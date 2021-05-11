@@ -1,0 +1,51 @@
+{
+  "name": "sbls",
+  "version": "1.0.0",
+  "description": "Systems Biology Layout Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js -e html,js,css,txt",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iVis-at-Bilkent/sbls.git"
+  },
+  "keywords": [
+    "graph",
+    "layout"
+  ],
+  "author": "iVis-at-Bilkent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iVis-at-Bilkent/sbls/issues"
+  },
+  "homepage": "https://github.com/iVis-at-Bilkent/sbls#readme",
+  "dependencies": {
+    "cytoscape": "^3.18.2",
+    "cytoscape-avsdf": "^1.0.0",
+    "cytoscape-cise": "^1.0.0",
+    "cytoscape-cola": "^2.4.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "cytoscape-dagre": "^2.3.2",
+    "cytoscape-euler": "^1.2.2",
+    "cytoscape-fcose": "^2.0.0",
+    "cytoscape-graphml": "^1.0.6",
+    "cytoscape-klay": "^3.1.4",
+    "cytoscape-sbgn-stylesheet": "github:iVis-at-Bilkent/cytoscape-sbgn-stylesheet#master",
+    "cytosnap": "^3.1.0",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "jsdom": "^16.5.3",
+    "libsbmljs_stable": "5.17.0-beta1",
+    "nodemon": "^2.0.7",
+    "sbgnml-to-cytoscape": "^4.0.4",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "env-cmd": "^9.0.3",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  }
+}

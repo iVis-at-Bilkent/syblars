@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link rel="shortcut icon" href="#" />
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Systems Biology Layout Service Demo</title>
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  </head>
+
+  <body>
+    
+    <div class="ui container">
+      <div class="ui vertically divided vertically padded grid">
+        <div class="row" style="padding-bottom: 0; padding-top: 0;  margin-top: 20px;">
+          <div class="column">
+            <h2 class="ui padded header">Systems Biology Layout Service</h2>
+          </div>
+        </div>        
+        <div class="three column row" style="padding-bottom: 0; padding-top: 0;">
+          <div class="four wide column">
+            <button id="load-file" class="ui button">Load File</button>
+            <input id="file-input" type="file" style="display:none" /><br><br>
+            <span class="input-file" id="file-name"></span>
+            <p style="margin-top: 10px" class="input-file" id="file-type"></p>
+          </div>
+          <div class="six wide column">
+            <h3 class="ui header">Layout Settings</h3>
+            <div class="ui form">
+              <div class="inline fields">
+                <label>Select Layout:</label>
+                <div class="six wide field">
+                  <select id="layoutType">
+                    <option value="fcose">fCoSE</option>
+                    <option value="cose-bilkent">CoSE-Bilkent</option>
+                    <option value="cise">CiSE</option>
+                    <option value="cola">Cola</option>
+                    <option value="cose">CoSE</option>
+                    <option value="dagre">Dagre</option>
+                    <option value="klay">Klay</option>
+                    <option value="euler">Euler</option>
+                    <option value="avsdf">Avsdf</option>                    
+                  </select>
+                </div>
+                <div class="six wide field">
+                  <div class="ui labeled button" tabindex="0">
+                    <a class="ui basic label">
+                      Options...
+                    </a>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
+          <div class="six wide column">
+            <h3 class="ui header">Image Settings</h3>
+            <div class="ui form">
+              <div class="inline fields" id="formatRadios">
+                <label>Format:</label>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="format" value="png" checked="checked">
+                    <label>PNG</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="format" value="jpg">
+                    <label>JPG</label>
+                  </div>
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="six wide field">
+                  <label>Width:</label>
+                  <input type="number" id="imageWidth" value="1280" min="1">
+                </div>
+                <div class="six wide field">
+                  <label>Height:</label>
+                  <input type="number" id="imageHeight" value="720" min="1">
+                </div>
+              </div>
+              <div class="inline fields">
+                <div class="eight wide field">
+                  <label>Background:</label>
+                  <input type="text" id="imageBackground" disabled>
+                </div>
+                <div class="ui checkbox">
+                  <input type="checkbox" id="isTransparent" checked>
+                  <label style="padding-left: 1.5em">Transparent</label>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div>
+        <div class="row" style="padding-bottom: 0; padding-top: 0">
+          <div class="center aligned column">
+            <button id="applyLayout" class="ui primary button">Apply Layout</button>
+          </div>
+        </div>
+        <div class="two column row" style="padding-bottom: 0; padding-top: 0">
+          <div class="seven wide column">
+            <div class="ui form">
+              <div class="field">
+                <div class="inline fields">
+                  <h3 class="ui header" style="margin-bottom: 0; margin-right: 10px">JSON</h3>
+                  <button class="ui icon mini button" id="downloadJSON" title="Download as JSON file">
+                    <i class="download icon"></i>               
+                  </button> 
+                </div>
+                <textarea id="resultText" rows="20"></textarea>
+              </div>  
+            </div>
+          </div>            
+          <div class="nine wide centered column">
+            <div class="ui form">
+              <div class="field">
+                <div class="inline fields">
+                  <h3 class="ui header" style="margin-bottom: 0; margin-right: 10px">Image</h3>
+                  <button class="ui icon mini button" id="downloadImage" title="Download as image">
+                    <i class="download icon"></i>               
+                  </button> 
+                </div>
+                <div class="ui segment" style='width: 620px; height: 370px'>
+                  <img style="cursor:pointer;" class="ui centered big image" id="resultImage" onclick="window.open(this.src, '_blank');">
+                </div>
+              </div>  
+            </div>           
+          </div>                    
+        </div>
+      </div>
+      
+    </div> 
+    
+
+    <script>
+      let port = window.location.port;
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
+    <script src="js/main.menu.js"></script>
+  </body>
+
+</html>
