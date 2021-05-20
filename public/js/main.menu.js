@@ -86,8 +86,41 @@ let processLayout = async function () {
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
+  let currentLayout = $('#layoutType').val();
+  
+  let layoutOptions = {};
+  switch (currentLayout) {
+    case 'fcose':
+      layoutOptions = fcoseLayoutProp.getProperties();
+      break;    
+    case 'cose-bilkent':
+      coseBilkentLayoutProp.getProperties();
+      break;
+    case 'cose':
+      coseLayoutProp.getProperties();
+      break;
+    case 'cola':
+      colaLayoutProp.getProperties();
+      break;
+    case 'cise':
+      ciseLayoutProp.getProperties();
+      break;
+    case 'dagre':
+      dagreLayoutProp.getProperties();
+      break;
+    case 'klay':
+      klayLayoutProp.getProperties();
+      break;
+    case 'avsdf':
+      avsdfLayoutProp.getProperties();
+      break;
+    case 'euler':
+      eulerLayoutProp.getProperties();
+      break;
+  }
+    
   let options = {
-    layoutOptions: {name: $('#layoutType').val()},
+    layoutOptions: layoutOptions,
     imageOptions: {
       format: imageFormat,
       background: $('#isTransparent').is(':checked') ? "transparent" : $('#imageBackground').val(),
@@ -348,11 +381,44 @@ var loadSample = function (fileName) {
             setFileContent(fileName);
         })
         .catch(e => {
-            return e
+            return e;
         });
 };
 
+let fcoseLayoutProp = new FCOSELayout({
+    el: '#fcose-layout-table'
+})
 
+$("#layout-options").on("click", function (e) {
+  let currentLayout = $('#layoutType').val();
+  switch (currentLayout) {
+    case 'fcose':
+      fcoseLayoutProp.render();
+      break;    
+    case 'cose-bilkent':
+      coseBilkentLayoutProp.render();
+      break;
+    case 'cose':
+      coseLayoutProp.render();
+      break;
+    case 'cola':
+      colaLayoutProp.render();
+      break;
+    case 'cise':
+      ciseLayoutProp.render();
+      break;
+    case 'dagre':
+      dagreLayoutProp.render();
+      break;
+    case 'klay':
+      klayLayoutProp.render();
+      break;
+    case 'avsdf':
+      avsdfLayoutProp.render();
+      break;
+    case 'euler':
+      eulerLayoutProp.render();
+      break;
 
-
-
+  }
+});
