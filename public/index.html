@@ -87,13 +87,26 @@
                 </div>
               </div>
               <div class="inline fields">
-                <div class="eight wide field">
-                  <label>Background:</label>
-                  <input type="text" id="imageBackground" disabled>
+                <div class="twelve wide field">
+                  <label>Color Scheme:</label>
+                  <div class="field">
+                    <select id="colorScheme">
+                      <option value="black_white">Black-White</option>
+                      <option value="greyscale">Greyscale</option>
+                      <option value="bluescale">Bluescale</option>
+                      <option value="red_blue">Red-Blue</option>
+                      <option value="green_brown">Green-Brown</option>
+                      <option value="purple_brown">Purple-Brown</option>
+                      <option value="purple_green">Purple-Green</option>
+                      <option value="grey_red">Grey-Red</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="ui checkbox">
-                  <input type="checkbox" id="isTransparent" checked>
-                  <label style="padding-left: 1.5em">Transparent</label>
+              </div>
+              <div class="inline fields">
+                <div class="six wide field">
+                  <label>Background:</label>
+                  <input type="color" id="imageBackground" value="#ffffff">
                 </div>
               </div>
             </div>

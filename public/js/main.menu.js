@@ -44,15 +44,6 @@ $("#save-file-json").on("click", function (e) {
     saveAs(blob, filename);
 });
 
-$("#isTransparent").change(function() {
-  if($('#isTransparent').is(':checked')) {
-    $("#imageBackground").prop("disabled", true);
-  }
-  else {
-    $("#imageBackground").prop("disabled", false);
-  }       
-});
-
 //$('#resultImage').click(function(){
 //
 //  window.open($(this)[0].src, '_blank');
@@ -76,13 +67,13 @@ let processLayout = async function () {
       url = "http://localhost:" + port + "/layout/json?edges=true"
   } else {
     if (isGraphML)
-      url = "https://cytoscape-layout-service.herokuapp.com/layout/graphml?edges=true";
+      url = "http://139.179.50.45:3000/layout/graphml?edges=true";
     else if (isSBGNML)
-      url = "https://cytoscape-layout-service.herokuapp.com/layout/sbgnml?edges=true"
+      url = "http://139.179.50.45:3000/layout/sbgnml?edges=true"
     else if (isSBML)
-      url = "https://cytoscape-layout-service.herokuapp.com/layout/sbml?edges=true"
+      url = "http://139.179.50.45:3000/layout/sbml?edges=true"
     else
-      url = "https://cytoscape-layout-service.herokuapp.com/layout/json?edges=true"
+      url = "http://139.179.50.45:3000/layout/json?edges=true"
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
@@ -123,9 +114,10 @@ let processLayout = async function () {
     layoutOptions: layoutOptions,
     imageOptions: {
       format: imageFormat,
-      background: $('#isTransparent').is(':checked') ? "transparent" : $('#imageBackground').val(),
+      background: $('#imageBackground').val(),
       width: parseInt($('#imageWidth').val()),
-      height: parseInt($('#imageHeight').val())
+      height: parseInt($('#imageHeight').val()),
+      colorScheme: $('#colorScheme').val()
     }
   };
 
@@ -158,7 +150,7 @@ let processLayout = async function () {
   $("#resultText").val(JSON.stringify(res.layout, null, 2));
   
   // get image info
-  blobData = saveImage(res["image"], "png", document.getElementById("file-name").innerHTML);
+  blobData = saveImage(res["image"], imageFormat, document.getElementById("file-name").innerHTML);
   let urlCreator = window.URL || window.webkitURL;
   let imageUrl = urlCreator.createObjectURL(blobData);
   $("#resultImage").attr("src", imageUrl);

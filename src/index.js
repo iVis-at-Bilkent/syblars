@@ -211,9 +211,47 @@ app.post('/layout/:format', (req, res) => {
     
     let stylesheet;
     if(format === "sbgnml") {
-      stylesheet = function(){
-        return sbgnStylesheet(cytoscape);
-      };
+      const colorScheme = options.imageOptions.colorScheme || "black_white";
+      if(colorScheme == "black_white") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "black_white");
+        };
+      }
+      else if(colorScheme == "greyscale") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "greyscale");
+        };
+      }
+      else if(colorScheme == "bluescale") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "bluescale");
+        };
+      }
+      else if(colorScheme == "red_blue") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "red_blue");
+        };
+      }
+      else if(colorScheme == "green_brown") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "green_brown");
+        };
+      }
+      else if(colorScheme == "purple_brown") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "purple_brown");
+        };
+      }
+      else if(colorScheme == "purple_green") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "purple_green");
+        };
+      }
+      else if(colorScheme == "grey_red") {
+        stylesheet = function(){
+          return sbgnStylesheet(cytoscape, "grey_red");
+        };
+      }
     }
     else {
       stylesheet = function(){
@@ -265,6 +303,7 @@ app.post('/layout/:format', (req, res) => {
             style: stylesheet,
             resolvesTo: 'base64uri',
             format: options.imageOptions.format || 'png',
+            quality: 100,
             width: options.imageOptions.width || 1280,
             height: options.imageOptions.height || 720,
             background: options.imageOptions.background || 'transparent'
