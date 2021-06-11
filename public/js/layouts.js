@@ -70,7 +70,7 @@ let FCOSELayout = Backbone.View.extend({
     
     $("#default-layout1").on("click", function (evt) {
       self.copyProperties();
-      var temp = _.template($("#fcose-settings-template").html());
+      let temp = _.template($("#fcose-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
       $(self.el).html(self.template);
       $("#save-layout1").on("click", saveFunction);

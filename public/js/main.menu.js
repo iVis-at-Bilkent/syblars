@@ -6,8 +6,8 @@ let graphData; // data read from the file
 let blobData; // blob data for image
 let imageFormat;
 
-var setFileContent = function (fileName) {
-    var span = document.getElementById('file-name');
+let setFileContent = function (fileName) {
+    let span = document.getElementById('file-name');
     while (span.firstChild) {
         span.removeChild(span.firstChild);
     }
@@ -35,12 +35,12 @@ $("#save-file-json").on("click", function (e) {
         }
     })
 
-    var jsonText = JSON.stringify(save, null, 4);
+    let jsonText = JSON.stringify(save, null, 4);
 
-    var blob = new Blob([jsonText], {
+    let blob = new Blob([jsonText], {
         type: "application/json;charset=utf-8;",
     });
-    var filename = "" + new Date().getTime() + ".json";
+    let filename = "" + new Date().getTime() + ".json";
     saveAs(blob, filename);
 });
 
@@ -84,12 +84,6 @@ let processLayout = async function () {
     case 'fcose':
       layoutOptions = fcoseLayoutProp.getProperties();
       break;    
-    case 'cose-bilkent':
-      coseBilkentLayoutProp.getProperties();
-      break;
-    case 'cose':
-      coseLayoutProp.getProperties();
-      break;
     case 'cola':
       colaLayoutProp.getProperties();
       break;
@@ -104,9 +98,6 @@ let processLayout = async function () {
       break;
     case 'avsdf':
       avsdfLayoutProp.getProperties();
-      break;
-    case 'euler':
-      eulerLayoutProp.getProperties();
       break;
   }
     
@@ -169,14 +160,16 @@ $('#downloadJSON').click(function(){
 
   let jsonText = $("#resultText").val();
 
-  let blob = new Blob([jsonText], {
-      type: "application/json;charset=utf-8;"
-  });
-  
-  let filename = document.getElementById("file-name").innerHTML;
-  filename = filename.substring(0, filename.lastIndexOf('.')) + ".json";
-  saveAs(blob, filename);
+  if(jsonText != "") {
+    let blob = new Blob([jsonText], {
+        type: "application/json;charset=utf-8;"
+    });
 
+    let filename = document.getElementById("file-name").innerHTML;
+    filename = filename.substring(0, filename.lastIndexOf('.')) + ".json";
+    saveAs(blob, filename);
+  }
+  
 });
 
 $('#downloadImage').click(function(){
@@ -190,9 +183,9 @@ $('#downloadImage').click(function(){
 });
 
 $("body").on("change", "#file-input", function (e) {
-    var fileInput = document.getElementById('file-input');
-    var file = fileInput.files[0];
-    var reader = new FileReader();
+    let fileInput = document.getElementById('file-input');
+    let file = fileInput.files[0];
+    let reader = new FileReader();
     setFileContent(file.name);
     reader.onload = async function (e) {
         $("#file-type").html("");
@@ -225,45 +218,45 @@ $("#load-file").on("click", function (e) {
 });
 
 // image content is base64 data and imageType is png/jpg
-var saveImage = function(imageContent, imageType, fileName){  
+let saveImage = function(imageContent, imageType, fileName){  
     // see http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
     function b64toBlob(b64Data, contentType, sliceSize) {
         contentType = contentType || '';
         sliceSize = sliceSize || 512;
 
-        var byteCharacters = atob(b64Data);
-        var byteArrays = [];
+        let byteCharacters = atob(b64Data);
+        let byteArrays = [];
 
-        for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-            var slice = byteCharacters.slice(offset, offset + sliceSize);
+        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            let slice = byteCharacters.slice(offset, offset + sliceSize);
 
-            var byteNumbers = new Array(slice.length);
-            for (var i = 0; i < slice.length; i++) {
+            let byteNumbers = new Array(slice.length);
+            for (let i = 0; i < slice.length; i++) {
                 byteNumbers[i] = slice.charCodeAt(i);
             }
 
-            var byteArray = new Uint8Array(byteNumbers);
+            let byteArray = new Uint8Array(byteNumbers);
 
             byteArrays.push(byteArray);
         }
 
-        var blob = new Blob(byteArrays, { type: contentType });
+        let blob = new Blob(byteArrays, { type: contentType });
         return blob;
     }
     // this is to remove the beginning of the pngContent: data:img/png;base64,
-    var b64data = imageContent.substr(imageContent.indexOf(",") + 1);
-    var blob = b64toBlob(b64data, "image/"+imageType);
+    let b64data = imageContent.substr(imageContent.indexOf(",") + 1);
+    let blob = b64toBlob(b64data, "image/"+imageType);
     
     return blob;
 };
 
 $("#save-as-png").on("click", function (evt) {
-    var pngContent = cy.png({ scale: 3, full: true });
+    let pngContent = cy.png({ scale: 3, full: true });
 
     saveImage(pngContent, "png", document.getElementById("file-name").innerHTML);
 });
 
-var loadSample = function (fileName) {
+let loadSample = function (fileName) {
     let convertIt;
     function readFile() {
         $.ajaxSetup({
@@ -387,12 +380,6 @@ $("#layout-options").on("click", function (e) {
     case 'fcose':
       fcoseLayoutProp.render();
       break;    
-    case 'cose-bilkent':
-      coseBilkentLayoutProp.render();
-      break;
-    case 'cose':
-      coseLayoutProp.render();
-      break;
     case 'cola':
       colaLayoutProp.render();
       break;
@@ -407,9 +394,6 @@ $("#layout-options").on("click", function (e) {
       break;
     case 'avsdf':
       avsdfLayoutProp.render();
-      break;
-    case 'euler':
-      eulerLayoutProp.render();
       break;
 
   }

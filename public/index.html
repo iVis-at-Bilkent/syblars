@@ -12,6 +12,7 @@
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link  rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -32,19 +33,16 @@
           </div>
           <div class="six wide column">
             <h3 class="ui header">Layout Settings</h3>
-            <div class="ui form">
+            <div class="ui tiny form">
               <div class="inline fields">
                 <label>Select Layout:</label>
-                <div class="six wide field">
+                <div class="four wide field">
                   <select id="layoutType">
                     <option value="fcose">fCoSE</option>
-                    <option value="cose-bilkent">CoSE-Bilkent</option>
+                    <option value="cola">Cola</option>                    
                     <option value="cise">CiSE</option>
-                    <option value="cola">Cola</option>
-                    <option value="cose">CoSE</option>
                     <option value="dagre">Dagre</option>
                     <option value="klay">Klay</option>
-                    <option value="euler">Euler</option>
                     <option value="avsdf">Avsdf</option>                    
                   </select>
                 </div>
@@ -60,7 +58,7 @@
           </div>
           <div class="six wide column">
             <h3 class="ui header">Image Settings</h3>
-            <div class="ui form">
+            <div class="ui tiny form">
               <div class="inline fields" id="formatRadios">
                 <label>Format:</label>
                 <div class="field">
@@ -160,7 +158,7 @@
         <tr><th colspan="2" style="font-size:18px">fCoSE Layout Options</th>
       </tr></thead>
       
-      <tr style="height: 48.2px;">
+      <tr style="height: 32.4px;">
         <td>
           <span class="add-on layout-text"> Randomize </span>
         </td>
@@ -169,7 +167,7 @@
         </td>
       </tr>
       
-      <tr style="height: 48.2px;">
+      <tr style="height: 32.4px;">
         <td>
           <span class="add-on layout-text"> Node Dimensions Include Labels </span>
         </td>
@@ -178,7 +176,7 @@
         </td>
       </tr>
 
-      <tr style="height: 48.2px;">
+      <tr style="height: 32.4px;">
         <td>
           <span class="add-on layout-text"> Uniform Node Dimensions </span>
         </td>
@@ -187,7 +185,7 @@
         </td>
       </tr>
       
-      <tr style="height: 48.2px;">
+      <tr style="height: 32.4px;">
         <td>
           <span class="add-on layout-text"> Pack Components </span>
         </td>
@@ -196,16 +194,12 @@
         </td>
       </tr>
       
-      <tr style="height: 48.2px;">
+      <tr style="height: 32.4px;">
         <td>
           <span class="add-on layout-text"> Tile </span>
         </td>
         <td>
-          <div class="ui small form">
-            <div class="field">
-              <input id="tile1" type="checkbox" class="input-small layout-text" <% if(tile){ %> checked <%}%> >
-            </div>
-          </div>        
+            <input id="tile1" type="checkbox" class="input-small layout-text" <% if(tile){ %> checked <%}%> >       
         </td>
       </tr>      
 
@@ -214,7 +208,7 @@
           <span class="add-on layout-text"> Padding </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="padding1" type="number" class="input-small layout-text" min="0" value = <%= padding %> >
             </div>
@@ -227,7 +221,7 @@
           <span class="add-on layout-text"> Node Repulsion </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="nodeRepulsion1" type="number" min="0" value = <%= nodeRepulsion %> >
             </div>
@@ -240,7 +234,7 @@
           <span class="add-on layout-text"> Ideal Edge length </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="idealEdgeLength1" type="number" class="input-small layout-text" min="0" value = <%= idealEdgeLength %> >
             </div>
@@ -253,7 +247,7 @@
           <span class="add-on layout-text"> Edge Elasticity </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="edgeElasticity1" type="number" class="input-small layout-text" min="0.01" step="0.01" value = <%= edgeElasticity %> >
             </div>
@@ -266,7 +260,7 @@
           <span class="add-on layout-text"> Nesting Factor </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="nestingFactor1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= nestingFactor %> >
             </div>
@@ -279,7 +273,7 @@
           <span class="add-on layout-text"> Number of Iterations </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="numIter1" type="number" class="input-small layout-text" min="0" value = <%= numIter %> >
             </div>
@@ -292,7 +286,7 @@
           <span class="add-on layout-text"> Tiling Padding Vertical </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="tilingPaddingVertical1" type="number" class="input-small layout-text" min="0" value = <%= tilingPaddingVertical %> >
             </div>
@@ -305,7 +299,7 @@
           <span class="add-on layout-text"> Tiling Padding Horizontal </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="tilingPaddingHorizontal1" type="number" class="input-small layout-text" min="0" value = <%= tilingPaddingHorizontal %> >
             </div>
@@ -318,7 +312,7 @@
           <span class="add-on layout-text"> Gravity </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="gravity1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= gravity %> >
             </div>
@@ -331,7 +325,7 @@
           <span class="add-on layout-text"> Gravity Range </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="gravityRange1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= gravityRange %> >
             </div>
@@ -344,7 +338,7 @@
           <span class="add-on layout-text"> Gravity Compound </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="gravityCompound1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= gravityCompound %> >
             </div>
@@ -357,7 +351,7 @@
           <span class="add-on layout-text"> Gravity Range Compound </span>
         </td>
         <td>
-          <div class="ui small form">
+          <div class="ui tiny form">
             <div class="field">
               <input id="gravityRangeCompound1" type="number" min="0" step="0.01" value = <%= gravityRangeCompound %> >
             </div>
@@ -370,8 +364,8 @@
         <td>
           <span class="add-on layout-text"> Initial Energy On Incremental </span>
         </td>
-        <td>
-          <div class="ui small form">
+        <td style="padding-bottom: 0.4em;">
+          <div class="ui tiny form">
             <div class="field">
               <input id="initialEnergyOnIncremental1" type="number" value = <%= initialEnergyOnIncremental %> >
             </div>
@@ -379,7 +373,7 @@
         </td>
       </tr>
       
-      <tr id="layout-buttons1">
+      <tr id="layout-option-buttons1" class="layout-option-buttons">
         <td>
           <button class="ui primary button" id="save-layout1">Save</button>
         </td>
