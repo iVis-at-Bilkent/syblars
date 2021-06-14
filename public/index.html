@@ -84,11 +84,15 @@
                   <input type="number" id="imageHeight" value="720" min="1">
                 </div>
               </div>
-              <div class="inline fields">
-                <div class="twelve wide field">
-                  <label>Color Scheme:</label>
+              <div class="inline fields">   
+                <label>Color Scheme:</label>
+                <div class="three wide field">
+                  <input type="color" id="color" value="#ffffff">
+                </div>
+                <label> or </label>
+                <div class="seven wide field">
                   <div class="field">
-                    <select id="colorScheme">
+                    <select id="colorScheme" disabled>
                       <option value="black_white">Black-White</option>
                       <option value="greyscale">Greyscale</option>
                       <option value="bluescale">Bluescale</option>
@@ -102,8 +106,8 @@
                 </div>
               </div>
               <div class="inline fields">
-                <div class="six wide field">
-                  <label>Background:</label>
+                <label>Background:</label>
+                <div class="three wide field">                  
                   <input type="color" id="imageBackground" value="#ffffff">
                 </div>
               </div>

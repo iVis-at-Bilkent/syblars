@@ -108,7 +108,7 @@ let processLayout = async function () {
       background: $('#imageBackground').val(),
       width: parseInt($('#imageWidth').val()),
       height: parseInt($('#imageHeight').val()),
-      colorScheme: $('#colorScheme').val()
+      colorScheme: $('#colorScheme').attr("disabled") ? $('#color').val() : $('#colorScheme').val()
     }
   };
 
@@ -194,16 +194,30 @@ $("body").on("change", "#file-input", function (e) {
         let isGraphML = (graphData.search("graphml") == -1) ? 0 : 1;
         let isSBGNML = (graphData.search("sbgn") == -1) ? 0 : 1;
         let isSBML = (graphData.search("sbml") == -1) ? 0 : 1;        
-        if(isGraphML)
+        if(isGraphML) {
           $("#file-type").html("GraphML file is detected! <br> Now you can apply layout!");
-        else if(isSBGNML)
+          $("#colorScheme").attr("disabled", true);
+          $("#color").attr("disabled", false);
+        }
+        else if(isSBGNML) {
           $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout!");
-        else if(isSBML)
+          $("#colorScheme").attr("disabled", false);
+          $("#color").attr("disabled", true);
+        }
+        else if(isSBML) {
           $("#file-type").html("SBML file is detected! <br> Now you can apply layout!");
-        else if(isJSON)
+          $("#colorScheme").attr("disabled", true);
+          $("#color").attr("disabled", false);
+        }
+        else if(isJSON) {
           $("#file-type").html("JSON file is detected! <br> Now you can apply layout!");
+          $("#colorScheme").attr("disabled", true);
+          $("#color").attr("disabled", false);
+        }
         else {
           $("#file-type").html("File format is not valid! <br> Load SBGNML, SBML, GraphML or JSON.");
+          $("#colorScheme").attr("disabled", true);
+          $("#color").attr("disabled", false);
           graphData = undefined;
         }
 

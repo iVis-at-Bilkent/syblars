@@ -5,9 +5,9 @@ const fs = require('fs');
 const cors = require('cors');
 const libsbml = require('libsbmljs_stable');
 const libsbmlInstance = libsbml();
-const sbgnStylesheet = require('cytoscape-sbgn-stylesheet');
 const convertSBGNtoCytoscape = require('sbgnml-to-cytoscape'); // to support sbgnml type of input
 const { convertSBMLtoCytoscape } = require('./sbml-to-cytoscape'); // to support sbml type of input
+const { adjustStylesheet } = require('./stylesheet');
 
 const cytosnap = require('cytosnap');
 cytosnap.use(['cytoscape-fcose'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet'});
@@ -147,6 +147,7 @@ app.post('/layout/:format', (req, res) => {
         }).forEach((node) => {
             node.css("width", parseInt(node.data('width')) || size);
             node.css("height", parseInt(node.data('height')) || size);
+            node.data("background-color", options.imageOptions.colorScheme || "white");
         })
 
         cy.layout(options.layoutOptions).run();
@@ -160,6 +161,7 @@ app.post('/layout/:format', (req, res) => {
             if (req.params.format === "json" || req.params.format === "sbml") {
                 node.css("width", node.data().width || size);
                 node.css("height", node.data().height || size);
+                node.data("backgroundColor", options.imageOptions.colorScheme || "white");
             }
             else {
                 node.css("width", node.data().bbox.w || size);
@@ -209,68 +211,8 @@ app.post('/layout/:format', (req, res) => {
       });
     }
     
-    let stylesheet;
-    if(format === "sbgnml") {
-      const colorScheme = options.imageOptions.colorScheme || "black_white";
-      if(colorScheme == "black_white") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "black_white");
-        };
-      }
-      else if(colorScheme == "greyscale") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "greyscale");
-        };
-      }
-      else if(colorScheme == "bluescale") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "bluescale");
-        };
-      }
-      else if(colorScheme == "red_blue") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "red_blue");
-        };
-      }
-      else if(colorScheme == "green_brown") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "green_brown");
-        };
-      }
-      else if(colorScheme == "purple_brown") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "purple_brown");
-        };
-      }
-      else if(colorScheme == "purple_green") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "purple_green");
-        };
-      }
-      else if(colorScheme == "grey_red") {
-        stylesheet = function(){
-          return sbgnStylesheet(cytoscape, "grey_red");
-        };
-      }
-    }
-    else {
-      stylesheet = function(){
-        return [ // http://js.cytoscape.org/#style
-          {
-            selector: 'node',
-            style: {
-              'background-color': 'red'
-            }
-          },
-          {
-            selector: 'edge',
-            style: {
-              'line-color': 'red'
-            }
-          }
-        ];        
-      };      
-    }
+    let colorScheme = options.imageOptions.colorScheme || "white";
+    let stylesheet = adjustStylesheet(format, colorScheme);
 
     if(options.imageOptions) {
       snap.start().then(function(){
