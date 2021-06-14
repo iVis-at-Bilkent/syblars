@@ -137,6 +137,7 @@ let processLayout = async function () {
             return e;
           });
 
+  $("#applyLayout").removeClass("loading");
   // get layout info
   $("#resultText").val(JSON.stringify(res.layout, null, 2));
   
@@ -149,10 +150,13 @@ let processLayout = async function () {
 
 $('#applyLayout').click(function(){
 
-  if(graphData !== undefined)
+  if(graphData !== undefined) {
     processLayout();
-  else
+    $("#applyLayout").addClass("loading");
+  }
+  else {
     $("#file-type").html("Please first load a valid file!");
+  }
 
 });
 

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/iVis-at-Bilkent/sbls#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "cytoscape": "^3.18.2",
     "cytoscape-avsdf": "^1.0.0",
     "cytoscape-cise": "^1.0.0",
@@ -33,15 +34,15 @@
     "cytoscape-fcose": "^2.0.0",
     "cytoscape-graphml": "^1.0.6",
     "cytoscape-klay": "^3.1.4",
+    "cytoscape-layout-utilities": "^1.0.2",
     "cytoscape-sbgn-stylesheet": "github:iVis-at-Bilkent/cytoscape-sbgn-stylesheet#master",
-    "cytosnap": "^3.1.0",
+    "cytosnap": "github:iVis-at-Bilkent/cytosnap#master",
     "express": "^4.17.1",
     "jquery": "^3.6.0",
     "jsdom": "^16.5.3",
     "libsbmljs_stable": "5.17.0-beta1",
     "nodemon": "^2.0.7",
-    "sbgnml-to-cytoscape": "^4.0.4",
-    "cors": "^2.8.5"
+    "sbgnml-to-cytoscape": "^4.0.4"
   },
   "devDependencies": {
     "env-cmd": "^9.0.3",

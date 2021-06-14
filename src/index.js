@@ -10,7 +10,7 @@ const { convertSBMLtoCytoscape } = require('./sbml-to-cytoscape'); // to support
 const { adjustStylesheet } = require('./stylesheet');
 
 const cytosnap = require('cytosnap');
-cytosnap.use(['cytoscape-fcose'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet'});
+cytosnap.use(['cytoscape-fcose'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities'});
 let snap = cytosnap();
 
 // const port = process.env.PORT || 3000;
@@ -150,7 +150,7 @@ app.post('/layout/:format', (req, res) => {
             node.data("background-color", options.imageOptions.colorScheme || "white");
         })
 
-        cy.layout(options.layoutOptions).run();
+//        cy.layout(options.layoutOptions).run();
     }
     else {
         cy.add(data);
@@ -170,7 +170,7 @@ app.post('/layout/:format', (req, res) => {
         });
 
         try {
-            cy.layout(options.layoutOptions).run();
+//            cy.layout(options.layoutOptions).run();
         }
         catch (e) {
             console.log(e);
@@ -209,7 +209,7 @@ app.post('/layout/:format', (req, res) => {
               ret["layout"][ele.id()] = { source: ele.data().source, target: ele.data().target };
           }
       });
-    }
+    }   
     
     let colorScheme = options.imageOptions.colorScheme || "white";
     let stylesheet = adjustStylesheet(format, colorScheme);
@@ -218,9 +218,7 @@ app.post('/layout/:format', (req, res) => {
       snap.start().then(function(){
         return snap.shot({
           elements: cy.json().elements,
-          layout: { 
-            name: 'fcose'
-          },
+          layout: options.layoutOptions,
           style: stylesheet,
           resolvesTo: 'json',
 //          format: options.imageOptions.format || 'png',
@@ -231,7 +229,6 @@ app.post('/layout/:format', (req, res) => {
       }).then(function( json ){
         // do whatever you want with img        
         let positions = json;
-//        console.log(positions);
         cy.nodes().not(":parent").forEach(function(node){
           node.position(positions[node.id()]);
         });
@@ -248,7 +245,7 @@ app.post('/layout/:format', (req, res) => {
             quality: 100,
             width: options.imageOptions.width || 1280,
             height: options.imageOptions.height || 720,
-            background: options.imageOptions.background || 'transparent'
+            background: options.imageOptions.background
           }).then(function( img ){
             ret["image"] = img;
             return res.status(200).send(ret);

@@ -6,7 +6,7 @@ let adjustStylesheet = function(format, colorScheme) {
   let stylesheet;
   if(format == 'sbgnml') {
     if(colorScheme == 'black_white') {
-      stylesheet = function(){
+      stylesheet = function(){       
         return sbgnStylesheet(cytoscape, 'black_white');
       };
     }
@@ -60,10 +60,14 @@ let adjustStylesheet = function(format, colorScheme) {
           {
             selector: 'node',
             style: {
-              'background-color': 'data(backgroundColor)',
+              'background-color': function(node){
+                return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
+              },
               "border-width": "3px",
               'border-color': 'black',
-              'label': 'data(label)'
+              'label': function(node){
+                return node.data('label') ? node.data('label') : ""
+              },
             }
           },
           {
