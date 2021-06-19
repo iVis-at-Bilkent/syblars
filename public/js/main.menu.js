@@ -85,22 +85,22 @@ let processLayout = async function () {
       layoutOptions = fcoseLayoutProp.getProperties();
       break;    
     case 'cola':
-      colaLayoutProp.getProperties();
+      layoutOptions = colaLayoutProp.getProperties();
       break;
     case 'cise':
-      ciseLayoutProp.getProperties();
+      layoutOptions = ciseLayoutProp.getProperties();
       break;
     case 'dagre':
-      dagreLayoutProp.getProperties();
+      layoutOptions = dagreLayoutProp.getProperties();
       break;
     case 'klay':
-      klayLayoutProp.getProperties();
+      layoutOptions = klayLayoutProp.getProperties();
       break;
     case 'avsdf':
-      avsdfLayoutProp.getProperties();
+      layoutOptions = avsdfLayoutProp.getProperties();
       break;
   }
-    
+    console.log(layoutOptions);
   let options = {
     layoutOptions: layoutOptions,
     imageOptions: {
@@ -390,7 +390,11 @@ let loadSample = function (fileName) {
 
 let fcoseLayoutProp = new FCOSELayout({
     el: '#fcose-layout-table'
-})
+});
+
+let colaLayoutProp = new COLALayout({
+    el: '#cola-layout-table'
+});
 
 $("#layout-options").on("click", function (e) {
   let currentLayout = $('#layoutType').val();

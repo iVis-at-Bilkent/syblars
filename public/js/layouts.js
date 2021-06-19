@@ -45,7 +45,6 @@ let FCOSELayout = Backbone.View.extend({
     $(self.el).modal({inverted: true}).modal('show');
     
     let saveFunction = function (evt) {
-      self.currentLayoutProperties.randomize = document.getElementById("randomize1").checked;
       self.currentLayoutProperties.padding = Number(document.getElementById("padding1").value);
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels1").checked;
       self.currentLayoutProperties.uniformNodeDimensions = document.getElementById("uniformNodeDimensions1").checked;
@@ -75,6 +74,83 @@ let FCOSELayout = Backbone.View.extend({
       $(self.el).html(self.template);
       $("#save-layout1").on("click", saveFunction);
     });
+
+    return this;
+  }
+});
+
+let COLALayout = Backbone.View.extend({
+  defaultLayoutProperties: {
+    name: 'cola',
+    animate: false,
+    padding: 30, // padding around the simulation
+    nodeDimensionsIncludeLabels: false, // whether labels should be included in determining the space used by a node
+
+    // positioning options
+    randomize: true, // use random node positions at beginning of layout
+    avoidOverlap: true, // if true, prevents overlap of node bounding boxes
+    handleDisconnected: true, // if true, avoids disconnected components from overlapping
+    nodeSpacing: 10,
+
+    // different methods of specifying edge length
+    // each can be a constant numerical value or a function like `function( edge ){ return 2; }`
+    edgeLength: 50, // sets edge length directly in simulation
+    edgeSymDiffLength: 0, // symmetric diff edge length in simulation
+    edgeJaccardLength: 0, // jaccard edge length in simulation
+
+    // iterations of cola algorithm; uses default values on undefined
+    unconstrIter: 10, // unconstrained initial layout iterations
+    userConstIter: 15, // initial layout iterations with user-specified constraints
+    allConstIter: 20, // initial layout iterations with all constraints including non-overlap
+  },
+  currentLayoutProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#cola-settings-template").html());
+    self.template = temp(self.currentLayoutProperties);
+  },
+  copyProperties: function () {
+    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
+  },
+  getProperties: function () {
+    return this.currentLayoutProperties;
+  },   
+  applyLayout: async function () {
+    await applyLayoutFunction(this);
+  },
+  render: function () {
+    let self = this;
+    let temp = _.template($("#cola-settings-template").html());
+    self.template = temp(self.currentLayoutProperties);
+    $(self.el).html(self.template);
+
+    $(self.el).modal({inverted: true}).modal('show');
+
+    let saveFunction = function (evt) {
+      self.currentLayoutProperties.padding = Number(document.getElementById("padding2").value);     
+      self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels2").checked;
+      self.currentLayoutProperties.avoidOverlap = document.getElementById("avoidOverlap2").checked;
+      self.currentLayoutProperties.handleDisconnected = document.getElementById("handleDisconnected2").checked;
+      self.currentLayoutProperties.nodeSpacing = Number(document.getElementById("nodeSpacing2").value);
+      self.currentLayoutProperties.edgeLength = Number(document.getElementById("edgeLength2").value);
+      self.currentLayoutProperties.edgeSymDiffLength = Number(document.getElementById("edgeSymDiffLength2").value);
+      self.currentLayoutProperties.edgeJaccardLength = Number(document.getElementById("edgeJaccardLength2").value);
+      self.currentLayoutProperties.unconstrIter = Number(document.getElementById("unconstrIter2").value);
+      self.currentLayoutProperties.userConstIter = Number(document.getElementById("userConstIter2").value);
+      self.currentLayoutProperties.allConstIter = Number(document.getElementById("allConstIter2").value);      
+      $(self.el).modal('hide');
+    };
+
+    $("#save-layout2").on("click", saveFunction);
+    
+    $("#default-layout2").on("click", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#cola-settings-template").html());
+      self.template = temp(self.currentLayoutProperties);
+      $(self.el).html(self.template);
+      $("#save-layout2").on("click", saveFunction);
+    });    
 
     return this;
   }
@@ -238,90 +314,7 @@ var COSELayout = Backbone.View.extend({
     return this;
   }
 });
-var COLALayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: 'cola',
-    refresh: 1, // number of ticks per frame; higher is faster but more jerky
-    maxSimulationTime: 4000, // max length in ms to run the layout
-    fit: true, // on every layout reposition of nodes, fit the viewport
-    padding: 30, // padding around the simulation
-    boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-    // layout event callbacks
-    ready: function () {
-    }, // on layoutready
-    stop: function () {
-    }, // on layoutstop
 
-    // positioning options
-    randomize: true, // use random node positions at beginning of layout
-    avoidOverlap: true, // if true, prevents overlap of node bounding boxes
-    handleDisconnected: true, // if true, avoids disconnected components from overlapping
-    nodeSpacing: function (node) {
-      return 10;
-    }, // extra spacing around nodes
-    flow: undefined, // use DAG/tree flow layout if specified, e.g. { axis: 'y', minSeparation: 30 }
-    alignment: undefined, // relative alignment constraints on nodes, e.g. function( node ){ return { x: 0, y: 1 } }
-
-    // different methods of specifying edge length
-    // each can be a constant numerical value or a function like `function( edge ){ return 2; }`
-    edgeLength: undefined, // sets edge length directly in simulation
-    edgeSymDiffLength: undefined, // symmetric diff edge length in simulation
-    edgeJaccardLength: undefined, // jaccard edge length in simulation
-
-    // iterations of cola algorithm; uses default values on undefined
-    unconstrIter: undefined, // unconstrained initial layout iterations
-    userConstIter: undefined, // initial layout iterations with user-specified constraints
-    allConstIter: undefined, // initial layout iterations with all constraints including non-overlap
-
-    // infinite layout options
-    infinite: false // overrides all other options for a forces-all-the-time mode
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#cola-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("Cola layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#cola-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout1").on("click", function (evt) {
-      self.currentLayoutProperties.refresh = Number(document.getElementById("refresh1").value);
-      self.currentLayoutProperties.maxSimulationTime = Number(document.getElementById("maxSimulationTime1").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit1").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding1").value);
-      self.currentLayoutProperties.randomize = document.getElementById("randomize1").checked;
-      self.currentLayoutProperties.avoidOverlap = document.getElementById("avoidOverlap1").checked;
-      self.currentLayoutProperties.handleDisconnected = document.getElementById("handleDisconnected1").checked;
-      self.currentLayoutProperties.infinite = document.getElementById("infinite1").checked;
-
-
-      $(self.el).dialog('close');
-    });
-
-    $("#default-layout1").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#cola-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-  }
-});
 var ARBORLayout = Backbone.View.extend({
   defaultLayoutProperties: {
     name: 'arbor',

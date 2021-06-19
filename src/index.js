@@ -10,7 +10,7 @@ const { convertSBMLtoCytoscape } = require('./sbml-to-cytoscape'); // to support
 const { adjustStylesheet } = require('./stylesheet');
 
 const cytosnap = require('cytosnap');
-cytosnap.use(['cytoscape-fcose'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities'});
+cytosnap.use(['cytoscape-fcose', 'cytoscape-cola'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities'});
 let snap = cytosnap();
 
 // const port = process.env.PORT || 3000;
@@ -147,8 +147,8 @@ app.post('/layout/:format', (req, res) => {
         }).forEach((node) => {
             node.css("width", parseInt(node.data('width')) || size);
             node.css("height", parseInt(node.data('height')) || size);
-            node.data("background-color", options.imageOptions.colorScheme || "white");
-        })
+            node.data("backgroundColor", options.imageOptions.colorScheme || "white");
+        });
 
 //        cy.layout(options.layoutOptions).run();
     }

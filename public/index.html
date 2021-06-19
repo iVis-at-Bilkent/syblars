@@ -151,32 +151,26 @@
         </div>
       </div>
       
-      <div id="fcose-layout-table" title="fCoSE Options" class="ui modal" style="width:310px;">
-          <!-- sbgn layout table will be shown here -->
+      <div id="fcose-layout-table" title="fCoSE Options" class="ui mini modal" >
+          <!-- fcose layout table will be shown here -->
       </div>
+      <div id="cola-layout-table" title="Cola Options" class="ui mini modal" style="width:310px;">
+          <!-- cola layout table will be shown here -->
+      </div>      
     </div>
     
     <script type="text/template" id="fcose-settings-template">
-      <table class="ui single line compact table">
+      <table class="ui single line compact table layoutTable">
       <thead>
         <tr><th colspan="2" style="font-size:18px">fCoSE Layout Options</th>
       </tr></thead>
       
       <tr style="height: 32.4px;">
         <td>
-          <span class="add-on layout-text"> Randomize </span>
-        </td>
-        <td>
-          <input id="randomize1" type="checkbox" class="input-small layout-text" <% if(randomize){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
           <span class="add-on layout-text"> Node Dimensions Include Labels </span>
         </td>
-        <td>
-          <input id="nodeDimensionsIncludeLabels1" type="checkbox" class="input-small layout-text" <% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
+        <td class="centered">
+          <input id="nodeDimensionsIncludeLabels1" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
         </td>
       </tr>
 
@@ -184,8 +178,8 @@
         <td>
           <span class="add-on layout-text"> Uniform Node Dimensions </span>
         </td>
-        <td>
-          <input id="uniformNodeDimensions1" type="checkbox" class="input-small layout-text" <% if(uniformNodeDimensions){ %> checked <%}%> >
+        <td class="centered">
+          <input id="uniformNodeDimensions1" type="checkbox"<% if(uniformNodeDimensions){ %> checked <%}%> >
         </td>
       </tr>
       
@@ -193,8 +187,8 @@
         <td>
           <span class="add-on layout-text"> Pack Components </span>
         </td>
-        <td>
-          <input id="packComponents1" type="checkbox" class="input-small layout-text" <% if(packComponents){ %> checked <%}%> >
+        <td class="centered">
+          <input id="packComponents1" type="checkbox"<% if(packComponents){ %> checked <%}%> >
         </td>
       </tr>
       
@@ -202,8 +196,8 @@
         <td>
           <span class="add-on layout-text"> Tile </span>
         </td>
-        <td>
-            <input id="tile1" type="checkbox" class="input-small layout-text" <% if(tile){ %> checked <%}%> >       
+        <td class="centered">
+            <input id="tile1" type="checkbox"<% if(tile){ %> checked <%}%> >       
         </td>
       </tr>      
 
@@ -214,7 +208,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="padding1" type="number" class="input-small layout-text" min="0" value = <%= padding %> >
+              <input id="padding1" type="number"min="0" value = <%= padding %> >
             </div>
           </div>         
         </td>
@@ -240,7 +234,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="idealEdgeLength1" type="number" class="input-small layout-text" min="0" value = <%= idealEdgeLength %> >
+              <input id="idealEdgeLength1" type="number"min="0" value = <%= idealEdgeLength %> >
             </div>
           </div>                  
         </td>
@@ -253,7 +247,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="edgeElasticity1" type="number" class="input-small layout-text" min="0.01" step="0.01" value = <%= edgeElasticity %> >
+              <input id="edgeElasticity1" type="number"min="0.01" step="0.01" value = <%= edgeElasticity %> >
             </div>
           </div>                  
         </td>
@@ -266,7 +260,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="nestingFactor1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= nestingFactor %> >
+              <input id="nestingFactor1" type="number"min="0" step="0.01" value = <%= nestingFactor %> >
             </div>
           </div>        
         </td>
@@ -279,7 +273,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="numIter1" type="number" class="input-small layout-text" min="0" value = <%= numIter %> >
+              <input id="numIter1" type="number"min="0" value = <%= numIter %> >
             </div>
           </div>                   
         </td>
@@ -292,7 +286,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="tilingPaddingVertical1" type="number" class="input-small layout-text" min="0" value = <%= tilingPaddingVertical %> >
+              <input id="tilingPaddingVertical1" type="number"min="0" value = <%= tilingPaddingVertical %> >
             </div>
           </div>                   
         </td>
@@ -305,7 +299,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="tilingPaddingHorizontal1" type="number" class="input-small layout-text" min="0" value = <%= tilingPaddingHorizontal %> >
+              <input id="tilingPaddingHorizontal1" type="number"min="0" value = <%= tilingPaddingHorizontal %> >
             </div>
           </div>                   
         </td>
@@ -318,7 +312,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="gravity1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= gravity %> >
+              <input id="gravity1" type="number"min="0" step="0.01" value = <%= gravity %> >
             </div>
           </div>                  
         </td>
@@ -331,7 +325,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="gravityRange1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= gravityRange %> >
+              <input id="gravityRange1" type="number"min="0" step="0.01" value = <%= gravityRange %> >
             </div>
           </div>                   
         </td>
@@ -344,7 +338,7 @@
         <td>
           <div class="ui tiny form">
             <div class="field">
-              <input id="gravityCompound1" type="number" class="input-small layout-text" min="0" step="0.01" value = <%= gravityCompound %> >
+              <input id="gravityCompound1" type="number"min="0" step="0.01" value = <%= gravityCompound %> >
             </div>
           </div>                  
         </td>
@@ -368,7 +362,7 @@
         <td>
           <span class="add-on layout-text"> Initial Energy On Incremental </span>
         </td>
-        <td style="padding-bottom: 0.4em;">
+        <td style="padding-bottom: 0.4em !important;">
           <div class="ui tiny form">
             <div class="field">
               <input id="initialEnergyOnIncremental1" type="number" value = <%= initialEnergyOnIncremental %> >
@@ -378,11 +372,156 @@
       </tr>
       
       <tr id="layout-option-buttons1" class="layout-option-buttons">
+        <td colspan=2>
+          <button class="ui button" id="default-layout1">Default</button>
+                    <button class="ui primary button" id="save-layout1" style="float: right">Save</button>
+        </td>
+      </tr>
+      
+      </table>
+    </script>
+
+    <script type="text/template" id="cola-settings-template">
+      <table class="ui single line compact table layoutTable">
+      <thead>
+        <tr><th colspan="2" style="font-size:18px">Cola Layout Options</th>
+      </tr></thead>
+      
+      <tr style="height: 32.4px;">
         <td>
-          <button class="ui primary button" id="save-layout1">Save</button>
+          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
+        </td>
+        <td class="centered">
+          <input id="nodeDimensionsIncludeLabels2" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
+        </td>
+      </tr>
+      
+      <tr style="height: 32.4px;">
+        <td>
+          <span class="add-on layout-text"> Avoid Overlap </span>
+        </td>
+        <td class="centered">
+          <input id="avoidOverlap2" type="checkbox"<% if(avoidOverlap){ %> checked <%}%> >
+        </td>
+      </tr>
+      
+      <tr style="height: 32.4px;">
+        <td>
+          <span class="add-on layout-text"> Handle Disconnected </span>
+        </td>
+        <td class="centered">
+          <input id="handleDisconnected2" type="checkbox"<% if(handleDisconnected){ %> checked <%}%> >
+        </td>
+      </tr>      
+
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Padding </span>
         </td>
         <td>
-          <button class="ui button" id="default-layout1">Default</button>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="padding2" type="number"min="0" value = <%= padding %> >
+            </div>
+          </div>         
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Node Spacing </span>
+        </td>
+        <td>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="nodeSpacing2" type="number" min="0" value = <%= nodeSpacing %> >
+            </div>
+          </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Edge length </span>
+        </td>
+        <td>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="edgeLength2" type="number"min="0" value = <%= edgeLength %> >
+            </div>
+          </div>                  
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Edge SymDiff Length </span>
+        </td>
+        <td>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="edgeSymDiffLength2" type="number"min="0" value = <%= edgeSymDiffLength %> >
+            </div>
+          </div>                  
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Edge Jaccard Length </span>
+        </td>
+        <td>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="edgeJaccardLength2" type="number"min="0" value = <%= edgeJaccardLength %> >
+            </div>
+          </div>        
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Unconstraint Iterations </span>
+        </td>
+        <td>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="unconstrIter2" type="number"min="0" value = <%= unconstrIter %> >
+            </div>
+          </div>                   
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> User Constraint Iterations </span>
+        </td>
+        <td>
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="userConstIter2" type="number"min="0" value = <%= userConstIter %> >
+            </div>
+          </div>                   
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <span class="add-on layout-text"> All Constraint Iterations </span>
+        </td>
+        <td style="padding-bottom: 0.4em !important;">
+          <div class="ui tiny form">
+            <div class="field">
+              <input id="allConstIter2" type="number"min="0" value = <%= allConstIter %> >
+            </div>
+          </div>                   
+        </td>
+      </tr>      
+      
+      <tr id="layout-option-buttons2" class="layout-option-buttons">
+        <td colspan=2>
+          <button class="ui button" id="default-layout2">Default</button>
+          <button class="ui primary button" id="save-layout2"  style="float: right">Save</button>          
         </td>
       </tr>
       

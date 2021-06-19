@@ -2,12 +2,32 @@ label {
   font-size: 14px !important;
 }
 
-.ui.compact.table td { 
-  border-top: 0px; 
-  padding: 0.2em 0.7em;
+.ui.mini.modal {
+  width: 340px !important;
+}
+
+.layoutTable th { 
+  padding-left: 1em !important;
+}
+
+.layoutTable td { 
+  border-top: 0px !important; 
+  padding: 0.2em 1.3em !important;
+}
+
+.centered{
+  border-top: 0px !important; 
+  padding: 0.2em 1.3em !important;
+  text-align: center !important; 
+}
+
+.ui.form input {
+  padding-right: 0.7em !important;
+  padding-left: 0.7em !important;
 }
 
 .layout-option-buttons td {
   border-top: 1px solid rgba(34,36,38,.1) !important;
-  padding: 0.6em 0.7em !important;
+  padding: 0.75em 4em !important;
+  margin-top: 2px;
 }
