@@ -36,6 +36,7 @@
     "cytoscape-klay": "^3.1.4",
     "cytoscape-layout-utilities": "^1.0.2",
     "cytoscape-sbgn-stylesheet": "github:iVis-at-Bilkent/cytoscape-sbgn-stylesheet#master",
+    "cytoscape-svg": "^0.3.1",
     "cytosnap": "github:iVis-at-Bilkent/cytosnap#master",
     "express": "^4.17.1",
     "jquery": "^3.6.0",

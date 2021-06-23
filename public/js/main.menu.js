@@ -108,7 +108,7 @@ let processLayout = async function () {
       background: $('#imageBackground').val(),
       width: parseInt($('#imageWidth').val()),
       height: parseInt($('#imageHeight').val()),
-      colorScheme: $('#colorScheme').attr("disabled") ? $('#color').val() : $('#colorScheme').val()
+      color: $('#colorScheme').attr("disabled") ? $('#color').val() : $('#colorScheme').val()
     }
   };
 
@@ -261,9 +261,16 @@ let saveImage = function(imageContent, imageType, fileName){
         let blob = new Blob(byteArrays, { type: contentType });
         return blob;
     }
-    // this is to remove the beginning of the pngContent: data:img/png;base64,
-    let b64data = imageContent.substr(imageContent.indexOf(",") + 1);
-    let blob = b64toBlob(b64data, "image/"+imageType);
+    
+    let blob;
+    if(imageType == "svg") {
+      blob = new Blob([imageContent], {type:"image/svg+xml;charset=utf-8"}); 
+    }
+    else {
+      // this is to remove the beginning of the pngContent: data:img/png;base64,
+      let b64data = imageContent.substr(imageContent.indexOf(",") + 1);
+      blob = b64toBlob(b64data, "image/"+imageType);      
+    }
     
     return blob;
 };

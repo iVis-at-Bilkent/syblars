@@ -10,7 +10,7 @@ const { convertSBMLtoCytoscape } = require('./sbml-to-cytoscape'); // to support
 const { adjustStylesheet } = require('./stylesheet');
 
 const cytosnap = require('cytosnap');
-cytosnap.use(['cytoscape-fcose', 'cytoscape-cola'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities'});
+cytosnap.use(['cytoscape-fcose', 'cytoscape-cola'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities', svg: 'cytoscape-svg'});
 let snap = cytosnap();
 
 // const port = process.env.PORT || 3000;
@@ -147,7 +147,7 @@ app.post('/layout/:format', (req, res) => {
         }).forEach((node) => {
             node.css("width", parseInt(node.data('width')) || size);
             node.css("height", parseInt(node.data('height')) || size);
-            node.data("backgroundColor", options.imageOptions.colorScheme || "white");
+            node.data("backgroundColor", options.imageOptions.color || "white");
         });
 
 //        cy.layout(options.layoutOptions).run();
@@ -161,7 +161,7 @@ app.post('/layout/:format', (req, res) => {
             if (req.params.format === "json" || req.params.format === "sbml") {
                 node.css("width", node.data().width || size);
                 node.css("height", node.data().height || size);
-                node.data("backgroundColor", options.imageOptions.colorScheme || "white");
+                node.data("backgroundColor", options.imageOptions.color || "white");
             }
             else {
                 node.css("width", node.data().bbox.w || size);
@@ -211,7 +211,7 @@ app.post('/layout/:format', (req, res) => {
       });
     }   
     
-    let colorScheme = options.imageOptions.colorScheme || "white";
+    let colorScheme = options.imageOptions.color || "white";
     let stylesheet = adjustStylesheet(format, colorScheme);
 
     if(options.imageOptions) {

@@ -71,6 +71,12 @@ let adjustStylesheet = function(format, colorScheme) {
             }
           },
           {
+            selector: 'node:parent',
+            style: {
+              'background-opacity': 0.3
+            }
+          },          
+          {
             selector: 'edge',
             style: {
               'line-color': 'black'
