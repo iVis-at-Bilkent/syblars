@@ -6,6 +6,18 @@ label {
   width: 340px !important;
 }
 
+.ui.mini.modal.large {
+  width: 372px !important;
+}
+
+.ui.mini.modal.small {
+  width: 308px !important;
+}
+
+.ui.tiny.form.tinier {
+  width: 67.45px;
+}
+
 .layoutTable th { 
   padding-left: 1em !important;
 }

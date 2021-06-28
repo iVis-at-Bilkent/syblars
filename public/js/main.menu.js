@@ -100,7 +100,7 @@ let processLayout = async function () {
       layoutOptions = avsdfLayoutProp.getProperties();
       break;
   }
-    console.log(layoutOptions);
+
   let options = {
     layoutOptions: layoutOptions,
     imageOptions: {
@@ -403,6 +403,22 @@ let colaLayoutProp = new COLALayout({
     el: '#cola-layout-table'
 });
 
+let ciseLayoutProp = new CISELayout({
+    el: '#cise-layout-table'
+});
+
+let dagreLayoutProp = new DAGRELayout({
+    el: '#dagre-layout-table'
+});
+
+let klayLayoutProp = new KLAYLayout({
+    el: '#klay-layout-table'
+});
+
+let avsdfLayoutProp = new AVSDFLayout({
+    el: '#avsdf-layout-table'
+});
+
 $("#layout-options").on("click", function (e) {
   let currentLayout = $('#layoutType').val();
   switch (currentLayout) {
@@ -424,6 +440,5 @@ $("#layout-options").on("click", function (e) {
     case 'avsdf':
       avsdfLayoutProp.render();
       break;
-
   }
 });

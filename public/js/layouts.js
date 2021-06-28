@@ -44,7 +44,7 @@ let FCOSELayout = Backbone.View.extend({
 
     $(self.el).modal({inverted: true}).modal('show');
     
-    let saveFunction = function (evt) {
+    $(document).off("click", "#save-layout1").on("click", "#save-layout1", function (evt) {
       self.currentLayoutProperties.padding = Number(document.getElementById("padding1").value);
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels1").checked;
       self.currentLayoutProperties.uniformNodeDimensions = document.getElementById("uniformNodeDimensions1").checked;
@@ -63,16 +63,13 @@ let FCOSELayout = Backbone.View.extend({
       self.currentLayoutProperties.gravityRangeCompound = Number(document.getElementById("gravityRangeCompound1").value);      
       self.currentLayoutProperties.initialEnergyOnIncremental = Number(document.getElementById("initialEnergyOnIncremental1").value);
       $(self.el).modal('hide');
-    };
-
-    $("#save-layout1").on("click", saveFunction);
+    });
     
-    $("#default-layout1").on("click", function (evt) {
+    $(document).off("click", "#default-layout1").on("click", "#default-layout1", function (evt) {
       self.copyProperties();
       let temp = _.template($("#fcose-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
       $(self.el).html(self.template);
-      $("#save-layout1").on("click", saveFunction);
     });
 
     return this;
@@ -127,7 +124,7 @@ let COLALayout = Backbone.View.extend({
 
     $(self.el).modal({inverted: true}).modal('show');
 
-    let saveFunction = function (evt) {
+    $(document).off("click", "#save-layout2").on("click", "#save-layout2", function (evt) {
       self.currentLayoutProperties.padding = Number(document.getElementById("padding2").value);     
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels2").checked;
       self.currentLayoutProperties.avoidOverlap = document.getElementById("avoidOverlap2").checked;
@@ -140,17 +137,267 @@ let COLALayout = Backbone.View.extend({
       self.currentLayoutProperties.userConstIter = Number(document.getElementById("userConstIter2").value);
       self.currentLayoutProperties.allConstIter = Number(document.getElementById("allConstIter2").value);      
       $(self.el).modal('hide');
-    };
-
-    $("#save-layout2").on("click", saveFunction);
+    });
     
-    $("#default-layout2").on("click", function (evt) {
+    $(document).off("click", "#default-layout2").on("click", "#default-layout2", function (evt) {
       self.copyProperties();
       let temp = _.template($("#cola-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
       $(self.el).html(self.template);
-      $("#save-layout2").on("click", saveFunction);
     });    
+
+    return this;
+  }
+});
+
+let CISELayout = Backbone.View.extend({
+  defaultLayoutProperties: {
+    name: "cise",
+    clusters: [],
+    animate: false,
+    packComponents: true,
+    allowNodesInsideCircle: false,    
+    padding: 30,
+    nodeSeparation: 12.5,
+    idealInterClusterEdgeLengthCoefficient: 1.4,
+    maxRatioOfNodesInsideCircle: 0.1,
+    springCoeff: 0.45,
+    nodeRepulsion: 4500,
+    gravity: 0.25,
+    gravityRange: 3.8
+  },
+  currentLayoutProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#cise-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+  },
+  copyProperties: function () {
+    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
+  },
+  getProperties: function () {
+    return this.currentLayoutProperties;
+  },  
+  applyLayout: async function () {
+    await applyLayoutFunction(this);
+  },
+  render: function () {
+    let self = this;
+    let temp = _.template($("#cise-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+    $(self.el).html(self.template);
+
+    $(self.el).modal({inverted: true}).modal('show');
+
+    $(document).off("click", "#save-layout3").on("click", "#save-layout3", function (evt) {
+      self.currentLayoutProperties.packComponents = document.getElementById("packComponents3").checked;
+      self.currentLayoutProperties.allowNodesInsideCircle = document.getElementById("allowNodesInsideCircle3").checked;      
+      self.currentLayoutProperties.padding = Number(document.getElementById("padding3").value);
+      self.currentLayoutProperties.nodeSeparation = Number(document.getElementById("nodeSeparation3").value);
+      self.currentLayoutProperties.idealInterClusterEdgeLengthCoefficient = Number(document.getElementById("idealInterClusterEdgeLengthCoefficient3").value);
+      self.currentLayoutProperties.maxRatioOfNodesInsideCircle = Number(document.getElementById("maxRatioOfNodesInsideCircle3").value);
+      self.currentLayoutProperties.springCoeff = Number(document.getElementById("springCoeff3").value);
+      self.currentLayoutProperties.nodeRepulsion = Number(document.getElementById("nodeRepulsion3").value);
+      self.currentLayoutProperties.gravity = Number(document.getElementById("gravity3").value);
+      self.currentLayoutProperties.gravityRange = Number(document.getElementById("gravityRange3").value);
+      $(self.el).modal('hide');
+    });   
+
+    $(document).off("click", "#default-layout3").on("click", "#default-layout3", function (evt) {
+      self.copyProperties();
+      var temp = _.template($("#cise-settings-template").html());
+      self.template = temp(self.currentLayoutProperties);
+      $(self.el).html(self.template);
+    });
+
+    return this;
+  }
+});
+
+let DAGRELayout = Backbone.View.extend({
+  defaultLayoutProperties: {
+    name: "dagre",
+    nodeDimensionsIncludeLabels: false,
+    animate: false,
+    padding: 30,
+    nodeSep: 50,
+    edgeSep: 10,
+    rankSep: 50,
+    edgeWeight: 1,
+    rankDir: 'TB'    
+  },
+  currentLayoutProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#dagre-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+  },
+  copyProperties: function () {
+    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
+  },
+  getProperties: function () {
+    return this.currentLayoutProperties;
+  },  
+  applyLayout: async function () {
+    await applyLayoutFunction(this);
+  },
+  render: function () {
+    let self = this;
+    let temp = _.template($("#dagre-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+    $(self.el).html(self.template);
+
+    $(self.el).modal({inverted: true}).modal('show');
+
+    $(document).off("click", "#save-layout4").on("click", "#save-layout4", function (evt) {
+      self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels4").checked;
+      self.currentLayoutProperties.padding = Number(document.getElementById("padding4").value);
+      self.currentLayoutProperties.nodeSep = Number(document.getElementById("nodeSep4").value);
+      self.currentLayoutProperties.edgeSep = Number(document.getElementById("edgeSep4").value);
+      self.currentLayoutProperties.rankSep = Number(document.getElementById("rankSep4").value);
+      self.currentLayoutProperties.edgeWeight = Number(document.getElementById("edgeWeight4").value);     
+      $(self.el).modal('hide');
+    });
+
+    $(document).off("click", "#default-layout4").on("click", "#default-layout4", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#dagre-settings-template").html());
+      self.template = temp(self.currentLayoutProperties);
+      $(self.el).html(self.template);
+    });
+
+    return this;
+  }
+});
+
+var KLAYLayout = Backbone.View.extend({
+  defaultLayoutProperties: {
+    name: "klay",
+    animate: false,
+    nodeDimensionsIncludeLabels: false,
+    padding: 30,
+    klay: {
+      addUnnecessaryBendpoints: false,
+      compactComponents: false,
+      feedbackEdges: false,      
+      layoutHierarchy: false,
+      mergeEdges: false,
+      mergeHierarchyCrossingEdges: true,
+      routeSelfLoopInside: false,
+      separateConnectedComponents: true,      
+      aspectRatio: 1.6,
+      borderSpacing: 20,
+      edgeSpacingFactor: 0.5,      
+      inLayerSpacingFactor: 1.0,
+      linearSegmentsDeflectionDampening: 0.3,
+      randomizationSeed: 1,
+      spacing: 20,
+      thoroughness: 7
+    }
+  },
+  currentLayoutProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#klay-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+  },
+  copyProperties: function () {
+    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
+    this.currentLayoutProperties.klay = _.clone(this.defaultLayoutProperties.klay);     
+  },
+  getProperties: function () {
+    return this.currentLayoutProperties;
+  },  
+  applyLayout: async function () {
+    await applyLayoutFunction(this);
+  },
+  render: function () {
+    let self = this;
+    let temp = _.template($("#klay-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+    $(self.el).html(self.template);
+
+    $(self.el).modal({inverted: true}).modal('show');
+
+    $(document).off("click", "#save-layout5").on("click", "#save-layout5", function (evt) {
+      self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels5").checked;      
+      self.currentLayoutProperties.padding = Number(document.getElementById("padding5").value);
+      self.currentLayoutProperties.klay.addUnnecessaryBendpoints = document.getElementById("addUnnecessaryBendpoints5").checked;
+      self.currentLayoutProperties.klay.compactComponents = document.getElementById("compactComponents5").checked;
+      self.currentLayoutProperties.klay.feedbackEdges = document.getElementById("feedbackEdges5").checked;
+      self.currentLayoutProperties.klay.layoutHierarchy = document.getElementById("layoutHierarchy5").checked;
+      self.currentLayoutProperties.klay.mergeEdges = document.getElementById("mergeEdges5").checked;
+      self.currentLayoutProperties.klay.mergeHierarchyCrossingEdges = document.getElementById("mergeHierarchyCrossingEdges5").checked;
+      self.currentLayoutProperties.klay.routeSelfLoopInside = document.getElementById("routeSelfLoopInside5").checked;
+      self.currentLayoutProperties.klay.separateConnectedComponents = document.getElementById("separateConnectedComponents5").checked;      
+      self.currentLayoutProperties.klay.aspectRatio = Number(document.getElementById("aspectRatio5").value);
+      self.currentLayoutProperties.klay.borderSpacing = Number(document.getElementById("borderSpacing5").value);
+      self.currentLayoutProperties.klay.edgeSpacingFactor = Number(document.getElementById("edgeSpacingFactor5").value);
+      self.currentLayoutProperties.klay.inLayerSpacingFactor = Number(document.getElementById("inLayerSpacingFactor5").value);
+      self.currentLayoutProperties.klay.linearSegmentsDeflectionDampening = Number(document.getElementById("linearSegmentsDeflectionDampening5").value);
+      self.currentLayoutProperties.klay.randomizationSeed = Number(document.getElementById("randomizationSeed5").value);
+      self.currentLayoutProperties.klay.spacing = Number(document.getElementById("spacing5").value);
+      self.currentLayoutProperties.klay.thoroughness = Number(document.getElementById("thoroughness5").value);
+      $(self.el).modal('hide');
+    });
+
+    $(document).off("click", "#default-layout5").on("click", "#default-layout5", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#klay-settings-template").html());
+      self.template = temp(self.currentLayoutProperties);
+      $(self.el).html(self.template);
+    });
+
+    return this;
+  }
+});
+
+let AVSDFLayout = Backbone.View.extend({
+  defaultLayoutProperties: {
+    name: "avsdf",
+    animate: false,
+    padding: 30,
+    nodeSeparation: 60
+  },
+  currentLayoutProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#avsdf-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+  },
+  copyProperties: function () {
+    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
+  },
+  getProperties: function () {
+    return this.currentLayoutProperties;
+  },  
+  applyLayout: async function () {
+    await applyLayoutFunction(this);
+  },
+  render: function () {
+    let self = this;
+    let temp = _.template($("#avsdf-settings-template").html());
+    self.template = temp(this.currentLayoutProperties);
+    $(self.el).html(self.template);
+
+    $(self.el).modal({inverted: true}).modal('show');
+
+    $(document).off("click", "#save-layout6").on("click", "#save-layout6", function (evt) {
+      self.currentLayoutProperties.padding = Number(document.getElementById("padding6").value);
+      self.currentLayoutProperties.nodeSeparation = Number(document.getElementById("nodeSeparation6").value);
+      $(self.el).modal('hide');
+    });
+
+    $(document).off("click", "#default-layout6").on("click", "#default-layout6", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#avsdf-settings-template").html());
+      self.template = temp(self.currentLayoutProperties);
+      $(self.el).html(self.template);
+    });
 
     return this;
   }
@@ -445,254 +692,8 @@ var SPRINGYLayout = Backbone.View.extend({
   }
 });
 
-var CISELayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: "cise",
-    clusters: [],
-    refresh: 10,
-    animationDuration: undefined,
-    animationEasing: undefined,
-    fit: true,
-    padding: 30,
-    nodeSeparation: 100,
-    idealInterClusterEdgeLengthCoefficient: 1.4,
-    allowNodesInsideCircle: false,
-    maxRatioOfNodesInsideCircle: 0.1,
-    springCoeff: 0.45,
-    nodeRepulsion: 4500,
-    gravity: 0.25,
-    gravityRange: 3.8
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#cise-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("cise layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#cise-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout6").on("click", function (evt) {
-      self.currentLayoutProperties.refresh = Number(document.getElementById("refresh6").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit6").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding6").value);
-      self.currentLayoutProperties.nodeSeparation = Number(document.getElementById("nodeSeparation6").value);
-      self.currentLayoutProperties.idealInterClusterEdgeLengthCoefficient = Number(document.getElementById("idealInterClusterEdgeLengthCoefficient6").value);
-      self.currentLayoutProperties.allowNodesInsideCircle = document.getElementById("allowNodesInsideCircle6").checked;
-      self.currentLayoutProperties.maxRatioOfNodesInsideCircle = Number(document.getElementById("maxRatioOfNodesInsideCircle6").value);
-      self.currentLayoutProperties.springCoeff = Number(document.getElementById("springCoeff6").value);
-      self.currentLayoutProperties.nodeRepulsion = Number(document.getElementById("nodeRepulsion6").value);
-      self.currentLayoutProperties.gravity = Number(document.getElementById("gravity6").value);
-      self.currentLayoutProperties.gravityRange = Number(document.getElementById("gravityRange6").value);
-      $(self.el).dialog('close');
-    });
-
-    $("#default-layout6").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#cise-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-
-  }
-});
-var AVSDFLayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: "avsdf",
-    refresh: 30,
-    fit: true,
-    padding: 10,
-    nodeSeparation: 60
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#avsdf-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("avsdf layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#avsdf-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout9").on("click", function (evt) {
-      self.currentLayoutProperties.refresh = Number(document.getElementById("refresh9").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit9").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding9").value);
-      self.currentLayoutProperties.nodeSeparation = Number(document.getElementById("nodeSeparation9").value);
-      $(self.el).dialog('close');
-    });
 
 
-    $("#default-layout9").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#avsdf-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-
-  }
-});
-var DAGRELayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: "dagre",
-    fit: true,
-    padding: 30,
-    nodeDimensionsIncludeLabels: false
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#dagre-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("dagre layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#dagre-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout7").on("click", function (evt) {
-      self.currentLayoutProperties.fit = document.getElementById("fit7").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding7").value);
-      self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels7").checked;
-      $(self.el).dialog('close');
-    });
-
-
-    $("#default-layout7").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#dagre-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-
-  }
-});
-var KLAYLayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: "klay",
-    fit: true,
-    padding: 30,
-    klay: {
-      addUnnecessaryBendpoints: false,
-      aspectRatio: 1.6,
-      borderSpacing: 20,
-      compactComponents: false,
-      edgeSpacingFactor: 0.5,
-      feedbackEdges: false,
-      inLayerSpacingFactor: 1.0,
-      layoutHierarchy: false,
-      linearSegmentsDeflectionDampening: 0.3,
-      mergeEdges: false,
-      mergeHierarchyCrossingEdges: true,
-      randomizationSeed: 1,
-      routeSelfLoopInside: false,
-      separateConnectedComponents: true,
-      spacing: 20,
-      thoroughness: 7
-    }
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#klay-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("klay layout is applied")
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#klay-settings-template").html());
-    let crossingMinimizationOption = '';
-
-    self.template = temp(this.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout8").on("click", function (evt) {
-      self.currentLayoutProperties.fit = document.getElementById("fit8").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding8").value);
-
-      self.currentLayoutProperties.klay.addUnnecessaryBendpoints = document.getElementById("addUnnecessaryBendpoints8").checked;
-      self.currentLayoutProperties.klay.aspectRatio = Number(document.getElementById("aspectRatio8").value);
-      self.currentLayoutProperties.klay.borderSpacing = Number(document.getElementById("borderSpacing8").value);
-      self.currentLayoutProperties.klay.compactComponents = document.getElementById("compactComponents8").checked;
-      self.currentLayoutProperties.klay.edgeSpacingFactor = Number(document.getElementById("edgeSpacingFactor8").value);
-      self.currentLayoutProperties.klay.feedbackEdges = document.getElementById("feedbackEdges8").checked;
-      self.currentLayoutProperties.klay.inLayerSpacingFactor = Number(document.getElementById("inLayerSpacingFactor8").value);
-      self.currentLayoutProperties.klay.layoutHierarchy = document.getElementById("layoutHierarchy8").checked;
-      self.currentLayoutProperties.klay.linearSegmentsDeflectionDampening = Number(document.getElementById("linearSegmentsDeflectionDampening8").value);
-      self.currentLayoutProperties.klay.mergeEdges = document.getElementById("mergeEdges8").checked;
-      self.currentLayoutProperties.klay.mergeHierarchyCrossingEdges = document.getElementById("mergeHierarchyCrossingEdges8").checked;
-      self.currentLayoutProperties.klay.randomizationSeed = Number(document.getElementById("randomizationSeed8").value);
-      self.currentLayoutProperties.klay.routeSelfLoopInside = document.getElementById("routeSelfLoopInside8").checked;
-      self.currentLayoutProperties.klay.separateConnectedComponents = document.getElementById("separateConnectedComponents8").checked;
-      self.currentLayoutProperties.klay.spacing = Number(document.getElementById("spacing8").value);
-      self.currentLayoutProperties.klay.thoroughness = Number(document.getElementById("thoroughness8").value);
-
-      $(self.el).dialog('close');
-    });
-
-
-    $("#default-layout8").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#klay-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-
-  }
-});
 var EULERLayout = Backbone.View.extend({
   defaultLayoutProperties: {
     name: "euler",

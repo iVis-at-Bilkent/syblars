@@ -10,10 +10,9 @@ const { convertSBMLtoCytoscape } = require('./sbml-to-cytoscape'); // to support
 const { adjustStylesheet } = require('./stylesheet');
 
 const cytosnap = require('cytosnap');
-cytosnap.use(['cytoscape-fcose', 'cytoscape-cola'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities', svg: 'cytoscape-svg'});
+cytosnap.use(['cytoscape-fcose', 'cytoscape-cola', 'cytoscape-cise', 'cytoscape-dagre', 'cytoscape-klay', 'cytoscape-avsdf'], {sbgnStylesheet: 'cytoscape-sbgn-stylesheet', layoutUtilities: 'cytoscape-layout-utilities', svg: 'cytoscape-svg'});
 let snap = cytosnap();
 
-// const port = process.env.PORT || 3000;
 const port = process.env.PORT || 3000;
 
 // to serve the html
