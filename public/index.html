@@ -19,9 +19,21 @@
     
     <div class="ui container">
       <div class="ui vertically divided vertically padded grid">
-        <div class="row" style="padding-bottom: 0; padding-top: 0;  margin-top: 20px;">
-          <div class="column">
-            <h2 class="ui padded header">Systems Biology Layout Service</h2>
+        <div class="row" style="padding-bottom: 0; padding-top: 0;  margin-top: 15px;">          
+          <div class="five wide column">
+            <a href="https://www.cs.bilkent.edu.tr/~ivis/" target="_blank">
+              <img class="ui image" src="ivis-logo-long.png" style="height: 50px;">
+            </a>
+          </div>
+          <div class="six wide column">           
+            <h2 class="ui padded header" style="margin-top: 15px;">
+              Systems Biology Layout Service
+            </h2>
+          </div>
+          <div class="five wide column">
+            <a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank">
+              <img class="ui image" src="bilkent-logo.png" style="height: 50px; float: right">
+            </a>
           </div>
         </div>        
         <div class="three column row" style="padding-bottom: 0; padding-top: 0;">
@@ -131,11 +143,11 @@
               <div class="field">
                 <div class="inline fields">
                   <h3 class="ui header" style="margin-bottom: 0; margin-right: 10px">JSON</h3>
-                  <button class="ui icon mini button" id="downloadJSON" title="Download as JSON file">
+                  <button class="ui icon mini button" id="downloadJSON" title="Download JSON file">
                     <i class="download icon"></i>               
                   </button> 
                 </div>
-                <textarea id="resultText" rows="20"></textarea>
+                <textarea id="resultText" rows="19"></textarea>
               </div>  
             </div>
           </div>            
@@ -144,17 +156,25 @@
               <div class="field">
                 <div class="inline fields">
                   <h3 class="ui header" style="margin-bottom: 0; margin-right: 10px">Image</h3>
-                  <button class="ui icon mini button" id="downloadImage" title="Download as image">
+                  <button class="ui icon mini button" id="downloadImage" title="Download image">
                     <i class="download icon"></i>               
                   </button> 
                 </div>
-                <div class="ui segment" style='width: 620px; height: 370px'>
-                  <img style="cursor:pointer;" class="ui centered big image" id="resultImage" onclick="window.open(this.src, '_blank');">
+                <div id="imageArea" class="ui segment" style="width: 615px; height: 345px;">
+                  <img style="cursor:pointer;" class="ui centered huge image" id="resultImage" onclick="window.open(this.src, '_blank');">
                 </div>
               </div>  
             </div>           
           </div>                    
         </div>
+        <div class="row" style="padding-bottom: 0; padding-top: 0">
+          <div class="center aligned column">
+            Copyright © 2021 - present by 
+            <a href="https://www.cs.bilkent.edu.tr/~ivis/" target="_blank">
+             Bilkent i-Vis Research Lab.
+            </a> All rights reserved. 
+          </div>
+        </div>        
       </div>
       
       <div id="fcose-layout-table" class="ui mini modal" >

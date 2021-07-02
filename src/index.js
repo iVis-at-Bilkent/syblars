@@ -35,10 +35,6 @@ cytoscape.use(graphml, $);
 const fcose = require('cytoscape-fcose');
 cytoscape.use(fcose);
 
-// for cose-bilkent
-const coseBilkent = require('cytoscape-cose-bilkent');
-cytoscape.use(coseBilkent);
-
 // for cise layout, Needs to be fixed, some problems
 const cise = require('cytoscape-cise');
 cytoscape.use(cise);
@@ -55,13 +51,9 @@ cytoscape.use(klay);
 const avsdf = require('cytoscape-avsdf');
 cytoscape.use(avsdf);
 
-// cola layout
+// for cola layout
 const cola = require('cytoscape-cola');
 cytoscape.use(cola);
-
-// euler layout
-const euler = require('cytoscape-euler');
-cytoscape.use(euler);
 
 let cy;
 let options;

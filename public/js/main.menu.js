@@ -145,6 +145,7 @@ let processLayout = async function () {
   blobData = saveImage(res["image"], imageFormat, document.getElementById("file-name").innerHTML);
   let urlCreator = window.URL || window.webkitURL;
   let imageUrl = urlCreator.createObjectURL(blobData);
+  $("#imageArea").css("height", parseInt($('#imageHeight').val()) / (parseInt($('#imageWidth').val()) / parseInt($('#imageArea').css('width'))));
   $("#resultImage").attr("src", imageUrl);
 };
 
