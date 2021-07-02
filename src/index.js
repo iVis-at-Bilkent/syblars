@@ -119,11 +119,11 @@ app.use((req, res, next) => {
                   
             }
             next();
-        })
+        });
     }
     else
         next();
-})
+});
 // check if an object is empty or not
 
 // whether to include edges in the output or not
@@ -140,45 +140,35 @@ app.post('/layout/:format', (req, res) => {
     });
 
     if (req.params.format === "graphml") {
-        cy.graphml(data);
-        cy.filter((element, i) => {
-            return element.isNode();
-        }).forEach((node) => {
-            node.css("width", parseInt(node.data('width')) || size);
-            node.css("height", parseInt(node.data('height')) || size);
-            node.data("backgroundColor", options.imageOptions.color || "white");
-        });
-
-//        cy.layout(options.layoutOptions).run();
+      cy.graphml(data);
+      cy.filter((element, i) => {
+          return element.isNode();
+      }).forEach((node) => {
+          node.css("width", parseInt(node.data('width')) || size);
+          node.css("height", parseInt(node.data('height')) || size);
+          node.data("backgroundColor", options.imageOptions.color || "white");
+      });
     }
     else {
-        cy.add(data);
+      cy.add(data);
 
-        cy.filter((element, i) => {
-            return element.isNode();
-        }).forEach((node) => {
-            if (req.params.format === "json" || req.params.format === "sbml") {
-                node.css("width", node.data().width || size);
-                node.css("height", node.data().height || size);
-                node.data("backgroundColor", options.imageOptions.color || "white");
-            }
-            else {
-                node.css("width", node.data().bbox.w || size);
-                node.css("height", node.data().bbox.h || size);
-            }
-        });
-
-        try {
-//            cy.layout(options.layoutOptions).run();
-        }
-        catch (e) {
-            console.log(e);
-            return res.status(500).send(e + "");
-        }
+      cy.filter((element, i) => {
+          return element.isNode();
+      }).forEach((node) => {
+          if (req.params.format === "json" || req.params.format === "sbml") {
+              node.css("width", node.data().width || size);
+              node.css("height", node.data().height || size);
+              node.data("backgroundColor", options.imageOptions.color || "white");
+          }
+          else {
+              node.css("width", node.data().bbox.w || size);
+              node.css("height", node.data().bbox.h || size);
+          }
+      });
     }
     let ret = {};
     
-    function setJson(){
+    function setJson(result){
       ret["layout"] = {};
       // whether to return edges or not
       cy.filter((element, i) => {
@@ -187,20 +177,20 @@ app.post('/layout/:format', (req, res) => {
           if (ele.isNode()) {
               if (req.params.format === "json" || req.params.format === "sbml") {
                   let obj = {};
-                  obj["position"] = { x: ele.position().x, y: ele.position().y };
-                  obj["data"] = { width: ele.data().width, height: ele.data().height, clusterID: ele.data().clusterID, parent: ele.data().parent };
+                  obj["position"] = result.positions[ele.data().id];
+                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: ele.data().clusterID, parent: ele.data().parent };
                   ret["layout"][ele.data().id] = obj;
               }
               else if (req.params.format === "graphml") {
                   let obj = {};
-                  obj["position"] = { x: ele.position().x, y: ele.position().y };
-                  obj["data"] = { width: parseInt(ele.data('width')), height: parseInt(ele.data('height')), clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
+                  obj["position"] = result.positions[ele.data().id];
+                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
                   ret["layout"][ele.id()] = obj;
               }
               else if (req.params.format === "sbgnml") {
                   let obj = {};
-                  obj["position"] = { x: ele.position().x, y: ele.position().y };
-                  obj["data"] = { width: ele.data().bbox.w || ele.data().bbox.width, height: ele.data().bbox.h || ele.data().bbox.height, clusterID: ele.data().clusterID, parent: ele.data().parent };
+                  obj["position"] = result.positions[ele.data().id];
+                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: ele.data().clusterID, parent: ele.data().parent };
                   ret["layout"][ele.id()] = obj;
               }          
           }
@@ -214,43 +204,23 @@ app.post('/layout/:format', (req, res) => {
     let stylesheet = adjustStylesheet(format, colorScheme);
 
     if(options.imageOptions) {
-      snap.start().then(function(){
-        return snap.shot({
-          elements: cy.json().elements,
-          layout: options.layoutOptions,
-          style: stylesheet,
-          resolvesTo: 'json',
-//          format: options.imageOptions.format || 'png',
-//          width: options.imageOptions.width || 1280,
-//          height: options.imageOptions.height || 720,
-//          background: options.imageOptions.background || 'transparent'
-        });
-      }).then(function( json ){
-        // do whatever you want with img        
-        let positions = json;
-        cy.nodes().not(":parent").forEach(function(node){
-          node.position(positions[node.id()]);
-        });
-        setJson();
         snap.start().then(function(){
           return snap.shot({
             elements: cy.json().elements,
-            layout: { 
-              name: 'preset'
-            },
+            layout: options.layoutOptions,
             style: stylesheet,
-            resolvesTo: 'base64uri',
+            resolvesTo: 'all',
             format: options.imageOptions.format || 'png',
             quality: 100,
             width: options.imageOptions.width || 1280,
             height: options.imageOptions.height || 720,
             background: options.imageOptions.background
-          }).then(function( img ){
-            ret["image"] = img;
+          }).then(function( result ){
+            ret["image"] = result.image;
+            setJson(result);
             return res.status(200).send(ret);
           });
         });
-      });    
     }
     else {
       return res.status(200).send(ret);
