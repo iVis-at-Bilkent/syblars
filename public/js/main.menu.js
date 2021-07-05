@@ -203,26 +203,32 @@ $("body").on("change", "#file-input", function (e) {
           $("#file-type").html("GraphML file is detected! <br> Now you can apply layout!");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
+          $("#svgRadio").attr("disabled", false);
         }
         else if(isSBGNML) {
           $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout!");
           $("#colorScheme").attr("disabled", false);
           $("#color").attr("disabled", true);
+          $("#svgRadio").attr("disabled", true);
+          $("#pngRadio").prop("checked", true);
         }
         else if(isSBML) {
           $("#file-type").html("SBML file is detected! <br> Now you can apply layout!");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
+          $("#svgRadio").attr("disabled", false);
         }
         else if(isJSON) {
           $("#file-type").html("JSON file is detected! <br> Now you can apply layout!");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
+          $("#svgRadio").attr("disabled", false);
         }
         else {
           $("#file-type").html("File format is not valid! <br> Load SBGNML, SBML, GraphML or JSON.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
+          $("#svgRadio").attr("disabled", false);
           graphData = undefined;
         }
 

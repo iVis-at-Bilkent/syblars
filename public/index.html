@@ -37,7 +37,7 @@
           </div>
         </div>        
         <div class="three column row" style="padding-bottom: 0; padding-top: 0;">
-          <div class="four wide column">
+          <div class="five wide column">
             <button id="load-file" class="ui button">Load File</button>
             <input id="file-input" type="file" style="display:none" /><br><br>
             <span class="input-file" id="file-name" style="overflow: hidden; text-overflow:ellipsis; width:250px; display:inline-block;"></span>
@@ -68,64 +68,64 @@
               </div>  
             </div>
           </div>
-          <div class="six wide column">
+          <div class="five wide column">
             <h3 class="ui header">Image Settings</h3>
             <div class="ui tiny form">
               <div class="inline fields" id="formatRadios">
                 <label>Format:</label>
                 <div class="field">
                   <div class="ui radio checkbox">
-                    <input type="radio" name="format" value="png" checked="checked">
+                    <input type="radio" id="pngRadio" name="format" value="png" checked="checked">
                     <label>PNG</label>
                   </div>
                 </div>
                 <div class="field">
                   <div class="ui radio checkbox">
-                    <input type="radio" name="format" value="jpg">
+                    <input type="radio" id="jpgRadio" name="format" value="jpg">
                     <label>JPG</label>
                   </div>
                 </div>
                 <div class="field">
                   <div class="ui radio checkbox">
-                    <input type="radio" name="format" value="svg">
+                    <input type="radio" id="svgRadio" name="format" value="svg">
                     <label>SVG</label>
                   </div>
                 </div>                
               </div>
               <div class="inline fields">
-                <div class="six wide field">
+                <div class="seven wide field">
                   <label>Width:</label>
                   <input type="number" id="imageWidth" value="1280" min="1">
                 </div>
-                <div class="six wide field">
+                <div class="seven wide field">
                   <label>Height:</label>
                   <input type="number" id="imageHeight" value="720" min="1">
                 </div>
               </div>
               <div class="inline fields">   
                 <label>Color:</label>
-                <div class="three wide field">
-                  <input type="color" id="color" value="#ffffff">
+                <div class="four wide field">
+                  <input type="color" id="color" value="#9ecae1">
                 </div>
                 <label> or </label>
                 <div class="seven wide field">
                   <div class="field">
                     <select id="colorScheme" disabled>
-                      <option value="black_white">Black-White</option>
-                      <option value="greyscale">Greyscale</option>
                       <option value="bluescale">Bluescale</option>
+                      <option value="greyscale">Greyscale</option>                      
                       <option value="red_blue">Red-Blue</option>
                       <option value="green_brown">Green-Brown</option>
                       <option value="purple_brown">Purple-Brown</option>
                       <option value="purple_green">Purple-Green</option>
                       <option value="grey_red">Grey-Red</option>
+                      <option value="black_white">Black-White</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="inline fields">
                 <label>Background:</label>
-                <div class="three wide field">                  
+                <div class="four wide field">                  
                   <input type="color" id="imageBackground" value="#ffffff">
                 </div>
               </div>

@@ -158,6 +158,11 @@ app.post('/layout/:format', (req, res) => {
           }
       });
     }
+    
+    if(req.params.format === 'sbgnml' && options.imageOptions.format === 'svg') {
+      options.imageOptions.format = 'png';
+    }
+    
     let ret = {};
     
     function setJson(result){
