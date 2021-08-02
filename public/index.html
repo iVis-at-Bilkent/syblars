@@ -31,23 +31,43 @@
             </h2>
           </div>
           <div class="five wide column">
-            <a href="https://w3.bilkent.edu.tr/bilkent/" target="_blank">
-              <img class="ui image" src="bilkent-logo.png" style="height: 50px; float: right">
-            </a>
+            <i id="informationModal" class="big info circle icon" style="height: 25px; margin-top: 15px; float: right"></i>
           </div>
         </div>        
         <div class="three column row" style="padding-bottom: 0; padding-top: 0;">
           <div class="five wide column">
-            <button id="load-file" class="ui button">Load File</button>
-            <input id="file-input" type="file" style="display:none" /><br><br>
-            <span class="input-file" id="file-name" style="overflow: hidden; text-overflow:ellipsis; width:250px; display:inline-block;"></span>
-            <p style="margin-top: 10px" class="input-file" id="file-type"></p>
+            <h3 class="ui header">File</h3>
+            <div class="ui tiny form">
+              <div class="field">
+             <!--   <label id="load-file" class="underline">Open File...</label> -->
+                <div class="inline fields">
+                  <label>Open Sample:</label>
+                  <div class="six wide field" style="width: 32.5%!important;">
+                    <select required id="sampleType">
+                      <option value="" disabled selected>Select...</option>
+                      <option value="sample1">Sample 1</option>
+                      <option value="sample2">Sample 2</option>                    
+                      <option value="sample3">Sample 3</option>
+                      <option value="sample4">Sample 4</option>                   
+                    </select>
+                  </div>
+                </div>
+                <div class="ui labeled button" id="load-file" tabindex="0">
+                  <a class="ui basic label">
+                    Open File...
+                  </a>
+                </div>             
+              </div>
+            </div>
+            <input id="file-input" type="file" style="display:none" />
+            <span class="input-file" id="file-name" style="overflow: hidden; text-overflow:ellipsis; margin-top: 10px; width:250px; font-weight: bold; display:inline-block;"></span>
+            <p style="margin-top: 6px" class="input-file" id="file-type"></p>            
           </div>
           <div class="six wide column">
             <h3 class="ui header">Layout Settings</h3>
             <div class="ui tiny form">
               <div class="inline fields">
-                <label>Select Layout:</label>
+                <label>Layout Style:</label>
                 <div class="four wide field">
                   <select id="layoutType">
                     <option value="fcose">fCoSE</option>
@@ -174,6 +194,30 @@
              Bilkent i-Vis Research Lab.
             </a> All rights reserved. 
           </div>
+        </div>        
+      </div>
+      
+      <div id="information-modal" class="ui small modal" >
+        <i class="close icon"></i>
+        <div class="header">
+          About
+        </div>        
+        <div class="content">
+          <b>System Biology Layout Service (SBLS)</b> is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON 
+          formats and produce corresponsing images of the layouts in the backend. This page presents a sample client-side demo for SBLS. <br><br>
+          To use demo, please follow these steps:
+          <ul>
+            <li>Open a file in one of the following formats: SBGNML, SBML, GraphML or JSON, or open one of the sample files.</li>
+            <li>Select a layout style and set corresponding layout options</li>
+            <li>Select an image format and set image options</li>
+            <li>Click on "Apply Layout" button</li>
+            <li>Now you can find/download layout info in "JSON" field and corresponding image in "Image" field</li>
+          </ul>
+        </div>
+        <div class="actions">
+          <p style="text-align: center; display: block;">Bilkent i-Vis Research Lab, Ankara, Turkey
+          <a href="mailto:ivis@cs.bilkent.edu.tr" target="_top" style="display: block;">ivis@cs.bilkent.edu.tr</a>
+          </p>
         </div>        
       </div>
       

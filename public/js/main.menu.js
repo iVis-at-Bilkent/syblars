@@ -193,7 +193,8 @@ $("body").on("change", "#file-input", function (e) {
     let reader = new FileReader();
     setFileContent(file.name);
     reader.onload = async function (e) {
-        $("#file-type").html("");
+        $("#file-type").html('');
+        $("#sampleType").val('');
         graphData = this.result;
         let isJSON = (file.type == 'application/json') ? 1 : 0;
         let isGraphML = (graphData.search("graphml") == -1) ? 0 : 1;
@@ -240,6 +241,10 @@ $("body").on("change", "#file-input", function (e) {
 
 $("#load-file").on("click", function (e) {
     $("#file-input").trigger('click');
+});
+
+$("#informationModal").on("click", function (e) {
+   $('#information-modal').modal({inverted: true}).modal('show');
 });
 
 // image content is base64 data and imageType is png/jpg

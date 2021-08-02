@@ -56,108 +56,109 @@ let adjustStylesheet = function(format, colorScheme) {
   }
   else if(format == 'sbml') {
     stylesheet =  function(){
-        return [ // http://js.cytoscape.org/#style
-          {
-            selector: 'node',
-            style: {
-              'background-color': function(node){
-                return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
-              },
-              'width': 64,
-              'height': 64,
-              'text-valign': 'center',
-              'font-size': 20,
-              "border-width": 2,
-              'border-color': '#555555',
-              'label': function(node){
-                return node.data('label') ? node.data('label') : ""
-              },
-            }
-          },
-          {
-            selector: 'node.compartment',
-            style: {
-              'shape': 'barrel',
-              'text-valign': 'bottom',
-              'text-margin-y': 2,
-              'background-opacity': 0.3
-            }
-          },
-          {
-            selector: 'node.reaction',
-            style: {
-              'shape': 'rectangle',
-              'width': 25,
-              'height': 25,
-              'text-valign': 'bottom',
-              'background-color': "#ffffff"
-            }
-          },          
-          {
-            selector: 'edge',
-            style: {
-              'curve-style': 'bezier',
-              'line-color': '#555555',
-              'width': 1.5
-            }
-          },
-          {
-            selector: 'edge.productEdge',
-            style: {
-              'line-color': '#555555',
-              'target-arrow-shape': 'triangle',
-              'target-arrow-color': '#555555',
-              'arrow-scale': 2
-            }
-          },
-          {
-            selector: 'edge.modifierEdge',
-            style: {
-              'line-color': '#555555',
-              'target-arrow-shape': 'triangle-tee',
-              'target-arrow-color': '#555555',
-              'target-arrow-fill': 'hollow',
-              'arrow-scale': 2
-            }
-          }          
-        ];        
-      };      
+      return [
+        {
+          selector: 'node',
+          style: {
+            'background-color': function(node){
+              return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
+            },
+            'width': 64,
+            'height': 64,
+            'text-valign': 'center',
+            'font-size': 20,
+            "border-width": 2,
+            'border-color': '#555555',
+            'label': function(node){
+              return node.data('label') ? node.data('label') : ""
+            },
+          }
+        },
+        {
+          selector: 'node.compartment',
+          style: {
+            'shape': 'barrel',
+            'text-valign': 'bottom',
+            'text-margin-y': 2,
+            'background-opacity': 0.3
+          }
+        },
+        {
+          selector: 'node.reaction',
+          style: {
+            'shape': 'rectangle',
+            'width': 25,
+            'height': 25,
+            'text-valign': 'bottom',
+            'background-color': "#ffffff"
+          }
+        },          
+        {
+          selector: 'edge',
+          style: {
+            'curve-style': 'bezier',
+            'line-color': '#555555',
+            'width': 1.5
+          }
+        },
+        {
+          selector: 'edge.productEdge',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'triangle',
+            'target-arrow-color': '#555555',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge.modifierEdge',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'triangle-tee',
+            'target-arrow-color': '#555555',
+            'target-arrow-fill': 'hollow',
+            'arrow-scale': 2
+          }
+        }          
+      ];        
+    };      
 
-      return stylesheet;             
+    return stylesheet;             
   }      
   else {
     stylesheet =  function(){
-        return [ // http://js.cytoscape.org/#style
-          {
-            selector: 'node',
-            style: {
-              'background-color': function(node){
-                return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
-              },
-              "border-width": 2,
-              'border-color': '#555555',
-              'label': function(node){
-                return node.data('label') ? node.data('label') : ""
-              },
-            }
-          },
-          {
-            selector: 'node:parent',
-            style: {
-              'background-opacity': 0.3
-            }
-          },          
-          {
-            selector: 'edge',
-            style: {
-              'line-color': '#555555',
-              'width': 1.5
-            }
+      return [
+        {
+          selector: 'node',
+          style: {
+            'background-color': function(node){
+              return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
+            },
+            "border-width": 2,
+            'border-color': '#555555',
+            'label': function(node){
+              return node.data('label') ? node.data('label') : ""
+            },
           }
-        ];        
-      };      
+        },
+        {
+          selector: 'node:parent',
+          style: {
+            'background-opacity': 0.3
+          }
+        },          
+        {
+          selector: 'edge',
+          style: {
+            'curve-style': 'bezier',
+            'line-color': '#555555',
+            'width': 1.5
+          }
+        }
+      ];        
+    };      
 
-      return stylesheet;             
+    return stylesheet;             
   }  
 };
 

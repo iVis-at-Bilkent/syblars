@@ -2,6 +2,22 @@ label {
   font-size: 14px !important;
 }
 
+#informationModal:hover {
+  cursor: pointer;
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: rgba(0, 0, 0, 0.87);
+}
+
 .ui.mini.modal {
   width: 340px !important;
 }
@@ -17,6 +33,11 @@ label {
 .ui.tiny.form.tinier {
   width: 67.45px;
 }
+
+.sample.six.wide.field {
+  width: 32.5%!important;
+}
+
 
 .layoutTable th { 
   padding-left: 1em !important;
