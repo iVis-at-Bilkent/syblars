@@ -230,9 +230,13 @@ $("body").on("change", "#file-input", function (e) {
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
+          $("#resultText").val("");
+          $("#resultImage").attr("src", null);
           graphData = undefined;
         }
-
+        $("#resultText").val("");
+        $("#resultImage").attr("src", null);
+        blobData = undefined;        
     };
     reader.readAsText(file);
 
