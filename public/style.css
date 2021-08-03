@@ -20,6 +20,7 @@ option {
 
 .ui.mini.modal {
   width: 340px !important;
+  top: 200px !important;
 }
 
 .ui.mini.modal.large {
@@ -64,3 +65,16 @@ option {
   padding: 0.75em 4em !important;
   margin-top: 2px;
 }
+
+.ui.small.modal.information {
+  top: 200px !important;
+}
+
+#applyLayout {
+  background-color: #d67664 ;
+}
+
+#applyLayout:hover{
+  background-color: #f2711c !important;
+}
+

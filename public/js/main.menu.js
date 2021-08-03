@@ -138,6 +138,7 @@ let processLayout = async function () {
           });
 
   $("#applyLayout").removeClass("loading");
+  $("#applyLayout").css("background-color", "#d67664");
   // get layout info
   $("#resultText").val(JSON.stringify(res.layout, null, 2));
   
@@ -154,6 +155,7 @@ $('#applyLayout').click(function(){
   if(graphData !== undefined) {
     processLayout();
     $("#applyLayout").addClass("loading");
+    $("#applyLayout").css("background-color", "#f2711c");
   }
   else {
     $("#file-type").html("Please first load a valid file!");
@@ -201,26 +203,26 @@ $("body").on("change", "#file-input", function (e) {
         let isSBGNML = (graphData.search("sbgn") == -1) ? 0 : 1;
         let isSBML = (graphData.search("sbml") == -1) ? 0 : 1;        
         if(isGraphML) {
-          $("#file-type").html("GraphML file is detected! <br> Now you can apply layout!");
+          $("#file-type").html("GraphML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
         }
         else if(isSBGNML) {
-          $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout!");
+          $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", false);
           $("#color").attr("disabled", true);
           $("#svgRadio").attr("disabled", true);
           $("#pngRadio").prop("checked", true);
         }
         else if(isSBML) {
-          $("#file-type").html("SBML file is detected! <br> Now you can apply layout!");
+          $("#file-type").html("SBML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
         }
         else if(isJSON) {
-          $("#file-type").html("JSON file is detected! <br> Now you can apply layout!");
+          $("#file-type").html("JSON file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
