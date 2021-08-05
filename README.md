@@ -1,2 +1,2 @@
-# sbls
-SBLS: Systems Biology Layout Service
+# SyBLaRS
+SyBLaRS: Systems Biology Layout & Rendering Service
