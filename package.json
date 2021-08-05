@@ -1,7 +1,7 @@
 {
-  "name": "sbls",
+  "name": "syblars",
   "version": "1.0.0",
-  "description": "Systems Biology Layout Service",
+  "description": "Systems Biology Layout & Rendering Service",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iVis-at-Bilkent/sbls.git"
+    "url": "git+https://github.com/iVis-at-Bilkent/syblars.git"
   },
   "keywords": [
     "graph",
@@ -19,9 +19,9 @@
   "author": "iVis-at-Bilkent",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iVis-at-Bilkent/sbls/issues"
+    "url": "https://github.com/iVis-at-Bilkent/syblars/issues"
   },
-  "homepage": "https://github.com/iVis-at-Bilkent/sbls#readme",
+  "homepage": "https://github.com/iVis-at-Bilkent/syblars#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "cytoscape": "^3.18.2",
