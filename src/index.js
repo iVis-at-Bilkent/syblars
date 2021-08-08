@@ -163,6 +163,28 @@ app.post('/layout/:format', (req, res) => {
       options.imageOptions.format = 'png';
     }
     
+    if(options.layoutOptions.name == 'cise') {
+      if(options.layoutOptions.clusters == undefined || options.layoutOptions.clusters.length == 0) {
+        let clusterMap = new Map();
+        cy.nodes().forEach(function(node){
+          let clusterID = node.data("clusterID");
+          if(clusterID) {
+            if(clusterMap.has(clusterID))
+              clusterMap.get(clusterID).push(node.id());
+            else
+              clusterMap.set(clusterID, [node.id()]);
+          }
+        });
+        
+        let clusters = [];
+        for (const value of clusterMap.values()) {
+          clusters.push(value);
+        }
+        
+        options.layoutOptions.clusters = clusters;
+      }
+    }
+
     let ret = {};
     
     function setJson(result){
@@ -174,20 +196,20 @@ app.post('/layout/:format', (req, res) => {
           if (ele.isNode()) {
               if (req.params.format === "json" || req.params.format === "sbml") {
                   let obj = {};
-                  obj["position"] = result.positions[ele.data().id];
-                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: ele.data().clusterID, parent: ele.data().parent };
-                  ret["layout"][ele.data().id] = obj;
+                  obj["position"] = result.positions[ele.id()];
+                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
+                  ret["layout"][ele.id()] = obj;
               }
               else if (req.params.format === "graphml") {
                   let obj = {};
-                  obj["position"] = result.positions[ele.data().id];
+                  obj["position"] = result.positions[ele.id()];
                   obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
                   ret["layout"][ele.id()] = obj;
               }
               else if (req.params.format === "sbgnml") {
                   let obj = {};
-                  obj["position"] = result.positions[ele.data().id];
-                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: ele.data().clusterID, parent: ele.data().parent };
+                  obj["position"] = result.positions[ele.id()];
+                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
                   ret["layout"][ele.id()] = obj;
               }          
           }

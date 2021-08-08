@@ -154,6 +154,7 @@ let CISELayout = Backbone.View.extend({
   defaultLayoutProperties: {
     name: "cise",
     clusters: [],
+    randomize: true,
     animate: false,
     packComponents: true,
     allowNodesInsideCircle: false,    
