@@ -1,4 +1,5 @@
 let resultJson = [];
+let speciesCompartmentMap = new Map;
 
 const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
   
@@ -15,6 +16,7 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
     
     let result = resultJson;
     resultJson = [];
+    speciesCompartmentMap = new Map;
     
     return result;
 };
@@ -52,6 +54,7 @@ const addSpecies = function(libsbmlInstance, model) {
 
   for(let i = 0; i < model.getNumSpecies(); i++){
     let species = model.getSpecies(i);
+    speciesCompartmentMap.set(species.getId(), species.getCompartment());
     let speciesData = {"id": species.getId(), "label": species.getName(), "parent": species.getCompartment()};
     speciesData.width = layout ? layout.specglyphs[i].getBoundingBox().width : 60;
     speciesData.height = layout ? layout.specglyphs[i].getBoundingBox().height : 30;
@@ -61,19 +64,24 @@ const addSpecies = function(libsbmlInstance, model) {
 
 // add reaction nodes and corresponding edges
 const addReactions = function(model) {
-  for(let i = 0; i < model.getNumReactions() - 1; i++){
-    // add reaction nodes
+  console.log(model.getNumReactions());
+  for(let i = 0; i < model.getNumReactions(); i++){
+
     let reaction = model.getReaction(i);
-    let reactionData = {"id": reaction.getId(), "label": reaction.getName(), "parent": reaction.getCompartment()};
-    reactionData.width = 20;
-    reactionData.height = 20;
-    resultJson.push({"data": reactionData, "group": "nodes", "classes": "reaction"});
-    
+    let reactionParentMap = new Map();
+    console.log(reaction.getId());
     // add reactant->reaction edges
     for(let j = 0; j < reaction.getNumReactants(); j++){
       let reactant = reaction.getReactant(j);
       let reactantEdgeData = {"id": reactant.getSpecies() + '_' + reaction.getId(), "source": reactant.getSpecies(), "target": reaction.getId()};
       resultJson.push({"data": reactantEdgeData, "group": "edges", "classes": "reactantEdge"});
+      
+      // collect possible parent info
+      let speciesCompartment = speciesCompartmentMap.get(reactant.getSpecies());
+      if(reactionParentMap.has(speciesCompartment))
+        reactionParentMap.set(speciesCompartment, reactionParentMap.get(speciesCompartment) + 1);
+      else
+        reactionParentMap.set(speciesCompartment, 1);
     }
     
     // add reaction->product edges
@@ -81,6 +89,13 @@ const addReactions = function(model) {
       let product = reaction.getProduct(k);
       let productEdgeData = {"id": reaction.getId() + '_' + product.getSpecies(), "source": reaction.getId(), "target": product.getSpecies()};
       resultJson.push({"data": productEdgeData, "group": "edges", "classes": "productEdge"});
+      
+      // collect possible parent info
+      let speciesCompartment = speciesCompartmentMap.get(product.getSpecies());
+      if(reactionParentMap.has(speciesCompartment))
+        reactionParentMap.set(speciesCompartment, reactionParentMap.get(speciesCompartment) + 1);
+      else
+        reactionParentMap.set(speciesCompartment, 1);      
     }
     
     // add modifier->reaction edges
@@ -88,7 +103,33 @@ const addReactions = function(model) {
       let modifier = reaction.getModifier(l);
       let modifierEdgeData = {"id": modifier.getSpecies() + '_' + reaction.getId(), "source": modifier.getSpecies(), "target": reaction.getId()};
       resultJson.push({"data": modifierEdgeData, "group": "edges", "classes": "modifierEdge"});
-    }         
+      
+      // collect possible parent info
+      let speciesCompartment = speciesCompartmentMap.get(modifier.getSpecies());
+      if(reactionParentMap.has(speciesCompartment))
+        reactionParentMap.set(speciesCompartment, reactionParentMap.get(speciesCompartment) + 1);
+      else
+        reactionParentMap.set(speciesCompartment, 1);      
+    }
+
+    // add reaction node
+    let parent = reaction.getCompartment();
+    if(!parent) {
+      // find the max occurrence
+      var max_count = 0, result = -1;
+      reactionParentMap.forEach((value, key) => {
+          if (max_count < value) {
+              result = key;
+              max_count = value;
+          }
+      });
+      parent = result;
+    }
+    
+    let reactionData = {"id": reaction.getId(), "label": reaction.getName(), "parent": parent};
+    reactionData.width = 20;
+    reactionData.height = 20;
+    resultJson.push({"data": reactionData, "group": "nodes", "classes": "reaction"});    
   }  
 };
 

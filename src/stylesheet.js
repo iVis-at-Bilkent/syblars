@@ -66,6 +66,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'width': 64,
             'height': 64,
             'text-valign': 'center',
+            'text-wrap': 'wrap',
             'font-size': 20,
             "border-width": 2,
             'border-color': '#555555',
