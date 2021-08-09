@@ -87,6 +87,7 @@ let COLALayout = Backbone.View.extend({
     randomize: true, // use random node positions at beginning of layout
     avoidOverlap: true, // if true, prevents overlap of node bounding boxes
     handleDisconnected: true, // if true, avoids disconnected components from overlapping
+    convergenceThreshold: 0.01, // when the alpha value (system energy) falls below this value, the layout stops
     nodeSpacing: 10,
 
     // different methods of specifying edge length
@@ -129,6 +130,7 @@ let COLALayout = Backbone.View.extend({
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels2").checked;
       self.currentLayoutProperties.avoidOverlap = document.getElementById("avoidOverlap2").checked;
       self.currentLayoutProperties.handleDisconnected = document.getElementById("handleDisconnected2").checked;
+      self.currentLayoutProperties.convergenceThreshold = Number(document.getElementById("convergenceThreshold2").value);
       self.currentLayoutProperties.nodeSpacing = Number(document.getElementById("nodeSpacing2").value);
       self.currentLayoutProperties.edgeLength = Number(document.getElementById("edgeLength2").value);
       self.currentLayoutProperties.edgeSymDiffLength = Number(document.getElementById("edgeSymDiffLength2").value);
