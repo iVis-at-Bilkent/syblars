@@ -67,13 +67,13 @@ let processLayout = async function () {
       url = "http://localhost:" + port + "/layout/json?edges=true";
   } else {
     if (isGraphML)
-      url = "https://syblarstry.herokuapp.com/layout/graphml?edges=true";
+      url = "https://syblars.herokuapp.com/layout/graphml?edges=true";
     else if (isSBGNML)
-      url = "https://syblarstry.herokuapp.com/layout/sbgnml?edges=true";
+      url = "https://syblars.herokuapp.com/layout/sbgnml?edges=true";
     else if (isSBML)
-      url = "https://syblarstry.herokuapp.com/layout/sbml?edges=true"
+      url = "https://syblars.herokuapp.com/layout/sbml?edges=true"
     else
-      url = "https://syblarstry.herokuapp.com/layout/json?edges=true";
+      url = "https://syblars.herokuapp.com/layout/json?edges=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
