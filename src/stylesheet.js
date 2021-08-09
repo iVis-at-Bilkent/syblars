@@ -138,8 +138,15 @@ let adjustStylesheet = function(format, colorScheme) {
             "border-width": 2,
             'border-color': '#555555',
             'label': function(node){
-              return node.data('label') ? node.data('label') : ""
+              if(node.data('label')) {
+                return node.data('label');
+              }
+              else {
+                return node.data('id');
+              }
             },
+            'text-wrap': 'wrap',
+            "text-max-width": "100px"
           }
         },
         {

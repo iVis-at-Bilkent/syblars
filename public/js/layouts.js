@@ -3,7 +3,7 @@ let FCOSELayout = Backbone.View.extend({
     name: "fcose",
     randomize: true,
     padding: 30,
-    nodeDimensionsIncludeLabels: false,
+    nodeDimensionsIncludeLabels: true,
     uniformNodeDimensions: false,
     packComponents: true,
     nodeRepulsion: 4500,

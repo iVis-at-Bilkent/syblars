@@ -1,0 +1,4211 @@
+{
+  "nodes": [
+    {
+      "data": {
+        "end_t": 567907200000,
+        "primary_profession": [
+          "soundtrack",
+          "actor",
+          "miscellaneous"
+        ],
+        "death_year": 1987,
+        "nconst": "nm0000001",
+        "primary_name": "Fred Astaire",
+        "start_t": -2240524800000,
+        "birth_year": 1899,
+        "id": "n0",
+        "parent": "c0",
+        "label": "Fred Astaire"
+      },
+      "position": {
+        "x": 1026.8798873660712,
+        "y": 714.1572241492875
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Person wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 110,
+        "production_end_date": -1072742400000,
+        "original_title": "Follow the Fleet",
+        "start_year": 1936,
+        "rating": 7.2,
+        "count_votes": 3797,
+        "primary_title": "Follow the Fleet",
+        "shooting_end_date": -1072742400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1078358400000,
+        "shooting_start_date": -1078358400000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "tconst": "tt0027630",
+        "id": "n1040429",
+        "parent": "c0",
+        "label": "Follow the Fleet"
+      },
+      "position": {
+        "x": 1005.7584807194685,
+        "y": 820.3471232103195
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 134,
+        "production_end_date": -339811200000,
+        "original_title": "On the Beach",
+        "start_year": 1959,
+        "rating": 7.2,
+        "count_votes": 11391,
+        "primary_title": "On the Beach",
+        "shooting_end_date": -339811200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -347155200000,
+        "genres": [
+          "Drama",
+          "Romance",
+          "Sci-Fi"
+        ],
+        "shooting_start_date": -347155200000,
+        "tconst": "tt0053137",
+        "id": "n1044463",
+        "parent": "c0",
+        "label": "On the Beach"
+      },
+      "position": {
+        "x": 891.2002412680038,
+        "y": 847.4880599471663
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 109,
+        "production_end_date": -1034467200000,
+        "original_title": "Shall We Dance",
+        "start_year": 1937,
+        "rating": 7.5,
+        "count_votes": 6194,
+        "primary_title": "Shall We Dance",
+        "shooting_end_date": -1034467200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1042070400000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -1042070400000,
+        "tconst": "tt0029546",
+        "id": "n1040763",
+        "parent": "c0",
+        "label": "Shall We Dance"
+      },
+      "position": {
+        "x": 1158.1555252178887,
+        "y": 697.1307088158699
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 101,
+        "production_end_date": -1016496000000,
+        "original_title": "A Damsel in Distress",
+        "start_year": 1937,
+        "rating": 6.8,
+        "count_votes": 1673,
+        "primary_title": "A Damsel in Distress",
+        "shooting_end_date": -1016496000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1023926400000,
+        "shooting_start_date": -1023926400000,
+        "genres": [
+          "Comedy",
+          "Music",
+          "Romance"
+        ],
+        "tconst": "tt0028757",
+        "id": "n1040628",
+        "parent": "c0",
+        "label": "A Damsel in Distress"
+      },
+      "position": {
+        "x": 1195.2296459007796,
+        "y": 862.793877167529
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 103,
+        "production_end_date": -424569600000,
+        "original_title": "Funny Face",
+        "start_year": 1957,
+        "rating": 7,
+        "count_votes": 25226,
+        "primary_title": "Funny Face",
+        "shooting_end_date": -424569600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -433296000000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -433296000000,
+        "tconst": "tt0050419",
+        "id": "n1044197",
+        "parent": "c0",
+        "label": "Funny Face"
+      },
+      "position": {
+        "x": 1073.1615865774284,
+        "y": 641.4285282421522
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 84,
+        "production_end_date": -923184000000,
+        "original_title": "Second Chorus",
+        "start_year": 1940,
+        "rating": 5.8,
+        "count_votes": 1224,
+        "primary_title": "Second Chorus",
+        "shooting_end_date": -923184000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -928627200000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -928627200000,
+        "tconst": "tt0033029",
+        "id": "n1041601",
+        "parent": "c0",
+        "label": "Second Chorus"
+      },
+      "position": {
+        "x": 1124.3567179208517,
+        "y": 805.3434648075871
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 110,
+        "production_end_date": -800150400000,
+        "original_title": "Ziegfeld Follies",
+        "start_year": 1945,
+        "rating": 6.5,
+        "count_votes": 2759,
+        "primary_title": "Ziegfeld Follies",
+        "shooting_end_date": -789004800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -815356800000,
+        "shooting_start_date": -820540800000,
+        "genres": [
+          "Comedy",
+          "Musical"
+        ],
+        "tconst": "tt0039116",
+        "id": "n1042802",
+        "parent": "c0",
+        "label": "Ziegfeld Follies"
+      },
+      "position": {
+        "x": 1142.4357637526082,
+        "y": 582.3369428121343
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 102,
+        "production_end_date": 999216000000,
+        "original_title": "Nelson Freire",
+        "start_year": 2003,
+        "rating": 7.9,
+        "count_votes": 152,
+        "primary_title": "Nelson Freire",
+        "shooting_end_date": 999216000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 957139200000,
+        "genres": [
+          "Biography",
+          "Documentary",
+          "Music"
+        ],
+        "shooting_start_date": 957139200000,
+        "tconst": "tt0360833",
+        "id": "n1059229",
+        "parent": "c0",
+        "label": "Nelson Freire"
+      },
+      "position": {
+        "x": 1047.7044274358614,
+        "y": 755.5065988539616
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 106,
+        "production_end_date": -31622400000,
+        "original_title": "Midas Run",
+        "start_year": 1969,
+        "rating": 5.5,
+        "count_votes": 99,
+        "primary_title": "Midas Run",
+        "shooting_end_date": -31622400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -52185600000,
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Crime"
+        ],
+        "shooting_start_date": -52185600000,
+        "tconst": "tt0064664",
+        "id": "n1045297",
+        "parent": "c0",
+        "label": "Midas Run"
+      },
+      "position": {
+        "x": 1245.2309029686792,
+        "y": 799.1666831573887
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "end_datetime": 0,
+        "begin_datetime": 0,
+        "name": "",
+        "id": "c0",
+        "expandcollapseRenderedStartX": 877.1528091603438,
+        "expandcollapseRenderedStartY": 78.49786835155442,
+        "expandcollapseRenderedCueSize": 12.134866722414126
+      },
+      "position": {
+        "x": 1014.9639886244188,
+        "y": 719.0208209379709
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Cluster"
+    },
+    {
+      "data": {
+        "runtime_minutes": 103,
+        "production_end_date": -1054684800000,
+        "original_title": "Swing Time",
+        "start_year": 1936,
+        "rating": 7.6,
+        "count_votes": 11613,
+        "primary_title": "Swing Time",
+        "shooting_end_date": -1054684800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1061683200000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -1061683200000,
+        "tconst": "tt0028333",
+        "id": "n1040544",
+        "parent": "c0",
+        "label": "Swing Time"
+      },
+      "position": {
+        "x": 783,
+        "y": 751.0349962530424
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 83,
+        "production_end_date": -992476800000,
+        "original_title": "Carefree",
+        "start_year": 1938,
+        "rating": 7.1,
+        "count_votes": 3135,
+        "primary_title": "Carefree",
+        "shooting_end_date": -992476800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1000944000000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -1000944000000,
+        "tconst": "tt0029971",
+        "id": "n1040874",
+        "parent": "c0",
+        "label": "Carefree"
+      },
+      "position": {
+        "x": 1237.2961845901264,
+        "y": 737.6422858111422
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 117,
+        "production_end_date": -407635200000,
+        "original_title": "Silk Stockings",
+        "start_year": 1957,
+        "rating": 6.8,
+        "count_votes": 3374,
+        "primary_title": "Silk Stockings",
+        "shooting_end_date": -407635200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -414979200000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -414979200000,
+        "tconst": "tt0050972",
+        "id": "n1044256",
+        "parent": "c0",
+        "label": "Silk Stockings"
+      },
+      "position": {
+        "x": 893.6032635316219,
+        "y": 780.6576697777522
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 100,
+        "production_end_date": -881107200000,
+        "original_title": "Holiday Inn",
+        "start_year": 1942,
+        "rating": 7.4,
+        "count_votes": 12504,
+        "primary_title": "Holiday Inn",
+        "shooting_end_date": -881107200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -887414400000,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Music"
+        ],
+        "shooting_start_date": -887414400000,
+        "tconst": "tt0034862",
+        "id": "n1041995",
+        "parent": "c0",
+        "label": "Holiday Inn"
+      },
+      "position": {
+        "x": 793.8787537952235,
+        "y": 686.4978169866196
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 112,
+        "production_end_date": -534124800000,
+        "original_title": "The Band Wagon",
+        "start_year": 1953,
+        "rating": 7.5,
+        "count_votes": 9465,
+        "primary_title": "The Band Wagon",
+        "shooting_end_date": -534124800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -543715200000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -543715200000,
+        "tconst": "tt0045537",
+        "id": "n1043654",
+        "parent": "c0",
+        "label": "The Band Wagon"
+      },
+      "position": {
+        "x": 1027.1029702375954,
+        "y": 560
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 101,
+        "production_end_date": -1091145600000,
+        "original_title": "Top Hat",
+        "start_year": 1935,
+        "rating": 7.8,
+        "count_votes": 16402,
+        "primary_title": "Top Hat",
+        "shooting_end_date": -1091145600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1096761600000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -1096761600000,
+        "tconst": "tt0027125",
+        "id": "n1040348",
+        "parent": "c0",
+        "label": "Top Hat"
+      },
+      "position": {
+        "x": 964.2119623763994,
+        "y": 620.3952322068044
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 93,
+        "production_end_date": -607219200000,
+        "original_title": "Royal Wedding",
+        "start_year": 1951,
+        "rating": 6.7,
+        "count_votes": 4510,
+        "primary_title": "Royal Wedding",
+        "shooting_end_date": -607219200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -615081600000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -615081600000,
+        "tconst": "tt0043983",
+        "id": "n1043476",
+        "parent": "c0",
+        "label": "Royal Wedding"
+      },
+      "position": {
+        "x": 1246.9279772488376,
+        "y": 640.4964213346811
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 88,
+        "production_end_date": -897523200000,
+        "original_title": "You'll Never Get Rich",
+        "start_year": 1941,
+        "rating": 6.8,
+        "count_votes": 2038,
+        "primary_title": "You'll Never Get Rich",
+        "shooting_end_date": -897523200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -902620800000,
+        "shooting_start_date": -902620800000,
+        "genres": [
+          "Comedy",
+          "Musical",
+          "Romance"
+        ],
+        "tconst": "tt0034409",
+        "id": "n1041911",
+        "parent": "c0",
+        "label": "You'll Never Get Rich"
+      },
+      "position": {
+        "x": 907.481565007719,
+        "y": 701.7255005297588
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 102,
+        "production_end_date": -627868800000,
+        "original_title": "Three Little Words",
+        "start_year": 1950,
+        "rating": 6.9,
+        "count_votes": 1532,
+        "primary_title": "Three Little Words",
+        "shooting_end_date": -627868800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -633312000000,
+        "shooting_start_date": -633312000000,
+        "genres": [
+          "Biography",
+          "Comedy",
+          "Musical"
+        ],
+        "tconst": "tt0043044",
+        "id": "n1043362",
+        "parent": "c0",
+        "label": "Three Little Words"
+      },
+      "position": {
+        "x": 1078.1933595056475,
+        "y": 878.0416418759419
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 103,
+        "production_end_date": -690940800000,
+        "original_title": "Easter Parade",
+        "start_year": 1948,
+        "rating": 7.4,
+        "count_votes": 8062,
+        "primary_title": "Easter Parade",
+        "shooting_end_date": -690940800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -697507200000,
+        "genres": [
+          "Musical",
+          "Romance"
+        ],
+        "shooting_start_date": -697507200000,
+        "tconst": "tt0040308",
+        "id": "n1042965",
+        "parent": "c0",
+        "label": "Easter Parade"
+      },
+      "position": {
+        "x": 852.5582972941685,
+        "y": 627.9055791015753
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "end_datetime": 0,
+        "begin_datetime": 0,
+        "name": "",
+        "id": "c2"
+      },
+      "position": {
+        "x": 246.40973281130323,
+        "y": 153.0544299446248
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Cluster"
+    },
+    {
+      "data": {
+        "runtime_minutes": 165,
+        "production_end_date": 148089600000,
+        "original_title": "The Towering Inferno",
+        "start_year": 1974,
+        "rating": 6.9,
+        "count_votes": 37230,
+        "primary_title": "The Towering Inferno",
+        "shooting_end_date": 148089600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 136598400000,
+        "shooting_start_date": 137289600000,
+        "genres": [
+          "Action",
+          "Drama",
+          "Thriller"
+        ],
+        "tconst": "tt0072308",
+        "id": "n1046713",
+        "parent": "c0",
+        "label": "The Towering Inferno"
+      },
+      "position": {
+        "x": 901.9387879797574,
+        "y": 562.0267234755967
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "end_t": 1419984000000,
+        "primary_profession": [
+          "actress",
+          "soundtrack"
+        ],
+        "death_year": 2014,
+        "nconst": "nm0000002",
+        "primary_name": "Lauren Bacall",
+        "start_t": -1451692800000,
+        "birth_year": 1924,
+        "id": "n1",
+        "parent": "c1",
+        "label": "Lauren Bacall"
+      },
+      "position": {
+        "x": 789.1092991763803,
+        "y": 211.73693483261718
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Person wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 86,
+        "production_end_date": 930355200000,
+        "original_title": "The Venice Project",
+        "start_year": 1999,
+        "rating": 5.7,
+        "count_votes": 103,
+        "primary_title": "The Venice Project",
+        "shooting_end_date": 930355200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 928713600000,
+        "shooting_start_date": 928713600000,
+        "genres": [
+          "Drama"
+        ],
+        "tconst": "tt0211719",
+        "id": "n1054989",
+        "parent": "c1",
+        "label": "The Venice Project"
+      },
+      "position": {
+        "x": 831.2828810724154,
+        "y": 342.6815833366262
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 100,
+        "production_end_date": -686534400000,
+        "original_title": "Key Largo",
+        "start_year": 1948,
+        "rating": 7.8,
+        "count_votes": 35392,
+        "primary_title": "Key Largo",
+        "shooting_end_date": -686534400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -696988800000,
+        "genres": [
+          "Action",
+          "Crime",
+          "Drama"
+        ],
+        "shooting_start_date": -696988800000,
+        "tconst": "tt0040506",
+        "id": "n1043000",
+        "parent": "c1",
+        "label": "Key Largo"
+      },
+      "position": {
+        "x": 715.4736776722818,
+        "y": 298.6739710997395
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 95,
+        "production_end_date": 331171200000,
+        "original_title": "The Fan",
+        "start_year": 1981,
+        "rating": 5.7,
+        "count_votes": 1817,
+        "primary_title": "The Fan",
+        "shooting_end_date": 331171200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 323395200000,
+        "genres": [
+          "Drama",
+          "Horror",
+          "Thriller"
+        ],
+        "shooting_start_date": 323395200000,
+        "tconst": "tt0082362",
+        "id": "n1048164",
+        "parent": "c1",
+        "label": "The Fan"
+      },
+      "position": {
+        "x": 1021.4400053506272,
+        "y": 232.46718085197801
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 118,
+        "production_end_date": -765417600000,
+        "original_title": "Confidential Agent",
+        "start_year": 1945,
+        "rating": 6.5,
+        "count_votes": 911,
+        "primary_title": "Confidential Agent",
+        "shooting_end_date": -765417600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -775872000000,
+        "shooting_start_date": -775872000000,
+        "genres": [
+          "Drama",
+          "Thriller"
+        ],
+        "tconst": "tt0037610",
+        "id": "n1042563",
+        "parent": "c1",
+        "label": "Confidential Agent"
+      },
+      "position": {
+        "x": 907.9235348204518,
+        "y": 220.39541280683818
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 121,
+        "production_end_date": -134265600000,
+        "original_title": "Harper",
+        "start_year": 1966,
+        "rating": 6.9,
+        "count_votes": 7770,
+        "primary_title": "Harper",
+        "shooting_end_date": -134265600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -142128000000,
+        "genres": [
+          "Crime",
+          "Drama",
+          "Mystery"
+        ],
+        "shooting_start_date": -142128000000,
+        "tconst": "tt0060490",
+        "id": "n1044930",
+        "parent": "c1",
+        "label": "Harper"
+      },
+      "position": {
+        "x": 948.2374553780602,
+        "y": 294.7518918338902
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 106,
+        "production_end_date": -723254400000,
+        "original_title": "Dark Passage",
+        "start_year": 1947,
+        "rating": 7.5,
+        "count_votes": 16761,
+        "primary_title": "Dark Passage",
+        "shooting_end_date": -723254400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -733795200000,
+        "genres": [
+          "Film-Noir",
+          "Thriller"
+        ],
+        "shooting_start_date": -733795200000,
+        "tconst": "tt0039302",
+        "id": "n1042827",
+        "parent": "c1",
+        "label": "Dark Passage"
+      },
+      "position": {
+        "x": 1002.6500731417827,
+        "y": 159.3503971198761
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 110,
+        "production_end_date": -465696000000,
+        "original_title": "Blood Alley",
+        "start_year": 1955,
+        "rating": 6.3,
+        "count_votes": 2692,
+        "primary_title": "Blood Alley",
+        "shooting_end_date": -465696000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -473385600000,
+        "genres": [
+          "Action",
+          "Adventure"
+        ],
+        "shooting_start_date": -473385600000,
+        "tconst": "tt0047889",
+        "id": "n1043926",
+        "parent": "c1",
+        "label": "Blood Alley"
+      },
+      "position": {
+        "x": 964.3362341567577,
+        "y": 87.01506403801307
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 95,
+        "production_end_date": -526176000000,
+        "original_title": "How to Marry a Millionaire",
+        "start_year": 1953,
+        "rating": 6.9,
+        "count_votes": 19550,
+        "primary_title": "How to Marry a Millionaire",
+        "shooting_end_date": -526176000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -530668800000,
+        "genres": [
+          "Comedy",
+          "Drama",
+          "Romance"
+        ],
+        "shooting_start_date": -530668800000,
+        "tconst": "tt0045891",
+        "id": "n1043696",
+        "parent": "c1",
+        "label": "How to Marry a Millionaire"
+      },
+      "position": {
+        "x": 885.6799926743217,
+        "y": 145.45892552367104
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 114,
+        "production_end_date": -757468800000,
+        "original_title": "The Big Sleep",
+        "start_year": 1946,
+        "rating": 7.9,
+        "count_votes": 75983,
+        "primary_title": "The Big Sleep",
+        "shooting_end_date": -787968000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -820540800000,
+        "genres": [
+          "Crime",
+          "Film-Noir",
+          "Mystery"
+        ],
+        "shooting_start_date": -796089600000,
+        "tconst": "tt0038355",
+        "id": "n1042682",
+        "parent": "c5",
+        "label": "The Big Sleep"
+      },
+      "position": {
+        "x": 218.98163173836883,
+        "y": 678.6843726203417
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 110,
+        "production_end_date": -628560000000,
+        "original_title": "Bright Leaf",
+        "start_year": 1950,
+        "rating": 6.6,
+        "count_votes": 1070,
+        "primary_title": "Bright Leaf",
+        "shooting_end_date": -628560000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -636422400000,
+        "genres": [
+          "Drama",
+          "Romance"
+        ],
+        "shooting_start_date": -636422400000,
+        "tconst": "tt0042285",
+        "id": "n1043251",
+        "parent": "c1",
+        "label": "Bright Leaf"
+      },
+      "position": {
+        "x": 599.224309384425,
+        "y": 243.21555613434697
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 178,
+        "production_end_date": 1015113600000,
+        "original_title": "Dogville",
+        "start_year": 2003,
+        "rating": 8,
+        "count_votes": 131554,
+        "primary_title": "Dogville",
+        "shooting_end_date": 1015113600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 1010620800000,
+        "genres": [
+          "Crime",
+          "Drama"
+        ],
+        "shooting_start_date": 1010620800000,
+        "tconst": "tt0276919",
+        "id": "n1057224",
+        "parent": "c1",
+        "label": "Dogville"
+      },
+      "position": {
+        "x": 652.2712516399,
+        "y": 179.81713985761593
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 108,
+        "production_end_date": 1167523200000,
+        "original_title": "The Walker",
+        "start_year": 2007,
+        "rating": 5.8,
+        "count_votes": 5118,
+        "primary_title": "The Walker",
+        "shooting_end_date": 1167523200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 1143763200000,
+        "genres": [
+          "Crime",
+          "Drama",
+          "Mystery"
+        ],
+        "shooting_start_date": 1143763200000,
+        "tconst": "tt0783608",
+        "id": "n1063144",
+        "parent": "c1",
+        "label": "The Walker"
+      },
+      "position": {
+        "x": 609.9268933583734,
+        "y": 114.65185548493861
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 91,
+        "production_end_date": 646704000000,
+        "original_title": "A Star for Two",
+        "start_year": 1991,
+        "rating": 5.4,
+        "count_votes": 196,
+        "primary_title": "A Star for Two",
+        "shooting_end_date": 646704000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 642211200000,
+        "genres": [
+          "Drama",
+          "Romance"
+        ],
+        "shooting_start_date": 642211200000,
+        "tconst": "tt0166817",
+        "id": "n1053931",
+        "parent": "c1",
+        "label": "A Star for Two"
+      },
+      "position": {
+        "x": 846.3660633814927,
+        "y": 68.65015385411886
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 100,
+        "production_end_date": -809308800000,
+        "original_title": "To Have and Have Not",
+        "start_year": 1944,
+        "rating": 7.8,
+        "count_votes": 29330,
+        "primary_title": "To Have and Have Not",
+        "shooting_end_date": -809308800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -815443200000,
+        "shooting_start_date": -815443200000,
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Film-Noir"
+        ],
+        "tconst": "tt0037382",
+        "id": "n1042518",
+        "parent": "c5",
+        "label": "To Have and Have Not"
+      },
+      "position": {
+        "x": 333.5783103787169,
+        "y": 707.8918476927105
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 93,
+        "production_end_date": 567907200000,
+        "original_title": "Mr. North",
+        "start_year": 1988,
+        "rating": 5.9,
+        "count_votes": 1160,
+        "primary_title": "Mr. North",
+        "shooting_end_date": 567907200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 553737600000,
+        "genres": [
+          "Comedy",
+          "Drama"
+        ],
+        "shooting_start_date": 553737600000,
+        "tconst": "tt0095665",
+        "id": "n1049683",
+        "parent": "c1",
+        "label": "Mr. North"
+      },
+      "position": {
+        "x": 769.0070070648558,
+        "y": 128.95412120851046
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 100,
+        "production_end_date": 197078400000,
+        "original_title": "The Shootist",
+        "start_year": 1976,
+        "rating": 7.6,
+        "count_votes": 21104,
+        "primary_title": "The Shootist",
+        "shooting_end_date": 197078400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 190339200000,
+        "genres": [
+          "Drama",
+          "Romance",
+          "Western"
+        ],
+        "shooting_start_date": 190339200000,
+        "tconst": "tt0075213",
+        "id": "n1047255",
+        "parent": "c1",
+        "label": "The Shootist"
+      },
+      "position": {
+        "x": 727.4662046854448,
+        "y": 65
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "primary_profession": [
+          "actress",
+          "soundtrack",
+          "producer"
+        ],
+        "nconst": "nm0000003",
+        "primary_name": "Brigitte Bardot",
+        "start_t": -1136073600000,
+        "birth_year": 1934,
+        "id": "n2",
+        "parent": "c2",
+        "label": "Brigitte Bardot"
+      },
+      "position": {
+        "x": 247.9121741511044,
+        "y": 168.90572969408106
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Person wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 120,
+        "production_end_date": -126316800000,
+        "original_title": "Viva Maria!",
+        "start_year": 1965,
+        "rating": 6.3,
+        "count_votes": 3135,
+        "primary_title": "Viva Maria!",
+        "shooting_end_date": -126316800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -155606400000,
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Romance"
+        ],
+        "shooting_start_date": -155606400000,
+        "tconst": "tt0059956",
+        "id": "n1044899",
+        "parent": "c2",
+        "label": "Viva Maria!"
+      },
+      "position": {
+        "x": 238.97553090071696,
+        "y": 65
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 113,
+        "production_end_date": -31622400000,
+        "original_title": "Shalako",
+        "start_year": 1968,
+        "rating": 5.6,
+        "count_votes": 2583,
+        "primary_title": "Shalako",
+        "shooting_end_date": -31622400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -63158400000,
+        "genres": [
+          "Western"
+        ],
+        "shooting_start_date": -63158400000,
+        "tconst": "tt0063592",
+        "id": "n1045152",
+        "parent": "c2",
+        "label": "Shalako"
+      },
+      "position": {
+        "x": 402.81946562260646,
+        "y": 217.3198850382587
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "production_start_date": -94694400000,
+        "runtime_minutes": 180,
+        "production_end_date": -44409600000,
+        "original_title": "Faces of Paris",
+        "shooting_start_date": -94694400000,
+        "genres": [
+          "Family"
+        ],
+        "tconst": "tt4981286",
+        "start_year": 1968,
+        "primary_title": "Faces of Paris",
+        "shooting_end_date": -42163200000,
+        "title_type": "tvMiniSeries",
+        "is_adult": 0,
+        "id": "n1076797",
+        "parent": "c2",
+        "label": "Faces of Paris"
+      },
+      "position": {
+        "x": 101.43556128741554,
+        "y": 241.10885988924957
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 91,
+        "production_end_date": 31449600000,
+        "original_title": "Les novices",
+        "start_year": 1970,
+        "rating": 5.1,
+        "count_votes": 197,
+        "primary_title": "Les novices",
+        "shooting_end_date": 31449600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 22723200000,
+        "genres": [
+          "Comedy",
+          "Drama"
+        ],
+        "shooting_start_date": 22723200000,
+        "tconst": "tt0066164",
+        "id": "n1045573",
+        "parent": "c2",
+        "label": "Les novices"
+      },
+      "position": {
+        "x": 398.3341646728243,
+        "y": 113.28865428971942
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 86,
+        "production_end_date": -86400000,
+        "original_title": "Les femmes",
+        "start_year": 1969,
+        "rating": 5.5,
+        "count_votes": 322,
+        "primary_title": "Les femmes",
+        "shooting_end_date": -86400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -24451200000,
+        "genres": [
+          "Comedy"
+        ],
+        "shooting_start_date": -24451200000,
+        "tconst": "tt0064324",
+        "id": "n1045238",
+        "parent": "c2",
+        "label": "Les femmes"
+      },
+      "position": {
+        "x": 90,
+        "y": 133.78794367699135
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "end_t": 410140800000,
+        "primary_profession": [
+          "actor",
+          "soundtrack",
+          "writer"
+        ],
+        "death_year": 1982,
+        "nconst": "nm0000004",
+        "primary_name": "John Belushi",
+        "start_t": -662688000000,
+        "birth_year": 1949,
+        "id": "n3",
+        "parent": "c3",
+        "label": "John Belushi"
+      },
+      "position": {
+        "x": 1435.0298690380616,
+        "y": 144.5274825148426
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Person wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 103,
+        "production_end_date": 349747200000,
+        "original_title": "Continental Divide",
+        "start_year": 1981,
+        "rating": 6.2,
+        "count_votes": 4413,
+        "primary_title": "Continental Divide",
+        "shooting_end_date": 349747200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 340848000000,
+        "shooting_start_date": 340848000000,
+        "genres": [
+          "Comedy",
+          "Romance"
+        ],
+        "tconst": "tt0082200",
+        "id": "n1048145",
+        "parent": "c3",
+        "label": "Continental Divide"
+      },
+      "position": {
+        "x": 1278,
+        "y": 158.47225035212338
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 133,
+        "production_end_date": 315446400000,
+        "original_title": "The Blues Brothers",
+        "start_year": 1980,
+        "rating": 7.9,
+        "count_votes": 173882,
+        "primary_title": "The Blues Brothers",
+        "shooting_end_date": 318211200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 283996800000,
+        "shooting_start_date": 303350400000,
+        "genres": [
+          "Adventure",
+          "Comedy",
+          "Crime"
+        ],
+        "tconst": "tt0080455",
+        "id": "n1047965",
+        "parent": "c3",
+        "label": "The Blues Brothers"
+      },
+      "position": {
+        "x": 1591.221848946527,
+        "y": 125.91136792329887
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 105,
+        "production_end_date": 247104000000,
+        "original_title": "Goin' South",
+        "start_year": 1978,
+        "rating": 6.2,
+        "count_votes": 6009,
+        "primary_title": "Goin' South",
+        "shooting_end_date": 247104000000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 239241600000,
+        "genres": [
+          "Comedy",
+          "Crime",
+          "Romance"
+        ],
+        "shooting_start_date": 239241600000,
+        "tconst": "tt0077621",
+        "id": "n1047612",
+        "parent": "c3",
+        "label": "Goin' South"
+      },
+      "position": {
+        "x": 1294.7972184550513,
+        "y": 64.99999999999999
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 94,
+        "production_end_date": 378604800000,
+        "original_title": "Neighbors",
+        "start_year": 1981,
+        "rating": 5.6,
+        "count_votes": 7133,
+        "primary_title": "Neighbors",
+        "shooting_end_date": 362620800000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 352252800000,
+        "genres": [
+          "Comedy"
+        ],
+        "shooting_start_date": 356572800000,
+        "tconst": "tt0082801",
+        "id": "n1048215",
+        "parent": "c3",
+        "label": "Neighbors"
+      },
+      "position": {
+        "x": 1511.669731690192,
+        "y": 240.36061142949808
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 103,
+        "production_end_date": 283910400000,
+        "original_title": "Old Boyfriends",
+        "start_year": 1979,
+        "rating": 5.4,
+        "count_votes": 229,
+        "primary_title": "Old Boyfriends",
+        "shooting_end_date": 283910400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": 258595200000,
+        "genres": [
+          "Drama"
+        ],
+        "shooting_start_date": 258595200000,
+        "tconst": "tt0079660",
+        "id": "n1047880",
+        "parent": "c3",
+        "label": "Old Boyfriends"
+      },
+      "position": {
+        "x": 1369.4423909290067,
+        "y": 237.8511831340117
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 102,
+        "production_end_date": -865123200000,
+        "original_title": "Casablanca",
+        "start_year": 1942,
+        "rating": 8.5,
+        "count_votes": 497036,
+        "primary_title": "Casablanca",
+        "shooting_end_date": -865123200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -871171200000,
+        "genres": [
+          "Drama",
+          "Romance",
+          "War"
+        ],
+        "shooting_start_date": -871171200000,
+        "tconst": "tt0034583",
+        "id": "n1041946",
+        "parent": "c5",
+        "label": "Casablanca"
+      },
+      "position": {
+        "x": 323.1340417894884,
+        "y": 774.8904454064714
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 100,
+        "production_end_date": -898041600000,
+        "original_title": "The Maltese Falcon",
+        "start_year": 1941,
+        "rating": 8,
+        "count_votes": 144303,
+        "primary_title": "The Maltese Falcon",
+        "shooting_end_date": -898041600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -901411200000,
+        "shooting_start_date": -901411200000,
+        "genres": [
+          "Film-Noir",
+          "Mystery"
+        ],
+        "tconst": "tt0033870",
+        "id": "n1041791",
+        "parent": "c5",
+        "label": "The Maltese Falcon"
+      },
+      "position": {
+        "x": 453.07692972690734,
+        "y": 746.107317714926
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "end_t": -378777600000,
+        "primary_profession": [
+          "actor",
+          "soundtrack",
+          "producer"
+        ],
+        "death_year": 1957,
+        "nconst": "nm0000007",
+        "primary_name": "Humphrey Bogart",
+        "start_t": -2240524800000,
+        "birth_year": 1899,
+        "id": "n5",
+        "parent": "c5",
+        "label": "Humphrey Bogart"
+      },
+      "position": {
+        "x": 317.7585321360255,
+        "y": 621.6552721743533
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Person wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 105,
+        "production_end_date": -578707200000,
+        "original_title": "The African Queen",
+        "start_year": 1951,
+        "rating": 7.7,
+        "count_votes": 68711,
+        "primary_title": "The African Queen",
+        "shooting_end_date": -578707200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -589248000000,
+        "shooting_start_date": -589248000000,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Romance"
+        ],
+        "tconst": "tt0043265",
+        "id": "n1043382",
+        "parent": "c5",
+        "label": "The African Queen"
+      },
+      "position": {
+        "x": 447.35337844020694,
+        "y": 679.5765152811498
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 126,
+        "production_end_date": -708739200000,
+        "original_title": "The Treasure of the Sierra Madre",
+        "start_year": 1948,
+        "rating": 8.2,
+        "count_votes": 108196,
+        "primary_title": "The Treasure of the Sierra Madre",
+        "shooting_end_date": -708739200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -717638400000,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "Western"
+        ],
+        "shooting_start_date": -717638400000,
+        "tconst": "tt0040897",
+        "id": "n1043065",
+        "parent": "c5",
+        "label": "The Treasure of the Sierra Madre"
+      },
+      "position": {
+        "x": 551.0277718891465,
+        "y": 622.6095167523448
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 97,
+        "production_end_date": -946857600000,
+        "original_title": "It All Came True",
+        "start_year": 1940,
+        "rating": 6.7,
+        "count_votes": 933,
+        "primary_title": "It All Came True",
+        "shooting_end_date": -946857600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -949622400000,
+        "shooting_start_date": -949622400000,
+        "genres": [
+          "Comedy",
+          "Crime",
+          "Drama"
+        ],
+        "tconst": "tt0032643",
+        "id": "n1041509",
+        "parent": "c5",
+        "label": "It All Came True"
+      },
+      "position": {
+        "x": 436.5619247750395,
+        "y": 598.7254921939114
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 102,
+        "production_end_date": -1009929600000,
+        "original_title": "Kid Galahad",
+        "start_year": 1937,
+        "rating": 7.2,
+        "count_votes": 2824,
+        "primary_title": "Kid Galahad",
+        "shooting_end_date": -1009929600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1041379200000,
+        "genres": [
+          "Crime",
+          "Drama",
+          "Romance"
+        ],
+        "shooting_start_date": -1041379200000,
+        "tconst": "tt0029080",
+        "id": "n1040689",
+        "parent": "c5",
+        "label": "Kid Galahad"
+      },
+      "position": {
+        "x": 494.49516541099456,
+        "y": 534.8355471673167
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 94,
+        "production_end_date": -633830400000,
+        "original_title": "In a Lonely Place",
+        "start_year": 1950,
+        "rating": 8,
+        "count_votes": 23875,
+        "primary_title": "In a Lonely Place",
+        "shooting_end_date": -633830400000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -637027200000,
+        "shooting_start_date": -637027200000,
+        "genres": [
+          "Drama",
+          "Film-Noir",
+          "Mystery"
+        ],
+        "tconst": "tt0042593",
+        "id": "n1043296",
+        "parent": "c5",
+        "label": "In a Lonely Place"
+      },
+      "position": {
+        "x": 106.94530570070748,
+        "y": 659.1868524277664
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 107,
+        "production_end_date": -888969600000,
+        "original_title": "All Through the Night",
+        "start_year": 1942,
+        "rating": 7.1,
+        "count_votes": 3605,
+        "primary_title": "All Through the Night",
+        "shooting_end_date": -888969600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -896832000000,
+        "shooting_start_date": -896832000000,
+        "genres": [
+          "Action",
+          "Comedy",
+          "Crime"
+        ],
+        "tconst": "tt0034449",
+        "id": "n1041918",
+        "parent": "c5",
+        "label": "All Through the Night"
+      },
+      "position": {
+        "x": 202.882047301258,
+        "y": 572.2439101090505
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 71,
+        "production_end_date": -1041465600000,
+        "original_title": "The Great O'Malley",
+        "start_year": 1937,
+        "rating": 6.8,
+        "count_votes": 505,
+        "primary_title": "The Great O'Malley",
+        "shooting_end_date": -1041465600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1057276800000,
+        "shooting_start_date": -1057276800000,
+        "genres": [
+          "Drama"
+        ],
+        "tconst": "tt0028955",
+        "id": "n1040666",
+        "parent": "c5",
+        "label": "The Great O'Malley"
+      },
+      "position": {
+        "x": 90,
+        "y": 593.0366431212768
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 88,
+        "production_end_date": -1041465600000,
+        "original_title": "China Clipper",
+        "start_year": 1936,
+        "rating": 6.3,
+        "count_votes": 474,
+        "primary_title": "China Clipper",
+        "shooting_end_date": -1041465600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -1062547200000,
+        "genres": [
+          "Drama"
+        ],
+        "shooting_start_date": -1062547200000,
+        "tconst": "tt0027445",
+        "id": "n1040400",
+        "parent": "c5",
+        "label": "China Clipper"
+      },
+      "position": {
+        "x": 373.90570179878887,
+        "y": 527.8088706256839
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 109,
+        "production_end_date": -823305600000,
+        "original_title": "Passage to Marseille",
+        "start_year": 1944,
+        "rating": 6.9,
+        "count_votes": 3773,
+        "primary_title": "Passage to Marseille",
+        "shooting_end_date": -823305600000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -836438400000,
+        "shooting_start_date": -836438400000,
+        "genres": [
+          "Adventure",
+          "Drama",
+          "War"
+        ],
+        "tconst": "tt0037166",
+        "id": "n1042473",
+        "parent": "c5",
+        "label": "Passage to Marseille"
+      },
+      "position": {
+        "x": 258.0602618618407,
+        "y": 502.3768281860685
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "runtime_minutes": 100,
+        "production_end_date": -924307200000,
+        "original_title": "High Sierra",
+        "start_year": 1941,
+        "rating": 7.5,
+        "count_votes": 14244,
+        "primary_title": "High Sierra",
+        "shooting_end_date": -924307200000,
+        "title_type": "movie",
+        "is_adult": 0,
+        "production_start_date": -927158400000,
+        "genres": [
+          "Action",
+          "Adventure",
+          "Crime"
+        ],
+        "shooting_start_date": -927158400000,
+        "tconst": "tt0033717",
+        "id": "n1041749",
+        "parent": "c5",
+        "label": "High Sierra"
+      },
+      "position": {
+        "x": 135.83124757542043,
+        "y": 512.964749048857
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Title wrap_label"
+    },
+    {
+      "data": {
+        "end_datetime": 0,
+        "begin_datetime": 0,
+        "name": "",
+        "id": "c1"
+      },
+      "position": {
+        "x": 810.3321573675262,
+        "y": 203.8407916683131
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Cluster"
+    },
+    {
+      "data": {
+        "end_datetime": 0,
+        "begin_datetime": 0,
+        "name": "",
+        "id": "c5"
+      },
+      "position": {
+        "x": 320.51388594457325,
+        "y": 638.6336367962699
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Cluster"
+    },
+    {
+      "data": {
+        "end_datetime": 0,
+        "begin_datetime": 0,
+        "name": "",
+        "id": "c3"
+      },
+      "position": {
+        "x": 1434.6109244732634,
+        "y": 152.68030571474904
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": "Cluster"
+    }
+  ],
+  "edges": [
+    {
+      "data": {
+        "source": "n1",
+        "target": "n1042518",
+        "id": "collapsedEdge_n1_n1042518_unknown_1078381207910",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Marie 'Slim' Browning"
+              ],
+              "act_end": -809308800000,
+              "act_begin": -815443200000,
+              "job": "",
+              "id": "e1630050",
+              "source": "n1",
+              "target": "n1042518"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTRESS"
+          },
+          {
+            "data": {
+              "end": -809308800000,
+              "begin": -815443200000,
+              "id": "e5",
+              "source": "n1",
+              "target": "n1042518"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "characters": [
+          "Dixon Steele"
+        ],
+        "act_end": -633830400000,
+        "act_begin": -637027200000,
+        "job": "",
+        "id": "e1496124",
+        "source": "n5",
+        "target": "n1043296"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "end": -865123200000,
+        "begin": -871171200000,
+        "id": "e13",
+        "source": "n5",
+        "target": "n1041946"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "KNOWN_FOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Turkey Morgan"
+        ],
+        "act_end": -1009929600000,
+        "act_begin": -1041379200000,
+        "job": "",
+        "id": "e1489936",
+        "source": "n5",
+        "target": "n1040689"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "end": -898041600000,
+        "begin": -901411200000,
+        "id": "e11",
+        "source": "n5",
+        "target": "n1041791"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "KNOWN_FOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Clara"
+        ],
+        "act_end": -86400000,
+        "act_begin": -24451200000,
+        "job": "",
+        "id": "e1633451",
+        "source": "n2",
+        "target": "n1045238"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "source": "n2",
+        "target": "n1044899",
+        "id": "collapsedEdge_n2_n1044899_unknown_269586766888",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Maria I"
+              ],
+              "act_end": -126316800000,
+              "act_begin": -155606400000,
+              "job": "",
+              "id": "e1633037",
+              "source": "n2",
+              "target": "n1044899"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTRESS"
+          },
+          {
+            "data": {
+              "end": -126316800000,
+              "begin": -155606400000,
+              "id": "e6",
+              "source": "n2",
+              "target": "n1044899"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "characters": [
+          "Eric Katz"
+        ],
+        "act_end": 283910400000,
+        "act_begin": 258595200000,
+        "job": "",
+        "id": "e1506457",
+        "source": "n3",
+        "target": "n1047880"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Agnès"
+        ],
+        "act_end": 31449600000,
+        "act_begin": 22723200000,
+        "job": "",
+        "id": "e1633839",
+        "source": "n2",
+        "target": "n1045573"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Self"
+        ],
+        "end": -44409600000,
+        "job": "",
+        "begin": -94694400000,
+        "id": "e1433263",
+        "source": "n2",
+        "target": "n1076797"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "SELF"
+    },
+    {
+      "data": {
+        "characters": [
+          "Irina Lazaar"
+        ],
+        "act_end": -31622400000,
+        "act_begin": -63158400000,
+        "job": "",
+        "id": "e1633338",
+        "source": "n2",
+        "target": "n1045152"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "'Gloves' Donahue"
+        ],
+        "act_end": -888969600000,
+        "act_begin": -896832000000,
+        "job": "",
+        "id": "e1492918",
+        "source": "n5",
+        "target": "n1041918"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "source": "n0",
+        "target": "n1043362",
+        "id": "collapsedEdge_n0_n1043362_unknown_298297594255",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Bert Kalmar"
+              ],
+              "act_end": -627868800000,
+              "act_begin": -633312000000,
+              "job": "",
+              "id": "e1496279",
+              "source": "n0",
+              "target": "n1043362"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTOR"
+          },
+          {
+            "data": {
+              "end": -627868800000,
+              "begin": -633312000000,
+              "id": "e2",
+              "source": "n0",
+              "target": "n1043362"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "source": "n1",
+        "target": "n1042682",
+        "id": "collapsedEdge_n1_n1042682_unknown_1401647244056",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Vivian Rutledge"
+              ],
+              "act_end": -787968000000,
+              "act_begin": -796089600000,
+              "job": "",
+              "id": "e1630253",
+              "source": "n1",
+              "target": "n1042682"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTRESS"
+          },
+          {
+            "data": {
+              "end": -757468800000,
+              "begin": -820540800000,
+              "id": "e4",
+              "source": "n1",
+              "target": "n1042682"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "characters": [
+          "Bond Rogers"
+        ],
+        "act_end": 197078400000,
+        "act_begin": 190339200000,
+        "job": "",
+        "id": "e1635676",
+        "source": "n1",
+        "target": "n1047255"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Mrs. Cranston"
+        ],
+        "act_end": 567907200000,
+        "act_begin": 553737600000,
+        "job": "",
+        "id": "e1638692",
+        "source": "n1",
+        "target": "n1049683"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Ernie Souchak"
+        ],
+        "act_end": 349747200000,
+        "act_begin": 340848000000,
+        "job": "",
+        "id": "e1507091",
+        "source": "n3",
+        "target": "n1048145"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Edwige"
+        ],
+        "act_end": 646704000000,
+        "act_begin": 642211200000,
+        "job": "",
+        "id": "e1643907",
+        "source": "n1",
+        "target": "n1053931"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Natalie Van Miter"
+        ],
+        "act_end": 1167523200000,
+        "act_begin": 1143763200000,
+        "job": "",
+        "id": "e1652253",
+        "source": "n1",
+        "target": "n1063144"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Ma Ginger"
+        ],
+        "act_end": 1015113600000,
+        "act_begin": 1010620800000,
+        "job": "",
+        "id": "e1646794",
+        "source": "n1",
+        "target": "n1057224"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Sonia Kovac"
+        ],
+        "act_end": -628560000000,
+        "act_begin": -636422400000,
+        "job": "",
+        "id": "e1630987",
+        "source": "n1",
+        "target": "n1043251"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "John Phillips"
+        ],
+        "act_end": -1041465600000,
+        "act_begin": -1057276800000,
+        "job": "",
+        "id": "e1489883",
+        "source": "n5",
+        "target": "n1040666"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Schatze Page"
+        ],
+        "act_end": -526176000000,
+        "act_begin": -530668800000,
+        "job": "",
+        "id": "e1631562",
+        "source": "n1",
+        "target": "n1043696"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Cathy Grainger"
+        ],
+        "act_end": -465696000000,
+        "act_begin": -473385600000,
+        "job": "",
+        "id": "e1631811",
+        "source": "n1",
+        "target": "n1043926"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Irene Jansen"
+        ],
+        "act_end": -723254400000,
+        "act_begin": -733795200000,
+        "job": "",
+        "id": "e1630455",
+        "source": "n1",
+        "target": "n1042827"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Mrs. Sampson"
+        ],
+        "act_end": -134265600000,
+        "act_begin": -142128000000,
+        "job": "",
+        "id": "e1633073",
+        "source": "n1",
+        "target": "n1044930"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Rose Cullen"
+        ],
+        "act_end": -765417600000,
+        "act_begin": -775872000000,
+        "job": "",
+        "id": "e1630108",
+        "source": "n1",
+        "target": "n1042563"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "source": "n3",
+        "target": "n1047965",
+        "id": "collapsedEdge_n3_n1047965_unknown_1363800964172",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Joliet Jake"
+              ],
+              "act_end": 318211200000,
+              "act_begin": 303350400000,
+              "job": "",
+              "id": "e1506660",
+              "source": "n3",
+              "target": "n1047965"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTOR"
+          },
+          {
+            "data": {
+              "end": 315446400000,
+              "begin": 283996800000,
+              "id": "e7",
+              "source": "n3",
+              "target": "n1047965"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "characters": [
+          "Bake Baker"
+        ],
+        "act_end": -1072742400000,
+        "act_begin": -1078358400000,
+        "job": "",
+        "id": "e1489323",
+        "source": "n0",
+        "target": "n1040429"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Roy Earle"
+        ],
+        "act_end": -924307200000,
+        "act_begin": -927158400000,
+        "job": "",
+        "id": "e1492525",
+        "source": "n5",
+        "target": "n1041749"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Deputy Hector"
+        ],
+        "act_end": 247104000000,
+        "act_begin": 239241600000,
+        "job": "",
+        "id": "e1505831",
+        "source": "n3",
+        "target": "n1047612"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "source": "n5",
+        "target": "n1043382",
+        "id": "collapsedEdge_n5_n1043382_unknown_1075643252259",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Charlie Allnutt"
+              ],
+              "act_end": -578707200000,
+              "act_begin": -589248000000,
+              "job": "",
+              "id": "e1496331",
+              "source": "n5",
+              "target": "n1043382"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTOR"
+          },
+          {
+            "data": {
+              "end": -578707200000,
+              "begin": -589248000000,
+              "id": "e14",
+              "source": "n5",
+              "target": "n1043382"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "characters": [
+          "Peter P. Peters aka Petrov"
+        ],
+        "act_end": -1034467200000,
+        "act_begin": -1042070400000,
+        "job": "",
+        "id": "e1490117",
+        "source": "n0",
+        "target": "n1040763"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Jerry Halliday"
+        ],
+        "act_end": -1016496000000,
+        "act_begin": -1023926400000,
+        "job": "",
+        "id": "e1489789",
+        "source": "n0",
+        "target": "n1040628"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Earl Keese"
+        ],
+        "act_end": 362620800000,
+        "act_begin": 356572800000,
+        "job": "",
+        "id": "e1507251",
+        "source": "n3",
+        "target": "n1048215"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "end": -809308800000,
+        "begin": -815443200000,
+        "id": "e12",
+        "source": "n5",
+        "target": "n1042518"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "KNOWN_FOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Jean Matrac"
+        ],
+        "act_end": -823305600000,
+        "act_begin": -836438400000,
+        "job": "",
+        "id": "e1494171",
+        "source": "n5",
+        "target": "n1042473"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Danny O'Neill"
+        ],
+        "act_end": -923184000000,
+        "act_begin": -928627200000,
+        "job": "",
+        "id": "e1492167",
+        "source": "n0",
+        "target": "n1041601"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Fred Astaire ('Here's to the Ladies')",
+          "Raffles ('This Heart of Mine')",
+          "Tai Long ('Limehouse Blues')"
+        ],
+        "act_end": -789004800000,
+        "act_begin": -820540800000,
+        "job": "",
+        "id": "e1494954",
+        "source": "n0",
+        "target": "n1042802"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Self"
+        ],
+        "end": 999216000000,
+        "job": "",
+        "begin": 957139200000,
+        "id": "e1701191",
+        "source": "n0",
+        "target": "n1059229"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ARCHIVE_FOOTAGE"
+    },
+    {
+      "data": {
+        "characters": [
+          "John Pedley"
+        ],
+        "act_end": -31622400000,
+        "act_begin": -52185600000,
+        "job": "",
+        "id": "e1500677",
+        "source": "n0",
+        "target": "n1045297"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Lucky Garnett"
+        ],
+        "act_end": -1054684800000,
+        "act_begin": -1061683200000,
+        "job": "",
+        "id": "e1489588",
+        "source": "n0",
+        "target": "n1040544"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Tony Flagg"
+        ],
+        "act_end": -992476800000,
+        "act_begin": -1000944000000,
+        "job": "",
+        "id": "e1490382",
+        "source": "n0",
+        "target": "n1040874"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Steve Canfield"
+        ],
+        "act_end": -407635200000,
+        "act_begin": -414979200000,
+        "job": "",
+        "id": "e1498333",
+        "source": "n0",
+        "target": "n1044256"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Ted Hanover"
+        ],
+        "act_end": -881107200000,
+        "act_begin": -887414400000,
+        "job": "",
+        "id": "e1493095",
+        "source": "n0",
+        "target": "n1041995"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Tony Hunter"
+        ],
+        "act_end": -534124800000,
+        "act_begin": -543715200000,
+        "job": "",
+        "id": "e1496955",
+        "source": "n0",
+        "target": "n1043654"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Jerry Travers"
+        ],
+        "act_end": -1091145600000,
+        "act_begin": -1096761600000,
+        "job": "",
+        "id": "e1489138",
+        "source": "n0",
+        "target": "n1040348"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Tom Bowen"
+        ],
+        "act_end": -607219200000,
+        "act_begin": -615081600000,
+        "job": "",
+        "id": "e1496560",
+        "source": "n0",
+        "target": "n1043476"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Robert Curtis"
+        ],
+        "act_end": -897523200000,
+        "act_begin": -902620800000,
+        "job": "",
+        "id": "e1492900",
+        "source": "n0",
+        "target": "n1041911"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Hap Stuart"
+        ],
+        "act_end": -1041465600000,
+        "act_begin": -1062547200000,
+        "job": "",
+        "id": "e1489262",
+        "source": "n5",
+        "target": "n1040400"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Don Hewes"
+        ],
+        "act_end": -690940800000,
+        "act_begin": -697507200000,
+        "job": "",
+        "id": "e1495338",
+        "source": "n0",
+        "target": "n1042965"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Grasselli",
+          "Chips Maguire"
+        ],
+        "act_end": -946857600000,
+        "act_begin": -949622400000,
+        "job": "",
+        "id": "e1491939",
+        "source": "n5",
+        "target": "n1041509"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Fred C. Dobbs"
+        ],
+        "act_end": -708739200000,
+        "act_begin": -717638400000,
+        "job": "",
+        "id": "e1495596",
+        "source": "n5",
+        "target": "n1043065"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "source": "n0",
+        "target": "n1044463",
+        "id": "collapsedEdge_n0_n1044463_unknown_1437731406892",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Julian Osborn"
+              ],
+              "act_end": -339811200000,
+              "act_begin": -347155200000,
+              "job": "",
+              "id": "e1498791",
+              "source": "n0",
+              "target": "n1044463"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTOR"
+          },
+          {
+            "data": {
+              "end": -339811200000,
+              "begin": -347155200000,
+              "id": "e0",
+              "source": "n0",
+              "target": "n1044463"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "source": "n0",
+        "target": "n1044197",
+        "id": "collapsedEdge_n0_n1044197_unknown_1551016269882",
+        "collapsedEdges": [
+          {
+            "data": {
+              "characters": [
+                "Dick Avery"
+              ],
+              "act_end": -424569600000,
+              "act_begin": -433296000000,
+              "job": "",
+              "id": "e1498199",
+              "source": "n0",
+              "target": "n1044197"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "ACTOR"
+          },
+          {
+            "data": {
+              "end": -424569600000,
+              "begin": -433296000000,
+              "id": "e3",
+              "source": "n0",
+              "target": "n1044197"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": true,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": "KNOWN_FOR"
+          }
+        ],
+        "edgeType": "unknown",
+        "directionType": "unidirection"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "cy-expand-collapse-collapsed-edge"
+    },
+    {
+      "data": {
+        "end": 148089600000,
+        "begin": 136598400000,
+        "id": "e1",
+        "source": "n0",
+        "target": "n1046713"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "KNOWN_FOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Philip Marlowe"
+        ],
+        "act_end": -787968000000,
+        "act_begin": -796089600000,
+        "job": "",
+        "id": "e1494653",
+        "source": "n5",
+        "target": "n1042682"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTOR"
+    },
+    {
+      "data": {
+        "characters": [
+          "Countess Camilla Volta"
+        ],
+        "act_end": 930355200000,
+        "act_begin": 928713600000,
+        "job": "",
+        "id": "e1645096",
+        "source": "n1",
+        "target": "n1054989"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Nora Temple"
+        ],
+        "act_end": -686534400000,
+        "act_begin": -696988800000,
+        "job": "",
+        "id": "e1630681",
+        "source": "n1",
+        "target": "n1043000"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    },
+    {
+      "data": {
+        "characters": [
+          "Sally Ross"
+        ],
+        "act_end": 331171200000,
+        "act_begin": 323395200000,
+        "job": "",
+        "id": "e1636754",
+        "source": "n1",
+        "target": "n1048164"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": "ACTRESS"
+    }
+  ]
+}

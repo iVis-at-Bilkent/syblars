@@ -189,14 +189,15 @@ $('#downloadImage').click(function(){
 
 });
 
-$("body").on("change", "#file-input", function (e) {
+$("body").on("change", "#file-input", function (e, fileObject) {
     let fileInput = document.getElementById('file-input');
-    let file = fileInput.files[0];
+    let file = fileInput.files[0] || fileObject;
     let reader = new FileReader();
     setFileContent(file.name);
     reader.onload = async function (e) {
         $("#file-type").html('');
-        $("#sampleType").val('');
+        if(!fileObject)
+          $("#sampleType").val('');
         graphData = this.result;
         let isJSON = (file.type == 'application/json') ? 1 : 0;
         let isGraphML = (graphData.search("graphml") == -1) ? 0 : 1;
@@ -299,120 +300,6 @@ $("#save-as-png").on("click", function (evt) {
     saveImage(pngContent, "png", document.getElementById("file-name").innerHTML);
 });
 
-let loadSample = function (fileName) {
-    let convertIt;
-    function readFile() {
-        $.ajaxSetup({
-            async: false
-        });
-        jQuery.get("samples/" + fileName + ".txt", (txt) => {
-            convertIt = txt;
-        });
-        $.ajaxSetup({
-            async: true
-        })
-    }
-    readFile();
-
-    let isGraphML = (convertIt.search("graphml") === -1) ? 0 : 1;
-    let isSBGNML = (convertIt.search("sbgn") === -1) ? 0 : 1;
-    let isSBML = (convertIt.search("sbml") === -1) ? 0 : 1;    
-
-    if (!heroku) {
-        if (isGraphML)
-            url = "http://localhost:" + port + "/layout/graphml?edges=true";
-        else if (isSBGNML)
-            url = "http://localhost:" + port + "/layout/sbgnml?edges=true"
-        else if (isSBML)
-            url = "http://localhost:" + port + "/layout/sbml?edges=true"          
-        else
-            url = "http://localhost:" + port + "/layout/json?edges=true"
-    }
-    else {
-        if (isGraphML)
-            url = "https://cytoscape-layout-service.herokuapp.com/layout/graphml?edges=true";
-        else if (isSBGNML)
-            url = "https://cytoscape-layout-service.herokuapp.com/layout/sbgnml?edges=true"
-        else if (isSBML)
-            url = "https://cytoscape-layout-service.herokuapp.com/layout/sbml?edges=true"          
-        else
-            url = "https://cytoscape-layout-service.herokuapp.com/layout/json?edges=true"
-    }
-
-    let options = { 
-      layoutOptions: { name: "fcose" },
-//      imageOptions: {
-//        format: 'png',
-//        quality: 85,
-//        background: 'transparent',
-//        width: 640,
-//        height: 480
-//      }
-    };
-    
-    let graphData = convertIt;
-
-    let data;
-    if (!isGraphML && !isSBGNML && !isSBML) {
-        data = [JSON.parse(graphData), options];
-        data = JSON.stringify(data);
-    }
-    else
-        data = graphData + JSON.stringify(options);
-
-    const settings = {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'content-Type': 'text/plain',
-        },
-        body: data
-    };
-
-    fetch(url, settings)
-        .then(response => response.json())
-        .then(res => {
-            let els = [];
-            let addIt;
-            els['nodes'] = [];
-            els['edges'] = [];
-            
-//            saveImage(res["image"], "png", document.getElementById("file-name").innerHTML);            
-
-            Object.keys(res).forEach((obj) => {
-                if (res[obj].source && res[obj].target) {
-                    addIt = {
-                        data: {
-                            id: obj,
-                            source: res[obj].source,
-                            target: res[obj].target
-                        }
-                    }
-                    els['edges'].push(addIt);
-                }
-                else {
-                    addIt = {
-                        data: {
-                            id: obj,
-                            clusterID: res[obj].data.clusterID,
-                            width: res[obj].data.width,
-                            height: res[obj].data.height,
-                            parent: res[obj].data.parent
-                        },
-                        position: { x: res[obj].position.x, y: res[obj].position.y }
-                    }
-                    els['nodes'].push(addIt);
-                }
-            });
-            cytoscapeJsGraph = els;
-            refreshCytoscape(els);
-            setFileContent(fileName);
-        })
-        .catch(e => {
-            return e;
-        });
-};
-
 let fcoseLayoutProp = new FCOSELayout({
     el: '#fcose-layout-table'
 });
@@ -459,4 +346,44 @@ $("#layout-options").on("click", function (e) {
       avsdfLayoutProp.render();
       break;
   }
+});
+
+function loadXMLDoc(fileName) {
+	let xhttp;
+  if (window.XMLHttpRequest) {
+    xhttp = new XMLHttpRequest();
+  }
+  else // for IE 5/6
+  {
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.open("GET", fileName, false);
+  xhttp.send();
+  return xhttp.response;
+}
+
+function loadSample(fileName){
+	let xmlResponse = loadXMLDoc(fileName);
+  let fileObj;
+  
+  if(fileName.split('.').pop() == 'json') {
+    fileObj = new File([xmlResponse], fileName, {
+      type: "application/json"
+    });
+  }
+  else {
+    fileObj = new File([xmlResponse], fileName, {
+      type: ""
+    });
+  }
+
+	return fileObj;
+}
+
+$("#sampleType").change(function() {
+  let currentSample = $('#sampleType').val();
+  let graph = loadSample("samples/" + currentSample);
+  console.log(graph);
+  $("#file-input").trigger("change", [graph]);
+  document.getElementById("file-name").innerHTML = currentSample;
 });
