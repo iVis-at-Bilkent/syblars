@@ -1,5 +1,5 @@
 const {port, app} = require('./index.js');
 
-module.exports = app.listen(process.env.PORT, () => {
+module.exports = app.listen(port, () => {
     console.log("Listening on " + port);
 });

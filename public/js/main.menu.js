@@ -60,11 +60,11 @@ let processLayout = async function () {
     if (isGraphML)
       url = "http://localhost:" + port + "/layout/graphml?edges=true";
     else if (isSBGNML)
-      url = "http://localhost:" + port + "/layout/sbgnml?edges=true"
+      url = "http://localhost:" + port + "/layout/sbgnml?edges=true";
     else if (isSBML)
-      url = "http://localhost:" + port + "/layout/sbml?edges=true"
+      url = "http://localhost:" + port + "/layout/sbml?edges=true";
     else
-      url = "http://localhost:" + port + "/layout/json?edges=true"
+      url = "http://localhost:" + port + "/layout/json?edges=true";
   } else {
     if (isGraphML)
       url = "http://139.179.50.45:3000/layout/graphml?edges=true";
@@ -123,7 +123,7 @@ let processLayout = async function () {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'content-Type': 'text/plain',
+      'content-Type': 'text/plain'
     },
     body: data
   };
@@ -383,7 +383,6 @@ function loadSample(fileName){
 $("#sampleType").change(function() {
   let currentSample = $('#sampleType').val();
   let graph = loadSample("samples/" + currentSample);
-  console.log(graph);
   $("#file-input").trigger("change", [graph]);
   document.getElementById("file-name").innerHTML = currentSample;
 });

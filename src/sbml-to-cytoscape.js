@@ -64,12 +64,11 @@ const addSpecies = function(libsbmlInstance, model) {
 
 // add reaction nodes and corresponding edges
 const addReactions = function(model) {
-  console.log(model.getNumReactions());
   for(let i = 0; i < model.getNumReactions(); i++){
 
     let reaction = model.getReaction(i);
     let reactionParentMap = new Map();
-    console.log(reaction.getId());
+
     // add reactant->reaction edges
     for(let j = 0; j < reaction.getNumReactants(); j++){
       let reactant = reaction.getReactant(j);
