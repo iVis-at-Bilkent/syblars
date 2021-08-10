@@ -70,15 +70,15 @@ options = {
     ...
   },
   imageOptions: {
-    format: 'png',          // output format
-    background: '#ffffff',  // background color
-    width: 1280,            // desired width
-    height: 720,            // desired height
-    color: #9ecae1          // node color
+    format: 'png',              // output format
+    background: 'transparent',  // background color
+    width: 1280,                // desired width
+    height: 720,                // desired height
+    color: '#9ecae'1            // node color
   }
 }
 ```
-For supported layout options, please check the documentation of the associated layout algorithm. Image options support three output formats: `png`, `jpg` and `svg`. `color` attribute should be a hex color code for SBML, GraphML and JSON formats, and one of the following predefined color schemes for the SBGNML format: `bluescale`, `greyscale`, `red_blue`, `green_brown`, `purple_brown`, `purple_green`, `grey_red`, `black_white`.
+For supported layout options, please check the documentation of the associated layout algorithm. Image options support three output formats: `png`, `jpg` and `svg`. `background` attribute should be a hex color code or `transparent`. `color` attribute should be a hex color code for SBML, GraphML and JSON formats, and one of the following predefined color schemes for the SBGNML format: `bluescale`, `greyscale`, `red_blue`, `green_brown`, `purple_brown`, `purple_green`, `grey_red`, `black_white`.
 
 After the request is sent, the server will lay out the given graph and return the layout information in JSON format that contains node ids and their corresponding positions and dimensions and image information (in `base64uri` encoding for `png` and`jpg` formats and in `xml` for the `svg` format).
 If an error occurs, the response of the server will consist of the error's body.

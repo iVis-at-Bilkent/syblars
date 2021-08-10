@@ -131,17 +131,33 @@ app.post('/layout/:format', (req, res) => {
         headless: true
     });
 
+    imageOptions = {
+      format: options.imageOptions.format ? options.imageOptions.format : 'png', 
+      background: options.imageOptions.background ? options.imageOptions.background : 'transparent',
+      width: options.imageOptions.width ? options.imageOptions.width : 1280,
+      height: options.imageOptions.height ? options.imageOptions.height : 720,
+      color: options.imageOptions.color ? options.imageOptions.color : '#9ecae1'
+    };
+    console.log(imageOptions);
+    if(imageOptions.format == 'jpg' && imageOptions.background == "transparent") {
+      imageOptions.background = "white";
+    }
+    
+    if(imageOptions.format == 'svg' && imageOptions.background == "transparent") {
+      imageOptions.background = undefined;
+    }    
+    
     if (req.params.format === "graphml") {
       cy.graphml(data);
       cy.nodes().forEach((node) => {        
-        node.data("backgroundColor", options.imageOptions.color || "white");
+        node.data("backgroundColor", imageOptions.color);
       });
     }
     else {
       cy.add(data);
       cy.nodes().forEach((node) => {
         if (req.params.format === "json" || req.params.format === "sbml") {
-          node.data("backgroundColor", options.imageOptions.color || "white");
+          node.data("backgroundColor", imageOptions.color);
         }
         else {
           node.css("width", node.data().bbox.w || size);
@@ -213,30 +229,26 @@ app.post('/layout/:format', (req, res) => {
     let colorScheme = options.imageOptions.color || "white";
     let stylesheet = adjustStylesheet(format, colorScheme);
 
-    if(options.imageOptions) {
-        snap.start().then(function(){
-          return snap.shot({
-            elements: cy.json().elements,
-            layout: options.layoutOptions,
-            style: stylesheet,
-            resolvesTo: 'all',
-            format: options.imageOptions.format || 'png',
-            quality: 100,
-            width: options.imageOptions.width || 1280,
-            height: options.imageOptions.height || 720,
-            background: options.imageOptions.background
-          }).then(function( result ){
-            ret["image"] = result.image;
-            setJson(result);
-            return res.status(200).send(ret);
-          }).then(function(){
-            snap.stop();
-          });
-        });
-    }
-    else {
-      return res.status(200).send(ret);
-    }
+    snap.start().then(function(){
+      return snap.shot({
+        elements: cy.json().elements,
+        layout: options.layoutOptions,
+        style: stylesheet,
+        resolvesTo: 'all',
+        format: imageOptions.format,
+        quality: 100,
+        width: imageOptions.width,
+        height: imageOptions.height,
+        background: imageOptions.background
+      }).then(function( result ){
+        ret["image"] = result.image;
+        setJson(result);
+        return res.status(200).send(ret);
+      }).then(function(){
+        snap.stop();
+      });
+    });
+
 });
 
 module.exports = {

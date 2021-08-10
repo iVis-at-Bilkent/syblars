@@ -105,7 +105,7 @@ let processLayout = async function () {
     layoutOptions: layoutOptions,
     imageOptions: {
       format: imageFormat,
-      background: $('#imageBackground').val(),
+      background: !$('#transparent').is(':checked') ? $('#imageBackground').val() : "transparent",
       width: parseInt($('#imageWidth').val()),
       height: parseInt($('#imageHeight').val()),
       color: $('#colorScheme').attr("disabled") ? $('#color').val() : $('#colorScheme').val()
@@ -252,6 +252,15 @@ $("#load-file").on("click", function (e) {
 
 $("#informationModal").on("click", function (e) {
    $('#information-modal').modal({inverted: true}).modal('show');
+});
+
+$("#transparent").change(function() {
+    if(this.checked) {
+      $("#imageBackground").attr("disabled", true);
+    }
+    else {
+      $("#imageBackground").attr("disabled", false);
+    }
 });
 
 // image content is base64 data and imageType is png/jpg
