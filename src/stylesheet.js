@@ -92,12 +92,148 @@ let adjustStylesheet = function(format, colorScheme) {
           selector: 'node.reaction',
           style: {
             'shape': 'rectangle',
-            'width': 25,
-            'height': 25,
+            'width': function(node){
+              return node.data('width') ? node.data('width') : 15;
+            },
+            'height': function(node){
+              return node.data('height') ? node.data('height') : 15;
+            },
             'text-valign': 'bottom',
             'background-color': "#ffffff"
           }
-        },          
+        },
+        {
+          selector: 'node[sboTerm = 334]',
+          style: {
+            'shape': 'rhomboid'
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 253]',
+          style: {
+            'shape': 'cut-rectangle',
+            'text-valign': 'bottom'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 289]',
+          style: {
+            'shape': 'cut-rectangle',
+            'border-style': 'dashed'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 291]',
+          style: {
+            'shape': 'diamond'
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 298]',
+          style: {
+            'shape': 'ellipse',
+            'border-style': 'double'
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 243]',
+          style: {
+            'shape': 'rectangle'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 252]',
+          style: {
+            'shape': 'round-rectangle'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 327]',
+          style: {
+            'shape': 'ellipse'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 284]',
+          style: {
+            'shape': 'tag'
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 358]',
+          style: {
+            'shape': 'hexagon'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 244]',
+          style: {
+            'shape': 'vee'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 278]',
+          style: {
+            'shape': 'heptagon'
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 247]',
+          style: {
+            'shape': 'ellipse'
+          }
+        },
+        {
+          selector: 'node[sboTerm = 252]',
+          style: {
+            'shape': 'round-rectangle'
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 285]',
+          style: {
+            'shape': 'ellipse',
+            'border-width': 0 
+          }
+        },
+        {
+          selector: 'node[sboTerm = 173]',
+          style: {
+            'shape': 'ellipse',
+            'label': 'AND',
+            'text-valign': 'center',
+            'width': 30,
+            'height': 30          
+          }
+        },
+        {
+          selector: 'node[sboTerm = 174]',
+          style: {
+            'shape': 'ellipse',
+            'label': 'OR',
+            'text-valign': 'center',
+            'width': 30,
+            'height': 30           
+          }
+        },        
+        {
+          selector: 'node[sboTerm = 238]',
+          style: {
+            'shape': 'ellipse',
+            'label': 'NOT',
+            'text-valign': 'center',
+            'width': 30,
+            'height': 30
+          }
+        },
+        {
+          selector: 'node[sboTerm = 239]',
+          style: {
+            'shape': 'ellipse',
+            'width': 30,
+            'height': 30
+          }
+        },        
         {
           selector: 'edge',
           style: {
