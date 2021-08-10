@@ -3,7 +3,7 @@
 **Systems Biology Layout & Rendering Service (SyBLaRS)** is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON formats and produce corresponding images of the layouts in the backend.
 
 SyBLaRS is distributed under the [MIT License](https://github.com/iVis-at-Bilkent/syblars/blob/main/LICENSE).
-A sample server deployment along with a simple client-side demo can be found [here](https://cytoscape-ivis-layout-service.herokuapp.com/).
+A sample server deployment along with a simple client-side demo can be found [here](https://syblars.herokuapp.com).
 
 ### Setup the server
 
