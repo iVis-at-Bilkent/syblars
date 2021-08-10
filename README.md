@@ -20,6 +20,7 @@ npm install
 ```
 npm run dev
 ```
+**Note:** This service uses [Puppeteer](https://pptr.dev) to generate the output. Please refer to the [Puppeteer documentation](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#troubleshooting) to ensure that your machine is configured properly to run Chrome headlessly.
 
 ### Supported formats
 SyBLaRS supports the following input formats for graphs:
