@@ -263,6 +263,26 @@ $("#transparent").change(function() {
     }
 });
 
+// prevent imageWidth and imageHeight to get negative values
+
+let imageWidth = document.getElementById('imageWidth');
+imageWidth.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58)
+      || e.keyCode == 8)) {
+        return false;
+    }
+}
+
+let imageHeight = document.getElementById('imageHeight');
+imageHeight.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58
+      || e.keyCode == 8)) {
+        return false;
+    }
+}
+
 // image content is base64 data and imageType is png/jpg
 let saveImage = function(imageContent, imageType, fileName){  
     // see http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript

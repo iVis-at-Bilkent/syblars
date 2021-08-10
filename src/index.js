@@ -138,13 +138,21 @@ app.post('/layout/:format', (req, res) => {
       height: options.imageOptions.height ? options.imageOptions.height : 720,
       color: options.imageOptions.color ? options.imageOptions.color : '#9ecae1'
     };
-    console.log(imageOptions);
+
     if(imageOptions.format == 'jpg' && imageOptions.background == "transparent") {
       imageOptions.background = "white";
     }
     
     if(imageOptions.format == 'svg' && imageOptions.background == "transparent") {
       imageOptions.background = undefined;
+    }
+
+    if(imageOptions.width <= 0) {
+      imageOptions.width = 1280;
+    }
+
+    if(imageOptions.height <= 0) {
+      imageOptions.height = 720;
     }    
     
     if (req.params.format === "graphml") {
