@@ -238,6 +238,8 @@ app.post('/layout/:format', (req, res) => {
             ret["image"] = result.image;
             setJson(result);
             return res.status(200).send(ret);
+          }).then(function(){
+            snap.stop();
           });
         });
     }
