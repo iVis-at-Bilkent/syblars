@@ -46,7 +46,7 @@ Request to layout the graph:
 POST /layout/:file_format   // file_format: sbgnml, sbml, graphml, json
 ```
 needs to be sent to server address, and the type of the request must be 'text' or 'text/plain'.
-By default, nodes with their positions (x,y) and their dimensions (width, height) will be returned. If you want edges to be returned as well, you should set 'edges' option to the request, which is false by default:
+By default, nodes with their positions (x, y) and their dimensions (width, height) will be returned. If you want edges to be returned as well, you should set 'edges' option to the request, which is false by default:
 ```
 POST /layout/:file_format?edges=true
 ```
@@ -71,7 +71,7 @@ options = {
   imageOptions: {
     format: 'png',          // output format
     background: '#ffffff',  // background color
-    width: 1080,            // desired width
+    width: 1280,            // desired width
     height: 720,            // desired height
     color: #9ecae1          // node color
   }
