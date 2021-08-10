@@ -34,10 +34,12 @@ const addCompartments = function (libsbmlInstance, model) {
   
   for(let i = 0; i < model.getNumCompartments(); i++){
     let compartment = model.getCompartment(i);
+    if(compartment.getId() !== "default") {
     let compartmentData = {"id": compartment.getId(), "label": compartment.getName()};
-    compartmentData.width = layout ? layout.getCompartmentGlyph(i).getBoundingBox().width : 100;
-    compartmentData.height = layout ? layout.getCompartmentGlyph(i).getBoundingBox().height : 100;
-    resultJson.push({"data": compartmentData, "group": "nodes", "classes": "compartment"});
+      compartmentData.width = layout ? layout.getCompartmentGlyph(i).getBoundingBox().width : 100;
+      compartmentData.height = layout ? layout.getCompartmentGlyph(i).getBoundingBox().height : 100;
+      resultJson.push({"data": compartmentData, "group": "nodes", "classes": "compartment"});
+    }
   }
 };
 

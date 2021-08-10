@@ -63,11 +63,15 @@ let adjustStylesheet = function(format, colorScheme) {
             'background-color': function(node){
               return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
             },
-            'width': 64,
-            'height': 64,
+            'width': function(node){
+              return node.data('width') ? node.data('width') : 100;
+            },
+            'height': function(node){
+              return node.data('height') ? node.data('height') : 50;
+            },
             'text-valign': 'center',
             'text-wrap': 'wrap',
-            'font-size': 20,
+            'font-size': 12,
             "border-width": 2,
             'border-color': '#555555',
             'label': function(node){
@@ -137,6 +141,12 @@ let adjustStylesheet = function(format, colorScheme) {
             },
             "border-width": 2,
             'border-color': '#555555',
+            'width': function(node){
+              return node.data('width') ? node.data('width') : 30;
+            },
+            'height': function(node){
+              return node.data('height') ? node.data('height') : 30;
+            },            
             'label': function(node){
               if(node.data('label')) {
                 return node.data('label');

@@ -15,7 +15,9 @@
         "birth_year": 1899,
         "id": "n0",
         "parent": "c0",
-        "label": "Fred Astaire"
+        "label": "Fred Astaire",
+        "width": 50,
+        "height": 50
       },
       "position": {
         "x": 1026.8798873660712,
@@ -825,7 +827,9 @@
         "birth_year": 1924,
         "id": "n1",
         "parent": "c1",
-        "label": "Lauren Bacall"
+        "label": "Lauren Bacall",
+        "width": 50,
+        "height": 50        
       },
       "position": {
         "x": 789.1092991763803,
@@ -1436,7 +1440,9 @@
         "birth_year": 1934,
         "id": "n2",
         "parent": "c2",
-        "label": "Brigitte Bardot"
+        "label": "Brigitte Bardot",
+        "width": 50,
+        "height": 50        
       },
       "position": {
         "x": 247.9121741511044,
@@ -1642,7 +1648,9 @@
         "birth_year": 1949,
         "id": "n3",
         "parent": "c3",
-        "label": "John Belushi"
+        "label": "John Belushi",
+        "width": 50,
+        "height": 50        
       },
       "position": {
         "x": 1435.0298690380616,
@@ -1925,7 +1933,9 @@
         "birth_year": 1899,
         "id": "n5",
         "parent": "c5",
-        "label": "Humphrey Bogart"
+        "label": "Humphrey Bogart",
+        "width": 50,
+        "height": 50        
       },
       "position": {
         "x": 317.7585321360255,

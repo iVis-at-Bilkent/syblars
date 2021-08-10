@@ -133,29 +133,20 @@ app.post('/layout/:format', (req, res) => {
 
     if (req.params.format === "graphml") {
       cy.graphml(data);
-      cy.filter((element, i) => {
-          return element.isNode();
-      }).forEach((node) => {
-          node.css("width", parseInt(node.data('width')) || size);
-          node.css("height", parseInt(node.data('height')) || size);
-          node.data("backgroundColor", options.imageOptions.color || "white");
+      cy.nodes().forEach((node) => {        
+        node.data("backgroundColor", options.imageOptions.color || "white");
       });
     }
     else {
       cy.add(data);
-
-      cy.filter((element, i) => {
-          return element.isNode();
-      }).forEach((node) => {
-          if (req.params.format === "json" || req.params.format === "sbml") {
-              node.css("width", node.data().width || size);
-              node.css("height", node.data().height || size);
-              node.data("backgroundColor", options.imageOptions.color || "white");
-          }
-          else {
-              node.css("width", node.data().bbox.w || size);
-              node.css("height", node.data().bbox.h || size);
-          }
+      cy.nodes().forEach((node) => {
+        if (req.params.format === "json" || req.params.format === "sbml") {
+          node.data("backgroundColor", options.imageOptions.color || "white");
+        }
+        else {
+          node.css("width", node.data().bbox.w || size);
+          node.css("height", node.data().bbox.h || size);
+        }
       });
     }
     
