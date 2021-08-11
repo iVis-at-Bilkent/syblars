@@ -9,9 +9,9 @@ Here is a sample server deployment along with a simple client-side demo:
 <a href="https://syblars.herokuapp.com"><img src="https://www.cs.bilkent.edu.tr/~ivis/images/demo1.png" height=42px></a>
 </p>
 
-## Setup the server
+## Setup of a service
 
-In order to deploy and run a local instance of the server, please follow the steps below:
+In order to deploy and run a local instance of the service, please follow the steps below:
 
 ### Installation
 ```
@@ -91,8 +91,8 @@ If an error occurs, the response of the server will consist of the error's body.
 
 SyBLaRS is mainly developed based on [Cytoscape.js](https://js.cytoscape.org) and its extensions (see the `package.json` file for a complete listing).
 
-Icons in client demo made by [Freepik](http://www.freepik.com), [Flaticon](https://www.flaticon.com) and licensed with 
-[Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+Icons in the client demo are made by [Freepik](http://www.freepik.com) and [Flaticon](https://www.flaticon.com) licensed with 
+[Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/).
 
 Third-party libraries used in web service:
 [sbgnml-to-cytoscape](https://www.npmjs.com/package/sbgnml-to-cytoscape),
