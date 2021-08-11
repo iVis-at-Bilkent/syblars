@@ -5,6 +5,7 @@ heroku = !(location.hostname === "localhost");
 let graphData; // data read from the file
 let blobData; // blob data for image
 let imageFormat;
+let fileType; 
 
 let setFileContent = function (fileName) {
     let span = document.getElementById('file-name');
@@ -43,12 +44,6 @@ $("#save-file-json").on("click", function (e) {
     let filename = "" + new Date().getTime() + ".json";
     saveAs(blob, filename);
 });
-
-//$('#resultImage').click(function(){
-//
-//  window.open($(this)[0].src, '_blank');
-//
-//});
 
 let processLayout = async function () {
   
@@ -204,12 +199,14 @@ $("body").on("change", "#file-input", function (e, fileObject) {
         let isSBGNML = (graphData.search("sbgn") == -1) ? 0 : 1;
         let isSBML = (graphData.search("sbml") == -1) ? 0 : 1;        
         if(isGraphML) {
+          fileType = "graphml";
           $("#file-type").html("GraphML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
         }
         else if(isSBGNML) {
+          fileType = "sbgnml";
           $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", false);
           $("#color").attr("disabled", true);
@@ -217,18 +214,21 @@ $("body").on("change", "#file-input", function (e, fileObject) {
           $("#pngRadio").prop("checked", true);
         }
         else if(isSBML) {
+          fileType = "sbml";
           $("#file-type").html("SBML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
         }
         else if(isJSON) {
+          fileType = "json";
           $("#file-type").html("JSON file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
           $("#svgRadio").attr("disabled", false);
         }
         else {
+          fileType = undefined;
           $("#file-type").html("File format is not valid! <br> Load SBGNML, SBML, GraphML or JSON.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
@@ -252,6 +252,25 @@ $("#load-file").on("click", function (e) {
 
 $("#informationModal").on("click", function (e) {
    $('#information-modal').modal({inverted: true}).modal('show');
+});
+
+$("#imageSettingsDefault").on("click", function (e) {
+   $("input[value='png']").prop("checked", true);
+   $("#imageWidth").val(1280);
+   $("#imageHeight").val(720);
+   $("#color").val("#9ecae1");
+   $("#colorScheme").val("bluescale");
+   if(fileType == "sbgnml") {
+     $("#color").attr("disabled", true);
+     $("#colorScheme").attr("disabled", false);
+     $("#svgRadio").attr("disabled", true);
+   } else {
+     $("#color").attr("disabled", false);
+     $("#colorScheme").attr("disabled", true);     
+   }
+   $("#imageBackground").val("#ffffff");
+   $("#imageBackground").attr("disabled", true);
+   $("#transparent").prop("checked", true);
 });
 
 $("#transparent").change(function() {

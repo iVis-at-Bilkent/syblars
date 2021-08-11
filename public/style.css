@@ -6,6 +6,10 @@ label {
   cursor: pointer;
 }
 
+#imageSettingsDefault:hover {
+  cursor: pointer;
+}
+
 select:required:invalid {
   color: gray;
 }

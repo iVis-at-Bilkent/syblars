@@ -119,7 +119,7 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
           }        
         }
       }
-      console.log(edgeArray);
+
       // infer nesting
       let areaMap = new Map();
       compoundMap.forEach(function(value, key){
