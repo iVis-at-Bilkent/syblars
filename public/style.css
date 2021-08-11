@@ -10,6 +10,27 @@ label {
   cursor: pointer;
 }
 
+#about {
+  color: #d67664
+}
+
+#imageSettingsDefault:hover {
+  background-color: #eaeaea !important;
+  border-radius: 3px;
+}
+
+#downloadJSON:hover {
+  background-color: #eaeaea !important;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#downloadImage:hover {
+  background-color: #eaeaea !important;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 select:required:invalid {
   color: gray;
 }

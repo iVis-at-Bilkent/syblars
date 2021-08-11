@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="five wide column">
-            <h3 class="ui header">Image Settings <img class="ui image" id="imageSettingsDefault" title="Reset defaults" src="settings.svg" style="height: 20px; width: 20px; margin-right: 55px; float: right"></h3>
+            <h3 class="ui header">Image Settings <img class="ui image" id="imageSettingsDefault" title="Reset to default" src="settings.svg" style="height: 20px; width: 20px; margin-right: 55px; float: right"></h3>
             <div class="ui tiny form">
               <div class="inline fields" id="formatRadios">
                 <label>Format:</label>
@@ -166,10 +166,8 @@
             <div class="ui form">
               <div class="field">
                 <div class="inline fields">
-                  <h3 class="ui header" style="margin-bottom: 0; margin-right: 10px">JSON</h3>
-                  <button class="ui icon mini button" id="downloadJSON" title="Download JSON file">
-                    <i class="download icon"></i>               
-                  </button> 
+                  <h3 class="ui header" style="margin-bottom: -3px; margin-right: 10px">JSON</h3>
+                  <img class="ui image" id="downloadJSON" src="download.svg" title="Download JSON file" style="height: 20px; width: 20px;">
                 </div>
                 <textarea id="resultText" rows="19"></textarea>
               </div>  
@@ -179,10 +177,8 @@
             <div class="ui form">
               <div class="field">
                 <div class="inline fields">
-                  <h3 class="ui header" style="margin-bottom: 0; margin-right: 10px">Image</h3>
-                  <button class="ui icon mini button" id="downloadImage" title="Download image">
-                    <i class="download icon"></i>               
-                  </button> 
+                  <h3 class="ui header" style="margin-bottom: -3px; margin-right: 10px">Image</h3>
+                  <img class="ui image" id="downloadImage" src="download.svg" title="Download image" style="height: 20px; width: 20px;"> 
                 </div>
                 <div id="imageArea" class="ui segment" style="width: 615px; height: 345px;">
                   <img style="cursor:pointer;" class="ui centered huge image" id="resultImage" onclick="window.open(this.src, '_blank');">
@@ -203,7 +199,7 @@
       
       <div id="information-modal" class="ui small modal information" >
         <i class="close icon"></i>
-        <div class="ui center aligned header">
+        <div class="ui center aligned header" id="about">
           About
         </div>        
         <div class="content" style="text-align: justify;">
