@@ -91,7 +91,7 @@ If an error occurs, the response of the server will consist of the error's body.
 
 SyBLaRS is mainly developed based on [Cytoscape.js](https://js.cytoscape.org) and its extensions (see the `package.json` file for a complete listing).
 
-Icons in client demo made by [Freepik](http://www.freepik.com) and licensed with 
+Icons in client demo made by [Freepik](http://www.freepik.com), [Flaticon](https://www.flaticon.com) and licensed with 
 [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
 
 Third-party libraries used in web service:
