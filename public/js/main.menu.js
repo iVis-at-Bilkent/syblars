@@ -94,6 +94,9 @@ let processLayout = async function () {
     case 'avsdf':
       layoutOptions = avsdfLayoutProp.getProperties();
       break;
+    case 'preset':
+      layoutOptions = presetLayoutProp.getProperties();
+      break;      
   }
 
   let options = {
@@ -372,6 +375,10 @@ let avsdfLayoutProp = new AVSDFLayout({
     el: '#avsdf-layout-table'
 });
 
+let presetLayoutProp = new PRESETLayout({
+    el: '#preset-layout-table'
+});
+
 $("#layout-options").on("click", function (e) {
   let currentLayout = $('#layoutType').val();
   switch (currentLayout) {
@@ -393,6 +400,9 @@ $("#layout-options").on("click", function (e) {
     case 'avsdf':
       avsdfLayoutProp.render();
       break;
+    case 'preset':
+      presetLayoutProp.render();
+      break;      
   }
 });
 

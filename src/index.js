@@ -157,11 +157,22 @@ app.post('/layout/:format', (req, res) => {
     
     if (req.params.format === "graphml") {
       cy.graphml(data);
+      cy.nodes().forEach(function(node) {
+        node.position({x: parseFloat(node.data("x")), y: parseFloat(node.data("y"))});
+      });      
       cy.nodes().forEach((node) => {        
         node.data("backgroundColor", imageOptions.color);
       });
     }
     else {
+      if(req.params.format === "sbgnml") {  // add position info if exists
+        let sbgnNodes = data["nodes"];
+        sbgnNodes.forEach(function(node) {
+          if(node["data"].bbox) {
+            node["position"] = {x: node["data"].bbox.x, y: node["data"].bbox.y};
+          }
+        });
+      }
       cy.add(data);
       cy.nodes().forEach((node) => {
         if (req.params.format === "json" || req.params.format === "sbml") {

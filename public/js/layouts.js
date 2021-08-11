@@ -158,6 +158,7 @@ let CISELayout = Backbone.View.extend({
     clusters: [],
     randomize: true,
     animate: false,
+    nodeDimensionsIncludeLabels: false,
     packComponents: true,
     allowNodesInsideCircle: false,    
     padding: 30,
@@ -194,6 +195,7 @@ let CISELayout = Backbone.View.extend({
     $(self.el).modal({inverted: true}).modal('show');
 
     $(document).off("click", "#save-layout3").on("click", "#save-layout3", function (evt) {
+      self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels3").checked;
       self.currentLayoutProperties.packComponents = document.getElementById("packComponents3").checked;
       self.currentLayoutProperties.allowNodesInsideCircle = document.getElementById("allowNodesInsideCircle3").checked;      
       self.currentLayoutProperties.padding = Number(document.getElementById("padding3").value);
@@ -406,80 +408,43 @@ let AVSDFLayout = Backbone.View.extend({
   }
 });
 
-/*
-var COSEBilkentLayout = Backbone.View.extend({
+let PRESETLayout = Backbone.View.extend({
   defaultLayoutProperties: {
-    name: 'cose-bilkent',
-    ready: function () {
-    },
-    stop: function () {
-    },
-    refresh: 0,
-    fit: true,
-    padding: 10,
-    incremental: true,
-    debug: false,
-    nodeRepulsion: 4500,
-    nodeOverlap: 10,
-    idealEdgeLength: 50,
-    edgeElasticity: 0.45,
-    nestingFactor: 0.1,
-    gravity: 0.4,
-    numIter: 2500,
-    initialTemp: 200,
-    coolingFactor: 0.95,
-    minTemp: 1,
-    tile: true
+    name: "preset",
+    padding: 30
   },
   currentLayoutProperties: null,
   initialize: function () {
-    var self = this;
+    let self = this;
     self.copyProperties();
-    var temp = _.template($("#cose-bilkent-settings-template").html());
+    let temp = _.template($("#preset-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
   },
   copyProperties: function () {
     this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
   },
+  getProperties: function () {
+    return this.currentLayoutProperties;
+  },  
   applyLayout: async function () {
-    console.log("cose-bilkent layout is applied");
     await applyLayoutFunction(this);
   },
   render: function () {
-    var self = this;
-    var temp = _.template($("#cose-bilkent-settings-template").html());
+    let self = this;
+    let temp = _.template($("#preset-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
     $(self.el).html(self.template);
 
-    $(self.el).dialog();
+    $(self.el).modal({inverted: true}).modal('show');
 
-    $("#save-layout4").on("click", function (evt) {
-      self.currentLayoutProperties.nodeRepulsion = Number(document.getElementById("node-repulsion4").value);
-      self.currentLayoutProperties.nodeOverlap = Number(document.getElementById("node-overlap4").value);
-      self.currentLayoutProperties.idealEdgeLength = Number(document.getElementById("ideal-edge-length4").value);
-      self.currentLayoutProperties.edgeElasticity = Number(document.getElementById("edge-elasticity4").value);
-      self.currentLayoutProperties.nestingFactor = Number(document.getElementById("nesting-factor4").value);
-      self.currentLayoutProperties.gravity = Number(document.getElementById("gravity4").value);
-      self.currentLayoutProperties.numIter = Number(document.getElementById("num-iter4").value);
-      // self.currentLayoutProperties.animate = document.getElementById("animate4").checked;
-      self.currentLayoutProperties.refresh = Number(document.getElementById("refresh4").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit4").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding4").value);
-      self.currentLayoutProperties.debug = document.getElementById("debug4").checked;
-      self.currentLayoutProperties.initialTemp = Number(document.getElementById("initialTemp4").value);
-      self.currentLayoutProperties.minTemp = Number(document.getElementById("minTemp4").value);
-      self.currentLayoutProperties.coolingFactor = Number(document.getElementById("coolingFactor4").value);
-      self.currentLayoutProperties.incremental = document.getElementById("incremental4").checked;
-      self.currentLayoutProperties.tile = document.getElementById("tile4").checked;
-
-
-      $(self.el).dialog('close');
-
+    $(document).off("click", "#save-layout7").on("click", "#save-layout7", function (evt) {
+      self.currentLayoutProperties.padding = Number(document.getElementById("padding7").value);
+      $(self.el).modal('hide');
     });
 
-    $("#default-layout4").on("click", function (evt) {
+    $(document).off("click", "#default-layout7").on("click", "#default-layout7", function (evt) {
       self.copyProperties();
-      var temp = _.template($("#cose-bilkent-settings-template").html());
+      let temp = _.template($("#preset-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
       $(self.el).html(self.template);
     });
@@ -487,339 +452,3 @@ var COSEBilkentLayout = Backbone.View.extend({
     return this;
   }
 });
-var COSELayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: 'cose',
-    ready: function () {
-    },
-    stop: function () {
-    },
-    refresh: 4,
-    fit: true,
-    padding: 30,
-    boundingBox: undefined,
-    randomize: true,
-    debug: false,
-    nodeRepulsion: 400000,
-    nodeOverlap: 10,
-    idealEdgeLength: 10,
-    edgeElasticity: 100,
-    nestingFactor: 5,
-    gravity: 250,
-    numIter: 100,
-    initialTemp: 200,
-    coolingFactor: 0.95,
-    minTemp: 1
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = self.template = _.template($("#cose-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("Cose layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = self.template = _.template($("#cose-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout").on("click", function (evt) {
-      self.currentLayoutProperties.nodeRepulsion = Number(document.getElementById("node-repulsion").value);
-      self.currentLayoutProperties.nodeOverlap = Number(document.getElementById("node-overlap").value);
-      self.currentLayoutProperties.idealEdgeLength = Number(document.getElementById("ideal-edge-length").value);
-      self.currentLayoutProperties.edgeElasticity = Number(document.getElementById("edge-elasticity").value);
-      self.currentLayoutProperties.nestingFactor = Number(document.getElementById("nesting-factor").value);
-      self.currentLayoutProperties.gravity = Number(document.getElementById("gravity").value);
-      self.currentLayoutProperties.numIter = Number(document.getElementById("num-iter").value);
-      self.currentLayoutProperties.refresh = Number(document.getElementById("refresh").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding").value);
-      self.currentLayoutProperties.randomize = document.getElementById("randomize").checked;
-      self.currentLayoutProperties.debug = document.getElementById("debug").checked;
-      self.currentLayoutProperties.initialTemp = Number(document.getElementById("initialTemp").value);
-      self.currentLayoutProperties.minTemp = Number(document.getElementById("minTemp").value);
-
-
-      $(self.el).dialog('close');
-
-    });
-
-    $("#default-layout").on("click", function (evt) {
-      self.copyProperties();
-      var temp = self.template = _.template($("#cose-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-  }
-});
-
-var ARBORLayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: 'arbor',
-    maxSimulationTime: 4000, // max length in ms to run the layout
-    fit: true, // on every layout reposition of nodes, fit the viewport
-    padding: 30, // padding around the simulation
-    boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-    ready: undefined, // callback on layoutready
-    stop: undefined, // callback on layoutstop
-    repulsion: undefined,
-    stiffness: undefined,
-    friction: undefined,
-    gravity: true,
-    fps: undefined,
-    precision: undefined,
-    nodeMass: undefined,
-    edgeLength: undefined,
-    stepSize: 0.1, // smoothing of arbor bounding box
-    stableEnergy: function (energy) {
-      var e = energy;
-      return (e.max <= 0.5) || (e.mean <= 0.3);
-    },
-    // infinite layout options
-    infinite: false // overrides all other options for a forces-all-the-time mode
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#arbor-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("Arbor layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#arbor-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout2").on("click", function (evt) {
-      self.currentLayoutProperties.maxSimulationTime = Number(document.getElementById("maxSimulationTime2").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit2").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding2").value);
-      self.currentLayoutProperties.gravity = document.getElementById("gravity2").checked;
-      self.currentLayoutProperties.stepSize = Number(document.getElementById("stepSize2").value);
-      self.currentLayoutProperties.infinite = document.getElementById("infinite2").checked;
-
-
-      $(self.el).dialog('close');
-    });
-
-    $("#default-layout2").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#arbor-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-  }
-});
-var SPRINGYLayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: 'springy',
-    maxSimulationTime: 4000, // max length in ms to run the layout
-    fit: true, // whether to fit the viewport to the graph
-    padding: 30, // padding on fit
-    boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-    random: false, // whether to use random initial positions
-    infinite: true, // overrides all other options for a forces-all-the-time mode
-    ready: undefined, // callback on layoutready
-    stop: undefined, // callback on layoutstop
-    stiffness: 400,
-    repulsion: 400,
-    damping: 0.5
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#springy-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("springy layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#springy-settings-template").html());
-    self.template = temp(self.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout3").on("click", function (evt) {
-      self.currentLayoutProperties.maxSimulationTime = Number(document.getElementById("maxSimulationTime3").value);
-      self.currentLayoutProperties.fit = document.getElementById("fit3").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding3").value);
-      self.currentLayoutProperties.random = document.getElementById("random3").checked;
-      self.currentLayoutProperties.infinite = document.getElementById("infinite3").checked;
-      self.currentLayoutProperties.stiffness = Number(document.getElementById("stiffness3").value);
-      self.currentLayoutProperties.repulsion = Number(document.getElementById("repulsion3").value);
-      self.currentLayoutProperties.damping = Number(document.getElementById("damping3").value);
-
-      $(self.el).dialog('close');
-    });
-
-    $("#default-layout3").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#springy-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-  }
-});
-
-
-
-var EULERLayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: "euler",
-    fit: true,
-    padding: 30,
-    gravity: -1.2,
-    pull: 0.001,
-    theta: 0.666,
-    dragCoeff: 0.02,
-    movementThreshold: 1,
-    timeStep: 20,
-    refresh: 10,
-    maxIterations: 1000,
-    maxSimulationTime: 4000,
-    boundingBox: undefined,
-    randomize: true
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#euler-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("Euler layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#euler-settings-template").html());
-    let crossingMinimizationOption = '';
-
-    self.template = temp(this.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout10").on("click", function (evt) {
-      self.currentLayoutProperties.fit = document.getElementById("fit10").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding10").value);
-      self.currentLayoutProperties.gravity = Number(document.getElementById("gravity10").value);
-      self.currentLayoutProperties.pull = Number(document.getElementById("pull10").value);
-      self.currentLayoutProperties.theta = Number(document.getElementById("theta10").value);
-      self.currentLayoutProperties.dragCoeff = Number(document.getElementById("dragCoeff10").value);
-      self.currentLayoutProperties.movementThreshold = Number(document.getElementById("movementThreshold10").value);
-      self.currentLayoutProperties.timeStep = Number(document.getElementById("timeStep10").value);
-      self.currentLayoutProperties.refresh = Number(document.getElementById("refresh10").value);
-      self.currentLayoutProperties.maxIterations = Number(document.getElementById("maxIterations10").value);
-      self.currentLayoutProperties.maxSimulationTime = Number(document.getElementById("maxSimulationTime10").value);
-      self.currentLayoutProperties.randomize = document.getElementById("randomize10").checked;
-
-      $(self.el).dialog('close');
-    });
-
-
-    $("#default-layout10").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#euler-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-  }
-});
-var SPREADLayout = Backbone.View.extend({
-  defaultLayoutProperties: {
-    name: "spread",
-    fit: true,
-    minDist: 20,
-    padding: 20,
-    expandingFactor: -1.0,
-    maxExpandIterations: 4,
-    randomize: false
-  },
-  currentLayoutProperties: null,
-  initialize: function () {
-    var self = this;
-    self.copyProperties();
-    var temp = _.template($("#spread-settings-template").html());
-    self.template = temp(this.currentLayoutProperties);
-  },
-  copyProperties: function () {
-    this.currentLayoutProperties = _.clone(this.defaultLayoutProperties);
-  },
-  applyLayout: async function () {
-    console.log("spread layout is applied");
-    await applyLayoutFunction(this);
-  },
-  render: function () {
-    var self = this;
-    var temp = _.template($("#spread-settings-template").html());
-    let crossingMinimizationOption = '';
-
-    self.template = temp(this.currentLayoutProperties);
-    $(self.el).html(self.template);
-
-    $(self.el).dialog();
-
-    $("#save-layout11").on("click", function (evt) {
-      self.currentLayoutProperties.fit = document.getElementById("fit11").checked;
-      self.currentLayoutProperties.padding = Number(document.getElementById("padding11").value);
-      self.currentLayoutProperties.maxExpandIterations = Number(document.getElementById("maxExpandIterations11").value);
-      self.currentLayoutProperties.randomize = document.getElementById("randomize11").checked;
-      self.currentLayoutProperties.minDist = Number(document.getElementById("minDist11").value);
-      self.currentLayoutProperties.expandingFactor = Number(document.getElementById("expandingFactor11").value);
-
-      $(self.el).dialog('close');
-    });
-
-
-    $("#default-layout11").on("click", function (evt) {
-      self.copyProperties();
-      var temp = _.template($("#spread-settings-template").html());
-      self.template = temp(self.currentLayoutProperties);
-      $(self.el).html(self.template);
-    });
-
-    return this;
-  }
-});
-*/

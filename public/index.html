@@ -75,7 +75,8 @@
                     <option value="cise">CiSE</option>
                     <option value="dagre">Dagre</option>
                     <option value="klay">Klay</option>
-                    <option value="avsdf">Avsdf</option>                    
+                    <option value="avsdf">Avsdf</option>
+                    <option value="preset">Preset</option>                     
                   </select>
                 </div>
                 <div class="six wide field">
@@ -242,6 +243,9 @@
       </div>
       <div id="avsdf-layout-table" class="ui mini modal small" >
           <!-- avsdf layout table will be shown here -->
+      </div>
+      <div id="preset-layout-table" class="ui mini modal small" >
+          <!-- preset layout table will be shown here -->
       </div>      
     </div>
     
@@ -632,6 +636,15 @@
       <thead>
         <tr><th colspan="2" style="font-size:18px">CiSE Layout Options</th>
       </tr></thead>
+      
+      <tr style="height: 32.4px;">
+        <td>
+          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
+        </td>
+        <td class="centered">
+          <input id="nodeDimensionsIncludeLabels3" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
+        </td>
+      </tr>      
       
       <tr style="height: 32.4px;">
         <td>
@@ -1109,7 +1122,36 @@
       </tr>
       
       </table>
-    </script>                   
+    </script>
+    
+    <script type="text/template" id="preset-settings-template">
+      <table class="ui single line compact table layoutTable">
+      <thead>
+        <tr><th colspan="2" style="font-size:18px">Preset Layout Options</th>
+      </tr></thead>     
+
+      <tr>
+        <td>
+          <span class="add-on layout-text"> Padding </span>
+        </td>
+        <td style="float: right">
+          <div class="ui tiny form tinier" >
+            <div class="field">
+              <input id="padding7" style="float: right" type="number" min="0" value = <%= padding %> >
+            </div>
+          </div>         
+        </td>
+      </tr>
+      
+      <tr id="layout-option-buttons7" class="layout-option-buttons">
+        <td colspan=2>
+          <button class="ui button" id="default-layout7">Default</button>
+          <button class="ui primary button" id="save-layout7" style="float: right">Save</button>
+        </td>
+      </tr>
+      
+      </table>
+    </script>    
    
     <script>
       let port = window.location.port;
