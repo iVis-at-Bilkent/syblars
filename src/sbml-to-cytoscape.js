@@ -91,11 +91,11 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
           let speciesReferenceGlyph = reactionGlyph.getSpeciesReferenceGlyph(j);
           let role = speciesReferenceGlyph.getRole();
           if(role === 1 || role === 3) {
-            let edgeData = {id: reactionGlyph.getReactionId() + "_" + speciesReferenceGlyph.getSpeciesGlyphId(), source: reactionGlyph.getReactionId(), target: speciesReferenceGlyph.getSpeciesGlyphId()};
+            let edgeData = {id: reactionGlyph.getReactionId() + "_" + speciesReferenceGlyph.getSpeciesGlyphId(), source: speciesReferenceGlyph.getSpeciesGlyphId(), target: reactionGlyph.getReactionId()};
             edgeArray.push({"data": edgeData, "group": "edges", "classes": "reactantEdge"});
           }
           else if(role === 2 || role === 4) {
-            let edgeData = {id: speciesReferenceGlyph.getSpeciesGlyphId() + "_" + reactionGlyph.getReactionId(), source: speciesReferenceGlyph.getSpeciesGlyphId(), target: reactionGlyph.getReactionId()};
+            let edgeData = {id: speciesReferenceGlyph.getSpeciesGlyphId() + "_" + reactionGlyph.getReactionId(), source: reactionGlyph.getReactionId(), target: speciesReferenceGlyph.getSpeciesGlyphId()};
             edgeArray.push({"data": edgeData, "group": "edges", "classes": "productEdge"});
           }
           else if(role === 5 || role === 6 || role === 7) {

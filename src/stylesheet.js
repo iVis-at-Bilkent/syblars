@@ -125,7 +125,11 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node[sboTerm = 291]',
           style: {
-            'shape': 'diamond'
+            'shape': 'polygon',
+            'shape-polygon-points': "-1, 1, 1, -1, 0.625, -0.625, 0.5, -0.75, 0.25, -0.875,\n\
+              0, -0.875, -0.25, -0.875, -0.5, -0.75, -0.625, -0.625, -0.75, -0.375, -0.875, 0,\n\
+              -0.75, 0.375, -0.625, 0.625, -0.5, 0.75, -0.25, 0.875, 0, 0.875, 0.25, 0.875,\n\
+               0.5, 0.75, 0.625, 0.625, 0.75, 0.375, 0.875, 0, 0.75, -0.375, 0.625, -0.625"
           }
         },        
         {
@@ -156,7 +160,9 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node[sboTerm = 284]',
           style: {
-            'shape': 'tag'
+            'shape': 'polygon',
+            'shape-polygon-points': "-1, -0.8, -0.96, -0.86, -0.87, -0.96, -0.8, -1,\n\
+               0.25, -1, 0.31, -0.96, 0.41, -0.86, 0.45, -0.8, 0.45, 0.8, 0.49, 0.86, 0.59, 0.96, 0.7, 1, 0.8, 1, 0.86, 0.96, 0.96, 0.86, 1, 0.8, 1, -0.8, 0.96, -0.86, 0.86, -0.96, 0.8, -1, 0.65, -1, 0.59, -0.96, 0.49, -0.86, 0.45, -0.8, 0.45, 0.8, 0.41, 0.86, 0.31, 0.96, 0.25, 1, -0.8, 1, -0.84, 0.96, -0.96, 0.86, -1, 0.8"
           }
         },        
         {
@@ -168,13 +174,15 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node[sboTerm = 244]',
           style: {
-            'shape': 'vee'
+            'shape': 'polygon',
+            'shape-polygon-points': "-1, -1, 0, -0.6, 1, -1, 1, 0.6, 0, 1, -1, 0.6"
           }
         },
         {
           selector: 'node[sboTerm = 278]',
           style: {
-            'shape': 'heptagon'
+            'shape': 'polygon',
+            'shape-polygon-points': "-0.5, -1, 1, -1, 0.5, 1, -1, 1"
           }
         },        
         {
