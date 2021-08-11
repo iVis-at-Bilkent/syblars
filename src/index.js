@@ -156,10 +156,12 @@ app.post('/layout/:format', (req, res) => {
     }    
     
     if (req.params.format === "graphml") {
-      cy.graphml(data);
-      cy.nodes().forEach(function(node) {
-        node.position({x: parseFloat(node.data("x")), y: parseFloat(node.data("y"))});
-      });      
+      cy.graphml({layoutBy: function(){
+        cy.nodes().forEach(function(node) {
+          node.position({x: parseFloat(node.data("x")), y: parseFloat(node.data("y"))});
+        }); 
+      }});
+      cy.graphml(data);     
       cy.nodes().forEach((node) => {        
         node.data("backgroundColor", imageOptions.color);
       });
