@@ -49,6 +49,7 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
 
       let speciesMap = new Map();
       let speciesNodeMap = new Map();
+      let speciesGlyphIdSpeciesIdMap = new Map();
 
       // traverse species
       for(let i = 0; i < model.getNumSpecies(); i++){
@@ -59,6 +60,7 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
       // traverse species glyphs
       for(let i = 0; i < layout.getNumSpeciesGlyphs(); i++){
         let speciesGlyph = layout.specglyphs[i];
+        speciesGlyphIdSpeciesIdMap.set(speciesGlyph.getId(), speciesGlyph.getSpeciesId());
         let bbox = speciesGlyph.getBoundingBox();
         let data = {id: speciesGlyph.getId(), label: speciesMap.get(speciesGlyph.getSpeciesId())[0], compref: speciesMap.get(speciesGlyph.getSpeciesId())[0],
           sboTerm: speciesMap.get(speciesGlyph.getSpeciesId())[2], width: bbox.width, height: bbox.height};
@@ -71,11 +73,18 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
 
       let reactionMap = new Map();
       let reactionNodeMap = new Map();
+      let reactionSpeciesModifierMap = new Map();
 
       // traverse reactions
       for(let i = 0; i < model.getNumReactions(); i++){
         let reaction = model.getReaction(i);
         reactionMap.set(reaction.getId(), [reaction.getName(), reaction.getSBOTerm()]);
+        reactionSpeciesModifierMap.set(reaction.getId(), {});
+        // fill reactionSpeciesModifierMap
+        for(let l = 0; l < reaction.getNumModifiers(); l++){
+          let modifier = reaction.getModifier(l);
+          reactionSpeciesModifierMap.get(reaction.getId())[modifier.getSpecies()] = modifier.getSBOTerm();
+        }            
       }
 
       // traverse reaction glyphs
@@ -99,16 +108,18 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
             edgeArray.push({"data": edgeData, "group": "edges", "classes": "productEdge"});
           }
           else if(role === 5 || role === 6 || role === 7) {
-            let edgeData = {id: speciesReferenceGlyph.getSpeciesGlyphId() + "_" + reactionGlyph.getReactionId(), source: speciesReferenceGlyph.getSpeciesGlyphId(), target: reactionGlyph.getReactionId()};
-            edgeArray.push({"data": edgeData, "group": "edges", "classes": "modifierEdge"});
+            let edgeData = {id: speciesReferenceGlyph.getSpeciesGlyphId() + "_" + reactionGlyph.getReactionId(), source: speciesReferenceGlyph.getSpeciesGlyphId(), target: reactionGlyph.getReactionId(), 
+              sboTerm: reactionSpeciesModifierMap.get(reactionGlyph.getReactionId())[speciesGlyphIdSpeciesIdMap.get(speciesReferenceGlyph.getSpeciesGlyphId())]};
+            edgeArray.push({"data": edgeData, "group": "edges"});
           }
           else {
-            let edgeData = {id: reactionGlyph.getReactionId() + "_" + speciesReferenceGlyph.getSpeciesGlyphId(), source: reactionGlyph.getReactionId(), target: speciesReferenceGlyph.getSpeciesGlyphId()};
-            edgeArray.push({"data": edgeData, "group": "edges", "classes": "reactantEdge"});          
+            let edgeData = {id: reactionGlyph.getReactionId() + "_" + speciesReferenceGlyph.getSpeciesGlyphId(), source: reactionGlyph.getReactionId(), target: speciesReferenceGlyph.getSpeciesGlyphId(), 
+              sboTerm: reactionSpeciesModifierMap.get(reactionGlyph.getReactionId())[speciesGlyphIdSpeciesIdMap.get(speciesReferenceGlyph.getSpeciesGlyphId())]};
+            edgeArray.push({"data": edgeData, "group": "edges"});          
           }        
         }
       }
-
+      console.log(edgeArray);
       // infer nesting
       let areaMap = new Map();
       compoundMap.forEach(function(value, key){

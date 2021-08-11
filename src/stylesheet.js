@@ -268,7 +268,77 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-fill': 'hollow',
             'arrow-scale': 2
           }
-        }          
+        },
+        {
+          selector: 'edge[sboTerm = 13]',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'circle',
+            'target-arrow-color': '#555555',
+            'target-arrow-fill': 'hollow',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge[sboTerm = 537]',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'tee',
+            'target-arrow-color': '#555555',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge[sboTerm = 594]',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'diamond',
+            'target-arrow-color': '#555555',
+            'target-arrow-fill': 'hollow',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge[sboTerm = 459]',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'triangle',
+            'target-arrow-color': '#555555',
+            'target-arrow-fill': 'hollow',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge[sboTerm = 461]',
+          style: {
+            'line-color': '#555555',
+            'target-arrow-shape': 'triangle-tee',
+            'target-arrow-color': '#555555',
+            'target-arrow-fill': 'hollow',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge[sboTerm = 462]',
+          style: {
+            'line-color': '#555555',
+            'line-style': 'dashed',
+            'target-arrow-shape': 'circle',
+            'target-arrow-color': '#555555',
+            'target-arrow-fill': 'hollow',
+            'arrow-scale': 2
+          }
+        },
+        {
+          selector: 'edge[sboTerm = 536]',
+          style: {
+            'line-color': '#555555',
+            'line-style': 'dashed',            
+            'target-arrow-shape': 'tee',
+            'target-arrow-color': '#555555',
+            'arrow-scale': 2
+          }
+        }        
       ];        
     };      
 
