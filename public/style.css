@@ -8,6 +8,19 @@ body {
 
 .ui.basic.label {
    color: #56423E !important;
+   background: none #efefef;
+   border-radius: .28571429rem !important;
+ 
+}
+
+.ui.basic.label:hover {
+   color: #56423E !important;
+   background: none #ffffff !important;
+   border-radius: .28571429rem !important;  
+}
+
+.ui.form {
+  color: #56423E !important;
 }
 
 .ui.form select {
@@ -122,5 +135,9 @@ option {
 
 #applyLayout:hover{
   background-color: #f2711c !important;
+}
+
+.ui.labeled.button {
+  background-color: #efefef !important;
 }
 

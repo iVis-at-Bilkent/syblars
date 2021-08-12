@@ -156,7 +156,7 @@ $('#applyLayout').click(function(){
     $("#applyLayout").css("background-color", "#f2711c");
   }
   else {
-    $("#file-type").html("Please first load a valid file!");
+    $("#file-type").html("You must first load a valid file!");
   }
 
 });
