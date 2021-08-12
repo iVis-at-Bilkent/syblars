@@ -85,7 +85,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'shape': 'barrel',
             'text-valign': 'bottom',
             'text-margin-y': 2,
-            'background-opacity': 0.3
+            'background-opacity': 0.2
           }
         },
         {
@@ -112,14 +112,16 @@ let adjustStylesheet = function(format, colorScheme) {
           selector: 'node[sboTerm = 253]',
           style: {
             'shape': 'cut-rectangle',
-            'text-valign': 'bottom'
+            'text-valign': 'bottom',
+            'background-opacity': 0.3
           }
         },
         {
           selector: 'node[sboTerm = 289]',
           style: {
             'shape': 'cut-rectangle',
-            'border-style': 'dashed'
+            'border-style': 'dashed',
+            'background-opacity': 0.3
           }
         },
         {
@@ -136,7 +138,8 @@ let adjustStylesheet = function(format, colorScheme) {
           selector: 'node[sboTerm = 298]',
           style: {
             'shape': 'ellipse',
-            'border-style': 'double'
+            'border-style': 'double',
+            'background-opacity': 0.8
           }
         },        
         {
@@ -154,7 +157,8 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node[sboTerm = 327]',
           style: {
-            'shape': 'ellipse'
+            'shape': 'ellipse',
+            'background-opacity': 0.8
           }
         },
         {
@@ -162,7 +166,11 @@ let adjustStylesheet = function(format, colorScheme) {
           style: {
             'shape': 'polygon',
             'shape-polygon-points': "-1, -0.8, -0.96, -0.86, -0.87, -0.96, -0.8, -1,\n\
-               0.25, -1, 0.31, -0.96, 0.41, -0.86, 0.45, -0.8, 0.45, 0.8, 0.49, 0.86, 0.59, 0.96, 0.7, 1, 0.8, 1, 0.86, 0.96, 0.96, 0.86, 1, 0.8, 1, -0.8, 0.96, -0.86, 0.86, -0.96, 0.8, -1, 0.65, -1, 0.59, -0.96, 0.49, -0.86, 0.45, -0.8, 0.45, 0.8, 0.41, 0.86, 0.31, 0.96, 0.25, 1, -0.8, 1, -0.84, 0.96, -0.96, 0.86, -1, 0.8"
+               0.25, -1, 0.31, -0.96, 0.41, -0.86, 0.45, -0.8, 0.45, 0.8, 0.49, 0.86, \n\
+                0.59, 0.96, 0.7, 1, 0.8, 1, 0.86, 0.96, 0.96, 0.86, 1, 0.8, 1, -0.8,\n\
+                0.96, -0.86, 0.86, -0.96, 0.8, -1, 0.65, -1, 0.59, -0.96, 0.49, -0.86,\n\
+                0.45, -0.8, 0.45, 0.8, 0.41, 0.86, 0.31, 0.96, 0.25, 1, -0.8, 1, -0.84, 0.96, -0.96, 0.86, -1, 0.8",
+            'background-opacity': 0.8
           }
         },        
         {
@@ -188,7 +196,8 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node[sboTerm = 247]',
           style: {
-            'shape': 'ellipse'
+            'shape': 'ellipse',
+            'background-opacity': 0.6
           }
         },
         {
@@ -201,7 +210,8 @@ let adjustStylesheet = function(format, colorScheme) {
           selector: 'node[sboTerm = 285]',
           style: {
             'shape': 'ellipse',
-            'border-width': 0 
+            'border-width': 0,
+            'background-opacity': 0.4
           }
         },
         {
@@ -211,7 +221,8 @@ let adjustStylesheet = function(format, colorScheme) {
             'label': 'AND',
             'text-valign': 'center',
             'width': 30,
-            'height': 30          
+            'height': 30,
+            'background-color': "#F2F2F2"      
           }
         },
         {
@@ -221,7 +232,8 @@ let adjustStylesheet = function(format, colorScheme) {
             'label': 'OR',
             'text-valign': 'center',
             'width': 30,
-            'height': 30           
+            'height': 30,
+            'background-color': "#F2F2F2"           
           }
         },        
         {
@@ -231,15 +243,17 @@ let adjustStylesheet = function(format, colorScheme) {
             'label': 'NOT',
             'text-valign': 'center',
             'width': 30,
-            'height': 30
+            'height': 30,
+            'background-color': "#F2F2F2"
           }
         },
         {
-          selector: 'node[sboTerm = 239]',
+          selector: 'node[sboTerm = 398]',
           style: {
             'shape': 'ellipse',
             'width': 30,
-            'height': 30
+            'height': 30,
+            'background-color': "#F2F2F2"
           }
         },        
         {
