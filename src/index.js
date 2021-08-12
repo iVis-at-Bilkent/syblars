@@ -122,29 +122,52 @@ app.use((req, res, next) => {
 // POST /layout/:format?edges=true 
 // POST /layout/:format?clusters=true
 app.post('/layout/:format', (req, res) => {
-    options.layoutOptions.animate = false;
+
     let size = 30;
     let format = req.params.format;
+    let imageWanted = true;
+    if(req.query.image == "false") {
+      imageWanted = false;
+    }
         
     cy = cytoscape({
         styleEnabled: true,
         headless: true
     });
-
-    imageOptions = {
-      format: options.imageOptions.format ? options.imageOptions.format : 'png', 
-      background: options.imageOptions.background ? options.imageOptions.background : 'transparent',
-      width: options.imageOptions.width ? options.imageOptions.width : 1280,
-      height: options.imageOptions.height ? options.imageOptions.height : 720,
-      color: options.imageOptions.color ? options.imageOptions.color : '#9ecae1'
+    
+    let layoutOptions = options.layoutOptions;
+    
+    if(!layoutOptions) {
+      layoutOptions = {
+        name: "preset",
+        padding: 30
+      }
+    }
+    
+    layoutOptions.animate = false;
+    
+    let imageOptions = {
+      format: 'png', 
+      background: 'transparent',
+      width: 1280,
+      height: 720,
+      color: '#9ecae1'
     };
+    
+    if(options.imageOptions) {
+      $.extend(imageOptions, options.imageOptions);
+    }
 
     if(imageOptions.format == 'jpg' && imageOptions.background == "transparent") {
       imageOptions.background = "white";
     }
-    
+
     if(imageOptions.format == 'svg' && imageOptions.background == "transparent") {
       imageOptions.background = undefined;
+    }
+
+    if(req.params.format === 'sbgnml' && options.imageOptions.format === 'svg') {
+      imageOptions.format = 'png';
     }
 
     if(imageOptions.width <= 0) {
@@ -153,7 +176,7 @@ app.post('/layout/:format', (req, res) => {
 
     if(imageOptions.height <= 0) {
       imageOptions.height = 720;
-    }    
+    }  
     
     if (req.params.format === "graphml") {
       cy.graphml({layoutBy: function(){
@@ -187,12 +210,8 @@ app.post('/layout/:format', (req, res) => {
       });
     }
     
-    if(req.params.format === 'sbgnml' && options.imageOptions.format === 'svg') {
-      options.imageOptions.format = 'png';
-    }
-    
-    if(options.layoutOptions.name == 'cise') {
-      if(options.layoutOptions.clusters == undefined || options.layoutOptions.clusters.length == 0) {
+    if(layoutOptions.name == 'cise') {
+      if(layoutOptions.clusters == undefined || layoutOptions.clusters.length == 0) {
         let clusterMap = new Map();
         cy.nodes().forEach(function(node){
           let clusterID = node.data("clusterID");
@@ -209,7 +228,7 @@ app.post('/layout/:format', (req, res) => {
           clusters.push(value);
         }
         
-        options.layoutOptions.clusters = clusters;
+        layoutOptions.clusters = clusters;
       }
     }
 
@@ -247,13 +266,13 @@ app.post('/layout/:format', (req, res) => {
       });
     }   
     
-    let colorScheme = options.imageOptions.color || "white";
+    let colorScheme = imageOptions.color || "white";
     let stylesheet = adjustStylesheet(format, colorScheme);
 
     snap.start().then(function(){
       return snap.shot({
         elements: cy.json().elements,
-        layout: options.layoutOptions,
+        layout: layoutOptions,
         style: stylesheet,
         resolvesTo: 'all',
         format: imageOptions.format,
@@ -262,8 +281,12 @@ app.post('/layout/:format', (req, res) => {
         height: imageOptions.height,
         background: imageOptions.background
       }).then(function( result ){
-        ret["image"] = result.image;
-        setJson(result);
+        if(imageWanted) {
+          ret["image"] = result.image;
+        }
+        if(layoutOptions.name != "preset") {
+          setJson(result);
+        }
         return res.status(200).send(ret);
       }).then(function(){
         snap.stop();

@@ -121,15 +121,15 @@ let processLayout = async function () {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'content-Type': 'text/plain'
+      'Content-Type': 'text/plain'
     },
     body: data
   };
 
   let res = await fetch(url, settings)
           .then(response => response.json())
-          .then(res => {
-            return res;
+          .then(result => {
+            return result;
           })
           .catch(e => {
             return e;
@@ -139,7 +139,7 @@ let processLayout = async function () {
   $("#applyLayout").css("background-color", "#d67664");
   // get layout info
   $("#resultText").val(JSON.stringify(res.layout, null, 2));
-  
+
   // get image info
   blobData = saveImage(res["image"], imageFormat, document.getElementById("file-name").innerHTML);
   let urlCreator = window.URL || window.webkitURL;
