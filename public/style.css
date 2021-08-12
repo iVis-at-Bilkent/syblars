@@ -1,5 +1,26 @@
+body {
+   color: #56423E;
+}
+
+.ui.header {
+   color: #56423E !important;
+}
+
+.ui.basic.label {
+   color: #56423E !important;
+}
+
+.ui.form select {
+  color: #56423E !important;
+}
+
+.input-file {
+  color: #56423E !important;  
+}
+
 label {
   font-size: 14px !important;
+  color: #56423E !important;
 }
 
 #informationModal:hover {
@@ -11,7 +32,7 @@ label {
 }
 
 #about {
-  color: #d67664
+  color: #d67664 !important
 }
 
 #imageSettingsDefault:hover {
@@ -40,7 +61,7 @@ option[value=""][disabled] {
 }
 
 option {
-  color: rgba(0, 0, 0, 0.87);
+  color: #56423E !important;
 }
 
 .ui.mini.modal {
