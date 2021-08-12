@@ -17,7 +17,8 @@
         "parent": "c0",
         "label": "Fred Astaire",
         "width": 50,
-        "height": 50
+        "height": 50,
+        "clusterID": 5
       },
       "position": {
         "x": 1026.8798873660712,
@@ -54,7 +55,8 @@
         "tconst": "tt0027630",
         "id": "n1040429",
         "parent": "c0",
-        "label": "Follow the Fleet"
+        "label": "Follow the Fleet",
+        "clusterID": 5
       },
       "position": {
         "x": 1005.7584807194685,
@@ -91,7 +93,8 @@
         "tconst": "tt0053137",
         "id": "n1044463",
         "parent": "c0",
-        "label": "On the Beach"
+        "label": "On the Beach",
+        "clusterID": 5
       },
       "position": {
         "x": 891.2002412680038,
@@ -128,7 +131,8 @@
         "tconst": "tt0029546",
         "id": "n1040763",
         "parent": "c0",
-        "label": "Shall We Dance"
+        "label": "Shall We Dance",
+        "clusterID": 5
       },
       "position": {
         "x": 1158.1555252178887,
@@ -165,7 +169,8 @@
         "tconst": "tt0028757",
         "id": "n1040628",
         "parent": "c0",
-        "label": "A Damsel in Distress"
+        "label": "A Damsel in Distress",
+        "clusterID": 5
       },
       "position": {
         "x": 1195.2296459007796,
@@ -202,7 +207,8 @@
         "tconst": "tt0050419",
         "id": "n1044197",
         "parent": "c0",
-        "label": "Funny Face"
+        "label": "Funny Face",
+        "clusterID": 5
       },
       "position": {
         "x": 1073.1615865774284,
@@ -239,7 +245,8 @@
         "tconst": "tt0033029",
         "id": "n1041601",
         "parent": "c0",
-        "label": "Second Chorus"
+        "label": "Second Chorus",
+        "clusterID": 5
       },
       "position": {
         "x": 1124.3567179208517,
@@ -275,7 +282,8 @@
         "tconst": "tt0039116",
         "id": "n1042802",
         "parent": "c0",
-        "label": "Ziegfeld Follies"
+        "label": "Ziegfeld Follies",
+        "clusterID": 5
       },
       "position": {
         "x": 1142.4357637526082,
@@ -312,7 +320,8 @@
         "tconst": "tt0360833",
         "id": "n1059229",
         "parent": "c0",
-        "label": "Nelson Freire"
+        "label": "Nelson Freire",
+        "clusterID": 5
       },
       "position": {
         "x": 1047.7044274358614,
@@ -349,7 +358,8 @@
         "tconst": "tt0064664",
         "id": "n1045297",
         "parent": "c0",
-        "label": "Midas Run"
+        "label": "Midas Run",
+        "clusterID": 5
       },
       "position": {
         "x": 1245.2309029686792,
@@ -409,7 +419,8 @@
         "tconst": "tt0028333",
         "id": "n1040544",
         "parent": "c0",
-        "label": "Swing Time"
+        "label": "Swing Time",
+        "clusterID": 5
       },
       "position": {
         "x": 783,
@@ -446,7 +457,8 @@
         "tconst": "tt0029971",
         "id": "n1040874",
         "parent": "c0",
-        "label": "Carefree"
+        "label": "Carefree",
+        "clusterID": 5
       },
       "position": {
         "x": 1237.2961845901264,
@@ -483,7 +495,8 @@
         "tconst": "tt0050972",
         "id": "n1044256",
         "parent": "c0",
-        "label": "Silk Stockings"
+        "label": "Silk Stockings",
+        "clusterID": 5
       },
       "position": {
         "x": 893.6032635316219,
@@ -520,7 +533,8 @@
         "tconst": "tt0034862",
         "id": "n1041995",
         "parent": "c0",
-        "label": "Holiday Inn"
+        "label": "Holiday Inn",
+        "clusterID": 5
       },
       "position": {
         "x": 793.8787537952235,
@@ -557,7 +571,8 @@
         "tconst": "tt0045537",
         "id": "n1043654",
         "parent": "c0",
-        "label": "The Band Wagon"
+        "label": "The Band Wagon",
+        "clusterID": 5
       },
       "position": {
         "x": 1027.1029702375954,
@@ -594,7 +609,8 @@
         "tconst": "tt0027125",
         "id": "n1040348",
         "parent": "c0",
-        "label": "Top Hat"
+        "label": "Top Hat",
+        "clusterID": 5
       },
       "position": {
         "x": 964.2119623763994,
@@ -631,7 +647,8 @@
         "tconst": "tt0043983",
         "id": "n1043476",
         "parent": "c0",
-        "label": "Royal Wedding"
+        "label": "Royal Wedding",
+        "clusterID": 5
       },
       "position": {
         "x": 1246.9279772488376,
@@ -668,7 +685,8 @@
         "tconst": "tt0034409",
         "id": "n1041911",
         "parent": "c0",
-        "label": "You'll Never Get Rich"
+        "label": "You'll Never Get Rich",
+        "clusterID": 5
       },
       "position": {
         "x": 907.481565007719,
@@ -705,7 +723,8 @@
         "tconst": "tt0043044",
         "id": "n1043362",
         "parent": "c0",
-        "label": "Three Little Words"
+        "label": "Three Little Words",
+        "clusterID": 5
       },
       "position": {
         "x": 1078.1933595056475,
@@ -741,7 +760,8 @@
         "tconst": "tt0040308",
         "id": "n1042965",
         "parent": "c0",
-        "label": "Easter Parade"
+        "label": "Easter Parade",
+        "clusterID": 5
       },
       "position": {
         "x": 852.5582972941685,
@@ -798,7 +818,8 @@
         "tconst": "tt0072308",
         "id": "n1046713",
         "parent": "c0",
-        "label": "The Towering Inferno"
+        "label": "The Towering Inferno",
+        "clusterID": 5
       },
       "position": {
         "x": 901.9387879797574,
@@ -829,7 +850,8 @@
         "parent": "c1",
         "label": "Lauren Bacall",
         "width": 50,
-        "height": 50        
+        "height": 50,
+        "clusterID": 2       
       },
       "position": {
         "x": 789.1092991763803,
@@ -864,7 +886,8 @@
         "tconst": "tt0211719",
         "id": "n1054989",
         "parent": "c1",
-        "label": "The Venice Project"
+        "label": "The Venice Project",
+        "clusterID": 2
       },
       "position": {
         "x": 831.2828810724154,
@@ -901,7 +924,8 @@
         "tconst": "tt0040506",
         "id": "n1043000",
         "parent": "c1",
-        "label": "Key Largo"
+        "label": "Key Largo",
+        "clusterID": 2
       },
       "position": {
         "x": 715.4736776722818,
@@ -938,7 +962,8 @@
         "tconst": "tt0082362",
         "id": "n1048164",
         "parent": "c1",
-        "label": "The Fan"
+        "label": "The Fan",
+        "clusterID": 2
       },
       "position": {
         "x": 1021.4400053506272,
@@ -974,7 +999,8 @@
         "tconst": "tt0037610",
         "id": "n1042563",
         "parent": "c1",
-        "label": "Confidential Agent"
+        "label": "Confidential Agent",
+        "clusterID": 2
       },
       "position": {
         "x": 907.9235348204518,
@@ -1011,7 +1037,8 @@
         "tconst": "tt0060490",
         "id": "n1044930",
         "parent": "c1",
-        "label": "Harper"
+        "label": "Harper",
+        "clusterID": 2
       },
       "position": {
         "x": 948.2374553780602,
@@ -1047,7 +1074,8 @@
         "tconst": "tt0039302",
         "id": "n1042827",
         "parent": "c1",
-        "label": "Dark Passage"
+        "label": "Dark Passage",
+        "clusterID": 2 
       },
       "position": {
         "x": 1002.6500731417827,
@@ -1083,7 +1111,8 @@
         "tconst": "tt0047889",
         "id": "n1043926",
         "parent": "c1",
-        "label": "Blood Alley"
+        "label": "Blood Alley",
+        "clusterID": 2 
       },
       "position": {
         "x": 964.3362341567577,
@@ -1120,7 +1149,8 @@
         "tconst": "tt0045891",
         "id": "n1043696",
         "parent": "c1",
-        "label": "How to Marry a Millionaire"
+        "label": "How to Marry a Millionaire",
+        "clusterID": 2
       },
       "position": {
         "x": 885.6799926743217,
@@ -1157,7 +1187,8 @@
         "tconst": "tt0038355",
         "id": "n1042682",
         "parent": "c5",
-        "label": "The Big Sleep"
+        "label": "The Big Sleep",
+        "clusterID": 2
       },
       "position": {
         "x": 218.98163173836883,
@@ -1193,7 +1224,8 @@
         "tconst": "tt0042285",
         "id": "n1043251",
         "parent": "c1",
-        "label": "Bright Leaf"
+        "label": "Bright Leaf",
+        "clusterID": 2
       },
       "position": {
         "x": 599.224309384425,
@@ -1229,7 +1261,8 @@
         "tconst": "tt0276919",
         "id": "n1057224",
         "parent": "c1",
-        "label": "Dogville"
+        "label": "Dogville",
+        "clusterID": 2
       },
       "position": {
         "x": 652.2712516399,
@@ -1266,7 +1299,8 @@
         "tconst": "tt0783608",
         "id": "n1063144",
         "parent": "c1",
-        "label": "The Walker"
+        "label": "The Walker",
+        "clusterID": 2
       },
       "position": {
         "x": 609.9268933583734,
@@ -1302,7 +1336,8 @@
         "tconst": "tt0166817",
         "id": "n1053931",
         "parent": "c1",
-        "label": "A Star for Two"
+        "label": "A Star for Two",
+        "clusterID": 2
       },
       "position": {
         "x": 846.3660633814927,
@@ -1339,7 +1374,8 @@
         "tconst": "tt0037382",
         "id": "n1042518",
         "parent": "c5",
-        "label": "To Have and Have Not"
+        "label": "To Have and Have Not",
+        "clusterID": 3
       },
       "position": {
         "x": 333.5783103787169,
@@ -1375,7 +1411,8 @@
         "tconst": "tt0095665",
         "id": "n1049683",
         "parent": "c1",
-        "label": "Mr. North"
+        "label": "Mr. North",
+        "clusterID": 2
       },
       "position": {
         "x": 769.0070070648558,
@@ -1412,7 +1449,8 @@
         "tconst": "tt0075213",
         "id": "n1047255",
         "parent": "c1",
-        "label": "The Shootist"
+        "label": "The Shootist",
+        "clusterID": 2
       },
       "position": {
         "x": 727.4662046854448,
@@ -1442,7 +1480,8 @@
         "parent": "c2",
         "label": "Brigitte Bardot",
         "width": 50,
-        "height": 50        
+        "height": 50,
+        "clusterID": 1      
       },
       "position": {
         "x": 247.9121741511044,
@@ -1479,7 +1518,8 @@
         "tconst": "tt0059956",
         "id": "n1044899",
         "parent": "c2",
-        "label": "Viva Maria!"
+        "label": "Viva Maria!",
+        "clusterID": 1
       },
       "position": {
         "x": 238.97553090071696,
@@ -1514,7 +1554,8 @@
         "tconst": "tt0063592",
         "id": "n1045152",
         "parent": "c2",
-        "label": "Shalako"
+        "label": "Shalako",
+        "clusterID": 1
       },
       "position": {
         "x": 402.81946562260646,
@@ -1547,7 +1588,8 @@
         "is_adult": 0,
         "id": "n1076797",
         "parent": "c2",
-        "label": "Faces of Paris"
+        "label": "Faces of Paris",
+        "clusterID": 1 
       },
       "position": {
         "x": 101.43556128741554,
@@ -1583,7 +1625,8 @@
         "tconst": "tt0066164",
         "id": "n1045573",
         "parent": "c2",
-        "label": "Les novices"
+        "label": "Les novices",
+        "clusterID": 1
       },
       "position": {
         "x": 398.3341646728243,
@@ -1618,7 +1661,8 @@
         "tconst": "tt0064324",
         "id": "n1045238",
         "parent": "c2",
-        "label": "Les femmes"
+        "label": "Les femmes",
+        "clusterID": 1
       },
       "position": {
         "x": 90,
@@ -1650,7 +1694,8 @@
         "parent": "c3",
         "label": "John Belushi",
         "width": 50,
-        "height": 50        
+        "height": 50,
+        "clusterID": 4       
       },
       "position": {
         "x": 1435.0298690380616,
@@ -1686,7 +1731,8 @@
         "tconst": "tt0082200",
         "id": "n1048145",
         "parent": "c3",
-        "label": "Continental Divide"
+        "label": "Continental Divide",
+        "clusterID": 4
       },
       "position": {
         "x": 1278,
@@ -1723,7 +1769,8 @@
         "tconst": "tt0080455",
         "id": "n1047965",
         "parent": "c3",
-        "label": "The Blues Brothers"
+        "label": "The Blues Brothers",
+        "clusterID": 4
       },
       "position": {
         "x": 1591.221848946527,
@@ -1760,7 +1807,8 @@
         "tconst": "tt0077621",
         "id": "n1047612",
         "parent": "c3",
-        "label": "Goin' South"
+        "label": "Goin' South",
+        "clusterID": 4
       },
       "position": {
         "x": 1294.7972184550513,
@@ -1795,7 +1843,8 @@
         "tconst": "tt0082801",
         "id": "n1048215",
         "parent": "c3",
-        "label": "Neighbors"
+        "label": "Neighbors",
+        "clusterID": 4
       },
       "position": {
         "x": 1511.669731690192,
@@ -1830,7 +1879,8 @@
         "tconst": "tt0079660",
         "id": "n1047880",
         "parent": "c3",
-        "label": "Old Boyfriends"
+        "label": "Old Boyfriends",
+        "clusterID": 4
       },
       "position": {
         "x": 1369.4423909290067,
@@ -1867,7 +1917,8 @@
         "tconst": "tt0034583",
         "id": "n1041946",
         "parent": "c5",
-        "label": "Casablanca"
+        "label": "Casablanca",
+        "clusterID": 3
       },
       "position": {
         "x": 323.1340417894884,
@@ -1903,7 +1954,8 @@
         "tconst": "tt0033870",
         "id": "n1041791",
         "parent": "c5",
-        "label": "The Maltese Falcon"
+        "label": "The Maltese Falcon",
+        "clusterID": 3
       },
       "position": {
         "x": 453.07692972690734,
@@ -1935,7 +1987,8 @@
         "parent": "c5",
         "label": "Humphrey Bogart",
         "width": 50,
-        "height": 50        
+        "height": 50,
+        "clusterID": 3      
       },
       "position": {
         "x": 317.7585321360255,
@@ -1972,7 +2025,8 @@
         "tconst": "tt0043265",
         "id": "n1043382",
         "parent": "c5",
-        "label": "The African Queen"
+        "label": "The African Queen",
+        "clusterID": 3
       },
       "position": {
         "x": 447.35337844020694,
@@ -2009,7 +2063,8 @@
         "tconst": "tt0040897",
         "id": "n1043065",
         "parent": "c5",
-        "label": "The Treasure of the Sierra Madre"
+        "label": "The Treasure of the Sierra Madre",
+        "clusterID": 3
       },
       "position": {
         "x": 551.0277718891465,
@@ -2046,7 +2101,8 @@
         "tconst": "tt0032643",
         "id": "n1041509",
         "parent": "c5",
-        "label": "It All Came True"
+        "label": "It All Came True",
+        "clusterID": 3
       },
       "position": {
         "x": 436.5619247750395,
@@ -2083,7 +2139,8 @@
         "tconst": "tt0029080",
         "id": "n1040689",
         "parent": "c5",
-        "label": "Kid Galahad"
+        "label": "Kid Galahad",
+        "clusterID": 3
       },
       "position": {
         "x": 494.49516541099456,
@@ -2120,7 +2177,8 @@
         "tconst": "tt0042593",
         "id": "n1043296",
         "parent": "c5",
-        "label": "In a Lonely Place"
+        "label": "In a Lonely Place",
+        "clusterID": 3
       },
       "position": {
         "x": 106.94530570070748,
@@ -2157,7 +2215,8 @@
         "tconst": "tt0034449",
         "id": "n1041918",
         "parent": "c5",
-        "label": "All Through the Night"
+        "label": "All Through the Night",
+        "clusterID": 3
       },
       "position": {
         "x": 202.882047301258,
@@ -2192,7 +2251,8 @@
         "tconst": "tt0028955",
         "id": "n1040666",
         "parent": "c5",
-        "label": "The Great O'Malley"
+        "label": "The Great O'Malley",
+        "clusterID": 3
       },
       "position": {
         "x": 90,
@@ -2227,7 +2287,8 @@
         "tconst": "tt0027445",
         "id": "n1040400",
         "parent": "c5",
-        "label": "China Clipper"
+        "label": "China Clipper",
+        "clusterID": 3
       },
       "position": {
         "x": 373.90570179878887,
@@ -2264,7 +2325,8 @@
         "tconst": "tt0037166",
         "id": "n1042473",
         "parent": "c5",
-        "label": "Passage to Marseille"
+        "label": "Passage to Marseille",
+        "clusterID": 3
       },
       "position": {
         "x": 258.0602618618407,
@@ -2301,7 +2363,8 @@
         "tconst": "tt0033717",
         "id": "n1041749",
         "parent": "c5",
-        "label": "High Sierra"
+        "label": "High Sierra",
+        "clusterID": 3
       },
       "position": {
         "x": 135.83124757542043,

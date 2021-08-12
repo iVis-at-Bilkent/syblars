@@ -206,14 +206,12 @@ $("body").on("change", "#file-input", function (e, fileObject) {
           $("#file-type").html("GraphML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
-          $("#svgRadio").attr("disabled", false);
         }
         else if(isSBGNML) {
           fileType = "sbgnml";
           $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", false);
           $("#color").attr("disabled", true);
-          $("#svgRadio").attr("disabled", true);
           $("#pngRadio").prop("checked", true);
         }
         else if(isSBML) {
@@ -221,21 +219,18 @@ $("body").on("change", "#file-input", function (e, fileObject) {
           $("#file-type").html("SBML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
-          $("#svgRadio").attr("disabled", false);
         }
         else if(isJSON) {
           fileType = "json";
           $("#file-type").html("JSON file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
-          $("#svgRadio").attr("disabled", false);
         }
         else {
           fileType = undefined;
           $("#file-type").html("File format is not valid! <br> Load SBGNML, SBML, GraphML or JSON.");
           $("#colorScheme").attr("disabled", true);
           $("#color").attr("disabled", false);
-          $("#svgRadio").attr("disabled", false);
           $("#resultText").val("");
           $("#resultImage").attr("src", null);
           graphData = undefined;
@@ -266,7 +261,6 @@ $("#imageSettingsDefault").on("click", function (e) {
    if(fileType == "sbgnml") {
      $("#color").attr("disabled", true);
      $("#colorScheme").attr("disabled", false);
-     $("#svgRadio").attr("disabled", true);
    } else {
      $("#color").attr("disabled", false);
      $("#colorScheme").attr("disabled", true);     

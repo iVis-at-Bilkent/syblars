@@ -166,10 +166,6 @@ app.post('/layout/:format', (req, res) => {
       imageOptions.background = undefined;
     }
 
-    if(req.params.format === 'sbgnml' && options.imageOptions.format === 'svg') {
-      imageOptions.format = 'png';
-    }
-
     if(imageOptions.width <= 0) {
       imageOptions.width = 1280;
     }
