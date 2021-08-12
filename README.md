@@ -1,6 +1,13 @@
 # SyBLaRS
 
-**Sy**stems **B**iology **La**yout & **R**endering **S**ervice (SyBLaRS) is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON formats and/or produce corresponding images of the layouts in the backend.
+**Sy**stems **B**iology **La**yout & **R**endering **S**ervice (SyBLaRS) is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON formats and/or produce corresponding images (in JPG, PNG or SVG formats) of the layouts in the backend. 
+
+![A screenshot from the sample Heroku deployment of SyBLaRS](syblars-ss.png)
+
+Main use cases of SyBLaRS include:
+- creating an image of the provided map, which already has layout information,
+- laying out the provided map in specified layout style (among many available ones) and returning the map with layout information, and
+- both laying out the provided map in specified layout style and creating an image of it.
 
 SyBLaRS is distributed under the [MIT License](https://github.com/iVis-at-Bilkent/syblars/blob/main/LICENSE).
 Here is a sample server deployment along with a simple client-side demo:
@@ -42,7 +49,7 @@ The supported graph layout algorithms are:
 [Dagre](https://github.com/cytoscape/cytoscape.js-dagre),
 [Klay](https://github.com/cytoscape/cytoscape.js-klay),
 [Avsdf](https://github.com/iVis-at-Bilkent/cytoscape.js-avsdf)
-and Cytoscape.js layouts listed [here](https://js.cytoscape.org/#layouts).
+and are among Cytoscape.js layout extensions as listed [here](https://js.cytoscape.org/#layouts).
 
 ## Usage
 
@@ -115,4 +122,4 @@ Third-party libraries used in client demo:
 
 ## Team
 
-  * [Hasan Balci](https://github.com/hasanbalci), [Perman Atayev](https://github.com/PermanAtayev) and [Ugur Dogrusoz](https://github.com/ugurdogrusoz) of [i-Vis at Bilkent University](http://www.cs.bilkent.edu.tr/~ivis).
+[Hasan Balci](https://github.com/hasanbalci), [Perman Atayev](https://github.com/PermanAtayev) and [Ugur Dogrusoz](https://github.com/ugurdogrusoz) of [i-Vis at Bilkent University](http://www.cs.bilkent.edu.tr/~ivis)
