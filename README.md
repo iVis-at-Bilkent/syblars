@@ -125,21 +125,21 @@ let imageInfo = result["image"];     // in `base64uri` for `png` and`jpg` and in
 ```
 ### Remarks
 
-- SyBLaRS regards node dimension information in SBML, GraphML and JSON file formats, if it exists. This information should be provided via Layout extension in SBML files, and via `width` and `height` data attributes of each node in GraphML and JSON files (see the [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). This is not valid for SBGNML file format, because the third-party [stylesheet](https://github.com/iVis-at-Bilkent/cytoscape-sbgn-stylesheet) we used for SBGNML maps has pre-defined dimensions for each node type.
+- SyBLaRS regards any node position information. This is especially useful if you want to create an image of the map, which is already laid out. This is also useful in cases where you do have a partially decent layout but you would like to apply an incremental layout respecting the current positions in your map. This information should be provided via `bbox` of each glyph in SBGNML files, via the layout extension in SBML files, via `x` and `y` data attributes and `position` attribute of each node in GraphML and JSON files, respectively (see the [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)).
 
-- SyBLaRS also regards node position information in SBGNML, SBML, GraphML and JSON file formats, if it exists. This is especially useful if you want to create an image of the map you have, which already has layout information. This information should be provided via `bbox` of each glyph in SBGNML files, via Layout extension in SBML files, via `x` and `y` data attributes and `position` attribute of each node in GraphML and JSON files, respectively (see the [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)).
+- SyBLaRS also takes any node dimensions into account for layout in SBML, GraphML and JSON file formats. This information should be provided via the layout extension in SBML files, and via `width` and `height` data attributes of each node in GraphML and JSON files (see the [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). Any dimension data is ignored for the SBGNML file format, however, as the third-party [stylesheet](https://github.com/iVis-at-Bilkent/cytoscape-sbgn-stylesheet) used for rendering SBGNML maps has fixed/pre-defined dimensions for each node type.
 
-- Compound graph structures are supported in each file formats. We recomment you to use fCoSE layout algorithm for better results on these types of graphs.
+- Compound/nested graph structures are supported in all file formats. We recommend that you use the fCoSE layout style for best results on graphs with compound structures.
 
-- Clusters are supported only in GraphML and JSON formats. The cluster each node belongs should be defined via `clusterID` data attribute of each node (see the corresponding [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). We recommend you to use CiSE layout algorithm for better results on graphs with cluster information.
+- Performing a layout emphasizing the clustering/grouping of nodes is supported only with GraphML and JSON formats. The cluster each node belongs to should be defined via the `clusterID` data attribute of each node (see the corresponding [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). We recommend that you use the CiSE layout style for best results on clustered graphs.
 
 - The `x` and `y` coordinates of a node in the resulting layout information indicate the '*center*' coordinates of the node.
 
-- `jpg` output format does not support transparent background, therefore it returns a white background when `transparent` option is chosen.
+- `jpg` output format does not support transparent background; thus, we return a white background when `transparent` option is chosen.
 
-- The layout options presented in the client demo is for display purposes and may not include all options of the corresponding layout. Please refer to the webpage of each layout for the detailed list of options. 
+- The layout options presented in the client demo are not exhaustive and may not include all options of the corresponding layout style. Please refer to the webpage of each layout extension for the detailed list of available options. 
 
-- We run our sample web service and client demo in free Heroku account, therefore it may be in sleep mode and it may take a while (20-30 seconds) for it to wake up in the first query.
+- We run our sample web service and client demo with a free Heroku account. Thus, the application will go in sleep mode and it may take a while (20-30 seconds) for it to wake up before your first request can be served.
 
 ## Credits
 
