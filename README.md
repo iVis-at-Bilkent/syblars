@@ -51,6 +51,8 @@ The supported graph layout algorithms are:
 [Avsdf](https://github.com/iVis-at-Bilkent/cytoscape.js-avsdf)
 and are among Cytoscape.js layout extensions as listed [here](https://js.cytoscape.org/#layouts).
 
+Each layout style has a varying number of options for customization of the layout. The demo provided only exposes some of the popular options; please refer to the corresponding GitHub repository for an exhaustive list of such options.
+
 ## Usage
 
 Request to layout the graph:
