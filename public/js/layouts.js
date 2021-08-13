@@ -81,7 +81,7 @@ let COLALayout = Backbone.View.extend({
     name: 'cola',
     animate: false,
     padding: 30, // padding around the simulation
-    nodeDimensionsIncludeLabels: false, // whether labels should be included in determining the space used by a node
+    nodeDimensionsIncludeLabels: true, // whether labels should be included in determining the space used by a node
 
     // positioning options
     randomize: true, // use random node positions at beginning of layout
@@ -158,7 +158,7 @@ let CISELayout = Backbone.View.extend({
     clusters: [],
     randomize: true,
     animate: false,
-    nodeDimensionsIncludeLabels: false,
+    nodeDimensionsIncludeLabels: true,
     packComponents: true,
     allowNodesInsideCircle: false,    
     padding: 30,
@@ -223,7 +223,7 @@ let CISELayout = Backbone.View.extend({
 let DAGRELayout = Backbone.View.extend({
   defaultLayoutProperties: {
     name: "dagre",
-    nodeDimensionsIncludeLabels: false,
+    nodeDimensionsIncludeLabels: true,
     animate: false,
     padding: 30,
     nodeSep: 50,
@@ -281,7 +281,7 @@ var KLAYLayout = Backbone.View.extend({
   defaultLayoutProperties: {
     name: "klay",
     animate: false,
-    nodeDimensionsIncludeLabels: false,
+    nodeDimensionsIncludeLabels: true,
     padding: 30,
     klay: {
       addUnnecessaryBendpoints: false,
