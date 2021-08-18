@@ -51,7 +51,13 @@ The supported graph layout algorithms are:
 [Avsdf](https://github.com/iVis-at-Bilkent/cytoscape.js-avsdf)
 and are among Cytoscape.js layout extensions as listed [here](https://js.cytoscape.org/#layouts).
 
-Each layout style has a varying number of options for customization of the layout. The demo provided only exposes some of the popular options; please refer to the corresponding GitHub repository for an exhaustive list of such options.
+Each layout style has a varying number of options for customization of the layout. The demo provided only exposes some of the popular options; please refer to the corresponding GitHub repository for an exhaustive list of such options. Among these options some that we think will be commonly used are listed below:
+- `padding`: Padding around the map drawing
+- `idealEdgeLength`: Ideal length of an edge (layout will try to get every edge this long within constraints)
+- `randomize`: Use random node positions at the beginning of layout (`false` means an incremental layout)
+- `packComponents`: Whether or not to pack disconnected components after separate layout
+- `tile`: Enable tiling of disconnected nodes together for a compact representation
+- `nodeDimensionsIncludeLabels`: Whether or not to include labels in node dimensions during layout
 
 ## Usage
 
