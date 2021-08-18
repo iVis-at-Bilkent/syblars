@@ -7,7 +7,7 @@
 Main use cases of SyBLaRS include:
 - creating an image of the provided map, which already has layout information,
 - laying out the provided map in specified layout style (among many available ones) and returning the map with layout information, and
-- both laying out the provided map in specified layout style and creating an image of it.
+- both laying out the provided map in specified layout style and creating an image of it (and returning both the map with layout information and the image).
 
 SyBLaRS is distributed under the [MIT License](https://github.com/iVis-at-Bilkent/syblars/blob/main/LICENSE).
 Here is a sample server deployment along with a simple client-side demo:
@@ -145,7 +145,7 @@ let imageInfo = result["image"];     // in `base64uri` for `png` and`jpg` and in
 
 ## Credits
 
-SyBLaRS is mainly developed based on [Cytoscape.js](https://js.cytoscape.org) and its extensions (see the `package.json` file for a complete listing).
+SyBLaRS uses [the Express framework](https://expressjs.com/) for handling http requests. Actual operations are performed using [Cytoscape.js](https://js.cytoscape.org) and its extensions (see the `package.json` file for a complete listing). Among these extensions, [cytosnap](https://github.com/cytoscape/cytosnap) is particularly needed for creating a headless Chrome instance, on which graph creation, rendering, layout and image creation of the input graphs are performed.
 
 Icons in the client demo are made by [Freepik](http://www.freepik.com) and [Flaticon](https://www.flaticon.com) licensed with 
 [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/).
@@ -163,7 +163,7 @@ Third-party libraries used in web service:
 [jest](https://www.npmjs.com/package/jest),
 [super-test](https://www.npmjs.com/package/supertest)
 
-Third-party libraries used in client demo:
+Third-party libraries used in demo client:
 [Semantic UI](https://semantic-ui.com),
 [underscore.js](https://underscorejs.org),
 [backbone.js](https://backbonejs.org),
