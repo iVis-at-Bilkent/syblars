@@ -64,10 +64,10 @@ let adjustStylesheet = function(format, colorScheme) {
               return node.data('backgroundColor') ? node.data('backgroundColor') : "#ffffff"
             },
             'width': function(node){
-              return node.data('width') ? node.data('width') : 100;
+              return node.data('width') ? node.data('width') : 60;
             },
             'height': function(node){
-              return node.data('height') ? node.data('height') : 50;
+              return node.data('height') ? node.data('height') : 30;
             },
             'text-valign': 'center',
             'text-wrap': 'wrap',
@@ -131,7 +131,13 @@ let adjustStylesheet = function(format, colorScheme) {
             'shape-polygon-points': "-1, 1, 1, -1, 0.625, -0.625, 0.5, -0.75, 0.25, -0.875,\n\
               0, -0.875, -0.25, -0.875, -0.5, -0.75, -0.625, -0.625, -0.75, -0.375, -0.875, 0,\n\
               -0.75, 0.375, -0.625, 0.625, -0.5, 0.75, -0.25, 0.875, 0, 0.875, 0.25, 0.875,\n\
-               0.5, 0.75, 0.625, 0.625, 0.75, 0.375, 0.875, 0, 0.75, -0.375, 0.625, -0.625"
+               0.5, 0.75, 0.625, 0.625, 0.75, 0.375, 0.875, 0, 0.75, -0.375, 0.625, -0.625",
+            'width': function(node){
+              return node.data('width') ? node.data('width') : 25;
+            },
+            'height': function(node){
+              return node.data('height') ? node.data('height') : 25;
+            },
           }
         },        
         {
@@ -158,7 +164,13 @@ let adjustStylesheet = function(format, colorScheme) {
           selector: 'node[sboTerm = 327]',
           style: {
             'shape': 'ellipse',
-            'background-opacity': 0.8
+            'background-opacity': 0.8,
+            'width': function(node){
+              return node.data('width') ? node.data('width') : 30;
+            },
+            'height': function(node){
+              return node.data('height') ? node.data('height') : 30;
+            },
           }
         },
         {
@@ -231,8 +243,8 @@ let adjustStylesheet = function(format, colorScheme) {
             'shape': 'ellipse',
             'label': 'OR',
             'text-valign': 'center',
-            'width': 30,
-            'height': 30,
+            'width': 25,
+            'height': 25,
             'background-color': "#F2F2F2"           
           }
         },        
@@ -242,8 +254,8 @@ let adjustStylesheet = function(format, colorScheme) {
             'shape': 'ellipse',
             'label': 'NOT',
             'text-valign': 'center',
-            'width': 30,
-            'height': 30,
+            'width': 25,
+            'height': 25,
             'background-color': "#F2F2F2"
           }
         },
@@ -251,8 +263,8 @@ let adjustStylesheet = function(format, colorScheme) {
           selector: 'node[sboTerm = 398]',
           style: {
             'shape': 'ellipse',
-            'width': 30,
-            'height': 30,
+            'width': 25,
+            'height': 25,
             'background-color': "#F2F2F2"
           }
         },        
@@ -270,7 +282,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'line-color': '#555555',
             'target-arrow-shape': 'triangle',
             'target-arrow-color': '#555555',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -280,7 +292,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-shape': 'triangle-tee',
             'target-arrow-color': '#555555',
             'target-arrow-fill': 'hollow',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -290,7 +302,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-shape': 'circle',
             'target-arrow-color': '#555555',
             'target-arrow-fill': 'hollow',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -299,7 +311,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'line-color': '#555555',
             'target-arrow-shape': 'tee',
             'target-arrow-color': '#555555',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -309,7 +321,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-shape': 'diamond',
             'target-arrow-color': '#555555',
             'target-arrow-fill': 'hollow',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -319,7 +331,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-shape': 'triangle',
             'target-arrow-color': '#555555',
             'target-arrow-fill': 'hollow',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -329,7 +341,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-shape': 'triangle-tee',
             'target-arrow-color': '#555555',
             'target-arrow-fill': 'hollow',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -340,7 +352,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-shape': 'circle',
             'target-arrow-color': '#555555',
             'target-arrow-fill': 'hollow',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         },
         {
@@ -350,7 +362,7 @@ let adjustStylesheet = function(format, colorScheme) {
             'line-style': 'dashed',            
             'target-arrow-shape': 'tee',
             'target-arrow-color': '#555555',
-            'arrow-scale': 2
+            'arrow-scale': 1.25
           }
         }        
       ];        

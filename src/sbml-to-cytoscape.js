@@ -19,7 +19,7 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
       layoutplugin = libsbmlInstance.castObject(plugin, libsbmlInstance.LayoutModelPlugin);
       layout = layoutplugin.layouts[0];
     }    
-    
+
     if(layout) {
       let edgeArray = [];
       let compoundMap = new Map();
@@ -166,8 +166,8 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
     }
     else {
       // add compartments, species and reactions
-      addCompartments(libsbmlInstance, model);
-      addSpecies(libsbmlInstance, model);
+      addCompartments(model);
+      addSpecies(model);
       addReactions(model);
 
       let result = resultJson;
@@ -179,44 +179,24 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
 };
 
 // add compartment nodes
-const addCompartments = function (libsbmlInstance, model) {
-  let plugin = model.findPlugin('layout');
-  let layoutplugin;
-  let layout;
-  
-  if(plugin) {
-    layoutplugin = libsbmlInstance.castObject(plugin, libsbmlInstance.LayoutModelPlugin);
-    layout = layoutplugin.layouts[0];
-  }
+const addCompartments = function (model) {
   
   for(let i = 0; i < model.getNumCompartments(); i++){
     let compartment = model.getCompartment(i);
     if(compartment.getId() !== "default") {
     let compartmentData = {"id": compartment.getId(), "label": compartment.getName()};
-      compartmentData.width = layout ? layout.getCompartmentGlyph(i).getBoundingBox().width : 100;
-      compartmentData.height = layout ? layout.getCompartmentGlyph(i).getBoundingBox().height : 100;
       resultJson.push({"data": compartmentData, "group": "nodes", "classes": "compartment"});
     }
   }
 };
 
 // add species nodes
-const addSpecies = function(libsbmlInstance, model) {
-  let plugin = model.findPlugin('layout');
-  let layoutplugin;
-  let layout;
-
-  if(plugin) {
-    layoutplugin = libsbmlInstance.castObject(plugin, libsbmlInstance.LayoutModelPlugin);
-    layout = layoutplugin.layouts[0];
-  }
+const addSpecies = function(model) {
 
   for(let i = 0; i < model.getNumSpecies(); i++){
     let species = model.getSpecies(i);
     speciesCompartmentMap.set(species.getId(), species.getCompartment());
-    let speciesData = {"id": species.getId(), "label": species.getName(), "parent": species.getCompartment()};
-    speciesData.width = layout ? layout.specglyphs[i].getBoundingBox().width : 60;
-    speciesData.height = layout ? layout.specglyphs[i].getBoundingBox().height : 30;
+    let speciesData = {"id": species.getId(), "label": species.getName(), "parent": species.getCompartment(), "sboTerm": species.getSBOTerm()};
     resultJson.push({"data": speciesData, "group": "nodes", "classes": "species"});
   }  
 };
@@ -259,7 +239,7 @@ const addReactions = function(model) {
     // add modifier->reaction edges
     for(let l = 0; l < reaction.getNumModifiers(); l++){
       let modifier = reaction.getModifier(l);
-      let modifierEdgeData = {"id": modifier.getSpecies() + '_' + reaction.getId(), "source": modifier.getSpecies(), "target": reaction.getId()};
+      let modifierEdgeData = {"id": modifier.getSpecies() + '_' + reaction.getId(), "source": modifier.getSpecies(), "target": reaction.getId(), "sboTerm": modifier.getSBOTerm()};
       resultJson.push({"data": modifierEdgeData, "group": "edges", "classes": "modifierEdge"});
       
       // collect possible parent info
