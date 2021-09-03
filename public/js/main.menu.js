@@ -212,7 +212,6 @@ $("body").on("change", "#file-input", function (e, fileObject) {
           $("#file-type").html("SBGNML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", false);
           $("#color").attr("disabled", true);
-          $("#pngRadio").prop("checked", true);
         }
         else if(isSBML) {
           fileType = "sbml";

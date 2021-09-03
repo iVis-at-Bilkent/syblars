@@ -85,7 +85,8 @@ let adjustStylesheet = function(format, colorScheme) {
             'shape': 'barrel',
             'text-valign': 'bottom',
             'text-margin-y': 2,
-            'background-opacity': 0.2
+            'background-opacity': 0.2,
+            "border-width": 4,
           }
         },
         {
