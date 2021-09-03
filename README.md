@@ -41,6 +41,12 @@ SyBLaRS supports the following input formats for graphs:
 [GraphML](http://graphml.graphdrawing.org/), and
 [JSON](https://www.json.org/).
 
+The notations used for these formats:
+
+SBGNML             |  SBML |  GraphML & JSON
+-------------------------|-------------------------|-------------------------
+<a href="https://raw.githubusercontent.com/iVis-at-Bilkent/syblars/main/img/SBGNML_stylesheet.svg" title="SBGNML stylesheet"><img src="img/SBGNML_stylesheet.jpg"></a>  |  <a href="https://raw.githubusercontent.com/iVis-at-Bilkent/syblars/main/img/SBML_stylesheet.svg" title="SBML stylesheet"><img src="img/SBML_stylesheet.jpg"></a> | <a href="https://raw.githubusercontent.com/iVis-at-Bilkent/syblars/main/img/GraphML&JSON_stylesheet.svg" title="GraphML & JSON stylesheet"><img src="img/GraphML&JSON_stylesheet.jpg"></a>
+
 ## Supported layouts
 The supported graph layout algorithms are:
 [fCoSE](https://github.com/iVis-at-Bilkent/cytoscape.js-fcose/tree/unstable),
