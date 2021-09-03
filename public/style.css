@@ -1,5 +1,5 @@
 body {
-   color: #56423E;
+   color: #56423E !important;
 }
 
 .ui.header {
@@ -29,6 +29,10 @@ body {
 
 .input-file {
   color: #56423E !important;  
+}
+
+.ui.accordion .title:not(.ui){
+  color: #56423E !important;
 }
 
 label {

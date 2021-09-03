@@ -251,6 +251,8 @@ $("#informationModal").on("click", function (e) {
    $('#information-modal').modal({inverted: true}).modal('show');
 });
 
+$('.ui.accordion').accordion();
+
 $("#imageSettingsDefault").on("click", function (e) {
    $("input[value='png']").prop("checked", true);
    $("#imageWidth").val(1280);

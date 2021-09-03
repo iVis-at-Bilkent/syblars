@@ -43,7 +43,7 @@ SyBLaRS supports the following input formats for graphs:
 
 The notations used for these formats:
 
-SBGNML             |  SBML |  GraphML & JSON
+SBGNML Stylesheet            |  SBML Stylesheet |  GraphML & JSON
 -------------------------|-------------------------|-------------------------
 <a href="https://raw.githubusercontent.com/iVis-at-Bilkent/syblars/main/img/SBGNML_stylesheet.svg" title="SBGNML stylesheet"><img src="img/SBGNML_stylesheet.jpg"></a>  |  <a href="https://raw.githubusercontent.com/iVis-at-Bilkent/syblars/main/img/SBML_stylesheet.svg" title="SBML stylesheet"><img src="img/SBML_stylesheet.jpg"></a> | <a href="https://raw.githubusercontent.com/iVis-at-Bilkent/syblars/main/img/GraphML&JSON_stylesheet.svg" title="GraphML & JSON stylesheet"><img src="img/GraphML&JSON_stylesheet.jpg"></a>
 

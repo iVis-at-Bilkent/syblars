@@ -9,8 +9,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="649.5116"
-   height="251.98456"
+   width="549.5116"
+   height="191.19005"
    id="svg503"
    sodipodi:docname="GraphML&amp;JSON_stylesheet.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
@@ -40,12 +40,12 @@
      id="namedview505"
      showgrid="false"
      inkscape:zoom="1.5000001"
-     inkscape:cx="295.40029"
-     inkscape:cy="78.225124"
+     inkscape:cx="-90.599673"
+     inkscape:cy="78.225114"
      inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1407"
+     inkscape:current-layer="g501"
      fit-margin-top="10"
      fit-margin-left="20"
      fit-margin-right="20"
@@ -458,7 +458,7 @@
     </clipPath>
   </defs>
   <g
-     transform="matrix(1.4831461,0,0,1.4831461,987.65268,-370.69619)"
+     transform="matrix(1.4831461,0,0,1.4831461,987.65268,-431.4907)"
      stroke-miterlimit="10"
      id="g501"
      style="stroke:#555555;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1">
@@ -496,61 +496,8 @@
        style="stroke:#555555;stroke-width:2.74812794;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        id="g1509-2"
        transform="matrix(0.88324589,0,0,0.88324589,-1434.4563,773.76358)" />
-    <text
-       font-size="12px"
-       font-style="normal"
-       font-weight="normal"
-       text-decoration="normal"
-       x="-447.19022"
-       y="274.66132"
-       dominant-baseline="text-after-edge"
-       id="text70-7-8-3"
-       style="font-style:normal;font-weight:normal;font-size:13.81885433px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15157115">
-      <tspan
-         id="tspan1677-4-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.97979927px;font-family:'Helvetica Neue', Helvetica, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, sans-serif Bold';stroke-width:1.15157115">GRAPHML &amp; JSON Stylesheet</tspan>
-    </text>
     <g
        id="g1407">
-      <g
-         transform="matrix(0.7,0,0,0.7,-103.49436,58.722279)"
-         id="g1159">
-        <path
-           d="m -766.56004,350.93128 v 113.4 q 1.575,6.3 31.5,6.3 h 63 q 29.925,0 31.5,-6.3 v -113.4 q -1.575,-6.3 -31.5,-6.3 h -63 q -29.925,0 -31.5,6.3 z"
-           id="path315"
-           style="fill:#e2eff6;fill-opacity:1;stroke:#555555;stroke-width:6.54978323;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-           inkscape:connector-curvature="0" />
-        <text
-           style="font-style:normal;font-weight:normal;font-size:19.74122047px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.64510167"
-           id="text6"
-           dominant-baseline="text-after-edge"
-           y="506.88342"
-           x="-703.87329"
-           text-decoration="normal"
-           font-weight="normal"
-           font-style="normal"
-           font-size="12px">Compound node</text>
-      </g>
-      <g
-         id="g1167"
-         transform="translate(312.84844,-541.09149)">
-        <text
-           style="font-style:normal;font-weight:normal;font-size:13.81885433px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15157115;stroke-miterlimit:10;stroke-opacity:1"
-           id="text6-6-2-1-2-7-6-6"
-           dominant-baseline="text-after-edge"
-           y="909.20526"
-           x="-596.82977"
-           text-decoration="normal"
-           font-weight="normal"
-           font-style="normal"
-           font-size="12px">Edge</text>
-        <path
-           inkscape:connector-curvature="0"
-           style="fill:none;stroke:#555555;stroke-width:1.69909084;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:fill stroke markers"
-           d="m -639.74887,885.0397 h 85.42652"
-           stroke-miterlimit="10"
-           id="path184" />
-      </g>
       <flowRoot
          style="font-style:normal;font-weight:normal;font-size:10px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:-100px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
          id="flowRoot1160"
@@ -562,24 +509,66 @@
              width="1006.9208"
              id="rect1164" /></flowRegion><flowPara
            id="flowPara1166" /></flowRoot>      <g
-         id="g1403"
-         transform="translate(6.7668685)">
-        <text
-           style="font-style:normal;font-weight:normal;font-size:13.81885433px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15157115"
-           id="text6-3-6-7"
-           dominant-baseline="text-after-edge"
-           y="390.73157"
-           x="-440.27399"
-           text-decoration="normal"
-           font-weight="normal"
-           font-style="normal"
-           font-size="12px">Simple node</text>
-        <path
-           d="m -422.91275,344.74491 -0.0532,1.35527 -0.15943,1.34691 -0.26461,1.33025 -0.36815,1.3054 -0.46944,1.27247 -0.56784,1.23174 -0.66272,1.18337 -0.75353,1.12774 -0.83969,1.06513 -0.92066,0.99598 -0.99597,0.92066 -1.06515,0.83969 -1.12773,0.75353 -1.18338,0.66272 -1.23173,0.56784 -1.27248,0.46944 -1.30539,0.36816 -1.33025,0.2646 -1.34691,0.15942 -1.35527,0.0532 -1.35527,-0.0532 -1.34691,-0.15942 -1.33026,-0.2646 -1.30539,-0.36816 -1.27248,-0.46944 -1.23173,-0.56784 -1.18338,-0.66272 -1.12773,-0.75353 -1.06514,-0.83969 -0.99597,-0.92066 -0.92067,-0.99598 -0.83968,-1.06513 -0.75353,-1.12774 -0.66272,-1.18337 -0.56784,-1.23174 -0.46944,-1.27247 -0.36816,-1.3054 -0.2646,-1.33025 -0.15942,-1.34691 -0.0532,-1.35527 0.0532,-1.35526 0.15942,-1.34692 0.2646,-1.33026 0.36816,-1.30538 0.46944,-1.27249 0.56784,-1.23172 0.66272,-1.18339 0.75353,-1.12773 0.83968,-1.06514 0.92067,-0.99597 0.99597,-0.92067 1.06514,-0.83968 1.12773,-0.75353 1.18338,-0.66272 1.23173,-0.56784 1.27248,-0.46943 1.30539,-0.36817 1.33026,-0.2646 1.34691,-0.15942 1.35527,-0.0532 1.35527,0.0532 1.34691,0.15942 1.33025,0.2646 1.30539,0.36817 1.27249,0.46943 1.23172,0.56784 1.18338,0.66272 1.12774,0.75353 1.06514,0.83968 0.99597,0.92067 0.92066,0.99597 0.83969,1.06514 0.75353,1.12773 0.66272,1.18339 0.56784,1.23172 0.46944,1.27249 0.36816,1.30538 0.2646,1.33026 0.15943,1.34692 z"
-           stroke-miterlimit="10"
-           id="path36"
-           inkscape:connector-curvature="0"
-           style="fill:#9ecae1;fill-opacity:0.8;stroke:#555555;stroke-width:2.30314231;stroke-miterlimit:10;stroke-opacity:1;paint-order:fill stroke markers" />
+         id="g942">
+        <g
+           id="g1159"
+           transform="matrix(0.7,0,0,0.7,-103.49436,58.722279)">
+          <path
+             inkscape:connector-curvature="0"
+             style="fill:#e2eff6;fill-opacity:1;stroke:#555555;stroke-width:6.54978323;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             id="path315"
+             d="m -766.56004,350.93128 v 113.4 q 1.575,6.3 31.5,6.3 h 63 q 29.925,0 31.5,-6.3 v -113.4 q -1.575,-6.3 -31.5,-6.3 h -63 q -29.925,0 -31.5,6.3 z" />
+          <text
+             font-size="12px"
+             font-style="normal"
+             font-weight="normal"
+             text-decoration="normal"
+             x="-703.87329"
+             y="506.88342"
+             dominant-baseline="text-after-edge"
+             id="text6"
+             style="font-style:normal;font-weight:normal;font-size:19.74122047px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.64510167">Compound node</text>
+        </g>
+        <g
+           transform="translate(245.4242,-541.09149)"
+           id="g1167">
+          <text
+             font-size="12px"
+             font-style="normal"
+             font-weight="normal"
+             text-decoration="normal"
+             x="-596.82977"
+             y="909.20526"
+             dominant-baseline="text-after-edge"
+             id="text6-6-2-1-2-7-6-6"
+             style="font-style:normal;font-weight:normal;font-size:13.81885433px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15157115;stroke-miterlimit:10;stroke-opacity:1">Edge</text>
+          <path
+             id="path184"
+             stroke-miterlimit="10"
+             d="m -639.74887,885.0397 h 85.42652"
+             style="fill:none;stroke:#555555;stroke-width:1.69909084;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:fill stroke markers"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           transform="translate(-26.945252,-2.9190367)"
+           id="g1403">
+          <text
+             font-size="12px"
+             font-style="normal"
+             font-weight="normal"
+             text-decoration="normal"
+             x="-440.27399"
+             y="390.73157"
+             dominant-baseline="text-after-edge"
+             id="text6-3-6-7"
+             style="font-style:normal;font-weight:normal;font-size:13.81885433px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15157115">Simple node</text>
+          <path
+             style="fill:#9ecae1;fill-opacity:0.8;stroke:#555555;stroke-width:2.30314231;stroke-miterlimit:10;stroke-opacity:1;paint-order:fill stroke markers"
+             inkscape:connector-curvature="0"
+             id="path36"
+             stroke-miterlimit="10"
+             d="m -422.91275,344.74491 -0.0532,1.35527 -0.15943,1.34691 -0.26461,1.33025 -0.36815,1.3054 -0.46944,1.27247 -0.56784,1.23174 -0.66272,1.18337 -0.75353,1.12774 -0.83969,1.06513 -0.92066,0.99598 -0.99597,0.92066 -1.06515,0.83969 -1.12773,0.75353 -1.18338,0.66272 -1.23173,0.56784 -1.27248,0.46944 -1.30539,0.36816 -1.33025,0.2646 -1.34691,0.15942 -1.35527,0.0532 -1.35527,-0.0532 -1.34691,-0.15942 -1.33026,-0.2646 -1.30539,-0.36816 -1.27248,-0.46944 -1.23173,-0.56784 -1.18338,-0.66272 -1.12773,-0.75353 -1.06514,-0.83969 -0.99597,-0.92066 -0.92067,-0.99598 -0.83968,-1.06513 -0.75353,-1.12774 -0.66272,-1.18337 -0.56784,-1.23174 -0.46944,-1.27247 -0.36816,-1.3054 -0.2646,-1.33025 -0.15942,-1.34691 -0.0532,-1.35527 0.0532,-1.35526 0.15942,-1.34692 0.2646,-1.33026 0.36816,-1.30538 0.46944,-1.27249 0.56784,-1.23172 0.66272,-1.18339 0.75353,-1.12773 0.83968,-1.06514 0.92067,-0.99597 0.99597,-0.92067 1.06514,-0.83968 1.12773,-0.75353 1.18338,-0.66272 1.23173,-0.56784 1.27248,-0.46943 1.30539,-0.36817 1.33026,-0.2646 1.34691,-0.15942 1.35527,-0.0532 1.35527,0.0532 1.34691,0.15942 1.33025,0.2646 1.30539,0.36817 1.27249,0.46943 1.23172,0.56784 1.18338,0.66272 1.12774,0.75353 1.06514,0.83968 0.99597,0.92067 0.92066,0.99597 0.83969,1.06514 0.75353,1.12773 0.66272,1.18339 0.56784,1.23172 0.46944,1.27249 0.36816,1.30538 0.2646,1.33026 0.15943,1.34692 z" />
+        </g>
       </g>
     </g>
   </g>
