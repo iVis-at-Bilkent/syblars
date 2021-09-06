@@ -53,22 +53,22 @@ let processLayout = async function () {
 
   if (!heroku) {
     if (isGraphML)
-      url = "http://localhost:" + port + "/layout/graphml?edges=true";
+      url = "http://localhost:" + port + "/graphml?edges=true";
     else if (isSBGNML)
-      url = "http://localhost:" + port + "/layout/sbgnml?edges=true";
+      url = "http://localhost:" + port + "/sbgnml?edges=true";
     else if (isSBML)
-      url = "http://localhost:" + port + "/layout/sbml?edges=true";
+      url = "http://localhost:" + port + "/sbml?edges=true";
     else
-      url = "http://localhost:" + port + "/layout/json?edges=true";
+      url = "http://localhost:" + port + "/json?edges=true";
   } else {
     if (isGraphML)
-      url = "https://syblars.herokuapp.com/layout/graphml?edges=true";
+      url = "https://syblars.herokuapp.com/graphml?edges=true";
     else if (isSBGNML)
-      url = "https://syblars.herokuapp.com/layout/sbgnml?edges=true";
+      url = "https://syblars.herokuapp.com/sbgnml?edges=true";
     else if (isSBML)
-      url = "https://syblars.herokuapp.com/layout/sbml?edges=true"
+      url = "https://syblars.herokuapp.com/sbml?edges=true"
     else
-      url = "https://syblars.herokuapp.com/layout/json?edges=true";
+      url = "https://syblars.herokuapp.com/json?edges=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
@@ -116,7 +116,7 @@ let processLayout = async function () {
     data = JSON.stringify(data);
   } else
     data = graphData + JSON.stringify(options);
-
+  
   const settings = {
     method: 'POST',
     headers: {

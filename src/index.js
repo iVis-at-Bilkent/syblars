@@ -119,9 +119,9 @@ app.use((req, res, next) => {
 // check if an object is empty or not
 
 // whether to include edges in the output or not
-// POST /layout/:format?edges=true 
-// POST /layout/:format?clusters=true
-app.post('/layout/:format', (req, res) => {
+// POST :format?edges=true 
+// POST :format?clusters=true
+app.post('/:format', (req, res) => {
 
     let size = 30;
     let format = req.params.format;
