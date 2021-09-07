@@ -84,7 +84,7 @@ let adjustStylesheet = function(format, colorScheme) {
           style: {
             'shape': 'barrel',
             'text-valign': 'bottom',
-            'text-margin-y': 2,
+            'text-margin-y': 3,
             'background-opacity': 0.2,
             "border-width": 4,
           }
@@ -114,7 +114,8 @@ let adjustStylesheet = function(format, colorScheme) {
           style: {
             'shape': 'cut-rectangle',
             'text-valign': 'bottom',
-            'background-opacity': 0.3
+            'background-opacity': 0.3,
+            'text-margin-y': 3
           }
         },
         {
@@ -122,7 +123,8 @@ let adjustStylesheet = function(format, colorScheme) {
           style: {
             'shape': 'cut-rectangle',
             'border-style': 'dashed',
-            'background-opacity': 0.3
+            'background-opacity': 0.3,
+            'text-margin-y': 3
           }
         },
         {
