@@ -237,24 +237,13 @@ app.post('/:format', (req, res) => {
           return true;
       }).forEach((ele) => {
           if (ele.isNode()) {
-              if (req.params.format === "json" || req.params.format === "sbml") {
-                  let obj = {};
-                  obj["position"] = result.positions[ele.id()];
-                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
-                  ret["layout"][ele.id()] = obj;
+              let obj = {};
+              obj["position"] = result.positions[ele.id()];
+              obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], parent: ele.data("parent") };
+              if(ele.data('clusterID') != null) {
+                obj["data"]['clusterID'] = parseInt(ele.data('clusterID'));
               }
-              else if (req.params.format === "graphml") {
-                  let obj = {};
-                  obj["position"] = result.positions[ele.id()];
-                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
-                  ret["layout"][ele.id()] = obj;
-              }
-              else if (req.params.format === "sbgnml") {
-                  let obj = {};
-                  obj["position"] = result.positions[ele.id()];
-                  obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], clusterID: parseInt(ele.data('clusterID')), parent: ele.data("parent") };
-                  ret["layout"][ele.id()] = obj;
-              }          
+              ret["layout"][ele.id()] = obj;
           }
           else if (!ele.isNode() && req.query.edges) {
               ret["layout"][ele.id()] = { source: ele.data().source, target: ele.data().target };
