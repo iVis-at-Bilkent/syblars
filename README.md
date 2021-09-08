@@ -121,7 +121,7 @@ options = {
   }
 }
 ```
-Note that while sending request via curl, any `"` in the `request_body` should be replaced with `\"`. 
+**Note:** While sending the requests via curl, any `"` in the `request_body` should be replaced with `\"`. 
 
 For supported layout options, please check the documentation of the associated layout algorithm. Image options support three output formats: `png`, `jpg` and `svg`. `background` attribute should be a hex color code or `transparent`. `color` attribute should be a hex color code for SBML, GraphML and JSON formats, and one of the following predefined color schemes for the SBGNML format: `bluescale`, `greyscale`, `red_blue`, `green_brown`, `purple_brown`, `purple_green`, `grey_red`, and `black_white`.
 
