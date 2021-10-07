@@ -11,7 +11,14 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
 
     let result = []; 
     
-    let plugin = model.findPlugin('layout');
+    let plugin;
+    try {
+      plugin = model.findPlugin('layout');
+    }
+    catch(err) {
+      plugin = undefined;
+    }
+
     let layoutplugin;
     let layout;    
     
