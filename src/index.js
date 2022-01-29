@@ -70,6 +70,7 @@ app.use((req, res, next) => {
         isJson = false;
         options = '';
         data = '';
+        errorMessage = undefined;
 
         req.on('data', chunk => {
             body += chunk;
@@ -90,7 +91,7 @@ app.use((req, res, next) => {
                     body = JSON.parse(body);
                 }
                 catch (e) {
-                    console.log(e);
+                  errorMessage = "Sorry! Cannot process the given file!"
                 }
                 data = body[0];
                 options = body[1];
@@ -100,17 +101,28 @@ app.use((req, res, next) => {
                     options = JSON.parse(options);
                 }
                 catch (e) {
-                    console.log(e);
+                  errorMessage = "Sorry! Cannot process the given options!"
                 }
-                if (foundSBGN) { // sbgnml
+                try {
+                  if (foundSBGN) { // sbgnml
                     data = convertSBGNtoCytoscape(data);
+                  }
+                  else if (foundSBML) {
+                      data = convertSBMLtoCytoscape(libsbmlInstance, data);
+                  }
                 }
-                else if (foundSBML) {
-                    data = convertSBMLtoCytoscape(libsbmlInstance, data);
+                catch (e) {
+                  errorMessage = "Sorry! Cannot process the given file!"
                 }
-                  
             }
-            next();
+            if(errorMessage) {
+              return res.status(500).send({
+                errorMessage: errorMessage
+             });
+            }
+            else {
+              next();
+            }
         });
     }
     else

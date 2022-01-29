@@ -132,20 +132,31 @@ let processLayout = async function () {
             return result;
           })
           .catch(e => {
-            return e;
+            return alert("Sorry! Cannot process the given file!");
           });
 
   $("#applyLayout").removeClass("loading");
   $("#applyLayout").css("background-color", "#d67664");
-  // get layout info
-  $("#resultText").val(JSON.stringify(res.layout, null, 2));
 
-  // get image info
-  blobData = saveImage(res["image"], imageFormat, document.getElementById("file-name").innerHTML);
-  let urlCreator = window.URL || window.webkitURL;
-  let imageUrl = urlCreator.createObjectURL(blobData);
-  $("#imageArea").css("height", parseInt($('#imageHeight').val()) * parseInt($('#imageArea').css('width')) / (parseInt($('#imageWidth').val())));
-  $("#resultImage").attr("src", imageUrl);
+  if(!res.errorMessage && (res.layout !== undefined && res.image !== undefined)) {
+    // get layout info
+    $("#resultText").val(JSON.stringify(res.layout, null, 2));
+
+    // get image info
+    blobData = saveImage(res["image"], imageFormat, document.getElementById("file-name").innerHTML);
+    let urlCreator = window.URL || window.webkitURL;
+    let imageUrl = urlCreator.createObjectURL(blobData);
+    $("#imageArea").css("height", parseInt($('#imageHeight').val()) * parseInt($('#imageArea').css('width')) / (parseInt($('#imageWidth').val())));
+    $("#resultImage").attr("src", imageUrl);
+  }
+  else {
+    if(res.errorMessage) {
+      alert(res.errorMessage);
+    }
+    else {
+      alert("Sorry! Cannot process the given file!");
+    }
+  }
 };
 
 $('#applyLayout').click(function(){
