@@ -69,7 +69,7 @@ const convertSBMLtoCytoscape = function(libsbmlInstance, sbmlText) {
         let speciesGlyph = layout.specglyphs[i];
         speciesGlyphIdSpeciesIdMap.set(speciesGlyph.getId(), speciesGlyph.getSpeciesId());
         let bbox = speciesGlyph.getBoundingBox();
-        let data = {id: speciesGlyph.getId(), label: speciesMap.get(speciesGlyph.getSpeciesId())[0], compref: speciesMap.get(speciesGlyph.getSpeciesId())[0],
+        let data = {id: speciesGlyph.getId(), label: speciesMap.get(speciesGlyph.getSpeciesId())[0], compref: speciesMap.get(speciesGlyph.getSpeciesId())[1],
           sboTerm: speciesMap.get(speciesGlyph.getSpeciesId())[2], width: bbox.width, height: bbox.height};
         let position = {x: bbox.x + bbox.width / 2, y: bbox.y + bbox.height / 2};
         speciesNodeMap.set(speciesGlyph.getId(), {"data": data, "position": position, "group": "nodes", "classes": "species"});
