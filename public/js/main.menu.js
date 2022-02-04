@@ -138,7 +138,7 @@ let processLayout = async function () {
   $("#applyLayout").removeClass("loading");
   $("#applyLayout").css("background-color", "#d67664");
 
-  if(!res.errorMessage && (res.layout !== undefined && res.image !== undefined)) {
+  if(!res.errorMessage && (res.layout !== undefined || res.image !== undefined)) {
     // get layout info
     $("#resultText").val(JSON.stringify(res.layout, null, 2));
 
