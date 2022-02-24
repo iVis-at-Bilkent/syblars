@@ -1,11 +1,12 @@
-heroku = !(location.hostname === "localhost");
+heroku = !(location.hostname === "139.179.50.45");
 
 ///////////////////// LOAD & SAVE //////////////////////////////
 
 let graphData; // data read from the file
 let blobData; // blob data for image
 let imageFormat;
-let fileType; 
+let fileType;
+let nodeData; // object keeps node ids and labels 
 
 let setFileContent = function (fileName) {
     let span = document.getElementById('file-name');
@@ -45,7 +46,7 @@ $("#save-file-json").on("click", function (e) {
     saveAs(blob, filename);
 });
 
-let processLayout = async function () {
+let processNodes = async function () {
   
   let isGraphML = (graphData.search("graphml") === -1) ? 0 : 1;
   let isSBGNML = (graphData.search("sbgn") === -1) ? 0 : 1;
@@ -53,22 +54,22 @@ let processLayout = async function () {
 
   if (!heroku) {
     if (isGraphML)
-      url = "http://localhost:" + port + "/graphml?edges=true";
+      url = "http://139.179.50.45:" + port + "/graphml?nodeInfo=true";
     else if (isSBGNML)
-      url = "http://localhost:" + port + "/sbgnml?edges=true";
+      url = "http://139.179.50.45:" + port + "/sbgnml?nodeInfo=true";
     else if (isSBML)
-      url = "http://localhost:" + port + "/sbml?edges=true";
+      url = "http://139.179.50.45:" + port + "/sbml?nodeInfo=true";
     else
-      url = "http://localhost:" + port + "/json?edges=true";
+      url = "http://139.179.50.45:" + port + "/json?nodeInfo=true";
   } else {
     if (isGraphML)
-      url = "https://syblars.herokuapp.com/graphml?edges=true";
+      url = "https://syblars.herokuapp.com/graphml?nodeInfo=true";
     else if (isSBGNML)
-      url = "https://syblars.herokuapp.com/sbgnml?edges=true";
+      url = "https://syblars.herokuapp.com/sbgnml?nodeInfo=true";
     else if (isSBML)
-      url = "https://syblars.herokuapp.com/sbml?edges=true"
+      url = "https://syblars.herokuapp.com/sbml?nodeInfo=true"
     else
-      url = "https://syblars.herokuapp.com/json?edges=true";
+      url = "https://syblars.herokuapp.com/json?nodeInfo=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
@@ -108,6 +109,146 @@ let processLayout = async function () {
       height: parseInt($('#imageHeight').val()),
       color: $('#colorScheme').attr("disabled") ? $('#color').val() : $('#colorScheme').val()
     }
+  };
+
+  let data;
+  if (!isGraphML && !isSBGNML && !isSBML) {
+    data = [JSON.parse(graphData), options];
+    data = JSON.stringify(data);
+  } else
+    data = graphData + JSON.stringify(options);
+  
+  const settings = {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'text/plain'
+    },
+    body: data
+  };
+
+  let res = await fetch(url, settings)
+          .then(response => response.json())
+          .then(result => {
+            return result;
+          })
+          .catch(e => {
+            return alert("Sorry! Cannot process the given file!");
+          });
+       
+  if(!res.errorMessage) {
+    // get layout info
+    nodeData = res;
+  }
+  else {
+    if(res.errorMessage) {
+      alert(res.errorMessage);
+    }
+    else {
+      alert("Sorry! Cannot process the given file!");
+    }
+  }
+};
+
+let processLayout = async function () {
+  
+  let isGraphML = (graphData.search("graphml") === -1) ? 0 : 1;
+  let isSBGNML = (graphData.search("sbgn") === -1) ? 0 : 1;
+  let isSBML = (graphData.search("sbml") === -1) ? 0 : 1;
+
+  if (!heroku) {
+    if (isGraphML)
+      url = "http://139.179.50.45:" + port + "/graphml?edges=true";
+    else if (isSBGNML)
+      url = "http://139.179.50.45:" + port + "/sbgnml?edges=true";
+    else if (isSBML)
+      url = "http://139.179.50.45:" + port + "/sbml?edges=true";
+    else
+      url = "http://139.179.50.45:" + port + "/json?edges=true";
+  } else {
+    if (isGraphML)
+      url = "https://syblars.herokuapp.com/graphml?edges=true";
+    else if (isSBGNML)
+      url = "https://syblars.herokuapp.com/sbgnml?edges=true";
+    else if (isSBML)
+      url = "https://syblars.herokuapp.com/sbml?edges=true"
+    else
+      url = "https://syblars.herokuapp.com/json?edges=true";
+  }
+
+  imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
+  let currentLayout = $('#layoutType').val();
+
+  $('#' + currentLayout + '-save-layout').trigger("click");
+  
+  let layoutOptions = {};
+  switch (currentLayout) {
+    case 'fcose':
+      layoutOptions = fcoseLayoutProp.getProperties();
+      break;    
+    case 'cola':
+      layoutOptions = colaLayoutProp.getProperties();
+      break;
+    case 'cise':
+      layoutOptions = ciseLayoutProp.getProperties();
+      break;
+    case 'dagre':
+      layoutOptions = dagreLayoutProp.getProperties();
+      break;
+    case 'klay':
+      layoutOptions = klayLayoutProp.getProperties();
+      break;
+    case 'avsdf':
+      layoutOptions = avsdfLayoutProp.getProperties();
+      break;
+    case 'preset':
+      layoutOptions = presetLayoutProp.getProperties();
+      break;      
+  }
+
+  let currentQuery = $('#queryType').val();
+  let queryOptions = undefined;
+  switch (currentQuery) {
+    case 'shortestPath':
+      queryOptions = {
+        query: 'shortestPath',
+        sourceNodes: [$('#sourceNode').val()],
+        targetNodes: [$('#targetNode').val()],
+        sourceColor: $('#sourceColor').val(),
+        targetColor: $('#targetColor').val(),
+        pathColor: $('#pathColor').val()
+      };
+      break;    
+    case 'cola':
+      layoutOptions = colaLayoutProp.getProperties();
+      break;
+    case 'cise':
+      layoutOptions = ciseLayoutProp.getProperties();
+      break;
+    case 'dagre':
+      layoutOptions = dagreLayoutProp.getProperties();
+      break;
+    case 'klay':
+      layoutOptions = klayLayoutProp.getProperties();
+      break;
+    case 'avsdf':
+      layoutOptions = avsdfLayoutProp.getProperties();
+      break;
+    case 'preset':
+      layoutOptions = presetLayoutProp.getProperties();
+      break;      
+  }  
+
+  let options = {
+    layoutOptions: layoutOptions,
+    imageOptions: {
+      format: imageFormat,
+      background: !$('#transparent').is(':checked') ? $('#imageBackground').val() : "transparent",
+      width: parseInt($('#imageWidth').val()),
+      height: parseInt($('#imageHeight').val()),
+      color: $('#colorScheme').attr("disabled") ? $('#color').val() : $('#colorScheme').val()
+    },
+    queryOptions: queryOptions
   };
 
   let data;
@@ -247,7 +388,15 @@ $("body").on("change", "#file-input", function (e, fileObject) {
         }
         $("#resultText").val("");
         $("#resultImage").attr("src", null);
-        blobData = undefined;        
+        $("#layoutTab").css("pointer-events", "all");
+        $("#layoutTab").removeClass("disabled");
+        $("#imageTab").css("pointer-events", "all");
+        $("#imageTab").removeClass("disabled");
+        $("#queryTab").css("pointer-events", "all");
+        $("#queryTab").removeClass("disabled");                
+        blobData = undefined;
+        await processNodes();
+        $("#queryType").trigger('change');       
     };
     reader.readAsText(file);
 
@@ -263,6 +412,8 @@ $("#informationModal").on("click", function (e) {
 });
 
 $('.ui.accordion').accordion();
+
+$('.menu .item').tab();
 
 $("#imageSettingsDefault").on("click", function (e) {
    $("input[value='png']").prop("checked", true);
@@ -385,30 +536,96 @@ let presetLayoutProp = new PRESETLayout({
     el: '#preset-layout-table'
 });
 
-$("#layout-options").on("click", function (e) {
+fcoseLayoutProp.render();
+let previousLayout = $('#layoutType').val();
+$("#layoutType").on("change", function (e) {
   let currentLayout = $('#layoutType').val();
+  $('#' + previousLayout + '-save-layout').trigger("click");
   switch (currentLayout) {
-    case 'fcose':
-      fcoseLayoutProp.render();
+    case 'fcose':      
+      fcoseLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;    
     case 'cola':
-      colaLayoutProp.render();
+      colaLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;
     case 'cise':
-      ciseLayoutProp.render();
+      ciseLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;
     case 'dagre':
-      dagreLayoutProp.render();
+      dagreLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;
     case 'klay':
-      klayLayoutProp.render();
+      klayLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;
     case 'avsdf':
-      avsdfLayoutProp.render();
+      avsdfLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;
     case 'preset':
-      presetLayoutProp.render();
+      presetLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
       break;      
+  }
+});
+
+$("#layoutSettingsDefault").on("click", function (e) {
+  let currentLayout = $('#layoutType').val();
+  $('#' + currentLayout + '-default-layout').trigger("click");
+});
+
+$("#queryType").change(function() {
+  let value = this.value;
+  document.getElementById('queryFormTemplate').innerHTML = "";
+  if(value == "shortestPath") {
+    let form = document.getElementById('queryFormTemplate');
+    form.innerHTML +=
+      '<div class="two fields">' +
+        '<div class="five wide field">' +
+          '<label>Source Node</label>' +
+          '<select id="sourceNode">' +
+          '</select>' +
+        '</div>' +
+        '<div class="five wide field">' +
+          '<label>Target Node</label>' +
+          '<select id="targetNode">' +                   
+          '</select>' +
+        '</div>' +
+      '</div>';
+    $("#queryType").val('shortestPath');
+  }
+
+  if(value == "shortestPath") {
+    let sourceList = document.getElementById('sourceNode');
+    for (const [key, value] of Object.entries(nodeData)) {
+      sourceList.innerHTML += '<option value="' + key + '">'+ value + " (" + key + ')' + '</option>';
+    }
+    let targetList = document.getElementById('targetNode');
+    for (const [key, value] of Object.entries(nodeData)) {
+      targetList.innerHTML += '<option value="' + key + '">'+ value + " (" + key + ')' + '</option>';
+    }
+  }
+  if(value == "shortestPath") {
+    let form = document.getElementById('queryFormTemplate');
+    form.innerHTML +=
+      '<div class="inline fields">' +   
+        '<label>Source:</label>' +
+        '<div class="three wide field">' +
+          '<input type="color" id="sourceColor" value="#00ff00">' +
+        '</div>' +
+        '<label>Target:</label>' +
+        '<div class="three wide field">' +
+          '<input type="color" id="targetColor" value="#ff0000">' +
+        '</div>' +
+        '<label>Path:</label>' +
+        '<div class="three wide field">' +
+          '<input type="color" id="pathColor" value="#ffff00">' +
+        '</div>' +        
+      '</div>';
   }
 });
 

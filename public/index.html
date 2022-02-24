@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    
+
     <div class="ui container">
-      <div class="ui vertically divided vertically padded grid">
+      <div class="ui vertically padded grid">
         <div class="row" style="padding-bottom: 0; padding-top: 0;  margin-top: 15px;">          
           <div class="four wide column">
             <a href="https://www.cs.bilkent.edu.tr/~ivis/" target="_blank">
@@ -33,8 +33,9 @@
           <div class="four wide column">
             <img class="ui image" id="informationModal" src="img/information-button.svg" title="About SyBLaRS" style="height: 30px; margin-top: 15px; float: right">
           </div>
-        </div>        
-        <div class="three column row" style="padding-bottom: 0; padding-top: 0;">
+        </div>
+        <div class="ui divider"></div>
+        <div class="two column row" style="padding-bottom: 0; padding-top: 0;">
           <div class="five wide column">
             <h3 class="ui header">File</h3>
             <div class="ui tiny form">
@@ -63,105 +64,144 @@
             <span class="input-file" id="file-name" style="overflow: hidden; text-overflow:ellipsis; margin-top: 10px; width:250px; font-weight: bold; display:inline-block;"></span>
             <p style="margin-top: 6px" class="input-file" id="file-type"></p>            
           </div>
-          <div class="six wide column">
-            <h3 class="ui header">Layout Settings</h3>
-            <div class="ui tiny form">
-              <div class="inline fields">
-                <label>Layout Style:</label>
-                <div class="four wide field">
-                  <select id="layoutType">
-                    <option value="fcose">fCoSE</option>
-                    <option value="cola">CoLa</option>                    
-                    <option value="cise">CiSE</option>
-                    <option value="dagre">Dagre</option>
-                    <option value="klay">Klay</option>
-                    <option value="avsdf">Avsdf</option>
-                    <option value="preset">Preset</option>                     
-                  </select>
-                </div>
-                <div class="six wide field">
-                  <div class="ui labeled button" id="layout-options" tabindex="0">
-                    <a class="ui basic label">
-                      Options...
-                    </a>
-                  </div>
-                </div>
-              </div>  
+          <!-- <div class="two wide column"></div> -->
+          <div id='settings' class="eleven wide column">
+            <h3 class="ui header">Settings</h3>
+            <div class="ui top attached tabular menu">
+              <a class="item active" data-tab="first">Layout</a>
+              <a class="item" data-tab="second">Image</a>
+              <a class="item" data-tab="third">Query</a>
             </div>
-          </div>
-          <div class="five wide column">
-            <h3 class="ui header">Image Settings <img class="ui image" id="imageSettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-right: 50px; margin-top: 0px; float: right; padding: 2.5px"></h3>
-            <div class="ui tiny form">
-              <div class="inline fields" id="formatRadios">
-                <label>Format:</label>
-                <div class="field">
-                  <div class="ui radio checkbox">
-                    <input type="radio" id="pngRadio" name="format" value="png" checked="checked">
-                    <label>PNG</label>
+            <div id="layoutTab" class="ui bottom attached tab segment active disabled" data-tab="first" style="height: 250px; pointer-events: none;">
+              <div class="ui tiny form">
+                <div class="inline fields">
+                  <label>Layout Style:</label>
+                  <div class="four wide field">
+                    <select id="layoutType">
+                      <option value="fcose">fCoSE</option>
+                      <option value="cola">CoLa</option>                    
+                      <option value="cise">CiSE</option>
+                      <option value="dagre">Dagre</option>
+                      <option value="klay">Klay</option>
+                      <option value="avsdf">Avsdf</option>
+                      <option value="preset">Preset</option>                     
+                    </select>
                   </div>
+                  <img class="ui image" id="layoutSettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 10px; margin-top: 0px; float: right; padding: 2.5px">
                 </div>
-                <div class="field">
-                  <div class="ui radio checkbox">
-                    <input type="radio" id="jpgRadio" name="format" value="jpg">
-                    <label>JPG</label>
-                  </div>
+                <div id="fcose-layout-table" class="ui mini" >
+                  <!-- fcose layout table will be shown here -->
                 </div>
-                <div class="field">
-                  <div class="ui radio checkbox">
-                    <input type="radio" id="svgRadio" name="format" value="svg">
-                    <label>SVG</label>
-                  </div>
-                </div>                
+                <div id="cola-layout-table" class="ui mini" >
+                  <!-- cola layout table will be shown here -->
+                </div>
+                <div id="cise-layout-table" class="ui mini" >
+                  <!-- cise layout table will be shown here -->
+                </div>
+                <div id="dagre-layout-table" class="ui mini" >
+                  <!-- dagre layout table will be shown here -->
+                </div>
+                <div id="klay-layout-table" class="ui mini" >
+                    <!-- klay layout table will be shown here -->
+                </div>
+                <div id="avsdf-layout-table" class="ui mini" >
+                    <!-- avsdf layout table will be shown here -->
+                </div>
+                <div id="preset-layout-table" class="ui mini" >
+                    <!-- preset layout table will be shown here -->
+                </div>
               </div>
-              <div class="inline fields">
-                <div class="seven wide field">
-                  <label>Width:</label>
-                  <input type="number" id="imageWidth" value="1280" min="1">
-                </div>
-                <div class="seven wide field">
-                  <label>Height:</label>
-                  <input type="number" id="imageHeight" value="720" min="1">
-                </div>
-              </div>
-              <div class="inline fields">   
-                <label>Color:</label>
-                <div class="four wide field">
-                  <input type="color" id="color" value="#9ecae1">
-                </div>
-                <label> or </label>
-                <div class="seven wide field">
+            </div>
+            <div id="imageTab" class="ui bottom attached tab segment disabled" data-tab="second"  style="height: 250px; pointer-events: none;">
+              <div class="ui tiny form">
+                <div class="inline fields" id="formatRadios">
+                  <label>Format:</label>
                   <div class="field">
-                    <select id="colorScheme" disabled>
-                      <option value="bluescale">Bluescale</option>
-                      <option value="greyscale">Greyscale</option>                      
-                      <option value="red_blue">Red-Blue</option>
-                      <option value="green_brown">Green-Brown</option>
-                      <option value="purple_brown">Purple-Brown</option>
-                      <option value="purple_green">Purple-Green</option>
-                      <option value="grey_red">Grey-Red</option>
-                      <option value="black_white">Black-White</option>
+                    <div class="ui radio checkbox">
+                      <input type="radio" id="pngRadio" name="format" value="png" checked="checked">
+                      <label>PNG</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" id="jpgRadio" name="format" value="jpg">
+                      <label>JPG</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" id="svgRadio" name="format" value="svg">
+                      <label>SVG</label>
+                    </div>
+                  </div>
+                  <img class="ui image" id="imageSettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 165px; margin-top: 0px; float: right; padding: 2.5px">
+                </div>
+                <div class="inline fields">
+                  <div class="five wide field">
+                    <label>Width:</label>
+                    <input type="number" id="imageWidth" value="1280" min="1">
+                  </div>
+                  <div class="five wide field">
+                    <label>Height:</label>
+                    <input type="number" id="imageHeight" value="720" min="1">
+                  </div>
+                </div>
+                <div class="inline fields">
+                  <label>Color:</label>
+                  <div class="three wide field">
+                    <input type="color" id="color" value="#9ecae1">
+                  </div>
+                  <label> or </label>
+                  <div class="seven wide field">
+                    <div class="field">
+                      <select id="colorScheme" disabled>
+                        <option value="bluescale">Bluescale</option>
+                        <option value="greyscale">Greyscale</option>
+                        <option value="red_blue">Red-Blue</option>
+                        <option value="green_brown">Green-Brown</option>
+                        <option value="purple_brown">Purple-Brown</option>
+                        <option value="purple_green">Purple-Green</option>
+                        <option value="grey_red">Grey-Red</option>
+                        <option value="black_white">Black-White</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="inline fields">
+                  <label>Background:</label>
+                  <div class="three wide field">                  
+                    <input type="color" disabled id="imageBackground" value="#ffffff">
+                  </div>
+                   <div class="ui checkbox" style="margin-left: 5px;">
+                      <input type="checkbox" id='transparent' checked name="example">
+                      <label>Transparent</label>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div id="queryTab" class="ui bottom attached tab segment disabled" data-tab="third" style="height: 250px; margin-bottom: 14px; pointer-events: none;">
+              <div id="queryForm" class="ui tiny form">
+                <div class="inline fields">
+                  <label>Query Type:</label>
+                  <div class="five wide field">
+                    <select id="queryType">
+                      <option value="">Select Query</option>
+                      <option value="shortestPath">Shortest Path</option>                     
                     </select>
                   </div>
                 </div>
-              </div>
-              <div class="inline fields">
-                <label>Background:</label>
-                <div class="four wide field">                  
-                  <input type="color" disabled id="imageBackground" value="#ffffff">                  
+                <div id="queryFormTemplate">
                 </div>
-                 <div class="ui checkbox" style="margin-left: 5px;">
-                    <input type="checkbox" id='transparent' checked name="example">
-                    <label>Transparent</label>
-                  </div>                
               </div>
             </div>
-          </div>        
+          </div>
         </div>
         <div class="row" style="padding-bottom: 0; padding-top: 0">
           <div class="center aligned column">
             <button id="applyLayout" class="ui primary button">Apply Layout</button>
           </div>
         </div>
+        <div class="ui divider"></div>
         <div class="two column row" style="padding-bottom: 0; padding-top: 0">
           <div class="seven wide column" style="margin-top: 11.5px">
             <div class="ui form">
@@ -188,6 +228,7 @@
             </div>           
           </div>                    
         </div>
+        <div class="ui divider"></div>
         <div class="row" style="padding-bottom: 0; padding-top: 0; font-size: 13px;">
           <div class="center aligned column">
             Copyright © 2021 - present by 
@@ -257,932 +298,371 @@
           </p>
         </div>        
       </div>
-      
-      <div id="fcose-layout-table" class="ui mini modal" >
-          <!-- fcose layout table will be shown here -->
-      </div>
-      <div id="cola-layout-table" class="ui mini modal" >
-          <!-- cola layout table will be shown here -->
-      </div>
-      <div id="cise-layout-table" class="ui mini modal large" >
-          <!-- cise layout table will be shown here -->
-      </div>
-      <div id="dagre-layout-table" class="ui mini modal" >
-          <!-- dagre layout table will be shown here -->
-      </div>
-      <div id="klay-layout-table" class="ui mini modal large" >
-          <!-- klay layout table will be shown here -->
-      </div>
-      <div id="avsdf-layout-table" class="ui mini modal small" >
-          <!-- avsdf layout table will be shown here -->
-      </div>
-      <div id="preset-layout-table" class="ui mini modal small" >
-          <!-- preset layout table will be shown here -->
-      </div>      
     </div>
     
     <script type="text/template" id="fcose-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">fCoSE Layout Options</th>
-      </tr></thead>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
-        </td>
-        <td class="centered">
-          <input id="nodeDimensionsIncludeLabels1" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
-        </td>
-      </tr>
-
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Uniform Node Dimensions </span>
-        </td>
-        <td class="centered">
-          <input id="uniformNodeDimensions1" type="checkbox"<% if(uniformNodeDimensions){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Pack Components </span>
-        </td>
-        <td class="centered">
-          <input id="packComponents1" type="checkbox"<% if(packComponents){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Tile </span>
-        </td>
-        <td class="centered">
-            <input id="tile1" type="checkbox"<% if(tile){ %> checked <%}%> >       
-        </td>
-      </tr>      
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="padding1" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Node Repulsion </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="nodeRepulsion1" type="number" min="0" value = <%= nodeRepulsion %> >
-            </div>
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <input id="nodeDimensionsIncludeLabels1" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Ideal Edge Length </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="idealEdgeLength1" type="number" min="0" value = <%= idealEdgeLength %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge Elasticity </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeElasticity1" type="number" min="0" step="0.1" value = <%= edgeElasticity %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Nesting Factor </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="nestingFactor1" type="number" min="0" step="0.1" value = <%= nestingFactor %> >
-            </div>
-          </div>        
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Number of Iterations </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="numIter1" type="number" min="0" value = <%= numIter %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Tiling Padding Vertical </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="tilingPaddingVertical1" type="number" min="0" value = <%= tilingPaddingVertical %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Tiling Padding Horizontal </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="tilingPaddingHorizontal1" type="number" min="0" value = <%= tilingPaddingHorizontal %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>      
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Gravity </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="gravity1" type="number" min="0" step="0.1" value = <%= gravity %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Gravity Range </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="gravityRange1" type="number" min="0" step="0.1" value = <%= gravityRange %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Gravity Compound </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="gravityCompound1" type="number" min="0" step="0.1" value = <%= gravityCompound %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>      
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Gravity Range Compound </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="gravityRangeCompound1" type="number" min="0" step="0.1" value = <%= gravityRangeCompound %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Initial Energy On Incremental </span>
-        </td>
-        <td style="padding-bottom: 0.4em !important;">
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="initialEnergyOnIncremental1" type="number" min="0" step="0.1" value = <%= initialEnergyOnIncremental %> >
-            </div>
-          </div>                
-        </td>
-      </tr>
-      
-      <tr id="layout-option-buttons1" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout1">Default</button>
-          <button class="ui primary button" id="save-layout1" style="float: right">Save</button>
-        </td>
-      </tr>
-      
-      </table>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Uniform Node Dimensions </span>
+            <input id="uniformNodeDimensions1" type="checkbox"<% if(uniformNodeDimensions){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components </span>
+            <input id="packComponents1" type="checkbox"<% if(packComponents){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Tile </span>
+            <input id="tile1" type="checkbox"<% if(tile){ %> checked <%}%> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding1" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Node Repulsion </span>
+            <input id="nodeRepulsion1" type="number" min="0" value = <%= nodeRepulsion %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Ideal Edge Length </span>
+            <input id="idealEdgeLength1" type="number" min="0" value = <%= idealEdgeLength %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Edge Elasticity </span>
+            <input id="edgeElasticity1" type="number" min="0" step="0.1" value = <%= edgeElasticity %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Nesting Factor </span>
+            <input id="nestingFactor1" type="number" min="0" step="0.1" value = <%= nestingFactor %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Number of Iter. </span>
+            <input id="numIter1" type="number" min="0" value = <%= numIter %> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Gravity </span>
+            <input id="gravity1" type="number" min="0" step="0.1" value = <%= gravity %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Gravity Range </span>
+            <input id="gravityRange1" type="number" min="0" step="0.1" value = <%= gravityRange %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Gravity Compound </span>
+            <input id="gravityCompound1" type="number" min="0" step="0.1" value = <%= gravityCompound %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Gravity Range Comp. </span>
+            <input id="gravityRangeCompound1" type="number" min="0" step="0.1" value = <%= gravityRangeCompound %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Tiling Padding Vert. </span>
+            <input id="tilingPaddingVertical1" type="number" min="0" value = <%= tilingPaddingVertical %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Tiling Padding Hor. </span>
+            <input id="tilingPaddingHorizontal1" type="number" min="0" value = <%= tilingPaddingHorizontal %> >
+          </div>
+        </div>
+        <button class="ui button" id="fcose-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="fcose-save-layout" style="float: right; display:none" >Save</button>
+      </div>
     </script>
 
     <script type="text/template" id="cola-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">CoLa Layout Options</th>
-      </tr></thead>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
-        </td>
-        <td class="centered">
-          <input id="nodeDimensionsIncludeLabels2" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Avoid Overlap </span>
-        </td>
-        <td class="centered">
-          <input id="avoidOverlap2" type="checkbox"<% if(avoidOverlap){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Handle Disconnected </span>
-        </td>
-        <td class="centered">
-          <input id="handleDisconnected2" type="checkbox"<% if(handleDisconnected){ %> checked <%}%> >
-        </td>
-      </tr>      
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="padding2" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
- 
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Convergence Threshold </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="convergenceThreshold2" type="number" min="0" step="0.01" value = <%= convergenceThreshold %> >
-            </div>
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <input id="nodeDimensionsIncludeLabels2" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Node Spacing </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="nodeSpacing2" type="number" min="0" value = <%= nodeSpacing %> >
-            </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Avoid Overlap </span>
+            <input id="avoidOverlap2" type="checkbox"<% if(avoidOverlap){ %> checked <%}%> >
           </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge Length </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeLength2" type="number" min="0" value = <%= edgeLength %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge SymDiff Length </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeSymDiffLength2" type="number" min="0" value = <%= edgeSymDiffLength %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge Jaccard Length </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeJaccardLength2" type="number" min="0" value = <%= edgeJaccardLength %> >
-            </div>
-          </div>        
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Unconstraint Iterations </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="unconstrIter2" type="number" min="0" value = <%= unconstrIter %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> User Constraint Iterations </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="userConstIter2" type="number" min="0" value = <%= userConstIter %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> All Constraint Iterations </span>
-        </td>
-        <td style="padding-bottom: 0.4em !important;">
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="allConstIter2" type="number" min="0" value = <%= allConstIter %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>      
-      
-      <tr id="layout-option-buttons2" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout2">Default</button>
-          <button class="ui primary button" id="save-layout2"  style="float: right">Save</button>          
-        </td>
-      </tr>
-      
-      </table>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Handle Disconnected </span>
+            <input id="handleDisconnected2" type="checkbox"<% if(handleDisconnected){ %> checked <%}%> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding2" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Convergence Threshold </span>
+            <input id="convergenceThreshold2" type="number" min="0" step="0.01" value = <%= convergenceThreshold %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Node Spacing </span>
+            <input id="nodeSpacing2" type="number" min="0" value = <%= nodeSpacing %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Edge Length </span>
+            <input id="edgeLength2" type="number" min="0" value = <%= edgeLength %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Edge SymDiff Length </span>
+            <input id="edgeSymDiffLength2" type="number" min="0" value = <%= edgeSymDiffLength %> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Edge Jaccard Length </span>
+            <input id="edgeJaccardLength2" type="number" min="0" value = <%= edgeJaccardLength %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Unconstraint Iterations </span>
+            <input id="unconstrIter2" type="number" min="0" value = <%= unconstrIter %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> User Constraint Iterations </span>
+            <input id="userConstIter2" type="number" min="0" value = <%= userConstIter %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> All Constraint Iterations </span>
+            <input id="allConstIter2" type="number" min="0" value = <%= allConstIter %> >
+          </div>
+          <div class="field">
+          </div>
+        </div>
+        <button class="ui button" id="cola-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="cola-save-layout" style="float: right; display:none" >Save</button>                      
+      </div>
     </script>
 
     <script type="text/template" id="cise-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">CiSE Layout Options</th>
-      </tr></thead>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
-        </td>
-        <td class="centered">
-          <input id="nodeDimensionsIncludeLabels3" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
-        </td>
-      </tr>      
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Pack Components </span>
-        </td>
-        <td class="centered">
-          <input id="packComponents3" type="checkbox"<% if(packComponents){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Allow Nodes Inside Circle </span>
-        </td>
-        <td class="centered">
-          <input id="allowNodesInsideCircle3" type="checkbox"<% if(allowNodesInsideCircle){ %> checked <%}%> >
-        </td>
-      </tr>     
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="padding3" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Node Separation </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="nodeSeparation3" type="number" min="0" step="0.1" value = <%= nodeSeparation %> >
-            </div>
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <input id="nodeDimensionsIncludeLabels3" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Ideal Inter-Cluster Edge Length Coeff. </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="idealInterClusterEdgeLengthCoefficient3" type="number" min="0" step="0.1" value = <%= idealInterClusterEdgeLengthCoefficient %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Max Ratio Of Nodes Inside Circle </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="maxRatioOfNodesInsideCircle3" type="number" min="0" step="0.1" value = <%= maxRatioOfNodesInsideCircle %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Spring Coefficient </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="springCoeff3" type="number" min="0" step="0.1" value = <%= springCoeff %> >
-            </div>
-          </div>        
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Node Repulsion </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="nodeRepulsion3" type="number" min="0" value = <%= nodeRepulsion %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Gravity </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="gravity3" type="number" min="0" step="0.1" value = <%= gravity %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Gravity Range </span>
-        </td>
-        <td style="padding-bottom: 0.4em !important;">
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="gravityRange3" type="number" min="0" step="0.1" value = <%= gravityRange %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>      
-      
-      <tr id="layout-option-buttons3" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout3">Default</button>
-          <button class="ui primary button" id="save-layout3"  style="float: right">Save</button>          
-        </td>
-      </tr>
-      
-      </table>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components </span>
+            <input id="packComponents3" type="checkbox"<% if(packComponents){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Allow Nodes Inside Circle </span>
+            <input id="allowNodesInsideCircle3" type="checkbox"<% if(allowNodesInsideCircle){ %> checked <%}%> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding3" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Node Separation </span>
+            <input id="nodeSeparation3" type="number" min="0" step="0.1" value = <%= nodeSeparation %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Inter-Cluster Edge Length Coeff. </span>
+            <input id="idealInterClusterEdgeLengthCoefficient3" type="number" min="0" step="0.1" value = <%= idealInterClusterEdgeLengthCoefficient %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Max Ratio Of Nodes Inside Circle </span>
+            <input id="maxRatioOfNodesInsideCircle3" type="number" min="0" step="0.1" value = <%= maxRatioOfNodesInsideCircle %> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Spring Coefficient </span>
+            <input id="springCoeff3" type="number" min="0" step="0.1" value = <%= springCoeff %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Node Repulsion </span>
+            <input id="nodeRepulsion3" type="number" min="0" value = <%= nodeRepulsion %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Gravity </span>
+            <input id="gravity3" type="number" min="0" step="0.1" value = <%= gravity %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Gravity Range </span>
+            <input id="gravityRange3" type="number" min="0" step="0.1" value = <%= gravityRange %> >
+          </div>
+        </div>
+        <button class="ui button" id="cise-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="cise-save-layout" style="float: right; display:none" >Save</button>                       
+      </div>
     </script>
                  
     <script type="text/template" id="dagre-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">Dagre Layout Options</th>
-      </tr></thead>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
-        </td>
-        <td class="centered">
-          <input id="nodeDimensionsIncludeLabels4" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
-        </td>
-      </tr>      
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="padding4" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Node Separation </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="nodeSep4" type="number" min="0" value = <%= nodeSep %> >
-            </div>
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <input id="nodeDimensionsIncludeLabels4" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge Separation </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeSep4" type="number" min="0" value = <%= edgeSep %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>      
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Rank Separation </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="rankSep4" type="number" min="0" value = <%= rankSep %> >
-            </div>
-          </div>        
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge Weight </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeWeight4" type="number" min="0" step="0.1" value = <%= edgeWeight %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>      
-      
-      <tr id="layout-option-buttons4" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout4">Default</button>
-          <button class="ui primary button" id="save-layout4"  style="float: right">Save</button>          
-        </td>
-      </tr>
-      
-      </table>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding4" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Node Separation </span>
+            <input id="nodeSep4" type="number" min="0" value = <%= nodeSep %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Edge Separation </span>
+            <input id="edgeSep4" type="number" min="0" value = <%= edgeSep %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Rank Separation </span>
+            <input id="rankSep4" type="number" min="0" value = <%= rankSep %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Edge Weight </span>
+            <input id="edgeWeight4" type="number" min="0" step="0.1" value = <%= edgeWeight %> >
+          </div>
+        </div>
+        <button class="ui button" id="dagre-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="dagre-save-layout" style="float: right; display:none" >Save</button>                      
+      </div>
     </script>
 
     <script type="text/template" id="klay-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">Klay Layout Options</th>
-      </tr></thead>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Node Dimensions Include Labels </span>
-        </td>
-        <td class="centered">
-          <input id="nodeDimensionsIncludeLabels5" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
-        </td>
-      </tr>
-
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Add Unnecessary Bendpoints </span>
-        </td>
-        <td class="centered">
-          <input id="addUnnecessaryBendpoints5" type="checkbox"<% if(klay.addUnnecessaryBendpoints){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Compact Components </span>
-        </td>
-        <td class="centered">
-          <input id="compactComponents5" type="checkbox"<% if(klay.compactComponents){ %> checked <%}%> >
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Feedback Edges </span>
-        </td>
-        <td class="centered">
-            <input id="feedbackEdges5" type="checkbox"<% if(klay.feedbackEdges){ %> checked <%}%> >       
-        </td>
-      </tr>
-
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Layout Hierarchy </span>
-        </td>
-        <td class="centered">
-            <input id="layoutHierarchy5" type="checkbox"<% if(klay.layoutHierarchy){ %> checked <%}%> >       
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Merge Edges </span>
-        </td>
-        <td class="centered">
-            <input id="mergeEdges5" type="checkbox"<% if(klay.mergeEdges){ %> checked <%}%> >       
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Merge Hierarchy Crossing Edges </span>
-        </td>
-        <td class="centered">
-            <input id="mergeHierarchyCrossingEdges5" type="checkbox"<% if(klay.mergeHierarchyCrossingEdges){ %> checked <%}%> >       
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Route Self Loop Inside </span>
-        </td>
-        <td class="centered">
-            <input id="routeSelfLoopInside5" type="checkbox"<% if(klay.routeSelfLoopInside){ %> checked <%}%> >       
-        </td>
-      </tr>
-      
-      <tr style="height: 32.4px;">
-        <td>
-          <span class="add-on layout-text"> Separate Connected Components </span>
-        </td>
-        <td class="centered">
-            <input id="separateConnectedComponents5" type="checkbox"<% if(klay.separateConnectedComponents){ %> checked <%}%> >       
-        </td>
-      </tr>      
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="padding5" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Aspect Ratio </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="aspectRatio5" type="number" min="0" step="0.1" value = <%= klay.aspectRatio %> >
-            </div>
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <input id="nodeDimensionsIncludeLabels5" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Border Spacing </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="borderSpacing5" type="number" min="0" value = <%= klay.borderSpacing %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Edge Spacing Factor </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="edgeSpacingFactor5" type="number" min="0" step="0.1" value = <%= klay.edgeSpacingFactor %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> In-Layer Spacing Factor </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="inLayerSpacingFactor5" type="number" min="0" step="0.1" value = <%= klay.inLayerSpacingFactor %> >
-            </div>
-          </div>        
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Linear Segments Deflection Dampening </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="linearSegmentsDeflectionDampening5" type="number" min="0" step="0.1" value = <%= klay.linearSegmentsDeflectionDampening %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Randomization Seed </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="randomizationSeed5" type="number" min="0" value = <%= klay.randomizationSeed %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Spacing </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="spacing5" type="number"min="0" value = <%= klay.spacing %> >
-            </div>
-          </div>                   
-        </td>
-      </tr>      
-      
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Thoroughness </span>
-        </td>
-        <td>
-          <div class="ui tiny form">
-            <div class="field">
-              <input id="thoroughness5" type="number"min="0" value = <%= klay.thoroughness %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>      
-      
-      <tr id="layout-option-buttons5" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout5">Default</button>
-          <button class="ui primary button" id="save-layout5" style="float: right">Save</button>
-        </td>
-      </tr>
-      
-      </table>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Compact Components </span>
+            <input id="compactComponents5" type="checkbox"<% if(klay.compactComponents){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Feedback Edges </span>
+            <input id="feedbackEdges5" type="checkbox"<% if(klay.feedbackEdges){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Layout Hierarchy </span>
+            <input id="layoutHierarchy5" type="checkbox"<% if(klay.layoutHierarchy){ %> checked <%}%> > 
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Merge Edges </span>
+            <input id="mergeEdges5" type="checkbox"<% if(klay.mergeEdges){ %> checked <%}%> >  
+          </div>
+        </div>
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Merge Hier. Crossing Edges </span>
+            <input id="mergeHierarchyCrossingEdges5" type="checkbox"<% if(klay.mergeHierarchyCrossingEdges){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Add Unnec. Bendpoints </span>
+            <input id="addUnnecessaryBendpoints5" type="checkbox"<% if(klay.addUnnecessaryBendpoints){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Route Self Loop Inside </span>
+            <input id="routeSelfLoopInside5" type="checkbox"<% if(klay.routeSelfLoopInside){ %> checked <%}%> >
+          </div>
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Separate Conn. Components </span>
+            <input id="separateConnectedComponents5" type="checkbox"<% if(klay.separateConnectedComponents){ %> checked <%}%> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding5" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Aspect Ratio </span>
+            <input id="aspectRatio5" type="number" min="0" step="0.1" value = <%= klay.aspectRatio %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Border Spacing </span>
+            <input id="borderSpacing5" type="number" min="0" value = <%= klay.borderSpacing %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Edge Spacing Factor </span>
+            <input id="edgeSpacingFactor5" type="number" min="0" step="0.1" value = <%= klay.edgeSpacingFactor %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> In-Layer Spacing Factor </span>
+            <input id="inLayerSpacingFactor5" type="number" min="0" step="0.1" value = <%= klay.inLayerSpacingFactor %> >
+          </div>
+        </div>
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Linear Seg. Defl. Damp. </span>
+            <input id="linearSegmentsDeflectionDampening5" type="number" min="0" step="0.1" value = <%= klay.linearSegmentsDeflectionDampening %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Randomization Seed </span>
+            <input id="randomizationSeed5" type="number" min="0" value = <%= klay.randomizationSeed %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Spacing </span>
+            <input id="spacing5" type="number"min="0" value = <%= klay.spacing %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Thoroughness </span>
+            <input id="thoroughness5" type="number"min="0" value = <%= klay.thoroughness %> >
+          </div>
+          <div class="field">
+          </div>
+        </div>
+        <button class="ui button" id="klay-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="klay-save-layout" style="float: right; display:none" >Save</button>                              
+      </div>
     </script>
                    
     <script type="text/template" id="avsdf-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">AVSDF Layout Options</th>
-      </tr></thead>     
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td style="float: right">
-          <div class="ui tiny form tinier" >
-            <div class="field">
-              <input id="padding6" style="float: right" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Node Separation </span>
-        </td>
-        <td style="float: right">
-          <div class="ui tiny form tinier">
-            <div class="field">
-              <input id="nodeSeparation6" type="number" min="0" value = <%= nodeSeparation %> >
-            </div>
-          </div>                  
-        </td>
-      </tr>
-      
-      <tr id="layout-option-buttons6" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout6">Default</button>
-          <button class="ui primary button" id="save-layout6" style="float: right">Save</button>
-        </td>
-      </tr>
-      
-      </table>
+      <div class="ui tiny form">
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding6" style="float: right" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+            <span class="add-on layout-text"> Node Separation </span>
+            <input id="nodeSeparation6" type="number" min="0" value = <%= nodeSeparation %> >
+          </div>
+          <div class="field">
+          </div>
+          <div class="field">
+          </div>
+          <div class="field">
+          </div>
+        </div>
+        <button class="ui button" id="avsdf-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="avsdf-save-layout" style="float: right; display:none" >Save</button>                      
+      </div>
     </script>
     
     <script type="text/template" id="preset-settings-template">
-      <table class="ui single line compact table layoutTable">
-      <thead>
-        <tr><th colspan="2" style="font-size:18px">Preset Layout Options</th>
-      </tr></thead>     
-
-      <tr>
-        <td>
-          <span class="add-on layout-text"> Padding </span>
-        </td>
-        <td style="float: right">
-          <div class="ui tiny form tinier" >
-            <div class="field">
-              <input id="padding7" style="float: right" type="number" min="0" value = <%= padding %> >
-            </div>
-          </div>         
-        </td>
-      </tr>
-      
-      <tr id="layout-option-buttons7" class="layout-option-buttons">
-        <td colspan=2>
-          <button class="ui button" id="default-layout7">Default</button>
-          <button class="ui primary button" id="save-layout7" style="float: right">Save</button>
-        </td>
-      </tr>
-      
-      </table>
+      <div class="ui tiny form">
+        <div class="equal width fields">
+          <div class="field">
+            <span class="add-on layout-text"> Padding </span>
+            <input id="padding7" style="float: right" type="number" min="0" value = <%= padding %> >
+          </div>
+          <div class="field">
+          </div>
+          <div class="field">
+          </div>
+          <div class="field">
+          </div>
+          <div class="field">
+          </div>
+        </div>
+        <button class="ui button" id="preset-default-layout" style="display:none">Default</button>
+        <button class="ui primary button" id="preset-save-layout" style="float: right; display:none" >Save</button>                      
+      </div>
     </script>    
    
     <script>

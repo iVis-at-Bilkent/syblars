@@ -47,6 +47,9 @@ label {
 #imageSettingsDefault:hover {
   cursor: pointer;
 }
+#layoutSettingsDefault:hover {
+  cursor: pointer;
+}
 
 #about {
   color: #d67664 !important

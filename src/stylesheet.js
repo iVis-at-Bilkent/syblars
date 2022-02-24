@@ -270,7 +270,31 @@ let adjustStylesheet = function(format, colorScheme) {
             'height': 25,
             'background-color': "#F2F2F2"
           }
-        },        
+        },
+        {
+          selector: 'node.source',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        },
+        {
+          selector: 'node.target',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        },
+        {
+          selector: 'node.path',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        },                
         {
           selector: 'edge',
           style: {
@@ -367,11 +391,19 @@ let adjustStylesheet = function(format, colorScheme) {
             'target-arrow-color': '#555555',
             'arrow-scale': 1.25
           }
-        }        
-      ];        
-    };      
+        },
+        {
+          selector: 'edge.path',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        }
+      ];
+    };
 
-    return stylesheet;             
+    return stylesheet;
   }      
   else {
     stylesheet =  function(){
@@ -407,13 +439,45 @@ let adjustStylesheet = function(format, colorScheme) {
           style: {
             'background-opacity': 0.3
           }
-        },          
+        },
+        {
+          selector: 'node.source',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        },
+        {
+          selector: 'node.target',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        },
+        {
+          selector: 'node.path',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
+          }
+        },                         
         {
           selector: 'edge',
           style: {
             'curve-style': 'bezier',
             'line-color': '#555555',
             'width': 1.5
+          }
+        },
+        {
+          selector: 'edge.path',
+          style: {
+            'underlay-color': 'data(highlightColor)',
+            'underlay-padding': '10px',
+            'underlay-opacity': 0.5
           }
         }
       ];        

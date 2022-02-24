@@ -147,17 +147,6 @@ app.post('/:format', (req, res) => {
         headless: true
     });
     
-    let layoutOptions = options.layoutOptions;
-    
-    if(!layoutOptions) {
-      layoutOptions = {
-        name: "preset",
-        padding: 30
-      }
-    }
-    
-    layoutOptions.animate = false;
-    
     let imageOptions = {
       format: 'png', 
       background: 'transparent',
@@ -184,7 +173,7 @@ app.post('/:format', (req, res) => {
 
     if(imageOptions.height <= 0) {
       imageOptions.height = 720;
-    }  
+    }
     
     if (req.params.format === "graphml") {
       cy.graphml({layoutBy: function(){
@@ -217,6 +206,25 @@ app.post('/:format', (req, res) => {
         }
       });
     }
+
+    if(req.query.nodeInfo) {
+      let ret = {};
+      cy.nodes().forEach(function(node){
+        ret[node.id()] = node.data('label') ? node.data('label') : "";
+      });
+      return res.status(200).send(ret);
+    }
+
+    let layoutOptions = options.layoutOptions;
+    
+    if(!layoutOptions) {
+      layoutOptions = {
+        name: "preset",
+        padding: 30
+      }
+    }
+    
+    layoutOptions.animate = false;
     
     if(layoutOptions.name == 'cise') {
       if(layoutOptions.clusters == undefined || layoutOptions.clusters.length == 0) {
@@ -240,6 +248,29 @@ app.post('/:format', (req, res) => {
       }
     }
 
+    let queryOptions = options.queryOptions;
+    let highlightColors = {};
+
+    if(queryOptions) {
+      let path = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
+      let sourceNodes = cy.collection();
+      let targetNodes = cy.collection();
+      queryOptions.sourceNodes.forEach(function(nodeId){
+        let node = cy.getElementById(nodeId);
+        node.addClass('source');
+        node.data('highlightColor', queryOptions.sourceColor);
+        sourceNodes.merge(node);
+      });
+      queryOptions.targetNodes.forEach(function(nodeId){
+        let node = cy.getElementById(nodeId);
+        node.addClass('target');
+        node.data('highlightColor', queryOptions.targetColor);
+        targetNodes.merge(node);
+      });
+      path.difference(sourceNodes).difference(targetNodes).addClass('path');
+      path.difference(sourceNodes).difference(targetNodes).data('highlightColor', queryOptions.pathColor);
+    }
+
     let ret = {};
     
     function setJson(result){
@@ -261,8 +292,8 @@ app.post('/:format', (req, res) => {
               ret["layout"][ele.id()] = { source: ele.data().source, target: ele.data().target };
           }
       });
-    }   
-    
+    }
+
     let colorScheme = imageOptions.color || "white";
     let stylesheet = adjustStylesheet(format, colorScheme);
 

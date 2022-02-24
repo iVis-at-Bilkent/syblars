@@ -36,15 +36,15 @@ let FCOSELayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#fcose-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
-    
-    $(document).off("click", "#save-layout1").on("click", "#save-layout1", function (evt) {
+    $(document).off("click", "#fcose-save-layout").on("click", "#fcose-save-layout", function (evt) {
       self.currentLayoutProperties.padding = Number(document.getElementById("padding1").value);
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels1").checked;
       self.currentLayoutProperties.uniformNodeDimensions = document.getElementById("uniformNodeDimensions1").checked;
@@ -60,12 +60,10 @@ let FCOSELayout = Backbone.View.extend({
       self.currentLayoutProperties.gravity = Number(document.getElementById("gravity1").value);
       self.currentLayoutProperties.gravityRange = Number(document.getElementById("gravityRange1").value);
       self.currentLayoutProperties.gravityCompound = Number(document.getElementById("gravityCompound1").value);
-      self.currentLayoutProperties.gravityRangeCompound = Number(document.getElementById("gravityRangeCompound1").value);      
-      self.currentLayoutProperties.initialEnergyOnIncremental = Number(document.getElementById("initialEnergyOnIncremental1").value);
-      $(self.el).modal('hide');
+      self.currentLayoutProperties.gravityRangeCompound = Number(document.getElementById("gravityRangeCompound1").value);
     });
     
-    $(document).off("click", "#default-layout1").on("click", "#default-layout1", function (evt) {
+    $(document).off("click", "#fcose-default-layout").on("click", "#fcose-default-layout", function (evt) {
       self.copyProperties();
       let temp = _.template($("#fcose-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
@@ -117,15 +115,15 @@ let COLALayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#cola-settings-template").html());
     self.template = temp(self.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
-
-    $(document).off("click", "#save-layout2").on("click", "#save-layout2", function (evt) {
+    $(document).off("click", "#cola-save-layout").on("click", "#cola-save-layout", function (evt) {
       self.currentLayoutProperties.padding = Number(document.getElementById("padding2").value);     
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels2").checked;
       self.currentLayoutProperties.avoidOverlap = document.getElementById("avoidOverlap2").checked;
@@ -137,11 +135,10 @@ let COLALayout = Backbone.View.extend({
       self.currentLayoutProperties.edgeJaccardLength = Number(document.getElementById("edgeJaccardLength2").value);
       self.currentLayoutProperties.unconstrIter = Number(document.getElementById("unconstrIter2").value);
       self.currentLayoutProperties.userConstIter = Number(document.getElementById("userConstIter2").value);
-      self.currentLayoutProperties.allConstIter = Number(document.getElementById("allConstIter2").value);      
-      $(self.el).modal('hide');
+      self.currentLayoutProperties.allConstIter = Number(document.getElementById("allConstIter2").value);
     });
     
-    $(document).off("click", "#default-layout2").on("click", "#default-layout2", function (evt) {
+    $(document).off("click", "#cola-default-layout").on("click", "#cola-default-layout", function (evt) {
       self.copyProperties();
       let temp = _.template($("#cola-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
@@ -186,15 +183,15 @@ let CISELayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#cise-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
-
-    $(document).off("click", "#save-layout3").on("click", "#save-layout3", function (evt) {
+    $(document).off("click", "#cise-save-layout").on("click", "#cise-save-layout", function (evt) {
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels3").checked;
       self.currentLayoutProperties.packComponents = document.getElementById("packComponents3").checked;
       self.currentLayoutProperties.allowNodesInsideCircle = document.getElementById("allowNodesInsideCircle3").checked;      
@@ -206,10 +203,9 @@ let CISELayout = Backbone.View.extend({
       self.currentLayoutProperties.nodeRepulsion = Number(document.getElementById("nodeRepulsion3").value);
       self.currentLayoutProperties.gravity = Number(document.getElementById("gravity3").value);
       self.currentLayoutProperties.gravityRange = Number(document.getElementById("gravityRange3").value);
-      $(self.el).modal('hide');
     });   
 
-    $(document).off("click", "#default-layout3").on("click", "#default-layout3", function (evt) {
+    $(document).off("click", "#cise-default-layout").on("click", "#cise-default-layout", function (evt) {
       self.copyProperties();
       var temp = _.template($("#cise-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
@@ -248,25 +244,24 @@ let DAGRELayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#dagre-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
-
-    $(document).off("click", "#save-layout4").on("click", "#save-layout4", function (evt) {
+    $(document).off("click", "#dagre-save-layout").on("click", "#dagre-save-layout", function (evt) {
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels4").checked;
       self.currentLayoutProperties.padding = Number(document.getElementById("padding4").value);
       self.currentLayoutProperties.nodeSep = Number(document.getElementById("nodeSep4").value);
       self.currentLayoutProperties.edgeSep = Number(document.getElementById("edgeSep4").value);
       self.currentLayoutProperties.rankSep = Number(document.getElementById("rankSep4").value);
-      self.currentLayoutProperties.edgeWeight = Number(document.getElementById("edgeWeight4").value);     
-      $(self.el).modal('hide');
+      self.currentLayoutProperties.edgeWeight = Number(document.getElementById("edgeWeight4").value);
     });
 
-    $(document).off("click", "#default-layout4").on("click", "#default-layout4", function (evt) {
+    $(document).off("click", "#dagre-default-layout").on("click", "#dagre-default-layout", function (evt) {
       self.copyProperties();
       let temp = _.template($("#dagre-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
@@ -319,15 +314,15 @@ var KLAYLayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#klay-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
-
-    $(document).off("click", "#save-layout5").on("click", "#save-layout5", function (evt) {
+    $(document).off("click", "#klay-save-layout").on("click", "#klay-save-layout", function (evt) {
       self.currentLayoutProperties.nodeDimensionsIncludeLabels = document.getElementById("nodeDimensionsIncludeLabels5").checked;      
       self.currentLayoutProperties.padding = Number(document.getElementById("padding5").value);
       self.currentLayoutProperties.klay.addUnnecessaryBendpoints = document.getElementById("addUnnecessaryBendpoints5").checked;
@@ -346,10 +341,9 @@ var KLAYLayout = Backbone.View.extend({
       self.currentLayoutProperties.klay.randomizationSeed = Number(document.getElementById("randomizationSeed5").value);
       self.currentLayoutProperties.klay.spacing = Number(document.getElementById("spacing5").value);
       self.currentLayoutProperties.klay.thoroughness = Number(document.getElementById("thoroughness5").value);
-      $(self.el).modal('hide');
     });
 
-    $(document).off("click", "#default-layout5").on("click", "#default-layout5", function (evt) {
+    $(document).off("click", "#klay-default-layout").on("click", "#klay-default-layout", function (evt) {
       self.copyProperties();
       let temp = _.template($("#klay-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
@@ -383,21 +377,21 @@ let AVSDFLayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#avsdf-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
 
-    $(document).off("click", "#save-layout6").on("click", "#save-layout6", function (evt) {
+    $(document).off("click", "#avsdf-save-layout").on("click", "#avsdf-save-layout", function (evt) {
       self.currentLayoutProperties.padding = Number(document.getElementById("padding6").value);
       self.currentLayoutProperties.nodeSeparation = Number(document.getElementById("nodeSeparation6").value);
-      $(self.el).modal('hide');
     });
 
-    $(document).off("click", "#default-layout6").on("click", "#default-layout6", function (evt) {
+    $(document).off("click", "#avsdf-default-layout").on("click", "#avsdf-default-layout", function (evt) {
       self.copyProperties();
       let temp = _.template($("#avsdf-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
@@ -429,20 +423,19 @@ let PRESETLayout = Backbone.View.extend({
   applyLayout: async function () {
     await applyLayoutFunction(this);
   },
-  render: function () {
+  render: function (previousLayout) {
     let self = this;
     let temp = _.template($("#preset-settings-template").html());
     self.template = temp(this.currentLayoutProperties);
+    $("#" + previousLayout + "-layout-table").hide();
     $(self.el).html(self.template);
+    $(self.el).show();
 
-    $(self.el).modal({inverted: true}).modal('show');
-
-    $(document).off("click", "#save-layout7").on("click", "#save-layout7", function (evt) {
+    $(document).off("click", "#preset-save-layout").on("click", "#preset-save-layout", function (evt) {
       self.currentLayoutProperties.padding = Number(document.getElementById("padding7").value);
-      $(self.el).modal('hide');
     });
 
-    $(document).off("click", "#default-layout7").on("click", "#default-layout7", function (evt) {
+    $(document).off("click", "#preset-default-layout").on("click", "#preset-default-layout", function (evt) {
       self.copyProperties();
       let temp = _.template($("#preset-settings-template").html());
       self.template = temp(self.currentLayoutProperties);
