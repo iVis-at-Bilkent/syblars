@@ -274,24 +274,36 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node.source',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#00ff00";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         },
         {
           selector: 'node.target',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#ff0000";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         },
         {
           selector: 'node.path',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#ffff00";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         },                
@@ -395,8 +407,12 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'edge.path',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(edge){
+              return edge.data('highlightColor') ? edge.data('highlightColor') : "#ffff00";
+            },
+            'underlay-padding': function(edge){
+              return edge.data('highlightWidth') ? edge.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         }
@@ -443,24 +459,36 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'node.source',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#00ff00";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         },
         {
           selector: 'node.target',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#ff0000";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         },
         {
           selector: 'node.path',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#ffff00";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         },                         
@@ -475,8 +503,12 @@ let adjustStylesheet = function(format, colorScheme) {
         {
           selector: 'edge.path',
           style: {
-            'underlay-color': 'data(highlightColor)',
-            'underlay-padding': '10px',
+            'underlay-color': function(edge){
+              return edge.data('highlightColor') ? edge.data('highlightColor') : "#ffff00";
+            },
+            'underlay-padding': function(edge){
+              return edge.data('highlightWidth') ? edge.data('highlightWidth') : "10px";
+            },
             'underlay-opacity': 0.5
           }
         }

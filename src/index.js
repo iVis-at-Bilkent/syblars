@@ -269,6 +269,7 @@ app.post('/:format', (req, res) => {
       });
       path.difference(sourceNodes).difference(targetNodes).addClass('path');
       path.difference(sourceNodes).difference(targetNodes).data('highlightColor', queryOptions.pathColor);
+      path.data('highlightWidth', queryOptions.highlightWidth);
     }
 
     let ret = {};

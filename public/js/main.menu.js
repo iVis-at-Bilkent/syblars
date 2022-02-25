@@ -216,7 +216,8 @@ let processLayout = async function () {
         targetNodes: [$('#targetNode').val()],
         sourceColor: $('#sourceColor').val(),
         targetColor: $('#targetColor').val(),
-        pathColor: $('#pathColor').val()
+        pathColor: $('#pathColor').val(),
+        highlightWidth: $('#highlightWidth').val(),
       };
       break;    
     case 'cola':
@@ -625,6 +626,12 @@ $("#queryType").change(function() {
         '<div class="three wide field">' +
           '<input type="color" id="pathColor" value="#ffff00">' +
         '</div>' +        
+      '</div>' +
+      '<div class="inline fields">' +
+        '<label>Highlight Width:</label>' +
+        '<div class="three wide field">' +
+          '<input type="number" id="highlightWidth" value="10" min="1">' +
+        '</div>' +
       '</div>';
   }
 });
