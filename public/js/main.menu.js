@@ -207,18 +207,12 @@ let processLayout = async function () {
   }
 
   let currentQuery = $('#queryType').val();
+  $('#' + currentQuery + '-save-query').trigger("click");
+
   let queryOptions = undefined;
   switch (currentQuery) {
     case 'shortestPath':
-      queryOptions = {
-        query: 'shortestPath',
-        sourceNodes: [$('#sourceNode').val()],
-        targetNodes: [$('#targetNode').val()],
-        sourceColor: $('#sourceColor').val(),
-        targetColor: $('#targetColor').val(),
-        pathColor: $('#pathColor').val(),
-        highlightWidth: $('#highlightWidth').val(),
-      };
+      queryOptions = shortestPathQueryProp.getProperties();
       break;    
     case 'cola':
       layoutOptions = colaLayoutProp.getProperties();
@@ -237,8 +231,8 @@ let processLayout = async function () {
       break;
     case 'preset':
       layoutOptions = presetLayoutProp.getProperties();
-      break;      
-  }  
+      break;
+  }
 
   let options = {
     layoutOptions: layoutOptions,
@@ -579,61 +573,56 @@ $("#layoutSettingsDefault").on("click", function (e) {
   $('#' + currentLayout + '-default-layout').trigger("click");
 });
 
-$("#queryType").change(function() {
-  let value = this.value;
-  document.getElementById('queryFormTemplate').innerHTML = "";
-  if(value == "shortestPath") {
-    let form = document.getElementById('queryFormTemplate');
-    form.innerHTML +=
-      '<div class="two fields">' +
-        '<div class="five wide field">' +
-          '<label>Source Node</label>' +
-          '<select id="sourceNode">' +
-          '</select>' +
-        '</div>' +
-        '<div class="five wide field">' +
-          '<label>Target Node</label>' +
-          '<select id="targetNode">' +                   
-          '</select>' +
-        '</div>' +
-      '</div>';
-    $("#queryType").val('shortestPath');
-  }
+let shortestPathQueryProp = new shortestPathQuery({
+  el: '#shortestPath-query-table'
+});
 
-  if(value == "shortestPath") {
-    let sourceList = document.getElementById('sourceNode');
-    for (const [key, value] of Object.entries(nodeData)) {
-      sourceList.innerHTML += '<option value="' + key + '">'+ value + " (" + key + ')' + '</option>';
-    }
-    let targetList = document.getElementById('targetNode');
-    for (const [key, value] of Object.entries(nodeData)) {
-      targetList.innerHTML += '<option value="' + key + '">'+ value + " (" + key + ')' + '</option>';
-    }
+/* let colaLayoutProp = new COLALayout({
+  el: '#cola-layout-table'
+}); */
+
+//shortestPathQueryProp.render();
+let previousQuery = $('#queryType').val();
+$("#queryType").on("change", function (e) {
+  let currentQuery = $('#queryType').val();
+  $('#' + previousQuery + '-save-query').trigger("click");
+  switch (currentQuery) {
+    case 'shortestPath':      
+      shortestPathQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
+      break;    
+    case 'cola':
+      colaLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
+      break;
+    case 'cise':
+      ciseLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
+      break;
+    case 'dagre':
+      dagreLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
+      break;
+    case 'klay':
+      klayLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
+      break;
+    case 'avsdf':
+      avsdfLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
+      break;
+    case 'preset':
+      presetLayoutProp.render(previousLayout);
+      previousLayout = $('#layoutType').val();
+      break;
+    default: 
+      $("#" + previousQuery + "-query-table").hide();    
   }
-  if(value == "shortestPath") {
-    let form = document.getElementById('queryFormTemplate');
-    form.innerHTML +=
-      '<div class="inline fields">' +   
-        '<label>Source:</label>' +
-        '<div class="three wide field">' +
-          '<input type="color" id="sourceColor" value="#00ff00">' +
-        '</div>' +
-        '<label>Target:</label>' +
-        '<div class="three wide field">' +
-          '<input type="color" id="targetColor" value="#ff0000">' +
-        '</div>' +
-        '<label>Path:</label>' +
-        '<div class="three wide field">' +
-          '<input type="color" id="pathColor" value="#ffff00">' +
-        '</div>' +        
-      '</div>' +
-      '<div class="inline fields">' +
-        '<label>Highlight Width:</label>' +
-        '<div class="three wide field">' +
-          '<input type="number" id="highlightWidth" value="10" min="1">' +
-        '</div>' +
-      '</div>';
-  }
+});
+
+$("#querySettingsDefault").on("click", function (e) {
+  let currentQuery = $('#queryType').val();
+  $('#' + currentQuery + '-default-query').trigger("click");
 });
 
 function loadXMLDoc(fileName) {

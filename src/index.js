@@ -249,10 +249,12 @@ app.post('/:format', (req, res) => {
     }
 
     let queryOptions = options.queryOptions;
-    let highlightColors = {};
 
     if(queryOptions) {
-      let path = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
+      let path;
+      if(queryOptions.query == 'shortestPath') {
+        path = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
+      }
       let sourceNodes = cy.collection();
       let targetNodes = cy.collection();
       queryOptions.sourceNodes.forEach(function(nodeId){

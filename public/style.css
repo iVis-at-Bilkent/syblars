@@ -47,7 +47,12 @@ label {
 #imageSettingsDefault:hover {
   cursor: pointer;
 }
+
 #layoutSettingsDefault:hover {
+  cursor: pointer;
+}
+
+#querySettingsDefault:hover {
   cursor: pointer;
 }
 
