@@ -179,14 +179,18 @@
                 </div>
               </div>
             </div>
-            <div id="queryTab" class="ui bottom attached tab segment disabled" data-tab="third" style="height: 250px; margin-bottom: 14px; pointer-events: none;">
+            <div id="queryTab" class="ui bottom attached tab segment disabled" data-tab="third" style="height: auto; min-height: 250px; margin-bottom: 14px; pointer-events: none;">
               <div id="queryForm" class="ui tiny form">
                 <div class="inline fields">
                   <label>Query Type:</label>
-                  <div class="five wide field">
+                  <div class="four wide field">
                     <select id="queryType">
                       <option value="">Select Query</option>
-                      <option value="shortestPath">Shortest Path</option>                     
+                      <option value="shortestPath">Shortest Path</option>
+                      <option value="kNeighborhood">k-Neighborhood</option>
+                      <option value="commonStream">Common Stream</option>
+                      <option value="pathsBetween">Paths Between</option>
+                      <option value="pathsFromTo">Paths From To</option>
                     </select>
                   </div>
                   <img class="ui image" id="querySettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 10px; margin-top: 0px; float: right; padding: 2.5px">
@@ -194,7 +198,17 @@
                 <div id="shortestPath-query-table" class="ui mini" >
                   <!-- shortestPath query table will be shown here -->
                 </div>
-                <div id="queryFormTemplate">
+                <div id="kNeighborhood-query-table" class="ui mini" >
+                  <!-- kNeighborhood query table will be shown here -->
+                </div>
+                <div id="commonStream-query-table" class="ui mini" >
+                  <!-- commonStream query table will be shown here -->
+                </div>
+                <div id="pathsBetween-query-table" class="ui mini" >
+                  <!-- pathsBetween query table will be shown here -->
+                </div>
+                <div id="pathsFromTo-query-table" class="ui mini" >
+                  <!-- pathsFromTo query table will be shown here -->
                 </div>
               </div>
             </div>
@@ -304,6 +318,7 @@
       </div>
     </div>
     
+    <!-- layout templates -->
     <script type="text/template" id="fcose-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
@@ -669,44 +684,209 @@
       </div>
     </script>
 
+    <!-- query templates -->
     <script type="text/template" id="shortestPath-settings-template">
       <div class="ui tiny form">
-        <div class="two fields">
-          <div class="five wide field">
-            <label>Source Node</label>
-            <select id="sourceNodes">
+        <div class="inline fields">
+          <label>Source Node</label>
+          <div class="three wide field">
+            <select id="sourceNodesSP">
             </select>
           </div>
-          <div class="five wide field">
-            <label>Target Node</label>
-            <select id="targetNodes">
+          <label>Target Node</label>
+          <div class="three wide field">
+            <select id="targetNodesSP">
             </select>
           </div>
         </div>
         <div class="inline fields">
           <label>Source:</label>
-          <div class="three wide field">
-            <input type="color" id="sourceColor1" value= <%= sourceColor %>>
+          <div class="two wide field">
+            <input type="color" id="sourceColorSP" value= <%= sourceColor %>>
           </div>
           <label>Target:</label>
-          <div class="three wide field">
-            <input type="color" id="targetColor1" value= <%= targetColor %>>
+          <div class="two wide field">
+            <input type="color" id="targetColorSP" value= <%= targetColor %>>
           </div>
           <label>Path:</label>
-          <div class="three wide field">
-            <input type="color" id="pathColor1" value= <%= pathColor %>>
+          <div class="two wide field">
+            <input type="color" id="pathColorSP" value= <%= pathColor %>>
           </div>
         </div>
         <div class="inline fields">
           <label>Highlight Width:</label>
-          <div class="three wide field">
-            <input type="number" id="highlightWidth1" min="1" value= <%= highlightWidth %>>
+          <div class="two wide field">
+            <input type="number" id="highlightWidthSP" min="1" value= <%= highlightWidth %>>
           </div>
         </div>
         <button class="ui button" id="shortestPath-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="shortestPath-save-query" style="float: right; display:none" >Save</button>
       </div>
-    </script>    
+    </script>
+
+    <script type="text/template" id="kNeighborhood-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <label>Source Nodes</label>
+          <select multiple="" id="sourceNodesKN" class="ui tiny dropdown"></select>
+        </div>
+        <div class="inline fields">
+          <label>k (limit):</label>
+          <div class="two wide field">
+            <input type="number" id="limitKN" min="1" value= <%= limit %>>
+          </div>
+          <label>Direction</label>
+          <div class="three wide field">
+            <select id="directionKN">
+              <option value="bothstream">Both Stream</option>
+              <option value="upstream">Up Stream</option>
+              <option value="downstream">Down Stream</option>
+            </select>
+          </div>          
+        </div>
+        <div class="inline fields">
+          <label>Source:</label>
+          <div class="two wide field">
+            <input type="color" id="sourceColorKN" value= <%= sourceColor %>>
+          </div>
+          <label>Path:</label>
+          <div class="two wide field">
+            <input type="color" id="pathColorKN" value= <%= pathColor %>>
+          </div>
+          <label>Highlight Width:</label>
+          <div class="two wide field">
+            <input type="number" id="highlightWidthKN" min="1" value= <%= highlightWidth %>>
+          </div>          
+        </div>
+        <button class="ui button" id="kNeighborhood-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="kNeighborhood-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
+    <script type="text/template" id="commonStream-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <label>Source Nodes</label>
+          <select multiple="" id="sourceNodesCS" class="ui tiny dropdown"></select>
+        </div>
+        <div class="inline fields">
+          <label>k (limit):</label>
+          <div class="two wide field">
+            <input type="number" id="limitCS" min="1" value= <%= limit %>>
+          </div>
+          <label>Direction</label>
+          <div class="three wide field">
+            <select id="directionCS">
+              <option value="bothstream">Both Stream</option>
+              <option value="upstream">Up Stream</option>
+              <option value="downstream">Down Stream</option>
+            </select>
+          </div>          
+        </div>
+        <div class="inline fields">
+          <label>Source:</label>
+          <div class="two wide field">
+            <input type="color" id="sourceColorCS" value= <%= sourceColor %>>
+          </div>
+          <label>Path:</label>
+          <div class="two wide field">
+            <input type="color" id="pathColorCS" value= <%= pathColor %>>
+          </div>
+          <label>Highlight Width:</label>
+          <div class="two wide field">
+            <input type="number" id="highlightWidthCS" min="1" value= <%= highlightWidth %>>
+          </div>          
+        </div>
+        <button class="ui button" id="commonStream-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="commonStream-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
+    <script type="text/template" id="pathsBetween-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <label>Source Nodes</label>
+          <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
+        </div>
+        <div class="inline fields">
+          <label>k (limit):</label>
+          <div class="two wide field">
+            <input type="number" id="limitPB" min="1" value= <%= limit %>>
+          </div>
+          <label>Direction</label>
+          <div class="three wide field">
+            <select id="directionPB">
+              <option value="bothstream">Both Stream</option>
+              <option value="upstream">Up Stream</option>
+              <option value="downstream">Down Stream</option>
+            </select>
+          </div>          
+        </div>
+        <div class="inline fields">
+          <label>Source:</label>
+          <div class="two wide field">
+            <input type="color" id="sourceColorPB" value= <%= sourceColor %>>
+          </div>
+          <label>Path:</label>
+          <div class="two wide field">
+            <input type="color" id="pathColorPB" value= <%= pathColor %>>
+          </div>
+          <label>Highlight Width:</label>
+          <div class="two wide field">
+            <input type="number" id="highlightWidthPB" min="1" value= <%= highlightWidth %>>
+          </div>          
+        </div>
+        <button class="ui button" id="pathsBetween-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="pathsBetween-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
+    <script type="text/template" id="pathsFromTo-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <label>Source Nodes</label>
+          <select multiple="" id="sourceNodesPFT" class="ui tiny dropdown"></select>
+        </div>
+        <div class="inline fields">
+          <label>Target Nodes</label>
+          <select multiple="" id="targetNodesPFT" class="ui tiny dropdown"></select>
+        </div>        
+        <div class="inline fields">
+          <label>k (limit):</label>
+          <div class="two wide field">
+            <input type="number" id="limitPFT" min="1" value= <%= limit %>>
+          </div>
+          <label>Direction</label>
+          <div class="three wide field">
+            <select id="directionPFT">
+              <option value="bothstream">Both Stream</option>
+              <option value="upstream">Up Stream</option>
+              <option value="downstream">Down Stream</option>
+            </select>
+          </div>          
+        </div>
+        <div class="inline fields">
+          <label>Source:</label>
+          <div class="two wide field">
+            <input type="color" id="sourceColorPFT" value= <%= sourceColor %>>
+          </div>
+          <label>Target:</label>
+          <div class="two wide field">
+            <input type="color" id="targetColorPFT" value= <%= targetColor %>>
+          </div>          
+          <label>Path:</label>
+          <div class="two wide field">
+            <input type="color" id="pathColorPFT" value= <%= pathColor %>>
+          </div>
+          <label>Highlight Width:</label>
+          <div class="two wide field">
+            <input type="number" id="highlightWidthPFT" min="1" value= <%= highlightWidth %>>
+          </div>          
+        </div>
+        <button class="ui button" id="pathsFromTo-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="pathsFromTo-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
    
     <script>
       let port = window.location.port;

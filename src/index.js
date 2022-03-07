@@ -252,23 +252,49 @@ app.post('/:format', (req, res) => {
 
     if(queryOptions) {
       let path;
+      let sourceNodes = cy.collection();
+      let targetNodes = cy.collection();
       if(queryOptions.query == 'shortestPath') {
         path = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
       }
-      let sourceNodes = cy.collection();
-      let targetNodes = cy.collection();
+      else if(queryOptions.query == 'kNeighborhood') {
+        path = cy.collection();
+        queryOptions.sourceNodes.forEach(function(nodeId){
+          path.merge(cy.getElementById(nodeId).neighborhood());
+        });
+      }
+      else if(queryOptions.query == 'commonStream') {
+        path = cy.collection();
+        queryOptions.sourceNodes.forEach(function(nodeId){
+          path.merge(cy.getElementById(nodeId).neighborhood());
+        });
+      }
+      else if(queryOptions.query == 'pathsBetween') {
+        path = cy.collection();
+        queryOptions.sourceNodes.forEach(function(nodeId){
+          path.merge(cy.getElementById(nodeId).neighborhood());
+        });
+      }
+      else if(queryOptions.query == 'pathsFromTo') {
+        path = cy.collection();
+        queryOptions.sourceNodes.forEach(function(nodeId){
+          path.merge(cy.getElementById(nodeId).neighborhood());
+        });
+      }
       queryOptions.sourceNodes.forEach(function(nodeId){
         let node = cy.getElementById(nodeId);
         node.addClass('source');
         node.data('highlightColor', queryOptions.sourceColor);
         sourceNodes.merge(node);
       });
-      queryOptions.targetNodes.forEach(function(nodeId){
-        let node = cy.getElementById(nodeId);
-        node.addClass('target');
-        node.data('highlightColor', queryOptions.targetColor);
-        targetNodes.merge(node);
-      });
+      if(queryOptions.targetNodes) {
+        queryOptions.targetNodes.forEach(function(nodeId){
+          let node = cy.getElementById(nodeId);
+          node.addClass('target');
+          node.data('highlightColor', queryOptions.targetColor);
+          targetNodes.merge(node);
+        });
+      }
       path.difference(sourceNodes).difference(targetNodes).addClass('path');
       path.difference(sourceNodes).difference(targetNodes).data('highlightColor', queryOptions.pathColor);
       path.data('highlightWidth', queryOptions.highlightWidth);

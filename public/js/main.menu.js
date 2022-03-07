@@ -214,23 +214,17 @@ let processLayout = async function () {
     case 'shortestPath':
       queryOptions = shortestPathQueryProp.getProperties();
       break;    
-    case 'cola':
-      layoutOptions = colaLayoutProp.getProperties();
+    case 'kNeighborhood':
+      queryOptions = kNeighborhoodQueryProp.getProperties();
       break;
-    case 'cise':
-      layoutOptions = ciseLayoutProp.getProperties();
+    case 'commonStream':
+      queryOptions = commonStreamQueryProp.getProperties();
       break;
-    case 'dagre':
-      layoutOptions = dagreLayoutProp.getProperties();
+    case 'pathsBetween':
+      queryOptions = pathsBetweenQueryProp.getProperties();
       break;
-    case 'klay':
-      layoutOptions = klayLayoutProp.getProperties();
-      break;
-    case 'avsdf':
-      layoutOptions = avsdfLayoutProp.getProperties();
-      break;
-    case 'preset':
-      layoutOptions = presetLayoutProp.getProperties();
+    case 'pathsFromTo':
+      queryOptions = pathsFromToQueryProp.getProperties();
       break;
   }
 
@@ -577,9 +571,21 @@ let shortestPathQueryProp = new shortestPathQuery({
   el: '#shortestPath-query-table'
 });
 
-/* let colaLayoutProp = new COLALayout({
-  el: '#cola-layout-table'
-}); */
+let kNeighborhoodQueryProp = new kNeighborhoodQuery({
+  el: '#kNeighborhood-query-table'
+});
+
+let commonStreamQueryProp = new commonStreamQuery({
+  el: '#commonStream-query-table'
+});
+
+let pathsBetweenQueryProp = new pathsBetweenQuery({
+  el: '#pathsBetween-query-table'
+});
+
+let pathsFromToQueryProp = new pathsFromToQuery({
+  el: '#pathsFromTo-query-table'
+});
 
 //shortestPathQueryProp.render();
 let previousQuery = $('#queryType').val();
@@ -591,29 +597,21 @@ $("#queryType").on("change", function (e) {
       shortestPathQueryProp.render(previousQuery, nodeData);
       previousQuery = $('#queryType').val();
       break;    
-    case 'cola':
-      colaLayoutProp.render(previousLayout);
-      previousLayout = $('#layoutType').val();
+    case 'kNeighborhood':
+      kNeighborhoodQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
       break;
-    case 'cise':
-      ciseLayoutProp.render(previousLayout);
-      previousLayout = $('#layoutType').val();
+    case 'commonStream':
+      commonStreamQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
       break;
-    case 'dagre':
-      dagreLayoutProp.render(previousLayout);
-      previousLayout = $('#layoutType').val();
+    case 'pathsBetween':
+      pathsBetweenQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
       break;
-    case 'klay':
-      klayLayoutProp.render(previousLayout);
-      previousLayout = $('#layoutType').val();
-      break;
-    case 'avsdf':
-      avsdfLayoutProp.render(previousLayout);
-      previousLayout = $('#layoutType').val();
-      break;
-    case 'preset':
-      presetLayoutProp.render(previousLayout);
-      previousLayout = $('#layoutType').val();
+    case 'pathsFromTo':
+      pathsFromToQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
       break;
     default: 
       $("#" + previousQuery + "-query-table").hide();    
