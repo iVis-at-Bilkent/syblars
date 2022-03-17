@@ -431,7 +431,7 @@ $("#transparent").change(function() {
     }
 });
 
-// prevent imageWidth and imageHeight to get negative values
+/* // prevent imageWidth and imageHeight to get negative values
 
 let imageWidth = document.getElementById('imageWidth');
 imageWidth.onkeydown = function(e) {
@@ -449,7 +449,7 @@ imageHeight.onkeydown = function(e) {
       || e.keyCode == 8)) {
         return false;
     }
-}
+} */
 
 // image content is base64 data and imageType is png/jpg
 let saveImage = function(imageContent, imageType, fileName){  

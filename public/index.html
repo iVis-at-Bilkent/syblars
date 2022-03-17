@@ -139,16 +139,16 @@
                 <div class="inline fields">
                   <div class="five wide field">
                     <label>Width:</label>
-                    <input type="number" id="imageWidth" value="1280" min="1">
+                    <input type="number" id="imageWidth" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value="1280" min="1">
                   </div>
                   <div class="five wide field">
                     <label>Height:</label>
-                    <input type="number" id="imageHeight" value="720" min="1">
+                    <input type="number" id="imageHeight" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value="720" min="1">
                   </div>
                 </div>
                 <div class="inline fields">
                   <label>Color:</label>
-                  <div class="three wide field">
+                  <div class="two wide field">
                     <input type="color" id="color" value="#9ecae1">
                   </div>
                   <label> or </label>
@@ -169,7 +169,7 @@
                 </div>
                 <div class="inline fields">
                   <label>Background:</label>
-                  <div class="three wide field">                  
+                  <div class="two wide field">                  
                     <input type="color" disabled id="imageBackground" value="#ffffff">
                   </div>
                    <div class="ui checkbox" style="margin-left: 5px;">
@@ -342,53 +342,53 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding1" type="number" min="0" value = <%= padding %> >
+            <input id="padding1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" value = <%= padding %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Node Repulsion </span>
-            <input id="nodeRepulsion1" type="number" min="0" value = <%= nodeRepulsion %> >
+            <input id="nodeRepulsion1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" value = <%= nodeRepulsion %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Ideal Edge Length </span>
-            <input id="idealEdgeLength1" type="number" min="0" value = <%= idealEdgeLength %> >
+            <input id="idealEdgeLength1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" value = <%= idealEdgeLength %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Edge Elasticity </span>
-            <input id="edgeElasticity1" type="number" min="0" step="0.1" value = <%= edgeElasticity %> >
+            <input id="edgeElasticity1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" step="0.1" value = <%= edgeElasticity %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Nesting Factor </span>
-            <input id="nestingFactor1" type="number" min="0" step="0.1" value = <%= nestingFactor %> >
+            <input id="nestingFactor1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" step="0.1" value = <%= nestingFactor %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Number of Iter. </span>
-            <input id="numIter1" type="number" min="0" value = <%= numIter %> >
+            <input id="numIter1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= numIter %> >
           </div>
         </div>
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Gravity </span>
-            <input id="gravity1" type="number" min="0" step="0.1" value = <%= gravity %> >
+            <input id="gravity1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= gravity %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Gravity Range </span>
-            <input id="gravityRange1" type="number" min="0" step="0.1" value = <%= gravityRange %> >
+            <input id="gravityRange1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= gravityRange %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Gravity Compound </span>
-            <input id="gravityCompound1" type="number" min="0" step="0.1" value = <%= gravityCompound %> >
+            <input id="gravityCompound1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= gravityCompound %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Gravity Range Comp. </span>
-            <input id="gravityRangeCompound1" type="number" min="0" step="0.1" value = <%= gravityRangeCompound %> >
+            <input id="gravityRangeCompound1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= gravityRangeCompound %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Tiling Padding Vert. </span>
-            <input id="tilingPaddingVertical1" type="number" min="0" value = <%= tilingPaddingVertical %> >
+            <input id="tilingPaddingVertical1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= tilingPaddingVertical %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Tiling Padding Hor. </span>
-            <input id="tilingPaddingHorizontal1" type="number" min="0" value = <%= tilingPaddingHorizontal %> >
+            <input id="tilingPaddingHorizontal1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= tilingPaddingHorizontal %> >
           </div>
         </div>
         <button class="ui button" id="fcose-default-layout" style="display:none">Default</button>
@@ -415,41 +415,41 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding2" type="number" min="0" value = <%= padding %> >
+            <input id="padding2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= padding %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Convergence Threshold </span>
-            <input id="convergenceThreshold2" type="number" min="0" step="0.01" value = <%= convergenceThreshold %> >
+            <input id="convergenceThreshold2" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" step="0.01" value = <%= convergenceThreshold %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Node Spacing </span>
-            <input id="nodeSpacing2" type="number" min="0" value = <%= nodeSpacing %> >
+            <input id="nodeSpacing2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= nodeSpacing %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Edge Length </span>
-            <input id="edgeLength2" type="number" min="0" value = <%= edgeLength %> >
+            <input id="edgeLength2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeLength %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Edge SymDiff Length </span>
-            <input id="edgeSymDiffLength2" type="number" min="0" value = <%= edgeSymDiffLength %> >
+            <input id="edgeSymDiffLength2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeSymDiffLength %> >
           </div>
         </div>
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Edge Jaccard Length </span>
-            <input id="edgeJaccardLength2" type="number" min="0" value = <%= edgeJaccardLength %> >
+            <input id="edgeJaccardLength2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeJaccardLength %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Unconstraint Iterations </span>
-            <input id="unconstrIter2" type="number" min="0" value = <%= unconstrIter %> >
+            <input id="unconstrIter2" type="number" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value = <%= unconstrIter %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> User Constraint Iterations </span>
-            <input id="userConstIter2" type="number" min="0" value = <%= userConstIter %> >
+            <input id="userConstIter2" type="number" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value = <%= userConstIter %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> All Constraint Iterations </span>
-            <input id="allConstIter2" type="number" min="0" value = <%= allConstIter %> >
+            <input id="allConstIter2" type="number" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0"value = <%= allConstIter %> >
           </div>
           <div class="field">
           </div>
@@ -478,37 +478,37 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding3" type="number" min="0" value = <%= padding %> >
+            <input id="padding3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= padding %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Node Separation </span>
-            <input id="nodeSeparation3" type="number" min="0" step="0.1" value = <%= nodeSeparation %> >
+            <input id="nodeSeparation3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= nodeSeparation %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Inter-Cluster Edge Length Coeff. </span>
-            <input id="idealInterClusterEdgeLengthCoefficient3" type="number" min="0" step="0.1" value = <%= idealInterClusterEdgeLengthCoefficient %> >
+            <input id="idealInterClusterEdgeLengthCoefficient3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= idealInterClusterEdgeLengthCoefficient %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Max Ratio Of Nodes Inside Circle </span>
-            <input id="maxRatioOfNodesInsideCircle3" type="number" min="0" step="0.1" value = <%= maxRatioOfNodesInsideCircle %> >
+            <input id="maxRatioOfNodesInsideCircle3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= maxRatioOfNodesInsideCircle %> >
           </div>
         </div>
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Spring Coefficient </span>
-            <input id="springCoeff3" type="number" min="0" step="0.1" value = <%= springCoeff %> >
+            <input id="springCoeff3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= springCoeff %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Node Repulsion </span>
-            <input id="nodeRepulsion3" type="number" min="0" value = <%= nodeRepulsion %> >
+            <input id="nodeRepulsion3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= nodeRepulsion %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Gravity </span>
-            <input id="gravity3" type="number" min="0" step="0.1" value = <%= gravity %> >
+            <input id="gravity3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= gravity %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Gravity Range </span>
-            <input id="gravityRange3" type="number" min="0" step="0.1" value = <%= gravityRange %> >
+            <input id="gravityRange3" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= gravityRange %> >
           </div>
         </div>
         <button class="ui button" id="cise-default-layout" style="display:none">Default</button>
@@ -527,23 +527,23 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding4" type="number" min="0" value = <%= padding %> >
+            <input id="padding4" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= padding %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Node Separation </span>
-            <input id="nodeSep4" type="number" min="0" value = <%= nodeSep %> >
+            <input id="nodeSep4" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= nodeSep %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Edge Separation </span>
-            <input id="edgeSep4" type="number" min="0" value = <%= edgeSep %> >
+            <input id="edgeSep4" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeSep %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Rank Separation </span>
-            <input id="rankSep4" type="number" min="0" value = <%= rankSep %> >
+            <input id="rankSep4" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= rankSep %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Edge Weight </span>
-            <input id="edgeWeight4" type="number" min="0" step="0.1" value = <%= edgeWeight %> >
+            <input id="edgeWeight4" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= edgeWeight %> >
           </div>
         </div>
         <button class="ui button" id="dagre-default-layout" style="display:none">Default</button>
@@ -596,41 +596,41 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding5" type="number" min="0" value = <%= padding %> >
+            <input id="padding5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= padding %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Aspect Ratio </span>
-            <input id="aspectRatio5" type="number" min="0" step="0.1" value = <%= klay.aspectRatio %> >
+            <input id="aspectRatio5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.aspectRatio %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Border Spacing </span>
-            <input id="borderSpacing5" type="number" min="0" value = <%= klay.borderSpacing %> >
+            <input id="borderSpacing5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.borderSpacing %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Edge Spacing Factor </span>
-            <input id="edgeSpacingFactor5" type="number" min="0" step="0.1" value = <%= klay.edgeSpacingFactor %> >
+            <input id="edgeSpacingFactor5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.edgeSpacingFactor %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> In-Layer Spacing Factor </span>
-            <input id="inLayerSpacingFactor5" type="number" min="0" step="0.1" value = <%= klay.inLayerSpacingFactor %> >
+            <input id="inLayerSpacingFactor5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.inLayerSpacingFactor %> >
           </div>
         </div>
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Linear Seg. Defl. Damp. </span>
-            <input id="linearSegmentsDeflectionDampening5" type="number" min="0" step="0.1" value = <%= klay.linearSegmentsDeflectionDampening %> >
+            <input id="linearSegmentsDeflectionDampening5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.linearSegmentsDeflectionDampening %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Randomization Seed </span>
-            <input id="randomizationSeed5" type="number" min="0" value = <%= klay.randomizationSeed %> >
+            <input id="randomizationSeed5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.randomizationSeed %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Spacing </span>
-            <input id="spacing5" type="number"min="0" value = <%= klay.spacing %> >
+            <input id="spacing5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.spacing %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Thoroughness </span>
-            <input id="thoroughness5" type="number"min="0" value = <%= klay.thoroughness %> >
+            <input id="thoroughness5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.thoroughness %> >
           </div>
           <div class="field">
           </div>
@@ -645,11 +645,11 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding6" style="float: right" type="number" min="0" value = <%= padding %> >
+            <input id="padding6" style="float: right" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= padding %> >
           </div>
           <div class="field">
             <span class="add-on layout-text"> Node Separation </span>
-            <input id="nodeSeparation6" type="number" min="0" value = <%= nodeSeparation %> >
+            <input id="nodeSeparation6" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= nodeSeparation %> >
           </div>
           <div class="field">
           </div>
@@ -668,7 +668,7 @@
         <div class="equal width fields">
           <div class="field">
             <span class="add-on layout-text"> Padding </span>
-            <input id="padding7" style="float: right" type="number" min="0" value = <%= padding %> >
+            <input id="padding7" style="float: right" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= padding %> >
           </div>
           <div class="field">
           </div>
@@ -716,7 +716,7 @@
         <div class="inline fields">
           <label>Highlight Width:</label>
           <div class="two wide field">
-            <input type="number" id="highlightWidthSP" min="1" value= <%= highlightWidth %>>
+            <input type="number" id="highlightWidthSP" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>
         </div>
         <button class="ui button" id="shortestPath-default-query" style="display:none">Default</button>
@@ -733,7 +733,7 @@
         <div class="inline fields">
           <label>k (limit):</label>
           <div class="two wide field">
-            <input type="number" id="limitKN" min="1" value= <%= limit %>>
+            <input type="number" id="limitKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
           <label>Direction</label>
           <div class="three wide field">
@@ -755,7 +755,7 @@
           </div>
           <label>Highlight Width:</label>
           <div class="two wide field">
-            <input type="number" id="highlightWidthKN" min="1" value= <%= highlightWidth %>>
+            <input type="number" id="highlightWidthKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
         </div>
         <button class="ui button" id="kNeighborhood-default-query" style="display:none">Default</button>
@@ -772,7 +772,7 @@
         <div class="inline fields">
           <label>k (limit):</label>
           <div class="two wide field">
-            <input type="number" id="limitCS" min="1" value= <%= limit %>>
+            <input type="number" id="limitCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
           <label>Direction</label>
           <div class="three wide field">
@@ -794,7 +794,7 @@
           </div>
           <label>Highlight Width:</label>
           <div class="two wide field">
-            <input type="number" id="highlightWidthCS" min="1" value= <%= highlightWidth %>>
+            <input type="number" id="highlightWidthCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
         </div>
         <button class="ui button" id="commonStream-default-query" style="display:none">Default</button>
@@ -811,7 +811,7 @@
         <div class="inline fields">
           <label>k (limit):</label>
           <div class="two wide field">
-            <input type="number" id="limitPB" min="1" value= <%= limit %>>
+            <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
           <label>Direction</label>
           <div class="three wide field">
@@ -833,7 +833,7 @@
           </div>
           <label>Highlight Width:</label>
           <div class="two wide field">
-            <input type="number" id="highlightWidthPB" min="1" value= <%= highlightWidth %>>
+            <input type="number" id="highlightWidthPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
         </div>
         <button class="ui button" id="pathsBetween-default-query" style="display:none">Default</button>
@@ -854,7 +854,7 @@
         <div class="inline fields">
           <label>k (limit):</label>
           <div class="two wide field">
-            <input type="number" id="limitPFT" min="1" value= <%= limit %>>
+            <input type="number" id="limitPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
           <label>Direction</label>
           <div class="three wide field">
@@ -880,7 +880,7 @@
           </div>
           <label>Highlight Width:</label>
           <div class="two wide field">
-            <input type="number" id="highlightWidthPFT" min="1" value= <%= highlightWidth %>>
+            <input type="number" id="highlightWidthPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
         </div>
         <button class="ui button" id="pathsFromTo-default-query" style="display:none">Default</button>
