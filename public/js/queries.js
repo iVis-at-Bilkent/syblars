@@ -285,56 +285,81 @@ let fillNodesFunc = function(queryType, nodeData){
   }
   else if(queryType == "kNeighborhood") {
     let sourceList = document.getElementById('sourceNodesKN');
+    let sourceTitleArray = [];
     if(sourceList.innerHTML !== "") {
       sourceList.innerHTML = "";
     }
     sourceList.innerHTML += '<option value="">Select Nodes</option>';
     for (const [key, value] of Object.entries(nodeData)) {
       sourceList.innerHTML += '<option value="' + key + '" title="' + value + ' (' + key + ')' + '">'+ (value.length > 10 ? (value.substring(0, 10) + "...") : value) + " (" + (key.length > 10 ? (key.substring(0, 10) + "...") : key) + ')' + '</option>';
+      sourceTitleArray.push(value + ' (' + key + ')');
     }
     $('#sourceNodesKN').dropdown();
+    $('#sourceNodesKN').parent().children('.menu').children().each(function (index, element) {
+      $(element).attr({"title": sourceTitleArray[index]});
+    });
   }
   else if(queryType == "commonStream") {
     let sourceList = document.getElementById('sourceNodesCS');
+    let sourceTitleArray = [];
     if(sourceList.innerHTML !== "") {
       sourceList.innerHTML = "";
     }
     sourceList.innerHTML += '<option value="">Select Nodes</option>';
     for (const [key, value] of Object.entries(nodeData)) {
       sourceList.innerHTML += '<option value="' + key + '" title="' + value + ' (' + key + ')' + '">'+ (value.length > 10 ? (value.substring(0, 10) + "...") : value) + " (" + (key.length > 10 ? (key.substring(0, 10) + "...") : key) + ')' + '</option>';
+      sourceTitleArray.push(value + ' (' + key + ')');
     }
     $('#sourceNodesCS').dropdown();
+    $('#sourceNodesCS').parent().children('.menu').children().each(function (index, element) {
+      $(element).attr({"title": sourceTitleArray[index]});
+    }); 
   }
   else if(queryType == "pathsBetween") {
     let sourceList = document.getElementById('sourceNodesPB');
+    let sourceTitleArray = [];
     if(sourceList.innerHTML !== "") {
       sourceList.innerHTML = "";
     }
     sourceList.innerHTML += '<option value="">Select Nodes</option>';
     for (const [key, value] of Object.entries(nodeData)) {
       sourceList.innerHTML += '<option value="' + key + '" title="' + value + ' (' + key + ')' + '">'+ (value.length > 10 ? (value.substring(0, 10) + "...") : value) + " (" + (key.length > 10 ? (key.substring(0, 10) + "...") : key) + ')' + '</option>';
+      sourceTitleArray.push(value + ' (' + key + ')');
     }
     $('#sourceNodesPB').dropdown();
+    $('#sourceNodesPB').parent().children('.menu').children().each(function (index, element) {
+      $(element).attr({"title": sourceTitleArray[index]});
+    });
   }
   else if(queryType == "pathsFromTo") {
     let sourceList = document.getElementById('sourceNodesPFT');
+    let sourceTitleArray = [];
     if(sourceList.innerHTML !== "") {
       sourceList.innerHTML = "";
     }
     sourceList.innerHTML += '<option value="">Select Nodes</option>';
     for (const [key, value] of Object.entries(nodeData)) {
       sourceList.innerHTML += '<option value="' + key + '" title="' + value + ' (' + key + ')' + '">'+ (value.length > 10 ? (value.substring(0, 10) + "...") : value) + " (" + (key.length > 10 ? (key.substring(0, 10) + "...") : key) + ')' + '</option>';
+      sourceTitleArray.push(value + ' (' + key + ')');
     }
     $('#sourceNodesPFT').dropdown();
+    $('#sourceNodesPFT').parent().children('.menu').children().each(function (index, element) {
+      $(element).attr({"title": sourceTitleArray[index]});
+    });
 
     let targetList = document.getElementById('targetNodesPFT');
+    let targetTitleArray = [];
     if(targetList.innerHTML !== "") {
       targetList.innerHTML = "";
     }
     targetList.innerHTML += '<option value="">Select Nodes</option>';
     for (const [key, value] of Object.entries(nodeData)) {
       targetList.innerHTML += '<option value="' + key + '" title="' + value + ' (' + key + ')' + '">'+ (value.length > 10 ? (value.substring(0, 10) + "...") : value) + " (" + (key.length > 10 ? (key.substring(0, 10) + "...") : key) + ')' + '</option>';
+      targetTitleArray.push(value + ' (' + key + ')');
     }
     $('#targetNodesPFT').dropdown();
+    $('#targetNodesPFT').parent().children('.menu').children().each(function (index, element) {
+      $(element).attr({"title": targetTitleArray[index]});
+    });
   }
 }
