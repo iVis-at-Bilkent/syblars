@@ -113,6 +113,7 @@ let commonStreamQuery = Backbone.View.extend({
     limit: 1,
     direction: "bothstream",
     sourceColor: "#00ff00",
+    targetColor: "#ff0000",
     pathColor: "#ffff00",
     highlightWidth: 10
   },
@@ -144,6 +145,7 @@ let commonStreamQuery = Backbone.View.extend({
       self.currentQueryProperties.direction = document.getElementById("directionCS").value;
       self.currentQueryProperties.limit = Number(document.getElementById("limitCS").value);
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorCS").value;
+      self.currentQueryProperties.targetColor = document.getElementById("targetColorCS").value;      
       self.currentQueryProperties.pathColor = document.getElementById("pathColorCS").value;
       self.currentQueryProperties.highlightWidth = Number(document.getElementById("highlightWidthCS").value);
     });
