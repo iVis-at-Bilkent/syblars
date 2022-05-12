@@ -61,7 +61,7 @@ let kNeighborhoodQuery = Backbone.View.extend({
     cropToResult: false,
     sourceNodes: [],
     limit: 1,
-    direction: "bothstream",
+    direction: "BOTHSTREAM",
     sourceColor: "#00ff00",
     pathColor: "#ffff00",
     highlightWidth: 10
@@ -118,7 +118,7 @@ let commonStreamQuery = Backbone.View.extend({
     cropToResult: false,
     sourceNodes: [],
     limit: 1,
-    direction: "bothstream",
+    direction: "BOTHSTREAM",
     sourceColor: "#00ff00",
     targetColor: "#ff0000",
     pathColor: "#ffff00",
@@ -177,7 +177,6 @@ let pathsBetweenQuery = Backbone.View.extend({
     cropToResult: false,
     sourceNodes: [],
     limit: 1,
-    direction: "bothstream",
     sourceColor: "#00ff00",
     pathColor: "#ffff00",
     highlightWidth: 10
@@ -207,7 +206,6 @@ let pathsBetweenQuery = Backbone.View.extend({
 
     $(document).off("click", "#pathsBetween-save-query").on("click", "#pathsBetween-save-query", function (evt) {
       self.currentQueryProperties.sourceNodes = $("#sourceNodesPB").dropdown("get value");
-      self.currentQueryProperties.direction = document.getElementById("directionPB").value;
       self.currentQueryProperties.limit = Number(document.getElementById("limitPB").value);
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorPB").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorPB").value;
@@ -235,7 +233,8 @@ let pathsFromToQuery = Backbone.View.extend({
     sourceNodes: [],
     targetNodes: [],
     limit: 1,
-    direction: "bothstream",
+    furtherDistance: 1,
+    direction: "DIRECTED",
     sourceColor: "#00ff00",
     targetColor: "#ff0000",
     pathColor: "#ffff00",
@@ -269,6 +268,7 @@ let pathsFromToQuery = Backbone.View.extend({
       self.currentQueryProperties.targetNodes = $("#targetNodesPFT").dropdown("get value");
       self.currentQueryProperties.direction = document.getElementById("directionPFT").value;
       self.currentQueryProperties.limit = Number(document.getElementById("limitPFT").value);
+      self.currentQueryProperties.limit = Number(document.getElementById("furtherDistancePFT").value);
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorPFT").value;
       self.currentQueryProperties.targetColor = document.getElementById("targetColorPFT").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorPFT").value;

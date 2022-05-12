@@ -695,15 +695,13 @@
     <script type="text/template" id="shortestPath-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Node</label>
+          <label>Source Node:</label>
           <div class="three wide field">
-            <select id="sourceNodesSP">
-            </select>
+            <select id="sourceNodesSP"></select>
           </div>
-          <label>Target Node</label>
+          <label>Target Node:</label>
           <div class="three wide field">
-            <select id="targetNodesSP">
-            </select>
+            <select id="targetNodesSP"></select>
           </div>
         </div>
         <div class="inline fields">
@@ -734,7 +732,7 @@
     <script type="text/template" id="kNeighborhood-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes</label>
+          <label>Source Nodes:</label>
           <select multiple="" id="sourceNodesKN" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
@@ -742,12 +740,12 @@
           <div class="two wide field">
             <input type="number" id="limitKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <label>Direction</label>
+          <label>Direction:</label>
           <div class="three wide field">
             <select id="directionKN">
-              <option value="bothstream">Both Stream</option>
-              <option value="upstream">Up Stream</option>
-              <option value="downstream">Down Stream</option>
+              <option value="BOTHSTREAM">Both Stream</option>
+              <option value="UPSTREAM">Up Stream</option>
+              <option value="DOWNSTREAM">Down Stream</option>
             </select>
           </div>          
         </div>
@@ -773,7 +771,7 @@
     <script type="text/template" id="commonStream-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes</label>
+          <label>Source Nodes:</label>
           <select multiple="" id="sourceNodesCS" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
@@ -781,12 +779,12 @@
           <div class="two wide field">
             <input type="number" id="limitCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <label>Direction</label>
+          <label>Direction:</label>
           <div class="three wide field">
             <select id="directionCS">
-              <option value="bothstream">Both Stream</option>
-              <option value="upstream">Up Stream</option>
-              <option value="downstream">Down Stream</option>
+              <option value="BOTHSTREAM">Both Stream</option>
+              <option value="UPSTREAM">Up Stream</option>
+              <option value="DOWNSTREAM">Down Stream</option>
             </select>
           </div>          
         </div>
@@ -816,21 +814,13 @@
     <script type="text/template" id="pathsBetween-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes</label>
-          <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
-        </div>
-        <div class="inline fields">
+          <label>Source Nodes:</label>
+          <div class="four wide field">
+            <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
+          </div>
           <label>k (limit):</label>
           <div class="two wide field">
             <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
-          </div>
-          <label>Direction</label>
-          <div class="three wide field">
-            <select id="directionPB">
-              <option value="bothstream">Both Stream</option>
-              <option value="upstream">Up Stream</option>
-              <option value="downstream">Down Stream</option>
-            </select>
           </div>          
         </div>
         <div class="inline fields">
@@ -855,11 +845,11 @@
     <script type="text/template" id="pathsFromTo-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes</label>
+          <label>Source Nodes:</label>
           <select multiple="" id="sourceNodesPFT" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <label>Target Nodes</label>
+          <label>Target Nodes:</label>
           <select multiple="" id="targetNodesPFT" class="ui tiny dropdown"></select>
         </div>        
         <div class="inline fields">
@@ -867,12 +857,15 @@
           <div class="two wide field">
             <input type="number" id="limitPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <label>Direction</label>
+          <label>Further Distance:</label>
+          <div class="two wide field">
+            <input type="number" id="furtherDistancePFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= furtherDistance %>>
+          </div>          
+          <label>Direction:</label>
           <div class="three wide field">
             <select id="directionPFT">
-              <option value="bothstream">Both Stream</option>
-              <option value="upstream">Up Stream</option>
-              <option value="downstream">Down Stream</option>
+              <option value="DIRECTED">Directed</option>
+              <option value="UNDIRECTED">Undirected</option>
             </select>
           </div>          
         </div>
