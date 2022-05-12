@@ -1,6 +1,7 @@
 let shortestPathQuery = Backbone.View.extend({
   defaultQueryProperties: {
     query: "shortestPath",
+    cropToResult: false,
     sourceNodes: [],
     targetNodes: [],
     sourceColor: "#00ff00",
@@ -38,6 +39,7 @@ let shortestPathQuery = Backbone.View.extend({
       self.currentQueryProperties.targetColor = document.getElementById("targetColorSP").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorSP").value;
       self.currentQueryProperties.highlightWidth = Number(document.getElementById("highlightWidthSP").value);
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
     $(document).off("click", "#shortestPath-default-query").on("click", "#shortestPath-default-query", function (evt) {
@@ -46,6 +48,7 @@ let shortestPathQuery = Backbone.View.extend({
       self.template = temp(self.currentQueryProperties);
       $(self.el).html(self.template);
       fillNodesFunc("shortestPath", nodeData);
+      document.getElementById("cropToResult").checked = false;
     });
 
     return this;
@@ -55,6 +58,7 @@ let shortestPathQuery = Backbone.View.extend({
 let kNeighborhoodQuery = Backbone.View.extend({
   defaultQueryProperties: {
     query: "kNeighborhood",
+    cropToResult: false,
     sourceNodes: [],
     limit: 1,
     direction: "bothstream",
@@ -92,6 +96,7 @@ let kNeighborhoodQuery = Backbone.View.extend({
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorKN").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorKN").value;
       self.currentQueryProperties.highlightWidth = Number(document.getElementById("highlightWidthKN").value);
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
     $(document).off("click", "#kNeighborhood-default-query").on("click", "#kNeighborhood-default-query", function (evt) {
@@ -100,6 +105,7 @@ let kNeighborhoodQuery = Backbone.View.extend({
       self.template = temp(self.currentQueryProperties);
       $(self.el).html(self.template);
       fillNodesFunc("kNeighborhood", nodeData);
+      document.getElementById("cropToResult").checked = false;
     });
 
     return this;
@@ -109,6 +115,7 @@ let kNeighborhoodQuery = Backbone.View.extend({
 let commonStreamQuery = Backbone.View.extend({
   defaultQueryProperties: {
     query: "commonStream",
+    cropToResult: false,
     sourceNodes: [],
     limit: 1,
     direction: "bothstream",
@@ -148,6 +155,7 @@ let commonStreamQuery = Backbone.View.extend({
       self.currentQueryProperties.targetColor = document.getElementById("targetColorCS").value;      
       self.currentQueryProperties.pathColor = document.getElementById("pathColorCS").value;
       self.currentQueryProperties.highlightWidth = Number(document.getElementById("highlightWidthCS").value);
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
     $(document).off("click", "#commonStream-default-query").on("click", "#commonStream-default-query", function (evt) {
@@ -156,6 +164,7 @@ let commonStreamQuery = Backbone.View.extend({
       self.template = temp(self.currentQueryProperties);
       $(self.el).html(self.template);
       fillNodesFunc("commonStream", nodeData);
+      document.getElementById("cropToResult").checked = false;
     });
 
     return this;
@@ -165,6 +174,7 @@ let commonStreamQuery = Backbone.View.extend({
 let pathsBetweenQuery = Backbone.View.extend({
   defaultQueryProperties: {
     query: "pathsBetween",
+    cropToResult: false,
     sourceNodes: [],
     limit: 1,
     direction: "bothstream",
@@ -202,6 +212,7 @@ let pathsBetweenQuery = Backbone.View.extend({
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorPB").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorPB").value;
       self.currentQueryProperties.highlightWidth = Number(document.getElementById("highlightWidthPB").value);
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
     $(document).off("click", "#pathsBetween-default-query").on("click", "#pathsBetween-default-query", function (evt) {
@@ -210,6 +221,7 @@ let pathsBetweenQuery = Backbone.View.extend({
       self.template = temp(self.currentQueryProperties);
       $(self.el).html(self.template);
       fillNodesFunc("pathsBetween", nodeData);
+      document.getElementById("cropToResult").checked = false;
     });
 
     return this;
@@ -219,6 +231,7 @@ let pathsBetweenQuery = Backbone.View.extend({
 let pathsFromToQuery = Backbone.View.extend({
   defaultQueryProperties: {
     query: "pathsFromTo",
+    cropToResult: false,
     sourceNodes: [],
     targetNodes: [],
     limit: 1,
@@ -260,6 +273,7 @@ let pathsFromToQuery = Backbone.View.extend({
       self.currentQueryProperties.targetColor = document.getElementById("targetColorPFT").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorPFT").value;
       self.currentQueryProperties.highlightWidth = Number(document.getElementById("highlightWidthPFT").value);
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
     $(document).off("click", "#pathsFromTo-default-query").on("click", "#pathsFromTo-default-query", function (evt) {
@@ -268,6 +282,7 @@ let pathsFromToQuery = Backbone.View.extend({
       self.template = temp(self.currentQueryProperties);
       $(self.el).html(self.template);
       fillNodesFunc("pathsFromTo", nodeData);
+      document.getElementById("cropToResult").checked = false;
     });
 
     return this;

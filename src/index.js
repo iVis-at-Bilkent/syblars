@@ -249,36 +249,37 @@ app.post('/:format', (req, res) => {
     }
 
     let queryOptions = options.queryOptions;
-
+    let elementsToBeRendered = cy.elements();
     if(queryOptions) {
+      let queryResult;  // query result may or may not contain source/target nodes based on the type of the query
       let path;
       let sourceNodes = cy.collection();
       let targetNodes = cy.collection();
       if(queryOptions.query == 'shortestPath') {
-        path = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
+        queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
       }
       else if(queryOptions.query == 'kNeighborhood') {
-        path = cy.collection();
+        queryResult = cy.collection();
         queryOptions.sourceNodes.forEach(function(nodeId){
-          path.merge(cy.getElementById(nodeId).neighborhood());
+          queryResult.merge(cy.getElementById(nodeId).neighborhood());
         });
       }
       else if(queryOptions.query == 'commonStream') {
-        path = cy.collection();
+        queryResult = cy.collection();
         queryOptions.sourceNodes.forEach(function(nodeId){
-          path.merge(cy.getElementById(nodeId).neighborhood());
+          queryResult.merge(cy.getElementById(nodeId).neighborhood());
         });
       }
       else if(queryOptions.query == 'pathsBetween') {
-        path = cy.collection();
+        queryResult = cy.collection();
         queryOptions.sourceNodes.forEach(function(nodeId){
-          path.merge(cy.getElementById(nodeId).neighborhood());
+          queryResult.merge(cy.getElementById(nodeId).neighborhood());
         });
       }
       else if(queryOptions.query == 'pathsFromTo') {
-        path = cy.collection();
+        queryResult = cy.collection();
         queryOptions.sourceNodes.forEach(function(nodeId){
-          path.merge(cy.getElementById(nodeId).neighborhood());
+          queryResult.merge(cy.getElementById(nodeId).neighborhood());
         });
       }
       queryOptions.sourceNodes.forEach(function(nodeId){
@@ -287,7 +288,7 @@ app.post('/:format', (req, res) => {
         node.data('highlightColor', queryOptions.sourceColor);
         sourceNodes.merge(node);
       });
-      if(queryOptions.targetNodes) {
+      if(queryOptions.targetNodes) {  // TO DO: update here based on commonStream target nodes
         queryOptions.targetNodes.forEach(function(nodeId){
           let node = cy.getElementById(nodeId);
           node.addClass('target');
@@ -295,9 +296,15 @@ app.post('/:format', (req, res) => {
           targetNodes.merge(node);
         });
       }
-      path.difference(sourceNodes).difference(targetNodes).addClass('path');
-      path.difference(sourceNodes).difference(targetNodes).data('highlightColor', queryOptions.pathColor);
-      path.data('highlightWidth', queryOptions.highlightWidth);
+
+      path = queryResult.difference(sourceNodes).difference(targetNodes);
+      path.addClass('path');
+      path.data('highlightColor', queryOptions.pathColor);
+      queryResult.data('highlightWidth', queryOptions.highlightWidth);
+
+      if(queryOptions.cropToResult) {
+        elementsToBeRendered = queryResult.union(sourceNodes).union(targetNodes);
+      }
     }
 
     let ret = {};
@@ -305,22 +312,20 @@ app.post('/:format', (req, res) => {
     function setJson(result){
       ret["layout"] = {};
       // whether to return edges or not
-      cy.filter((element, i) => {
-          return true;
-      }).forEach((ele) => {
-          if (ele.isNode()) {
-              let obj = {};
-              obj["position"] = result.positions[ele.id()];
-              obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], parent: ele.data("parent") };
-              if(ele.data('clusterID') != null) {
-                obj["data"]['clusterID'] = parseInt(ele.data('clusterID'));
-              }
-              ret["layout"][ele.id()] = obj;
-          }
-          else if (!ele.isNode() && req.query.edges) {
-              ret["layout"][ele.id()] = { source: ele.data().source, target: ele.data().target };
-          }
+      elementsToBeRendered.nodes().forEach((ele) => {
+        let obj = {};
+        obj["position"] = result.positions[ele.id()];
+        obj["data"] = { width: result.widths[ele.data().id], height: result.heights[ele.data().id], parent: ele.data("parent") };
+        if(ele.data('clusterID') != null) {
+          obj["data"]['clusterID'] = parseInt(ele.data('clusterID'));
+        }
+        ret["layout"][ele.id()] = obj;
       });
+      if (req.query.edges) {
+        elementsToBeRendered.edges().forEach((ele) => {
+          ret["layout"][ele.id()] = { source: ele.data().source, target: ele.data().target };
+        });
+      }
     }
 
     let colorScheme = imageOptions.color || "white";
@@ -328,7 +333,7 @@ app.post('/:format', (req, res) => {
 
     snap.start().then(function(){
       return snap.shot({
-        elements: cy.json().elements,
+        elements: elementsToBeRendered.jsons(),
         layout: layoutOptions,
         style: stylesheet,
         resolvesTo: 'all',

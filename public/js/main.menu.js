@@ -213,7 +213,7 @@ let processLayout = async function () {
   switch (currentQuery) {
     case 'shortestPath':
       queryOptions = shortestPathQueryProp.getProperties();
-      break;    
+      break;
     case 'kNeighborhood':
       queryOptions = kNeighborhoodQueryProp.getProperties();
       break;
