@@ -26,6 +26,10 @@ const { window } = new JSDOM();
 const { document } = (new JSDOM('')).window;
 global.document = document;
 
+// for queries
+const graphAlgos = require("cytoscape-graph-algos");
+cytoscape.use(graphAlgos);
+
 const $ = jQuery = require('jquery')(window);
 
 const graphml = require('cytoscape-graphml');
@@ -255,40 +259,14 @@ app.post('/:format', (req, res) => {
       let path;
       let sourceNodes = cy.collection();
       let targetNodes = cy.collection();
-      if(queryOptions.query == 'shortestPath') {
-        queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
-      }
-      else if(queryOptions.query == 'kNeighborhood') {
-        queryResult = cy.collection();
-        queryOptions.sourceNodes.forEach(function(nodeId){
-          queryResult.merge(cy.getElementById(nodeId).neighborhood());
-        });
-      }
-      else if(queryOptions.query == 'commonStream') {
-        queryResult = cy.collection();
-        queryOptions.sourceNodes.forEach(function(nodeId){
-          queryResult.merge(cy.getElementById(nodeId).neighborhood());
-        });
-      }
-      else if(queryOptions.query == 'pathsBetween') {
-        queryResult = cy.collection();
-        queryOptions.sourceNodes.forEach(function(nodeId){
-          queryResult.merge(cy.getElementById(nodeId).neighborhood());
-        });
-      }
-      else if(queryOptions.query == 'pathsFromTo') {
-        queryResult = cy.collection();
-        queryOptions.sourceNodes.forEach(function(nodeId){
-          queryResult.merge(cy.getElementById(nodeId).neighborhood());
-        });
-      }
+
       queryOptions.sourceNodes.forEach(function(nodeId){
         let node = cy.getElementById(nodeId);
         node.addClass('source');
         node.data('highlightColor', queryOptions.sourceColor);
         sourceNodes.merge(node);
       });
-      if(queryOptions.targetNodes) {  // TO DO: update here based on commonStream target nodes
+      if(queryOptions.targetNodes) {
         queryOptions.targetNodes.forEach(function(nodeId){
           let node = cy.getElementById(nodeId);
           node.addClass('target');
@@ -297,7 +275,44 @@ app.post('/:format', (req, res) => {
         });
       }
 
+      let result;
+      if(queryOptions.query == 'shortestPath') {
+        queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
+      }
+      else if(queryOptions.query == 'kNeighborhood') {
+        queryResult = cy.collection();
+        result = cy.elements().kNeighborhood(sourceNodes, queryOptions.limit, queryOptions.direction);
+        queryResult.merge(result.neighborNodes).merge(result.neighborEdges);
+      }
+      else if(queryOptions.query == 'commonStream') {
+        queryResult = cy.collection();
+        result = cy.elements().commonStream(sourceNodes, queryOptions.limit, queryOptions.direction);
+        queryResult.merge(result.commonNodes).merge(result.edgesOnPath).merge(result.nodesOnPath);
+      }
+      else if(queryOptions.query == 'pathsBetween') {
+        queryResult = cy.collection();
+        result = cy.elements().pathsBetween(sourceNodes, queryOptions.limit);
+        queryResult.merge(result.resultNodes).merge(result.resultEdges);
+      }
+      else if(queryOptions.query == 'pathsFromTo') {
+        queryResult = cy.collection();
+        result = cy.elements().pathsFromTo(sourceNodes, targetNodes, queryOptions.limit, queryOptions.furtherDistance, queryOptions.direction);
+        queryResult.merge(result.nodesOnThePaths).merge(result.edgesOnThePaths);
+      }
+
       path = queryResult.difference(sourceNodes).difference(targetNodes);
+      if(queryOptions.query == 'commonStream') {
+        let commonNodes = cy.collection();  // change here after graph-algos bug fix
+        result.commonNodes.forEach(function(node){
+          commonNodes.merge(node);
+        });
+        path = path.difference(commonNodes);
+        result.commonNodes.forEach(function(node){
+          node.addClass('target');
+          node.data('highlightColor', queryOptions.targetColor);
+          targetNodes.merge(node);
+        });
+      }
       path.addClass('path');
       path.data('highlightColor', queryOptions.pathColor);
       queryResult.data('highlightWidth', queryOptions.highlightWidth);
