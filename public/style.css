@@ -40,12 +40,21 @@ label {
   color: #56423E !important;
 }
 
+.radio-label {
+  font-size: .85714286rem !important;
+  padding-top: 1px;
+}
+
 #informationModal:hover {
   cursor: pointer;
 }
 
 #imageSettingsDefault:hover {
   cursor: pointer;
+}
+
+.option-label {
+  margin-right: .85714286em;
 }
 
 #layoutSettingsDefault:hover {

@@ -75,7 +75,7 @@
             <div id="layoutTab" class="ui bottom attached tab segment active disabled" data-tab="first" style="height: 250px; pointer-events: none;">
               <div class="ui tiny form">
                 <div class="inline fields">
-                  <label>Layout Style:</label>
+                  <span class="add-on layout-text option-label"> Layout Style: </span>
                   <div class="four wide field">
                     <select id="layoutType">
                       <option value="fcose">fCoSE</option>
@@ -115,43 +115,43 @@
             <div id="imageTab" class="ui bottom attached tab segment disabled" data-tab="second"  style="height: 250px; pointer-events: none;">
               <div class="ui tiny form">
                 <div class="inline fields" id="formatRadios">
-                  <label>Format:</label>
+                  <span class="add-on layout-text option-label"> Format: </span>
                   <div class="field">
                     <div class="ui radio checkbox">
                       <input type="radio" id="pngRadio" name="format" value="png" checked="checked">
-                      <label>PNG</label>
+                      <label class="radio-label">PNG</label>
                     </div>
                   </div>
                   <div class="field">
                     <div class="ui radio checkbox">
                       <input type="radio" id="jpgRadio" name="format" value="jpg">
-                      <label>JPG</label>
+                      <label class="radio-label">JPG</label>
                     </div>
                   </div>
                   <div class="field">
                     <div class="ui radio checkbox">
                       <input type="radio" id="svgRadio" name="format" value="svg">
-                      <label>SVG</label>
+                      <label class="radio-label">SVG</label>
                     </div>
                   </div>
-                  <img class="ui image" id="imageSettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 165px; margin-top: 0px; float: right; padding: 2.5px">
+                  <img class="ui image" id="imageSettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 30px; margin-top: 0px; float: right; padding: 2.5px">
                 </div>
                 <div class="inline fields">
-                  <div class="five wide field">
-                    <label>Width:</label>
+                  <span class="add-on layout-text option-label"> Width: </span>
+                  <div class="two wide field">
                     <input type="number" id="imageWidth" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value="1280" min="1">
                   </div>
-                  <div class="five wide field">
-                    <label>Height:</label>
+                  <span class="add-on layout-text option-label"> Height: </span>
+                  <div class="two wide field">
                     <input type="number" id="imageHeight" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value="720" min="1">
                   </div>
                 </div>
                 <div class="inline fields">
-                  <label>Color:</label>
+                  <span class="add-on layout-text option-label"> Color: </span>
                   <div class="two wide field">
                     <input type="color" id="color" value="#9ecae1">
                   </div>
-                  <label> or </label>
+                  <span class="add-on layout-text option-label"> or </span>
                   <div class="seven wide field">
                     <div class="field">
                       <select id="colorScheme" disabled>
@@ -168,21 +168,22 @@
                   </div>
                 </div>
                 <div class="inline fields">
-                  <label>Background:</label>
+                  <span class="add-on layout-text option-label"> Background: </span>
                   <div class="two wide field">                  
                     <input type="color" disabled id="imageBackground" value="#ffffff">
                   </div>
-                   <div class="ui checkbox" style="margin-left: 5px;">
-                      <input type="checkbox" id='transparent' checked name="example">
-                      <label>Transparent</label>
-                    </div>
+                  <!-- <div class="ui checkbox" style="margin-left: 5px;"> -->
+                    <input type="checkbox" id='transparent' checked>
+                    <!-- <label class="radio-label">Transparent</label> -->
+                    <span class="add-on layout-text option-label" style="margin-left: 6px;"> Transparent </span>
+                  <!-- </div> -->
                 </div>
               </div>
             </div>
             <div id="queryTab" class="ui bottom attached tab segment disabled" data-tab="third" style="height: auto; min-height: 250px; margin-bottom: 14px; pointer-events: none;">
               <div id="queryForm" class="ui tiny form">
                 <div class="inline fields">
-                  <label>Query Type:</label>
+                  <span class="add-on layout-text option-label"> Query Type: </span>
                   <div class="four wide field">
                     <select id="queryType">
                       <option value="">Select Query</option>
@@ -194,11 +195,9 @@
                     </select>
                   </div>
                   <div class="field" style="margin-left: 15px">
-                    <label style="margin-right: 10px">Crop to Result:</label>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="cropToResult" style="margin-top: 4px">
+                    <span class="add-on layout-text option-label" style="margin-right:5px">Crop to Result:</span>
+                      <input type="checkbox" id="cropToResult">
                       <label style="margin-top: 4px"></label>
-                    </div>
                   </div>
                   <img class="ui image" id="querySettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 10px; margin-top: 0px; float: right; padding: 2.5px">
                 </div>
@@ -330,19 +329,19 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels1" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Uniform Node Dimensions </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Uniform Node Dimensions: </span>
             <input id="uniformNodeDimensions1" type="checkbox"<% if(uniformNodeDimensions){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components: </span>
             <input id="packComponents1" type="checkbox"<% if(packComponents){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Tile </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Tile: </span>
             <input id="tile1" type="checkbox"<% if(tile){ %> checked <%}%> >
           </div>
         </div>
@@ -407,15 +406,15 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels2" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Avoid Overlap </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Avoid Overlap: </span>
             <input id="avoidOverlap2" type="checkbox"<% if(avoidOverlap){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Handle Disconnected </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Handle Disconnected: </span>
             <input id="handleDisconnected2" type="checkbox"<% if(handleDisconnected){ %> checked <%}%> >
           </div>
         </div>
@@ -470,15 +469,15 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels3" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components: </span>
             <input id="packComponents3" type="checkbox"<% if(packComponents){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Allow Nodes Inside Circle </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Allow Nodes Inside Circle: </span>
             <input id="allowNodesInsideCircle3" type="checkbox"<% if(allowNodesInsideCircle){ %> checked <%}%> >
           </div>
         </div>
@@ -527,7 +526,7 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels4" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
         </div>
@@ -562,41 +561,41 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels5" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Compact Components </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Compact Components: </span>
             <input id="compactComponents5" type="checkbox"<% if(klay.compactComponents){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Feedback Edges </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Feedback Edges: </span>
             <input id="feedbackEdges5" type="checkbox"<% if(klay.feedbackEdges){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Layout Hierarchy </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Layout Hierarchy: </span>
             <input id="layoutHierarchy5" type="checkbox"<% if(klay.layoutHierarchy){ %> checked <%}%> > 
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Merge Edges </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Merge Edges: </span>
             <input id="mergeEdges5" type="checkbox"<% if(klay.mergeEdges){ %> checked <%}%> >  
           </div>
         </div>
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Merge Hier. Crossing Edges </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Merge Hier. Crossing Edges: </span>
             <input id="mergeHierarchyCrossingEdges5" type="checkbox"<% if(klay.mergeHierarchyCrossingEdges){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Add Unnec. Bendpoints </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Add Unnec. Bendpoints: </span>
             <input id="addUnnecessaryBendpoints5" type="checkbox"<% if(klay.addUnnecessaryBendpoints){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Route Self Loop Inside </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Route Self Loop Inside: </span>
             <input id="routeSelfLoopInside5" type="checkbox"<% if(klay.routeSelfLoopInside){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Separate Conn. Components </span>
+            <span class="add-on layout-text" style="margin-right: 5px"> Separate Conn. Components: </span>
             <input id="separateConnectedComponents5" type="checkbox"<% if(klay.separateConnectedComponents){ %> checked <%}%> >
           </div>
         </div>
@@ -695,31 +694,31 @@
     <script type="text/template" id="shortestPath-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Node:</label>
+          <span class="add-on layout-text option-label"> Source Node: </span>
           <div class="three wide field">
-            <select id="sourceNodesSP"></select>
+            <select id="sourceNodesSP" class="ui dropdown"></select>          
           </div>
-          <label>Target Node:</label>
+          <span class="add-on layout-text option-label"> Target Node: </span>
           <div class="three wide field">
             <select id="targetNodesSP"></select>
           </div>
         </div>
         <div class="inline fields">
-          <label>Source:</label>
+          <span class="add-on layout-text option-label"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorSP" value= <%= sourceColor %>>
           </div>
-          <label>Target:</label>
+          <span class="add-on layout-text option-label"> Target: </span>
           <div class="two wide field">
             <input type="color" id="targetColorSP" value= <%= targetColor %>>
           </div>
-          <label>Path:</label>
+          <span class="add-on layout-text option-label"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorSP" value= <%= pathColor %>>
           </div>
         </div>
         <div class="inline fields">
-          <label>Highlight Width:</label>
+          <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthSP" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>
@@ -732,15 +731,15 @@
     <script type="text/template" id="kNeighborhood-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes:</label>
+          <span class="add-on layout-text option-label"> Source Nodes: </span>
           <select multiple="" id="sourceNodesKN" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <label>k (limit):</label>
+          <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <label>Direction:</label>
+          <span class="add-on layout-text option-label"> Direction: </span>
           <div class="three wide field">
             <select id="directionKN">
               <option value="BOTHSTREAM">Both Stream</option>
@@ -750,15 +749,15 @@
           </div>          
         </div>
         <div class="inline fields">
-          <label>Source:</label>
+          <span class="add-on layout-text option-label"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorKN" value= <%= sourceColor %>>
           </div>
-          <label>Path:</label>
+          <span class="add-on layout-text option-label"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorKN" value= <%= pathColor %>>
           </div>
-          <label>Highlight Width:</label>
+          <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
@@ -771,15 +770,15 @@
     <script type="text/template" id="commonStream-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes:</label>
+          <span class="add-on layout-text option-label"> Source Nodes: </span>
           <select multiple="" id="sourceNodesCS" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <label>k (limit):</label>
+          <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <label>Direction:</label>
+          <span class="add-on layout-text option-label"> Direction: </span>
           <div class="three wide field">
             <select id="directionCS">
               <option value="BOTHSTREAM">Both Stream</option>
@@ -789,19 +788,19 @@
           </div>          
         </div>
         <div class="inline fields">
-          <label>Source:</label>
+          <span class="add-on layout-text option-label"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorCS" value= <%= sourceColor %>>
           </div>
-          <label>Target:</label>
+          <span class="add-on layout-text option-label"> Target: </span>
           <div class="two wide field">
             <input type="color" id="targetColorCS" value= <%= targetColor %>>
-          </div>          
-          <label>Path:</label>
+          </div>
+          <span class="add-on layout-text option-label"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorCS" value= <%= pathColor %>>
           </div>
-          <label>Highlight Width:</label>
+          <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
@@ -814,25 +813,25 @@
     <script type="text/template" id="pathsBetween-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes:</label>
+          <span class="add-on layout-text option-label"> Source Nodes: </span>
           <div class="four wide field">
             <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
           </div>
-          <label>k (limit):</label>
+          <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>          
         </div>
         <div class="inline fields">
-          <label>Source:</label>
+          <span class="add-on layout-text option-label"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorPB" value= <%= sourceColor %>>
           </div>
-          <label>Path:</label>
+          <span class="add-on layout-text option-label"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorPB" value= <%= pathColor %>>
           </div>
-          <label>Highlight Width:</label>
+          <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
@@ -845,23 +844,23 @@
     <script type="text/template" id="pathsFromTo-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <label>Source Nodes:</label>
+          <span class="add-on layout-text option-label"> Source Nodes: </span>
           <select multiple="" id="sourceNodesPFT" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <label>Target Nodes:</label>
+          <span class="add-on layout-text option-label"> Target Nodes: </span>
           <select multiple="" id="targetNodesPFT" class="ui tiny dropdown"></select>
         </div>        
         <div class="inline fields">
-          <label>k (limit):</label>
+          <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <label>Further Distance:</label>
+          <span class="add-on layout-text option-label"> Further Distance: </span>
           <div class="two wide field">
             <input type="number" id="furtherDistancePFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= furtherDistance %>>
-          </div>          
-          <label>Direction:</label>
+          </div>
+          <span class="add-on layout-text option-label"> Direction: </span>
           <div class="three wide field">
             <select id="directionPFT">
               <option value="DIRECTED">Directed</option>
@@ -870,19 +869,19 @@
           </div>          
         </div>
         <div class="inline fields">
-          <label>Source:</label>
+          <span class="add-on layout-text option-label"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorPFT" value= <%= sourceColor %>>
           </div>
-          <label>Target:</label>
+          <span class="add-on layout-text option-label"> Target: </span>
           <div class="two wide field">
             <input type="color" id="targetColorPFT" value= <%= targetColor %>>
-          </div>          
-          <label>Path:</label>
+          </div>
+          <span class="add-on layout-text option-label"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorPFT" value= <%= pathColor %>>
           </div>
-          <label>Highlight Width:</label>
+          <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>          
