@@ -1,4 +1,4 @@
-heroku = !(location.hostname === "139.179.50.45");
+heroku = !(location.hostname === "localhost");
 
 ///////////////////// LOAD & SAVE //////////////////////////////
 
@@ -54,13 +54,13 @@ let processNodes = async function () {
 
   if (!heroku) {
     if (isGraphML)
-      url = "http://139.179.50.45:" + port + "/graphml?nodeInfo=true";
+      url = "http://localhost:" + port + "/graphml?nodeInfo=true";
     else if (isSBGNML)
-      url = "http://139.179.50.45:" + port + "/sbgnml?nodeInfo=true";
+      url = "http://localhost:" + port + "/sbgnml?nodeInfo=true";
     else if (isSBML)
-      url = "http://139.179.50.45:" + port + "/sbml?nodeInfo=true";
+      url = "http://localhost:" + port + "/sbml?nodeInfo=true";
     else
-      url = "http://139.179.50.45:" + port + "/json?nodeInfo=true";
+      url = "http://localhost:" + port + "/json?nodeInfo=true";
   } else {
     if (isGraphML)
       url = "https://syblars.herokuapp.com/graphml?nodeInfo=true";
@@ -158,13 +158,13 @@ let processLayout = async function () {
 
   if (!heroku) {
     if (isGraphML)
-      url = "http://139.179.50.45:" + port + "/graphml?edges=true";
+      url = "http://localhost:" + port + "/graphml?edges=true";
     else if (isSBGNML)
-      url = "http://139.179.50.45:" + port + "/sbgnml?edges=true";
+      url = "http://localhost:" + port + "/sbgnml?edges=true";
     else if (isSBML)
-      url = "http://139.179.50.45:" + port + "/sbml?edges=true";
+      url = "http://localhost:" + port + "/sbml?edges=true";
     else
-      url = "http://139.179.50.45:" + port + "/json?edges=true";
+      url = "http://localhost:" + port + "/json?edges=true";
   } else {
     if (isGraphML)
       url = "https://syblars.herokuapp.com/graphml?edges=true";
@@ -487,7 +487,7 @@ let saveImage = function(imageContent, imageType, fileName){
       let b64data = imageContent.substr(imageContent.indexOf(",") + 1);
       blob = b64toBlob(b64data, "image/"+imageType);      
     }
-    
+
     return blob;
 };
 
