@@ -1,0 +1,1435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="_78ad10b8-586d-42a4-93d1-18042f44006e" version="4">
+  <model id="MODEL1510230001" name="Rantasalo2016 - Synthetic expresion modulator constitutive STF_VP16" metaid="COPASI0">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <pre>Rantasalo2015-Synthetic_expresion_modulator_constitutiveSTF_VP16
+
+This model is part of a family of models describing a modular synthetic expression system that modulates the expression level of a gene in S. Cerevisae. The whole family of models is described in the article: 
+
+Synthetic transcription amplifier system for orthogonal control of gene expression in Saccharomyces cerevisiae, by 
+Anssi Rantasalo, Elena Czeizler, Riitta Virtanen, Juho Rousu, Harri Lähdesmäki, Merja Penttilä, Jussi Jäntti and Dominik Mojzita (submitted).
+
+The family comprises 5 different models corresponding to the synthetic systems using:
+1) the methionine induced synthetic transcription factor sTF-VP16 construct, 
+2) the methionine induced synthetic transcription factor sTF-B42 construct, 
+3) the constitutive sTF-VP16 construct, 
+4) the constitutive sTF-B42 construct, and 
+5) the constitutive sTF-VP16 construct with a different core promoter for the reporter gene.
+The computational models were designed, developed and implemented by Elena Czeizler, Harri Lahdesmaki and Juho Rousu and they are all hosted separately in the Biomodels database.
+
+The only difference between the models corresponding to the constitutive and the methionine-induced systems stands in the sTF transcription process. The only difference between the models for the systems using the sTF16 or sTF42 constructs stands in the kinetic rates associated to 2 reactions: i) the association of the polymerase with the sTF’s bound to their specific DNA sites and ii) the degradation rate of the sTF proteins corresponding to the two transcription factors sTF16 or sTF42. The first 4 models correspond to systems using the pBID2-EP core promoter for the reporter mCherry gene. Starting from the model associated to the constitutive system using the sTF16 construct we derived the 5th model corresponding to the case when the core promoter for the reporter mCherry gene is switched from pBID2-EP to pBID2-ED. The only difference between these two last models stands in the kinetic rates for the association of polymerase bound to sTF and the core promoter.
+
+Since the 5 considered models have many parts in common, the values for the kinetic parameters corresponding to these common parts are identical in all of them. 
+
+The current model describes the gene expression modulation system using the constitutive synthetic transcription factor sTF-VP16 composed of a LexA DNA binding domain, the Herpes simplex virus transactivation domain (VP16) and a 6×His-tag. In this model, the number of boxes to which this sTF can bind (encoded in the species B) is set to 2. In the experimental setups, the number of binding boxes varied between 0 and 16 (8 binding sites on each of the 2 DNA constructs), which can be easily modified in the model by changing the initial value for B. The core promoter used for the reporter mCherry gene is pBID-EP.
+
+All model analysis and simulations were done by using the software COPASI (Hoops, S., Sahle, S., Gauges, R., Lee, C., Pahle, J., Simus, N., Singhal, M., Xu, L., Mendes, P. and Kummer, U. (2006) COPASI- A COmplex PAthway SImulator. Bioinformatics, 22, 3067-3074.)</pre>
+      </body>
+    </notes>
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:CopasiMT="http://www.copasi.org/RDF/MiriamTerms#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2015-01-15T11:10:48Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+            <dcterms:creator>
+              <rdf:Bag>
+                <rdf:li>
+                  <rdf:Description>
+                    <vCard:EMAIL>elena.czeizler@aalto.fi</vCard:EMAIL>
+                    <vCard:N>
+                      <rdf:Description>
+                        <vCard:Family>Czeizler</vCard:Family>
+                        <vCard:Given>Elena</vCard:Given>
+                      </rdf:Description>
+                    </vCard:N>
+                    <vCard:ORG>
+                      <rdf:Description>
+                        <vCard:Orgname>Aalto University</vCard:Orgname>
+                      </rdf:Description>
+                    </vCard:ORG>
+                  </rdf:Description>
+                </rdf:li>
+              </rdf:Bag>
+            </dcterms:creator>
+            <dcterms:modified>
+              <rdf:Description>
+                <dcterms:W3CDTF>2015-01-15T11:10:48Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:modified>
+            <CopasiMT:is>
+              <rdf:Bag>
+                <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1510230001"/>
+              </rdf:Bag>
+            </CopasiMT:is>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+	<rdf:Description rdf:about="#COPASI0">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Czeizler</vCard:Family>
+	<vCard:Given>Elena</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>elena.czeizler@aalto.fi</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Aalto University</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-01-15T11:10:48Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-01-15T11:10:48Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1510230001"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="volume" name="volume" metaid="e1005de0-fa7f-4431-9c45-8f470195258a">
+        <listOfUnits>
+          <unit scale="-12" exponent="1" metaid="_05cbc77b-0a18-4223-8a73-c855ef57863a" multiplier="1" kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance" metaid="_68de0512-7368-465c-bd95-6a7c0ad5677b">
+        <listOfUnits>
+          <unit scale="0" exponent="1" metaid="_7856db9c-0bbf-4d99-a4f9-dfb868451fb0" multiplier="1" kind="item"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cytoplasm" constant="true" spatialDimensions="3" name="cytoplasm" metaid="COPASI1" size="0.04">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-24T22:59:36Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+      <compartment id="nucleus" constant="true" spatialDimensions="3" name="nucleus" metaid="COPASI2" size="0.003">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-27T13:47:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="MmCherryc" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="MmCherryc" metaid="COPASI3" boundaryCondition="false" compartment="cytoplasm">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-26T17:15:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="mCherryc" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="mCherryc" metaid="COPASI4" boundaryCondition="false" compartment="cytoplasm">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:30:55Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="TFc" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="TFc" metaid="COPASI5" boundaryCondition="false" compartment="cytoplasm">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:11:29Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="MTFc" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="MTFc" metaid="COPASI6" boundaryCondition="false" compartment="cytoplasm">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:12:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="Pol" initialConcentration="3.33333333333333E6" constant="false" hasOnlySubstanceUnits="false" name="Pol" metaid="COPASI7" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-26T17:15:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="TFn_B" initialConcentration="282.29" constant="false" hasOnlySubstanceUnits="false" name="TFn:B" metaid="COPASI8" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-26T17:17:05Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="CP" initialConcentration="666.666666666667" constant="false" hasOnlySubstanceUnits="false" name="CP" metaid="COPASI9" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-26T17:13:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="Pol_TFn_B" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="Pol:TFn:B" metaid="COPASI10" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:10:55Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="TFn" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="TFn" metaid="COPASI11" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:11:17Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="Pol_DTF" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="Pol:DTF" metaid="COPASI12" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:11:34Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="DTF" initialConcentration="333.333333333333" constant="false" hasOnlySubstanceUnits="false" name="DTF" metaid="COPASI13" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:14:06Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="B" initialConcentration="384.376" constant="false" hasOnlySubstanceUnits="false" name="B" metaid="COPASI14" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T15:14:47Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species id="Pol_TFn_B_CP" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="Pol:TFn:B:CP" metaid="COPASI15" boundaryCondition="false" compartment="nucleus">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-05T22:10:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k_PolDTF_binding" constant="true" name="k_PolDTF_binding+" metaid="COPASI16" value="4988.36559619753">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:11:02Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_PolDTF_binding_0" constant="true" name="k_PolDTF_binding-" metaid="COPASI17" value="0.192182450383506">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:11:10Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_transcription" constant="true" name="k_TF_transcription" metaid="COPASI18" value="2.0444465556312">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:11:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_translocation" constant="true" name="k_TF_translocation" metaid="COPASI19" value="0.866959919372534">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:11:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_binding" constant="true" name="k_TF_binding+" metaid="COPASI20" value="0.189786030381885">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:11:33Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_binding_0" constant="true" name="k_TF_binding-" metaid="COPASI21" value="236.853248292671">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:11:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_mCherry_transcription" constant="true" name="k_mCherry_transcription" metaid="COPASI22" value="62.340281811739">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI22">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:12:35Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k__mCherry_translation" constant="true" name="k_ mCherry_translation" metaid="COPASI23" value="31.1701408949926">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:12:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_protein_degrade" constant="true" name="k_protein_degrade" metaid="COPASI24" value="12.2268708922389">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:12:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_MRNA_degrade" constant="true" name="k_MRNA_degrade" metaid="COPASI25" value="863.906711599506">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:13:24Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_mCherry_baseTransc" constant="true" name="k_mCherry_baseTransc" metaid="COPASI26" value="30.5981846313371">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:13:47Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="mCherry_f_fact_weak" constant="true" name="mCherry_f_fact_weak" metaid="COPASI27" value="8.93741146890699">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:32:22Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="mCherry_f_fact_strong" constant="true" name="mCherry_f_fact_strong" metaid="COPASI28" value="10.889034907704">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:33:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="mCherry_fl" constant="false" name="mCherry_fl" metaid="COPASI29" value="0">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:33:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_translation" constant="true" name="k_TF_translation" metaid="COPASI30" value="97.5615073950214">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-24T22:57:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Constraint_k_mCherry_transcription" constant="false" name="Constraint_k_mCherry_transcription" metaid="COPASI31" value="2.0000000006979">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-02-03T14:52:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Constraint_degradation" constant="false" name="Constraint_degradation" metaid="COPASI32" value="70.656402542688">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI32">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-02-06T10:10:36Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_MetTF_binding" constant="true" name="k_MetTF_binding+" metaid="COPASI33" value="0.444490667516126">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI33">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-03-18T11:18:01Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_MetTF_binding_0" constant="true" name="k_MetTF_binding-" metaid="COPASI34" value="125.750590787781">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI34">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-03-18T11:18:21Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_MetTF_sequestration" constant="true" name="k_MetTF_sequestration+" metaid="COPASI35" value="0.73811731842099">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI35">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-03-18T11:18:29Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_MetTF_sequestration_0" constant="true" name="k_MetTF_sequestration-" metaid="COPASI36" value="0.622979139302682">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI36">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-03-18T11:18:54Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Constraint_fluorescence_constraint" constant="false" name="Constraint_fluorescence_constraint" metaid="COPASI37" value="1.21836562472106">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI37">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-03-18T14:25:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_CP_activation" constant="true" name="k_CP_activation" metaid="COPASI38" value="0.025690422410495">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI38">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T10:50:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_Pol_TFn_B_binding_strong" constant="true" name="k_Pol_TFn:B_binding_strong+" metaid="COPASI39" value="6.66667134841238">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI39">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T10:51:17Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_degrade_strong" constant="true" name="k_TF_degrade_strong" metaid="COPASI40" value="226.00763534611">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI40">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T10:56:00Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TF_degrade_weak" constant="true" name="k_TF_degrade_weak" metaid="COPASI41" value="358.684898250558">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI41">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-27T09:14:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Constraint_TF_degradation" constant="false" name="Constraint_TF_degradation" metaid="COPASI42" value="0.630100783301541">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI42">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-27T09:14:24Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_Pol_TFn_B_binding_weak" constant="true" name="k_Pol_TFn:B_binding_weak+" metaid="COPASI43" value="0.223382219183289">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI43">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-27T09:22:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_Pol_TFn_B_binding_strong_0" constant="true" name="k_Pol_TFn:B_binding_strong-" metaid="COPASI44" value="7.44586094777342E4">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI44">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-29T10:20:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_Pol_TFn_B_binding_weak_0" constant="true" name="k_Pol_TFn:B_binding_weak-" metaid="COPASI45" value="5.34000014150654E4">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI45">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-27T09:22:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TFcomplex_CP_binding" constant="true" name="k_TFcomplex_CP_binding+" metaid="COPASI46" value="13.2784513212479">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI46">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-05T22:13:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="k_TFcomplex_CP_binding_0" constant="true" name="k_TFcomplex_CP_binding-" metaid="COPASI47" value="1.14572505308971E-5">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI47">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-05T22:13:46Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="ModelValue_12" constant="true" name="Initial for mCherry_f_fact_strong" metaid="_5bd9b8fb-c946-4005-bfa6-f1b534750415" value="10.889034907704">
+        <annotation>
+          <initialValue xmlns="http://copasi.org/initialValue" parent="mCherry_f_fact_strong"/>
+        </annotation>
+            </parameter>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="B" metaid="b93386c8-7830-4de3-9c8f-5772103d4ddb">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn> 2 </cn>
+                  <cn> 333.333 </cn>
+                </apply>
+                <ci> TFn_B </ci>
+              </apply>
+              <ci> Pol_TFn_B </ci>
+            </apply>
+            <ci> Pol_TFn_B_CP </ci>
+          </apply>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="ModelValue_12" metaid="d544f6ac-7a6e-4d82-a625-63535af5588a">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> mCherry_f_fact_strong </ci>
+        </math>
+            </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule metaid="c1472d7e-ed9e-4e21-b29f-d024fbfdd46c" variable="mCherry_fl">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <times/>
+            <ci> ModelValue_12 </ci>
+            <ci> mCherryc </ci>
+            <ci> cytoplasm </ci>
+            <cn> 1000 </cn>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule metaid="_71e050a8-3357-44bc-94d0-8e1377399ca4" variable="Constraint_k_mCherry_transcription">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <ci> k_mCherry_transcription </ci>
+            <ci> k__mCherry_translation </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule metaid="_8f5ecabd-57c9-4745-ba1a-55dbb0998a4b" variable="Constraint_degradation">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <ci> k_MRNA_degrade </ci>
+            <ci> k_protein_degrade </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule metaid="f7c7356b-95f6-45f4-bf29-3b2f2bf77131" variable="Constraint_fluorescence_constraint">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <ci> mCherry_f_fact_strong </ci>
+            <ci> mCherry_f_fact_weak </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule metaid="_446ca746-283d-4512-b423-0b2bdd0d7399" variable="Constraint_TF_degradation">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <ci> k_TF_degrade_strong </ci>
+            <ci> k_TF_degrade_weak </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="mCherry_transcription" name="mCherry transcription" metaid="COPASI48" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI48">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:22:47Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Pol_TFn_B_CP" metaid="c69e68a7-0ad5-441f-a18a-114ea636f993" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="TFn_B" metaid="_385bcea5-3a97-4de9-9429-3ad81b788bdb" stoichiometry="1"/>
+          <speciesReference species="Pol" metaid="_83fecf3b-c480-4b46-932d-b3cbcfa06891" stoichiometry="1"/>
+          <speciesReference species="CP" metaid="de5a561e-f544-436c-9d93-bec95ac6eda7" stoichiometry="1"/>
+          <speciesReference species="MmCherryc" metaid="_7a947122-2784-407e-96f4-60a0fec0c200" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pol_TFn_B_CP" metaid="a23222c0-f5e6-4459-a9ad-bc4afef6a981"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_29162873-9062-4579-8a9f-c5f65f05111a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> k_mCherry_transcription </ci>
+              <ci> Pol_TFn_B_CP </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="mCherry_translation" name="mCherry translation" metaid="COPASI49" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI49">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:23:30Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="MmCherryc" metaid="_8212a876-1873-4d7c-8ab9-5352a84c0f7f" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="mCherryc" metaid="a401db63-29e4-4256-a951-b37e264caa8c" stoichiometry="1"/>
+          <speciesReference species="MmCherryc" metaid="_1b79ce79-99a5-41cd-88be-12a7b72ea5c1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="MmCherryc" metaid="_5180423b-76b2-4ef6-9037-22a9306bf21d"/>
+        </listOfModifiers>
+        <kineticLaw metaid="eb50e69e-3da6-4ea9-880f-ee4fef3934d0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytoplasm </ci>
+              <ci> k__mCherry_translation </ci>
+              <ci> MmCherryc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="mCherry_degradation" name="mCherry degradation" metaid="COPASI50" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI50">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:25:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="mCherryc" metaid="a96599ca-a572-4854-9f65-1643d9c27b3a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mCherryc" metaid="_83da40a9-9639-4b32-97a1-ed85fadc11fa"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c4f5d199-665b-4389-825f-611904e0c25d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytoplasm </ci>
+              <ci> k_protein_degrade </ci>
+              <ci> mCherryc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MmCherry_degradation" name="MmCherry degradation" metaid="COPASI51" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI51">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-01-15T11:26:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="MmCherryc" metaid="_5a6c6a8f-c299-4baa-b632-3242cbd7381a" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="MmCherryc" metaid="da3a4840-b307-46c9-9d9a-04316f637bd1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_795f4ed4-c7b6-4a62-89b0-787e3f40d5b8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytoplasm </ci>
+              <ci> k_MRNA_degrade </ci>
+              <ci> MmCherryc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Pol_active_CP_binding" name="Pol-active CP binding" metaid="COPASI52" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI52">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:03:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Pol" metaid="_998dcc74-0e57-4cb3-a6bc-0916a1ed5cf7" stoichiometry="1"/>
+          <speciesReference species="TFn_B" metaid="_59ffb201-f931-4d98-8073-16b8d2e0f510" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pol_TFn_B" metaid="f661d7de-b8fb-47de-821f-9d88d66b87d0" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pol" metaid="_2d2ba55f-3a68-4757-83ff-56049a8b16c1"/>
+          <modifierSpeciesReference species="TFn_B" metaid="b12902fd-0c11-45c9-a4a6-b9ceec8961f3"/>
+          <modifierSpeciesReference species="Pol_TFn_B" metaid="_531d48ff-fa64-48bf-bbc9-2b2ecd12d813"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_43e377f0-1b4e-4d46-9dd2-b6858e46a9ad">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> nucleus </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_Pol_TFn_B_binding_strong </ci>
+                  <ci> Pol </ci>
+                  <ci> TFn_B </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_Pol_TFn_B_binding_strong_0 </ci>
+                  <ci> Pol_TFn_B </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TFn_degradation" name="TFn degradation" metaid="COPASI53" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI53">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:15:17Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="TFn" metaid="_2389b969-fe4d-4fef-892c-49ea368764a2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="TFn" metaid="e4dc0f62-3f98-4ecf-8ade-f061996f249d"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_956a6457-1c15-4827-be99-4408410972ae">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> nucleus </ci>
+              <ci> k_TF_degrade_strong </ci>
+              <ci> TFn </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TFc_translocation_to_nucleus" name="TFc translocation to nucleus" metaid="COPASI54" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI54">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:15:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="TFc" metaid="dcded453-0aaa-4d18-9559-31234df3a167" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="TFn" metaid="_19bcbc88-9e8a-493e-b358-d277272e4991" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="TFc" metaid="_92869f41-3b0d-4d35-9dd0-beb2b451fbad"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8a42602c-6bdf-4e9d-8b2d-91bc076f4311">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> k_TF_translocation </ci>
+              <ci> TFc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TFc_degradation" name="TFc degradation" metaid="COPASI55" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI55">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:15:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="TFc" metaid="_8c94865b-2c95-4ea6-91a5-61ff78d53ab6" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="TFc" metaid="_0a8660d8-3f0b-41f5-a218-5036db6e5a1e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_83473bda-5cbf-4a69-8b01-64a32902ca41">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytoplasm </ci>
+              <ci> k_TF_degrade_strong </ci>
+              <ci> TFc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF_translation" name="TF-translation" metaid="COPASI56" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI56">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:16:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="MTFc" metaid="_46493ebb-794a-4a6c-b15d-43a4d75b98da" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MTFc" metaid="_6463f52a-b119-4c89-9d7d-45e8e4b582d3" stoichiometry="1"/>
+          <speciesReference species="TFc" metaid="_0b6b7ffb-385d-4c3f-92d7-e367732afa6f" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="MTFc" metaid="e775b5b2-2613-4ddd-a209-b839600b3d4e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5130256b-9574-4099-9304-8f0fd8179bf8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytoplasm </ci>
+              <ci> k_TF_translation </ci>
+              <ci> MTFc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF_transcription" name="TF-transcription" metaid="COPASI57" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI57">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:16:34Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Pol_DTF" metaid="ba3d5eab-3f84-42a0-a8d5-46a5086021f2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MTFc" metaid="dd9760c4-053d-4463-931a-e84d0a5c098c" stoichiometry="1"/>
+          <speciesReference species="Pol" metaid="_68e433b9-e1eb-4b4d-a03e-754a8563c0eb" stoichiometry="1"/>
+          <speciesReference species="DTF" metaid="_0f598d14-52ef-4548-bd8e-ccf29f9c4bd2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pol_DTF" metaid="_9a7571fd-9b5c-4283-8bd6-86d816a47874"/>
+        </listOfModifiers>
+        <kineticLaw metaid="a1bcd1e5-49ca-4372-bd55-49cf1129b1c9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> k_TF_transcription </ci>
+              <ci> Pol_DTF </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF_DNA_binding" name="TF-DNA binding" metaid="COPASI58" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI58">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:16:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="TFn" metaid="_6e024a56-2766-4be0-a8da-4e2cde294487" stoichiometry="1"/>
+          <speciesReference species="B" metaid="_4d24901f-e49f-488a-95b3-eaa4d5bdb7f2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="TFn_B" metaid="f0d26ea2-4a13-4c6a-be20-9ac2dbec6df6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="TFn" metaid="f6da8e33-0a29-4ba8-82dc-3cb9eb0fd2d6"/>
+          <modifierSpeciesReference species="B" metaid="_210ce026-08fd-4acf-a56e-ad8d3f3650e2"/>
+          <modifierSpeciesReference species="TFn_B" metaid="_713b7049-89bf-40ff-9736-e9a567d4efa0"/>
+        </listOfModifiers>
+        <kineticLaw metaid="cd2b154d-1354-4039-b9f7-38989a8f181c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> nucleus </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_TF_binding </ci>
+                  <ci> TFn </ci>
+                  <ci> B </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_TF_binding_0 </ci>
+                  <ci> TFn_B </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Pol_DTF_binding" name="Pol-DTF binding" metaid="COPASI59" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI59">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:17:08Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Pol" metaid="da92fba2-1e3d-4914-86c1-d516be28dbb4" stoichiometry="1"/>
+          <speciesReference species="DTF" metaid="_7297c736-aff9-487a-9cce-10405e31073e" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pol_DTF" metaid="_09c06860-b6bf-4c05-bd20-5f75d0f70087" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pol" metaid="_55718e03-5766-4475-abb8-9e26ee704482"/>
+          <modifierSpeciesReference species="DTF" metaid="_2e324dc3-4ae7-4431-981c-c7f27ff78436"/>
+          <modifierSpeciesReference species="Pol_DTF" metaid="_5d78e1bf-545c-4ce6-84d0-34a86071a7b0"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_47e17554-26c5-42eb-bba7-6d5e18533b6a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> nucleus </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_PolDTF_binding </ci>
+                  <ci> Pol </ci>
+                  <ci> DTF </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_PolDTF_binding_0 </ci>
+                  <ci> Pol_DTF </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MTFc_degradation" name="MTFc degradation" metaid="COPASI60" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI60">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-05-26T11:18:22Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="MTFc" metaid="_309baa74-7dce-49aa-ba50-db9de93a3c90" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="MTFc" metaid="_59cde5f6-3928-4567-a9a7-df18f199b0a5"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_06eb7e1b-0cd7-4f9d-8d80-36464d297a54">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cytoplasm </ci>
+              <ci> k_MRNA_degrade </ci>
+              <ci> MTFc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF_complex_CP_binding" name="TF-complex-CP binding" metaid="COPASI61" reversible="true">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI61">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-05T22:15:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="Pol_TFn_B" metaid="_4c9f8bea-7111-493a-ae90-a9946df4e1a1" stoichiometry="1"/>
+          <speciesReference species="CP" metaid="bbf36eda-a045-4649-a884-1ed523116f41" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pol_TFn_B_CP" metaid="cdbab7a4-bd72-406f-bce3-cc4edb0920f5" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pol_TFn_B" metaid="_8903210f-06ac-443c-b113-507564e83505"/>
+          <modifierSpeciesReference species="CP" metaid="_898db6f8-640d-442f-8fdc-473d22cc5ede"/>
+          <modifierSpeciesReference species="Pol_TFn_B_CP" metaid="_458948bd-91a1-492d-bfaa-775f4e5ab605"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_615db21e-293d-41bd-9ba7-a7fbfb52817e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> nucleus </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_TFcomplex_CP_binding </ci>
+                  <ci> Pol_TFn_B </ci>
+                  <ci> CP </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_TFcomplex_CP_binding_0 </ci>
+                  <ci> Pol_TFn_B_CP </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

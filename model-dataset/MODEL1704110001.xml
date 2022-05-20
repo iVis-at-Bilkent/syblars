@@ -1,0 +1,694 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="bc36ba37-c902-4968-8ecb-2aca7f13f003" version="4">
+  <model id="MODEL1704110001" metaid="_9dc1a310-fba2-4162-b8dd-5c6745e04b75" name="Proctor2017 - Identifying microRNA for muscle regeneration during ageing  (Mir181_in_muscle)">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Proctor2017 - Identifying microRNA for muscle
+regeneration during ageing (Mir181_in_muscle)</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/doi/10.1038/s41598-017-12538-6" title="Access to this publication">Using computer simulation
+    models to investigate the most promising microRNAs to improve
+    muscle regeneration during ageing</a>
+  </div>
+  <div class="bibo:authorList">Carole J. Proctor &amp; Katarzyna
+  Goljanek-Whysall</div>
+  <div class="bibo:Journal">Scientific Reports</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>MicroRNAs (miRNAs) regulate gene expression through
+    interactions with target sites within mRNAs, leading to
+    enhanced degradation of the mRNA or inhibition of translation.
+    Skeletal muscle expresses many different miRNAs with important
+    roles in adulthood myogenesis (regeneration) and myofibre
+    hypertrophy and atrophy, processes associated with muscle
+    ageing. However, the large number of miRNAs and their targets
+    mean that a complex network of pathways exists, making it
+    difficult to predict the effect of selected miRNAs on
+    age-related muscle wasting. Computational modelling has the
+    potential to aid this process as it is possible to combine
+    models of individual miRNA:target interactions to form an
+    integrated network. As yet, no models of these interactions in
+    muscle exist. We created the first model of miRNA:target
+    interactions in myogenesis based on experimental evidence of
+    individual miRNAs which were next validated and used to make
+    testable predictions. Our model confirms that miRNAs regulate
+    key interactions during myogenesis and can act by promoting the
+    switch between quiescent/proliferating/differentiating
+    myoblasts and by maintaining the differentiation process. We
+    propose that a threshold level of miR-1 acts in the initial
+    switch to differentiation, with miR-181 keeping the switch on
+    and miR-378 maintaining the differentiation and miR-143
+    inhibiting myogenesis.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1704110001">MODEL1704110001</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/25414348" target="_blank">Chelliah V et al. BioModels: ten-year
+  anniversary. Nucl. Acids Res. 2015, 43(Database
+  issue):D542-8</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#_9dc1a310-fba2-4162-b8dd-5c6745e04b75">
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1704110001"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	
+	
+	
+	
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="_87303b46-3411-46e1-b1e1-f3cfc8f3965d">
+        <listOfUnits>
+          <unit kind="item" metaid="af60a671-49a0-451a-8ca7-d5d05347c6e3"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" metaid="bad8e355-dc90-4da5-b778-5a6e86483030" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="FoxO3" initialAmount="400" metaid="_4892bf3f-f7e5-45d1-8e00-ffa6968efe6b"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="FoxO3_Sirt1" initialAmount="100" metaid="_82b180e3-ce5f-47d9-b1b8-ee7ffe221de9"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="HoxA11" initialAmount="500" metaid="_3557a7ce-45c8-4a42-b936-7c336eadcdfe"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="HoxA11_mRNA" initialAmount="100" metaid="d6e596e1-8b31-4361-a9a6-bbebfc933cc5"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Mafbx" initialAmount="0" metaid="a5971a45-20bf-4bd7-8af7-ed6005991df6"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR181" initialAmount="10" metaid="bc35e106-23f9-49bf-9d39-824839dba3e7"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR181_HoxA11_mRNA" initialAmount="0" metaid="_52225350-c935-44d3-a659-b52bc2228249"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR181_Sirt1_mRNA" initialAmount="0" metaid="a9ccc57a-c75b-4da5-94e7-cf642f0c1d41"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR181_gene" initialAmount="2" metaid="_374754e4-b57a-47e0-aabc-30b280166bf1"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD" initialAmount="0" metaid="_0dad5b93-dfcd-4704-9428-227867fa25a8"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD_gene" initialAmount="2" metaid="bc688bd0-abda-4311-ab4a-04cdceb66268"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD_gene_FoxO3" initialAmount="0" metaid="_2606fde5-8b00-4990-8001-ca7437bc8671"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD_gene_HoxA11" initialAmount="0" metaid="_5a5967e9-a388-4e2c-9eec-72080ca2c88c"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD_mRNA" initialAmount="0" metaid="ea01ae86-313a-4356-ac33-df1d728ff095"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Sirt1" initialAmount="400" metaid="_489167df-7c20-4b76-9977-55c815558780"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Sirt1_mRNA" initialAmount="100" metaid="_380b1646-a5fd-493f-b363-986406c9392a"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Sink" initialAmount="0" metaid="_0ee69fc1-4043-40bc-90a9-1a0dce155b0b"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Source" initialAmount="1" metaid="e4c80928-577b-4df4-9a11-10843b497939"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kbinFoxO3Sirt1" metaid="_2512e6cd-4131-42ad-9eaa-ffa2f364e336" value="1E-5"/>
+      <parameter id="kbinmiR181Sirt1" metaid="_6ce261fa-2bc3-4d67-86c2-88627f6f0b58" value="5E-5"/>
+      <parameter id="kbinmiR181HoxA11" metaid="_7c53b02a-2a4b-4dda-b6e8-2e662981a1e6" value="5E-5"/>
+      <parameter id="kbinMyoDgeneFoxO3" metaid="_4bbc701e-591d-4e19-9a8b-2fb1d656166d" value="1E-5"/>
+      <parameter id="kbinMyoDgeneHoxA11" metaid="_417f3ac9-2a3c-455d-93a2-c78199d8dadd" value="1E-5"/>
+      <parameter id="kdegFoxO3" metaid="cb7a9623-8bec-44cd-9a06-0546d6abbd65" value="4.8E-5"/>
+      <parameter id="kdegFoxO3Sirt1" metaid="_64a6e900-0818-45da-a0b4-7af612a05d0d" value="9.6E-5"/>
+      <parameter id="kdegHoxA11" metaid="_65251311-a8b6-46aa-87dd-ffed76fff48b" value="6.4E-6"/>
+      <parameter id="kdegHoxA11mRNA" metaid="_78e3a144-55a4-4341-8d24-41b03abe079b" value="2E-5"/>
+      <parameter id="kdegHoxA11mRNAmiR181" metaid="_2b69329c-e86e-4ad6-9187-6ca0303c70fa" value="2E-5"/>
+      <parameter id="kdegMafbx" metaid="_900b6a92-3a35-4221-b844-0fe9daf9a55b" value="0.0002"/>
+      <parameter id="kdegmiR181" metaid="_5c6b2fa3-573d-43c4-b001-73d0c816fb0f" value="1.6E-6"/>
+      <parameter id="kdegMyoD" metaid="d35149af-32cd-4530-9237-988f50c082d0" value="0.00026"/>
+      <parameter id="kdegMyoDmRNA" metaid="a065e8cc-fb6d-41d8-b168-dc998b2e26e9" value="0.0002"/>
+      <parameter id="kdegSirt1" metaid="f70f14e8-be6a-4d1b-afe3-e57e938983c4" value="2.4E-5"/>
+      <parameter id="kdegSirt1mRNA" metaid="f12ead5a-fd23-40d8-8ec1-cc680ecaddf0" value="2E-5"/>
+      <parameter id="kdegSirt1mRNAmiR181" metaid="aefcef14-c43e-4577-93da-c97d3a076ff3" value="2E-5"/>
+      <parameter id="krelFoxO3Sirt1" metaid="e0645b91-14c3-4744-9509-f15dcf0b9d61" value="0.001"/>
+      <parameter id="krelmiR181HoxA11" metaid="ba942710-53c1-46a2-9b89-3419ce53a800" value="0.001"/>
+      <parameter id="krelmiR181Sirt1" metaid="_05734661-a8b8-4d28-92df-8f055f601193" value="0.001"/>
+      <parameter id="krelMyoDgeneFoxO3" metaid="_787dc61c-6012-443f-b282-50294b230842" value="0.001"/>
+      <parameter id="krelMyoDgeneHoxA11" metaid="c33de73c-4e0c-4508-8ea8-85700472de06" value="0.0005"/>
+      <parameter id="ksynFoxO3" metaid="_3b557c18-9670-4549-87ae-8d8ce41c020b" value="0.038"/>
+      <parameter id="ksynHoxA11" metaid="c35f38c9-03fb-435c-b569-3dcb7f5b0f42" value="3.2E-5"/>
+      <parameter id="ksynHoxA11mRNA" metaid="_5b51c61f-d6e8-49f0-8dfb-4741ec8eb348" value="0.002"/>
+      <parameter id="ksynMafbx" metaid="_84d38d41-b284-4fbd-be2c-dac1b51bd2d8" value="0.0001"/>
+      <parameter id="ksynmiR181" metaid="_7af9a15a-f5b7-4f1c-9a0d-892015ea795e" value="6E-6"/>
+      <parameter id="ksynMyoD" metaid="e8c29221-7675-4c5e-ac20-77f1a605fb61" value="0.002"/>
+      <parameter id="ksynMyoDmRNA" metaid="_45bb508f-c267-4f75-b0f1-e424cb8f696b" value="0.005"/>
+      <parameter id="ksynSirt1" metaid="_32ac8b09-4b57-462d-a2ef-e764b14d353c" value="2E-5"/>
+      <parameter id="ksynSirt1mRNA" metaid="_6ee5ccc9-6de4-42db-b76a-dfb102fae1eb" value="0.005"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="miR181_synthesis" metaid="_03d2b22c-a13f-49f4-ad11-3605f8fa199b" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ce6dbd92-4ec1-4629-97c7-0a88487ded41" species="miR181_gene"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4f67ea8c-4456-46d3-807f-c22ff95bb28b" species="miR181_gene"/>
+          <speciesReference metaid="_008528ed-dee8-4c00-ad41-f9fe590b2def" species="miR181"/>
+        </listOfProducts>
+        <kineticLaw metaid="_83f57705-2920-4dc6-84f3-337b24ed7a18">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynmiR181 </ci>
+              <ci> miR181_gene </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR181_degradation" metaid="dc797402-4638-468c-a905-3563906c215d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f42d5df3-a8f5-4bbe-b11f-7b9157cbac22" species="miR181"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fa951823-bc8f-4e23-be6a-ca137d0f5b84" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="fd55e661-18fb-413b-a5eb-2e827789f2f5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegmiR181 </ci>
+              <ci> miR181 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Sirt1_transcription" metaid="aa934caf-e52b-40fb-ac81-bfe90846b6e8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1f8cddae-884e-41f5-a4e7-e1a8082dfb4b" species="Source"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="bb47f194-5656-443d-9dbc-9d304695dca7" species="Sirt1_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_53ef6e49-91a1-459e-bd8d-09113bc5b77c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynSirt1mRNA </ci>
+              <ci> Source </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Sirt1_mRNA_degradation" metaid="_17f9310d-444b-4fe5-958a-f77f85dcee65" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_373ad127-420e-4296-9b14-69c089e1c9b1" species="Sirt1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5b357948-0c7a-4f56-a8ce-1f450ab98f6b" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_67c16ea2-b9dd-4ddd-b11b-901a3c4e66ba">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegSirt1mRNA </ci>
+              <ci> Sirt1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Sirt1_translation" metaid="_46d0eb44-4fa3-4e9d-9078-90563d4366d5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_392cdcdd-f45c-4bc9-bb17-5fbc932a7a73" species="Sirt1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_584486cb-3fcb-4ff4-b199-63e5d73adc2f" species="Sirt1_mRNA"/>
+          <speciesReference metaid="d93647da-b7c1-4af1-a43f-230fd7413c55" species="Sirt1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_478b2959-bd27-47b7-8477-46db19df5825">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynSirt1 </ci>
+              <ci> Sirt1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Sirt1_degradation" metaid="_8b01ec4f-ea0a-4a86-aef1-dde6c82ac229" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8fa4140c-5d66-4807-8102-b49f5aae6bc0" species="Sirt1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9d54fc48-0ed7-444c-ab12-9d34345c39d6" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_831d4e35-4393-463b-bb3d-9428c7224cd1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegSirt1 </ci>
+              <ci> Sirt1 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR181_Sirt1mRNA_binding" metaid="_69890a9c-698c-4e4c-acfc-545bc81886bd" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_462a582e-c73a-446f-89c9-cc65098ccc3d" species="miR181"/>
+          <speciesReference metaid="_7321c439-3490-4cb1-8fa2-09f9a8da8355" species="Sirt1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f8db5155-28d3-48de-94d8-fe0b927add58" species="miR181_Sirt1_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="a596a03f-61fa-4125-99d7-55465b38c6e3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR181Sirt1 </ci>
+              <ci> miR181 </ci>
+              <ci> Sirt1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR181_Sirt1mRNA_release" metaid="d5156fa5-4782-4c1e-8849-76e1f1c0d7b0" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2b96b571-3c06-41dc-aa66-9e07122ed9cc" species="miR181_Sirt1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="bfe3c337-7794-464f-a877-f0e182844831" species="miR181"/>
+          <speciesReference metaid="_4f7397be-bb01-4fe6-94b4-6f002a400a74" species="Sirt1_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="f123c086-4dac-4348-b956-70845136698f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR181Sirt1 </ci>
+              <ci> miR181_Sirt1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Sirt1_mRNA_degradation_by_miR181" metaid="_4290a824-87e9-4830-923c-bba57d1bebc9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_68fdddfc-ee90-4a31-9b36-8c0442553903" species="miR181_Sirt1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4078782c-ce90-459c-a302-7df490421b3b" species="miR181"/>
+        </listOfProducts>
+        <kineticLaw metaid="f7bb35bf-66f1-4511-9f2b-59566986c800">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegSirt1mRNAmiR181 </ci>
+              <ci> miR181_Sirt1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HoxA11_transcription" metaid="_9c2b0fff-8e05-4732-aad4-35011f558792" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="fe49ac68-e7b5-490f-8285-780ba99a11a0" species="Source"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_03e7ef89-d183-457a-bed8-91976bc741d8" species="HoxA11_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6debef88-b3ac-4ced-8e17-cdb5fd21de61">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynHoxA11mRNA </ci>
+              <ci> Source </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HoxA11_mRNA_degradation" metaid="d2051804-e82f-436a-96f1-3c012898ce45" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b58d6126-e84b-45aa-b747-b2dae07df8b1" species="HoxA11_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c4565d55-254d-4192-8d0e-a2df5fe3826f" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_60774622-d4e9-41b2-8ccb-6fd2185fb3f3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegHoxA11mRNA </ci>
+              <ci> HoxA11_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR181_HoxA11mRNA_binding" metaid="bca2a38b-83c2-43c9-83a0-1922a36a7370" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6360e860-1615-4b70-9d7b-c5de1f9c6173" species="miR181"/>
+          <speciesReference metaid="a3f0cd8a-ecd3-410d-9074-776d9c9d1306" species="HoxA11_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4bd9fdbf-e7a6-454e-ac40-50500ad2ae48" species="miR181_HoxA11_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_688aaada-eca2-41a6-a7ba-ec0aa5ebcb9b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR181HoxA11 </ci>
+              <ci> miR181 </ci>
+              <ci> HoxA11_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR181_HoxA11mRNA_release" metaid="_88918459-6ede-4fbb-ad7f-f4439aa68d5e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5be66c8a-bdd8-4746-a558-1cfcbd95f5a2" species="miR181_HoxA11_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9132dda3-ab5b-44d8-9c31-495acb104263" species="miR181"/>
+          <speciesReference metaid="_23128462-9794-4694-ab0a-2e5d1cb4127a" species="HoxA11_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="c47a13b3-559b-43c4-860e-83eb571c553e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR181HoxA11 </ci>
+              <ci> miR181_HoxA11_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HoxA11_mRNA_degradation_by_miR181" metaid="_54095f18-6701-4a06-8d34-a689098078f9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_36badde1-d962-46c5-8981-fc9318b25c86" species="miR181_HoxA11_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5b460769-6cfb-4f7b-af12-9fe1b47a6ee8" species="miR181"/>
+        </listOfProducts>
+        <kineticLaw metaid="b8b14bcf-c284-4061-9bc7-c4c4eaac6dae">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegHoxA11mRNAmiR181 </ci>
+              <ci> miR181_HoxA11_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HoxA11_translation" metaid="a148631f-9e90-41f1-bf59-aaa3f2d7c427" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_59878c64-46c9-4efd-a0d9-1bf43c00c5a3" species="HoxA11_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a81e2bdf-502e-4fe3-a5aa-c01c24762ca2" species="HoxA11_mRNA"/>
+          <speciesReference metaid="_3ff93b69-4852-4c4c-b4dc-1016dea884e8" species="HoxA11"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3c5efde6-c729-4bf9-b872-04287011a203">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynHoxA11 </ci>
+              <ci> HoxA11_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="HoxA11_degradation" metaid="_6c11170a-6b4d-40fe-85ed-e3d9d5accfb9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b96dd178-a77c-477e-9abd-ed2b2c6d2fd8" species="HoxA11"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fb70f6dc-321e-4ff9-9d9e-90fdb6569c29" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="b37d947c-8dd6-4bdb-9ef3-2ca5a57703a4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegHoxA11 </ci>
+              <ci> HoxA11 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_gene_FoxO3_binding" metaid="_5010e923-a90c-470c-8539-afc151eea33c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bb173f59-9fc5-4a7d-a43a-fa7006b84b32" species="MyoD_gene"/>
+          <speciesReference metaid="_6df18616-eaa5-4021-ad26-f017ad13f4ea" species="FoxO3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_13b013ff-aed4-4687-895a-935d2c766125" species="MyoD_gene_FoxO3"/>
+        </listOfProducts>
+        <kineticLaw metaid="_420106d8-419d-484c-8c4c-ebae75d1d0c4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinMyoDgeneFoxO3 </ci>
+              <ci> MyoD_gene </ci>
+              <ci> FoxO3 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_gene_FoxO3_release" metaid="_2cf7dc80-431b-4c4c-a692-42f8ff6f99d2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_41166cca-05ba-4588-a34d-c73f758cbed2" species="MyoD_gene_FoxO3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_72ab1b76-f56e-4554-9271-a2120c406d87" species="MyoD_gene"/>
+          <speciesReference metaid="_52e6ad4f-c745-4d64-bb88-71a5141dfc1b" species="FoxO3"/>
+        </listOfProducts>
+        <kineticLaw metaid="b5ae8fea-b038-40bf-9b72-a351aa4edfe1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelMyoDgeneFoxO3 </ci>
+              <ci> MyoD_gene_FoxO3 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_transcription" metaid="dccad294-a7e6-47e0-8de8-02ff27982257" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f7c4a8da-a37d-426c-92b7-9721ec79bfd7" species="MyoD_gene_FoxO3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0b95072f-77fb-426c-9a00-59b6694bf48e" species="MyoD_gene_FoxO3"/>
+          <speciesReference metaid="_34208cde-e6c9-4bdd-aebe-0f32989150ec" species="MyoD_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="c67a1fe6-497f-423f-a357-58d5270a93c7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMyoDmRNA </ci>
+              <ci> MyoD_gene_FoxO3 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_gene_HoxA11_binding" metaid="_539bcf6c-ae29-4a54-85f3-da3fa9a04a4e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ee6088e5-418a-4448-a9b5-e3d456314cbe" species="HoxA11"/>
+          <speciesReference metaid="_60f3f0bc-798d-40df-b3f0-78b2423ebcc8" species="MyoD_gene"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dacdfae3-b2fe-43bd-9d71-a319ff5a3529" species="MyoD_gene_HoxA11"/>
+        </listOfProducts>
+        <kineticLaw metaid="_712a363c-818f-4a64-a6e3-2100fb462231">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinMyoDgeneHoxA11 </ci>
+              <ci> HoxA11 </ci>
+              <ci> MyoD_gene </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_gene_HoxA11_release" metaid="_9813123b-ba22-481d-a205-2775e026ef26" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b403653b-b46d-4f44-881d-6f8e0d6adc36" species="MyoD_gene_HoxA11"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_12269edd-b59a-4905-ad39-ca40a313286a" species="HoxA11"/>
+          <speciesReference metaid="de616947-015e-4835-964d-799294547470" species="MyoD_gene"/>
+        </listOfProducts>
+        <kineticLaw metaid="a0cdc669-dbbc-4072-a7e2-3e037689abea">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelMyoDgeneHoxA11 </ci>
+              <ci> MyoD_gene_HoxA11 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_translation" metaid="bcc2fb89-7ea8-435d-9cf1-535d0cff7a57" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_017583fa-e3c2-49ac-b220-e2496dc4e8c9" species="MyoD_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6d78c297-e56f-45a2-a609-d89b8a274608" species="MyoD_mRNA"/>
+          <speciesReference metaid="f302df2f-6b44-4e52-b198-39d56a447dc4" species="MyoD"/>
+        </listOfProducts>
+        <kineticLaw metaid="_48282685-ae84-435e-bf5d-1c2f20b0446b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMyoD </ci>
+              <ci> MyoD_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_mRNA_degradation" metaid="_858c4963-a3c7-457b-b248-7f130308a8be" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5b786209-4a10-4b46-964a-337e8c4d01c8" species="MyoD_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e8f0a05b-389e-432c-b963-3ea45dcb01c6" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_316fb03b-9ab4-4ffc-b511-033edac15b47">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMyoDmRNA </ci>
+              <ci> MyoD_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_degradation" metaid="a24a0643-f328-4148-81e7-d9fca811c825" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_16f7b452-fa70-4dde-858b-c9a21af15dad" species="MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_73045f4e-b26d-4437-b661-a2a1ac5cf724" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="af0dbf88-f7ad-42b6-95e5-8b66f09a71ff">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMyoD </ci>
+              <ci> MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="FoxO3_Sirt1_binding" metaid="fedbc475-ec0a-46e1-ae44-f9dcd744a39a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d65b3bdb-dee2-4bf3-8f70-c251a942a17d" species="FoxO3"/>
+          <speciesReference metaid="_6f96eed6-58de-4f28-9d69-ed1acc8a8c29" species="Sirt1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b950bb7b-b18a-469d-8151-e875e1f31eff" species="FoxO3_Sirt1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_89aa7743-75bf-4368-94ea-ec2068a2bc08">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinFoxO3Sirt1 </ci>
+              <ci> FoxO3 </ci>
+              <ci> Sirt1 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="FoxO3_Sirt1_release" metaid="_34156b40-25e6-4b83-bb33-98473b1aa2e3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9d235af3-8995-47ea-b42c-083b109c9b5f" species="FoxO3_Sirt1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5f9de0c4-bbf5-4e81-b10e-e408048f8b7a" species="FoxO3"/>
+          <speciesReference metaid="_7bbfb2f8-33c3-4355-8d7b-7a068f4ac0c6" species="Sirt1"/>
+        </listOfProducts>
+        <kineticLaw metaid="f9917e77-5f7c-4605-9811-1113e5a45263">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelFoxO3Sirt1 </ci>
+              <ci> FoxO3_Sirt1 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Fox3_degradation_via_Sirt1" metaid="_391881b1-f5c0-44b6-8ba2-d2fbd6c13f0c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="bf3de1d0-67b4-4373-b7aa-8e68fc55aa20" species="FoxO3_Sirt1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d9d0aa15-f596-4678-afdd-ccad116d698c" species="Sirt1"/>
+        </listOfProducts>
+        <kineticLaw metaid="f8945f84-b32b-4e3f-828a-24f898b4b1a9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegFoxO3Sirt1 </ci>
+              <ci> FoxO3_Sirt1 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Fox3_degradation" metaid="_0cd6e026-d70f-4c57-a54c-d12a2de88528" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2b762aa2-bd8e-4c0d-9ec3-9ce6680ba3d9" species="FoxO3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2a2a28be-b91b-4445-8bbd-0f14d218ad9e" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_6022d5e3-3dbd-4de2-be27-509beecb6b7e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegFoxO3 </ci>
+              <ci> FoxO3 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Fox3_synthesis" metaid="_3b24614c-9912-42cd-bec7-5bf0028e56a1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6076fb4c-12a4-482d-b7b0-4c6863dfb760" species="Source"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b4c03e0a-b86b-4b67-97f1-ab1e3ad6f8e2" species="FoxO3"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7ab4d2f5-4618-4fb4-945b-c9735373492b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynFoxO3 </ci>
+              <ci> Source </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Mafbx_synthesis" metaid="cddb2b21-a114-4dc8-9b46-53ea80ed0477" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d33a5fa5-af40-4138-8937-09566f080078" species="FoxO3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="bb06249d-bd50-40f2-9f9e-2d8c9c7fa6bb" species="FoxO3"/>
+          <speciesReference metaid="_493e4932-737b-426c-9489-805c92576320" species="Mafbx"/>
+        </listOfProducts>
+        <kineticLaw metaid="_87e5bf1e-8d88-4157-ad42-51c618b8a893">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMafbx </ci>
+              <ci> FoxO3 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Mafbx_degradation" metaid="c0153f76-f912-4ba9-83ca-8eb74f91042a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b853f888-073a-4cde-ad46-46df88edcef2" species="Mafbx"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2b14d7f9-da5a-4274-b4b4-6aab944b8376" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_582b99a5-aef8-4f34-9725-1c6e73b45461">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMafbx </ci>
+              <ci> Mafbx </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

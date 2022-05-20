@@ -1,0 +1,2353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" xmlns:html="http://www.w3.org/1999/xhtml" metaid="_94d701d0_12d3_4f19_a45f_effb55fef579" level="2" version="1">
+  <model metaid="_206f56b5_02fc_4dae_a7c0_da8aa512f381" id="MODEL1203220000" name="Mol2013 - Leishmania macrophage signaling network">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Created by The MathWorks, Inc. SimBiology tool, Version 3.3</p>
+      </body>
+    </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#_206f56b5_02fc_4dae_a7c0_da8aa512f381">
+          <bqmodel:is>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1203220000"/>
+            </rdf:Bag>
+          </bqmodel:is>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/5658"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isVersionOf>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/go/GO:0051707"/>
+              <rdf:li rdf:resource="http://identifiers.org/doid/DOID:9065"/>
+            </rdf:Bag>
+          </bqbiol:isVersionOf>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+    <listOfUnitDefinitions>
+      <unitDefinition metaid="b3009fea_853c_42c2_9d03_3468db594e9f" id="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" name="nanomole">
+        <listOfUnits>
+          <unit metaid="fe00e958_af82_4359_a0a7_02b970522213" kind="mole" multiplier="1e-09" offset="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition metaid="e09acffa_fc4b_413f_ad73_6c62767692fe" id="MWDERIVEDUNIT_1__second" name="1/second">
+        <listOfUnits>
+          <unit metaid="_1302bbcb_a684_44c6_a54d_258347e53945" kind="second" exponent="-1" multiplier="1" offset="0"/>
+          <unit metaid="_8dd0d838_7263_4ba0_8711_8b75d03f316b" kind="dimensionless" multiplier="1" offset="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition metaid="_1e07f934_07e3_4568_9fff_89450b7747f2" id="MWDERIVEDUNIT_nanomole__second" name="nanomole/second">
+        <listOfUnits>
+          <unit metaid="e2df9786_403d_4b4b_a039_7ff8625624d0" kind="mole" multiplier="1" offset="0"/>
+          <unit metaid="b90987c8_652d_4ca7_b937_d5bd33fdbe0a" kind="second" exponent="-1" multiplier="1" offset="0"/>
+          <unit metaid="f27c1c5f_1329_4e7f_88ed_efc72937ba2c" kind="dimensionless" multiplier="1e-09" offset="0"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="c8fc7546_2f25_4b69_a46a_8225b10a1d2e" id="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" name="cytoplasm" size="1"/>
+      <compartment metaid="_67af1c4b_35f9_46e3_b033_133a940aaa08" id="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" name="nucleus" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="_9d2240f6_e1e0_45dd_8cfd_bd47d843a159" id="mw68f058f9_e632_469e_a51e_b0641d5ac5f1" name="CD14" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.9" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="b6ffe87f_1122_4758_ae65_4e9fef2cffa8" id="mw589e86be_36cb_41e1_bccf_93824d618644" name="TLR4" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.38" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_1592abc8_a207_42d6_87be_8e648d235bcc" id="mw389efde0_d330_42e0_b68c_cb0cfbf8a3c9" name="MyD88" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.56" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_7c2a5d8f_5ba3_4e5a_ae80_2ad796d0eb64" id="mw86470798_a991_412f_a9bb_574001df871d" name="IRAK4/1" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.6" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_60248991_77c8_4270_8d92_ae7f90aa6eeb" id="mw4535fcdd_0cf2_4ee4_8d52_eadd3c4fec92" name="TNF" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.8" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_92761a41_f970_4f38_874f_97af60a15e05" id="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4" name="TNFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.61" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="f65f4d37_1bad_4e80_9f84_0f334dcd2bf8" id="mwde9f266b_e891_41cb_ab2a_d5dad0ab0679" name="TRAF-6" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.16" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_2b1e8fbd_b200_4cc2_b43c_5d736446d03d" id="mwaba648c3_0fbe_4730_9665_1ce08e8daea5" name="TRADD" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.41" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_9917819a_13fe_49b3_a179_40684fcb2323" id="mwa8f3c19d_88cf_4373_a806_3c37c805573e" name="CASP" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.42" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_04498d1f_20fe_466f_8829_c1686aa5e42d" id="mwc2026454_debe_4dec_876b_cf45ed2b5901" name="IL-1" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.78" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_3a2fd9a6_fb41_4c50_9053_6980e82f7728" id="mw204f32b2_a550_4b65_8b2c_2946cfd8e651" name="IL-1R" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.53" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_121e7b65_0c13_4a47_b490_ae7b89409eb5" id="mw620c50fb_bae0_412a_85fa_a5ca89b690e4" name="TRAF-2" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.39" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_6e490618_171c_4992_9330_0684b20d311e" id="mwb93254c9_4f08_4834_a49a_cae881a3daa1" name="ECSIT" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.36" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="f4df1df8_096c_45cb_98ef_d822059c970f" id="mw8da7aebf_15e8_41a1_a54c_9f9794270ec6" name="TAB2" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.46" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_4325362e_8f1a_4ca1_98be_35e6caf41077" id="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3" name="TAK1" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.56" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_89a1b0d5_3439_4aa4_8a90_283d90d28264" id="mw36ff1d07_7172_419c_9450_11c0a0de000b" name="NIK" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.56" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="a83de6d1_200e_40b4_b6e3_f0e2b0f7b366" id="mwd8813764_c58d_48d0_b17a_5d127ce67f8a" name="MKK4/7" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.26" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_4aac213d_38fe_4f85_809f_10674b91b63a" id="mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e" name="MKK3/6" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.6551" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="f7d88f0a_94c6_4acf_b0ec_ca2111d6a70a" id="mwbffc13a2_e7b8_4066_8a4f_a80e633fbf72" name="RIP" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.68" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="d215399a_7f43_4f3c_a605_5a9ea9621a81" id="mw5426f38e_7b56_4f4f_a7af_ee3da82fffea" name="ASK1" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.6271" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_25fb6ded_e900_47f8_bc85_397fa3355304" id="mw6aae3358_8470_416f_bff0_fbcaa50cd01d" name="MAP4K5" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.1" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_227cf410_ea88_434c_9d33_bf740084727a" id="mwe7fa13a8_2948_49c5_a55a_52df07e4dbe5" name="p38" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.36" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_6eeeb03d_965a_4e13_b560_86b76b4b3531" id="mwa39e55d4_644b_4621_ae08_d705665747c4" name="JNK" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.45" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="f67456c1_9373_42d5_aa3e_ac10604dcc62" id="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148" name="IKK" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.32" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_30cd2c3d_c8da_43f3_b1c5_8c0dae540423" id="mwde2b45ce_a69b_4b42_bc20_0deb7cac2795" name="IkB/NF-kappa B" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.56" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_4fe9ef7a_85c4_46ee_b3b4_3afac430cb51" id="mw7e47a4ac_214b_4cb1_aaaf_efe0fc3b80ea" name="MAPK3K8" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.66" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="ac272843_7828_4ea0_866b_bf9ea1b92081" id="mw4a5a8c20_aac7_45ad_bce5_732262d8e390" name="PAK-1/2" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.46" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="ed00a57d_9901_4ee0_b12b_5f1504aefddc" id="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab" name="MEKK1" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.4" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="fb92e2a8_66cf_4736_b7da_13ec5e8596de" id="mw2fdc8ce9_a7a6_43ca_add9_b01a6d34ccac" name="EGF" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.78" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_2b5e90ba_da54_4553_b30d_c6d07e4a0887" id="mwca4c87e3_b7b1_4b22_a51c_e839f38eca0c" name="EGF_EGFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.627" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_2be6a8d3_c97f_4e14_8bb1_354f92d9be0f" id="mwbbb6dcea_041f_4e15_a536_ad38338827e4" name="EGF_EGFR_EGF_EGFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.64" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="fc209839_fa6b_4b89_81e6_d30e708bb0a7" id="mwd3984f38_00c1_4e75_aead_6fe5b43b9a41" name="GRB-2" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.67" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_4882b5a1_ddb4_46fd_b1a7_fc748322a042" id="mwdddea9e9_1e3a_4bc4_8a75_ab4efcc729c2" name="FGF" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.78" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="c479ee7f_4e6d_4fa1_b65d_b564c1a0e409" id="mw120f93d0_5277_4a5d_86d0_47b9dfb0e8c1" name="FGF_FGFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.52" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="f33b7f08_4f88_4918_ad28_cc5936fbf517" id="mw28f092b3_9243_4bd8_aa6f_cedef9e3a6b3" name="FGF_FGFR_FGF_FGFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.037" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_0784762b_04f8_476b_a54d_44b708564039" id="mw311fccb1_96a3_439d_ba48_67f4e88e6b73" name="PDGF" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.78" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="ac2f7a69_23a8_4006_abb0_75b79cdb1dd4" id="mw45eb5e42_e766_4d1f_9aa5_c613c1472548" name="PDGF_PDGFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.52" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_3918d3dd_0d56_4154_ab66_6d0b376b35c8" id="mw48b8edd7_265d_40ce_b4b1_d698919f2147" name="PDGF_PDGFR_PDGF_PDGFR" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.02" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_625e5820_3236_4923_a373_28d1c908904c" id="mw52382c73_2da6_4835_9e4d_76377fc99ffe" name="GRB-2_SOS" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.472" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="a183a22e_b92a_45e1_a5bc_afef9a1a3cda" id="mwc9492335_5ba3_4285_8ac4_d59cf43410d9" name="Ras-GDP" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.59" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_81df7e19_ec67_4780_8309_47a77e505bb9" id="mw200750a1_12a1_449b_a057_119a8b08429b" name="Ras-GTP" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.64" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_11386ae0_d609_4cf4_9667_fc29dcfed552" id="mwc753e46c_8fc5_4702_8306_5cc366e33a31" name="Raf" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.152" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="d32c5e70_3c40_4b71_90ea_b02a6c4bd2f8" id="mwc9fd6842_66be_454e_a3db_90acddbb7818" name="PLC-gamma" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.56" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_59a73c3f_4adc_4c8f_a503_3acd6e6c35fd" id="mw59a56f43_44b1_40ca_8614_27b249c3b7df" name="PIP2" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.64" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_8624495b_005e_47de_8f2f_3ee2bf1d18b4" id="mw2b60f0f5_3e7e_4414_8179_f556e6411b8c" name="DAG" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.732" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_6fa1955b_ad9c_4a96_a8cf_5e52078ca4ed" id="mwd35b5a6c_a291_4d09_83ae_c4741b8e70e0" name="PKC" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.68" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_1f13bd88_50e2_42f3_9771_a4ca7456239e" id="mw83b7fb74_6820_47d6_8dc7_1c6fa865f296" name="PI3K" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.22" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_01bdacf4_53d5_4493_a7b7_425d09ce1384" id="mwdc638aeb_0b47_4212_a1dd_918ea2da0212" name="PI3Ka" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.348" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_1da5e512_72c4_430e_998b_7726e824440a" id="mw84260725_e9f3_4867_b521_43b35d0f7ca9" name="PIP3" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.4772" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="e2ff6a1e_53d0_433b_9914_9ff791a7dc54" id="mwcf6d77b9_4f94_4cdc_9988_97e570b85ad1" name="PDK1" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.525" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="cf2c2a93_a26e_4ba9_ac24_ed75100e4b2a" id="mw9e3b1d43_8855_4105_9daa_032e54d4015a" name="MEK" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.4" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="d56e4587_6e17_403e_bff5_1ed043937f35" id="mw1153dbec_2f78_48c6_95c2_3b6bc91ee6b2" name="MEKp" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.16" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_95b45bf4_7f04_49f8_b2dd_e1c36270f372" id="mw37aed6bd_57c1_480a_a95e_2abb24130e8b" name="MEKpp" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.11" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_394f0ab6_d0e0_4708_a4fa_316cdebb95ea" id="mw6ea337f1_d5b7_4ac5_abb8_423c3054ec6a" name="ERK1/2" compartment="mw8c954d61_faf8_4b86_8f58_9b3e95362a76" initialAmount="0.231" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="a5f46529_d1b9_473a_b3f4_974d47a0ed90" id="mw7e9aa052_15aa_4c07_83ce_28df3a1cdfa1" name="p38" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0.42" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_033feac2_a57a_4569_95fe_fe3ce36676d4" id="mw9635ddd6_5252_48e8_b38c_d537ca35a8ec" name="c-fos" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0"/>
+      <species metaid="_7b3e5572_9dd6_4cc0_a7e0_4ebc5b728021" id="mw8556671d_17dc_40c5_9089_f753b6cb7551" name="JNK" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0.431" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="_784de185_114c_4535_9d52_ceeda7f804d8" id="mw55487173_6717_4539_99ef_c972acea4c27" name="c-Jun" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0"/>
+      <species metaid="f3327d81_8e38_4849_8d85_6715b81a3d06" id="mwa47ba545_892c_4b59_8779_d4e6d26d6f6c" name="MAPK3K8" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0.61" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="cef3e308_c583_41a7_9317_39c1775c3d19" id="mwd7292a30_7bb3_420e_865b_b7dc81bf94f6" name="AP-1" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0"/>
+      <species metaid="e5133b21_afaf_44ae_89dc_8ca75fcc954e" id="mw46ffa59d_b34b_4281_83b9_e5889aa54d5e" name="NF-kappa B" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0"/>
+      <species metaid="f50c7312_def0_4df1_b529_238a1d4ff906" id="mwe0fc95b3_77c3_46a4_8b15_cab561007ae2" name="ERK1/2" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0.39" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="d6f7901f_a394_43c3_9271_17a29e8d5d99" id="mw2412ee7b_8057_42fb_afe9_bed216a92367" name="Elk" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0.62" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+      <species metaid="dc693cf5_6895_4291_a152_56d23ae0f866" id="mw02b2de67_caaf_4e23_a554_d473d7fff31a" name="SRF" compartment="mw0edac52b_23e8_4bdc_ae76_5fb17d18b439" initialAmount="0.53" substanceUnits="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole" hasOnlySubstanceUnits="true"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction metaid="aecf79ab_a16c_4e3a_bab2_5f8f9b982920" id="mw8b84084d_e24a_4e60_b60c_543f0ae712c8" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="bb87540f_8672_443f_9505_048d55c1c8b4" species="mw68f058f9_e632_469e_a51e_b0641d5ac5f1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="bcdd735e_0d26_48a2_8f17_0b7d211b825a" species="mw589e86be_36cb_41e1_bccf_93824d618644"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw68f058f9_e632_469e_a51e_b0641d5ac5f1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9a4e638e_7ed5_4892_92d6_9c2237357396">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwe381aeb6_184a_4a96_8368_fb710103531f </ci>
+              <ci> mw68f058f9_e632_469e_a51e_b0641d5ac5f1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="c27c8510_7534_4d13_b70d_2b432d9fceda" id="mwe381aeb6_184a_4a96_8368_fb710103531f" name="Kf1" value="2.01" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_9641e54a_cd91_4923_820d_c50bd39afd1c" id="mw6d68bca4_b597_4a0c_a290_a99d065dd6b7" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_448350fa_fff2_4ccf_a93d_16f6e352e356" species="mw589e86be_36cb_41e1_bccf_93824d618644"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9bdd06e5_84a3_455e_b7f1_34b4ecda9c5f" species="mw389efde0_d330_42e0_b68c_cb0cfbf8a3c9"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw589e86be_36cb_41e1_bccf_93824d618644"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f55089fd_997f_4592_8b60_4178ab569351">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwacc2e1da_c0b5_4846_97d1_7625b528d739 </ci>
+              <ci> mw589e86be_36cb_41e1_bccf_93824d618644 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_790a29c2_ff9d_4d91_8b12_db8b059e08df" id="mwacc2e1da_c0b5_4846_97d1_7625b528d739" name="Kf2" value="0.41" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_08a6fc8b_53f3_4a42_ac5c_c80794309933" id="mw2e7123b0_58a9_4713_886d_7c38fdb4a5f4" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_543e0d94_c85a_492e_826e_18a5fd12375e" species="mw389efde0_d330_42e0_b68c_cb0cfbf8a3c9"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f4282c0f_8be0_4a24_b768_c5343b00f8e8" species="mw86470798_a991_412f_a9bb_574001df871d"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw389efde0_d330_42e0_b68c_cb0cfbf8a3c9"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_23729516_b686_4f9c_8ff4_39b483d43489">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw50950615_6337_4c4b_8cdf_d4e2a37a5b3d </ci>
+                <ci> mw389efde0_d330_42e0_b68c_cb0cfbf8a3c9 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw2f078793_9765_42fe_998a_82d1fa349918 </ci>
+                <ci> mw389efde0_d330_42e0_b68c_cb0cfbf8a3c9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_259a464d_881f_4efd_8f13_b61b78b43db6" id="mw50950615_6337_4c4b_8cdf_d4e2a37a5b3d" name="Vm3" value="1.12" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="d6b8ffef_246a_42d8_aea7_26f6c286c30f" id="mw2f078793_9765_42fe_998a_82d1fa349918" name="Km3" value="4.6" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_0fde2d58_7d15_4d8b_8fe1_e45b16ea53ee" id="mwe38f37aa_0912_43ba_bfdb_12307a5099c0" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_425170b3_acef_4bf1_8f69_70113da684a3" species="mw86470798_a991_412f_a9bb_574001df871d"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4335e749_986c_4d47_8e4b_619b01f64170" species="mwde9f266b_e891_41cb_ab2a_d5dad0ab0679"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw86470798_a991_412f_a9bb_574001df871d"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_616125ef_ad4e_4faa_9235_dc23274f8ca5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwe7780a86_7d44_4755_b877_e1157b1cafc5 </ci>
+                <ci> mw86470798_a991_412f_a9bb_574001df871d </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw62baa4b0_ed4e_4cdd_863a_998bbc70cd16 </ci>
+                <ci> mw86470798_a991_412f_a9bb_574001df871d </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_241bae34_aba0_41d1_8f1a_b56293586f15" id="mwe7780a86_7d44_4755_b877_e1157b1cafc5" name="Vm4" value="11.6" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_92d5e1f2_cf8d_4f05_831d_989edcdf04e5" id="mw62baa4b0_ed4e_4cdd_863a_998bbc70cd16" name="Km4" value="4.376" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_623e6653_180b_4534_915a_c7672bcad6d5" id="mw10f4bf3e_6367_454e_b451_c53a0dd2fb9f" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="a3215fd4_0e1e_4440_9ac1_b9dd972cdbdf" species="mw4535fcdd_0cf2_4ee4_8d52_eadd3c4fec92"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_6cad3b15_6fdb_4b12_9f8a_649aece474c8" species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw4535fcdd_0cf2_4ee4_8d52_eadd3c4fec92"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d0aab8e7_0b52_45b5_b888_94ecc9197478">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw5a7ea0a4_c82f_404a_a5b5_43370e4b2740 </ci>
+              <ci> mw4535fcdd_0cf2_4ee4_8d52_eadd3c4fec92 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_999bab83_3a00_4e30_85ae_4e923f8f3d71" id="mw5a7ea0a4_c82f_404a_a5b5_43370e4b2740" name="Kf5" value="0.78" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="bf556bde_3d92_4c05_80d7_04190febb2f1" id="mw0c564439_a8e4_4373_bd67_2805c5625025" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="e416ae02_824a_4f88_b997_a604a6438614" species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7062ab20_cca4_40b2_891b_4868929606db" species="mwde9f266b_e891_41cb_ab2a_d5dad0ab0679"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c6005bc5_dcab_412c_903b_fd3df6e31535">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw386f1a9e_d5dd_4239_bfc4_31a5113cc755 </ci>
+                <ci> mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw70bf4db7_5bcc_458f_8581_3d5cf2e06836 </ci>
+                <ci> mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_385ad1f6_5be1_4543_8db3_13c5a66492e4" id="mw386f1a9e_d5dd_4239_bfc4_31a5113cc755" name="Vm6" value="0.57" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_00b9ea0c_8848_414e_82e4_33311eab259a" id="mw70bf4db7_5bcc_458f_8581_3d5cf2e06836" name="Km6" value="7.3" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_2d135282_00ff_4abb_a020_07a00d279826" id="mw14c73f22_934d_4089_9888_965a6b4eae41" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="d4652c93_0cc0_4a88_b6ab_bd0656a8cccc" species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_793c58ff_cfb1_4bc0_9df7_924bee5f37a7" species="mwaba648c3_0fbe_4730_9665_1ce08e8daea5"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_00b85331_d0c8_4632_b364_af1b84458ff2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw53a9157b_9b3a_4c43_8359_1037b0cdbeb5 </ci>
+                <ci> mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw5edee6e7_b8ae_47eb_ba8a_04ac815ebeaf </ci>
+                <ci> mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_519a546b_c8a7_478e_a735_c8f75870a27d" id="mw53a9157b_9b3a_4c43_8359_1037b0cdbeb5" name="Vm7" value="0.66" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_7c67d147_95bf_40ac_90e2_010ac33cff54" id="mw5edee6e7_b8ae_47eb_ba8a_04ac815ebeaf" name="Km7" value="3.8" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_24b305f7_da5b_4fe9_8063_aeccfafbd7f9" id="mw4c8cdac2_54bf_43d6_9edb_f63719848ee2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_1f1ead93_4ca1_4810_b4ea_064b684c1b38" species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_851495e3_2687_4d46_a0a1_228a02fce480" species="mwa8f3c19d_88cf_4373_a806_3c37c805573e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5fe73d06_0075_4425_a364_5b89f490efc2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw847f8287_a68c_457b_ad05_0cb323062df2 </ci>
+                <ci> mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwc8eecacf_fa6b_4155_b51c_3468c82dc536 </ci>
+                <ci> mwab7d0cf5_ee7e_4d3f_998c_12cbba7a31e4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="a235f94d_6322_42b7_8c6f_cc00a4316758" id="mw847f8287_a68c_457b_ad05_0cb323062df2" name="Vm8" value="0.15" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="ad65d779_4d93_4ff9_9787_4e631e900ccd" id="mwc8eecacf_fa6b_4155_b51c_3468c82dc536" name="Km8" value="3.89" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_2f27ea38_d910_4eed_bde4_01f6004137fa" id="mwb096fef3_fee4_49f6_aff5_90b05528af3b" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_1c296750_908c_4e1c_a837_db98805066fe" species="mwc2026454_debe_4dec_876b_cf45ed2b5901"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_030df032_f38c_48f3_b83f_5a0891547747" species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwc2026454_debe_4dec_876b_cf45ed2b5901"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_3f7c5b9b_d1cd_4c7a_b963_c792f5604143">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwdc106f77_c9d2_4f41_a258_b48b19dd5c58 </ci>
+              <ci> mwc2026454_debe_4dec_876b_cf45ed2b5901 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_4eef8744_3582_4c7a_890b_1e014691eec0" id="mwdc106f77_c9d2_4f41_a258_b48b19dd5c58" name="Kf9" value="1" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_456ddeb2_b4bc_4ce4_83a6_5548e7d54f57" id="mw98cc7d59_490c_4776_b657_5fb857c5b3ec" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_0c04de77_18d5_4f87_9d69_4fcb7d05e7c0" species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9e46ada0_7ab9_4933_bbc7_6ce5ee9d0b13" species="mwde9f266b_e891_41cb_ab2a_d5dad0ab0679"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c2f51ef0_6362_4e0d_9450_2dad265e23bd">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw5a9f893b_4cfb_48f9_af69_bc0e1cba9b55 </ci>
+                <ci> mw204f32b2_a550_4b65_8b2c_2946cfd8e651 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw7f8d90a0_14dd_4c61_afb8_9254ef1fed41 </ci>
+                <ci> mw204f32b2_a550_4b65_8b2c_2946cfd8e651 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_8c2d4851_0b36_4764_8ec1_099b488363b7" id="mw5a9f893b_4cfb_48f9_af69_bc0e1cba9b55" name="Vm10" value="0.1" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_1ad46972_e446_4f44_86d1_c258ce6d3f01" id="mw7f8d90a0_14dd_4c61_afb8_9254ef1fed41" name="Km10" value="4.6" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_65ad29ec_b406_4f6b_a748_64b85af9d7fa" id="mw24fe0277_77a1_4164_b073_81b1150aae27" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="ab991892_6925_4f1b_97b4_069b373ec8bf" species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3dd5c4bf_90ee_400c_ada7_48d4c03cd0b7" species="mw620c50fb_bae0_412a_85fa_a5ca89b690e4"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f824e2fa_87e3_42e9_85e2_c39f5ec22783">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwf79c4c2f_bceb_422e_8c4d_fb62b22aaa20 </ci>
+                <ci> mw204f32b2_a550_4b65_8b2c_2946cfd8e651 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw474d688d_2598_4326_aa6f_b8f04fb70382 </ci>
+                <ci> mw204f32b2_a550_4b65_8b2c_2946cfd8e651 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_05e08e0b_c4c5_4e69_8d84_03724568c92f" id="mwf79c4c2f_bceb_422e_8c4d_fb62b22aaa20" name="Vm11" value="0.43" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_8fb0860f_545b_405e_a84b_eec20b42037f" id="mw474d688d_2598_4326_aa6f_b8f04fb70382" name="Km11" value="2.63" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="b6e3d8aa_3ff8_49f0_b780_c2a7bd083d81" id="mwb7ba883b_cc4a_4258_8be5_805f37baee62" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="f179fefd_b6c1_4d67_bef9_820eec9d966a" species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f739d322_655a_4229_87d4_d2fc8195a913" species="mwa8f3c19d_88cf_4373_a806_3c37c805573e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw204f32b2_a550_4b65_8b2c_2946cfd8e651"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_7b38e4c7_abfe_43ec_b52c_26893e232a00">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwbccc2d3c_2de0_4819_bcef_2366af24e2fd </ci>
+                <ci> mw204f32b2_a550_4b65_8b2c_2946cfd8e651 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwd0b69e12_01a2_4b54_9593_19408a02fdbe </ci>
+                <ci> mw204f32b2_a550_4b65_8b2c_2946cfd8e651 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_38b9ba72_1a63_4cbc_a429_d6b495a22ae1" id="mwbccc2d3c_2de0_4819_bcef_2366af24e2fd" name="Vm12" value="0.25" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_1eaade41_a22b_4474_99a2_fcae5d362b4e" id="mwd0b69e12_01a2_4b54_9593_19408a02fdbe" name="Km12" value="3.2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="aa7e410f_ee6e_458b_acdc_9d7e84850892" id="mwb3db6ef3_6e39_41e1_ace1_d4e6e74dc072" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_4a42ea8d_6f2c_4dcb_a1f6_46794afaa677" species="mwde9f266b_e891_41cb_ab2a_d5dad0ab0679"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_57cf5021_983b_4bf5_a60e_2ba20ce513a4" species="mwb93254c9_4f08_4834_a49a_cae881a3daa1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwde9f266b_e891_41cb_ab2a_d5dad0ab0679"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_77695de7_f1d3_4751_b1f3_33d050cfde92">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwfc24927e_b673_49e2_966b_e6fdd918d92e </ci>
+              <ci> mwde9f266b_e891_41cb_ab2a_d5dad0ab0679 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_73a1346d_1616_428b_9f20_e31eeab9c7a5" id="mwfc24927e_b673_49e2_966b_e6fdd918d92e" name="Kf13" value="0.24" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_79292d0a_7e2e_4328_9012_b6981c36a5f9" id="mw8b6428b1_7c1a_4f17_bba2_a381b08e347c" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="e945de87_c819_450d_9736_39bdac568143" species="mwb93254c9_4f08_4834_a49a_cae881a3daa1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="bb95e894_a093_432e_a4bb_2f325f16ac10" species="mw8da7aebf_15e8_41a1_a54c_9f9794270ec6"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwb93254c9_4f08_4834_a49a_cae881a3daa1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b2f678d4_10e7_47ea_8e4c_92bd99d8aee8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwb645df4e_6365_4e4e_8fab_56157375d0ea </ci>
+                <ci> mwb93254c9_4f08_4834_a49a_cae881a3daa1 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwe066c0a1_9900_42ac_9ea1_74d780aedfcc </ci>
+                <ci> mwb93254c9_4f08_4834_a49a_cae881a3daa1 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="b446e529_953b_4713_98d6_c84b97fa10d5" id="mwb645df4e_6365_4e4e_8fab_56157375d0ea" name="Vm14" value="0.33" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="ef4610e0_7799_4b16_afc4_5147093b2abe" id="mwe066c0a1_9900_42ac_9ea1_74d780aedfcc" name="Km14" value="0.9" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_0d7c1726_2cc9_4e3b_8432_5ae6a857cf83" id="mw7658c132_b286_4e04_bddb_edfa1356deda" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_5ea89f45_1670_471a_b57a_f8f595440f2f" species="mw8da7aebf_15e8_41a1_a54c_9f9794270ec6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dbc006fa_b871_478a_9883_0151c9969eb9" species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw8da7aebf_15e8_41a1_a54c_9f9794270ec6"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_80a85628_730c_45a3_9c71_7186b50b5982">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwfb87d62c_af5c_4037_9c63_4e0bc64ada24 </ci>
+                <ci> mw8da7aebf_15e8_41a1_a54c_9f9794270ec6 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw3d1ac45a_d947_4178_b459_0cb5d0117b98 </ci>
+                <ci> mw8da7aebf_15e8_41a1_a54c_9f9794270ec6 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="c64f23ee_ff50_4b11_956e_bf2f6740d514" id="mwfb87d62c_af5c_4037_9c63_4e0bc64ada24" name="Vm15" value="2.11" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="d8ed5ff7_6653_4455_b940_148d3e0e38c4" id="mw3d1ac45a_d947_4178_b459_0cb5d0117b98" name="Km15" value="2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_5fd4b64e_07ed_455f_bfa8_822a82b044c8" id="mw9e4c4fd2_731b_4f84_8dbb_aa42f10a9f21" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="f8bb614b_5ae4_45d0_ac90_ad38872cfc83" species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1e064655_da5d_49c5_bec4_e3880fbdfa9c" species="mw36ff1d07_7172_419c_9450_11c0a0de000b"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c86bd15e_b0e2_4efa_9be1_2879127b27c8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwaeb4b764_b3c3_4f60_99f9_5dec0c369430 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw925bd56e_efdb_4d1f_b744_136f8cd79912 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_60cc71a6_6b6c_454f_8e65_ef646a4d3eb2" id="mwaeb4b764_b3c3_4f60_99f9_5dec0c369430" name="Vm16" value="1.14" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_25578e09_e9ef_4379_ad2f_467c20200830" id="mw925bd56e_efdb_4d1f_b744_136f8cd79912" name="Km16" value="2.4" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="d8b41cbe_dd8d_4494_ba3d_e5ae5518ceac" id="mwc31c58aa_d71b_4ca0_a86b_dfb0ea6b3f05" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_5603e1eb_4427_40c5_bd19_9659f25ae92b" species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a1f431a2_faec_45a2_bb71_6813537f685d" species="mwd8813764_c58d_48d0_b17a_5d127ce67f8a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9ffe3852_7f9a_4a69_a4e4_93959c0efa99">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw9c71b3cd_4496_475f_bb88_0cff7c8ade21 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw657ff1e6_9106_45d2_97d9_04d010d206b5 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="ee4eb396_5df1_48af_8848_760a3c8b0144" id="mw9c71b3cd_4496_475f_bb88_0cff7c8ade21" name="Vm17" value="1.4" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_6a59d9d9_0690_43e1_a567_31b113cd7462" id="mw657ff1e6_9106_45d2_97d9_04d010d206b5" name="Km17" value="0.989" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_1eb5edd8_bc82_4e6d_a451_f20f060b2aec" id="mwd978af28_ca2c_4809_afeb_066d1b36321f" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="eb60fb8d_3b2c_4797_98a2_e8c81654c8ee" species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a0d4c91b_be40_45be_82ff_d892fe022437" species="mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_744cfc54_e67a_497a_b16d_aed5c4a3a8cb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw7fb00c5e_dafe_484b_8a2c_d019fa2b3994 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwef1cd3e6_a85c_4ec6_9555_4050232b90af </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="cdbb4076_f0d3_4a6c_bc53_f468acec6d41" id="mw7fb00c5e_dafe_484b_8a2c_d019fa2b3994" name="Vm18" value="0.00179" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_99d3d1b9_aec5_4bec_817d_082c36937b4d" id="mwef1cd3e6_a85c_4ec6_9555_4050232b90af" name="Km18" value="0.00941" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="b177c6cb_43ce_4078_b8d4_c3c37701928a" id="mw73e702d0_ca4e_4f57_ae16_38d5bbff401b" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_4a66f0fb_1d2b_4cb7_949f_6fff4b8b29b1" species="mwaba648c3_0fbe_4730_9665_1ce08e8daea5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_258e6618_2f2a_409a_b52e_952e3a2e00fe" species="mwbffc13a2_e7b8_4066_8a4f_a80e633fbf72"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwaba648c3_0fbe_4730_9665_1ce08e8daea5"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_68c124c4_a9e4_4d28_b9f0_3f876142c72d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwb830947c_33da_4f22_9049_df51071298f6 </ci>
+                <ci> mwaba648c3_0fbe_4730_9665_1ce08e8daea5 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwb361f6c2_1c39_4cc8_932c_1ca584bfa8c7 </ci>
+                <ci> mwaba648c3_0fbe_4730_9665_1ce08e8daea5 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="e7ad5c1d_ea06_437a_b56f_fda7fbd202b7" id="mwb830947c_33da_4f22_9049_df51071298f6" name="Vm19" value="0.22" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="c54254d0_c211_4f71_b81a_35bf852f0c9c" id="mwb361f6c2_1c39_4cc8_932c_1ca584bfa8c7" name="Km19" value="5.4" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_98af2741_4069_4d8e_aef6_c46673d799f5" id="mw9b4714f5_eb00_4a06_b5ad_c2d1d4a03c28" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="cf22a981_b7c6_43e7_a090_a57cf64fee2a" species="mwbffc13a2_e7b8_4066_8a4f_a80e633fbf72"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="be7ae4a0_f678_4471_9644_faad7aba7e12" species="mw620c50fb_bae0_412a_85fa_a5ca89b690e4"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwbffc13a2_e7b8_4066_8a4f_a80e633fbf72"/>
+        </listOfModifiers>
+        <kineticLaw metaid="caef9eda_5fe5_4bc7_97cf_5992bf4e3e38">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwf0b9c8cb_2159_4007_a889_c09cc11bd8d2 </ci>
+                <ci> mwbffc13a2_e7b8_4066_8a4f_a80e633fbf72 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwd78a5dfb_70c7_44c6_9e8f_9de237ad87d7 </ci>
+                <ci> mwbffc13a2_e7b8_4066_8a4f_a80e633fbf72 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_9160b621_0f94_4505_a4b1_3a2e9593e2ea" id="mwf0b9c8cb_2159_4007_a889_c09cc11bd8d2" name="Vm20" value="0.8" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_51ba2748_a7c7_4ee1_8a97_ec684b4a6c7c" id="mwd78a5dfb_70c7_44c6_9e8f_9de237ad87d7" name="Km20" value="2.2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_8a997b89_a7dd_4bba_a9d8_e3476768ace4" id="mw6f823f73_e9f7_4042_a27b_6373d3471991" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_0f7c4f23_4035_405d_ac6b_7c9718c02653" species="mw620c50fb_bae0_412a_85fa_a5ca89b690e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_83fd4b94_dbd8_407a_9dae_1fcc853ea6d5" species="mw5426f38e_7b56_4f4f_a7af_ee3da82fffea"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw620c50fb_bae0_412a_85fa_a5ca89b690e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1a4a202d_4020_456c_a0a8_9b97383503ce">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwf6ab9fdd_818c_4581_b25c_04a2efa474aa </ci>
+                <ci> mw620c50fb_bae0_412a_85fa_a5ca89b690e4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwf1fd74cd_f3ca_4de1_b78d_52efab7fcce6 </ci>
+                <ci> mw620c50fb_bae0_412a_85fa_a5ca89b690e4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_41b748b2_08ef_49fe_8114_d0f31fd2e2bd" id="mwf6ab9fdd_818c_4581_b25c_04a2efa474aa" name="Vm21" value="0.0017" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="d740e9b3_41ce_40d8_814c_7c65cfddc11a" id="mwf1fd74cd_f3ca_4de1_b78d_52efab7fcce6" name="Km21" value="4.83" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="f8c64796_0486_46d2_89c4_8e3b20dac258" id="mw3f0f2f7b_ef56_4f9f_bc62_7e7f79669b28" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_6e7e637a_1413_4f5a_8123_f78d7e06c975" species="mw620c50fb_bae0_412a_85fa_a5ca89b690e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2867ee37_7622_4d97_830f_11b8161aaca9" species="mw6aae3358_8470_416f_bff0_fbcaa50cd01d"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw620c50fb_bae0_412a_85fa_a5ca89b690e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="a09030a8_3926_4d76_86e2_25e6a79998c5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw3fb7101d_8bf8_4b8e_9963_ee9ce7d35c8b </ci>
+                <ci> mw620c50fb_bae0_412a_85fa_a5ca89b690e4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw4645ad74_0ed3_43aa_ac0d_58820be09d6e </ci>
+                <ci> mw620c50fb_bae0_412a_85fa_a5ca89b690e4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="bbcde22c_bc16_4cb2_8600_3128fb7f7324" id="mw3fb7101d_8bf8_4b8e_9963_ee9ce7d35c8b" name="Vm22" value="0.435" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="a9351179_0c05_4be2_b541_5fce1735afd9" id="mw4645ad74_0ed3_43aa_ac0d_58820be09d6e" name="Km22" value="2.3" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_273f701c_b1b8_4fc3_9df2_30bdc7709a0c" id="mw9c5d7ca9_fa08_41b1_9adc_5007c8beefa1" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="a8b53037_4966_4880_88a9_de47b5f31e5c" species="mw5426f38e_7b56_4f4f_a7af_ee3da82fffea"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d83c1322_2018_4532_886c_d69ae2cd5faf" species="mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw5426f38e_7b56_4f4f_a7af_ee3da82fffea"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d008ccda_f607_4b3f_8779_ce982ee79e94">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw604be5de_7ccc_407f_b66d_f64308c94e33 </ci>
+                <ci> mw5426f38e_7b56_4f4f_a7af_ee3da82fffea </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw6c0ce5e4_d261_4a93_a8d0_cc45c890de16 </ci>
+                <ci> mw5426f38e_7b56_4f4f_a7af_ee3da82fffea </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_4f3cb653_e1c6_41bb_9b8b_ccb26311e4ab" id="mw604be5de_7ccc_407f_b66d_f64308c94e33" name="Vm23" value="0.67" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_779c9f45_28ff_468d_a879_e65a6d54f85a" id="mw6c0ce5e4_d261_4a93_a8d0_cc45c890de16" name="Km23" value="0.97" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_3049713a_ae25_41f5_b889_75dfcd92aa14" id="mw4083ace8_f413_4f73_95f1_d5da931f1091" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_9eb3efd0_8c05_4b96_a392_33c365137def" species="mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1dbe453a_901a_411c_aaf8_d6539a088b61" species="mwe7fa13a8_2948_49c5_a55a_52df07e4dbe5"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5dc3eca1_8242_44d2_a763_9d30f8539088">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw57a5babb_9101_47c5_a794_3147ee3b030f </ci>
+                <ci> mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw71bc8d87_77bd_43b8_8237_d26edd734766 </ci>
+                <ci> mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_662d6fe8_c68b_4d58_9e5f_82c2584ef051" id="mw57a5babb_9101_47c5_a794_3147ee3b030f" name="Vm24" value="0.45" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_45599d6c_c795_4e7d_a5d6_b671163875c1" id="mw71bc8d87_77bd_43b8_8237_d26edd734766" name="Km24" value="3.05" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_9a51fa88_5f13_4e22_b837_266b26aa255a" id="mwb888fb56_4242_4e96_a5fe_a3822ad6eb21" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_1ee6e1f1_2863_48e7_b965_f0cb2c0b6d6c" species="mwe7fa13a8_2948_49c5_a55a_52df07e4dbe5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dab74cb3_5604_4566_ab77_f42fc6e88ec1" species="mw7e9aa052_15aa_4c07_83ce_28df3a1cdfa1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwe7fa13a8_2948_49c5_a55a_52df07e4dbe5"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d07727bc_5577_4d3b_b612_bbfdc25b97a2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwa568e8ac_5aea_4076_a350_aabbd916280a </ci>
+                <ci> mwe7fa13a8_2948_49c5_a55a_52df07e4dbe5 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw3aad8216_ee0a_4c81_bfaa_c2a8339f4689 </ci>
+                <ci> mwe7fa13a8_2948_49c5_a55a_52df07e4dbe5 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_6fe29a3d_ac9f_444a_a911_f731657cc588" id="mwa568e8ac_5aea_4076_a350_aabbd916280a" name="Vm25" value="0.227" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_3ef133a8_0dc2_4af9_8e5b_7b6a5d232168" id="mw3aad8216_ee0a_4c81_bfaa_c2a8339f4689" name="Km25" value="3.67" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_6d064afd_f0cd_46db_8cf6_4a6f326d4695" id="mw1c06e4dc_83e9_4d66_b10a_5c7e567f0960" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_16e405d0_6f9a_4123_86bf_57c0f87911aa" species="mw7e9aa052_15aa_4c07_83ce_28df3a1cdfa1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_64838db8_c1bd_4ca4_bb69_47a93f4755a7" species="mw9635ddd6_5252_48e8_b38c_d537ca35a8ec"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw7e9aa052_15aa_4c07_83ce_28df3a1cdfa1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8a3f4c48_9e0c_46ef_930d_e6c61bed183b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwa3755d1f_8443_49b2_a7ff_e6038f4557bc </ci>
+              <ci> mw7e9aa052_15aa_4c07_83ce_28df3a1cdfa1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="a4dbc129_bae0_41fa_ae29_b48cf0e274aa" id="mwa3755d1f_8443_49b2_a7ff_e6038f4557bc" name="Kf26" value="0.5" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_9be4fa57_8d3a_4ba9_a6c1_3f231ea4b0b5" id="mw5b08a269_5f94_4be6_9b42_5bb3bc81317e" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="d719ec55_d7c3_4d2c_ad35_5e69313682fc" species="mw6aae3358_8470_416f_bff0_fbcaa50cd01d"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c40ab58b_b720_4711_85df_dfcb3243c314" species="mwd8813764_c58d_48d0_b17a_5d127ce67f8a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw6aae3358_8470_416f_bff0_fbcaa50cd01d"/>
+        </listOfModifiers>
+        <kineticLaw metaid="fc654108_20e2_4afd_a8bf_36d1be7d06d3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwb4c16fa5_5c2a_4160_a19f_44da121b4b90 </ci>
+                <ci> mw6aae3358_8470_416f_bff0_fbcaa50cd01d </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw25ffad8e_bb2d_4b50_8bd6_f86237744e28 </ci>
+                <ci> mw6aae3358_8470_416f_bff0_fbcaa50cd01d </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_12a1348b_ac7f_4e85_9e80_0a829ae5b6f4" id="mwb4c16fa5_5c2a_4160_a19f_44da121b4b90" name="Vm27" value="0.381" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_8e2fa530_028a_472a_80b9_722ed0f09ab0" id="mw25ffad8e_bb2d_4b50_8bd6_f86237744e28" name="Km27" value="5.97" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_2974d642_e663_471c_9883_33bf5d8c7a16" id="mwda42fce1_b0d9_4b37_9f96_2f04bc2052e2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="a3f8b2cc_bc89_4578_ba3e_73fd70790afe" species="mwd8813764_c58d_48d0_b17a_5d127ce67f8a"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_123f11ad_273f_4e48_a3e2_e1e6d7ab3d4b" species="mwa39e55d4_644b_4621_ae08_d705665747c4"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwd8813764_c58d_48d0_b17a_5d127ce67f8a"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d3076991_5582_4330_8c3a_a57365bf27cc">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw18ecd07b_21af_4882_8a38_487901ce328a </ci>
+                <ci> mwd8813764_c58d_48d0_b17a_5d127ce67f8a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw3e416fcf_f998_44ec_af1b_f7544bcbd5f5 </ci>
+                <ci> mwd8813764_c58d_48d0_b17a_5d127ce67f8a </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_10d513b8_2c44_4a4a_8528_1b700f6b5743" id="mw18ecd07b_21af_4882_8a38_487901ce328a" name="Vm28" value="0.32" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_25214c07_8a99_42ae_9da2_2649356af103" id="mw3e416fcf_f998_44ec_af1b_f7544bcbd5f5" name="Km28" value="0.431" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_935176b4_9e47_47f3_8534_2a8038f9dbda" id="mwfdb547a7_4369_45c4_9b5d_71e6f99c6775" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="cbba7217_cf3b_483c_aef3_98836c3cc966" species="mwa39e55d4_644b_4621_ae08_d705665747c4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f871c849_6926_409b_a7f3_48fc0c52dd59" species="mw8556671d_17dc_40c5_9089_f753b6cb7551"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwa39e55d4_644b_4621_ae08_d705665747c4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ebfad432_0a10_4783_98ba_11a202b2d0ff">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw0f7d92ca_8548_48d7_b0ff_bf170e68e9e2 </ci>
+                <ci> mwa39e55d4_644b_4621_ae08_d705665747c4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw16d6dfc8_f740_4bae_8375_e605a685aba1 </ci>
+                <ci> mwa39e55d4_644b_4621_ae08_d705665747c4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="b2629cd6_a3ed_4e43_993d_1728442aef3d" id="mw0f7d92ca_8548_48d7_b0ff_bf170e68e9e2" name="Vm29" value="1.3" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_97293347_9a82_4218_bccd_a37f79b5adee" id="mw16d6dfc8_f740_4bae_8375_e605a685aba1" name="Km29" value="5.63" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_96cee879_00be_4204_80b9_d2bd83c6b526" id="mwb1d72c18_60b2_43fb_b5bc_9d59f4ceb0cd" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="d56ad5d6_769e_4875_84f3_a545e8229219" species="mw8556671d_17dc_40c5_9089_f753b6cb7551"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4b36f6e7_9ed8_43d8_b4c3_263dc8afe848" species="mw55487173_6717_4539_99ef_c972acea4c27"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw8556671d_17dc_40c5_9089_f753b6cb7551"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4fb083b5_4a91_48e7_8304_6af4c2febc28">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw993c4b61_ba4d_4f86_944f_57232aaf2fb1 </ci>
+              <ci> mw8556671d_17dc_40c5_9089_f753b6cb7551 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_7e87d9be_7856_4079_97d0_2f61bd691d8d" id="mw993c4b61_ba4d_4f86_944f_57232aaf2fb1" name="Kf30" value="0.2119" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="beb8ebf7_5e8b_4dba_b59d_3d0cfcf8b9c1" id="mw432dd857_3754_43ac_8a80_92731e02bed2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_8cc065c4_3bf0_44f6_8f1c_5ee08f0a2f28" species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e7691528_bd47_46bd_9b29_26ec07628a5e" species="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw3abf9361_f0f4_4fae_8352_be1aac0e23d3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d4aaf86f_0348_4acc_8e61_0a9632e6b870">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwb9b25300_7319_407e_bfd1_eb26adec9784 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwe2d35e05_05b8_49af_a418_a550ce29a368 </ci>
+                <ci> mw3abf9361_f0f4_4fae_8352_be1aac0e23d3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="f7f42016_9c82_45f1_a05d_325fbd2b6b95" id="mwb9b25300_7319_407e_bfd1_eb26adec9784" name="Vm31" value="0.13" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="e2924de7_f8bd_4c9e_9272_570a4c6e32b8" id="mwe2d35e05_05b8_49af_a418_a550ce29a368" name="Km31" value="2.76" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_60443945_58d7_42ec_94b7_772eebbd3ba5" id="mwff4d8384_360a_449f_a6b9_09da421b361e" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="fc8459bc_f79c_42c2_82f5_c4c61f1ddfb7" species="mw36ff1d07_7172_419c_9450_11c0a0de000b"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2a5cde5b_8914_43d6_b95d_f3172d1f0211" species="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw36ff1d07_7172_419c_9450_11c0a0de000b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_3ae08989_1456_4b80_b1d7_5d98e89783b3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwba7fc750_179e_4f91_8740_f595744e002a </ci>
+                <ci> mw36ff1d07_7172_419c_9450_11c0a0de000b </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw58786dd5_3247_470d_a5ce_f266d81e37ec </ci>
+                <ci> mw36ff1d07_7172_419c_9450_11c0a0de000b </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_1cae9ec3_9f7f_466e_8271_2571634a8e65" id="mwba7fc750_179e_4f91_8740_f595744e002a" name="Vm32" value="0.2" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_110a3fdd_2541_4de9_92e4_30c7c76874ca" id="mw58786dd5_3247_470d_a5ce_f266d81e37ec" name="Km32" value="4.3" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_019a7f97_4ae6_43c8_8777_e956d3b781f7" id="mwb17271d7_f8a3_4c68_9d4d_1aacbcdd6de6" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_5d52063e_3df8_4540_b764_107b069870fa" species="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_35f671ee_a675_4985_8044_966b2752372a" species="mwde2b45ce_a69b_4b42_bc20_0deb7cac2795"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_10725761_f2b9_4a17_8c01_f7df5ec59d0a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw3fb548d4_c4ad_4d0b_bdfb_7373278012bf </ci>
+                <ci> mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw7935e5f2_426a_4a60_859f_87bce4c93b33 </ci>
+                <ci> mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_2b84887d_a9e7_4c9f_9d1c_2de383244390" id="mw3fb548d4_c4ad_4d0b_bdfb_7373278012bf" name="Vm33" value="0.1" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_7ba2171d_668f_4f13_ae5c_a804894b5612" id="mw7935e5f2_426a_4a60_859f_87bce4c93b33" name="Km33" value="4.8" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="e408166a_0313_4b82_8c61_93b4d646dfe9" id="mw29955972_cdf0_4369_b6f8_708cbc457e24" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_196340f4_5335_49fb_a29f_f6d499263ef5" species="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3a1c20b7_6011_4ef2_9d33_7af7a38899f6" species="mw7e47a4ac_214b_4cb1_aaaf_efe0fc3b80ea"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_7f919f9e_c0bc_4c47_ac91_c37b397b07ac">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw47370904_b032_4652_810d_c6895a95e5a7 </ci>
+                <ci> mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwa031e286_bbfb_4c2a_a096_a8b959f7a83b </ci>
+                <ci> mw83e2dffc_8cc7_439a_8b81_7c3f2ce51148 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_12f4f2c3_65c0_4c4e_8d89_be772188ad25" id="mw47370904_b032_4652_810d_c6895a95e5a7" name="Vm34" value="1.4" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_2b3941d5_0209_4b3f_8a9c_54aed0ddc3a6" id="mwa031e286_bbfb_4c2a_a096_a8b959f7a83b" name="Km34" value="0.616" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_4da0bc94_5c73_4720_a51e_26501ec5ac79" id="mw742318e4_f8f6_404e_bf42_853ea581b0d5" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_846cf297_8ae5_4b6a_9473_2385382bc601" species="mw7e47a4ac_214b_4cb1_aaaf_efe0fc3b80ea"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5fa48266_d8de_41e3_993d_280491bbe88d" species="mwa47ba545_892c_4b59_8779_d4e6d26d6f6c"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw7e47a4ac_214b_4cb1_aaaf_efe0fc3b80ea"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1e2a4edb_2e41_40f3_b492_5958c1b66911">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw45db2055_212a_4bf2_af13_a065d2e546b6 </ci>
+                <ci> mw7e47a4ac_214b_4cb1_aaaf_efe0fc3b80ea </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw13a3cb32_bc50_40cb_90f0_09e4bf23418b </ci>
+                <ci> mw7e47a4ac_214b_4cb1_aaaf_efe0fc3b80ea </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_9048167b_6a58_401e_b184_dad5351c6af5" id="mw45db2055_212a_4bf2_af13_a065d2e546b6" name="Vm35" value="0.173" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_98ee116a_ca2a_4cd4_a225_a2de8f481a00" id="mw13a3cb32_bc50_40cb_90f0_09e4bf23418b" name="Km35" value="0.454" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="e367a325_ff32_4f9d_86e6_40e709b36f01" id="mw8d01141f_6b97_4b73_af87_3bc18958824c" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_0e200e69_635b_44b4_ae19_1c65f3edb8be" species="mwa47ba545_892c_4b59_8779_d4e6d26d6f6c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a660356e_4f88_4b26_8221_8974fd220475" species="mwd7292a30_7bb3_420e_865b_b7dc81bf94f6"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwa47ba545_892c_4b59_8779_d4e6d26d6f6c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_0f914ef9_65d2_4ddb_8b9f_49b2b886e462">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw663e40fa_17b1_4bbb_82e3_f73de9b15900 </ci>
+              <ci> mwa47ba545_892c_4b59_8779_d4e6d26d6f6c </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_48b284de_5ee0_42ab_bcdf_3209887b2220" id="mw663e40fa_17b1_4bbb_82e3_f73de9b15900" name="Kf36" value="0.084" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_374476f6_ed03_4544_b0a2_c659c356e69a" id="mw88d6939f_909c_44a9_9d36_6cdd39106bb5" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_378a1bd6_2f88_45c3_a86f_42a158aa98c1" species="mwde2b45ce_a69b_4b42_bc20_0deb7cac2795"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4e045813_d4d0_4214_a987_8751ea2318e4" species="mw46ffa59d_b34b_4281_83b9_e5889aa54d5e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwde2b45ce_a69b_4b42_bc20_0deb7cac2795"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_6451ad8b_a391_472f_9dc7_90844b131104">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwaa75b772_7587_4e52_b3d1_a95055bf17ff </ci>
+              <ci> mwde2b45ce_a69b_4b42_bc20_0deb7cac2795 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="fb41e3ee_1e49_490f_b055_02ae65483a1a" id="mwaa75b772_7587_4e52_b3d1_a95055bf17ff" name="Kf37" value="1.8" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="c807190f_6299_4ef2_9a9c_2880f4f698ee" id="mw9b60dd99_0eb8_4803_82da_d24dac10d747" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_322259d7_9185_4b87_985f_d9d89ad30653" species="mwa8f3c19d_88cf_4373_a806_3c37c805573e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_30b291bf_9a2d_488a_985a_58dbdae2ae5d" species="mw4a5a8c20_aac7_45ad_bce5_732262d8e390"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwa8f3c19d_88cf_4373_a806_3c37c805573e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_730fe8a7_e1eb_411e_a456_c2bd88e2206c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwa5601c15_617b_4318_9439_102e53b4ba7f </ci>
+                <ci> mwa8f3c19d_88cf_4373_a806_3c37c805573e </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw37d615f5_eef4_4507_94c2_fa30071370f4 </ci>
+                <ci> mwa8f3c19d_88cf_4373_a806_3c37c805573e </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_640190b3_8d85_445a_9bb7_ba9cda5c1803" id="mwa5601c15_617b_4318_9439_102e53b4ba7f" name="Vm38" value="0.003" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_0d4fc6c6_0f7d_41a3_93ce_1ff3fc752636" id="mw37d615f5_eef4_4507_94c2_fa30071370f4" name="Km38" value="5.632" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_46bf8cb9_bf51_444d_a2b6_40c6ff261b91" id="mw892acbf2_b355_4e65_a63c_532d2a286a46" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_6f62714a_f785_4d82_9e75_5e5241e0ad8c" species="mw4a5a8c20_aac7_45ad_bce5_732262d8e390"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_997df1ce_d527_47af_b83f_bad32dfd4574" species="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw4a5a8c20_aac7_45ad_bce5_732262d8e390"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4443fcc8_1a81_4234_ac81_4da859ff338c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwa6e2cac0_a838_40d8_af41_b7a4beaf749a </ci>
+                <ci> mw4a5a8c20_aac7_45ad_bce5_732262d8e390 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw42d4f9da_9bd5_4a0c_bf4f_7d70d5e82a06 </ci>
+                <ci> mw4a5a8c20_aac7_45ad_bce5_732262d8e390 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_864afa0c_7703_43ab_b6f0_8c3e75eada8b" id="mwa6e2cac0_a838_40d8_af41_b7a4beaf749a" name="Vm39" value="0.9" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_07ae72f8_3f83_411d_b3a6_9598df3d1c4d" id="mw42d4f9da_9bd5_4a0c_bf4f_7d70d5e82a06" name="Km39" value="2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_78034631_05fc_4237_b8f6_96220e97fd1f" id="mw5fb066f1_b48b_4208_9560_dcce4adcfa40" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_9cb5b001_6062_474b_b028_3b289d068351" species="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3dac476f_7419_4692_a5dc_1122db42313c" species="mwd8813764_c58d_48d0_b17a_5d127ce67f8a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c4241c63_2c71_475c_9e08_b62e40fa7ea9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwe1f5529b_3132_4be9_83e5_c5e82fd4a81f </ci>
+                <ci> mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwd6777152_03b0_4c71_b863_e3c9b91d8ec0 </ci>
+                <ci> mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_23abfeb4_3195_46be_89ba_bd19e496d3ba" id="mwe1f5529b_3132_4be9_83e5_c5e82fd4a81f" name="Vm40" value="0.5" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_46cfd562_dcfa_424d_8249_33011d7d2238" id="mwd6777152_03b0_4c71_b863_e3c9b91d8ec0" name="Km40" value="0.44" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_911e86fb_da71_4a52_8f70_8d9bfc1376f1" id="mwce970ab9_ea15_4495_9f3a_6fd2301e5aa2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_110da708_c599_4d4c_9ddc_ed2b887c0287" species="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b9a5aa9d_1e2f_49f4_ab29_5bdc31c50576" species="mw6c0fac8e_7303_4327_b5c9_958d5c86fa7e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b0cff11f_19de_4beb_9dc7_df4a0f890548">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwbbebb65f_c0f7_49c3_b35e_d118e17309c7 </ci>
+                <ci> mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw39ce9882_c28e_4326_b942_d5aa177a9878 </ci>
+                <ci> mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="d7d9ed31_8a59_4aae_ba76_fc460cfdde3e" id="mwbbebb65f_c0f7_49c3_b35e_d118e17309c7" name="Vm41" value="0.7" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_90c6926a_639b_4d22_8c17_938d15af68b6" id="mw39ce9882_c28e_4326_b942_d5aa177a9878" name="Km41" value="6.1" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="d4559788_2766_4167_8942_2df0df7a40c2" id="mw490271b3_f4da_4551_9bb3_06c76d1ed6fc" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_3cd3b856_8905_4769_be51_10182a6fe7e0" species="mw2fdc8ce9_a7a6_43ca_add9_b01a6d34ccac"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a3360fa8_1301_4da0_98d4_153b2e41fe5c" species="mwca4c87e3_b7b1_4b22_a51c_e839f38eca0c"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw2fdc8ce9_a7a6_43ca_add9_b01a6d34ccac"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8288a83a_ad8d_4ca5_aa21_8fb14efb801d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwd608d3d1_5d97_445e_b71e_dc0c5cbf2476 </ci>
+              <ci> mw2fdc8ce9_a7a6_43ca_add9_b01a6d34ccac </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_0769521a_7e7f_4aad_864e_67fe060d8ae8" id="mwd608d3d1_5d97_445e_b71e_dc0c5cbf2476" name="Kf42" value="0.68" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="e7d2e2f0_a8fd_4954_8c78_b370a234a467" id="mwe7ba0afd_4d22_4c0b_962a_20e3b21bcc27" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_4dcc9b1f_f33b_4dae_af76_e10f1f89e403" species="mwca4c87e3_b7b1_4b22_a51c_e839f38eca0c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_19b905d3_3e30_4463_a62c_4a0443c4284a" species="mwbbb6dcea_041f_4e15_a536_ad38338827e4"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwca4c87e3_b7b1_4b22_a51c_e839f38eca0c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d3364cbc_c80e_44e5_91d6_799325519ded">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw1229bb32_b2b9_4917_b545_0684c17b238e </ci>
+                <ci> mwca4c87e3_b7b1_4b22_a51c_e839f38eca0c </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw00aad0fb_4eba_4fa8_9252_03ea7385400e </ci>
+                <ci> mwca4c87e3_b7b1_4b22_a51c_e839f38eca0c </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="f57df079_613d_4382_b83c_7ea8afd789bb" id="mw1229bb32_b2b9_4917_b545_0684c17b238e" name="Vm43" value="0.9" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="b152c98d_0ee7_4d45_8455_d3c1499f35bf" id="mw00aad0fb_4eba_4fa8_9252_03ea7385400e" name="Km43" value="3.4" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="c4c1b6f6_d8c9_4b54_ba3f_e2d6628a6546" id="mwef4bc0aa_09c9_4e87_9999_ea65e5c471cc" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_511132e1_cd87_4003_ad26_fa7fbebd6403" species="mwbbb6dcea_041f_4e15_a536_ad38338827e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_52630306_e8b4_4e83_ab71_495cd91fff0b" species="mwd3984f38_00c1_4e75_aead_6fe5b43b9a41"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwbbb6dcea_041f_4e15_a536_ad38338827e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_19cbd39b_6f4d_47f0_a2ff_7389f47cec0d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwc1654dd7_b80b_46f1_aaaf_38e7e94175b9 </ci>
+                <ci> mwbbb6dcea_041f_4e15_a536_ad38338827e4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw2f628a71_2471_48bf_9c29_be0098dc3730 </ci>
+                <ci> mwbbb6dcea_041f_4e15_a536_ad38338827e4 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_91e83eae_bcdb_4213_9b85_e2dd77e1a410" id="mwc1654dd7_b80b_46f1_aaaf_38e7e94175b9" name="Vm44" value="0.0003" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_2b435ddb_258c_4678_901e_8b0414e521c9" id="mw2f628a71_2471_48bf_9c29_be0098dc3730" name="Km44" value="0.06" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="f2e9b67e_2a36_46e3_9fb8_214619ae6256" id="mw238f53dd_5923_4ac0_ad7f_b6fd79d0251b" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_964b1d47_4a1e_4b25_ae97_cd15be6d9e9f" species="mwdddea9e9_1e3a_4bc4_8a75_ab4efcc729c2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b2ea0540_d94e_4acf_a5db_427e09a1e1eb" species="mw120f93d0_5277_4a5d_86d0_47b9dfb0e8c1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwdddea9e9_1e3a_4bc4_8a75_ab4efcc729c2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8a4abe38_a9a6_4821_b492_7bfd685ee0bf">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw8b672bd9_759d_4ddc_aa32_4b9251b2c4a2 </ci>
+              <ci> mwdddea9e9_1e3a_4bc4_8a75_ab4efcc729c2 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_20e86030_8435_4932_8ae8_f4b786089497" id="mw8b672bd9_759d_4ddc_aa32_4b9251b2c4a2" name="Kf45" value="0.78" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_0395bbeb_ac2c_4b83_ab8a_3a26f4b03de6" id="mw44b7e71a_d27f_494c_9faf_54303f729224" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="d6449586_d8ef_40da_a7ee_6e0806e154df" species="mw120f93d0_5277_4a5d_86d0_47b9dfb0e8c1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="da0cec30_a7b0_48c0_91ed_4d6e5e210669" species="mw28f092b3_9243_4bd8_aa6f_cedef9e3a6b3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw120f93d0_5277_4a5d_86d0_47b9dfb0e8c1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ca1dc085_87d8_4115_b968_a36931caaf1f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw2df35c73_a88e_4468_9792_e8fdb3312daf </ci>
+                <ci> mw120f93d0_5277_4a5d_86d0_47b9dfb0e8c1 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw9b340ab5_5b48_4d5c_9f4f_d3c4dbf49115 </ci>
+                <ci> mw120f93d0_5277_4a5d_86d0_47b9dfb0e8c1 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_5499093f_8c7c_4883_8f8d_c1eac6a50125" id="mw2df35c73_a88e_4468_9792_e8fdb3312daf" name="Vm46" value="0.6" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_9c4e6166_b34f_47fb_a314_8a9b1b772460" id="mw9b340ab5_5b48_4d5c_9f4f_d3c4dbf49115" name="Km46" value="3.27" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="d4b4541c_4b5e_4203_aa92_b8c407a00647" id="mwc587953d_ecde_4185_a690_fa1bac43e8ba" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_390e3228_7b5f_4ff0_b05c_8f5a7c9750dc" species="mw28f092b3_9243_4bd8_aa6f_cedef9e3a6b3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_04d7a3f7_d718_4217_a716_e83af94e2562" species="mwd3984f38_00c1_4e75_aead_6fe5b43b9a41"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw28f092b3_9243_4bd8_aa6f_cedef9e3a6b3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1ca04264_88cd_4b18_99fa_f82fdd9d170a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw61e12c13_e863_4418_bc96_821991d98273 </ci>
+                <ci> mw28f092b3_9243_4bd8_aa6f_cedef9e3a6b3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw0a76780f_c692_4028_8e13_15be7e4a3b3a </ci>
+                <ci> mw28f092b3_9243_4bd8_aa6f_cedef9e3a6b3 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_6d59e786_74f2_4ccb_a7f9_ebe691839e86" id="mw61e12c13_e863_4418_bc96_821991d98273" name="Vm47" value="0.01" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="fc37d5d5_00fc_4efe_8561_498f2d8e07e9" id="mw0a76780f_c692_4028_8e13_15be7e4a3b3a" name="Km47" value="0.06" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="a7e15b06_e6de_4ddc_9af6_218c3fbd9c51" id="mw631dedde_f7eb_4da9_86dd_db22930bbe43" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_02096abb_fb3b_4c0c_98a4_aefa1274f7d7" species="mw311fccb1_96a3_439d_ba48_67f4e88e6b73"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3c2f0fba_270a_4072_b572_b5e73425cf75" species="mw45eb5e42_e766_4d1f_9aa5_c613c1472548"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw311fccb1_96a3_439d_ba48_67f4e88e6b73"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_3b7e9048_a31a_4aad_bec3_1dfa203fd167">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw0078d8f6_46a0_4ef2_9820_bd75b3a76d04 </ci>
+              <ci> mw311fccb1_96a3_439d_ba48_67f4e88e6b73 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_38259fac_98e1_491f_8a9a_836fb9816a87" id="mw0078d8f6_46a0_4ef2_9820_bd75b3a76d04" name="Kf48" value="0.78" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="eeaeed23_0213_4e26_a98d_4a9e075854bc" id="mwa5e51834_2419_4f39_b5c8_aed9f3ae9c8e" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_5cadc5ab_1c93_4930_8e4f_0922682e8504" species="mw45eb5e42_e766_4d1f_9aa5_c613c1472548"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2d9ca190_7cd6_4c51_b65d_6c7c647b493e" species="mw48b8edd7_265d_40ce_b4b1_d698919f2147"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw45eb5e42_e766_4d1f_9aa5_c613c1472548"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b828ff9f_0044_4057_a1a0_10e029c24d03">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwd9c761be_e607_49b3_991c_6f0530542311 </ci>
+                <ci> mw45eb5e42_e766_4d1f_9aa5_c613c1472548 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw651e3327_b257_4df6_b693_697f41c5185b </ci>
+                <ci> mw45eb5e42_e766_4d1f_9aa5_c613c1472548 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_60a6cace_e527_4889_8127_8df416bf68ab" id="mwd9c761be_e607_49b3_991c_6f0530542311" name="Vm49" value="0.38" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="ea34ebea_9d4b_4e0d_b69e_8073dc5da567" id="mw651e3327_b257_4df6_b693_697f41c5185b" name="Km49" value="1.5" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_92ba6f48_e7bf_45bb_9777_d4791514e61e" id="mw64a01117_83ab_421e_be76_667acd750d50" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="fde35658_cfea_47d1_99e0_769efd6dd3c4" species="mw48b8edd7_265d_40ce_b4b1_d698919f2147"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_263a0140_78bc_4d84_8693_bfec26602b96" species="mwd3984f38_00c1_4e75_aead_6fe5b43b9a41"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw48b8edd7_265d_40ce_b4b1_d698919f2147"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ae63a4db_4866_43ef_ae45_705b14972086">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw07130740_ffb8_4cc5_90e1_ccb6bc9f5351 </ci>
+                <ci> mw48b8edd7_265d_40ce_b4b1_d698919f2147 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw6cd93aca_2d75_4299_ae77_1038cf4ecbf3 </ci>
+                <ci> mw48b8edd7_265d_40ce_b4b1_d698919f2147 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_5ddbd88e_4199_4103_b41c_0c5dc535035f" id="mw07130740_ffb8_4cc5_90e1_ccb6bc9f5351" name="Vm50" value="0.027" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_6a949d49_44fa_4a40_966c_5978cda0eb85" id="mw6cd93aca_2d75_4299_ae77_1038cf4ecbf3" name="Km50" value="0.56" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="cb71d183_4db5_4a5a_9abf_9747d8ec4259" id="mw5f5760e7_930c_4d01_99f9_72cb16a71d62" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="fc9b09c6_1306_418e_b0e0_980b26ba0d20" species="mwd3984f38_00c1_4e75_aead_6fe5b43b9a41"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_77c36c69_dc3c_4499_93f5_b8fa2ee2266d" species="mw52382c73_2da6_4835_9e4d_76377fc99ffe"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwd3984f38_00c1_4e75_aead_6fe5b43b9a41"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_2e13d99c_3a5d_4189_9679_da03ada2d182">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw6cf67369_ed2e_4903_a34b_893af9bfb917 </ci>
+                <ci> mwd3984f38_00c1_4e75_aead_6fe5b43b9a41 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw396318d4_7c48_4b72_8eda_50ed001dafaf </ci>
+                <ci> mwd3984f38_00c1_4e75_aead_6fe5b43b9a41 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_99625552_1411_474c_83c5_06f0e9ce131e" id="mw6cf67369_ed2e_4903_a34b_893af9bfb917" name="Vm51" value="3.5" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_770fe3a6_ef3f_4f1a_9a09_8dd4cdb59db3" id="mw396318d4_7c48_4b72_8eda_50ed001dafaf" name="Km51" value="4.1" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_12303c53_db34_4e67_9865_95413f631437" id="mwc9fe8ac3_bdeb_4203_9406_26adf62ba3a4" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_6958f406_7df5_46fb_bd98_de52399ab517" species="mw52382c73_2da6_4835_9e4d_76377fc99ffe"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="b2df41d5_c9cf_4b11_b350_47179aff8bec" species="mwc9492335_5ba3_4285_8ac4_d59cf43410d9"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw52382c73_2da6_4835_9e4d_76377fc99ffe"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c286aaf9_70c0_4ec3_a4bc_adb768d9317b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwebc051ca_234b_452f_9d73_e81e899d420b </ci>
+                <ci> mw52382c73_2da6_4835_9e4d_76377fc99ffe </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw1e0ae3c1_1f74_4a66_a208_4821ea527779 </ci>
+                <ci> mw52382c73_2da6_4835_9e4d_76377fc99ffe </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_0b5cb9be_a3cd_4ca7_83cb_e90112df91d7" id="mwebc051ca_234b_452f_9d73_e81e899d420b" name="Vm52" value="0.33" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_04d6ffea_bc65_47cb_98f5_5489863982e5" id="mw1e0ae3c1_1f74_4a66_a208_4821ea527779" name="Km52" value="2.6" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="e3326863_afc8_4985_b667_5a8744a8a398" id="mwccd60e15_1ee8_4c49_b994_308a1cce17bb" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="d7e51f23_a03d_434d_aa52_0a0bd043c9f8" species="mwc9492335_5ba3_4285_8ac4_d59cf43410d9"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e224a461_cd69_413e_926a_41a0f8eab456" species="mw200750a1_12a1_449b_a057_119a8b08429b"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwc9492335_5ba3_4285_8ac4_d59cf43410d9"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_90a7197a_9052_4486_9528_08aaa394ae08">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw002a87f6_4999_40e7_b09f_c48c52d0fe00 </ci>
+                <ci> mwc9492335_5ba3_4285_8ac4_d59cf43410d9 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw91ea8b6e_22db_4bff_943f_a461a92ee011 </ci>
+                <ci> mwc9492335_5ba3_4285_8ac4_d59cf43410d9 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_57f1dd5a_c184_4a5c_8cbb_185217650a87" id="mw002a87f6_4999_40e7_b09f_c48c52d0fe00" name="Vm53" value="2.18" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_343608d0_cc5c_416a_a2bd_699b8e64ce9b" id="mw91ea8b6e_22db_4bff_943f_a461a92ee011" name="Km53" value="3.6" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_6808c6df_cc4b_481e_b22f_2bbc5a05da65" id="mw86955418_6f39_4894_a427_0b0ad3242b0d" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_7174f990_67bb_45a8_a46d_77ba150a6ddb" species="mw200750a1_12a1_449b_a057_119a8b08429b"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_678b6b95_5b86_47de_b9a8_9397bfe3dc7b" species="mwc753e46c_8fc5_4702_8306_5cc366e33a31"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw200750a1_12a1_449b_a057_119a8b08429b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_84989cd7_094a_4ac4_9ab3_ed4b2986d62d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw045eb7b5_54d6_4d08_b19a_cd81e5cd9d80 </ci>
+                <ci> mw200750a1_12a1_449b_a057_119a8b08429b </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw3a26af9c_562d_4a65_8037_4911fb8f3a45 </ci>
+                <ci> mw200750a1_12a1_449b_a057_119a8b08429b </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="d5bae38d_fd63_4181_9153_312090f67040" id="mw045eb7b5_54d6_4d08_b19a_cd81e5cd9d80" name="Vm54" value="0.61" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_01c25fc7_ba9b_4c1a_8408_ba7ace2f9919" id="mw3a26af9c_562d_4a65_8037_4911fb8f3a45" name="Km54" value="3.4" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="d832f05e_97ee_4234_b20c_1116286e3fcb" id="mw077829cc_ecce_44be_a350_ec56cb95e37c" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="fd481284_7d7b_4a68_8aa7_7532cdda0640" species="mwc9fd6842_66be_454e_a3db_90acddbb7818"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_265ac5ec_0926_477c_80c7_6e93e7c847ac" species="mw59a56f43_44b1_40ca_8614_27b249c3b7df"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwc9fd6842_66be_454e_a3db_90acddbb7818"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_03b57650_b6b6_40bc_bd11_52c258431881">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwb1a4fe4d_dc36_4295_bbde_951373ca1080 </ci>
+              <ci> mwc9fd6842_66be_454e_a3db_90acddbb7818 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_3a7005c1_d0e3_455c_bba6_2659edd8ad75" id="mwb1a4fe4d_dc36_4295_bbde_951373ca1080" name="Kf55" value="0.41" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="ca971c41_71b5_4475_8916_ca6d0e25b617" id="mwdd777fce_f162_44b2_8162_448ae0cd789f" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_217ef756_e86e_4d0d_9fe1_607769dba3db" species="mw59a56f43_44b1_40ca_8614_27b249c3b7df"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ed594180_3cb3_485f_918b_c30149fce722" species="mw2b60f0f5_3e7e_4414_8179_f556e6411b8c"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw59a56f43_44b1_40ca_8614_27b249c3b7df"/>
+        </listOfModifiers>
+        <kineticLaw metaid="da9c1dc3_0b72_4ca3_83e5_3ed778cf3485">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw1b8060b6_613b_4e6c_aa25_b0c4d35d0f55 </ci>
+                <ci> mw59a56f43_44b1_40ca_8614_27b249c3b7df </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw8b9a6f5a_29f0_44ea_aa26_47b4b9f52c29 </ci>
+                <ci> mw59a56f43_44b1_40ca_8614_27b249c3b7df </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_7a2faf7e_0eaf_46e8_82bf_39b2cfff6d73" id="mw1b8060b6_613b_4e6c_aa25_b0c4d35d0f55" name="Vm56" value="0.48" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_3e0f7f7f_a341_4ab1_8317_09599702e99b" id="mw8b9a6f5a_29f0_44ea_aa26_47b4b9f52c29" name="Km56" value="1.4" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_1a5f6800_90e0_480a_8276_e37289e8d79e" id="mw95867351_28e2_4875_a450_123dffc17878" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="fe58a03c_d056_46d8_955a_400c132dbd3a" species="mw2b60f0f5_3e7e_4414_8179_f556e6411b8c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="bfa99a97_e906_4694_b2dd_0ff803d11ddb" species="mwd35b5a6c_a291_4d09_83ae_c4741b8e70e0"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw2b60f0f5_3e7e_4414_8179_f556e6411b8c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4a92a01e_4c81_4e14_9279_2b8dc9fa8012">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwc0924e67_43d7_4bb9_8055_8fcfcac8620c </ci>
+                <ci> mw2b60f0f5_3e7e_4414_8179_f556e6411b8c </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw7bad6032_f69a_4dea_b92a_45b04db157c2 </ci>
+                <ci> mw2b60f0f5_3e7e_4414_8179_f556e6411b8c </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_11c1d7bb_7ea3_4e87_bbe2_a82f703560d0" id="mwc0924e67_43d7_4bb9_8055_8fcfcac8620c" name="Vm57" value="1.2" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_867cd76c_2ba7_4df2_b94a_4b38fb59141b" id="mw7bad6032_f69a_4dea_b92a_45b04db157c2" name="Km57" value="4" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_8e2fd6cf_f095_4877_b9e7_f982047aedc4" id="mw6db7c403_9348_49e3_8342_ab07dec6397c" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_6f4b217c_1df0_46de_814d_a5716e4a8306" species="mwd35b5a6c_a291_4d09_83ae_c4741b8e70e0"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a98c3cb9_f6e4_4025_9481_7c5cf92b788a" species="mwc753e46c_8fc5_4702_8306_5cc366e33a31"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwd35b5a6c_a291_4d09_83ae_c4741b8e70e0"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9ebfacc8_1cd3_4888_989d_4c7b2cf19b2e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwd2c35fd4_a3d9_4a50_8201_ce5abcb1d408 </ci>
+                <ci> mwd35b5a6c_a291_4d09_83ae_c4741b8e70e0 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw3c8f2498_a492_4ced_89d3_c4df62eed45a </ci>
+                <ci> mwd35b5a6c_a291_4d09_83ae_c4741b8e70e0 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="a49d6f02_08c4_40cc_8ae0_dcd1e53c2998" id="mwd2c35fd4_a3d9_4a50_8201_ce5abcb1d408" name="Vm58" value="0.4" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_92b5bc1d_cf7c_4d6e_ab63_e14f95ab7797" id="mw3c8f2498_a492_4ced_89d3_c4df62eed45a" name="Km58" value="2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="a8d10c38_2391_455a_9aa3_c586e6806a85" id="mwd5a8eca7_dd66_4803_aee9_280beb83af62" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_9c2f534f_fe94_4093_9c6c_a07661b4271a" species="mw200750a1_12a1_449b_a057_119a8b08429b"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_789fa420_1b57_48d4_b5e8_d38b59c0688c" species="mwc4c0407b_9cc0_4fa2_9dac_d7333e85e4ab"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw200750a1_12a1_449b_a057_119a8b08429b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_59c8ae8b_8333_4ae6_8327_1c61a9a2bb03">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwae9b9776_f320_4e0c_995a_f7cfd83e7aaf </ci>
+                <ci> mw200750a1_12a1_449b_a057_119a8b08429b </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwecbf5689_e9e8_4200_b048_ecd61195f273 </ci>
+                <ci> mw200750a1_12a1_449b_a057_119a8b08429b </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_9c1da0c0_c8c2_4ed4_b100_2ccadab42598" id="mwae9b9776_f320_4e0c_995a_f7cfd83e7aaf" name="Vm59" value="0.12" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="c5ef19fe_3158_4cfd_b067_2db2f714916d" id="mwecbf5689_e9e8_4200_b048_ecd61195f273" name="Km59" value="3.2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_1a64fcd9_2449_403c_bdb3_f678bf19a770" id="mwe8b7aa51_f544_4b84_bb8d_9c9e84b95cd6" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="b2746303_93c2_4060_8496_68683c7b231c" species="mwbbb6dcea_041f_4e15_a536_ad38338827e4"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_017313f4_873b_4af1_8be3_5644944b0fad" species="mw83b7fb74_6820_47d6_8dc7_1c6fa865f296"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwbbb6dcea_041f_4e15_a536_ad38338827e4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_99f954bc_09a6_4da7_8aaa_dbb20508167e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw383c7e7e_3aeb_4680_af17_b4e3fc5b3b38 </ci>
+              <ci> mwbbb6dcea_041f_4e15_a536_ad38338827e4 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="f421f09f_509b_49fd_8cb2_a228cb564114" id="mw383c7e7e_3aeb_4680_af17_b4e3fc5b3b38" name="Kf60" value="0.135" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_10895911_ef31_44d6_9862_b142edd4fa8c" id="mw0695e2d7_fb88_4600_849b_821340926966" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_3b7e5a40_d4fe_46e6_98d4_a2be580f3c9e" species="mw83b7fb74_6820_47d6_8dc7_1c6fa865f296"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dd576d66_76fd_41dd_a400_041ae304a91e" species="mwdc638aeb_0b47_4212_a1dd_918ea2da0212"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw83b7fb74_6820_47d6_8dc7_1c6fa865f296"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ae50d01f_39db_47e8_90cb_f540ca8fb717">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwe0f74106_daa6_4154_bfdf_3f8f1649a0c5 </ci>
+                <ci> mw83b7fb74_6820_47d6_8dc7_1c6fa865f296 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw18c2857b_456a_4a0f_8560_3ddcc62ee026 </ci>
+                <ci> mw83b7fb74_6820_47d6_8dc7_1c6fa865f296 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_864011f0_6c6d_486c_be80_a07e2923aa69" id="mwe0f74106_daa6_4154_bfdf_3f8f1649a0c5" name="Vm61" value="0.078" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_66a38562_d271_42d8_bcfe_b2b297769979" id="mw18c2857b_456a_4a0f_8560_3ddcc62ee026" name="Km61" value="0.47" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="bd31655d_c872_4197_9954_fe87c78c3da0" id="mw6866e7e3_61e2_4563_a6fb_610aeaa51cf2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_454663a8_4604_41ba_8b5e_40d5cea81d16" species="mwdc638aeb_0b47_4212_a1dd_918ea2da0212"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1f96c7e9_4b64_4462_820d_b686905e81af" species="mw59a56f43_44b1_40ca_8614_27b249c3b7df"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwdc638aeb_0b47_4212_a1dd_918ea2da0212"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_90186561_c04e_4749_8c0c_b4b7a0ca56b3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mwba271af9_7bd1_4402_a0a4_8434229b2075 </ci>
+                <ci> mwdc638aeb_0b47_4212_a1dd_918ea2da0212 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwf48ee078_a319_469e_870c_04cc665959bb </ci>
+                <ci> mwdc638aeb_0b47_4212_a1dd_918ea2da0212 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_03242f64_42fd_4192_bfd9_25b22f3994c3" id="mwba271af9_7bd1_4402_a0a4_8434229b2075" name="Vm62" value="2.9" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="ce2e811f_7f1a_4399_b4f3_1af3589ae094" id="mwf48ee078_a319_469e_870c_04cc665959bb" name="Km62" value="0.487" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_1d7050cc_e2bd_4625_ab82_444a39cbdb18" id="mwd9bea392_1134_4eee_97d9_b19d0a7ef81f" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="bc292568_9438_4a1a_9679_0583ce55b5b3" species="mw59a56f43_44b1_40ca_8614_27b249c3b7df"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a5893195_84c2_4b60_91f5_78ec53b3f084" species="mw84260725_e9f3_4867_b521_43b35d0f7ca9"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw59a56f43_44b1_40ca_8614_27b249c3b7df"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_848f0213_caa3_4133_bc93_1b1b0712ab38">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw5b2bfd85_435e_475b_afef_aedb02be7749 </ci>
+                <ci> mw59a56f43_44b1_40ca_8614_27b249c3b7df </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwc68886a4_6ae4_42ce_b264_999592c06eb8 </ci>
+                <ci> mw59a56f43_44b1_40ca_8614_27b249c3b7df </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_6947d6de_3d1d_4245_8f2e_3fc4ee3a9b7b" id="mw5b2bfd85_435e_475b_afef_aedb02be7749" name="Vm63" value="1" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_7491b53d_68f5_4aa0_ab1a_8e5762fd36d3" id="mwc68886a4_6ae4_42ce_b264_999592c06eb8" name="Km63" value="2.2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_1872755e_b02a_487a_a976_99ff7f90864c" id="mw2b2f38e0_a265_45ba_b6f9_5ac00f47cb05" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="a6fe7f97_8279_4d0a_a760_cbba46276364" species="mw84260725_e9f3_4867_b521_43b35d0f7ca9"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a1c350fd_d527_4285_9e91_773a0e7093f9" species="mwcf6d77b9_4f94_4cdc_9988_97e570b85ad1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw84260725_e9f3_4867_b521_43b35d0f7ca9"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_8caa55d2_e18d_4473_9cf5_841fcaadd287">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw7f54575d_9529_47cc_ba3c_c90391f4cce6 </ci>
+              <ci> mw84260725_e9f3_4867_b521_43b35d0f7ca9 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="a6e5cf84_318f_4b0d_b1a2_55418d0e354b" id="mw7f54575d_9529_47cc_ba3c_c90391f4cce6" name="Kf64" value="0.104" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_7b57d551_959a_4820_beef_b870aa84f7af" id="mw2978fca9_d11a_4c5a_8aa2_4b93f53f119c" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="db936db4_8da2_47c9_a8bd_7f95ebdea3f3" species="mwcf6d77b9_4f94_4cdc_9988_97e570b85ad1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d0badc2d_9c25_4857_abcb_8ab3a9c3c41f" species="mw9e3b1d43_8855_4105_9daa_032e54d4015a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwcf6d77b9_4f94_4cdc_9988_97e570b85ad1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_2ea7508d_07ee_489e_934e_d8f0d0192c81">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwbccc850b_79dc_4dc4_a11d_d5b3e3fcd281 </ci>
+              <ci> mwcf6d77b9_4f94_4cdc_9988_97e570b85ad1 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="dc741e06_2b05_4169_b5aa_a96e04608f9f" id="mwbccc850b_79dc_4dc4_a11d_d5b3e3fcd281" name="Kf65" value="0.07" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_9fbd6e8c_fe9d_400c_b071_ae9f10f63ce7" id="mw75436f70_1ab5_4d05_baf8_13810579318a" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="e34c4c00_651d_4385_942a_3a4a22378c4d" species="mwdc638aeb_0b47_4212_a1dd_918ea2da0212"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d222d154_66d1_4ee1_b6bc_383da3f30f8d" species="mw4a5a8c20_aac7_45ad_bce5_732262d8e390"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwdc638aeb_0b47_4212_a1dd_918ea2da0212"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_2fdddcde_97d7_48ff_b4a9_666156077e31">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw434b204a_1e3c_4f3b_9583_00bf1d9b0fe0 </ci>
+                <ci> mwdc638aeb_0b47_4212_a1dd_918ea2da0212 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw8b9248f1_45c1_4a8c_a52b_04b1ccbc277a </ci>
+                <ci> mwdc638aeb_0b47_4212_a1dd_918ea2da0212 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_51989ca5_a512_4051_b342_c572000cb411" id="mw434b204a_1e3c_4f3b_9583_00bf1d9b0fe0" name="Vm66" value="0.018" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_284d5044_f614_49ad_8a98_ad4cd0b278c9" id="mw8b9248f1_45c1_4a8c_a52b_04b1ccbc277a" name="Km66" value="0.005" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_6dd747cb_2c57_486c_9257_0007ef9966ea" id="mwa77c0012_f7b6_41e7_aba4_5e930ab25ff8" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="df68ddbb_1458_4fc5_9f7a_af07c96758f4" species="mw4a5a8c20_aac7_45ad_bce5_732262d8e390"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="daf142db_331e_4664_b81c_9cb16205ab74" species="mwc753e46c_8fc5_4702_8306_5cc366e33a31"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw4a5a8c20_aac7_45ad_bce5_732262d8e390"/>
+        </listOfModifiers>
+        <kineticLaw metaid="a6009fd7_1b1d_4157_afb2_c5c9b5251953">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw71e1707b_a135_4efa_abfe_3d26e83d7fb5 </ci>
+                <ci> mw4a5a8c20_aac7_45ad_bce5_732262d8e390 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw6bd491fb_2d1b_4728_8302_004c4d2184fc </ci>
+                <ci> mw4a5a8c20_aac7_45ad_bce5_732262d8e390 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="bf0c341c_26b9_44fe_ba3f_9b4262903bcc" id="mw71e1707b_a135_4efa_abfe_3d26e83d7fb5" name="Vm67" value="3.35" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="b79bed05_8ec1_4a0a_8807_e6c0cc0fac7e" id="mw6bd491fb_2d1b_4728_8302_004c4d2184fc" name="Km67" value="1.23" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_30c0aa2b_fbf8_4699_8556_104d55cb7cea" id="mw03190446_58eb_4487_800a_940d071722aa" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_496a81c7_3b85_464b_9056_8c2d1ebd645f" species="mwc753e46c_8fc5_4702_8306_5cc366e33a31"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_21ea8bd4_c992_41bf_8813_feae4bd9132e" species="mw9e3b1d43_8855_4105_9daa_032e54d4015a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwc753e46c_8fc5_4702_8306_5cc366e33a31"/>
+        </listOfModifiers>
+        <kineticLaw metaid="df643a8e_808b_4a7c_ae7b_9edcc93e5ebf">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw26d1e0a7_668d_4fe5_81b5_edd8fd16bfc6 </ci>
+                <ci> mwc753e46c_8fc5_4702_8306_5cc366e33a31 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw1782ec1d_d1da_43d4_a41f_fb9b60ef7d06 </ci>
+                <ci> mwc753e46c_8fc5_4702_8306_5cc366e33a31 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_54ad6b2e_daa8_4ce7_87fb_1c1f2ff317cb" id="mw26d1e0a7_668d_4fe5_81b5_edd8fd16bfc6" name="Vm68" value="1.09" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_5b3f9b50_fba8_490c_90e2_a1daf744e59c" id="mw1782ec1d_d1da_43d4_a41f_fb9b60ef7d06" name="Km68" value="3.6" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_5dca6b44_08b4_4a37_86d2_311963b2b95e" id="mwb4411867_c7ae_48c3_bd11_5820504d1fa8" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="ce956e98_7e36_4175_859a_efd6463db06f" species="mw9e3b1d43_8855_4105_9daa_032e54d4015a"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_309f3065_76ca_40e6_af99_6aff45c06555" species="mw1153dbec_2f78_48c6_95c2_3b6bc91ee6b2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw9e3b1d43_8855_4105_9daa_032e54d4015a"/>
+        </listOfModifiers>
+        <kineticLaw metaid="cdd70b8e_c798_4054_aa46_382ce6a69824">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw00564bcc_4cac_4f02_84cc_30eaa44d8d47 </ci>
+                <ci> mw9e3b1d43_8855_4105_9daa_032e54d4015a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw4a759902_8cc3_4497_8126_8c96e7f33291 </ci>
+                <ci> mw9e3b1d43_8855_4105_9daa_032e54d4015a </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_0210e4ed_513a_43d6_a075_ff622ddb7aea" id="mw00564bcc_4cac_4f02_84cc_30eaa44d8d47" name="Vm69" value="2.964" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="a994fa06_fad5_4216_a0fe_352cc3128084" id="mw4a759902_8cc3_4497_8126_8c96e7f33291" name="Km69" value="9.8" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_63bf4c7c_a353_4d96_977c_94a97f48583c" id="mwb6768a3c_5b8a_460b_bd11_3315139bd805" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="ce086ea5_9d4e_4713_aea0_032b9ba9e883" species="mw1153dbec_2f78_48c6_95c2_3b6bc91ee6b2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_871e5245_0e4b_4a93_a978_b2604b6d76eb" species="mw37aed6bd_57c1_480a_a95e_2abb24130e8b"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw1153dbec_2f78_48c6_95c2_3b6bc91ee6b2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d15599cd_08bf_4599_905d_70792e75cd5e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw9ad8ac53_863a_4a07_af87_32f25b61d791 </ci>
+                <ci> mw1153dbec_2f78_48c6_95c2_3b6bc91ee6b2 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mw226fa9e4_2a5c_4e21_9db8_994bb45214f7 </ci>
+                <ci> mw1153dbec_2f78_48c6_95c2_3b6bc91ee6b2 </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_3fb5d448_9f07_45dd_9c4a_41496cd8aba1" id="mw9ad8ac53_863a_4a07_af87_32f25b61d791" name="Vm70" value="0.25" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="b6c1d69a_3275_4954_956a_d396d66892d3" id="mw226fa9e4_2a5c_4e21_9db8_994bb45214f7" name="Km70" value="0.2" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_32b59df8_698d_46e6_8b0b_d8aac02a774f" id="mwc7b8061c_0d57_4d2f_9aec_737f1dcb6300" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_5dfc7e7a_f124_46b7_bbc6_558dc8118aef" species="mw37aed6bd_57c1_480a_a95e_2abb24130e8b"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_456803b1_1ca2_4db5_a033_58978d902494" species="mw6ea337f1_d5b7_4ac5_abb8_423c3054ec6a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw37aed6bd_57c1_480a_a95e_2abb24130e8b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9dda4420_5343_4f31_89d5_307827a35444">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw81088343_8183_4a41_b399_161f499c9c9a </ci>
+                <ci> mw37aed6bd_57c1_480a_a95e_2abb24130e8b </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwcfe818d6_5d9a_4c1d_9d18_21e9d10db08d </ci>
+                <ci> mw37aed6bd_57c1_480a_a95e_2abb24130e8b </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_2c5513b6_c34f_4d12_b10e_839b9fde243f" id="mw81088343_8183_4a41_b399_161f499c9c9a" name="Vm71" value="0.69" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_23bb3c67_fe0d_4dd5_869b_9b39fdb123bc" id="mwcfe818d6_5d9a_4c1d_9d18_21e9d10db08d" name="Km71" value="3.48" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="b5d2d8b6_04c3_4021_8334_4fc749b6de82" id="mw74d5f274_0cc3_41f1_a1ab_1171dddecf92" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="fc1861ad_de12_4bc2_b937_be31f47de4d3" species="mw6ea337f1_d5b7_4ac5_abb8_423c3054ec6a"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_399b96e6_c2b3_493e_a88c_856dfd67442e" species="mwe0fc95b3_77c3_46a4_8b15_cab561007ae2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw6ea337f1_d5b7_4ac5_abb8_423c3054ec6a"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_997ed1e2_0e75_4e80_8463_26142e1f2425">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> mw622125da_dd97_44f1_b8c0_4911102c5e46 </ci>
+                <ci> mw6ea337f1_d5b7_4ac5_abb8_423c3054ec6a </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> mwce586106_fc6e_4241_b1df_a7583b952bec </ci>
+                <ci> mw6ea337f1_d5b7_4ac5_abb8_423c3054ec6a </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="c3d6c54e_52c8_48b3_8a80_553e4a834bd6" id="mw622125da_dd97_44f1_b8c0_4911102c5e46" name="Vm72" value="0.077" units="MWDERIVEDUNIT_nanomole__second"/>
+            <parameter metaid="_4f2928c1_098b_4fba_83c0_8c81781a4e3b" id="mwce586106_fc6e_4241_b1df_a7583b952bec" name="Km72" value="2.8" units="MWBUILTINPREFIX_nano_MWBUILTINUNIT_mole"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="f128c696_aca2_4aa3_b887_43e34f4dfdad" id="mw01b2f331_860d_4bb2_b90c_7e22e74773f1" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_7db34660_cb4c_4de0_82e3_28e3359a0db5" species="mwe0fc95b3_77c3_46a4_8b15_cab561007ae2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7f7222d6_a9e2_4854_91f2_d7015f44465a" species="mw2412ee7b_8057_42fb_afe9_bed216a92367"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mwe0fc95b3_77c3_46a4_8b15_cab561007ae2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ba4bdb0a_b295_4265_8332_86a5693cfa0f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwbe515eca_14f4_4d94_a7ad_c359f327bf62 </ci>
+              <ci> mwe0fc95b3_77c3_46a4_8b15_cab561007ae2 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="_6bc32457_3ffa_45a0_bf39_a8272fe0a79f" id="mwbe515eca_14f4_4d94_a7ad_c359f327bf62" name="Kf73" value="0.987" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="_3b4b7a02_8c3f_4f01_b05f_c848c336244d" id="mw7e1f997c_b8ca_4998_b8bc_0856d4e06b59" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="a399c725_31ec_4e28_95d2_d94bc46b9b28" species="mw2412ee7b_8057_42fb_afe9_bed216a92367"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_062f817d_9ca1_4a73_9c42_6acce3d3445f" species="mw02b2de67_caaf_4e23_a554_d473d7fff31a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw2412ee7b_8057_42fb_afe9_bed216a92367"/>
+        </listOfModifiers>
+        <kineticLaw metaid="a708487d_8df7_41b3_88ac_e06865c3797e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mwa0ee919a_faf6_4df8_87ac_fb5fb904ad35 </ci>
+              <ci> mw2412ee7b_8057_42fb_afe9_bed216a92367 </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="b6833f61_2152_4739_b850_7b7a23413af7" id="mwa0ee919a_faf6_4df8_87ac_fb5fb904ad35" name="Kf74" value="0.072" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="c8792faf_7a57_4dda_b453_5dd3cbbea636" id="mw33115a9e_70e9_4f1b_9a1d_f879f434242b" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="_17fdc3e6_ea2c_47ef_94ff_2a9b70896c15" species="mw02b2de67_caaf_4e23_a554_d473d7fff31a"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_064345d1_7c6b_434a_ae4c_a923d1476aaa" species="mw9635ddd6_5252_48e8_b38c_d537ca35a8ec"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="mw02b2de67_caaf_4e23_a554_d473d7fff31a"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_73bdcb7f_8ee6_447a_a9fc_22bc9a19e3cf">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> mw45d106b2_f791_40c2_9cad_0a2033495761 </ci>
+              <ci> mw02b2de67_caaf_4e23_a554_d473d7fff31a </ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter metaid="c7bab1e3_c02a_4268_b1bb_a97e19885d5f" id="mw45d106b2_f791_40c2_9cad_0a2033495761" name="Kf75" value="0.018" units="MWDERIVEDUNIT_1__second"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

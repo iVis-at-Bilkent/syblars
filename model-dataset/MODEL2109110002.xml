@@ -1,0 +1,2946 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model id="Coletti2020___QSP_model_of_prostate_cancer_immunotherapy" metaid="COPASI0" name="Coletti2020 - QSP model of prostate cancer immunotherapy">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <pre>This model is based on the publication:
+Coletti R, Leonardelli L, Parolo S, Marchetti L. A QSP model of prostate cancer immunotherapy to identify effective combination therapies. Sci Rep. 2020 Jun 3;10(1):9063. doi: 10.1038/s41598-020-65590-0
+
+Comment:
+Eq. 3 - no listed species "R", therefore based on Eq. 1 and 2, R_2 used instead.
+Eq. 12 - no listed parameter "a_Df" in Table S1, a_Dc used based on parameter description.
+
+Curation Comment:
+Simulations are not reproducing manuscript plots. Matlab code is available (Supplementary File 2 of the manuscript publication) but has not been tested, so would be worth reattempting model curation.
+</pre>
+      </body>
+    </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#COPASI0">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Chen</vCard:Family>
+	<vCard:Given>Emilia</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>eblc2@cam.ac.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>University of Cambridge</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2021-07-23T15:03:49Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2021-07-23T15:03:49Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqbiol:isPropertyOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/ncit/C15438"/>
+	</rdf:Bag>
+	</bqbiol:isPropertyOf>
+	<bqbiol:hasTaxon>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+	</rdf:Bag>
+	</bqbiol:hasTaxon>
+	<bqbiol:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/32493951"/>
+	</rdf:Bag>
+	</bqbiol:isDescribedBy>
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0002837"/>
+	<rdf:li rdf:resource="http://identifiers.org/doid/DOID:10283"/>
+	<rdf:li rdf:resource="http://identifiers.org/ncit/C94604"/>
+	<rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	</rdf:Description>
+	
+	
+	
+      </rdf:RDF>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:CopasiMT="http://www.copasi.org/RDF/MiriamTerms#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+          <rdf:Description rdf:about="#COPASI0">
+            <bqbiol:hasProperty rdf:resource="urn:miriam:doid:DOID:10283"/>
+            <bqbiol:hasProperty rdf:resource="urn:miriam:go:GO:0002837"/>
+            <bqbiol:hasProperty rdf:resource="urn:miriam:mamo:MAMO_0000019"/>
+            <bqbiol:hasProperty rdf:resource="urn:miriam:mamo:MAMO_0000020"/>
+            <bqbiol:hasProperty rdf:resource="urn:miriam:mamo:MAMO_0000046"/>
+            <bqbiol:hasProperty rdf:resource="urn:miriam:ncit:C94604"/>
+            <bqbiol:hasTaxon rdf:resource="urn:miriam:taxonomy:9606"/>
+            <bqbiol:isPropertyOf rdf:resource="urn:miriam:ncit:C15438"/>
+            <dcterms:bibliographicCitation>
+              <rdf:Description>
+                <CopasiMT:isDescribedBy rdf:resource="urn:miriam:pubmed:32493951"/>
+              </rdf:Description>
+            </dcterms:bibliographicCitation>
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2021-07-23T15:03:49Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>eblc2@cam.ac.uk</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Chen</vCard:Family>
+                    <vCard:Given>Emilia</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>University of Cambridge</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    </annotation>
+      <listOfFunctionDefinitions>
+      <functionDefinition id="Rate_Law_for_Treg_increase" metaid="COPASI108" name="Rate Law for Treg_increase">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_DR </ci>
+            </bvar>
+            <bvar>
+              <ci> D_m </ci>
+            </bvar>
+            <bvar>
+              <ci> a_IR </ci>
+            </bvar>
+            <bvar>
+              <ci> I_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> p_R </ci>
+            </bvar>
+            <bvar>
+              <ci> m_R </ci>
+            </bvar>
+            <bvar>
+              <ci> R_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> a_XR </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> X_2 </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> a_DR </ci>
+                <ci> D_m </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> a_IR </ci>
+                <ci> I_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> p_R </ci>
+                <ci> m_R </ci>
+                <ci> R_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> a_XR </ci>
+                <apply>
+                  <plus/>
+                  <ci> X_1 </ci>
+                  <ci> X_2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Treg_death_inactivation" metaid="COPASI109" name="Rate Law for Treg_death_inactivation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_R </ci>
+            </bvar>
+            <bvar>
+              <ci> R_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_antiRR </ci>
+            </bvar>
+            <bvar>
+              <ci> AR </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_R </ci>
+                <ci> R_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_antiRR </ci>
+                <ci> AR </ci>
+                <ci> R_2 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_IL_2_production" metaid="COPASI110" name="Rate Law for IL-2_production">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_CI </ci>
+            </bvar>
+            <bvar>
+              <ci> C_2 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> a_CI </ci>
+              <ci> C_2 </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Androgen_proliferation" metaid="COPASI111" name="Rate Law for Androgen_proliferation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> A </ci>
+            </bvar>
+            <bvar>
+              <ci> lambda_A </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> lambda_A </ci>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> A </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Androgen_depletion" metaid="COPASI112" name="Rate Law for Androgen_depletion">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> lambda_A </ci>
+            </bvar>
+            <bvar>
+              <ci> Boolean_CX </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> lambda_A </ci>
+              <ci> Boolean_CX </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_CTLs_lymphoid_increase" metaid="COPASI113" name="Rate Law for CTLs_lymphoid_increase">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_Df </ci>
+            </bvar>
+            <bvar>
+              <ci> D_f </ci>
+            </bvar>
+            <bvar>
+              <ci> a_IC </ci>
+            </bvar>
+            <bvar>
+              <ci> C_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> I_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> s_I </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> a_Df </ci>
+                <ci> D_f </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> a_IC </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> C_1 </ci>
+                    <ci> I_1 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> s_I </ci>
+                    <ci> I_1 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Treg_lymphoid_proliferation" metaid="COPASI114" name="Rate Law for Treg_lymphoid_proliferation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_DrR </ci>
+            </bvar>
+            <bvar>
+              <ci> D_r </ci>
+            </bvar>
+            <bvar>
+              <ci> a_IR </ci>
+            </bvar>
+            <bvar>
+              <ci> I_1 </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> a_DrR </ci>
+                <ci> D_r </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> a_IR </ci>
+                <ci> I_1 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_CTLs_lymphoid_transformation" metaid="COPASI115" name="Rate Law for CTLs_lymphoid_transformation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_DfDr </ci>
+            </bvar>
+            <bvar>
+              <ci> D_f </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> a_DfDr </ci>
+              <ci> D_f </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_MDSC_increase" metaid="COPASI116" name="Rate Law for MDSC_increase">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> rho_M </ci>
+            </bvar>
+            <bvar>
+              <ci> a_XM </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> X_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> s_M </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <ci> rho_M </ci>
+              <apply>
+                <times/>
+                <ci> a_XM </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <plus/>
+                    <ci> X_1 </ci>
+                    <ci> X_2 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> s_M </ci>
+                    <ci> X_1 </ci>
+                    <ci> X_2 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_CTLs_migration_lymphoid" metaid="COPASI117" name="Rate Law for CTLs_migration_lymphoid">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> p_D </ci>
+            </bvar>
+            <bvar>
+              <ci> m_D </ci>
+            </bvar>
+            <bvar>
+              <ci> D_m </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> p_D </ci>
+              <ci> m_D </ci>
+              <ci> D_m </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_ADPC_death" metaid="COPASI118" name="Rate Law for ADPC_death">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> A </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_CX </ci>
+            </bvar>
+            <bvar>
+              <ci> delta_ICB </ci>
+            </bvar>
+            <bvar>
+              <ci> ICB </ci>
+            </bvar>
+            <bvar>
+              <ci> C_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_NX </ci>
+            </bvar>
+            <bvar>
+              <ci> k_RN </ci>
+            </bvar>
+            <bvar>
+              <ci> R_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_MN </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <bvar>
+              <ci> N </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_1 </ci>
+                <apply>
+                  <minus/>
+                  <cn> 1 </cn>
+                  <ci> A </ci>
+                </apply>
+                <ci> X_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_CX </ci>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <times/>
+                    <ci> delta_ICB </ci>
+                    <ci> ICB </ci>
+                  </apply>
+                </apply>
+                <ci> C_2 </ci>
+                <ci> X_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_NX </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <exponentiale/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> k_RN </ci>
+                      </apply>
+                      <ci> R_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <exponentiale/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> k_MN </ci>
+                      </apply>
+                      <ci> M </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> N </ci>
+                <ci> X_1 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_ADPC_mutation" metaid="COPASI119" name="Rate Law for ADPC_mutation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> r_M </ci>
+            </bvar>
+            <bvar>
+              <ci> A </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> r_M </ci>
+              <apply>
+                <minus/>
+                <cn> 1 </cn>
+                <ci> A </ci>
+              </apply>
+              <ci> X_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_CTLs_inhibition_death" metaid="COPASI120" name="Rate Law for CTLs_inhibition_death">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> k_RC </ci>
+            </bvar>
+            <bvar>
+              <ci> R_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> C_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_MC </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <bvar>
+              <ci> mu_C </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k_RC </ci>
+                <ci> R_2 </ci>
+                <ci> C_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_MC </ci>
+                <ci> M </ci>
+                <ci> C_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> mu_C </ci>
+                <ci> C_2 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_DCs_mature_increase" metaid="COPASI121" name="Rate Law for DCs_mature_increase">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_VD </ci>
+            </bvar>
+            <bvar>
+              <ci> V </ci>
+            </bvar>
+            <bvar>
+              <ci> a_XD </ci>
+            </bvar>
+            <bvar>
+              <ci> mu_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> A </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> mu_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> X_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_CX </ci>
+            </bvar>
+            <bvar>
+              <ci> delta_ICB </ci>
+            </bvar>
+            <bvar>
+              <ci> ICB </ci>
+            </bvar>
+            <bvar>
+              <ci> C_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_NX </ci>
+            </bvar>
+            <bvar>
+              <ci> k_RN </ci>
+            </bvar>
+            <bvar>
+              <ci> R_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_MN </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <bvar>
+              <ci> N </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> a_VD </ci>
+                <ci> V </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> a_XD </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> mu_1 </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> A </ci>
+                    </apply>
+                    <ci> X_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> mu_2 </ci>
+                    <ci> X_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> k_CX </ci>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <times/>
+                        <ci> delta_ICB </ci>
+                        <ci> ICB </ci>
+                      </apply>
+                    </apply>
+                    <ci> C_2 </ci>
+                    <apply>
+                      <plus/>
+                      <ci> X_1 </ci>
+                      <ci> X_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> k_NX </ci>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <exponentiale/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> k_RN </ci>
+                          </apply>
+                          <ci> R_2 </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <exponentiale/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> k_MN </ci>
+                          </apply>
+                          <ci> M </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> N </ci>
+                    <apply>
+                      <plus/>
+                      <ci> X_1 </ci>
+                      <ci> X_2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_MDSC_death_inactivation" metaid="COPASI122" name="Rate Law for MDSC_death_inactivation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_M </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <bvar>
+              <ci> k_antiMM </ci>
+            </bvar>
+            <bvar>
+              <ci> AM </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_M </ci>
+                <ci> M </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_antiMM </ci>
+                <ci> AM </ci>
+                <ci> M </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_ADPC_proliferation" metaid="COPASI123" name="Rate Law for ADPC_proliferation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> r_p1 </ci>
+            </bvar>
+            <bvar>
+              <ci> A </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> r_p1 </ci>
+              <ci> A </ci>
+              <ci> X_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_NK_cell_death_inhibition" metaid="COPASI124" name="Rate Law for NK_cell_death_inhibition">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_N </ci>
+            </bvar>
+            <bvar>
+              <ci> N </ci>
+            </bvar>
+            <bvar>
+              <ci> k_XN </ci>
+            </bvar>
+            <bvar>
+              <ci> X_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> X_2 </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_N </ci>
+                <ci> N </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_XN </ci>
+                <ci> N </ci>
+                <apply>
+                  <plus/>
+                  <ci> X_1 </ci>
+                  <ci> X_2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_CTLs_lymphoid_decrease" metaid="COPASI125" name="Rate Law for CTLs_lymphoid_decrease">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> m_C </ci>
+            </bvar>
+            <bvar>
+              <ci> C_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_RC </ci>
+            </bvar>
+            <bvar>
+              <ci> R_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> mu_C </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> m_C </ci>
+                <ci> C_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_RC </ci>
+                <ci> R_1 </ci>
+                <ci> C_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> mu_C </ci>
+                <ci> C_1 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_CTLs_increase" metaid="COPASI126" name="Rate Law for CTLs_increase">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_DC </ci>
+            </bvar>
+            <bvar>
+              <ci> D_m </ci>
+            </bvar>
+            <bvar>
+              <ci> a_IC </ci>
+            </bvar>
+            <bvar>
+              <ci> C_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> I_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> p_C </ci>
+            </bvar>
+            <bvar>
+              <ci> m_C </ci>
+            </bvar>
+            <bvar>
+              <ci> C_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> s_I </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> a_DC </ci>
+                <ci> D_m </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> a_IC </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> C_2 </ci>
+                    <ci> I_2 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> s_I </ci>
+                    <ci> I_2 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> p_C </ci>
+                <ci> m_C </ci>
+                <ci> C_1 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_IL_2_degradation" metaid="COPASI127" name="Rate Law for IL-2_degradation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_I </ci>
+            </bvar>
+            <bvar>
+              <ci> I_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_antiIl </ci>
+            </bvar>
+            <bvar>
+              <ci> AI </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_I </ci>
+                <ci> I_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_antiIl </ci>
+                <ci> AI </ci>
+                <ci> I_2 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_AIPC_proliferation" metaid="COPASI128" name="Rate Law for AIPC_proliferation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> r_p2 </ci>
+            </bvar>
+            <bvar>
+              <ci> X_2 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> r_p2 </ci>
+              <ci> X_2 </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_AIPC_death" metaid="COPASI129" name="Rate Law for AIPC_death">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> X_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_CX </ci>
+            </bvar>
+            <bvar>
+              <ci> delta_ICB </ci>
+            </bvar>
+            <bvar>
+              <ci> ICB </ci>
+            </bvar>
+            <bvar>
+              <ci> C_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_NX </ci>
+            </bvar>
+            <bvar>
+              <ci> k_RN </ci>
+            </bvar>
+            <bvar>
+              <ci> R_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_MN </ci>
+            </bvar>
+            <bvar>
+              <ci> M </ci>
+            </bvar>
+            <bvar>
+              <ci> N </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_2 </ci>
+                <ci> X_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_CX </ci>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <times/>
+                    <ci> delta_ICB </ci>
+                    <ci> ICB </ci>
+                  </apply>
+                </apply>
+                <ci> C_2 </ci>
+                <ci> X_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_NX </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <exponentiale/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> k_RN </ci>
+                      </apply>
+                      <ci> R_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <exponentiale/>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> k_MN </ci>
+                      </apply>
+                      <ci> M </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> N </ci>
+                <ci> X_2 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_NK_cell_proliferation" metaid="COPASI130" name="Rate Law for NK_cell_proliferation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> rho__N </ci>
+            </bvar>
+            <bvar>
+              <ci> a_IN </ci>
+            </bvar>
+            <bvar>
+              <ci> N </ci>
+            </bvar>
+            <bvar>
+              <ci> I_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> s_N </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <ci> rho__N </ci>
+              <apply>
+                <times/>
+                <ci> a_IN </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> N </ci>
+                    <ci> I_2 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> s_N </ci>
+                    <ci> I_2 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_IL_2_lymphoid_degradation" metaid="COPASI131" name="Rate Law for IL-2_lymphoid_degradation">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> mu_I </ci>
+            </bvar>
+            <bvar>
+              <ci> I_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> k_antiI </ci>
+            </bvar>
+            <bvar>
+              <ci> AI </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> mu_I </ci>
+                <ci> I_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_antiI </ci>
+                <ci> AI </ci>
+                <ci> I_1 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_Treg_lymphoid_decrease" metaid="COPASI132" name="Rate Law for Treg_lymphoid_decrease">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> m_R </ci>
+            </bvar>
+            <bvar>
+              <ci> R_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> mu_R </ci>
+            </bvar>
+            <bvar>
+              <ci> k_antiRR </ci>
+            </bvar>
+            <bvar>
+              <ci> AR </ci>
+            </bvar>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> m_R </ci>
+                <ci> R_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> mu_R </ci>
+                <ci> R_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_antiRR </ci>
+                <ci> AR </ci>
+                <ci> R_1 </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Rate_Law_for_IL_2_lymphoid_production" metaid="COPASI133" name="Rate Law for IL-2_lymphoid_production">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> a_CI </ci>
+            </bvar>
+            <bvar>
+              <ci> C_1 </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> a_CI </ci>
+              <ci> C_1 </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="length" name="length">
+        <listOfUnits>
+          <unit exponent="1" kind="metre" multiplier="1" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area" name="area">
+        <listOfUnits>
+          <unit exponent="2" kind="metre" multiplier="1" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume" name="volume">
+        <listOfUnits>
+          <unit exponent="1" kind="litre" multiplier="1" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit exponent="1" kind="second" multiplier="86400" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit exponent="1" kind="item" multiplier="1" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment constant="true" id="Prostate_gland" metaid="COPASI1" name="Prostate_gland" size="1" spatialDimensions="3">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+      <compartment constant="true" id="Lymphoid_tissue" metaid="COPASI2" name="Lymphoid_tissue" size="1" spatialDimensions="3">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="X_1" initialConcentration="1" metaid="COPASI3" name="X_1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="X_2" initialConcentration="0" metaid="COPASI4" name="X_2">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="A" initialConcentration="1" metaid="COPASI5" name="A">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="D_m" initialConcentration="1" metaid="COPASI6" name="D_m">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="V" initialConcentration="0" metaid="COPASI7" name="V">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="C_2" initialConcentration="1" metaid="COPASI8" name="C_2">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="I_2" initialConcentration="1" metaid="COPASI9" name="I_2">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="N" initialConcentration="1" metaid="COPASI10" name="N">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="R_2" initialConcentration="1" metaid="COPASI11" name="R_2">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="M" initialConcentration="1" metaid="COPASI12" name="M">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Lymphoid_tissue" constant="false" id="D_f" initialConcentration="1" metaid="COPASI13" name="D_f">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Lymphoid_tissue" constant="false" id="D_r" initialConcentration="1" metaid="COPASI14" name="D_r">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Lymphoid_tissue" constant="false" id="C_1" initialConcentration="1" metaid="COPASI15" name="C_1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Lymphoid_tissue" constant="false" id="R_1" initialConcentration="1" metaid="COPASI16" name="R_1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Lymphoid_tissue" constant="false" id="I_1" initialConcentration="1" metaid="COPASI17" name="I_1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="AI" initialConcentration="0" metaid="COPASI18" name="AI">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="AR" initialConcentration="0" metaid="COPASI19" name="AR">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="AM" initialConcentration="0" metaid="COPASI20" name="AM">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Prostate_gland" constant="false" id="ICB" initialConcentration="0" metaid="COPASI21" name="ICB">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="Prostate_gland" constant="false" id="Tumor" initialConcentration="1" metaid="COPASI22" name="Tumor">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter constant="true" id="a_CI" metaid="COPASI23" name="a_CI" value="0.0584">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_DC" metaid="COPASI24" name="a_DC" value="0.424">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_DfDr" metaid="COPASI25" name="a_DfDr" value="0.0143">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_DR" metaid="COPASI26" name="a_DR" value="0.106">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_DrR" metaid="COPASI27" name="a_DrR" value="0.0675">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_IC" metaid="COPASI28" name="a_IC" value="770">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_IN" metaid="COPASI29" name="a_IN" value="0.0743">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_IR" metaid="COPASI30" name="a_IR" value="0.0506">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_VD" metaid="COPASI31" name="a_VD" value="0.808">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_XD" metaid="COPASI32" name="a_XD" value="0.273">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI32"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_XM" metaid="COPASI33" name="a_XM" value="670">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI33"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="a_XR" metaid="COPASI34" name="a_XR" value="0.0206">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI34"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_antiIl" metaid="COPASI35" name="k_antiIl" value="0.714">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_antiMM" metaid="COPASI36" name="k_antiMM" value="75.7">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI36"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_antiRR" metaid="COPASI37" name="k_antiRR" value="1.43">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI37"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_CX" metaid="COPASI38" name="k_CX" value="0.000655">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI38"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_MC" metaid="COPASI39" name="k_MC" value="0.0962">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI39"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_MN" metaid="COPASI40" name="k_MN" value="3.88">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI40"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_NX" metaid="COPASI41" name="k_NX" value="0.00722">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI41"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_RC" metaid="COPASI42" name="k_RC" value="0.1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI42"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_RN" metaid="COPASI43" name="k_RN" value="2.07">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI43"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="k_XN" metaid="COPASI44" name="k_XN" value="0.0016">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI44"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="m_C" metaid="COPASI45" name="m_C" value="0.429">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI45"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="m_D" metaid="COPASI46" name="m_D" value="0.936">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI46"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="m_R" metaid="COPASI47" name="m_R" value="0.0143">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI47"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="p_C" metaid="COPASI48" name="p_C" value="0.5">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI48"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="p_D" metaid="COPASI49" name="p_D" value="0.5">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI49"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="p_R" metaid="COPASI50" name="p_R" value="0.5">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI50"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="r_M" metaid="COPASI51" name="r_M" value="0.811">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI51"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="r_p1" metaid="COPASI52" name="r_p1" value="0.0363">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI52"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="r_p2" metaid="COPASI53" name="r_p2" value="0.17">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI53"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="s_I" metaid="COPASI54" name="s_I" value="77200">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI54"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="s_M" metaid="COPASI55" name="s_M" value="18200">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI55"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="s_N" metaid="COPASI56" name="s_N" value="149">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI56"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="delta_ICB" metaid="COPASI57" name="delta_ICB" value="10.9">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI57"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="lambda_A" metaid="COPASI58" name="lambda_A" value="0.099">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="lambda_AI" metaid="COPASI59" name="lambda_AI" value="0.099">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="lambda_AM" metaid="COPASI60" name="lambda_AM" value="4.75">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="lambda_AR" metaid="COPASI61" name="lambda_AR" value="0.099">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="lambda_ICB" metaid="COPASI62" name="lambda_ICB" value="0.139">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="lambda_V" metaid="COPASI63" name="lambda_V" value="0.099">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_1" metaid="COPASI64" name="mu_1" value="0.0101">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI64"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_2" metaid="COPASI65" name="mu_2" value="0.148">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI65"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_C" metaid="COPASI66" name="mu_C" value="0.146">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI66"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_D" metaid="COPASI67" name="mu_D" value="0.0929">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI67"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_I" metaid="COPASI68" name="mu_I" value="0.0305">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI68"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_M" metaid="COPASI69" name="mu_M" value="0.294">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI69"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_R" metaid="COPASI70" name="mu_R" value="0.0807">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI70"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu_N" metaid="COPASI71" name="mu_N" value="0.09">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="rho_M" metaid="COPASI72" name="rho_M" value="0.324">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI72"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="rho_N" metaid="COPASI73" name="rho_N" value="0.09">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="Boolean_CX" metaid="COPASI74" name="Boolean_CX" value="1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI74"/>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="Tumor">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> X_1 </ci>
+            <ci> X_2 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="ADPC_proliferation" metaid="COPASI75" name="ADPC_proliferation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="X_1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="A"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_ADPC_proliferation </ci>
+                <ci> r_p1 </ci>
+                <ci> A </ci>
+                <ci> X_1 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ADPC_death" metaid="COPASI76" name="ADPC_death" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="X_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="A"/>
+          <modifierSpeciesReference species="ICB"/>
+          <modifierSpeciesReference species="C_2"/>
+          <modifierSpeciesReference species="R_2"/>
+          <modifierSpeciesReference species="M"/>
+          <modifierSpeciesReference species="N"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_ADPC_death </ci>
+                <ci> mu_1 </ci>
+                <ci> A </ci>
+                <ci> X_1 </ci>
+                <ci> k_CX </ci>
+                <ci> delta_ICB </ci>
+                <ci> ICB </ci>
+                <ci> C_2 </ci>
+                <ci> k_NX </ci>
+                <ci> k_RN </ci>
+                <ci> R_2 </ci>
+                <ci> k_MN </ci>
+                <ci> M </ci>
+                <ci> N </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="AIPC_proliferation" metaid="COPASI77" name="AIPC_proliferation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="X_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_AIPC_proliferation </ci>
+                <ci> r_p2 </ci>
+                <ci> X_2 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="AIPC_death" metaid="COPASI78" name="AIPC_death" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="X_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="ICB"/>
+          <modifierSpeciesReference species="C_2"/>
+          <modifierSpeciesReference species="R_2"/>
+          <modifierSpeciesReference species="M"/>
+          <modifierSpeciesReference species="N"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_AIPC_death </ci>
+                <ci> mu_2 </ci>
+                <ci> X_2 </ci>
+                <ci> k_CX </ci>
+                <ci> delta_ICB </ci>
+                <ci> ICB </ci>
+                <ci> C_2 </ci>
+                <ci> k_NX </ci>
+                <ci> k_RN </ci>
+                <ci> R_2 </ci>
+                <ci> k_MN </ci>
+                <ci> M </ci>
+                <ci> N </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="DCs_mature_increase" metaid="COPASI79" name="DCs_mature_increase" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="D_m" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="V"/>
+          <modifierSpeciesReference species="A"/>
+          <modifierSpeciesReference species="X_1"/>
+          <modifierSpeciesReference species="X_2"/>
+          <modifierSpeciesReference species="ICB"/>
+          <modifierSpeciesReference species="C_2"/>
+          <modifierSpeciesReference species="R_2"/>
+          <modifierSpeciesReference species="M"/>
+          <modifierSpeciesReference species="N"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_DCs_mature_increase </ci>
+                <ci> a_VD </ci>
+                <ci> V </ci>
+                <ci> a_XD </ci>
+                <ci> mu_1 </ci>
+                <ci> A </ci>
+                <ci> X_1 </ci>
+                <ci> mu_2 </ci>
+                <ci> X_2 </ci>
+                <ci> k_CX </ci>
+                <ci> delta_ICB </ci>
+                <ci> ICB </ci>
+                <ci> C_2 </ci>
+                <ci> k_NX </ci>
+                <ci> k_RN </ci>
+                <ci> R_2 </ci>
+                <ci> k_MN </ci>
+                <ci> M </ci>
+                <ci> N </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="DCs_mature_migration" metaid="COPASI80" name="DCs_mature_migration" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="D_m" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <ci> m_D </ci>
+              <ci> D_m </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CTLs_increase" metaid="COPASI81" name="CTLs_increase" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="D_m"/>
+          <modifierSpeciesReference species="I_2"/>
+          <modifierSpeciesReference species="C_1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Rate_Law_for_CTLs_increase </ci>
+              <ci> a_DC </ci>
+              <ci> D_m </ci>
+              <ci> a_IC </ci>
+              <ci> C_2 </ci>
+              <ci> I_2 </ci>
+              <ci> p_C </ci>
+              <ci> m_C </ci>
+              <ci> C_1 </ci>
+              <ci> s_I </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CTLs_inhibition_death" metaid="COPASI82" name="CTLs_inhibition_death" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="R_2"/>
+          <modifierSpeciesReference species="M"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_CTLs_inhibition_death </ci>
+                <ci> k_RC </ci>
+                <ci> R_2 </ci>
+                <ci> C_2 </ci>
+                <ci> k_MC </ci>
+                <ci> M </ci>
+                <ci> mu_C </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="NK_cell_proliferation" metaid="COPASI83" name="NK_cell_proliferation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="N" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="I_2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_NK_cell_proliferation </ci>
+                <ci> rho_N </ci>
+                <ci> a_IN </ci>
+                <ci> N </ci>
+                <ci> I_2 </ci>
+                <ci> s_N </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="NK_cell_death_inhibition" metaid="COPASI84" name="NK_cell_death_inhibition" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="N" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="X_1"/>
+          <modifierSpeciesReference species="X_2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_NK_cell_death_inhibition </ci>
+                <ci> mu_N </ci>
+                <ci> N </ci>
+                <ci> k_XN </ci>
+                <ci> X_1 </ci>
+                <ci> X_2 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Treg_increase" metaid="COPASI85" name="Treg_increase" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="R_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="D_m"/>
+          <modifierSpeciesReference species="I_2"/>
+          <modifierSpeciesReference species="R_1"/>
+          <modifierSpeciesReference species="X_1"/>
+          <modifierSpeciesReference species="X_2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Rate_Law_for_Treg_increase </ci>
+              <ci> a_DR </ci>
+              <ci> D_m </ci>
+              <ci> a_IR </ci>
+              <ci> I_2 </ci>
+              <ci> p_R </ci>
+              <ci> m_R </ci>
+              <ci> R_1 </ci>
+              <ci> a_XR </ci>
+              <ci> X_1 </ci>
+              <ci> X_2 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Treg_death_inactivation" metaid="COPASI86" name="Treg_death_inactivation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="R_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AR"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_Treg_death_inactivation </ci>
+                <ci> mu_R </ci>
+                <ci> R_2 </ci>
+                <ci> k_antiRR </ci>
+                <ci> AR </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MDSC_increase" metaid="COPASI87" name="MDSC_increase" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="M" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="X_1"/>
+          <modifierSpeciesReference species="X_2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_MDSC_increase </ci>
+                <ci> rho_M </ci>
+                <ci> a_XM </ci>
+                <ci> X_1 </ci>
+                <ci> X_2 </ci>
+                <ci> s_M </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MDSC_death_inactivation" metaid="COPASI88" name="MDSC_death_inactivation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="M" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_MDSC_death_inactivation </ci>
+                <ci> mu_M </ci>
+                <ci> M </ci>
+                <ci> k_antiMM </ci>
+                <ci> AM </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IL_2_production" metaid="COPASI89" name="IL-2_production" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="I_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C_2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_IL_2_production </ci>
+                <ci> a_CI </ci>
+                <ci> C_2 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IL_2_degradation" metaid="COPASI90" name="IL-2_degradation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="I_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AI"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_IL_2_degradation </ci>
+                <ci> mu_I </ci>
+                <ci> I_2 </ci>
+                <ci> k_antiIl </ci>
+                <ci> AI </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Androgen_proliferation" metaid="COPASI91" name="Androgen_proliferation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="A" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_Androgen_proliferation </ci>
+                <ci> A </ci>
+                <ci> lambda_A </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Androgen_depletion" metaid="COPASI92" name="Androgen_depletion" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="A" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_Androgen_depletion </ci>
+                <ci> lambda_A </ci>
+                <ci> Boolean_CX </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Vaccine_decay" metaid="COPASI93" name="Vaccine_decay" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="V" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <ci> lambda_V </ci>
+              <ci> V </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Anti_IL_2_decay" metaid="COPASI94" name="Anti_IL-2_decay" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="AI" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <ci> lambda_AI </ci>
+              <ci> AI </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Anti_treg_decay" metaid="COPASI95" name="Anti_treg_decay" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="AR" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <ci> lambda_AR </ci>
+              <ci> AR </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Anti_MDSC_decay" metaid="COPASI96" name="Anti_MDSC_decay" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="AM" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <ci> lambda_AM </ci>
+              <ci> AM </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Immune_checkpotin_blocakde_decay" metaid="COPASI97" name="Immune_checkpotin_blocakde_decay" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="ICB" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <ci> lambda_ICB </ci>
+              <ci> ICB </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="ADPC_mutation" metaid="COPASI98" name="ADPC_mutation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="X_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="A"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Prostate_gland </ci>
+              <apply>
+                <ci> Rate_Law_for_ADPC_mutation </ci>
+                <ci> r_M </ci>
+                <ci> A </ci>
+                <ci> X_1 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="DCs_functional_lymphoid_migration" metaid="COPASI99" name="DCs_functional_lymphoid_migration" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="D_f" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="D_m"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Rate_Law_for_CTLs_migration_lymphoid </ci>
+              <ci> p_D </ci>
+              <ci> m_D </ci>
+              <ci> D_m </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="DCs_functional_lymphoid_transformation" metaid="COPASI100" name="DCs_functional_lymphoid_transformation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="D_f" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="D_r" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Lymphoid_tissue </ci>
+              <apply>
+                <ci> Rate_Law_for_CTLs_lymphoid_transformation </ci>
+                <ci> a_DfDr </ci>
+                <ci> D_f </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="DCs_regulatory_lymphoid_death" metaid="COPASI101" name="DCs_regulatory_lymphoid_death" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="D_r" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Lymphoid_tissue </ci>
+              <ci> mu_D </ci>
+              <ci> D_r </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CTLs_lymphoid_increase" metaid="COPASI102" name="CTLs_lymphoid_increase" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="C_1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="D_f"/>
+          <modifierSpeciesReference species="I_1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Lymphoid_tissue </ci>
+              <apply>
+                <ci> Rate_Law_for_CTLs_lymphoid_increase </ci>
+                <ci> a_DC </ci>
+                <ci> D_f </ci>
+                <ci> a_IC </ci>
+                <ci> C_1 </ci>
+                <ci> I_1 </ci>
+                <ci> s_I </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="CTLs_lymphoid_decrease" metaid="COPASI103" name="CTLs_lymphoid_decrease" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="C_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="R_1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Lymphoid_tissue </ci>
+              <apply>
+                <ci> Rate_Law_for_CTLs_lymphoid_decrease </ci>
+                <ci> m_C </ci>
+                <ci> C_1 </ci>
+                <ci> k_RC </ci>
+                <ci> R_1 </ci>
+                <ci> mu_C </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Treg_lymphoid_proliferation" metaid="COPASI104" name="Treg_lymphoid_proliferation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="R_1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="D_r"/>
+          <modifierSpeciesReference species="I_1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Lymphoid_tissue </ci>
+              <apply>
+                <ci> Rate_Law_for_Treg_lymphoid_proliferation </ci>
+                <ci> a_DrR </ci>
+                <ci> D_r </ci>
+                <ci> a_IR </ci>
+                <ci> I_1 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Treg_lymphoid_decrease" metaid="COPASI105" name="Treg_lymphoid_decrease" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="R_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AR"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Rate_Law_for_Treg_lymphoid_decrease </ci>
+              <ci> m_R </ci>
+              <ci> R_1 </ci>
+              <ci> mu_R </ci>
+              <ci> k_antiRR </ci>
+              <ci> AR </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IL_2_lymphoid_production" metaid="COPASI106" name="IL-2_lymphoid_production" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference species="I_1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C_1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Lymphoid_tissue </ci>
+              <apply>
+                <ci> Rate_Law_for_IL_2_lymphoid_production </ci>
+                <ci> a_CI </ci>
+                <ci> C_1 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IL_2_lymphoid_degradation" metaid="COPASI107" name="IL-2_lymphoid_degradation" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="I_1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AI"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Rate_Law_for_IL_2_lymphoid_degradation </ci>
+              <ci> mu_I </ci>
+              <ci> I_1 </ci>
+              <ci> k_antiIl </ci>
+              <ci> AI </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

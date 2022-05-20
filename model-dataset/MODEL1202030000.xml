@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="_261454" level="2" version="4">
+  <model metaid="_261466" id="Dupeux2011_ABAreceptor_Dimer" name="Dupeux2011_ABAreceptor_Dimer">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model is from the article:      <br/>
+        <strong>A thermodynamic switch modulates abscisic acid receptor sensitivity.</strong>
+        <br/>
+          Dupeux F, Santiago J, Betz K, Twycross J, Park SY, Rodriguez L, Gonzalez-Guzman M, Jensen MR, Krasnogor N, Blackledge M, Holdsworth M, Cutler SR, Rodriguez PL, Márquez JA      <em>EMBO J.</em>
+          [2011 Oct; Volume: 30 (Issue: 20 )]  Page info: 4171-84      <a href="http://www.ncbi.nlm.nih.gov/pubmed/21847091">21847091</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          Abscisic acid (ABA) is a key hormone regulating plant growth, development and the response to biotic and abiotic stress. ABA binding to pyrabactin resistance (PYR)/PYR1-like (PYL)/Regulatory Component of Abscisic acid Receptor (RCAR) intracellular receptors promotes the formation of stable complexes with certain protein phosphatases type 2C (PP2Cs), leading to the activation of ABA signalling. The PYR/PYL/RCAR family contains 14 genes in Arabidopsis and is currently the largest plant hormone receptor family known; however, it is unclear what functional differentiation exists among receptors. Here, we identify two distinct classes of receptors, dimeric and monomeric, with different intrinsic affinities for ABA and whose differential properties are determined by the oligomeric state of their apo forms. Moreover, we find a residue in PYR1, H60, that is variable between family members and plays a key role in determining oligomeric state. In silico modelling of the ABA activation pathway reveals that monomeric receptors have a competitive advantage for binding to ABA and PP2Cs. This work illustrates how receptor oligomerization can modulate hormonal responses and more generally, the sensitivity of a ligand-dependent signalling system.      </p>
+      <p>To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not.</p>
+    <p>To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#_261466">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1202030000"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/21847091"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/3702"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/efo/0001900"/>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0009725"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="_261478" id="per_second">
+    <listOfUnits>
+      <unit metaid="_261490" kind="second" exponent="-1"/>
+    </listOfUnits>
+  </unitDefinition>
+  <unitDefinition metaid="_261502" id="substance">
+    <listOfUnits>
+      <unit metaid="_261514" kind="item"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_261526" id="c0" name="c0_0" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_261538" id="s0_0" name="H" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261550" id="s0_1" name="H.H.RA.RA" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261562" id="s0_2" name="H.H.RB.RB" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261574" id="s0_3" name="H.RA" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261586" id="s0_4" name="H.RA.RA" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261599" id="s0_5" name="H.RB" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261611" id="s0_6" name="H.RB.RB" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261623" id="s0_7" name="P" compartment="c0" initialAmount="60221" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261635" id="s0_8" name="P.H.RA" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261647" id="s0_9" name="P.H.RB" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261660" id="s0_10" name="RA" compartment="c0" initialAmount="30111" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261672" id="s0_11" name="RA.RA" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261684" id="s0_12" name="RB" compartment="c0" initialAmount="30111" hasOnlySubstanceUnits="true"/>
+  <species metaid="_261696" id="s0_13" name="RB.RB" compartment="c0" initialAmount="0" hasOnlySubstanceUnits="true"/>
+</listOfSpecies><listOfReactions>
+  <reaction metaid="_261708" id="re0_0_0" name="re0_0_0" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_261720" species="s0_10"/>
+      <speciesReference metaid="_261732" species="s0_10"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_261744" species="s0_11"/>
+    </listOfProducts>
+    <kineticLaw metaid="_261756">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_10 </ci>
+          <apply>
+            <minus/>
+            <ci> s0_10 </ci>
+            <cn type="integer"> 1 </cn>
+          </apply>
+          <cn> 0.5 </cn>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_261768" id="k1" name="k1" value="3.32107756632545e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_261780" id="re0_0_1" name="re0_0_1" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_261792" species="s0_11"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_261805" species="s0_10"/>
+      <speciesReference metaid="_261817" species="s0_10"/>
+    </listOfProducts>
+    <kineticLaw metaid="_261829">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_11 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_261842" id="k1" name="k1" value="1000" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_261855" id="re0_0_2" name="re0_0_2" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_261867" species="s0_10"/>
+      <speciesReference metaid="_261879" species="s0_0"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_261891" species="s0_3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_261903">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_10 </ci>
+          <ci> s0_0 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_261915" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_261927" id="re0_0_3" name="re0_0_3" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_261939" species="s0_3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_261951" species="s0_10"/>
+      <speciesReference metaid="_261963" species="s0_0"/>
+    </listOfProducts>
+    <kineticLaw metaid="_261975">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_3 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_261987" id="k1" name="k1" value="1.5" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_261999" id="re0_0_4" name="re0_0_4" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262011" species="s0_0"/>
+      <speciesReference metaid="_262023" species="s0_11"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262036" species="s0_4"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262048">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_0 </ci>
+          <ci> s0_11 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262061" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262073" id="re0_0_5" name="re0_0_5" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262085" species="s0_4"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262097" species="s0_11"/>
+      <speciesReference metaid="_262109" species="s0_0"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262121">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_4 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262133" id="k1" name="k1" value="90" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262145" id="re0_0_6" name="re0_0_6" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262157" species="s0_0"/>
+      <speciesReference metaid="_262169" species="s0_4"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262181" species="s0_1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262193">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_0 </ci>
+          <ci> s0_4 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262205" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262217" id="re0_0_7" name="re0_0_7" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262229" species="s0_1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262241" species="s0_0"/>
+      <speciesReference metaid="_262254" species="s0_4"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262266">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_1 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262278" id="k1" name="k1" value="90" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262290" id="re0_0_8" name="re0_0_8" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262303" species="s0_3"/>
+      <speciesReference metaid="_262315" species="s0_3"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262327" species="s0_1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262339">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_3 </ci>
+          <apply>
+            <minus/>
+            <ci> s0_3 </ci>
+            <cn type="integer"> 1 </cn>
+          </apply>
+          <cn> 0.5 </cn>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262351" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262363" id="re0_0_9" name="re0_0_9" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262375" species="s0_1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262388" species="s0_3"/>
+      <speciesReference metaid="_262400" species="s0_3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262412">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_1 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262424" id="k1" name="k1" value="100" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262436" id="re0_0_10" name="re0_0_10" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262448" species="s0_3"/>
+      <speciesReference metaid="_262460" species="s0_7"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262472" species="s0_8"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262484">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_3 </ci>
+          <ci> s0_7 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262496" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262508" id="re0_0_11" name="re0_0_11" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262520" species="s0_8"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262533" species="s0_7"/>
+      <speciesReference metaid="_262545" species="s0_3"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262557">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_8 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262569" id="k1" name="k1" value="0.02" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262582" id="re0_0_12" name="re0_0_12" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262594" species="s0_12"/>
+      <speciesReference metaid="_262606" species="s0_12"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262618" species="s0_13"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262630">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_12 </ci>
+          <apply>
+            <minus/>
+            <ci> s0_12 </ci>
+            <cn type="integer"> 1 </cn>
+          </apply>
+          <cn> 0.5 </cn>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262642" id="k1" name="k1" value="3.32107756632545e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262654" id="re0_0_13" name="re0_0_13" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262666" species="s0_13"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262678" species="s0_12"/>
+      <speciesReference metaid="_262690" species="s0_12"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262702">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_13 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262714" id="k1" name="k1" value="0.05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262726" id="re0_0_14" name="re0_0_14" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262738" species="s0_12"/>
+      <speciesReference metaid="_262750" species="s0_0"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262762" species="s0_5"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262774">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_12 </ci>
+          <ci> s0_0 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262786" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262798" id="re0_0_15" name="re0_0_15" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262810" species="s0_5"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262822" species="s0_12"/>
+      <speciesReference metaid="_262834" species="s0_0"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262846">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_5 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262858" id="k1" name="k1" value="1.5" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262870" id="re0_0_16" name="re0_0_16" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262882" species="s0_0"/>
+      <speciesReference metaid="_262894" species="s0_13"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262906" species="s0_6"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262918">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_0 </ci>
+          <ci> s0_13 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262930" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_262942" id="re0_0_17" name="re0_0_17" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_262954" species="s0_6"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_262966" species="s0_13"/>
+      <speciesReference metaid="_262978" species="s0_0"/>
+    </listOfProducts>
+    <kineticLaw metaid="_262991">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_6 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263003" id="k1" name="k1" value="90" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_263015" id="re0_0_18" name="re0_0_18" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_263027" species="s0_0"/>
+      <speciesReference metaid="_263039" species="s0_6"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_263051" species="s0_2"/>
+    </listOfProducts>
+    <kineticLaw metaid="_263063">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_0 </ci>
+          <ci> s0_6 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263076" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_263088" id="re0_0_19" name="re0_0_19" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_263100" species="s0_2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_263112" species="s0_0"/>
+      <speciesReference metaid="_263124" species="s0_6"/>
+    </listOfProducts>
+    <kineticLaw metaid="_263136">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_2 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263148" id="k1" name="k1" value="90" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_263160" id="re0_0_20" name="re0_0_20" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_263172" species="s0_5"/>
+      <speciesReference metaid="_263184" species="s0_5"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_263196" species="s0_2"/>
+    </listOfProducts>
+    <kineticLaw metaid="_263208">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_5 </ci>
+          <apply>
+            <minus/>
+            <ci> s0_5 </ci>
+            <cn type="integer"> 1 </cn>
+          </apply>
+          <cn> 0.5 </cn>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263221" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_263233" id="re0_0_21" name="re0_0_21" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_263246" species="s0_2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_263258" species="s0_5"/>
+      <speciesReference metaid="_263270" species="s0_5"/>
+    </listOfProducts>
+    <kineticLaw metaid="_263282">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_2 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263294" id="k1" name="k1" value="100" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_263306" id="re0_0_22" name="re0_0_22" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_263318" species="s0_5"/>
+      <speciesReference metaid="_263330" species="s0_7"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_263342" species="s0_9"/>
+    </listOfProducts>
+    <kineticLaw metaid="_263355">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_5 </ci>
+          <ci> s0_7 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263367" id="k1" name="k1" value="1.66053878316273e-05" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_263379" id="re0_0_23" name="re0_0_23" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_263391" species="s0_9"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_263403" species="s0_7"/>
+      <speciesReference metaid="_263415" species="s0_5"/>
+    </listOfProducts>
+    <kineticLaw metaid="_263427">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> s0_9 </ci>
+        </apply>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_263439" id="k1" name="k1" value="0.02" units="per_second"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

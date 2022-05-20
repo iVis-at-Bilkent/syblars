@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Generate images from dataset",
+  "main": "generate-image.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ivis-at-bilkent",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-fetch": "^3.2.4"
+  }
+}

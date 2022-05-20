@@ -1,0 +1,968 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="_5cda8c41-0c58-4657-ab0a-5a2e4d6dc2ea" version="4">
+  <model id="MODEL1409240002" name="Qosa2014 - Mechanistic modeling that describes Aβ clearance across BBB" metaid="COPASI0">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Qosa2014 - Mechanistic modeling that
+describes Aβ clearance across BBB</div>
+<div class="dc:description">Qosa2014 - Mechanistic modeling that
+describes Aβ clearance across BBB.
+<div>
+  <br/>
+</div>
+<div>Encoded non-curated model. Issues:</div>
+<div>
+  <br/>
+</div>
+<div>- Confusing equation 6</div>
+<div>- Missing initial values for spices</div></div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/pubmed/24467845" title="Access to this publication">Differences in amyloid-?
+    clearance across mouse and human blood-brain barrier models:
+    kinetic analysis and mechanistic modeling.</a>
+  </div>
+  <div class="bibo:authorList">Qosa H, Abuasal BS, Romero IA,
+  Weksler B, Couraud PO, Keller JN, Kaddoumi A.</div>
+  <div class="bibo:Journal">Neuropharmacology 2014 Apr; 79:
+  668-678</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>Alzheimer's disease (AD) has a characteristic hallmark of
+    amyloid-? (A?) accumulation in the brain. This accumulation of
+    A? has been related to its faulty cerebral clearance. Indeed,
+    preclinical studies that used mice to investigate A? clearance
+    showed that efflux across blood-brain barrier (BBB) and brain
+    degradation mediate efficient A? clearance. However, the
+    contribution of each process to A? clearance remains unclear.
+    Moreover, it is still uncertain how species differences between
+    mouse and human could affect A? clearance. Here, a modified
+    form of the brain efflux index method was used to estimate the
+    contribution of BBB and brain degradation to A? clearance from
+    the brain of wild type mice. We estimated that 62% of
+    intracerebrally injected (125)I-A?40 is cleared across BBB
+    while 38% is cleared by brain degradation. Furthermore,
+    in vitro and in silico studies were performed to compare
+    A? clearance between mouse and human BBB models. Kinetic
+    studies for A?40 disposition in bEnd3 and hCMEC/D3 cells,
+    representative in vitro mouse and human BBB models,
+    respectively, demonstrated 30-fold higher rate of (125)I-A?40
+    uptake and 15-fold higher rate of degradation by bEnd3 compared
+    to hCMEC/D3 cells. Expression studies showed both cells to
+    express different levels of P-glycoprotein and RAGE, while LRP1
+    levels were comparable. Finally, we established a mechanistic
+    model, which could successfully predict cellular levels of
+    (125)I-A?40 and the rate of each process. Established
+    mechanistic model suggested significantly higher rates of A?
+    uptake and degradation in bEnd3 cells as rationale for the
+    observed differences in (125)I-A?40 disposition between mouse
+    and human BBB models. In conclusion, current study demonstrates
+    the important role of BBB in the clearance of A? from the
+    brain. Moreover, it provides insight into the differences
+    between mouse and human BBB with regards to A? clearance and
+    offer, for the first time, a mathematical model that describes
+    A? clearance across BBB.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1409240002">MODEL1409240002</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/20587024" title="Latest BioModels Database publication">BioModels Database:
+  An enhanced, curated and annotated resource for published
+  quantitative kinetic models</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2014-08-04T13:36:07Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI0">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Lloret i Villas</vCard:Family>
+	<vCard:Given>Audald</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>lloret@ebi.ac.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>EMBL-EBI</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2014-09-24T15:25:00Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2014-09-24T15:30:00Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqmodel:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/24467845"/>
+	</rdf:Bag>
+	</bqmodel:isDescribedBy>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1409240002"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0097242"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/doid/DOID:10652"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	<bqbiol:hasTaxon>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+	<rdf:li rdf:resource="http://identifiers.org/taxonomy/10090"/>
+	</rdf:Bag>
+	</bqbiol:hasTaxon>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfFunctionDefinitions>
+      <functionDefinition id="Henri_Michaelis_Menten__irreversible" name="Henri-Michaelis-Menten (irreversible)" metaid="bc446aa4-448f-47e8-85dd-eac7640ef8ca">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> substrate </ci>
+            </bvar>
+            <bvar>
+              <ci> Km </ci>
+            </bvar>
+            <bvar>
+              <ci> V </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> V </ci>
+                <ci> substrate </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Km </ci>
+                <ci> substrate </ci>
+              </apply>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="Degradation" name="Degradation" metaid="COPASI31">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI31">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:07:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> CL </ci>
+            </bvar>
+            <bvar>
+              <ci> Ccell </ci>
+            </bvar>
+            <apply>
+              <times/>
+              <ci> CL </ci>
+              <ci> Ccell </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="volume" name="volume" metaid="c6811f2e-9010-4e52-ab84-e3a7be1b632c">
+        <listOfUnits>
+          <unit scale="-3" exponent="1" metaid="a4f3f9ba-46dd-4757-b807-bb3b9553db00" multiplier="1" kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time" metaid="_15dfca48-7cdc-472e-bded-4aecfe36c388">
+        <listOfUnits>
+          <unit scale="0" exponent="1" metaid="_764e26b1-8f13-4d54-9f18-9a2883d64b4f" multiplier="60" kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance" metaid="f098af84-62c7-468e-895b-9c16e6b6d504">
+        <listOfUnits>
+          <unit scale="-9" exponent="1" metaid="c6e7446c-b6a2-4774-bc1b-ddfee3366c5b" multiplier="1" kind="mole"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" constant="true" spatialDimensions="3" name="cell" metaid="COPASI1" size="1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:38:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+      <compartment id="media" constant="true" spatialDimensions="3" name="media" metaid="COPASI2" size="1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-15T13:11:53Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="CcellhCMEC_D3" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="CcellhCMEC/D3" metaid="COPASI3" boundaryCondition="false" compartment="cell">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:01:47Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI3">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="DcellhCMEC_D3" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="DcellhCMEC/D3" metaid="COPASI4" boundaryCondition="false" compartment="cell">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:08:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI4">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="IntactAbetahCMEC_D3" initialConcentration="3" constant="false" hasOnlySubstanceUnits="false" name="IntactAbetahCMEC/D3" metaid="COPASI5" boundaryCondition="true" compartment="cell">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:09:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI5">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="CcellbEnd3" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="CcellbEnd3" metaid="COPASI6" boundaryCondition="false" compartment="cell">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:26:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI6">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="IntactAbetabEnd3" initialConcentration="3" constant="false" hasOnlySubstanceUnits="false" name="IntactAbetabEnd3" metaid="COPASI7" boundaryCondition="true" compartment="cell">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:29:11Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI7">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="DcellbEnd3" initialConcentration="0" constant="false" hasOnlySubstanceUnits="false" name="DcellbEnd3" metaid="COPASI8" boundaryCondition="false" compartment="cell">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:32:19Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI8">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="CmediahCMEC_D3" initialConcentration="3" constant="false" hasOnlySubstanceUnits="false" name="CmediahCMEC/D3" metaid="COPASI9" boundaryCondition="false" compartment="media">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:01:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI9">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="CmediabEnd3" initialConcentration="3" constant="false" hasOnlySubstanceUnits="false" name="CmediabEnd3" metaid="COPASI10" boundaryCondition="false" compartment="media">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:26:37Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#COPASI10">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P05067"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="Kmuh" constant="true" name="Kmuh" metaid="COPASI11" value="49.1">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Km, uptake for hCMEC/D3 cells (nM)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T14:02:28Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Kmub" constant="true" name="Kmub" metaid="COPASI12" value="19.8">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Km, uptake for bEnd3 cells (nM)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:59:37Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Vmuh" constant="true" name="Vmuh" metaid="COPASI13" value="4">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Vmax, uptake for hCMEC/D3 cells (fmole/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T14:00:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Vmub" constant="true" name="Vmub" metaid="COPASI14" value="56.4">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Vmax, uptake for bEnd3 cells (fmole/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T14:00:23Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Intuh" constant="true" name="Intuh" metaid="COPASI15" value="81">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Intrinsic upake for hCMEC/D3 cells (nl/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T14:01:29Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Intub" constant="true" name="Intub" metaid="COPASI16" value="2848">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Intrinsic uptake for bEnd3 cells (nl/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:58:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Kmeh" constant="true" name="Kmeh" metaid="COPASI17" value="7.5">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Km, efflux for hCMEC/D3 cells (nM)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI17">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T14:01:55Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Kmeb" constant="true" name="Kmeb" metaid="COPASI18" value="7.6">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Km, efflux for bEnd3 cells (nM)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI18">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:59:04Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Vmeh" constant="true" name="Vmeh" metaid="COPASI19" value="0.12">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Vmax, efflux for hCMEC/D3 cells (fmole/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI19">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T14:02:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Vmeb" constant="true" name="Vmeb" metaid="COPASI20" value="0.14">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Vmax, efflux for bEnd3 cells (fmole/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI20">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:59:54Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Inteh" constant="true" name="Inteh" metaid="COPASI21" value="16">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Intrinsic efflux for hCMEC/D3 cells (nl/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI21">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:58:40Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="Inteb" constant="true" name="Inteb" metaid="COPASI22" value="18">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>Intrinsic efflux for bEnd3 cells (nl/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI22">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:58:12Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="CLh" constant="true" name="CLh" metaid="COPASI23" value="17">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>CL for hCMEC/D3 cells (nl/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI23">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:56:50Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter id="CLb" constant="true" name="CLb" metaid="COPASI24" value="260">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <pre>CL for bEnd3 cells (nl/min)</pre>
+          </body>
+        </notes>
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI24">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T13:56:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule metaid="_7ed1ff14-d246-4e6d-a926-011779990b49" variable="IntactAbetahCMEC_D3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> CcellhCMEC_D3 </ci>
+            <ci> CmediahCMEC_D3 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule metaid="_27800fbc-917a-49be-9222-ee2c7e2f7c74" variable="IntactAbetabEnd3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> CcellbEnd3 </ci>
+            <ci> CmediabEnd3 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="Uptake_hCMEC_D3" name="Uptake hCMEC/D3" metaid="COPASI25" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI25">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T15:57:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="CmediahCMEC_D3" metaid="_206e011d-ef79-4287-9d84-3ed54fe88eb4" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CcellhCMEC_D3" metaid="fa47ec46-d166-4715-810f-3097444afe3c" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CmediahCMEC_D3" metaid="_3f165e08-ae5e-4da6-a75a-4f227082ef1f"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c1ee5f91-df30-4abb-a671-7fe90ba29c73">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Henri_Michaelis_Menten__irreversible </ci>
+              <ci> CmediahCMEC_D3 </ci>
+              <ci> Kmuh </ci>
+              <ci> Vmuh </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Efflux_hCMEC_D3" name="Efflux hCMEC/D3" metaid="COPASI26" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI26">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:02:21Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="CcellhCMEC_D3" metaid="_3bff64cc-09dc-4a57-bb87-4abc30aa1b2f" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CmediahCMEC_D3" metaid="_686ae09e-58cc-487c-8860-ae914603efe7" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CcellhCMEC_D3" metaid="_0eedea32-0b24-47ae-8951-1d6212a37c3c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d97810a4-e1d6-4594-ae98-ce8303f81ad8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Henri_Michaelis_Menten__irreversible </ci>
+              <ci> CcellhCMEC_D3 </ci>
+              <ci> Kmeh </ci>
+              <ci> Vmeh </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Degradation_hCMEC_D3" name="Degradation hCMEC/D3" metaid="COPASI27" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI27">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:07:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="CcellhCMEC_D3" metaid="_96c38f4a-1c2c-430b-a37e-9c3c44db2e85" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="DcellhCMEC_D3" metaid="c356ac77-af2f-4177-b245-3fa92dc34509" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CcellhCMEC_D3" metaid="_730e351c-b4e9-4453-b85b-5e85fc4fbf1b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_3b543681-7a6c-465e-8cfa-375ff8d4b6e4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <ci> Degradation </ci>
+                <ci> CLh </ci>
+                <ci> CcellhCMEC_D3 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Uptake_bEnd3" name="Uptake bEnd3" metaid="COPASI28" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI28">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:25:24Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="CmediabEnd3" metaid="_765b3956-7c54-43f8-9089-f899070978b2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CcellbEnd3" metaid="d28ea4fb-6956-4ba1-8d2d-ba0c8f76eee6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CmediabEnd3" metaid="c3ef37f0-3f1a-4605-af84-31987ae79b90"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_39230167-7cf4-43cf-a8dd-869ce2766bf4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Henri_Michaelis_Menten__irreversible </ci>
+              <ci> CmediabEnd3 </ci>
+              <ci> Kmub </ci>
+              <ci> Vmub </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Efflux_bEnd3" name="Efflux bEnd3" metaid="COPASI29" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI29">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:27:17Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="CcellbEnd3" metaid="_24028f4c-2da0-48c1-a7cf-63684520a67b" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CmediabEnd3" metaid="_2bac7736-b139-4885-90b5-248ec291dae6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CcellbEnd3" metaid="e454f115-d2ef-4c79-b1f6-87c3c6156b0b"/>
+        </listOfModifiers>
+        <kineticLaw metaid="fad2b6f6-005f-4f1b-9afe-69a0895e3198">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <ci> Henri_Michaelis_Menten__irreversible </ci>
+              <ci> CcellbEnd3 </ci>
+              <ci> Kmeb </ci>
+              <ci> Vmeb </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Degradation_bEnd3" name="Degradation bEnd3" metaid="COPASI30" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI30">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2014-08-04T16:28:09Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference species="CcellbEnd3" metaid="_592c208d-c3fd-4631-9090-7e0ab0bb3f5b" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="DcellbEnd3" metaid="c731b8ac-067c-4cb4-8b90-bc891ba9aaa3" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CcellbEnd3" metaid="a74db1b9-1569-4657-a880-ec57daa145e5"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_84e25edf-f2ee-4a80-b6db-6908acbc5a90">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> cell </ci>
+              <apply>
+                <ci> Degradation </ci>
+                <ci> CLb </ci>
+                <ci> CcellbEnd3 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

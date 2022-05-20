@@ -1,0 +1,1571 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model metaid="e0ddafe5-68a8-46fd-9e3f-e0145ffffebe" name="Corbat2021 - Apoptotic Reaction Model.models">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>Apoptotic Reaction Model is an ordinary differential equation model describing every species in the apoptotic cascade and trained to simulate experiments with extrinsic or intrinsic stimuli. It is based on the model introduced by Albeck et al. 2008 and contains a missing feedback between effector caspase 3 and intrinsic caspase 9 to be able to predict results from experiments with either extrinsic and intrinsic stimuli.</p>
+  </body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+        <rdf:Description rdf:about="#e0ddafe5-68a8-46fd-9e3f-e0145ffffebe">
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	</rdf:Description>
+	
+	
+	
+	
+	
+	</rdf:RDF>
+	</annotation>
+      <listOfCompartments>
+      <compartment constant="true" id="default" size="1" spatialDimensions="3"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s0" name="L(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s1" name="R(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s2" name="flip(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s3" name="C8(bf=None, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s4" name="BAR(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s5" name="Apaf(bf=None, state='I')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s6" name="C3(bf=None, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s7" name="C6(bf=None, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s8" name="PARP(bf=None, state='U')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s9" name="XIAP(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s10" name="Bid(bf=None, state='U')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s11" name="Bax(bf=None, s1=None, s2=None, state='C')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s12" name="Bcl2(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s13" name="Mito(bf=None, state='I')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s14" name="Smac(bf=None, state='M')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s15" name="CytoC(bf=None, state='M')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s16" name="Bcl2c(b=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s17" name="BFP(sl=1, bf=None) ._br_BFP(sl=1, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s18" name="Cit(sl=1, bf=None) ._br_Cit(sl=1, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s19" name="mKate(sl=1, bf=None) ._br_mKate(sl=1, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s20" initialAmount="0" name="L(bf=1) ._br_R(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s21" initialAmount="0" name="DISC(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s22" initialAmount="0" name="C8(bf=1, state='pro') ._br_DISC(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s23" initialAmount="0" name="DISC(bf=1) ._br_flip(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s24" initialAmount="0" name="C8(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s25" initialAmount="0" name="Bid(bf=1, state='U') ._br_C8(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s26" initialAmount="0" name="BAR(bf=1) ._br_C8(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s27" initialAmount="0" name="C3(bf=1, state='pro') ._br_C8(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s28" initialAmount="0" name="C8(bf=1, state='A') ._br_mKate(sl=2, bf=1) ._br_mKate(sl=2, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s29" initialAmount="0" name="Bid(bf=None, state='T')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s30" initialAmount="0" name="C3(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s31" initialAmount="0" name="mKate(sl=None, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s32" initialAmount="0" name="C3(bf=1, state='A') ._br_XIAP(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s33" initialAmount="0" name="C3(bf=1, state='A') ._br_PARP(bf=1, state='U')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s34" initialAmount="0" name="C3(bf=1, state='A') ._br_C6(bf=1, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s35" initialAmount="0" name="Bax(bf=1, s1=None, s2=None, state='C') ._br_Bid(bf=1, state='T')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s36" initialAmount="0" name="Bcl2c(b=1) ._br_Bid(bf=1, state='T')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s37" initialAmount="0" name="BFP(sl=2, bf=1) ._br_BFP(sl=2, bf=None) ._br_C3(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s38" initialAmount="0" name="C3(bf=None, state='ub')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s39" initialAmount="0" name="PARP(bf=None, state='C')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s40" initialAmount="0" name="C6(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s41" initialAmount="0" name="Bax(bf=None, s1=None, s2=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s42" initialAmount="0" name="BFP(sl=None, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s43" initialAmount="0" name="C6(bf=1, state='A') ._br_C8(bf=1, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s44" initialAmount="0" name="Bax(bf=None, s1=None, s2=None, state='M')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s45" initialAmount="0" name="Bax(bf=None, s1=1, s2=None, state='M') ._br_Bax(bf=None, s1=None, s2=1, state='M')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s46" initialAmount="0" name="Bax(bf=1, s1=None, s2=None, state='M') ._br_Bcl2(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s47" initialAmount="0" name="Bax(bf=None, s1=1, s2=2, state='M') ._br_Bax(bf=None, s1=3, s2=1, state='M') ._br_Bax(bf=None, s1=4, s2=3, state='M') ._br_Bax(bf=None, s1=2, s2=4, state='M')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s48" initialAmount="0" name="Bax(bf=1, s1=None, s2=2, state='M') ._br_Bax(bf=None, s1=2, s2=None, state='M') ._br_Bcl2(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s49" initialAmount="0" name="Bax(bf=1, s1=2, s2=3, state='M') ._br_Bax(bf=None, s1=4, s2=2, state='M') ._br_Bax(bf=None, s1=5, s2=4, state='M') ._br_Bax(bf=None, s1=3, s2=5, state='M') ._br_Bcl2(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s50" initialAmount="0" name="Bax(bf=1, s1=2, s2=3, state='M') ._br_Bax(bf=None, s1=4, s2=2, state='M') ._br_Bax(bf=None, s1=5, s2=4, state='M') ._br_Bax(bf=None, s1=3, s2=5, state='M') ._br_Mito(bf=1, state='I')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s51" initialAmount="0" name="Mito(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s52" initialAmount="0" name="Mito(bf=1, state='A') ._br_Smac(bf=1, state='M')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s53" initialAmount="0" name="CytoC(bf=1, state='M') ._br_Mito(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s54" initialAmount="0" name="Smac(bf=None, state='C')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s55" initialAmount="0" name="CytoC(bf=None, state='C')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s56" initialAmount="0" name="Smac(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s57" initialAmount="0" name="CytoC(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s58" initialAmount="0" name="Apaf(bf=1, state='I') ._br_CytoC(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s59" initialAmount="0" name="Smac(bf=1, state='A') ._br_XIAP(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s60" initialAmount="0" name="Apaf(bf=None, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s61" initialAmount="0" name="Apaf(bf=1, state='A') ._br_C3(bf=1, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s62" initialAmount="0" name="Apaf(bf=1, state='A') ._br_C3(bf=1, state='A')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s63" initialAmount="0" name="Apaf(bf=1, state='A') ._br_XIAP(bf=1)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s64" initialAmount="0" name="Apaf(bf=1, state='A') ._br_Cit(sl=2, bf=1) ._br_Cit(sl=2, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s65" initialAmount="0" name="Apop(bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s66" initialAmount="0" name="Cit(sl=None, bf=None)"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s67" initialAmount="0" name="Apop(bf=1) ._br_C3(bf=1, state='pro')"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="true" id="__s68" initialAmount="0" name="Apop(bf=1) ._br_Cit(sl=2, bf=1) ._br_Cit(sl=2, bf=None)"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter constant="true" id="L_0" name="L_0" value="1000"/>
+      <parameter constant="true" id="R_0" name="R_0" value="200"/>
+      <parameter constant="true" id="flip_0" name="flip_0" value="100"/>
+      <parameter constant="true" id="C8_0" name="C8_0" value="20000"/>
+      <parameter constant="true" id="BAR_0" name="BAR_0" value="1000"/>
+      <parameter constant="true" id="bind_L_R_to_LR_kf" name="bind_L_R_to_LR_kf" value="4E-7"/>
+      <parameter constant="true" id="bind_L_R_to_LR_kr" name="bind_L_R_to_LR_kr" value="0.001"/>
+      <parameter constant="true" id="convert_LR_to_DISC_kc" name="convert_LR_to_DISC_kc" value="1E-5"/>
+      <parameter constant="true" id="bind_DISC_C8pro_to_DISCC8pro_kf" name="bind_DISC_C8pro_to_DISCC8pro_kf" value="1E-6"/>
+      <parameter constant="true" id="bind_DISC_C8pro_to_DISCC8pro_kr" name="bind_DISC_C8pro_to_DISCC8pro_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_DISCC8pro_to_DISC_C8A_kc" name="catalyze_DISCC8pro_to_DISC_C8A_kc" value="1"/>
+      <parameter constant="true" id="bind_C8A_BidU_to_C8ABidU_kf" name="bind_C8A_BidU_to_C8ABidU_kf" value="1E-7"/>
+      <parameter constant="true" id="bind_C8A_BidU_to_C8ABidU_kr" name="bind_C8A_BidU_to_C8ABidU_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_C8ABidU_to_C8A_BidT_kc" name="catalyze_C8ABidU_to_C8A_BidT_kc" value="1"/>
+      <parameter constant="true" id="bind_DISC_flip_kf" name="bind_DISC_flip_kf" value="1E-6"/>
+      <parameter constant="true" id="bind_DISC_flip_kr" name="bind_DISC_flip_kr" value="0.001"/>
+      <parameter constant="true" id="bind_BAR_C8A_kf" name="bind_BAR_C8A_kf" value="1E-6"/>
+      <parameter constant="true" id="bind_BAR_C8A_kr" name="bind_BAR_C8A_kr" value="0.001"/>
+      <parameter constant="true" id="Apaf_0" name="Apaf_0" value="1000"/>
+      <parameter constant="true" id="C3_0" name="C3_0" value="10000"/>
+      <parameter constant="true" id="C6_0" name="C6_0" value="10000"/>
+      <parameter constant="true" id="XIAP_0" name="XIAP_0" value="10000"/>
+      <parameter constant="true" id="PARP_0" name="PARP_0" value="1000000"/>
+      <parameter constant="true" id="equilibrate_SmacC_to_SmacA_kf" name="equilibrate_SmacC_to_SmacA_kf" value="0.01"/>
+      <parameter constant="true" id="equilibrate_SmacC_to_SmacA_kr" name="equilibrate_SmacC_to_SmacA_kr" value="0.01"/>
+      <parameter constant="true" id="equilibrate_CytoCC_to_CytoCA_kf" name="equilibrate_CytoCC_to_CytoCA_kf" value="0.01"/>
+      <parameter constant="true" id="equilibrate_CytoCC_to_CytoCA_kr" name="equilibrate_CytoCC_to_CytoCA_kr" value="0.01"/>
+      <parameter constant="true" id="bind_CytoCA_ApafI_to_CytoCAApafI_kf" name="bind_CytoCA_ApafI_to_CytoCAApafI_kf" value="5E-7"/>
+      <parameter constant="true" id="bind_CytoCA_ApafI_to_CytoCAApafI_kr" name="bind_CytoCA_ApafI_to_CytoCAApafI_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_CytoCAApafI_to_CytoCA_ApafA_kc" name="catalyze_CytoCAApafI_to_CytoCA_ApafA_kc" value="1"/>
+      <parameter constant="true" id="bind_ApafA_C3pro_to_ApafAC3pro_kf" name="bind_ApafA_C3pro_to_ApafAC3pro_kf" value="5E-9"/>
+      <parameter constant="true" id="bind_ApafA_C3pro_to_ApafAC3pro_kr" name="bind_ApafA_C3pro_to_ApafAC3pro_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_ApafAC3pro_to_ApafA_C3A_kc" name="catalyze_ApafAC3pro_to_ApafA_C3A_kc" value="1"/>
+      <parameter constant="true" id="bind_C3A_ApafA_to_C3AApafA_kf" name="bind_C3A_ApafA_to_C3AApafA_kf" value="1.3E-6"/>
+      <parameter constant="true" id="bind_C3A_ApafA_to_C3AApafA_kr" name="bind_C3A_ApafA_to_C3AApafA_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_C3AApafA_to_C3A_Apop_kc" name="catalyze_C3AApafA_to_C3A_Apop_kc" value="1"/>
+      <parameter constant="true" id="bind_Apop_C3pro_to_ApopC3pro_kf" name="bind_Apop_C3pro_to_ApopC3pro_kf" value="5E-9"/>
+      <parameter constant="true" id="bind_Apop_C3pro_to_ApopC3pro_kr" name="bind_Apop_C3pro_to_ApopC3pro_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_ApopC3pro_to_Apop_C3A_kc" name="catalyze_ApopC3pro_to_Apop_C3A_kc" value="1"/>
+      <parameter constant="true" id="bind_ApafA_XIAP_kf" name="bind_ApafA_XIAP_kf" value="2E-6"/>
+      <parameter constant="true" id="bind_ApafA_XIAP_kr" name="bind_ApafA_XIAP_kr" value="0.001"/>
+      <parameter constant="true" id="bind_SmacA_XIAP_kf" name="bind_SmacA_XIAP_kf" value="7E-6"/>
+      <parameter constant="true" id="bind_SmacA_XIAP_kr" name="bind_SmacA_XIAP_kr" value="0.001"/>
+      <parameter constant="true" id="bind_C8A_C3pro_to_C8AC3pro_kf" name="bind_C8A_C3pro_to_C8AC3pro_kf" value="1E-7"/>
+      <parameter constant="true" id="bind_C8A_C3pro_to_C8AC3pro_kr" name="bind_C8A_C3pro_to_C8AC3pro_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_C8AC3pro_to_C8A_C3A_kc" name="catalyze_C8AC3pro_to_C8A_C3A_kc" value="1"/>
+      <parameter constant="true" id="bind_XIAP_C3A_to_XIAPC3A_kf" name="bind_XIAP_C3A_to_XIAPC3A_kf" value="2E-6"/>
+      <parameter constant="true" id="bind_XIAP_C3A_to_XIAPC3A_kr" name="bind_XIAP_C3A_to_XIAPC3A_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_XIAPC3A_to_XIAP_C3ub_kc" name="catalyze_XIAPC3A_to_XIAP_C3ub_kc" value="0.1"/>
+      <parameter constant="true" id="bind_C3A_PARPU_to_C3APARPU_kf" name="bind_C3A_PARPU_to_C3APARPU_kf" value="1E-6"/>
+      <parameter constant="true" id="bind_C3A_PARPU_to_C3APARPU_kr" name="bind_C3A_PARPU_to_C3APARPU_kr" value="0.01"/>
+      <parameter constant="true" id="catalyze_C3APARPU_to_C3A_PARPC_kc" name="catalyze_C3APARPU_to_C3A_PARPC_kc" value="1"/>
+      <parameter constant="true" id="bind_C3A_C6pro_to_C3AC6pro_kf" name="bind_C3A_C6pro_to_C3AC6pro_kf" value="1E-6"/>
+      <parameter constant="true" id="bind_C3A_C6pro_to_C3AC6pro_kr" name="bind_C3A_C6pro_to_C3AC6pro_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_C3AC6pro_to_C3A_C6A_kc" name="catalyze_C3AC6pro_to_C3A_C6A_kc" value="1"/>
+      <parameter constant="true" id="bind_C6A_C8pro_to_C6AC8pro_kf" name="bind_C6A_C8pro_to_C6AC8pro_kf" value="3E-8"/>
+      <parameter constant="true" id="bind_C6A_C8pro_to_C6AC8pro_kr" name="bind_C6A_C8pro_to_C6AC8pro_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_C6AC8pro_to_C6A_C8A_kc" name="catalyze_C6AC8pro_to_C6A_C8A_kc" value="1"/>
+      <parameter constant="true" id="Bid_0" name="Bid_0" value="40000"/>
+      <parameter constant="true" id="Bax_0" name="Bax_0" value="100000"/>
+      <parameter constant="true" id="Bcl2_0" name="Bcl2_0" value="20000"/>
+      <parameter constant="true" id="bind_BidT_BaxC_to_BidTBaxC_kf" name="bind_BidT_BaxC_to_BidTBaxC_kf" value="1E-7"/>
+      <parameter constant="true" id="bind_BidT_BaxC_to_BidTBaxC_kr" name="bind_BidT_BaxC_to_BidTBaxC_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_BidTBaxC_to_BidT_BaxA_kc" name="catalyze_BidTBaxC_to_BidT_BaxA_kc" value="1"/>
+      <parameter constant="true" id="equilibrate_BaxA_to_BaxM_kf" name="equilibrate_BaxA_to_BaxM_kf" value="0.01"/>
+      <parameter constant="true" id="equilibrate_BaxA_to_BaxM_kr" name="equilibrate_BaxA_to_BaxM_kr" value="0.01"/>
+      <parameter constant="true" id="Bax_dimerization_kf" name="Bax_dimerization_kf" value="1.42857142857143E-5"/>
+      <parameter constant="true" id="Bax_dimerization_kr" name="Bax_dimerization_kr" value="0.001"/>
+      <parameter constant="true" id="Bax_tetramerization_kf" name="Bax_tetramerization_kf" value="2.85714285714286E-5"/>
+      <parameter constant="true" id="Bax_tetramerization_kr" name="Bax_tetramerization_kr" value="0.0005"/>
+      <parameter constant="true" id="bind_BaxM_Bcl2_kf" name="bind_BaxM_Bcl2_kf" value="1.42857142857143E-5"/>
+      <parameter constant="true" id="bind_BaxM_Bcl2_kr" name="bind_BaxM_Bcl2_kr" value="0.001"/>
+      <parameter constant="true" id="pore_bind_Bax_2_Bcl2_kf" name="pore_bind_Bax_2_Bcl2_kf" value="1.42857142857143E-5"/>
+      <parameter constant="true" id="pore_bind_Bax_2_Bcl2_kr" name="pore_bind_Bax_2_Bcl2_kr" value="0.001"/>
+      <parameter constant="true" id="pore_bind_Bax_4_Bcl2_kf" name="pore_bind_Bax_4_Bcl2_kf" value="1.42857142857143E-5"/>
+      <parameter constant="true" id="pore_bind_Bax_4_Bcl2_kr" name="pore_bind_Bax_4_Bcl2_kr" value="0.001"/>
+      <parameter constant="true" id="Mito_0" name="Mito_0" value="500000"/>
+      <parameter constant="true" id="pore_bind_Bax_4_MitoI_kf" name="pore_bind_Bax_4_MitoI_kf" value="1.42857142857143E-5"/>
+      <parameter constant="true" id="pore_bind_Bax_4_MitoI_kr" name="pore_bind_Bax_4_MitoI_kr" value="0.001"/>
+      <parameter constant="true" id="Mito_activation_kc" name="Mito_activation_kc" value="1"/>
+      <parameter constant="true" id="Smac_0" name="Smac_0" value="100000"/>
+      <parameter constant="true" id="CytoC_0" name="CytoC_0" value="100000"/>
+      <parameter constant="true" id="bind_MitoA_SmacM_to_MitoASmacM_kf" name="bind_MitoA_SmacM_to_MitoASmacM_kf" value="2.85714285714286E-5"/>
+      <parameter constant="true" id="bind_MitoA_SmacM_to_MitoASmacM_kr" name="bind_MitoA_SmacM_to_MitoASmacM_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_MitoASmacM_to_MitoA_SmacC_kc" name="catalyze_MitoASmacM_to_MitoA_SmacC_kc" value="10"/>
+      <parameter constant="true" id="bind_MitoA_CytoCM_to_MitoACytoCM_kf" name="bind_MitoA_CytoCM_to_MitoACytoCM_kf" value="2.85714285714286E-5"/>
+      <parameter constant="true" id="bind_MitoA_CytoCM_to_MitoACytoCM_kr" name="bind_MitoA_CytoCM_to_MitoACytoCM_kr" value="0.001"/>
+      <parameter constant="true" id="catalyze_MitoACytoCM_to_MitoA_CytoCC_kc" name="catalyze_MitoACytoCM_to_MitoA_CytoCC_kc" value="10"/>
+      <parameter constant="true" id="Bcl2c_0" name="Bcl2c_0" value="20000"/>
+      <parameter constant="true" id="bind_BidT_Bcl2c_kf" name="bind_BidT_Bcl2c_kf" value="1E-6"/>
+      <parameter constant="true" id="bind_BidT_Bcl2c_kr" name="bind_BidT_Bcl2c_kr" value="0.001"/>
+      <parameter constant="true" id="dBFP_0" name="dBFP_0" value="750000"/>
+      <parameter constant="true" id="dCit_0" name="dCit_0" value="750000"/>
+      <parameter constant="true" id="dmKate_0" name="dmKate_0" value="750000"/>
+      <parameter constant="true" id="bind_BFPBFP_C3A_kf" name="bind_BFPBFP_C3A_kf" value="2.8E-7"/>
+      <parameter constant="true" id="bind_BFPBFP_C3A_kr" name="bind_BFPBFP_C3A_kr" value="0.01"/>
+      <parameter constant="true" id="cleave_C3ABFPBFP_to_BFP_BFP_C3A_kc" name="cleave_C3ABFPBFP_to_BFP_BFP_C3A_kc" value="1"/>
+      <parameter constant="true" id="bind_CitCit_Apop_kf" name="bind_CitCit_Apop_kf" value="2.8E-7"/>
+      <parameter constant="true" id="bind_CitCit_Apop_kr" name="bind_CitCit_Apop_kr" value="0.001"/>
+      <parameter constant="true" id="cleave_ApopCitCit_to_Cit_Cit_Apop_kc" name="cleave_ApopCitCit_to_Cit_Cit_Apop_kc" value="1"/>
+      <parameter constant="true" id="bind_mKatemKate_C8A_kf" name="bind_mKatemKate_C8A_kf" value="5.4E-8"/>
+      <parameter constant="true" id="bind_mKatemKate_C8A_kr" name="bind_mKatemKate_C8A_kr" value="0.001"/>
+      <parameter constant="true" id="cleave_C8AmKatemKate_to_mKate_mKate_C8A_kc" name="cleave_C8AmKatemKate_to_mKate_mKate_C8A_kc" value="1"/>
+      <parameter constant="true" id="bind_CitCit_ApafA_kf" name="bind_CitCit_ApafA_kf" value="2E-10"/>
+      <parameter constant="true" id="bind_CitCit_ApafA_kr" name="bind_CitCit_ApafA_kr" value="0.001"/>
+      <parameter constant="true" id="cleave_ApafACitCit_to_Cit_Cit_ApafA_kc" name="cleave_ApafACitCit_to_Cit_Cit_ApafA_kc" value="1"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="__s0">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> L_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> R_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> flip_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> C8_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> BAR_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Apaf_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> C3_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> C6_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> PARP_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s9">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> XIAP_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Bid_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s11">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Bax_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s12">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Bcl2_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s13">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Mito_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s14">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Smac_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s15">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> CytoC_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s16">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> Bcl2c_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> dBFP_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s18">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> dCit_0 </ci>
+        </math>
+            </initialAssignment>
+      <initialAssignment symbol="__s19">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <ci> dmKate_0 </ci>
+        </math>
+            </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfReactions>
+      <reaction id="r0" name="bind_L_R_to_LR" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s0"/>
+          <speciesReference constant="true" species="__s1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s20"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s0 </ci>
+                <ci> __s1 </ci>
+                <ci> bind_L_R_to_LR_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s20 </ci>
+                <ci> bind_L_R_to_LR_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r1" name="convert_LR_to_DISC" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s20"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s21"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s20 </ci>
+              <ci> convert_LR_to_DISC_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r2" name="bind_DISC_C8pro_to_DISCC8pro" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s3"/>
+          <speciesReference constant="true" species="__s21"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s22"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s21 </ci>
+                <ci> __s3 </ci>
+                <ci> bind_DISC_C8pro_to_DISCC8pro_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s22 </ci>
+                <ci> bind_DISC_C8pro_to_DISCC8pro_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r3" name="bind_DISC_flip" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s2"/>
+          <speciesReference constant="true" species="__s21"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s23"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s2 </ci>
+                <ci> __s21 </ci>
+                <ci> bind_DISC_flip_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s23 </ci>
+                <ci> bind_DISC_flip_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r4" name="catalyze_DISCC8pro_to_DISC_C8A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s22"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s21"/>
+          <speciesReference constant="true" species="__s24"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s22 </ci>
+              <ci> catalyze_DISCC8pro_to_DISC_C8A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r5" name="bind_C8A_BidU_to_C8ABidU" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s10"/>
+          <speciesReference constant="true" species="__s24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s25"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s10 </ci>
+                <ci> __s24 </ci>
+                <ci> bind_C8A_BidU_to_C8ABidU_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s25 </ci>
+                <ci> bind_C8A_BidU_to_C8ABidU_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r6" name="bind_BAR_C8A" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s4"/>
+          <speciesReference constant="true" species="__s24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s26"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s24 </ci>
+                <ci> __s4 </ci>
+                <ci> bind_BAR_C8A_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s26 </ci>
+                <ci> bind_BAR_C8A_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r7" name="bind_C8A_C3pro_to_C8AC3pro" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s6"/>
+          <speciesReference constant="true" species="__s24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s27"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s24 </ci>
+                <ci> __s6 </ci>
+                <ci> bind_C8A_C3pro_to_C8AC3pro_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s27 </ci>
+                <ci> bind_C8A_C3pro_to_C8AC3pro_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r8" name="bind_mKatemKate_C8A" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s19"/>
+          <speciesReference constant="true" species="__s24"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s28"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> __s19 </ci>
+                <ci> __s24 </ci>
+                <ci> bind_mKatemKate_C8A_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s28 </ci>
+                <ci> bind_mKatemKate_C8A_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r9" name="catalyze_C8ABidU_to_C8A_BidT" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s25"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s24"/>
+          <speciesReference constant="true" species="__s29"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s25 </ci>
+              <ci> catalyze_C8ABidU_to_C8A_BidT_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r10" name="catalyze_C8AC3pro_to_C8A_C3A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s27"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s24"/>
+          <speciesReference constant="true" species="__s30"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s27 </ci>
+              <ci> catalyze_C8AC3pro_to_C8A_C3A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r11" name="cleave_C8AmKatemKate_to_mKate_mKate_C8A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s28"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s24"/>
+          <speciesReference constant="true" species="__s31"/>
+          <speciesReference constant="true" species="__s31"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s28 </ci>
+              <ci> cleave_C8AmKatemKate_to_mKate_mKate_C8A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r12" name="bind_XIAP_C3A_to_XIAPC3A" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s9"/>
+          <speciesReference constant="true" species="__s30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s32"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s30 </ci>
+                <ci> __s9 </ci>
+                <ci> bind_XIAP_C3A_to_XIAPC3A_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s32 </ci>
+                <ci> bind_XIAP_C3A_to_XIAPC3A_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r13" name="bind_C3A_PARPU_to_C3APARPU" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s8"/>
+          <speciesReference constant="true" species="__s30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s33"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s30 </ci>
+                <ci> __s8 </ci>
+                <ci> bind_C3A_PARPU_to_C3APARPU_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s33 </ci>
+                <ci> bind_C3A_PARPU_to_C3APARPU_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r14" name="bind_C3A_C6pro_to_C3AC6pro" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s7"/>
+          <speciesReference constant="true" species="__s30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s34"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s30 </ci>
+                <ci> __s7 </ci>
+                <ci> bind_C3A_C6pro_to_C3AC6pro_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s34 </ci>
+                <ci> bind_C3A_C6pro_to_C3AC6pro_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r15" name="bind_BidT_BaxC_to_BidTBaxC" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s11"/>
+          <speciesReference constant="true" species="__s29"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s35"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s11 </ci>
+                <ci> __s29 </ci>
+                <ci> bind_BidT_BaxC_to_BidTBaxC_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s35 </ci>
+                <ci> bind_BidT_BaxC_to_BidTBaxC_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r16" name="bind_BidT_Bcl2c" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s16"/>
+          <speciesReference constant="true" species="__s29"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s36"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s16 </ci>
+                <ci> __s29 </ci>
+                <ci> bind_BidT_Bcl2c_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s36 </ci>
+                <ci> bind_BidT_Bcl2c_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r17" name="bind_BFPBFP_C3A" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s17"/>
+          <speciesReference constant="true" species="__s30"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s37"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> __s17 </ci>
+                <ci> __s30 </ci>
+                <ci> bind_BFPBFP_C3A_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s37 </ci>
+                <ci> bind_BFPBFP_C3A_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r18" name="catalyze_XIAPC3A_to_XIAP_C3ub" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s32"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s9"/>
+          <speciesReference constant="true" species="__s38"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s32 </ci>
+              <ci> catalyze_XIAPC3A_to_XIAP_C3ub_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r19" name="catalyze_C3APARPU_to_C3A_PARPC" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s33"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s39"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s33 </ci>
+              <ci> catalyze_C3APARPU_to_C3A_PARPC_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r20" name="catalyze_C3AC6pro_to_C3A_C6A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s34"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s40"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s34 </ci>
+              <ci> catalyze_C3AC6pro_to_C3A_C6A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r21" name="catalyze_BidTBaxC_to_BidT_BaxA" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s35"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s29"/>
+          <speciesReference constant="true" species="__s41"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s35 </ci>
+              <ci> catalyze_BidTBaxC_to_BidT_BaxA_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r22" name="cleave_C3ABFPBFP_to_BFP_BFP_C3A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s37"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s42"/>
+          <speciesReference constant="true" species="__s42"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s37 </ci>
+              <ci> cleave_C3ABFPBFP_to_BFP_BFP_C3A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r23" name="bind_C6A_C8pro_to_C6AC8pro" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s3"/>
+          <speciesReference constant="true" species="__s40"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s43"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s3 </ci>
+                <ci> __s40 </ci>
+                <ci> bind_C6A_C8pro_to_C6AC8pro_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s43 </ci>
+                <ci> bind_C6A_C8pro_to_C6AC8pro_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r24" name="equilibrate_BaxA_to_BaxM" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s41"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s44"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s41 </ci>
+                <ci> equilibrate_BaxA_to_BaxM_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s44 </ci>
+                <ci> equilibrate_BaxA_to_BaxM_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r25" name="catalyze_C6AC8pro_to_C6A_C8A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s43"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s24"/>
+          <speciesReference constant="true" species="__s40"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s43 </ci>
+              <ci> catalyze_C6AC8pro_to_C6A_C8A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r26" name="Bax_dimerization" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s44"/>
+          <speciesReference constant="true" species="__s44"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s45"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <apply>
+                  <power/>
+                  <ci> __s44 </ci>
+                  <cn> 2 </cn>
+                </apply>
+                <ci> Bax_dimerization_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s45 </ci>
+                <ci> Bax_dimerization_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r27" name="bind_BaxM_Bcl2" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s12"/>
+          <speciesReference constant="true" species="__s44"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s46"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s12 </ci>
+                <ci> __s44 </ci>
+                <ci> bind_BaxM_Bcl2_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s46 </ci>
+                <ci> bind_BaxM_Bcl2_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r28" name="Bax_tetramerization" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s45"/>
+          <speciesReference constant="true" species="__s45"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s47"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <cn> 0.5 </cn>
+                <apply>
+                  <power/>
+                  <ci> __s45 </ci>
+                  <cn> 2 </cn>
+                </apply>
+                <ci> Bax_tetramerization_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> __s47 </ci>
+                <ci> Bax_tetramerization_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r29" name="pore_bind_Bax_2_Bcl2" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s12"/>
+          <speciesReference constant="true" species="__s45"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s48"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s12 </ci>
+                <ci> __s45 </ci>
+                <ci> pore_bind_Bax_2_Bcl2_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s48 </ci>
+                <ci> pore_bind_Bax_2_Bcl2_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r30" name="pore_bind_Bax_4_Bcl2" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s12"/>
+          <speciesReference constant="true" species="__s47"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s49"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s12 </ci>
+                <ci> __s47 </ci>
+                <ci> pore_bind_Bax_4_Bcl2_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s49 </ci>
+                <ci> pore_bind_Bax_4_Bcl2_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r31" name="pore_bind_Bax_4_MitoI" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s13"/>
+          <speciesReference constant="true" species="__s47"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s50"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s13 </ci>
+                <ci> __s47 </ci>
+                <ci> pore_bind_Bax_4_MitoI_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s50 </ci>
+                <ci> pore_bind_Bax_4_MitoI_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r32" name="Mito_activation" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s50"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s51"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s50 </ci>
+              <ci> Mito_activation_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r33" name="bind_MitoA_SmacM_to_MitoASmacM" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s14"/>
+          <speciesReference constant="true" species="__s51"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s52"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s14 </ci>
+                <ci> __s51 </ci>
+                <ci> bind_MitoA_SmacM_to_MitoASmacM_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s52 </ci>
+                <ci> bind_MitoA_SmacM_to_MitoASmacM_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r34" name="bind_MitoA_CytoCM_to_MitoACytoCM" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s15"/>
+          <speciesReference constant="true" species="__s51"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s53"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s15 </ci>
+                <ci> __s51 </ci>
+                <ci> bind_MitoA_CytoCM_to_MitoACytoCM_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s53 </ci>
+                <ci> bind_MitoA_CytoCM_to_MitoACytoCM_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r35" name="catalyze_MitoASmacM_to_MitoA_SmacC" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s52"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s51"/>
+          <speciesReference constant="true" species="__s54"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s52 </ci>
+              <ci> catalyze_MitoASmacM_to_MitoA_SmacC_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r36" name="catalyze_MitoACytoCM_to_MitoA_CytoCC" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s53"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s51"/>
+          <speciesReference constant="true" species="__s55"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s53 </ci>
+              <ci> catalyze_MitoACytoCM_to_MitoA_CytoCC_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r37" name="equilibrate_SmacC_to_SmacA" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s54"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s56"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s54 </ci>
+                <ci> equilibrate_SmacC_to_SmacA_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s56 </ci>
+                <ci> equilibrate_SmacC_to_SmacA_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r38" name="equilibrate_CytoCC_to_CytoCA" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s55"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s57"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s55 </ci>
+                <ci> equilibrate_CytoCC_to_CytoCA_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s57 </ci>
+                <ci> equilibrate_CytoCC_to_CytoCA_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r39" name="bind_CytoCA_ApafI_to_CytoCAApafI" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s5"/>
+          <speciesReference constant="true" species="__s57"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s58"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s5 </ci>
+                <ci> __s57 </ci>
+                <ci> bind_CytoCA_ApafI_to_CytoCAApafI_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s58 </ci>
+                <ci> bind_CytoCA_ApafI_to_CytoCAApafI_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r40" name="bind_SmacA_XIAP" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s9"/>
+          <speciesReference constant="true" species="__s56"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s59"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s56 </ci>
+                <ci> __s9 </ci>
+                <ci> bind_SmacA_XIAP_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s59 </ci>
+                <ci> bind_SmacA_XIAP_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r41" name="catalyze_CytoCAApafI_to_CytoCA_ApafA" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s58"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s57"/>
+          <speciesReference constant="true" species="__s60"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s58 </ci>
+              <ci> catalyze_CytoCAApafI_to_CytoCA_ApafA_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r42" name="bind_ApafA_C3pro_to_ApafAC3pro" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s6"/>
+          <speciesReference constant="true" species="__s60"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s61"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s6 </ci>
+                <ci> __s60 </ci>
+                <ci> bind_ApafA_C3pro_to_ApafAC3pro_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s61 </ci>
+                <ci> bind_ApafA_C3pro_to_ApafAC3pro_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r43" name="bind_C3A_ApafA_to_C3AApafA" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s60"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s62"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s30 </ci>
+                <ci> __s60 </ci>
+                <ci> bind_C3A_ApafA_to_C3AApafA_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s62 </ci>
+                <ci> bind_C3A_ApafA_to_C3AApafA_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r44" name="bind_ApafA_XIAP" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s9"/>
+          <speciesReference constant="true" species="__s60"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s63"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s60 </ci>
+                <ci> __s9 </ci>
+                <ci> bind_ApafA_XIAP_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s63 </ci>
+                <ci> bind_ApafA_XIAP_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r45" name="bind_CitCit_ApafA" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s18"/>
+          <speciesReference constant="true" species="__s60"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s64"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> __s18 </ci>
+                <ci> __s60 </ci>
+                <ci> bind_CitCit_ApafA_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s64 </ci>
+                <ci> bind_CitCit_ApafA_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r46" name="catalyze_ApafAC3pro_to_ApafA_C3A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s61"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s60"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s61 </ci>
+              <ci> catalyze_ApafAC3pro_to_ApafA_C3A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r47" name="catalyze_C3AApafA_to_C3A_Apop" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s62"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s65"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s62 </ci>
+              <ci> catalyze_C3AApafA_to_C3A_Apop_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r48" name="cleave_ApafACitCit_to_Cit_Cit_ApafA" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s64"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s60"/>
+          <speciesReference constant="true" species="__s66"/>
+          <speciesReference constant="true" species="__s66"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s64 </ci>
+              <ci> cleave_ApafACitCit_to_Cit_Cit_ApafA_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r49" name="bind_Apop_C3pro_to_ApopC3pro" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s6"/>
+          <speciesReference constant="true" species="__s65"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s67"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> __s6 </ci>
+                <ci> __s65 </ci>
+                <ci> bind_Apop_C3pro_to_ApopC3pro_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s67 </ci>
+                <ci> bind_Apop_C3pro_to_ApopC3pro_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r50" name="bind_CitCit_Apop" reversible="true">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s18"/>
+          <speciesReference constant="true" species="__s65"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s68"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <cn> 2 </cn>
+                <ci> __s18 </ci>
+                <ci> __s65 </ci>
+                <ci> bind_CitCit_Apop_kf </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> __s68 </ci>
+                <ci> bind_CitCit_Apop_kr </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r51" name="catalyze_ApopC3pro_to_Apop_C3A" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s67"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s30"/>
+          <speciesReference constant="true" species="__s65"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s67 </ci>
+              <ci> catalyze_ApopC3pro_to_Apop_C3A_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="r52" name="cleave_ApopCitCit_to_Cit_Cit_Apop" reversible="false">
+        <listOfReactants>
+          <speciesReference constant="true" species="__s68"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="true" species="__s65"/>
+          <speciesReference constant="true" species="__s66"/>
+          <speciesReference constant="true" species="__s66"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> __s68 </ci>
+              <ci> cleave_ApopCitCit_to_Cit_Cit_Apop_kc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

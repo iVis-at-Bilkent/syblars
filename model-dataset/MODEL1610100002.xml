@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" level="2" metaid="_9e6a990a-e621-4d69-a4cf-617dbd279e34" version="3">
+  <model id="MODEL1610100002" metaid="_79e6eb2f-24e7-4f99-8168-fe9485c57554" name="Proctor2017- Role of microRNAs in osteoarthritis (Negative Feedback By MicroRNA with Delay)">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Proctor2017- Role of microRNAs in
+osteoarthritis (Negative Feedback By MicroRNA with Delay)</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/pubmed/29095952" title="Access to this publication">Computer simulation models
+    as a tool to investigate the role of microRNAs in
+    osteoarthritis.</a>
+  </div>
+  <div class="bibo:authorList">Proctor CJ, Smith GR.</div>
+  <div class="bibo:Journal">PLoS ONE 2017; 12(11): e0187568</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>The aim of this study was to show how computational models
+    can be used to increase our understanding of the role of
+    microRNAs in osteoarthritis (OA) using miR-140 as an example.
+    Bioinformatics analysis and experimental results from the
+    literature were used to create and calibrate models of gene
+    regulatory networks in OA involving miR-140 along with key
+    regulators such as NF-?B, SMAD3, and RUNX2. The individual
+    models were created with the modelling standard, Systems
+    Biology Markup Language, and integrated to examine the overall
+    effect of miR-140 on cartilage homeostasis. Down-regulation of
+    miR-140 may have either detrimental or protective effects for
+    cartilage, indicating that the role of miR-140 is complex.
+    Studies of individual networks in isolation may therefore lead
+    to different conclusions. This indicated the need to combine
+    the five chosen individual networks involving miR-140 into an
+    integrated model. This model suggests that the overall effect
+    of miR-140 is to change the response to an IL-1 stimulus from a
+    prolonged increase in matrix degrading enzymes to a pulse-like
+    response so that cartilage degradation is temporary. Our
+    current model can easily be modified and extended as more
+    experimental data become available about the role of miR-140 in
+    OA. In addition, networks of other microRNAs that are important
+    in OA could be incorporated. A fully integrated model could not
+    only aid our understanding of the mechanisms of microRNAs in
+    ageing cartilage but could also provide a useful tool to
+    investigate the effect of potential interventions to prevent
+    cartilage loss.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1610100002">MODEL1610100002</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/25414348" target="_blank">Chelliah V et al. BioModels: ten-year
+  anniversary. Nucl. Acids Res. 2015, 43(Database
+  issue):D542-8</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#_79e6eb2f-24e7-4f99-8168-fe9485c57554">
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1610100002"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	
+	
+	
+	
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="_559dae9b-85bb-44d3-8aa6-eb5c4e33c10b">
+        <listOfUnits>
+          <unit kind="item" metaid="_73142492-d049-40a6-ac96-e7c6a616a23f"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" metaid="_9456a9b4-e792-44b5-a36d-7646bb3ae40f" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR" initialAmount="0" metaid="_188a56eb-af7e-4d03-b2f0-3e436ec313dc"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR_gene" initialAmount="2" metaid="ae549fdf-5c37-4977-bbcf-a6228b95977d"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR_gene_TF1" initialAmount="0" metaid="_5c02625e-7455-4485-8e70-c13f0382660c"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="pri_miR" initialAmount="0" metaid="_8755cce6-3778-46c0-a7ca-eb16b8116f5b"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Signal" initialAmount="0" metaid="ae9dfb79-fcbc-43dc-8d65-c273e4f9dc3c"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="TF1_cyt" initialAmount="0" metaid="_8c2436da-42b2-421c-b9e2-5dd904b302eb"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="TF1_nuc" initialAmount="0" metaid="_98fc2f71-54ad-4c8b-9394-88e1c3092d6b"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="TF1_mRNA" initialAmount="0" metaid="_381ee980-d2bb-4d26-8e58-7d2eb643d188"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Sink" initialAmount="0" metaid="baa7e154-a2ef-4910-aadd-27390cc9508c"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kbinTF1miRgene" metaid="b0d43541-cdac-4abd-963e-5cedbcde2377" value="0.1"/>
+      <parameter id="kdegMiR" metaid="c7627584-b315-4fd0-9fbe-c448df88e096" value="0.005"/>
+      <parameter id="kdegTF1" metaid="_4df58f13-d98d-4642-912a-4be85e1ddbd2" value="0.001"/>
+      <parameter id="kdegTF1mRNA" metaid="_1fcb528d-d828-4472-9db2-72ba0c811a99" value="0.0001"/>
+      <parameter id="kdegTF1mRNAbyMiR" metaid="bfc12d3e-913c-4ea7-835d-2a0918e0c571" value="0.001"/>
+      <parameter id="krelTF1miRgene" metaid="_17a86976-cf98-4871-8536-0a7d9e20908f" value="0.5"/>
+      <parameter id="ksynMiR" metaid="_9305159c-acd2-4b25-81f0-f4ecef75caca" value="1"/>
+      <parameter id="ksynTF1" metaid="de6db4c9-4eb6-4691-adcc-43af16c3fc96" value="0.005"/>
+      <parameter id="ksynTF1mRNA" metaid="_1a52af76-43e4-4bcd-a744-887394d318df" value="0.01"/>
+      <parameter id="kcyt2nuc" metaid="_2d1f15a9-bb8a-41aa-8acb-ed23aaa1c64c" value="1E-5"/>
+      <parameter id="knuc2cyt" metaid="_1632b0d4-003e-4fc6-b4db-dcd0ee51222d" value="0.001"/>
+      <parameter id="kprocessMiR" metaid="_7d53218a-0ff8-40fc-acdd-6fe6cb853d41" value="0.005"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="miR_gene_TF1_binding" metaid="fc3f98e7-ec6b-4d65-be75-cd8a7c866a8a" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8ebd2759-2003-4f49-9900-994a6746707c" species="miR_gene"/>
+          <speciesReference metaid="_33079eaf-1075-48a4-a7f7-2917920e1ab4" species="TF1_nuc"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_57da29b8-c10e-45b6-af4a-64d26907aa40" species="miR_gene_TF1"/>
+        </listOfProducts>
+        <kineticLaw metaid="eeb17669-4436-4ed0-84b1-6e7eea658d6a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinTF1miRgene </ci>
+              <ci> miR_gene </ci>
+              <ci> TF1_nuc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR_gene_TF1_release" metaid="_275b7ad0-b534-4c47-90d2-52435e6cdcae" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a246f1a6-1cde-4823-b3a3-d36f85c9a432" species="miR_gene_TF1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_26fc7b77-c563-4f52-b00b-889ef752e1fa" species="miR_gene"/>
+          <speciesReference metaid="_9338afcf-3c41-4947-892c-5c23c5b14b09" species="TF1_nuc"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9a039ad4-8134-40ea-85b6-696c682c2660">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelTF1miRgene </ci>
+              <ci> miR_gene_TF1 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR_synthesis" metaid="_39b0cb2f-1b81-4b71-b291-8767d3f32678" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c70c5426-7921-4bf0-bf5e-5ce80977018f" species="miR_gene_TF1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e38c6ecd-d3dd-4f9b-a4ee-1ce4ce133d70" species="miR_gene_TF1"/>
+          <speciesReference metaid="_138c1a0f-6be3-4213-be95-9b3d0b3064dd" species="pri_miR"/>
+        </listOfProducts>
+        <kineticLaw metaid="_80c02d11-83ab-413b-aa6a-fe9ec1e6c1c6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMiR </ci>
+              <ci> miR_gene_TF1 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR_processing" metaid="f84b6acf-c0c0-4d66-9400-78ec1226b78c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e497b9a3-8c55-4f14-82c2-93840ca23a7c" species="pri_miR"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_702e6c8a-eec9-4cde-8bad-fbe482c6c191" species="miR"/>
+        </listOfProducts>
+        <kineticLaw metaid="fd3fc0a8-c0be-425d-99b9-7f1ec43642af">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kprocessMiR </ci>
+              <ci> pri_miR </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR_degradation" metaid="df55dbca-ecef-4952-b9bc-600e67c47244" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d329d466-fd86-49cb-97d8-7dc971ce9f2b" species="miR"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_869bfc87-3ed0-4193-b044-70512ef210ed" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_47ac8da5-d754-4d04-83fd-76bef3b2251f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMiR </ci>
+              <ci> miR </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_transcription" metaid="de0f80f5-3dd5-4c0c-a6ba-8d91d7e21bf5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f7fbeaca-ff63-4bcc-9ee9-9955f2807db5" species="Signal"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0520c909-6ec3-4552-adf1-915211396cdc" species="Signal"/>
+          <speciesReference metaid="_57ea67e5-ef49-4cdf-a4c2-c8a869c6c63a" species="TF1_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="fd0d2892-e7c3-4e04-9d42-0fd6007734a2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynTF1mRNA </ci>
+              <ci> Signal </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_mRNA_degradation" metaid="ed11a198-b4ac-475a-af40-b340ce839067" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d1588dd3-64e8-478f-9a43-6a662090cb8e" species="TF1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_125f8981-af80-43e6-9999-ff49c8650f3f" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_561c2975-8083-41ca-bdf3-650e3e678e1e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegTF1mRNA </ci>
+              <ci> TF1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_mRNA_degradation_via_miR" metaid="_3bdc0abd-9ee9-425f-8882-cdfef8853bbd" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1b50210c-4e44-4c8d-9a6c-d91ed991ebbc" species="TF1_mRNA"/>
+          <speciesReference metaid="b1a6e3f6-6f15-4d16-baac-542e246f4f40" species="miR"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_67758d35-4251-4913-af2f-a332c8c28ada" species="miR"/>
+        </listOfProducts>
+        <kineticLaw metaid="_12668198-a639-4d26-9088-62e143a9e879">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegTF1mRNAbyMiR </ci>
+              <ci> TF1_mRNA </ci>
+              <ci> miR </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_translation" metaid="a7d8c09c-24dd-4f4d-8fa6-f21c066e6334" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8f8c6307-aa9a-4f35-ac1e-7c17efa0305d" species="TF1_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a8f15db2-bf36-48ef-9cfb-33434f1fda09" species="TF1_mRNA"/>
+          <speciesReference metaid="c935b102-6961-4878-9118-4d6608d8f013" species="TF1_cyt"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3e02ddbf-b5e7-4d32-8662-66dfa6b995d4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynTF1 </ci>
+              <ci> TF1_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_degradation" metaid="_1d8d1e3b-388c-448a-9fb3-4411df12dc7d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_367ace21-ad5a-41d4-86ce-c611361537c7" species="TF1_cyt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="baa02470-2438-44eb-8b1b-5a21eb277951" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_047b23ab-426e-4c4f-ac98-d1f8920c4504">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegTF1 </ci>
+              <ci> TF1_cyt </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_translocation_to_nucleus" metaid="_3d07b9f9-3a82-449f-a9ae-7ed9d66ba0e3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c8aadeb0-c13d-4959-baa8-1563da0cb51a" species="TF1_cyt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_97098628-8be2-4079-b7c0-a4ea9e2c63de" species="TF1_nuc"/>
+        </listOfProducts>
+        <kineticLaw metaid="_41d4c71e-e291-4d2d-b75f-cb94dfe66871">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kcyt2nuc </ci>
+              <ci> TF1_cyt </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="TF1_translocation_to_cytoplasm" metaid="c263f465-7292-4dcd-8c06-39986e698ed1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_84577d56-861c-4f8e-83de-616eea57ef10" species="TF1_nuc"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8c8c2efb-49c2-4b93-b1e5-efd4b6167bf7" species="TF1_cyt"/>
+        </listOfProducts>
+        <kineticLaw metaid="f85c20bc-9407-4a3c-a86a-9364c81eccce">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> knuc2cyt </ci>
+              <ci> TF1_nuc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <listOfEvents>
+      <event id="ActivateSignal" metaid="_0f32c9ff-353d-441e-9d88-635655ccd2ea">
+        <trigger metaid="_90cd1788-13b2-4064-ba90-3776e59f2e46">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <gt/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+              <cn type="integer"> 3600 </cn>
+            </apply>
+          </math>
+                </trigger>
+        <listOfEventAssignments>
+          <eventAssignment metaid="_6138fb11-0cb5-426f-95ff-af9bf2e7e454" variable="Signal">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">            
+              <cn> 100 </cn>
+            </math>
+                    </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
+  </model>
+</sbml>

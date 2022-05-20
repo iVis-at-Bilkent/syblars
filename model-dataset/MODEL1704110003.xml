@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="_634833a1-fc6d-4301-9584-50718bcda352" version="4">
+  <model id="MODEL1704110003" metaid="f440a9d2-acd8-431a-abe9-bc8efaa520b1" name="Proctor2017 - Identifying microRNA for muscle regeneration during ageing (Mir143_in_muscle)">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Proctor2017 - Identifying microRNA for muscle
+regeneration during ageing (Mir143_in_muscle)</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/doi/10.1038/s41598-017-12538-6" title="Access to this publication">Using computer simulation
+    models to investigate the most promising microRNAs to improve
+    muscle regeneration during ageing</a>
+  </div>
+  <div class="bibo:authorList">Carole J. Proctor &amp; Katarzyna
+  Goljanek-Whysall</div>
+  <div class="bibo:Journal">Scientific Reports</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>MicroRNAs (miRNAs) regulate gene expression through
+    interactions with target sites within mRNAs, leading to
+    enhanced degradation of the mRNA or inhibition of translation.
+    Skeletal muscle expresses many different miRNAs with important
+    roles in adulthood myogenesis (regeneration) and myofibre
+    hypertrophy and atrophy, processes associated with muscle
+    ageing. However, the large number of miRNAs and their targets
+    mean that a complex network of pathways exists, making it
+    difficult to predict the effect of selected miRNAs on
+    age-related muscle wasting. Computational modelling has the
+    potential to aid this process as it is possible to combine
+    models of individual miRNA:target interactions to form an
+    integrated network. As yet, no models of these interactions in
+    muscle exist. We created the first model of miRNA:target
+    interactions in myogenesis based on experimental evidence of
+    individual miRNAs which were next validated and used to make
+    testable predictions. Our model confirms that miRNAs regulate
+    key interactions during myogenesis and can act by promoting the
+    switch between quiescent/proliferating/differentiating
+    myoblasts and by maintaining the differentiation process. We
+    propose that a threshold level of miR-1 acts in the initial
+    switch to differentiation, with miR-181 keeping the switch on
+    and miR-378 maintaining the differentiation and miR-143
+    inhibiting myogenesis.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1704110003">MODEL1704110003</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/25414348" target="_blank">Chelliah V et al. BioModels: ten-year
+  anniversary. Nucl. Acids Res. 2015, 43(Database
+  issue):D542-8</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#f440a9d2-acd8-431a-abe9-bc8efaa520b1">
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1704110003"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	
+	
+	
+	
+	</rdf:RDF>
+	</annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="_62c29c71-5826-449e-a250-4326725edbf7">
+        <listOfUnits>
+          <unit kind="item" metaid="a62bd3e3-b76b-4611-87c5-e68cd5b250eb"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" metaid="_5266608e-aae0-48e3-a3a8-d0bb9bed7da7" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Akt" initialAmount="100" metaid="b3ea824c-69d1-4ec6-9c9e-a829da52a673"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Akt_P" initialAmount="0" metaid="e120e5df-3db3-4919-9e8a-ed655138bb47"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Igf2" initialAmount="500" metaid="fcca68bb-d351-460d-9e63-2dc422069588"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Igf2_Igfbp5" initialAmount="0" metaid="c0b896f5-9e19-4e6c-8cce-269c1bdaaffd"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Igfbp5" initialAmount="100" metaid="_770dc0ce-a1e3-4517-926d-373b2be0fde0"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Igfbp5_mRNA" initialAmount="20" metaid="a884cef4-2902-477a-823e-3ab6a73cfa2f"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Igfbp5_mRNA_miR143" initialAmount="0" metaid="b62a1d8f-2afd-4534-9bcc-52bb26e5f134"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="IL6" initialAmount="500" metaid="_1d2440c1-82e3-46af-8a78-f9658e7fd391"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR143" initialAmount="200" metaid="_924011db-99be-40ca-908b-9a6375d3dbeb"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR143_gene" initialAmount="2" metaid="_3de7aa37-eb80-40e4-a2dd-554ae84ee710"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR143_gene_IL6" initialAmount="0" metaid="c234fe17-4905-489c-9cf8-c5c6c55cca53"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR143_gene_MyoD" initialAmount="0" metaid="ae614719-9bb3-49bf-92eb-9ae263f58c0b"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD" initialAmount="500" metaid="f23581b5-71e0-4ec0-95c0-50821ca86c15"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Myogenin" initialAmount="0" metaid="_3c886c0a-c456-4424-9aec-64d7b8b4dba5"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Sink" initialAmount="0" metaid="_3fe70daa-420f-4ec5-a811-953187a4ca9e"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Source" initialAmount="1" metaid="_4ae75fb1-6718-47f7-9bd4-5a5dd86f70e1"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kbinIgf2Igfbp5" metaid="c7f3bdcc-a8ce-4010-ac8c-153c43214db8" value="5E-6"/>
+      <parameter id="kbinmiR143geneIL6" metaid="ad56da96-f49b-466a-ac64-1bf33b1ef795" value="0.001"/>
+      <parameter id="kbinmiR143geneMyoD" metaid="_1647c396-3d1f-40fe-bae9-e4bd8060beca" value="1E-5"/>
+      <parameter id="kbinmiR143Igfbp5mRNA" metaid="b2a0b455-a0fa-49b7-8cc3-256668a42a73" value="0.0001"/>
+      <parameter id="kdegIgfbp5" metaid="_005dce47-e718-4f97-893d-27af662cba94" value="5E-5"/>
+      <parameter id="kdegIgfbp5mRNA" metaid="_7578bb45-bd8f-40f2-a416-4125e0319ca1" value="1E-5"/>
+      <parameter id="kdegIgfbp5mRNAmiR143" metaid="d38fe600-f55d-48f3-b2a8-0b291bbb2ffb" value="5E-5"/>
+      <parameter id="kdegIL6" metaid="_33379d12-901e-4ae8-9669-74cacce9ead3" value="8E-6"/>
+      <parameter id="kdegmiR143" metaid="_691f4e8d-e30e-4d69-af09-7c2447750095" value="5E-6"/>
+      <parameter id="kdegMyogenin" metaid="db714da2-d171-45ee-bb6a-bc134dde3645" value="1E-5"/>
+      <parameter id="kdephosAkt" metaid="b6815cec-1b96-4ed1-ac43-8dd50d81acc5" value="0.01"/>
+      <parameter id="kphosAkt" metaid="f754fe20-1d8a-44f1-ac7a-aa016623d4eb" value="0.0005"/>
+      <parameter id="krelIgf2Igfbp5" metaid="_2749fa07-daf7-4377-bad1-08de215409ee" value="0.001"/>
+      <parameter id="krelmiR143geneIL6" metaid="d6740d6d-884f-4c8f-b9f2-eb368bf8502e" value="0.0005"/>
+      <parameter id="krelmiR143geneMyoD" metaid="_3fe3c7d6-e0f2-4de5-8b3f-43dbef676b34" value="0.001"/>
+      <parameter id="krelmiR143Igfbp5mRNA" metaid="dfb04568-7fe7-42f3-9c49-9f54bcad2b0c" value="0.001"/>
+      <parameter id="ksynIgfbp5" metaid="_710800f3-84f0-4d5d-860e-2f6ba819accc" value="8E-5"/>
+      <parameter id="ksynIgfbp5mRNA" metaid="_8c7027b5-088f-49c4-b6ba-bb025e9df788" value="0.001"/>
+      <parameter id="ksynIL6" metaid="_47fe7e2d-b5e9-4f56-81e9-450f5854828e" value="0"/>
+      <parameter id="ksynmiR143" metaid="_7665bbb9-0b16-475a-878d-8d5cee6b718b" value="0.0005"/>
+      <parameter id="ksynMyogenin" metaid="c71c0025-e2fb-4e2c-86f4-c4d95f424a54" value="1E-5"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="miR143_gene_MyoD_binding" metaid="_447a74ce-4888-469e-b71c-269c0e208100" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b43884e1-621a-4ae3-ba7e-18c9309bac82" species="miR143_gene"/>
+          <speciesReference metaid="_90f79a4c-20ae-4784-bd6d-0c68f1762600" species="MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e624dc27-a8ef-4c6b-add9-df6b2f65c608" species="miR143_gene_MyoD"/>
+        </listOfProducts>
+        <kineticLaw metaid="_4d346805-02a5-4aab-b630-d05e1af270cb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR143geneMyoD </ci>
+              <ci> miR143_gene </ci>
+              <ci> MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR143_gene_MyoD_release" metaid="_42b230cd-e6b0-4d2d-8917-77d21ffbec20" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_87c9d44f-2729-4dfe-9772-27d163865454" species="miR143_gene_MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7356988c-97c8-4949-bbba-4582b937275e" species="miR143_gene"/>
+          <speciesReference metaid="efe85601-9004-48d7-9d56-73f7d3c0cc28" species="MyoD"/>
+        </listOfProducts>
+        <kineticLaw metaid="ed26e3a4-a5b1-4e1c-9a47-196b730fb8da">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR143geneMyoD </ci>
+              <ci> miR143_gene_MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR143_synthesis" metaid="c0a37435-fcee-4362-9cbf-cdcb443fb818" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f70028d0-4aef-472c-9d68-d26b45813c32" species="miR143_gene_MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_24eec5e9-41b8-4550-ba1c-62b5cc2b2ee1" species="miR143_gene_MyoD"/>
+          <speciesReference metaid="_7fc069c0-2321-4364-a87f-e9325fda9870" species="miR143"/>
+        </listOfProducts>
+        <kineticLaw metaid="abcf3397-d7d1-45ea-9ce8-76444b2d9f64">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynmiR143 </ci>
+              <ci> miR143_gene_MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR143_degradation" metaid="_6105ae8d-639b-4dc0-ad12-d79bb47e917d" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_165cad55-5b1e-47a4-90bf-4877411a85f9" species="miR143"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7fa04c6e-976b-41c6-9e9a-f89c67fea7c9" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_73f013de-9270-4f4e-b926-24574347a357">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegmiR143 </ci>
+              <ci> miR143 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IL6_synthesis" metaid="_1df65f2b-e839-4fbf-9708-e63b2116c003" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_48ce50f8-65ea-4c8c-8edc-16c6ad0df68e" species="Source"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f3ebda34-3417-48dc-886b-56fcd332960c" species="IL6"/>
+        </listOfProducts>
+        <kineticLaw metaid="bb81d779-194d-4299-8a06-a824ced304a1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIL6 </ci>
+              <ci> Source </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="IL6_degradation" metaid="_21b368db-3f57-4c7c-a240-20b65837e206" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8f28ea73-aa52-4299-9754-796d6d52a301" species="IL6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_13654f61-dc37-4af8-8ed5-18d67fa75859" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="f07203a7-dcf3-44c7-9c21-052fb2e2b3a4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIL6 </ci>
+              <ci> IL6 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR143_gene_IL6_binding" metaid="_158f4128-173e-433e-a354-b9ab63c1f537" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_0e54edef-5fb0-4e46-93ce-804feefdc255" species="miR143_gene"/>
+          <speciesReference metaid="_6f3a672d-f0e4-4b4d-8afe-658ea2df62de" species="IL6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8966706d-c6ac-4273-8ce5-eb4e745fea72" species="miR143_gene_IL6"/>
+        </listOfProducts>
+        <kineticLaw metaid="d9cfabd5-a9d1-42fe-8504-98ad762fc191">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR143geneIL6 </ci>
+              <ci> miR143_gene </ci>
+              <ci> IL6 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR143_gene_IL6_release" metaid="_1cd3a58e-cfe5-4694-ae11-fd2916683592" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e837f91c-ca2c-4879-9670-26a033d2122c" species="miR143_gene_IL6"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="cae77246-fd43-46b2-bd8d-28ec5e939126" species="miR143_gene"/>
+          <speciesReference metaid="f845e33f-c539-47b0-bc7b-89b8ff4cde07" species="IL6"/>
+        </listOfProducts>
+        <kineticLaw metaid="b31f2fad-3cee-4b5f-9180-8579a360b7e4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR143geneIL6 </ci>
+              <ci> miR143_gene_IL6 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_transcription" metaid="a616b84a-28f8-4fe5-acdd-b8790d96f78e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="fd84b4d9-10b1-404c-adab-200a6f17aac3" species="Source"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_0db72520-18b3-4f0a-b39a-602a9219e900" species="Igfbp5_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3bd0be43-dfb2-43c8-9402-efc6ae53bcca">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIgfbp5mRNA </ci>
+              <ci> Source </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_mRNA_degradation" metaid="_57bb7ed7-32a7-4b13-9ffe-9d3b631e2bf3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c79e44f4-2601-4ed2-bcce-0e9b4ac83eeb" species="Igfbp5_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="aa422255-b9a0-47ae-9ed2-54bc01b473fa" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_7466e010-d89c-4f08-92f9-76185c2a63cb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIgfbp5mRNA </ci>
+              <ci> Igfbp5_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_mRNA_miR143_binding" metaid="_596b780c-cb2c-445e-86f6-c879b85c9904" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_0f96e0d3-f1ef-46e7-b79e-53679e730c3f" species="Igfbp5_mRNA"/>
+          <speciesReference metaid="a22718a2-0474-4910-9982-37a58eec3b2e" species="miR143"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ae572678-5c71-48e7-8532-087a47929a58" species="Igfbp5_mRNA_miR143"/>
+        </listOfProducts>
+        <kineticLaw metaid="_257eb3f1-d8cf-42b2-9792-88377185ef5c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR143Igfbp5mRNA </ci>
+              <ci> Igfbp5_mRNA </ci>
+              <ci> miR143 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_mRNA_miR143_release" metaid="_4cc2f462-6ae0-4805-ae06-f39ff0281bc9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_56719809-2691-477a-a4bc-34f13fe21fbf" species="Igfbp5_mRNA_miR143"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_75550826-8264-4f08-b063-62375ec5ad7f" species="Igfbp5_mRNA"/>
+          <speciesReference metaid="_3c2869fa-b7b2-4d47-ab2e-6dbbc3104bfd" species="miR143"/>
+        </listOfProducts>
+        <kineticLaw metaid="_004ec39c-60a2-4482-b549-e26731b86053">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR143Igfbp5mRNA </ci>
+              <ci> Igfbp5_mRNA_miR143 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_mRNA_degradation_by_miR143" metaid="_0c4e71cf-d41d-461e-b623-cdc9bec4a67e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a903eec0-1e64-4ff1-a3c4-da391ac3016f" species="Igfbp5_mRNA_miR143"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8584114f-7a67-41a1-a8fd-1f353a8a3737" species="miR143"/>
+        </listOfProducts>
+        <kineticLaw metaid="d7d37850-418e-4c9d-977a-7acc33153f5b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIgfbp5mRNAmiR143 </ci>
+              <ci> Igfbp5_mRNA_miR143 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_translation" metaid="ecaea22b-c816-4035-a844-81e9c7d1fd91" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_085abba7-900e-445e-b6bb-d34b459a24ca" species="Igfbp5_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_719ebb7b-f857-4fbc-963b-88c63f615eb6" species="Igfbp5_mRNA"/>
+          <speciesReference metaid="df0250ee-d017-4192-810f-1f745d941607" species="Igfbp5"/>
+        </listOfProducts>
+        <kineticLaw metaid="ec68d5a4-49cf-4d4d-b71c-6c32ad7e415b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynIgfbp5 </ci>
+              <ci> Igfbp5_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igfbp5_degradation" metaid="_1df22e2a-6c46-4324-9a7d-5a4eac54f166" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7d3166a5-7f65-4009-bf2e-7a7958a99af7" species="Igfbp5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_45331988-8e8d-4f38-ac7d-53541c8bde09" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_18f996ff-c6a7-4cb5-9e60-1b8d8eedd7bf">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegIgfbp5 </ci>
+              <ci> Igfbp5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igf2_Igfbp5_binding" metaid="d1bb3c41-8190-4674-858c-b86e7a4fc27f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="fa4dd53f-b876-4d8e-8ac5-ebb5958fd24c" species="Igf2"/>
+          <speciesReference metaid="_70583066-be48-4bd6-87cc-96cec884cc0e" species="Igfbp5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2be387fa-cc08-4ce4-9ca0-7efa6b94e6ac" species="Igf2_Igfbp5"/>
+        </listOfProducts>
+        <kineticLaw metaid="faaaed40-301e-4335-9fcc-4e8db61cffca">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinIgf2Igfbp5 </ci>
+              <ci> Igf2 </ci>
+              <ci> Igfbp5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Igf2_Igfbp5_release" metaid="_2b87b7a8-ce1e-4110-a754-47fa142ca634" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_55ad2fb3-75a1-4e33-a55f-097ee1dee074" species="Igf2_Igfbp5"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e5c5e250-406d-4f9b-8d5f-556d318a3475" species="Igf2"/>
+          <speciesReference metaid="de080a00-3693-47e3-8de1-93359c44e7df" species="Igfbp5"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5fdc9c72-aa01-41a0-9f52-fcbc6886acae">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelIgf2Igfbp5 </ci>
+              <ci> Igf2_Igfbp5 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Akt_phosphorylation" metaid="_73517d65-7680-4cfc-a130-c1989c75761f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="baeb8470-78ca-4d80-a69f-820c70a75f26" species="Igf2_Igfbp5"/>
+          <speciesReference metaid="aa4bd286-3058-405e-81c0-a60db357fad9" species="Akt"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5cce048a-da33-4956-8c45-6684e2e25e1c" species="Igf2_Igfbp5"/>
+          <speciesReference metaid="_318750ea-4a7e-4ab9-ac9c-5632435aa725" species="Akt_P"/>
+        </listOfProducts>
+        <kineticLaw metaid="_2f54dcb1-542a-4484-a441-8e11f09e0fdd">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kphosAkt </ci>
+              <ci> Igf2_Igfbp5 </ci>
+              <ci> Akt </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Akt_dephosphorylation" metaid="e09042d9-91ac-4022-a01b-3e9b29299f4c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6034edf3-1fa7-4d57-aaf3-56041cb4da5e" species="Akt_P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_35978449-192c-4d7d-bf10-bef5b4050756" species="Akt"/>
+        </listOfProducts>
+        <kineticLaw metaid="f1abaf8d-e26b-4f0f-b1a5-57ce84d248da">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdephosAkt </ci>
+              <ci> Akt_P </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Myogenin_synthesis" metaid="_7b1c53d4-78a9-4313-aa72-f1023d773123" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c2e61e37-8597-4ac0-ad4e-5ec8a10c6bc2" species="Akt_P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4dd43583-41a7-44f3-aab1-e828f1d395e5" species="Akt_P"/>
+          <speciesReference metaid="a34012b9-b4bd-4c3e-87df-6fbf4259303b" species="Myogenin"/>
+        </listOfProducts>
+        <kineticLaw metaid="cde74971-943e-4eff-a348-77924b2093c0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMyogenin </ci>
+              <ci> Akt_P </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Myogenin_degradation" metaid="c51822b6-085d-4f17-a9dc-35a0ccc5d866" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_259e0972-20cc-4bd8-a47f-08094d5eec79" species="Myogenin"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9097c34c-5830-4a41-8d96-e80e9a78ce86" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="a64d8076-b79f-4112-b68a-adc287094e6a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMyogenin </ci>
+              <ci> Myogenin </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

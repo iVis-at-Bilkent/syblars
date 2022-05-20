@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner" metaid="metaid_0000001" level="2" version="1">
+  <model metaid="metaid_0000054" id="model_0000001" name="dAlcantara2003_SynapticPlasticity">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+      <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+      <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+  </p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000054">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL8938094216"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/12823459"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0048167"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="metaid_0000048" id="substance" name="substance">
+    <listOfUnits>
+      <unit metaid="_138518" kind="mole" scale="-6"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="metaid_0000003" id="compartment_0000001" name="spine" size="1" units="volume"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="metaid_0000006" id="Sstar" name="S*" compartment="compartment_0000001" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="metaid_0000007" id="K" name="K" compartment="compartment_0000001" initialConcentration="0.5"/>
+  <species metaid="metaid_0000008" id="Kprime" name="K&apos;" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000009" id="Kstar" name="K*" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000010" id="N" name="N" compartment="compartment_0000001" initialConcentration="1"/>
+  <species metaid="metaid_0000011" id="Nstar" name="N*" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000012" id="D" name="D" compartment="compartment_0000001" initialConcentration="3"/>
+  <species metaid="metaid_0000013" id="Dstar" name="D*" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000015" id="R" name="R" compartment="compartment_0000001" initialConcentration="1"/>
+  <species metaid="metaid_0000016" id="Rprime" name="R&apos;" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000017" id="Rstar" name="R*" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000018" id="Pstar" name="P*" compartment="compartment_0000001" initialConcentration="2"/>
+  <species metaid="metaid_0000019" id="DstarP" name="D*P" compartment="compartment_0000001" initialConcentration="0"/>
+  <species metaid="metaid_0000059" id="Stotal" name="S total" compartment="compartment_0000001" initialConcentration="30" constant="true"/>
+  <species metaid="metaid_0000091" id="Ca2plus" name="Ca2plus" compartment="compartment_0000001" initialConcentration="0.001"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="metaid_0000030" id="Kd" name="Kd" value="7"/>
+  <parameter metaid="metaid_0000031" id="nH" name="Hill coefficient" value="4"/>
+  <parameter metaid="metaid_0000032" id="k1" name="k1" value="150"/>
+  <parameter metaid="metaid_0000034" id="k2" name="k2" value="2.17"/>
+  <parameter metaid="metaid_0000035" id="k3" name="k3" value="0.5"/>
+  <parameter metaid="metaid_0000036" id="k4" name="k4" value="0.03"/>
+  <parameter metaid="metaid_0000037" id="n1" name="n1" value="1666"/>
+  <parameter metaid="metaid_0000038" id="n2" name="n2" value="10"/>
+  <parameter metaid="metaid_0000039" id="d1" name="d1" value="2000"/>
+  <parameter metaid="metaid_0000040" id="d2PKAstar" name="d2 times PKA*" value="0.002"/>
+  <parameter metaid="metaid_0000041" id="r1PKAstar" name="r1 times PKA*" value="0.1"/>
+  <parameter metaid="metaid_0000042" id="r2" name="r2" value="1"/>
+  <parameter metaid="metaid_0000043" id="r3" name="r3" value="10"/>
+  <parameter metaid="metaid_0000044" id="r4" name="r4" value="0.1"/>
+  <parameter metaid="metaid_0000045" id="p1" name="p1" value="0.03"/>
+  <parameter metaid="metaid_0000046" id="p2" name="p2" value="3e-05"/>
+</listOfParameters><listOfRules>
+  <assignmentRule metaid="metaid_0000056" variable="Ca2plus">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <cn> 0.1 </cn>
+          <apply>
+            <lt/>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+            <cn> 60 </cn>
+          </apply>
+        </piece>
+        <piece>
+          <cn> 0.1 </cn>
+          <apply>
+            <gt/>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+            <cn> 66.0115 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <cn> 1 </cn>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000060" variable="Sstar">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <minus/>
+          <ci> Stotal </ci>
+          <apply>
+            <plus/>
+            <ci> Kprime </ci>
+            <ci> Kstar </ci>
+            <ci> Nstar </ci>
+          </apply>
+        </apply>
+        <apply>
+          <plus/>
+          <cn type="integer"> 1 </cn>
+          <apply>
+            <power/>
+            <apply>
+              <divide/>
+              <ci> Kd </ci>
+              <ci> Ca2plus </ci>
+            </apply>
+            <ci> nH </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+</listOfRules><listOfReactions>
+  <reaction metaid="metaid_0000065" id="reaction_0000003" name="CaMKII binding to CaM" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138530" species="K"/>
+      <speciesReference metaid="_138542" species="Sstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138554" species="Kprime"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138567">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k1 </ci>
+          <ci> Sstar </ci>
+          <ci> K </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000067" id="reaction_0000004" name="CaMKII autophosphorylation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138579" species="Kprime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138591" species="Kstar"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138603">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> Kprime </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000068" id="reaction_0000006" name="Calcineurin or PP2B activation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138616" species="N"/>
+      <speciesReference metaid="_138628" species="Sstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138640" species="Nstar"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138652">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> n1 </ci>
+          <ci> Sstar </ci>
+          <ci> N </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000069" id="reaction_0000007" name="DARPP-32 activation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138664" species="D"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138676" species="Dstar"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138688">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> d2PKAstar </ci>
+          <ci> D </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000070" id="reaction_0000008" name="AMPAR intermediate activation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138701" species="R"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138713" species="Rprime"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138725">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> r1PKAstar </ci>
+          <ci> R </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000071" id="reaction_0000009" name="full AMPAR activation by active CaMKII" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138737" species="Rprime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138749" species="Rstar"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_138761" species="Kprime"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_138773">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> r3 </ci>
+          <ci> Rprime </ci>
+          <ci> Kprime </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000072" id="reaction_0000010" name="PP1 inactivation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138785" species="Dstar"/>
+      <speciesReference metaid="_138797" species="Pstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138809" species="DstarP"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138821">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> p2 </ci>
+          <ci> Dstar </ci>
+          <ci> Pstar </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000082" id="reaction_0000011" name="CaM unbinding from CaMKII" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138833" species="Kprime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138845" species="K"/>
+      <speciesReference metaid="_138857" species="Sstar"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138869">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> k2 </ci>
+          <ci> Kprime </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000083" id="reaction_0000012" name="CaMKII dephosphorylation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138881" species="Kstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138893" species="Kprime"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_138905" species="Pstar"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_138917">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Kstar </ci>
+          <ci> k4 </ci>
+          <ci> Pstar </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000084" id="reaction_0000014" name="Calcineurin or PP2B inactivation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138930" species="Nstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138942" species="Sstar"/>
+      <speciesReference metaid="_138954" species="N"/>
+    </listOfProducts>
+    <kineticLaw metaid="_138966">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Nstar </ci>
+          <ci> n2 </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000085" id="reaction_0000015" name="DARPP-32 deactivation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_138978" species="Dstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_138990" species="D"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_139003" species="Nstar"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_139016">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Dstar </ci>
+          <ci> Nstar </ci>
+          <ci> d1 </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000086" id="reaction_0000016" name="AMPAR complete deactivation by calcineurin" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_139029" species="Rprime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_139041" species="R"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_139054" species="Nstar"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_139066">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Rprime </ci>
+          <ci> r2 </ci>
+          <ci> Nstar </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000087" id="reaction_0000017" name="AMPAR complete deactivation by PP1" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_139078" species="Rprime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_139090" species="R"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_139102" species="Pstar"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_139114">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Rprime </ci>
+          <ci> r2 </ci>
+          <ci> Pstar </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000088" id="reaction_0000019" name="full AMPAR activation by autophosphorylated CaMKII" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_139126" species="Rprime"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_139138" species="Rstar"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_139151" species="Kstar"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_139163">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Rprime </ci>
+          <ci> r3 </ci>
+          <ci> Kstar </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000089" id="reaction_0000020" name="intermediate AMPAR deactivation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_139175" species="Rstar"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_139187" species="Rprime"/>
+    </listOfProducts>
+    <listOfModifiers>
+      <modifierSpeciesReference metaid="_139199" species="Pstar"/>
+    </listOfModifiers>
+    <kineticLaw metaid="_139211">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> Rstar </ci>
+          <ci> r4 </ci>
+          <ci> Pstar </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="metaid_0000090" id="reaction_0000021" name="PP1 activation" reversible="false">
+    <listOfReactants>
+      <speciesReference metaid="_139223" species="DstarP"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_139235" species="Dstar"/>
+      <speciesReference metaid="_139247" species="Pstar"/>
+    </listOfProducts>
+    <kineticLaw metaid="_139259">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <apply>
+          <times/>
+          <ci> DstarP </ci>
+          <ci> p1 </ci>
+          <ci> compartment_0000001 </ci>
+        </apply>
+      </math>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>

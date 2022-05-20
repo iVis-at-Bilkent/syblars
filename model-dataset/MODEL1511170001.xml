@@ -1,0 +1,522 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="d760a9bf-35c9-476c-bfcf-98da77dd5397" version="4">
+  <model id="MODEL1511170001" metaid="COPASI0" name="LlorénsRico2016 - Effects of cis-Encoded antisense RNAs (asRNAs) - Case2">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">LlorénsRico2016 - Effects of cis-Encoded
+antisense RNAs (asRNAs) - Case1</div>
+<div class="dc:description">
+  <span style="color: rgb(0, 0, 0); font-family: 'Times New Roman', stixgeneral, serif; font-size: 15.999099731445313px;">Three
+  putative effects of the asRNAs were considered in this study: in
+  case 1</span>
+  <span style="color: rgb(0, 0, 0); font-family: 'Times New Roman', stixgeneral, serif; font-size: 15.999099731445313px;">,
+  the binding of the asRNA to the corresponding mRNA induces
+  degradation of the duplex. In case 2 </span>
+  <span style="color: rgb(0, 0, 0); font-family: 'Times New Roman', stixgeneral, serif; font-size: 15.999099731445313px;"> (this
+  model)</span>
+  <span style="color: rgb(0, 0, 0); font-family: 'Times New Roman', stixgeneral, serif; font-size: 15.999099731445313px;"> 
+  the binding of the asRNA to the mRNA induces degradation of the
+  mRNA, but not of the asRNA. In case 3, the mRNA and the asRNA
+  bind reversibly to form a stable duplex, preventing translation
+  of the mRNA. In all the three cases, binding to the ribosome
+  protects the mRNA from the effect of the asRNA.</span>
+</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/pubmed/26973873" title="Access to this publication">Bacterial antisense RNAs are
+    mainly the product of transcriptional noise.</a>
+  </div>
+  <div class="bibo:authorList">Lloréns-Rico V, Cano J,
+  Kamminga T, Gil R, Latorre A, Chen WH, Bork P, Glass JI, Serrano
+  L, Lluch-Senar M.</div>
+  <div class="bibo:Journal">Sci Adv 2016 Mar; 2(3): e1501363</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>cis-Encoded antisense RNAs (asRNAs) are widespread along
+    bacterial transcriptomes. However, the role of most of these
+    RNAs remains unknown, and there is an ongoing discussion as to
+    what extent these transcripts are the result of transcriptional
+    noise. We show, by comparative transcriptomics of 20 bacterial
+    species and one chloroplast, that the number of asRNAs is
+    exponentially dependent on the genomic AT content and that
+    expression of asRNA at low levels exerts little impact in terms
+    of energy consumption. A transcription model simulating mRNA
+    and asRNA production indicates that the asRNA regulatory effect
+    is only observed above certain expression thresholds,
+    substantially higher than physiological transcript levels.
+    These predictions were verified experimentally by
+    overexpressing nine different asRNAs in Mycoplasma pneumoniae.
+    Our results suggest that most of the antisense transcripts
+    found in bacteria are the consequence of transcriptional noise,
+    arising at spurious promoters throughout the genome.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1511170001">MODEL1511170001</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/20587024" title="Latest BioModels Database publication">BioModels Database:
+  An enhanced, curated and annotated resource for published
+  quantitative kinetic models</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2015-06-20T19:57:50Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>veronica.llorens@crg.eu</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Lloréns-Rico</vCard:Family>
+                    <vCard:Given>Verónica</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>CRG</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#COPASI0">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Lloréns-Rico</vCard:Family>
+	<vCard:Given>Verónica</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>veronica.llorens@crg.eu</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>CRG</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-06-20T19:57:50Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2015-06-20T19:57:50Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1511170001"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	
+	
+	
+	
+	
+	
+	
+	</rdf:RDF>
+	</annotation>
+      <listOfFunctionDefinitions>
+      <functionDefinition id="Constant_flux__irreversible" metaid="da5368b1-9d9b-47a4-ab7e-3067277ad22d" name="Constant flux (irreversible)">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> v </ci>
+            </bvar>
+            <ci> v </ci>
+          </lambda>
+        </math>
+            </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" metaid="ef03f935-b3c0-42b9-8ea4-71372996024c" name="time">
+        <listOfUnits>
+          <unit exponent="1" kind="second" metaid="_5aa2196c-ffe7-4239-adac-41674227b696" multiplier="60" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment constant="true" id="Myco_cell" metaid="COPASI1" name="Mycoplasma pneumoniae cell" size="5.5E-17" spatialDimensions="3">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T19:58:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="Myco_cell" constant="false" id="mrna" initialConcentration="3.11023622047244E-9" metaid="COPASI2" name="mrna">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T19:58:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Myco_cell" constant="false" id="asrna" initialConcentration="1.7007299270073E-9" metaid="COPASI3" name="asrna">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T19:59:48Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Myco_cell" constant="false" id="protein" initialConcentration="5.04520833250758E-6" metaid="COPASI4" name="protein">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T19:59:36Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Myco_cell" constant="false" id="rib" initialConcentration="6.03811178998255E-6" metaid="COPASI5" name="rib">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-22T17:37:32Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="false" compartment="Myco_cell" constant="false" id="mrnarib" initialConcentration="2.11057881910267E-10" metaid="COPASI6" name="mrnarib">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-22T17:39:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="transcription_mrna" metaid="COPASI7" name="transcription mrna" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T20:01:21Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference metaid="_6856d8be-f5a6-4487-8c06-272165dfd643" species="mrna" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_20b755c0-a8f3-41a5-94c9-3928bdeb13cc">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> v </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="v" metaid="_51f05598-179f-4955-a77b-cb7209ee04dd" name="v" value="3.95E-10"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="transcription_asrna" metaid="COPASI8" name="transcription asrna" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T20:01:56Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfProducts>
+          <speciesReference metaid="befb8d02-8a20-460d-9d76-68dbcf4d353e" species="asrna" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_96f8636d-17ca-42b8-a6b7-7cc9c827dac4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <apply>
+                <ci> Constant_flux__irreversible </ci>
+                <ci> v </ci>
+              </apply>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="v" metaid="_3b8cdef7-c5ba-4404-a6e5-2810d0267da2" name="v" value="2.33E-10"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="translation_protein" metaid="COPASI9" name="translation protein" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T20:02:42Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference metaid="_9ea927bd-2784-4a05-9060-867c8c88514a" species="mrnarib" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f4599d26-4d45-4a90-9949-c9d28c07577f" species="mrna" stoichiometry="1"/>
+          <speciesReference metaid="c8151241-bca5-4128-b647-aff3a19cdc74" species="protein" stoichiometry="1"/>
+          <speciesReference metaid="_2aeea1ef-5414-440e-903b-0d85a2e8490b" species="rib" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_4bb5cfa7-79f9-42a2-b2ae-d60d65734865">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <ci> k1 </ci>
+              <ci> mrnarib </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="k1" metaid="_0956a189-43a6-41ad-875a-6af02c0ac002" name="k1" value="1.2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="degradation_mrna" metaid="COPASI10" name="degradation mrna" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T20:00:27Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference metaid="_94d93ba6-74b5-4843-848f-18c8553046ca" species="mrna" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw metaid="_9d39e1be-2f88-41e9-90b6-5c7603cf2334">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <ci> k1 </ci>
+              <ci> mrna </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="k1" metaid="_1e4d2a0c-27a2-4383-8671-ab4b88e8d2a0" name="k1" value="0.127"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="degradation_asrna" metaid="COPASI11" name="degradation asrna" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T20:03:41Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference metaid="_7145ec3b-b492-455d-8f84-46102e2afdca" species="asrna" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw metaid="_1c88463a-0479-43de-93af-12256e6d33a3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <ci> k1 </ci>
+              <ci> asrna </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="k1" metaid="b65809ab-3bf3-421d-8ee7-09bfba07e388" name="k1" value="0.137"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="degradation_protein" metaid="COPASI12" name="degradation protein" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-20T20:03:57Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference metaid="efcf3c24-b023-4e0e-b600-45d9afd16ca6" species="protein" stoichiometry="1"/>
+        </listOfReactants>
+        <kineticLaw metaid="ada2e4ea-f67d-44d9-80b8-4edc6ff815f0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <ci> k1 </ci>
+              <ci> protein </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="k1" metaid="_84c7a467-6f2c-4903-b727-64a6ac227c19" name="k1" value="5.02E-5"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="mrna_ribosome_binding" metaid="COPASI13" name="mrna ribosome binding" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-06-22T17:40:28Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference metaid="d19ea32d-5977-4a99-9cdf-6f308e2871cf" species="mrna" stoichiometry="1"/>
+          <speciesReference metaid="_11d0ef52-4f0c-4dca-8738-e59b23dd8e1b" species="rib" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fbdbd6fb-e182-441f-9784-cc4a1b2f6f30" species="mrnarib" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_1851a707-6837-4469-b942-9ff4f932e611">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <ci> k1 </ci>
+              <ci> mrna </ci>
+              <ci> rib </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="k1" metaid="eced0d54-8a4b-4b83-a2b7-707f9f8357d3" name="k1" value="1.34861596782129E4"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="induced_degradation_mrna" metaid="COPASI14" name="induced degradation mrna" reversible="false">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2015-11-17T17:49:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+              <listOfReactants>
+          <speciesReference metaid="_41bbfce5-fe41-4b4a-9f78-15c273379d15" species="asrna" stoichiometry="1"/>
+          <speciesReference metaid="ad83d451-36a5-4c84-a92e-76e47f978129" species="mrna" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fe1d7908-c27c-4399-ae65-9db7048d4f48" species="asrna" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw metaid="_0516c515-4298-4041-8ee6-ff9ff9ce0360">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> Myco_cell </ci>
+              <ci> k1 </ci>
+              <ci> asrna </ci>
+              <ci> mrna </ci>
+            </apply>
+          </math>
+                  <listOfParameters>
+            <parameter id="k1" metaid="_6702416b-98a1-443c-af48-e2be183ae5a8" name="k1" value="60000000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

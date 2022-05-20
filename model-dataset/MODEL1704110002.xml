@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="c0b81a3c-e6a6-46a5-9308-9addf21611e3" version="4">
+  <model id="MODEL1704110002" metaid="_87e6bc3c-fbb5-41b6-a30a-26e2fa6f7173" name="Proctor2017 - Identifying microRNA for muscle regeneration during ageing (Mir378_in_muscle)">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <div class="dc:title">Proctor2017 - Identifying microRNA for muscle regeneration during ageing (Mir378_in_muscle)</div>
+<div class="dc:bibliographicCitation">
+  <p>This model is described in the article:</p>
+  <div class="bibo:title">
+    <a href="http://identifiers.org/doi/10.1038/s41598-017-12538-6" title="Access to this publication">Using computer simulation
+    models to investigate the most promising microRNAs to improve
+    muscle regeneration during ageing</a>
+  </div>
+  <div class="bibo:authorList">Carole J. Proctor &amp; Katarzyna
+  Goljanek-Whysall</div>
+  <div class="bibo:Journal">Scientific Reports</div>
+  <p>Abstract:</p>
+  <div class="bibo:abstract">
+    <p>MicroRNAs (miRNAs) regulate gene expression through
+    interactions with target sites within mRNAs, leading to
+    enhanced degradation of the mRNA or inhibition of translation.
+    Skeletal muscle expresses many different miRNAs with important
+    roles in adulthood myogenesis (regeneration) and myofibre
+    hypertrophy and atrophy, processes associated with muscle
+    ageing. However, the large number of miRNAs and their targets
+    mean that a complex network of pathways exists, making it
+    difficult to predict the effect of selected miRNAs on
+    age-related muscle wasting. Computational modelling has the
+    potential to aid this process as it is possible to combine
+    models of individual miRNA:target interactions to form an
+    integrated network. As yet, no models of these interactions in
+    muscle exist. We created the first model of miRNA:target
+    interactions in myogenesis based on experimental evidence of
+    individual miRNAs which were next validated and used to make
+    testable predictions. Our model confirms that miRNAs regulate
+    key interactions during myogenesis and can act by promoting the
+    switch between quiescent/proliferating/differentiating
+    myoblasts and by maintaining the differentiation process. We
+    propose that a threshold level of miR-1 acts in the initial
+    switch to differentiation, with miR-181 keeping the switch on
+    and miR-378 maintaining the differentiation and miR-143
+    inhibiting myogenesis.</p>
+  </div>
+</div>
+<div class="dc:publisher">
+  <p>This model is hosted on 
+  <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+  and identified by: 
+  <a href="http://identifiers.org/biomodels.db/MODEL1704110002">MODEL1704110002</a>.</p>
+  <p>To cite BioModels Database, please use: 
+  <a href="http://identifiers.org/pubmed/25414348" target="_blank">Chelliah V et al. BioModels: ten-year
+  anniversary. Nucl. Acids Res. 2015, 43(Database
+  issue):D542-8</a>.</p>
+</div>
+<div class="dc:license">
+  <p>To the extent possible under law, all copyright and related or
+  neighbouring rights to this encoded model have been dedicated to
+  the public domain worldwide. Please refer to 
+  <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0
+  Public Domain Dedication</a> for more information.</p>
+</div>
+</body>
+    </notes>
+    <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="cdb1dfac-1a18-4087-9f4c-8d0c3431d675">
+        <listOfUnits>
+          <unit kind="item" metaid="_7c954116-ecfc-4960-b7c7-8c65bc704da8"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cell" metaid="d3cf5885-49bd-45a2-86be-b7c5ef10be28" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR378" initialAmount="20" metaid="_5c1654eb-23f5-43cf-805e-ed3ad9c8d601"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR378_gene" initialAmount="2" metaid="_1904ef13-66e0-49e6-8b85-8474afe7bae9"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR378_gene_MyoD" initialAmount="0" metaid="_620934e6-9c8b-4cda-80ec-bf5c6bb22950"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR378_gene_Msc" initialAmount="0" metaid="_13db1ad4-9b7c-41cb-8973-1b1360978a17"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="miR378_Msc_mRNA" initialAmount="0" metaid="_77dec46e-76aa-4674-8796-c2389022fbed"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD" initialAmount="500" metaid="_066f34b0-47c6-4d71-a375-eb44a14e04cb"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD_gene" initialAmount="2" metaid="_187b1d57-4af5-4130-8999-5d5efd8ab09e"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="MyoD_mRNA" initialAmount="20" metaid="_94c4a30b-4cc3-4b44-b34e-3d70f89a7983"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Msc" initialAmount="500" metaid="ba9e1d31-4382-498a-9021-c2db815722bb"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Msc_gene" initialAmount="2" metaid="c9c0b79b-951c-45d1-82f2-16821dab7869"/>
+      <species compartment="cell" hasOnlySubstanceUnits="true" id="Msc_mRNA" initialAmount="50" metaid="_3759c0df-7ffd-4876-9619-db6ec7b7976b"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Sink" initialAmount="0" metaid="_4ea89b60-4e37-46ca-af9b-eeb5561b8e96"/>
+      <species boundaryCondition="true" compartment="cell" constant="true" hasOnlySubstanceUnits="true" id="Source" initialAmount="1" metaid="_09698050-e383-4600-9fc0-26999b46a6ca"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kbinmiR378geneMsc" metaid="_06a0997a-fba3-4817-b577-1b735bc812b3" value="5E-5"/>
+      <parameter id="kbinmiR378geneMyoD" metaid="dd0fb6d5-36e7-4592-bf6a-1463d5929d5b" value="1E-5"/>
+      <parameter id="kbinmiR378MscmRNA" metaid="_7c499c49-9d03-4cbf-8bc1-1d78e387958c" value="0.0001"/>
+      <parameter id="kdegmiR378" metaid="_44db44d3-94a6-43af-961f-2dd16e651d1a" value="1.6E-6"/>
+      <parameter id="kdegMyoD" metaid="_081a1c16-a898-4804-8b09-0821350b98d6" value="0.00026"/>
+      <parameter id="kdegMyoDmRNA" metaid="e1766024-f375-400d-ab52-bc9df66bc43f" value="0.0002"/>
+      <parameter id="kdegMsc" metaid="fd239e57-9d14-496f-9158-04bef399c899" value="5E-5"/>
+      <parameter id="kdegMscmRNA" metaid="_853fe867-bcab-4a46-8b0d-f54be37f7717" value="1E-5"/>
+      <parameter id="kdegMscmRNAmiR378" metaid="_43ddc045-d107-4b84-b80a-83815a967735" value="4E-5"/>
+      <parameter id="krelmiR378geneMsc" metaid="a8a792e8-4401-41de-81fe-03526e1ded1c" value="0.001"/>
+      <parameter id="krelmiR378geneMyoD" metaid="a18645f4-ba6c-42be-ada5-17b564308139" value="0.001"/>
+      <parameter id="krelmiR378MscmRNA" metaid="b03ccae8-9dcc-4ed6-bae1-5204a613a99c" value="0.001"/>
+      <parameter id="ksynmiR378" metaid="_620c6242-01b1-4c08-bcaf-4b9390e92f63" value="0.0001"/>
+      <parameter id="ksynMsc" metaid="b47882f3-1edb-4d38-8a8e-2c4cfd37e8ad" value="0.0005"/>
+      <parameter id="ksynMscmRNA" metaid="_876b1f94-5fdb-4eb0-b72f-c97dc149aa53" value="0.00025"/>
+      <parameter id="ksynMyoD" metaid="_971c3664-48fd-45bc-b97f-1f9cdbeec317" value="0.002"/>
+      <parameter id="ksynMyoDmRNA" metaid="_0275b6ac-0254-41fa-8563-29207b700937" value="0.005"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="miR378_gene_MyoD_binding" metaid="b36d8ebb-e91a-4b22-94a7-3e46507dc0ab" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_91325192-3c4f-46c4-956d-220cbf9e4617" species="miR378_gene"/>
+          <speciesReference metaid="d60c8f21-9012-4e15-a9c2-2774d8547b6a" species="MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_63783fb6-821c-41b7-a888-fa8af65c4865" species="miR378_gene_MyoD"/>
+        </listOfProducts>
+        <kineticLaw metaid="_94e5491f-bd1c-4a07-aff3-fe3c237a7324">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR378geneMyoD </ci>
+              <ci> miR378_gene </ci>
+              <ci> MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR_gene_MyoD_release" metaid="b84b7d9d-d377-4e59-8ddc-4f557e13e538" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a6c0196d-7920-40d9-87a7-17a1ac353fd7" species="miR378_gene_MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_04795971-749e-4136-a2cc-76ff9af56f95" species="miR378_gene"/>
+          <speciesReference metaid="_0036f26a-510b-462b-8e62-50a2e0b06eef" species="MyoD"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5ea5474d-f34d-4a7b-844c-ce61be5b237d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR378geneMyoD </ci>
+              <ci> miR378_gene_MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR378_synthesis" metaid="_681cccea-eddb-4b2a-912f-3b7d384ca582" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_0552bcb6-d25d-40a6-b3a0-ca1ed31e6476" species="miR378_gene_MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ed36c3d2-eb63-494b-86d4-e636e62340d0" species="miR378_gene_MyoD"/>
+          <speciesReference metaid="d7ff3708-945a-4a27-a1f6-86c0c40241ba" species="miR378"/>
+        </listOfProducts>
+        <kineticLaw metaid="da0262fd-5d03-4e96-bffe-af8e3262a138">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynmiR378 </ci>
+              <ci> miR378_gene_MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR378_degradation" metaid="e75a31fb-96ba-40d8-9878-fe0dbbe3d3fd" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b3af399a-d415-4ed8-9299-8df6ec69b916" species="miR378"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="fb870b3a-35c3-40c7-b316-95080d359a7e" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_74798c3b-917a-4062-8928-277d8915553d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegmiR378 </ci>
+              <ci> miR378 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_transcription" metaid="_1e6cffe6-65db-4cab-a9ed-a807f1868106" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_20a91867-50b7-4399-ab04-8b7363030705" species="MyoD_gene"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_51b28dac-e274-4e81-b5f3-2c7a9b63f654" species="MyoD_gene"/>
+          <speciesReference metaid="_424f5d46-5004-4df9-8927-1bff1da6ff68" species="MyoD_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5c1ae4d6-7664-4fbe-932b-6070f20a9c54">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMyoDmRNA </ci>
+              <ci> MyoD_gene </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_mRNA_degradation" metaid="_08b53294-7ebc-4f31-8447-4083cc01142c" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5c561c11-ee2b-497e-8447-d17f6396cde3" species="MyoD_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ede50866-3e4c-4228-a678-a32f7488d2e5" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8bb792fe-f870-48cb-b5ea-c07aead1ee69">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMyoDmRNA </ci>
+              <ci> MyoD_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_translation" metaid="acbfbde7-d07a-4978-a029-fd80699fdf1e" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_96f14c6a-288c-43d6-ad1d-df6e221b3ba1" species="MyoD_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_772bf19c-6c4a-4268-85c0-dfd46cb38600" species="MyoD_mRNA"/>
+          <speciesReference metaid="_5b893aaa-31a8-44c3-bd6c-89c3a4d106f1" species="MyoD"/>
+        </listOfProducts>
+        <kineticLaw metaid="e9723d16-9651-4964-ab40-d042c32e5a55">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMyoD </ci>
+              <ci> MyoD_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="MyoD_degradation" metaid="efad087a-d432-43e2-ac8b-442c2598cc47" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_63b2cf75-8e46-463d-a92d-c57923e8846f" species="MyoD"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_777c53a3-d7c8-494c-8c14-4514a0538084" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="affab871-1926-4f55-af94-f311d6214ed3">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMyoD </ci>
+              <ci> MyoD </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Msc_transcription" metaid="f2c4d582-789a-4645-874c-66c757cf71b8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_66a2ab43-e885-48c6-ba53-4b8a62d092eb" species="Msc_gene"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_749aa08e-8a72-4605-bfe8-380337796a4a" species="Msc_gene"/>
+          <speciesReference metaid="b3256f15-6cf7-44a3-b461-697bde5d804f" species="Msc_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_53788cbe-d487-4752-8400-736f0c4897d4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMscmRNA </ci>
+              <ci> Msc_gene </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Msc_translation" metaid="b5c50e9c-1c98-44e0-b5ea-1499d0761026" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3dc1a1b7-3c1e-4018-8681-13104c81eb7c" species="Msc_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ae417322-e95e-49b5-8bd1-f939109ab03e" species="Msc_mRNA"/>
+          <speciesReference metaid="_73e7183e-f690-41f4-b19c-893cc6b451cd" species="Msc"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9ca21bed-2359-4e2e-a8a8-a044048a0dd5">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> ksynMsc </ci>
+              <ci> Msc_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Msc_mRNA_degradation" metaid="_75b9cb2a-8462-4b0a-ba53-e0b8ff396a9f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5c2c18ce-36a8-4979-a791-11893e53527b" species="Msc_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_606c5965-3694-43b6-8397-2868b42685d3" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_8986b8c7-a074-4c3a-9b3c-adcb65937692">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMscmRNA </ci>
+              <ci> Msc_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR378_Msc_binding" metaid="c9aa5dd8-10de-4e51-9ef4-7c640db9b571" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d7a6a7be-2fc3-42a9-b36b-de6868aaa40a" species="miR378"/>
+          <speciesReference metaid="_6964a2b4-8784-476a-8f6f-e7471f725524" species="Msc_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="d7afdd83-925e-4a1e-8be5-f6d0042c5c2a" species="miR378_Msc_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_322b2a86-2137-480a-9b0b-1305ddd5afd6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR378MscmRNA </ci>
+              <ci> miR378 </ci>
+              <ci> Msc_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR378_Msc_release" metaid="ee0554c2-8864-4576-a5d1-74c75779e694" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a4f484cb-4047-4598-bd07-e785059052e6" species="miR378_Msc_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="ea2398f7-608e-4b27-bc96-f93f03e15de1" species="miR378"/>
+          <speciesReference metaid="a77b6a84-6d36-486f-a1a0-06d00fc16ff3" species="Msc_mRNA"/>
+        </listOfProducts>
+        <kineticLaw metaid="_5eacca86-a134-401a-8552-f0d7003e9da6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR378MscmRNA </ci>
+              <ci> miR378_Msc_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Msc_mRNA_degradation_by_miR378" metaid="_36c1c709-2354-40f7-8769-beb778d36b85" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_06c0108a-1dcf-4a84-8fef-5d2c3b081e10" species="miR378_Msc_mRNA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_74212cc2-ab82-491c-a83f-9d8720fca254" species="miR378"/>
+        </listOfProducts>
+        <kineticLaw metaid="_280ce36e-a1b9-4e6b-b93e-0b5e8940b1ac">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMscmRNAmiR378 </ci>
+              <ci> miR378_Msc_mRNA </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR378_gene_Msc_binding" metaid="_84ef939e-e0df-481d-8cbf-68c2bc7faded" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="fee636df-6719-4e77-9124-61b13c712940" species="miR378_gene"/>
+          <speciesReference metaid="cd89464f-7cf5-4713-b426-370f26f5c59b" species="Msc"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_65d3dcaf-9596-40be-9c8a-d47583da90c8" species="miR378_gene_Msc"/>
+        </listOfProducts>
+        <kineticLaw metaid="_9c2f20a6-a55a-44dc-b1c4-e2044764f17e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kbinmiR378geneMsc </ci>
+              <ci> miR378_gene </ci>
+              <ci> Msc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="miR378_gene_Msc_release" metaid="_9c30175b-251e-41af-b6ba-d7b58dd008cf" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_97e010c9-b265-426f-8c16-d42cc4afd00f" species="miR378_gene_Msc"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7e6f9364-89e4-4c99-9823-b71fe5773799" species="miR378_gene"/>
+          <speciesReference metaid="d9bbdacc-7e17-44e1-867e-22c11c9e2ecf" species="Msc"/>
+        </listOfProducts>
+        <kineticLaw metaid="_3efaf70b-3bfa-4da4-9066-627f6bc03eec">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> krelmiR378geneMsc </ci>
+              <ci> miR378_gene_Msc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="Msc_degradation" metaid="_6dde09c2-f49f-4cba-954d-4056a21c211f" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6d312c1b-df65-49a0-bcf0-297b2606e130" species="Msc"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_5c42e84f-ee06-4773-ba9f-4cf657722da2" species="Sink"/>
+        </listOfProducts>
+        <kineticLaw metaid="_22da2fdc-aceb-4e55-913a-14b7dbbe56bd">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> kdegMsc </ci>
+              <ci> Msc </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

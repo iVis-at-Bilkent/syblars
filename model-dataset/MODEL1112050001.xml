@@ -1,0 +1,1472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" metaid="metaid_0000001" level="2" version="4">
+  <model metaid="metaid_0000002" id="Liu2009_GlucoseMobilization_UptakeModel" name="Liu2009_GlucoseMobilization_UptakeModel">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>This a model from the article:      <br/>
+        <strong>A molecular mathematical model of glucose mobilization and uptake.</strong>
+        <br/>
+          Liu W, Hsin C, Tang F.      <em>Math Biosci.</em>
+          2009 Oct;221(2):121-9.      <a href="http://www.ncbi.nlm.nih.gov/pubmed/19651146">19651146</a>
+          ,      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+          A new molecular mathematical model is developed by considering the kinetics of GLUT2, GLUT3, and GLUT4, the process of glucose mobilization by glycogen phosphorylase and glycogen synthase in liver, and the dynamics of the insulin signaling pathway. The new model can qualitatively reproduce the experimental glucose and insulin data. It also enables us to use the Bendixson criterion about the existence of periodic orbits of a two-dimensional dynamical system to mathematically predict that the oscillations of glucose and insulin are not caused by liver, instead they would be caused by the mechanism of insulin secretion from pancreatic beta cells. Furthermore it enables us to conduct a parametric sensitivity analysis. The analysis shows that both glucose and insulin are most sensitive to the rate constant for conversion of PI(3,4,5)P(3) to PI(4,5)P(2), the multiplicative factor modulating the rate constant for conversion of PI(3,4,5)P(3) to PI(4,5)P(2), the multiplicative factor that modulates insulin receptor dephosphorylation rate, and the maximum velocity of GLUT4. Moreover, the sensitivity analysis predicts that an increase of the apparent velocity of GLUT4, a combination of elevated mobilization rate of GLUT4 to the plasma membrane and an extended duration of GLUT4 on the plasma membrane, will result in a decrease in the needs of plasma insulin. On the other hand, an increase of the GLUT4 internalization rate results in an elevated demand of insulin to stimulate the mobilization of GLUT4 from the intracellular store to the plasma membrane.      </p>
+      <p>This model originates from BioModels Database: A Database of Annotated Published Models (http://www.ebi.ac.uk/biomodels/). It is copyright (c) 2005-2011 The BioModels.net Team.      <br/>
+          To the extent possible under law, all copyright and related or neighbouring rights to this encoded model have been dedicated to the public domain worldwide. Please refer to      <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons CC0">CC0 Public Domain Dedication</a>
+          for more information.      </p>
+    <p>In summary, you are entitled to use this encoded model in absolutely any manner you deem suitable, verbatim, or with modification, alone or embedded it in a larger context, redistribute it, commercially or not, in a restricted way or not..      <br/>
+    <br/>
+          To cite BioModels Database, please use:      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20587024" target="_blank">Li C, Donizelli M, Rodriguez N, Dharuri H, Endler L, Chelliah V, Li L, He E, Henry A, Stefan MI, Snoep JL, Hucka M, Le Novère N, Laibe C (2010) BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models. BMC Syst Biol., 4:92.</a>
+</p>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+    <rdf:Description rdf:about="#metaid_0000002">
+      <dc:creator>
+        <rdf:Bag>
+          <rdf:li rdf:parseType="Resource">
+            <vCard:N rdf:parseType="Resource">
+              <vCard:Family>Ajmera</vCard:Family>
+              <vCard:Given>Ishan</vCard:Given>
+            </vCard:N>
+            <vCard:EMAIL>ajmera@ebi.ac.uk</vCard:EMAIL>
+            <vCard:ORG rdf:parseType="Resource">
+              <vCard:Orgname>EMBL-EBI</vCard:Orgname>
+            </vCard:ORG>
+          </rdf:li>
+          <rdf:li rdf:parseType="Resource">
+            <vCard:N rdf:parseType="Resource">
+              <vCard:Family>Ajmera</vCard:Family>
+              <vCard:Given>Ishan</vCard:Given>
+            </vCard:N>
+            <vCard:EMAIL>ajmera@ebi.ac.uk</vCard:EMAIL>
+            <vCard:ORG rdf:parseType="Resource">
+              <vCard:Orgname>EMBL-EBI</vCard:Orgname>
+            </vCard:ORG>
+          </rdf:li>
+          <rdf:li rdf:parseType="Resource">
+            <vCard:N rdf:parseType="Resource">
+              <vCard:Family>Ajmera</vCard:Family>
+              <vCard:Given>Ishan</vCard:Given>
+            </vCard:N>
+            <vCard:EMAIL>ajmera@ebi.ac.uk</vCard:EMAIL>
+            <vCard:ORG rdf:parseType="Resource">
+              <vCard:Orgname>EMBL-EBI</vCard:Orgname>
+            </vCard:ORG>
+          </rdf:li>
+        </rdf:Bag>
+      </dc:creator>
+      <dcterms:created rdf:parseType="Resource">
+        <dcterms:W3CDTF>2011-12-05T13:40:06Z</dcterms:W3CDTF>
+      </dcterms:created>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2011-12-05T13:40:46Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2011-12-05T13:40:46Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <dcterms:modified rdf:parseType="Resource">
+        <dcterms:W3CDTF>2011-12-05T13:40:46Z</dcterms:W3CDTF>
+      </dcterms:modified>
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1112050001"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqmodel:isDescribedBy>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/pubmed/19651146"/>
+        </rdf:Bag>
+      </bqmodel:isDescribedBy>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/9606"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:2001273"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfCompartments>
+  <compartment metaid="metaid_0000103" id="cellsurface" name="cellsurface" size="1"/>
+  <compartment metaid="metaid_0000104" id="intracellular" name="intracellular" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="COPASI2" id="h1p" name="plasma glucagon" compartment="cellsurface" initialConcentration="1.389e-11" boundaryCondition="true"/>
+  <species metaid="COPASI3" id="h2p" name="plasma insulin" compartment="cellsurface" initialConcentration="5.38e-10" boundaryCondition="true"/>
+  <species metaid="COPASI4" id="h1" name="cellular glucagon" compartment="cellsurface" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI5" id="r1" name="glucagon receptor" compartment="cellsurface" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI6" id="x1" name="cellular insulin" compartment="cellsurface" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI7" id="x2" name="unbound insulin receptors" compartment="cellsurface" initialConcentration="9e-13" boundaryCondition="true"/>
+  <species metaid="COPASI8" id="x3" name="unphosphorylated once bound receptor" compartment="cellsurface" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI9" id="x4" name="phosphorylated twice bound receptor" compartment="cellsurface" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI10" id="x5" name="phosphorylated once bound receptor" compartment="cellsurface" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI11" id="x21" name="cell surface GLUT4" compartment="cellsurface" initialConcentration="10" boundaryCondition="true"/>
+  <species metaid="COPASI12" id="gp" name="plasma glucose" compartment="cellsurface" initialConcentration="1935" boundaryCondition="true"/>
+  <species metaid="COPASI13" id="u3" name="exogenous glucose" compartment="cellsurface" initialConcentration="25.9" boundaryCondition="true" constant="true"/>
+  <species metaid="COPASI14" id="x6" name="unbound unphosphorylated receptor" compartment="intracellular" initialConcentration="1e-13" boundaryCondition="true"/>
+  <species metaid="COPASI15" id="x7" name="phosphorylated twice bound intracellular receptor" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI16" id="x8" name="phosphorylated once bound intracellular receptors" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI17" id="x9" name="unphosphorylated IRS1" compartment="intracellular" initialConcentration="1e-12" boundaryCondition="true"/>
+  <species metaid="COPASI18" id="x10" name="phosphorylated IRS1" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI19" id="x11" name="unactive PI3 kinase" compartment="intracellular" initialConcentration="1e-13" boundaryCondition="true"/>
+  <species metaid="COPASI20" id="x12" name="IRS1-PI3 Kinase complex" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI21" id="x13" name="PI(3,4,5)P3" compartment="intracellular" initialConcentration="0.31" boundaryCondition="true"/>
+  <species metaid="COPASI22" id="x14" name="PI(4,5)P2" compartment="intracellular" initialConcentration="99.4" boundaryCondition="true"/>
+  <species metaid="COPASI23" id="x15" name="PI(3,4)P2" compartment="intracellular" initialConcentration="0.29" boundaryCondition="true"/>
+  <species metaid="COPASI24" id="x16" name="inactive PKB" compartment="intracellular" initialConcentration="100" boundaryCondition="true"/>
+  <species metaid="COPASI25" id="x17" name="activated PKB" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI26" id="x18" name="inactivated PKC" compartment="intracellular" initialConcentration="100" boundaryCondition="true"/>
+  <species metaid="COPASI27" id="x19" name="activated PKC" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+  <species metaid="COPASI28" id="x20" name="intracellular GLUT4" compartment="intracellular" initialConcentration="90" boundaryCondition="true"/>
+  <species metaid="COPASI29" id="gy" name=" liver glucagon" compartment="intracellular" initialConcentration="200" boundaryCondition="true"/>
+  <species metaid="COPASI30" id="gl" name="liver glucose" compartment="intracellular" initialConcentration="0" boundaryCondition="true"/>
+</listOfSpecies><listOfParameters>
+  <parameter metaid="metaid_0000067" id="km2" name="km2" value="15300"/>
+  <parameter metaid="metaid_0000068" id="km3" name="km3" value="1530"/>
+  <parameter metaid="metaid_0000069" id="km4" name="km4" value="774"/>
+  <parameter metaid="metaid_0000070" id="kms" name="kms" value="67"/>
+  <parameter metaid="metaid_0000071" id="kmp" name="kmp" value="600"/>
+  <parameter metaid="metaid_0000072" id="vmax2" name="vmax2" value="50"/>
+  <parameter metaid="metaid_0000073" id="vmax3" name="vmax3" value="10"/>
+  <parameter metaid="metaid_0000074" id="vmax4" name="vmax4" value="4"/>
+  <parameter metaid="metaid_0000075" id="vmaxs" name="vmaxs" value="28.4"/>
+  <parameter metaid="metaid_0000076" id="vmaxp" name="vmaxp" value="258"/>
+  <parameter metaid="metaid_0000077" id="R0" name="R0" value="9e-13"/>
+  <parameter metaid="metaid_0000078" id="a1" name="a1" value="0.12"/>
+  <parameter metaid="metaid_0000079" id="a2" name="a2" value="0.3"/>
+  <parameter metaid="metaid_0000080" id="a3" name="a3" value="0.01"/>
+  <parameter metaid="metaid_0000081" id="a4" name="a4" value="60000000"/>
+  <parameter metaid="metaid_0000082" id="a5" name="a5" value="0.2"/>
+  <parameter metaid="COPASI31" id="a6" name="a6" value="1.11111111111111e+15" constant="false"/>
+  <parameter metaid="COPASI32" id="b1" name="b1" value="0.0151"/>
+  <parameter metaid="metaid_0000083" id="b2" name="b2" value="0.002"/>
+  <parameter metaid="metaid_0000084" id="b3" name="b3" value="0.01"/>
+  <parameter metaid="metaid_0000085" id="v" name="v" value="11"/>
+  <parameter metaid="metaid_0000086" id="vp" name="vp" value="3"/>
+  <parameter metaid="metaid_0000087" id="Gm" name="Gm" value="2.23e-10"/>
+  <parameter metaid="metaid_0000088" id="Rm" name="Rm" value="4.44e-12"/>
+  <parameter metaid="metaid_0000089" id="C1" name="C1" value="1162"/>
+  <parameter metaid="metaid_0000090" id="p1" name="p1" value="0.005"/>
+  <parameter metaid="metaid_0000091" id="p2" name="p2" value="0.01594"/>
+  <parameter metaid="metaid_0000092" id="q1" name="q1" value="10"/>
+  <parameter metaid="metaid_0000093" id="q2" name="q2" value="1.85"/>
+  <parameter metaid="metaid_0000094" id="PTP" name="PTP" value="1"/>
+  <parameter metaid="metaid_0000095" id="PTEN" name="PTEN" value="1"/>
+  <parameter metaid="metaid_0000096" id="SHIP" name="SHIP" value="1"/>
+  <parameter metaid="metaid_0000097" id="IRp" name="IRp" value="8.97e-13"/>
+  <parameter metaid="COPASI33" id="AP" name="AP" value="9.09090909090909" constant="false"/>
+  <parameter metaid="metaid_0000098" id="PI3K" name="PI3K" value="5e-15"/>
+  <parameter metaid="metaid_0000099" id="k9sim" name="k9sim" value="1.39"/>
+  <parameter metaid="COPASI34" id="k9bas" name="k9bas" value="0.131448692152917" constant="false"/>
+  <parameter metaid="metaid_0000100" id="k1" name="k1" value="60000000"/>
+  <parameter metaid="metaid_0000101" id="k2" name="k2" value="60000000"/>
+  <parameter metaid="metaid_0000102" id="k3" name="k3" value="2500"/>
+  <parameter metaid="COPASI35" id="k4" name="k4" value="0.000333333333333333" constant="false"/>
+  <parameter metaid="COPASI36" id="k5" name="k5" value="1.002e-16" constant="false"/>
+  <parameter metaid="COPASI37" id="k6" name="k6" value="0.461"/>
+  <parameter metaid="COPASI38" id="k7" name="k7" value="4.16"/>
+  <parameter metaid="COPASI39" id="k8" name="k8" value="7064641469445.42" constant="false"/>
+  <parameter metaid="COPASI40" id="k9" name="k9" value="0.131448692152917" constant="false"/>
+  <parameter metaid="COPASI41" id="k10" name="k10" value="2.96103448275862" constant="false"/>
+  <parameter metaid="COPASI42" id="k11" name="k11" value="0" constant="false"/>
+  <parameter metaid="COPASI43" id="k12" name="k12" value="0" constant="false"/>
+  <parameter metaid="COPASI44" id="k13" name="k13" value="0.00695833333333333" constant="false"/>
+  <parameter metaid="COPASI45" id="k14" name="k14" value="0.0011088" constant="false"/>
+  <parameter metaid="COPASI46" id="k15" name="k15" value="0.2"/>
+  <parameter metaid="COPASI47" id="k16" name="k16" value="20"/>
+  <parameter metaid="COPASI48" id="k17" name="k17" value="0.2"/>
+  <parameter metaid="COPASI49" id="k18" name="k18" value="0.003"/>
+  <parameter metaid="COPASI50" id="k19" name="k19" value="0.0021"/>
+  <parameter metaid="COPASI51" id="k20" name="k20" value="0.00021"/>
+  <parameter metaid="COPASI52" id="k21" name="k21" value="1.67e-18"/>
+  <parameter metaid="COPASI53" id="k22" name="k22" value="1.39597315436242" constant="false"/>
+  <parameter metaid="COPASI54" id="k23" name="k23" value="10"/>
+  <parameter metaid="COPASI55" id="k24" name="k24" value="42.1483870967742" constant="false"/>
+  <parameter metaid="COPASI56" id="k25" name="k25" value="2.77"/>
+  <parameter metaid="COPASI57" id="k26" name="k26" value="6.93147180559945" constant="false"/>
+  <parameter metaid="COPASI58" id="k27" name="k27" value="6.93147180559945" constant="false"/>
+  <parameter metaid="COPASI59" id="k28" name="k28" value="0.167"/>
+  <parameter metaid="COPASI60" id="k29" name="k29" value="0.001155"/>
+  <parameter metaid="COPASI61" id="effect" name="effect" value="0" constant="false"/>
+  <parameter metaid="COPASI62" id="Ig4" name="Ig4" value="0" constant="false"/>
+  <parameter metaid="COPASI63" id="Igs" name="glycogen synthase activation" value="0" constant="false"/>
+  <parameter metaid="COPASI64" id="U1" name="feedback gulcagon " value="2.07765458370863e-13" constant="false"/>
+  <parameter metaid="COPASI65" id="U2" name="insulin infusion" value="4.43996341192627e-12" constant="false"/>
+</listOfParameters><listOfRules>
+  <assignmentRule metaid="metaid_0000106" variable="AP">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 100 </cn>
+        <cn> 11 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000105" variable="a6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 1000 </cn>
+        <ci> R0 </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000125" variable="U2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> Rm </ci>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <times/>
+            <ci> q2 </ci>
+            <apply>
+              <exp/>
+              <apply>
+                <times/>
+                <ci> p2 </ci>
+                <apply>
+                  <minus/>
+                  <ci> C1 </ci>
+                  <ci> gp </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000124" variable="U1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <ci> Gm </ci>
+        <apply>
+          <plus/>
+          <cn> 1 </cn>
+          <apply>
+            <times/>
+            <ci> q1 </ci>
+            <apply>
+              <exp/>
+              <apply>
+                <times/>
+                <ci> p1 </ci>
+                <apply>
+                  <minus/>
+                  <ci> gp </ci>
+                  <cn> 1000 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000123" variable="Igs">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <cn> 0.2 </cn>
+          <ci> x17 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <cn> 0.8 </cn>
+          <ci> x19 </ci>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000121" variable="effect">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <cn> 11 </cn>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 0.2 </cn>
+              <ci> x17 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 0.8 </cn>
+              <ci> x19 </ci>
+            </apply>
+          </apply>
+        </apply>
+        <cn> 100 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000122" variable="Ig4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <minus/>
+          <apply>
+            <divide/>
+            <cn> 2 </cn>
+            <cn> 3 </cn>
+          </apply>
+          <apply>
+            <divide/>
+            <cn> 4 </cn>
+            <cn> 96 </cn>
+          </apply>
+        </apply>
+        <ci> k28 </ci>
+        <ci> effect </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000119" variable="k27">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 10 </cn>
+        <apply>
+          <ln/>
+          <cn> 2 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000117" variable="k26">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 10 </cn>
+        <apply>
+          <ln/>
+          <cn> 2 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000116" variable="k24">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 94 </cn>
+          <cn> 3.1 </cn>
+        </apply>
+        <ci> k9sim </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000115" variable="k22">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 2.5 </cn>
+          <cn> 7.45 </cn>
+        </apply>
+        <cn> 4.16 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000114" variable="k14">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <cn> 0.96 </cn>
+        <cn> 0.001155 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000113" variable="k13">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 4 </cn>
+          <cn> 96 </cn>
+        </apply>
+        <cn> 0.167 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000120" variable="k12">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <cn> 0.1 </cn>
+          <ci> k27 </ci>
+          <apply>
+            <minus/>
+            <ci> x13 </ci>
+            <cn> 0.31 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 3.1 </cn>
+          <cn> 0.31 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000118" variable="k11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <apply>
+          <times/>
+          <cn> 0.1 </cn>
+          <ci> k26 </ci>
+          <apply>
+            <minus/>
+            <ci> x13 </ci>
+            <cn> 0.31 </cn>
+          </apply>
+        </apply>
+        <apply>
+          <minus/>
+          <cn> 3.1 </cn>
+          <cn> 0.31 </cn>
+        </apply>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000112" variable="k10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <cn> 3.1 </cn>
+          <cn> 2.9 </cn>
+        </apply>
+        <cn> 2.77 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000110" variable="k8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <cn> 10 </cn>
+            <cn> 5 </cn>
+          </apply>
+          <cn> 70.775 </cn>
+        </apply>
+        <cn> 10000000000000 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000109" variable="k5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <piecewise>
+        <piece>
+          <apply>
+            <times/>
+            <cn type="integer"> 10 </cn>
+            <ci> k21 </ci>
+          </apply>
+          <apply>
+            <gt/>
+            <apply>
+              <plus/>
+              <ci> x6 </ci>
+              <ci> x7 </ci>
+              <ci> x8 </ci>
+            </apply>
+            <cn type="e-notation"> 1 <sep/> -13 </cn>
+          </apply>
+        </piece>
+        <otherwise>
+          <apply>
+            <times/>
+            <cn type="integer"> 60 </cn>
+            <ci> k21 </ci>
+          </apply>
+        </otherwise>
+      </piecewise>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000108" variable="k4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <divide/>
+        <cn> 0.003 </cn>
+        <cn> 9 </cn>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000107" variable="k9bas">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <times/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <cn> 0.31 </cn>
+              <cn> 99.4 </cn>
+            </apply>
+            <cn> 94 </cn>
+          </apply>
+          <cn> 3.1 </cn>
+        </apply>
+        <ci> k9sim </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <assignmentRule metaid="metaid_0000111" variable="k9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> k9sim </ci>
+              <ci> k9bas </ci>
+            </apply>
+            <ci> x12 </ci>
+          </apply>
+          <ci> PI3K </ci>
+        </apply>
+        <ci> k9bas </ci>
+      </apply>
+    </math>
+  </assignmentRule>
+  <rateRule metaid="metaid_0000126" variable="h1p">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <ci> a1 </ci>
+              <ci> a2 </ci>
+            </apply>
+          </apply>
+          <ci> h1p </ci>
+        </apply>
+        <ci> U1 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000127" variable="h2p">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <ci> b1 </ci>
+              <ci> b2 </ci>
+            </apply>
+          </apply>
+          <ci> h2p </ci>
+        </apply>
+        <ci> U2 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000128" variable="h1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> a4 </ci>
+            </apply>
+            <ci> h1 </ci>
+            <apply>
+              <minus/>
+              <ci> R0 </ci>
+              <ci> r1 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> a3 </ci>
+            <ci> h1 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> a1 </ci>
+            <ci> vp </ci>
+            <ci> h1p </ci>
+          </apply>
+          <ci> v </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000129" variable="r1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> a4 </ci>
+          <ci> h1 </ci>
+          <apply>
+            <minus/>
+            <ci> R0 </ci>
+            <ci> r1 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> a5 </ci>
+          <ci> r1 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000130" variable="x1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> k1 </ci>
+            </apply>
+            <ci> x1 </ci>
+            <ci> x2 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> b3 </ci>
+            <ci> x1 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> b1 </ci>
+            <ci> vp </ci>
+            <ci> h1p </ci>
+          </apply>
+          <ci> v </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000131" variable="x2">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> k15 </ci>
+                <ci> x3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k17 </ci>
+                <ci> PTP </ci>
+                <ci> x5 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k1 </ci>
+              <ci> x1 </ci>
+              <ci> x2 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k18 </ci>
+            <ci> x6 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k4 </ci>
+          <ci> x2 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000132" variable="x3">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> k15 </ci>
+            </apply>
+            <ci> x3 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k1 </ci>
+            <ci> x1 </ci>
+            <ci> x2 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k3 </ci>
+          <ci> x3 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000133" variable="x4">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k2 </ci>
+              <ci> x1 </ci>
+              <ci> x5 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k16 </ci>
+              <ci> x4 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k20 </ci>
+            <ci> x7 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k19 </ci>
+          <ci> x4 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000134" variable="x5">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k3 </ci>
+                  <ci> x3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k16 </ci>
+                  <ci> x4 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> x1 </ci>
+                <ci> x5 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> x17 </ci>
+              <ci> PTP </ci>
+              <ci> x5 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k20 </ci>
+            <ci> x8 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k19 </ci>
+          <ci> x5 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000135" variable="x21">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <ci> k28 </ci>
+          </apply>
+          <ci> x21 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <ci> k13 </ci>
+            <ci> Ig4 </ci>
+          </apply>
+          <ci> x20 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000136" variable="gp">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> x21 </ci>
+                  <ci> vmax4 </ci>
+                  <ci> gp </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> km4 </ci>
+                  <ci> gp </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> vmax2 </ci>
+                <ci> gp </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> km2 </ci>
+                <ci> gp </ci>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> vmax3 </ci>
+              <ci> gp </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> km3 </ci>
+              <ci> gp </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> vmax2 </ci>
+            <ci> gl </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> km2 </ci>
+            <ci> gl </ci>
+          </apply>
+        </apply>
+        <ci> u3 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000137" variable="x6">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <minus/>
+            <ci> k5 </ci>
+            <apply>
+              <times/>
+              <ci> k21 </ci>
+              <ci> x6 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k6 </ci>
+            <ci> PTP </ci>
+            <apply>
+              <plus/>
+              <ci> x7 </ci>
+              <ci> x8 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k4 </ci>
+            <ci> x2 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k18 </ci>
+          <ci> x6 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000138" variable="x7">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k19 </ci>
+            <ci> x4 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k20 </ci>
+            <ci> x7 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k6 </ci>
+          <ci> PTP </ci>
+          <ci> x7 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000139" variable="x8">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <minus/>
+          <apply>
+            <times/>
+            <ci> k19 </ci>
+            <ci> x5 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k20 </ci>
+            <ci> x8 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k6 </ci>
+          <ci> PTP </ci>
+          <ci> k8 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000140" variable="x9">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k22 </ci>
+          <ci> PTP </ci>
+          <ci> x10 </ci>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> k7 </ci>
+            <ci> x9 </ci>
+            <apply>
+              <plus/>
+              <ci> x4 </ci>
+              <ci> x5 </ci>
+            </apply>
+          </apply>
+          <ci> IRp </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000141" variable="x10">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> k7 </ci>
+              <ci> x9 </ci>
+              <apply>
+                <plus/>
+                <ci> x4 </ci>
+                <ci> x5 </ci>
+              </apply>
+            </apply>
+            <ci> IRp </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k23 </ci>
+            <ci> x12 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> k22 </ci>
+              <ci> PTP </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k8 </ci>
+              <ci> x11 </ci>
+            </apply>
+          </apply>
+          <ci> x10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000142" variable="x11">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k23 </ci>
+          <ci> x12 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k8 </ci>
+          <ci> x11 </ci>
+          <ci> x10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000143" variable="x12">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <ci> k23 </ci>
+          </apply>
+          <ci> x12 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k8 </ci>
+          <ci> x11 </ci>
+          <ci> x10 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000144" variable="x13">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <plus/>
+          <apply>
+            <times/>
+            <ci> k9 </ci>
+            <ci> x14 </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k10 </ci>
+            <ci> x15 </ci>
+          </apply>
+        </apply>
+        <apply>
+          <times/>
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> k24 </ci>
+              <ci> PTEN </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k25 </ci>
+              <ci> SHIP </ci>
+            </apply>
+          </apply>
+          <ci> x13 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000145" variable="x14">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k24 </ci>
+          <ci> PTEN </ci>
+          <ci> x13 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k9 </ci>
+          <ci> x14 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000146" variable="x15">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k25 </ci>
+          <ci> SHIP </ci>
+          <ci> x13 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k10 </ci>
+          <ci> x15 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000147" variable="x16">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k26 </ci>
+          <ci> x17 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k11 </ci>
+          <ci> x16 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000148" variable="x17">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <ci> k26 </ci>
+          </apply>
+          <ci> x17 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k11 </ci>
+          <ci> x16 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000149" variable="x18">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <minus/>
+        <apply>
+          <times/>
+          <ci> k27 </ci>
+          <ci> x19 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k12 </ci>
+          <ci> x18 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000150" variable="x19">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <times/>
+          <apply>
+            <minus/>
+            <ci> k27 </ci>
+          </apply>
+          <ci> x19 </ci>
+        </apply>
+        <apply>
+          <times/>
+          <ci> k12 </ci>
+          <ci> x18 </ci>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000151" variable="x20">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k28 </ci>
+              <ci> x21 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> k13 </ci>
+                <ci> Ig4 </ci>
+              </apply>
+              <ci> x20 </ci>
+            </apply>
+          </apply>
+          <apply>
+            <times/>
+            <ci> k29 </ci>
+            <ci> x20 </ci>
+          </apply>
+        </apply>
+        <ci> k14 </ci>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000152" variable="gy">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <ci> vmaxp </ci>
+            </apply>
+            <ci> r1 </ci>
+            <ci> gy </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> R0 </ci>
+            <apply>
+              <plus/>
+              <ci> kmp </ci>
+              <ci> gy </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> vmaxs </ci>
+            <ci> Igs </ci>
+            <ci> gl </ci>
+          </apply>
+          <apply>
+            <times/>
+            <apply>
+              <plus/>
+              <cn> 1 </cn>
+              <apply>
+                <times/>
+                <ci> a6 </ci>
+                <ci> r1 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> kms </ci>
+              <ci> gl </ci>
+            </apply>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+  <rateRule metaid="metaid_0000153" variable="gl">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <apply>
+        <plus/>
+        <apply>
+          <minus/>
+          <apply>
+            <minus/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> vmaxs </ci>
+                <ci> Igs </ci>
+                <ci> gl </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <times/>
+                    <ci> a6 </ci>
+                    <ci> r1 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> kms </ci>
+                  <ci> gl </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> vmax2 </ci>
+              <ci> gl </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> km2 </ci>
+              <ci> gl </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> vmaxp </ci>
+            <ci> r1 </ci>
+            <ci> gy </ci>
+          </apply>
+          <apply>
+            <times/>
+            <ci> R0 </ci>
+            <apply>
+              <plus/>
+              <ci> kmp </ci>
+              <ci> gy </ci>
+            </apply>
+          </apply>
+        </apply>
+        <apply>
+          <divide/>
+          <apply>
+            <times/>
+            <ci> vmax2 </ci>
+            <ci> gp </ci>
+          </apply>
+          <apply>
+            <plus/>
+            <ci> km2 </ci>
+            <ci> gp </ci>
+          </apply>
+        </apply>
+      </apply>
+    </math>
+  </rateRule>
+</listOfRules>
+</model>
+</sbml>

@@ -1,0 +1,1506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner" metaid="metaid_0000001" level="2" version="4">
+  <model metaid="metaid_0000002" id="MODEL1308080003" name="Cao2010 - Epigenetic state of lysogeny in phage lambda">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    References:
+1. Xiaomei Zhu, Lan Yin, Leroy Hood, David Galas and Ping Ao, Efficiency, Robustness and Stochasticity of Gene Regulatory networks in Systems biology: Lambda switch as a working example, 2006.
+2. Adam Arkin, John Ross and Harley H. McAdams, Stochastic kinetic analysis of developmental pathway bifurcation in phage lambda-infected Escherichia coli cells, 1998, Genetics, 149: 1633-1648.
+3. GenBank sequence: NC_001416 is the whole genome sequence of phage lambda.</body>
+    </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#metaid_0000002">
+          <bqmodel:is>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1308080003"/>
+            </rdf:Bag>
+          </bqmodel:is>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://identifiers.org/taxonomy/562"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:isVersionOf>
+            <rdf:Bag>
+              <rdf:li rdf:resource="http://www.geneontology.org/GO:0040029"/>
+            </rdf:Bag>
+          </bqbiol:isVersionOf>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+    <listOfCompartments>
+      <compartment metaid="metaid_1000001" id="default" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="metaid_1001" id="OR1" name="OR1" compartment="default" initialAmount="1"/>
+      <species metaid="metaid_1002" id="OR2" name="OR2" compartment="default" initialAmount="1"/>
+      <species metaid="metaid_1003" id="OR3" name="OR3" compartment="default" initialAmount="1"/>
+      <species metaid="metaid_1004" id="CI" name="pCI" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1005" id="Cro" name="pCro" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1006" id="CI2" name="R2" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1007" id="Cro2" name="C2" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1008" id="ROR1" name="ROR1" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1009" id="ROR2" name="ROR2" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1010" id="ROR3" name="ROR3" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1011" id="COR1" name="COR1" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1012" id="COR2" name="COR2" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1013" id="COR3" name="COR3" compartment="default" initialAmount="0"/>
+      <species metaid="metaid_1014" id="EmptySet" name="EmptySet" compartment="default" initialAmount="0"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="metaid_2001" id="kb_DimerDNA" name="binding rate of protein to DNA" value="0.021"/>
+      <parameter metaid="metaid_2002" id="ku_CI2OR1" name="unbinding rate of CI2 from OR1" value="0.03998"/>
+      <parameter metaid="metaid_2003" id="ku_CI2OR1c1" name="unbinding rate of CI2 from OR1 with coop 1" value="0.0005"/>
+      <parameter metaid="metaid_2004" id="ku_CI2OR1c2" name="unbinding rate of CI2 from OR1 with coop 2" value="0.05531"/>
+      <parameter metaid="metaid_2005" id="ku_CI2OR2" name="unbinding rate of CI2 from OR2" value="1.026"/>
+      <parameter metaid="metaid_2006" id="ku_CI2OR2c1" name="unbinding rate of CI2 from OR2 with coop 1" value="0.01284"/>
+      <parameter metaid="metaid_2007" id="ku_CI2OR2c2" name="unbinding rate of CI2 from OR2 with coop 2" value="0.00928"/>
+      <parameter metaid="metaid_2008" id="ku_CI2OR2c3" name="unbinding rate of CI2 from OR2 with coop 3" value="0.01284"/>
+      <parameter metaid="metaid_2009" id="ku_CI2OR3" name="unbinding rate of CI2 from OR3" value="5.19753"/>
+      <parameter metaid="metaid_2010" id="ku_CI2OR3c1" name="unbinding rate of CI2 from OR3 with coop 1" value="0.04702"/>
+      <parameter metaid="metaid_2011" id="ku_CI2OR3c2" name="unbinding rate of CI2 from OR3 with coop 2" value="5.19753"/>
+      <parameter metaid="metaid_2012" id="ku_Cro2OR1" name="unbinding rate of Cro2 from OR1" value="0.08999"/>
+      <parameter metaid="metaid_2013" id="ku_Cro2OR1c1" name="unbinding rate of Cro2 from OR1 with coop 1" value="0.01776"/>
+      <parameter metaid="metaid_2014" id="ku_Cro2OR1c2" name="unbinding rate of Cro2 from OR1 with coop 2" value="0.05531"/>
+      <parameter metaid="metaid_2015" id="ku_Cro2OR2" name="unbinding rate of Cro2 from OR2" value="0.6306"/>
+      <parameter metaid="metaid_2016" id="ku_Cro2OR2c1" name="unbinding rate of Cro2 from OR2 with coop 1" value="0.12448"/>
+      <parameter metaid="metaid_2017" id="ku_Cro2OR2c2" name="unbinding rate of Cro2 from OR2 with coop 2" value="0.23822"/>
+      <parameter metaid="metaid_2018" id="ku_Cro2OR2c3" name="unbinding rate of Cro2 from OR2 with coop 3" value="0.14641"/>
+      <parameter metaid="metaid_2019" id="ku_Cro2OR3" name="unbinding rate of Cro2 from OR3" value="0.00928"/>
+      <parameter metaid="metaid_2020" id="ku_Cro2OR3c1" name="unbinding rate of Cro2 from OR3 with coop 1" value="0.00351"/>
+      <parameter metaid="metaid_2021" id="ku_Cro2OR3c2" name="unbinding rate of Cro2 from OR3 with coop 2" value="0.01092"/>
+      <parameter metaid="metaid_2022" id="kb_DimerCI" name="association rate of CI monomer to dimer" value="0.05"/>
+      <parameter metaid="metaid_2023" id="kb_DimerCro" name="association rate of Cro monomer to dimer" value="0.0307"/>
+      <parameter metaid="metaid_2024" id="ku_Dimer" name="disassociation rate of dimer" value="0.5"/>
+      <parameter metaid="metaid_2025" id="kd_CI" name="degradation rate of CI" value="0.0007"/>
+      <parameter metaid="metaid_2026" id="kd_Cro" name="degradation rate of Cro" value="0.0025"/>
+      <parameter metaid="metaid_2027" id="ks_CI" name="synthesis rate of CI" value="0.0069"/>
+      <parameter metaid="metaid_2028" id="ks_CIcoop" name="synthesis rate of CI with cooperativity" value="0.066"/>
+      <parameter metaid="metaid_2029" id="ks_Cro" name="synthesis rate of Cro" value="0.0929"/>
+      <parameter metaid="metaid_3030" id="default1" name="default1" value="1"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction metaid="metaid_0000101" id="SynReaction1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_34f5ca6d_87d1_4cea_b4ac_d87d8f8c6ddb" species="EmptySet"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c3083e5b_07d2_46a4_84d9_f340123c41c7" species="CI"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_4a8f81cc_a9d8_4261_a67a_d3f00f13d49e" species="OR3"/>
+          <modifierSpeciesReference metaid="_6e9862c4_933b_4723_acb4_b98a363472ce" species="OR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="db2af714_fc72_4109_b6f8_2f8a8fe76c2b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ks_CI </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000102" id="SynReaction2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a1e4c747_5d8e_4da9_91da_9e7f47255256" species="EmptySet"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9636be5e_9c0a_4377_9dda_a7172f5b1336" species="CI"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_634e4a6e_b873_4cd2_b9fd_ac7f0d55cc5b" species="OR3"/>
+          <modifierSpeciesReference metaid="_3638d317_eb92_4b83_b50f_54bc2034462f" species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="ed758655_f665_4b7c_bf13_70fa9f17d9e4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ks_CI </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000103" id="SynReaction3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9ca3f93d_d79b_4309_ab28_9da679f6409a" species="EmptySet"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_63823353_61cd_4f18_b6f0_ab55b529b3f9" species="CI"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_54bb63ea_1c6d_481c_917d_4892d9687b36" species="OR3"/>
+          <modifierSpeciesReference metaid="_195e81ff_1054_4fcd_855a_c9cdbfd9cc48" species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_50e58f15_fdf9_42fc_b87a_3b2df76fdd4f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ks_CIcoop </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000104" id="SynReaction4" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="a2bf514a_733c_44a9_8468_6e371bfaabdf" species="EmptySet"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="eb8b4083_8722_4b71_9551_b7f320236425" species="Cro"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_317090e0_a0cb_4a36_a049_e7d92365cc8d" species="OR1"/>
+          <modifierSpeciesReference metaid="dee7f3e4_426e_48ca_bdcd_cf6e80da2f68" species="OR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5274c819_0637_4cda_824e_0579fbea3b72">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ks_Cro </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000201" id="DegReaction1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_27df168d_285e_44f9_a3b6_53c83069f75f" species="CI"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8c73e131_b0cc_4431_8bd9_c62873ea61dc" species="EmptySet"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_02884616_4d95_460c_b551_05fe872b2930" species="CI"/>
+          <modifierSpeciesReference metaid="_442444fc_0733_48f3_8196_34efc8048f05" species="CI"/>
+          <modifierSpeciesReference metaid="_0138086d_a482_498c_a9b3_9bdf9a29c84d" species="CI"/>
+          <modifierSpeciesReference species="CI"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4304253b_3469_4a6b_a9a9_56c7c06917d1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> CI </ci>
+              <ci> kd_CI </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000202" id="DegReaction2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3c2ca2cc_481f_4d59_84d5_6cc6b72f971a" species="Cro"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e418f9ed_10dc_48eb_8755_492c2292da43" species="EmptySet"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="c0379710_01b1_4726_b102_3718d6ed0823" species="Cro"/>
+          <modifierSpeciesReference metaid="_2421cace_5155_4125_aa48_df04a4d9e0a8" species="Cro"/>
+          <modifierSpeciesReference metaid="_08c75b29_d5a6_4b35_b314_94889a589d6a" species="Cro"/>
+          <modifierSpeciesReference species="Cro"/>
+        </listOfModifiers>
+        <kineticLaw metaid="e2dabc8c_1d3a_4224_bce9_1c7a207e811e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> Cro </ci>
+              <ci> kd_Cro </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000301" id="DimReaction1" reversible="true">
+        <listOfReactants>
+          <speciesReference metaid="_0ee90d81_05f1_4822_8e21_2ce7ec2cf2aa" species="CI" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e25b664c_01ed_4d88_8982_91d3c12df208" species="CI2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_19539d84_4498_410f_8e96_24ef008b0dbd" species="CI"/>
+          <modifierSpeciesReference metaid="a585eb73_9b55_4ea7_85d0_f37b021198a0" species="CI2"/>
+          <modifierSpeciesReference metaid="fc80c082_ec2d_484b_84e5_17fa4804d185" species="CI"/>
+          <modifierSpeciesReference metaid="_14c241f6_8391_44b2_8f30_4bf9706bfb37" species="CI2"/>
+          <modifierSpeciesReference metaid="_1dc2a548_b4c0_436f_a44e_d4dd8673e70e" species="CI"/>
+          <modifierSpeciesReference metaid="b241a8db_504b_43f0_aecc_a991cb81a6c8" species="CI2"/>
+          <modifierSpeciesReference species="CI"/>
+          <modifierSpeciesReference species="CI2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1e4b0664_36cb_4dcb_9f19_638256c39be0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kb_DimerCI </ci>
+                  <cn> 0.5 </cn>
+                  <ci> CI </ci>
+                  <apply>
+                    <minus/>
+                    <ci> CI </ci>
+                    <cn> 1 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> CI2 </ci>
+                  <ci> ku_Dimer </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000302" id="DimReaction2" reversible="true">
+        <listOfReactants>
+          <speciesReference metaid="_03f97d7c_c616_4350_a53b_02d9ecb70ff4" species="Cro" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4fc36076_46bc_4b7c_813f_e0820c470b09" species="Cro2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_142557b9_a6b4_45a3_b898_624587467cfe" species="Cro"/>
+          <modifierSpeciesReference metaid="e504eab4_e380_4671_a12d_5daf83663171" species="Cro2"/>
+          <modifierSpeciesReference metaid="_582c4e79_51b7_4a50_8623_79ad76dc0eae" species="Cro"/>
+          <modifierSpeciesReference metaid="_3f2c1ee8_b353_4812_8de4_10a3c39abcd7" species="Cro2"/>
+          <modifierSpeciesReference metaid="_3006ecc9_16c6_4f0a_ba3e_594972662216" species="Cro"/>
+          <modifierSpeciesReference metaid="_607debbe_a079_4f96_8962_d7b73be92d84" species="Cro2"/>
+          <modifierSpeciesReference species="Cro"/>
+          <modifierSpeciesReference species="Cro2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_25675a77_929a_4bd0_aacb_cf6df824a994">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> kb_DimerCro </ci>
+                  <cn> 0.5 </cn>
+                  <ci> Cro </ci>
+                  <apply>
+                    <minus/>
+                    <ci> Cro </ci>
+                    <cn> 1 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Cro2 </ci>
+                  <ci> ku_Dimer </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000411" id="BindReaction1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="dc94a18b_a477_428b_a3a0_71e19be9a10e" species="OR1"/>
+          <speciesReference metaid="_85fb81b5_7e3f_47a6_b9fe_006106166e76" species="CI2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4448ddfa_81ba_49ae_8750_71d516ae468c" species="ROR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="ae1cea95_f663_45c9_9d02_1cecedfe57fb" species="OR1"/>
+          <modifierSpeciesReference metaid="_0683cc86_13e1_41bf_973f_4f600ce9f117" species="CI2"/>
+          <modifierSpeciesReference metaid="_1123d8dc_cdc1_4206_b975_35321b23a1de" species="OR1"/>
+          <modifierSpeciesReference metaid="c33eb24c_560f_45d8_a16e_31f27daaa147" species="CI2"/>
+          <modifierSpeciesReference metaid="e2ecfba7_db5e_4956_8b58_d1570e1d1cd7" species="OR1"/>
+          <modifierSpeciesReference metaid="_03d06345_0c34_47c3_8550_0157e0ff421d" species="CI2"/>
+          <modifierSpeciesReference species="OR1"/>
+          <modifierSpeciesReference species="CI2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b3beb357_b209_4523_93c9_e8ae4db8d772">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> OR1 </ci>
+              <ci> CI2 </ci>
+              <ci> kb_DimerDNA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000412" id="BindReaction2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9cf1476e_3045_48ae_9bf4_e85b834e6ec8" species="OR2"/>
+          <speciesReference metaid="_94dff1e3_165b_4f58_a222_028c249325b5" species="CI2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9fdf2715_c729_46f3_a43b_30beb51a5194" species="ROR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="e2abf270_768b_4726_8417_0a1ac1c0ebfa" species="OR2"/>
+          <modifierSpeciesReference metaid="_99bb2897_32de_444b_bbb9_532e80523d29" species="CI2"/>
+          <modifierSpeciesReference metaid="b3e1c6db_0cc2_4de6_bc81_d8158ca1641e" species="OR2"/>
+          <modifierSpeciesReference metaid="_1bef7844_7db4_4777_bd61_6316c5537d02" species="CI2"/>
+          <modifierSpeciesReference metaid="_0d363fb5_086b_489e_9f54_fa85392b8a11" species="OR2"/>
+          <modifierSpeciesReference metaid="b113b379_cd87_4c52_8ec8_6b5245e78290" species="CI2"/>
+          <modifierSpeciesReference species="OR2"/>
+          <modifierSpeciesReference species="CI2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_64691f75_c7b4_46d2_aea5_0d0b04ee8501">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> OR2 </ci>
+              <ci> CI2 </ci>
+              <ci> kb_DimerDNA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000413" id="BindReaction3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3e1723e8_a912_465c_95d1_42205ba57bc5" species="OR3"/>
+          <speciesReference metaid="_10ad2eb1_6c9f_4b0e_9707_754eb84705ec" species="CI2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_70a8631c_1467_4049_8902_95a99ee4c55d" species="ROR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_01ff47db_5e64_4b20_b355_42d912ca37c6" species="OR3"/>
+          <modifierSpeciesReference metaid="a9a3150e_51e4_49ad_bb98_a76a18a4f94b" species="CI2"/>
+          <modifierSpeciesReference metaid="_924561ea_6287_4744_bc05_904591d0fbb4" species="OR3"/>
+          <modifierSpeciesReference metaid="c8299d33_9499_400f_b7dc_48399e93963d" species="CI2"/>
+          <modifierSpeciesReference metaid="d5a81c9d_eb78_4ae8_9df7_814bf96832ce" species="OR3"/>
+          <modifierSpeciesReference metaid="_93f41f91_31c1_462f_8560_87749d0240e3" species="CI2"/>
+          <modifierSpeciesReference species="OR3"/>
+          <modifierSpeciesReference species="CI2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_021a97b2_d1ae_432e_8d5b_14a5e519bd15">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> OR3 </ci>
+              <ci> CI2 </ci>
+              <ci> kb_DimerDNA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000414" id="BindReaction4" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1728618e_1e3c_484c_87bf_d17cdee9a81d" species="OR1"/>
+          <speciesReference metaid="_407561ec_a752_4b04_a282_d4197d992e49" species="Cro2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e49b1d3d_bf86_4f8e_bfc1_5804d0bdc13f" species="COR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_30428423_d827_4619_a99f_273068a93ce8" species="OR1"/>
+          <modifierSpeciesReference metaid="a3e24a41_0323_4e7c_baaa_3e6f3691c3df" species="Cro2"/>
+          <modifierSpeciesReference metaid="_673d2c42_306d_4f8a_91de_5c37cd9cc550" species="OR1"/>
+          <modifierSpeciesReference metaid="cb7fe7d4_d800_4eef_a6b7_f6ddbc324aa3" species="Cro2"/>
+          <modifierSpeciesReference metaid="f2325fcb_9571_4d58_9b0e_e9adc50e8191" species="OR1"/>
+          <modifierSpeciesReference metaid="cc14fc47_0e80_454e_84fb_1e41beddfcc9" species="Cro2"/>
+          <modifierSpeciesReference species="OR1"/>
+          <modifierSpeciesReference species="Cro2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="bb6c12af_bd92_481d_a736_0ca8249e387d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> OR1 </ci>
+              <ci> Cro2 </ci>
+              <ci> kb_DimerDNA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000415" id="BindReaction5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_00e4fce3_7c28_4928_aa6a_9ba10f18583b" species="OR2"/>
+          <speciesReference metaid="_5b467a91_1201_442a_9610_c671ec1c06af" species="Cro2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1580e7c9_d98b_4621_b81c_f28b0fe291e9" species="COR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_7dec381a_ea7d_4e0e_b5ab_fcc8f32b59ea" species="OR2"/>
+          <modifierSpeciesReference metaid="bf9e2369_aa2f_400f_b0df_84b4edcee70e" species="Cro2"/>
+          <modifierSpeciesReference metaid="aed58f32_f522_4c18_8919_78d4eef31e73" species="OR2"/>
+          <modifierSpeciesReference metaid="_244af69c_cc57_4503_95ba_a6c72bee760a" species="Cro2"/>
+          <modifierSpeciesReference metaid="_17fc8380_a2ef_4b7d_9766_2da62514cd0e" species="OR2"/>
+          <modifierSpeciesReference metaid="_160dec08_23d3_4c07_9437_65567ecb3e28" species="Cro2"/>
+          <modifierSpeciesReference species="OR2"/>
+          <modifierSpeciesReference species="Cro2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="bce0098d_d891_42e7_8fd9_8655c6621416">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> OR2 </ci>
+              <ci> Cro2 </ci>
+              <ci> kb_DimerDNA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000416" id="BindReaction6" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="ef5b7266_dcf4_4627_b851_488872e0384b" species="OR3"/>
+          <speciesReference metaid="f5417184_5f7c_4f13_9201_9436b77f7af1" species="Cro2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_37c8c577_e504_40cf_9ecd_8f3229cad1b6" species="COR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_0e70c071_bc86_4ce4_8c12_e17a8c821b6c" species="OR3"/>
+          <modifierSpeciesReference metaid="_9a88141e_1795_4a44_9f98_af27bbb53a17" species="Cro2"/>
+          <modifierSpeciesReference metaid="fbfd25ee_219c_46ca_9f6c_697cc769824b" species="OR3"/>
+          <modifierSpeciesReference metaid="d14979f4_f306_4483_bf97_ba78df71456f" species="Cro2"/>
+          <modifierSpeciesReference metaid="b109d904_ebd6_4fab_b4e1_f278d13aeccc" species="OR3"/>
+          <modifierSpeciesReference metaid="_5883227d_c808_4c17_b112_33fc4f1ccc9d" species="Cro2"/>
+          <modifierSpeciesReference species="OR3"/>
+          <modifierSpeciesReference species="Cro2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c907d5c2_8c71_40e8_80c6_ddab1f2c3155">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> OR3 </ci>
+              <ci> Cro2 </ci>
+              <ci> kb_DimerDNA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000421" id="UnbindReaction1" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_4e53f8f9_bd68_4fe0_b842_c41e679d9b1b" species="ROR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9c4f06c5_d8bc_49c3_a19b_096330d57a86" species="OR1"/>
+          <speciesReference metaid="_41d111c7_1496_4160_802a_21998abb38cf" species="CI2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="d8ca1053_ed71_46a9_9458_a654257af61d" species="OR2"/>
+          <modifierSpeciesReference metaid="_763c639a_c17a_441c_9532_b05b361707f0" species="ROR1"/>
+          <modifierSpeciesReference metaid="a8678c8b_5892_489a_922a_3e3a7d97114b" species="ROR1"/>
+          <modifierSpeciesReference metaid="_3edf671a_a17b_4293_9b8d_4c06d661e5ac" species="ROR1"/>
+          <modifierSpeciesReference species="ROR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_36ed1b0e_32ff_40aa_a1c2_b65746f38ac2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR1 </ci>
+              <ci> ku_CI2OR1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000422" id="UnbindReaction2" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_7086dcf6_d9a6_4796_93e0_be1a1cc07806" species="ROR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="e1b9a28a_7774_4eb9_974b_e28dbdea5436" species="OR1"/>
+          <speciesReference metaid="e6dccd17_11df_4b17_9ec9_619c592719cf" species="CI2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_330acd92_70f7_433d_b2b8_11d714140ee2" species="ROR2"/>
+          <modifierSpeciesReference metaid="_0a826bd1_c9c5_437c_b16c_dac062409250" species="OR3"/>
+          <modifierSpeciesReference metaid="_10d9c553_0b56_4f52_b166_5e7164cb2e60" species="ROR1"/>
+          <modifierSpeciesReference metaid="_38d0b33b_3286_4dc8_bb6d_85cbb242f6c1" species="ROR1"/>
+          <modifierSpeciesReference metaid="_9472da6d_62be_4b81_9b3b_76146dd8a1ad" species="ROR1"/>
+          <modifierSpeciesReference species="ROR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4706970d_5c4c_41e9_a1a6_57ac940038ac">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR1 </ci>
+              <ci> ku_CI2OR1c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000423" id="UnbindReaction3" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f2db8deb_9259_429f_b0e6_166ae4c88d42" species="ROR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f1982732_f83d_41f1_863e_be4f6787308a" species="OR1"/>
+          <speciesReference metaid="_5aad8e07_91ea_447f_bac7_5c144a5d2551" species="CI2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="e1b4dae7_bc25_4bba_b1a8_c7bb371602f8" species="ROR2"/>
+          <modifierSpeciesReference metaid="c2c1a1d9_6248_4fa2_94b9_7569d677ed65" species="ROR3"/>
+          <modifierSpeciesReference metaid="_8b99f453_abe1_4b76_a95c_c8ab75d0b39c" species="ROR1"/>
+          <modifierSpeciesReference metaid="_00ad4d5b_fdaa_46fc_858e_9f7788931dcb" species="ROR1"/>
+          <modifierSpeciesReference metaid="fe761847_ff29_4d47_a04a_357de2283478" species="ROR1"/>
+          <modifierSpeciesReference species="ROR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1b4e95a1_6218_4613_aa9f_e122de5a48e8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR1 </ci>
+              <ci> ku_CI2OR1c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000424" id="UnbindReaction4" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5a832b5b_4603_406f_afd5_35361f65cd81" species="ROR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="cee1316b_9599_4a83_b642_617e07e7180c" species="OR1"/>
+          <speciesReference metaid="_27fa34d8_90c3_4773_8e81_e07c0e94040f" species="CI2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="c464211f_06a7_4438_a23e_c34ecc6b7270" species="ROR2"/>
+          <modifierSpeciesReference metaid="_0efb257f_50e2_4e4b_94c4_cbe77c8f70f1" species="COR3"/>
+          <modifierSpeciesReference metaid="_91db73a5_61f6_4959_a41b_6cff890cb9b1" species="ROR1"/>
+          <modifierSpeciesReference metaid="_58768fe3_035a_40a9_b020_2c8e18c4c0de" species="ROR1"/>
+          <modifierSpeciesReference metaid="_22c3f1d6_55a1_4dc4_8867_490a6371e03f" species="ROR1"/>
+          <modifierSpeciesReference species="ROR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="aec3f6bc_64b6_4930_8987_3c82350f658b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR1 </ci>
+              <ci> ku_CI2OR1c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000425" id="UnbindReaction5" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="cb5f25ae_0c07_4af9_b912_3a7e8e20206e" species="ROR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_33bba9f9_c53d_41ee_bc95_14c66115f976" species="OR1"/>
+          <speciesReference metaid="a798d694_f643_432b_9cf5_acd74c3413f4" species="CI2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="ed37ab39_a406_48c1_9c11_d966ca69966d" species="COR2"/>
+          <modifierSpeciesReference metaid="d0985a20_ccf1_44ca_a8d6_089cd08583fd" species="ROR1"/>
+          <modifierSpeciesReference metaid="a6ec5883_d57a_473d_9ea8_520a82dfa1b3" species="ROR1"/>
+          <modifierSpeciesReference metaid="_6161bb8e_acd6_4b7f_99f1_3ddf56c4748c" species="ROR1"/>
+          <modifierSpeciesReference species="ROR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="e236cf83_832f_42d8_8f7b_1b856b8bf1ad">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR1 </ci>
+              <ci> ku_CI2OR1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000431" id="UnbindReaction6" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_2d56b57d_cde0_463a_8295_893d0984b14a" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="eba13500_f104_4993_a91c_8eac4201533a" species="CI2"/>
+          <speciesReference metaid="_37ebe3c6_a40c_4b57_9e50_db80afad9e3e" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_72822974_9ec8_4ae5_949b_55db53cd0635" species="OR1"/>
+          <modifierSpeciesReference metaid="f68e1716_4564_40ec_96fc_cf39da07f110" species="OR3"/>
+          <modifierSpeciesReference metaid="c73e5e28_7508_4a3b_8fd2_0b16ba61b3d8" species="ROR2"/>
+          <modifierSpeciesReference metaid="_47ecfbf7_e598_4c92_b52a_8dce4c6a8f86" species="ROR2"/>
+          <modifierSpeciesReference metaid="b525fb11_1ea9_44fd_a90e_6af63be0f104" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_6bcf5503_11e2_43fa_a8b8_ecfb1a69c703">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000432" id="UnbindReaction7" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_10f6a429_5a05_4c38_b961_64b1bca37700" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7306b5bb_009c_42cc_9906_01e4ea25b4ef" species="CI2"/>
+          <speciesReference metaid="_54aeaa08_a9cd_4934_977b_951e156cf609" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="c59f22fb_18a1_4034_bb32_4b84d66ef601" species="ROR1"/>
+          <modifierSpeciesReference metaid="_3cf1d37e_8839_4be6_98c7_0d2ef57c69b8" species="OR3"/>
+          <modifierSpeciesReference metaid="_127a8f77_42fb_4187_a337_3ba8a9fb270c" species="ROR2"/>
+          <modifierSpeciesReference metaid="_3b3642fb_a888_49ee_b895_71c102006ef3" species="ROR2"/>
+          <modifierSpeciesReference metaid="_4ce8d2cd_e2c1_41d2_a503_5278b465060e" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_3eb258c8_9c63_417e_8d10_b9d10efede56">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000433" id="UnbindReaction8" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6cdb2dc0_74e5_4c8c_ba52_f775399519f2" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2fa71f9f_06a9_4cb8_8643_2ab168829494" species="CI2"/>
+          <speciesReference metaid="_65c266c3_b468_4144_8581_63189c6f9377" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_78788a53_ddad_49f9_a47d_735e1482037a" species="OR1"/>
+          <modifierSpeciesReference metaid="c375f54d_e6e1_4ddd_8982_ccf8b371e4de" species="ROR3"/>
+          <modifierSpeciesReference metaid="_8b2f2182_99ba_491f_a9df_3965944ce637" species="ROR2"/>
+          <modifierSpeciesReference metaid="_6578cc0b_54cd_4470_b7ff_4e3f91de6206" species="ROR2"/>
+          <modifierSpeciesReference metaid="_56e046b7_7512_4923_a2e7_88146b3f16e7" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f7b43c2e_1660_4418_966c_cc84d6160a60">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000434" id="UnbindReaction9" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8ebebe98_0978_462f_b5cf_255d5c35477d" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1e554e79_4881_46e8_8c79_45620fe83266" species="CI2"/>
+          <speciesReference metaid="b45cce7c_2559_4fa7_9403_af509724ec3e" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_280dd517_8fc1_4982_9b9a_1abeeb423235" species="ROR1"/>
+          <modifierSpeciesReference metaid="_648ce451_fbe5_44f6_b0ac_bb1f456c536f" species="ROR3"/>
+          <modifierSpeciesReference metaid="_5dce4cc5_eccd_4d04_98b8_86dc8d1185b2" species="ROR2"/>
+          <modifierSpeciesReference metaid="_7a31deda_872c_42e5_a96f_0e830e940ea7" species="ROR2"/>
+          <modifierSpeciesReference metaid="_3880fa0c_c29c_491d_b5c7_4344a1b39eba" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_1cafb7f8_80e9_427c_9ef5_69902a7ff1d7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2c3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000435" id="UnbindReaction10" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_99cbe8b9_ac0d_43fa_b2f3_b9164eb3ec29" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_448974c5_7088_4325_8f08_7781c593ac7b" species="CI2"/>
+          <speciesReference metaid="_0f882d5d_fcc1_4918_b9e2_96080d6c6c8e" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="c4a2726f_e149_45f2_af9f_3fe5a539f012" species="COR1"/>
+          <modifierSpeciesReference metaid="e353b134_acc8_4ca4_8932_b8aed198686a" species="OR3"/>
+          <modifierSpeciesReference metaid="f1ba81ba_c1b2_4173_8413_f9fd88b44b47" species="ROR2"/>
+          <modifierSpeciesReference metaid="ebb0989e_eed2_437e_b796_6e7e20b910a9" species="ROR2"/>
+          <modifierSpeciesReference metaid="baaec8e7_45b3_4f2b_8e90_5bbe8fcd5d2f" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="fc129c99_1204_4a0f_8d7c_6957875725b4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000436" id="UnbindReaction11" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_3ae62ce0_0b20_413b_b10d_c31fad547d7a" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_4fa7da7c_717e_40ff_98f8_df49dc7df755" species="CI2"/>
+          <speciesReference metaid="_5a60dfd5_753d_45b4_becb_b6f3fa221f94" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="be78a2a8_2160_402c_8017_8041b2e1b434" species="OR1"/>
+          <modifierSpeciesReference metaid="abd93ca8_7b10_4c0e_9c4c_bf2870aff364" species="COR3"/>
+          <modifierSpeciesReference metaid="_8bf20086_66bf_4d65_b579_b9ee3349e3d1" species="ROR2"/>
+          <modifierSpeciesReference metaid="_780db28e_9f30_4b53_b2cb_6b0f8d0cf48a" species="ROR2"/>
+          <modifierSpeciesReference metaid="_9b7d1d51_6537_4bf6_8270_9e5ef2988a23" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_32f9d1b2_aa17_46ed_8ac2_0e24e4636f9a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000437" id="UnbindReaction12" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_59878943_6ae4_4adb_83d7_26a4e643ea91" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_864743a6_3d75_45f0_82d4_790115b6622c" species="CI2"/>
+          <speciesReference metaid="b244b726_68f9_4665_a5d9_a0a5cf5e671e" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="bc178bb8_be6d_4c7a_8403_414b69598b74" species="COR1"/>
+          <modifierSpeciesReference metaid="_34e3a7ac_d191_4e75_b86e_7f3c737371be" species="COR3"/>
+          <modifierSpeciesReference metaid="_9c95c86d_95a2_4153_a998_f27594ca70f9" species="ROR2"/>
+          <modifierSpeciesReference metaid="_60865233_19ba_45e1_a10f_c7c13c9d0a54" species="ROR2"/>
+          <modifierSpeciesReference metaid="dd1d5f12_1581_4d7a_905c_bc5970fa9465" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_969cdcd0_d8ee_481e_bef9_4322e5123404">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000438" id="UnbindReaction13" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_29d215a2_1127_424b_aef0_cc0934014c3b" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1c4ed7fb_efb0_4833_bd09_63b327e851c3" species="CI2"/>
+          <speciesReference metaid="abc352ad_116c_43ad_9d45_0af581a9233a" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_460441a6_3a0c_4eca_83ff_88422c95c1bf" species="ROR1"/>
+          <modifierSpeciesReference metaid="ef969ecc_2ee0_4dc1_a0bc_8cc9188e1233" species="COR3"/>
+          <modifierSpeciesReference metaid="_0f5fe4a1_a057_4cf6_964c_cda248d787b7" species="ROR2"/>
+          <modifierSpeciesReference metaid="_7047c0f7_62f2_440c_8111_27fc0a33fd2d" species="ROR2"/>
+          <modifierSpeciesReference metaid="bfa616fb_cf54_4a3c_831c_13268e0f2ca8" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_839b4899_8738_40ab_aaba_81cda4d57939">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000439" id="UnbindReaction14" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1255537a_05d9_4964_b708_bb7e3b7fca03" species="ROR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_9a4655d7_295d_4a27_a837_95d4bf87ae9d" species="CI2"/>
+          <speciesReference metaid="dd6fdd36_cc99_4f12_8762_6a2a5a9e3b97" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_2c2ab513_0562_4415_9dfb_fd72dbd2bb5d" species="COR1"/>
+          <modifierSpeciesReference metaid="_7d51aa19_a648_48bd_b01b_073830155060" species="ROR3"/>
+          <modifierSpeciesReference metaid="ae12cbd6_6f52_4164_b349_1f111ef4ca35" species="ROR2"/>
+          <modifierSpeciesReference metaid="_77681786_a011_460c_8ac3_5f6609a148af" species="ROR2"/>
+          <modifierSpeciesReference metaid="_046d2ef9_14a0_4667_ac0e_0176b0b5bbfb" species="ROR2"/>
+          <modifierSpeciesReference species="ROR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b5d0f01f_bc5c_433a_b677_299427081f5b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR2 </ci>
+              <ci> ku_CI2OR2c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000441" id="UnbindReaction15" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_15647195_acd4_4614_b272_764c9744a276" species="ROR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_34085ef2_839e_40fa_8273_9e183159179b" species="CI2"/>
+          <speciesReference metaid="_03665d89_d008_4b8c_a4ea_6b3703e2cd8b" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="f8957d6f_8615_4343_9403_10dc33079591" species="OR2"/>
+          <modifierSpeciesReference metaid="_12ba03d8_d3da_42c0_a8e9_fe566e3c76eb" species="ROR3"/>
+          <modifierSpeciesReference metaid="ff52b46f_db47_4216_ad82_c3d88cc99d4c" species="ROR3"/>
+          <modifierSpeciesReference metaid="d28d117a_a155_4d7d_a1e6_48293e2e01b5" species="ROR3"/>
+          <modifierSpeciesReference species="ROR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_0dd58970_7634_489f_af5b_196788e3702e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR3 </ci>
+              <ci> ku_CI2OR3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000442" id="UnbindReaction16" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d1c9443d_bacc_4bfd_9afb_f155b8b97d30" species="ROR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_655ffb37_53cc_4023_9d65_1c025bf28231" species="CI2"/>
+          <speciesReference metaid="_10dac6f1_9ac9_44fb_a47b_ed20cbefd24e" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_72b26726_c779_4737_a251_9df5c52ef7db" species="ROR2"/>
+          <modifierSpeciesReference metaid="f68a46e8_60c9_4ae8_b717_6bfe26af67d0" species="OR1"/>
+          <modifierSpeciesReference metaid="f294ed1e_43ea_46e2_a1f9_1e092538bd6c" species="ROR3"/>
+          <modifierSpeciesReference metaid="_66f501e9_805b_4766_8f9a_0cdd410e8b29" species="ROR3"/>
+          <modifierSpeciesReference metaid="_17979f16_d8ce_49da_a287_789b54d9f092" species="ROR3"/>
+          <modifierSpeciesReference species="ROR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="e0e9781a_04d9_448c_832c_0217433819d0">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR3 </ci>
+              <ci> ku_CI2OR3c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000443" id="UnbindReaction17" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_57aeec83_03c4_4b19_b407_41894b7dedba" species="ROR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2f14a03c_017a_47a1_9730_4356c6ac8056" species="CI2"/>
+          <speciesReference metaid="_958099e9_45cf_4c46_992f_c3ecb6edfd80" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_8ddeaee9_0d42_4557_a6d5_b8f26bf4c283" species="ROR2"/>
+          <modifierSpeciesReference metaid="cc33cfed_7356_4858_b2d7_c97e46d52703" species="ROR1"/>
+          <modifierSpeciesReference metaid="aed7c38b_757f_44dc_8704_8fd86759f47e" species="ROR3"/>
+          <modifierSpeciesReference metaid="a3c2d4a7_bedf_4e18_a3b1_6c90fc76ee2c" species="ROR3"/>
+          <modifierSpeciesReference metaid="e973daa7_5a47_499e_89ec_828ad7df28f0" species="ROR3"/>
+          <modifierSpeciesReference species="ROR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5d2850f6_1422_4395_8ad8_a82a8683044b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR3 </ci>
+              <ci> ku_CI2OR3c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000444" id="UnbindReaction18" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5492ac0e_697f_4809_b38c_38ff484f489d" species="ROR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7eda05e7_3c2d_45c1_8a2b_c478805a890b" species="CI2"/>
+          <speciesReference metaid="_859ac5a0_a51c_43aa_933f_79336c1b533f" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_0e6eda0d_9056_4287_a110_7e9ed5111944" species="ROR2"/>
+          <modifierSpeciesReference metaid="_1ebedf65_b776_4155_a945_b36fc2b1a287" species="COR1"/>
+          <modifierSpeciesReference metaid="_78914cce_976f_427e_a2cc_8c483777eb46" species="ROR3"/>
+          <modifierSpeciesReference metaid="_953317e5_7d7d_4e74_8849_e1ed709ee6e2" species="ROR3"/>
+          <modifierSpeciesReference metaid="_8afea8a7_e11c_4c1e_97e2_680a710c5f0a" species="ROR3"/>
+          <modifierSpeciesReference species="ROR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_934a6a2f_39fd_415e_b467_020f3616adf4">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR3 </ci>
+              <ci> ku_CI2OR3c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000445" id="UnbindReaction19" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_13c4a4fb_bd60_45d7_ac4a_c1f3e960471a" species="ROR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_248b4c91_251c_4fe1_8741_9e28c119fa16" species="CI2"/>
+          <speciesReference metaid="d9545b81_aeb6_47bd_ae65_861e2742321f" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="a0cb39e3_7fcd_492d_9209_8cf0509f7812" species="COR2"/>
+          <modifierSpeciesReference metaid="c8599a61_aa65_4398_87f6_c42bc2b80709" species="ROR3"/>
+          <modifierSpeciesReference metaid="_5d118135_69c0_4b63_9460_6a18033e1716" species="ROR3"/>
+          <modifierSpeciesReference metaid="_45800a2f_5323_4e00_abbe_03bd499972de" species="ROR3"/>
+          <modifierSpeciesReference species="ROR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="b781e048_2f60_426c_b6b2_a2da5253500f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> ROR3 </ci>
+              <ci> ku_CI2OR3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000451" id="UnbindReaction20" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_87412511_f014_400d_9552_7dea4703d60f" species="COR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c48899c2_574a_4cb7_9e49_76e4274748ce" species="Cro2"/>
+          <speciesReference metaid="_7c36a027_d0ca_457c_934f_9f11c1a394e6" species="OR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="cf8929cc_7423_469d_a480_a47466f3df66" species="OR2"/>
+          <modifierSpeciesReference metaid="_84dd740a_fe31_41d8_a5e4_ae526f1724fc" species="COR1"/>
+          <modifierSpeciesReference metaid="_6ca9ea87_7fa9_488f_83f0_f0169ab357c1" species="COR1"/>
+          <modifierSpeciesReference metaid="_3003e5b3_5bc8_4090_90c7_f0f9c31f279d" species="COR1"/>
+          <modifierSpeciesReference species="COR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9ed4c234_c4dd_4359_b5b0_f173ee3f3602">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR1 </ci>
+              <ci> ku_Cro2OR1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000452" id="UnbindReaction21" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c45e19dd_3551_4789_8fa7_4764dfe6ec6f" species="COR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_75c84b65_79d4_44a3_b869_01d52d497722" species="Cro2"/>
+          <speciesReference metaid="_37d8a354_aa11_499b_9a35_fed5e60855a4" species="OR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_9fcfd180_b2fa_4a6f_bc3e_a269997b227d" species="ROR2"/>
+          <modifierSpeciesReference metaid="_5584d15a_24f1_4968_9beb_06e9324fb26e" species="COR1"/>
+          <modifierSpeciesReference metaid="_8bfc7d3a_f6c9_49a7_aa01_71188343e830" species="COR1"/>
+          <modifierSpeciesReference metaid="_98126cb1_2e56_4532_9613_fee2842ec0cb" species="COR1"/>
+          <modifierSpeciesReference species="COR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d84e0482_d6e6_4299_8d85_338247eb3374">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR1 </ci>
+              <ci> ku_Cro2OR1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000453" id="UnbindReaction22" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_9731da05_c84d_4229_b3e4_99ad278cb619" species="COR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c275e42c_9e45_4911_967e_678a0ad238d9" species="Cro2"/>
+          <speciesReference metaid="_6d965cd5_44a6_4423_8438_d147cb759643" species="OR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_83f8f047_10bc_4b13_8509_7318e3e70225" species="COR2"/>
+          <modifierSpeciesReference metaid="_90f4ed1a_e478_4dbf_b7f9_166d5c9c382a" species="OR3"/>
+          <modifierSpeciesReference metaid="_5e42c6ff_3f50_4ecb_88ec_d8a0a476a20e" species="COR1"/>
+          <modifierSpeciesReference metaid="d3edd58a_0bae_4979_9504_97de2d99c5ad" species="COR1"/>
+          <modifierSpeciesReference metaid="_96b9f3b6_c7a5_453c_a319_2a060d3aa0bd" species="COR1"/>
+          <modifierSpeciesReference species="COR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_20467ed2_d0fb_4e25_8076_80107103a6b2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR1 </ci>
+              <ci> ku_Cro2OR1c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000454" id="UnbindReaction23" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_5f60e08f_e608_4c5e_84d1_3127e8c760cf" species="COR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_2c9b5ce3_7836_46cf_8f06_4bb17a3e9ec4" species="Cro2"/>
+          <speciesReference metaid="_4d087c64_1ad8_4af3_801c_0d4a13bb90f8" species="OR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_8d25809d_71c9_43db_a6ed_5fd6dc2b7c5e" species="COR2"/>
+          <modifierSpeciesReference metaid="af546e2f_d9fe_4dc0_9108_9c376cd013b6" species="ROR3"/>
+          <modifierSpeciesReference metaid="_90724c45_e5bf_4bd8_9f7b_2c2be039271e" species="COR1"/>
+          <modifierSpeciesReference metaid="_0cc93838_fc86_4187_bb74_bc3103315939" species="COR1"/>
+          <modifierSpeciesReference metaid="_40023590_424e_402d_9fe0_063fc951cd6d" species="COR1"/>
+          <modifierSpeciesReference species="COR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5e0b8b23_49b9_4a16_8aa4_688a3acaaee8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR1 </ci>
+              <ci> ku_Cro2OR1c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000455" id="UnbindReaction24" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f16ab3c3_30cd_4838_8b98_218b1f10c554" species="COR1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c9ccc25e_f74b_4d59_9ee6_e2262e2ab50a" species="Cro2"/>
+          <speciesReference metaid="_7e442ab8_dd9f_44ae_8641_9fbf8cfee968" species="OR1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_3de40f40_b59e_44ed_8d82_7ce84fd3b773" species="COR2"/>
+          <modifierSpeciesReference metaid="_22f07c1d_3de7_487b_a5e8_08f5f198a8b7" species="COR3"/>
+          <modifierSpeciesReference metaid="_4f688172_6e8f_425e_8a59_98cdea9c5633" species="COR1"/>
+          <modifierSpeciesReference metaid="c3b025ca_56ce_4c0e_86b8_dcaff85d1331" species="COR1"/>
+          <modifierSpeciesReference metaid="_0ba8ffd5_bcd3_4814_b13b_51089bbac62e" species="COR1"/>
+          <modifierSpeciesReference species="COR1"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_773c56a5_79c4_4d2c_b165_5de7a8f70130">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR1 </ci>
+              <ci> ku_Cro2OR1c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000461" id="UnbindReaction25" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6153a6ad_90b0_41fa_a46b_e9c9e8b34d53" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_3f4e176f_1923_4936_88ff_43c2bb2d8339" species="Cro2"/>
+          <speciesReference metaid="f2fef258_a88d_4ba9_8eec_e73188c35378" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_0442f41d_bd76_41c0_a45c_6751aafff887" species="OR1"/>
+          <modifierSpeciesReference metaid="_77b6c8dd_8efa_4dcb_834a_1f3c76b48968" species="OR3"/>
+          <modifierSpeciesReference metaid="caffc033_ecb0_4006_8e5a_f58746f65661" species="COR2"/>
+          <modifierSpeciesReference metaid="_44464ad4_3b4f_4081_95df_9c95eb1ec064" species="COR2"/>
+          <modifierSpeciesReference metaid="f994f3ef_3533_4eb6_b1e5_c84df99dc318" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_2fa3a5ba_9e3e_4a76_9851_ed017c95943d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000462" id="UnbindReaction26" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="b8a2c6ac_b9d4_428a_9cbd_a5df465af52d" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="f0752523_0afb_4d86_bc45_9a15ce759ecd" species="Cro2"/>
+          <speciesReference metaid="_34b69724_33e3_44a0_a54a_da66ffaacfb3" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="c0cadbb7_e87d_44a9_8256_5c362bee85f1" species="ROR1"/>
+          <modifierSpeciesReference metaid="ac3ba71b_f42c_426d_b559_cf1b7f1c0700" species="OR3"/>
+          <modifierSpeciesReference metaid="_1759416a_9e46_4ef8_a7d4_0a236a8bd9c0" species="COR2"/>
+          <modifierSpeciesReference metaid="_005caef1_9e6f_4207_8eab_21f491780f49" species="COR2"/>
+          <modifierSpeciesReference metaid="b57f9010_36ca_4243_baf8_68468c1520e3" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_68b14259_6684_4cc7_b420_e1694395860f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000463" id="UnbindReaction27" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="e98d5750_9f91_49c0_aac3_2c3f8ee4e37e" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_7e9a548e_7bb6_4d0d_bd0e_ef09ac4cbe8e" species="Cro2"/>
+          <speciesReference metaid="a460be61_fdd1_4cf6_a0f5_abb1697043d3" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_48028d34_cff4_42f1_8293_f6e44cea7c9e" species="OR1"/>
+          <modifierSpeciesReference metaid="b927b211_ee47_4e5c_a77f_27876e5c358e" species="ROR3"/>
+          <modifierSpeciesReference metaid="_821419f2_a40a_4889_a963_4f179b54f1fe" species="COR2"/>
+          <modifierSpeciesReference metaid="_3acfe391_90fd_420a_bd67_4d2868ca3fb1" species="COR2"/>
+          <modifierSpeciesReference metaid="a5684903_a3b9_42c1_b8ab_27cca2cbdd77" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_7f230582_4d6d_41a4_8979_6d5cab44085b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000464" id="UnbindReaction28" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_989f9371_472f_403a_85c8_fae55ab5b56c" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_36fb2b68_e7ce_4d8c_baf8_b9b47eb01271" species="Cro2"/>
+          <speciesReference metaid="_78035c95_c7e2_4370_9ef3_01116ad7d14b" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="d7e1d1fc_e068_4089_8d10_db5922808240" species="ROR1"/>
+          <modifierSpeciesReference metaid="a659ef81_2bb1_4244_9e76_97073c059531" species="ROR3"/>
+          <modifierSpeciesReference metaid="_8b353702_77ed_40cb_a384_20a51c97aea5" species="COR2"/>
+          <modifierSpeciesReference metaid="_4dc847e5_7c24_4458_8892_b30a89678cfb" species="COR2"/>
+          <modifierSpeciesReference metaid="_0ae06610_ee7c_431d_a8d2_7f7ea0a80ba1" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="fd147423_22b5_488c_972c_7929b22c9fa1">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000465" id="UnbindReaction29" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_6ebf4112_d5cd_4619_8a1d_c506213fdab0" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_779823ce_2798_4bd7_a85a_6cc52605f0fa" species="Cro2"/>
+          <speciesReference metaid="a03fb183_2a6a_4342_8de2_6712e8306a7f" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="f87ec6ac_b24d_46ec_9bd2_9b393c242ef1" species="COR1"/>
+          <modifierSpeciesReference metaid="_6bc4fafc_4b4e_4940_b715_c630b4b4f916" species="OR3"/>
+          <modifierSpeciesReference metaid="_452df006_0ab4_482d_873c_1463cca6639d" species="COR2"/>
+          <modifierSpeciesReference metaid="_304804ce_bb44_49de_aec4_f2455cf654b0" species="COR2"/>
+          <modifierSpeciesReference metaid="_4d2d3300_e0df_4475_a592_b920f2b4e932" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_91dd2ee8_bdf3_4d76_b653_0b1d01c22b0d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000466" id="UnbindReaction30" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="d2a29d52_7cbf_4693_8f43_2c9de3593899" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_8e0a4545_086b_4f94_a0ba_478371d1ee46" species="Cro2"/>
+          <speciesReference metaid="_16289eaa_972d_4bdf_b7f0_ca9a0f6e530c" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="f09f1d39_5c8e_471d_b019_01d4cecb1965" species="OR1"/>
+          <modifierSpeciesReference metaid="_74f4925e_55bd_4f5e_a1c6_9b92a3357434" species="COR3"/>
+          <modifierSpeciesReference metaid="_6fa1bc44_b3bc_4515_9885_d0190fcaef59" species="COR2"/>
+          <modifierSpeciesReference metaid="c2b43d76_35b7_4bfa_9226_c060f8f40a33" species="COR2"/>
+          <modifierSpeciesReference metaid="_94ff51d4_a409_4689_a01d_32866cea1026" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_16ff4fcf_b4ee_436e_92f8_11c36df2e66f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000467" id="UnbindReaction31" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_09ccd8b3_46b9_4e4b_aba1_e88c6b2160c8" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_26a3be7b_fb9d_4f84_8da6_6c3ac26af74d" species="Cro2"/>
+          <speciesReference metaid="_9f6446b4_e0db_4676_b4af_ab83d6dc2504" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_300e00d2_1942_406c_b204_1f2e50d7e261" species="COR1"/>
+          <modifierSpeciesReference metaid="eaa3f9d7_f7f6_4d6c_8e19_84e310181da9" species="COR3"/>
+          <modifierSpeciesReference metaid="_2a0d0933_829a_4e69_9b5f_1ef85db8bbe7" species="COR2"/>
+          <modifierSpeciesReference metaid="_96ed753d_e7ad_48c7_9d65_035474edb382" species="COR2"/>
+          <modifierSpeciesReference metaid="f2185ee4_cf55_40ee_b5c8_bca03a652836" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9abdac10_ab40_4e7a_b2d6_9c31c1e8188a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2c3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000468" id="UnbindReaction32" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_8952ac1c_9b19_403b_a68d_aaf326895b9e" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="a056f762_be7b_4353_9172_906ffb8c1271" species="Cro2"/>
+          <speciesReference metaid="_05e2f1d8_9943_469e_9db1_f57396f33fa9" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_4192f25b_4835_4beb_ad59_ccb66b666f84" species="ROR1"/>
+          <modifierSpeciesReference metaid="_09fa0155_f608_477d_993d_d4e89c944fb5" species="COR3"/>
+          <modifierSpeciesReference metaid="_520860f5_c316_442b_b882_6bc3eb9165e9" species="COR2"/>
+          <modifierSpeciesReference metaid="e2fc1a82_846a_470b_a896_a940d248bb32" species="COR2"/>
+          <modifierSpeciesReference metaid="_5a703807_65ac_4935_ad49_5693fdce90f7" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="e4aa6b5e_029d_43b7_bcec_d8eb26a87008">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000469" id="UnbindReaction33" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c945c393_b5cb_4d85_8871_6be8ef63968a" species="COR2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_60627278_3eb5_4c25_8d6c_dbaf1cada840" species="Cro2"/>
+          <speciesReference metaid="e19d4752_9aa2_4f69_83a0_55974ad36d27" species="OR2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_4ecae7c3_0e9d_4529_9905_cd0e34449fa1" species="COR1"/>
+          <modifierSpeciesReference metaid="fef0e680_a45a_4bbb_b34e_c6fe4ef5c73c" species="ROR3"/>
+          <modifierSpeciesReference metaid="_91ca369c_8e80_4ed3_b6fa_51096f362b9c" species="COR2"/>
+          <modifierSpeciesReference metaid="_2333774d_418f_445c_a5ad_928d96325b5c" species="COR2"/>
+          <modifierSpeciesReference metaid="_0ce2faac_d1d9_4b56_8a46_f79cb38e0476" species="COR2"/>
+          <modifierSpeciesReference species="COR2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="eab8e326_4669_4f8c_b011_66ebf15ffc96">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR2 </ci>
+              <ci> ku_Cro2OR2c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000471" id="UnbindReaction34" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_26c726c2_2a64_412e_a0bf_12b972b2dee7" species="COR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="cc0ca5fd_f650_43f7_93bb_92bd09fec0a6" species="Cro2"/>
+          <speciesReference metaid="_73c62c05_d7b3_410b_b936_49942dd69464" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_2d7350a7_33a6_42e0_bcbf_e40f8c183248" species="OR2"/>
+          <modifierSpeciesReference metaid="_44627b29_6794_43bb_95a5_921e9f9ac9bb" species="COR3"/>
+          <modifierSpeciesReference metaid="d8bcfd7e_218d_4c54_bdee_12430abfba5d" species="COR3"/>
+          <modifierSpeciesReference metaid="_271b3374_b959_4671_81b3_089b917b4f28" species="COR3"/>
+          <modifierSpeciesReference species="COR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d18f9149_6ec5_4599_8f32_a45b5861b321">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR3 </ci>
+              <ci> ku_Cro2OR3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000472" id="UnbindReaction35" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_1d0f19e5_a5f4_44c6_8f2e_1c20b6e86b02" species="COR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="c80a2542_1952_448f_a65d_4588c11ec440" species="Cro2"/>
+          <speciesReference metaid="_21e3d157_f86c_4e75_9a47_0e0e7e3583c4" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="f63c9bdd_64da_4afe_be1f_f073ff8677b0" species="ROR2"/>
+          <modifierSpeciesReference metaid="_036b7566_fc58_4406_b79f_c4ca894c1684" species="COR3"/>
+          <modifierSpeciesReference metaid="_2d56e1dd_1034_4402_9301_2cb21e3ed774" species="COR3"/>
+          <modifierSpeciesReference metaid="_0792cf1a_bc5b_4e18_9920_cf0964f8602f" species="COR3"/>
+          <modifierSpeciesReference species="COR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d248f2f2_245c_43f6_a014_a7ab7ab8cf46">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR3 </ci>
+              <ci> ku_Cro2OR3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000473" id="UnbindReaction36" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="f086499e_ad0f_4176_9786_8e174c93b2d4" species="COR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="dbc0025d_8665_4873_9812_e755a54af3eb" species="Cro2"/>
+          <speciesReference metaid="_27ccdedb_f2af_459e_bd42_18d74dca6fed" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="b95274c9_5748_4ec1_912f_eb3e55568915" species="COR2"/>
+          <modifierSpeciesReference metaid="_4eb4cda4_8754_4db1_ad3b_2dfa0751449f" species="OR1"/>
+          <modifierSpeciesReference metaid="b695e479_5c01_4121_b032_065300511318" species="COR3"/>
+          <modifierSpeciesReference metaid="_67a950ec_3706_4d6a_8821_5f1663cdcc10" species="COR3"/>
+          <modifierSpeciesReference metaid="b279bc20_4055_40cf_aa2d_3f7cac4083ff" species="COR3"/>
+          <modifierSpeciesReference species="COR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="e9b113c3_567b_4ea3_a3a9_caff7f18ac5c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR3 </ci>
+              <ci> ku_Cro2OR3c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000474" id="UnbindReaction37" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="_38c207a6_dbc3_4da6_a4a6_9223ee367826" species="COR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_30cdfe48_2cb4_46f9_94e7_8eebbbaa76d5" species="Cro2"/>
+          <speciesReference metaid="_87371d42_e9d0_4275_8d1f_1c89131f4ba1" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="_1b280ea9_bf43_46f2_93de_f751112e33c0" species="COR2"/>
+          <modifierSpeciesReference metaid="ebc3b000_635b_4f29_acc1_b7d82f53b362" species="ROR1"/>
+          <modifierSpeciesReference metaid="_80c798e7_4be4_42a7_a31b_a4b45cf11b30" species="COR3"/>
+          <modifierSpeciesReference metaid="_6d23dcce_2fe8_4d56_a0ce_f91a15aefc37" species="COR3"/>
+          <modifierSpeciesReference metaid="_4127f777_31cd_427b_9449_90b9c71a3c52" species="COR3"/>
+          <modifierSpeciesReference species="COR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_2e0df509_453c_4a46_9591_a09045b94fe7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR3 </ci>
+              <ci> ku_Cro2OR3c1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_0000475" id="UnbindReaction38" reversible="false">
+        <listOfReactants>
+          <speciesReference metaid="c03f2d32_5c88_4179_aa48_d9b82c86acd9" species="COR3"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="_1f60d4b4_cdff_4825_8dd0_ccff0a5e2d10" species="Cro2"/>
+          <speciesReference metaid="c7cd70dc_6af6_40ae_b2d3_e1ef792408c6" species="OR3"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="de079fad_48bf_4f2d_affd_f5c0e8a63cc2" species="COR2"/>
+          <modifierSpeciesReference metaid="_2e8cc35b_117d_4790_ba98_3f51b34c1fab" species="COR1"/>
+          <modifierSpeciesReference metaid="_78742e3d_fcbd_4f44_bddc_d6f7864c1df3" species="COR3"/>
+          <modifierSpeciesReference metaid="_56f9af83_c5fe_4592_a6bd_2dad8074c45b" species="COR3"/>
+          <modifierSpeciesReference metaid="_552d4878_e48b_427d_840e_3e37ec70d2ec" species="COR3"/>
+          <modifierSpeciesReference species="COR3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_92e9ed5a_c3c4_48d7_8c32_6ce4e3b48446">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> default </ci>
+              <ci> COR3 </ci>
+              <ci> ku_Cro2OR3c2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

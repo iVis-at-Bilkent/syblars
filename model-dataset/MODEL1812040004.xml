@@ -1,0 +1,736 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model id="New_Model" metaid="COPASI0" name="Mushayabasa2011- Modeling gonirrhea and HIV co-interaction">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>A mathematical model was designed to explore the co-interaction of gonorrhea and HIV in the presence of antiretroviral therapy and gonorrhea treatment. Qualitative and comprehensive mathematical techniques have been used to analyse the model.</p>
+  </body>
+    </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#COPASI0">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Kananathan</vCard:Family>
+	<vCard:Given>Sarubini</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>sarubini.kananathan@hotmail.co.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>EMBL-EBI</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2018-07-20T10:31:16Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2018-07-20T10:31:16Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqbiol:hasProperty>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/mamo/MAMO_0000046"/>
+	</rdf:Bag>
+	</bqbiol:hasProperty>
+	</rdf:Description>
+	
+	
+	
+      </rdf:RDF>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2018-07-20T10:31:16Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+            <dcterms:creator>
+              <rdf:Description>
+                <vCard:EMAIL>sarubini.kananathan@hotmail.co.uk</vCard:EMAIL>
+                <vCard:N>
+                  <rdf:Description>
+                    <vCard:Family>Kananathan</vCard:Family>
+                    <vCard:Given>Sarubini</vCard:Given>
+                  </rdf:Description>
+                </vCard:N>
+                <vCard:ORG>
+                  <rdf:Description>
+                    <vCard:Orgname>EMBL-EBI</vCard:Orgname>
+                  </rdf:Description>
+                </vCard:ORG>
+              </rdf:Description>
+            </dcterms:creator>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    </annotation>
+      <listOfUnitDefinitions>
+      <unitDefinition id="volume" name="volume">
+        <listOfUnits>
+          <unit exponent="1" kind="litre" multiplier="1" scale="-3"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit exponent="1" kind="second" multiplier="86400" scale="0"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit exponent="1" kind="mole" multiplier="1" scale="-3"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment constant="true" id="compartment" name="compartment" size="1" spatialDimensions="3"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="S" initialConcentration="500" metaid="COPASI1" name="S">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI1">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:20:15Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="I_G" initialConcentration="50000" metaid="COPASI2" name="I_G">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI2">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:21:44Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="I_H" initialConcentration="0" metaid="COPASI3" name="I_H">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI3">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:22:51Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="I_GH" initialConcentration="0" metaid="COPASI4" name="I_GH">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI4">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:24:55Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="A_H" initialConcentration="0" metaid="COPASI5" name="A_H">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI5">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:26:49Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="A_GH" initialConcentration="0" metaid="COPASI6" name="A_GH">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI6">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:28:28Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="A_HT" initialConcentration="0" metaid="COPASI7" name="A_HT">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI7">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:30:18Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+      <species boundaryCondition="true" compartment="compartment" constant="false" id="A_GHT" initialConcentration="0" metaid="COPASI8" name="A_GHT">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI8">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:32:03Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter constant="true" id="LAMBDA" metaid="COPASI9" name="LAMBDA" value="100000">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI9">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T10:40:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="mu" metaid="COPASI10" name="mu" value="0.025">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI10">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T10:40:59Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="v" metaid="COPASI11" name="v" value="0.333">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI11">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T10:41:13Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="gamma" metaid="COPASI12" name="gamma" value="0.125">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI12">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T10:41:25Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="beta_H" name="beta_H" value="0.015"/>
+      <parameter constant="true" id="beta_G" name="beta_G" value="0.051"/>
+      <parameter constant="true" id="V" metaid="COPASI13" name="V" value="0.4">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI13">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T10:39:16Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="true" id="phi" name="phi" value="0.5"/>
+      <parameter constant="true" id="epsilon1" name="epsilon1" value="1.19"/>
+      <parameter constant="true" id="epsilon2" name="epsilon2" value="1.2"/>
+      <parameter constant="true" id="kappa" name="kappa" value="1.02"/>
+      <parameter constant="true" id="sigma" name="sigma" value="1.21"/>
+      <parameter constant="true" id="alpha" name="alpha" value="1.22"/>
+      <parameter constant="true" id="eta" name="eta" value="1.15"/>
+      <parameter constant="true" id="thetaA" name="thetaA" value="1.25"/>
+      <parameter constant="true" id="thetaGH" name="thetaGH" value="1.3"/>
+      <parameter constant="true" id="PHI1" name="PHI1" value="0.1"/>
+      <parameter constant="true" id="PHI2" name="PHI2" value="0.025"/>
+      <parameter constant="true" id="PHI3" name="PHI3" value="0.003"/>
+      <parameter constant="true" id="PHI4" name="PHI4" value="0.0031"/>
+      <parameter constant="true" id="tau" name="tau" value="0.4"/>
+      <parameter constant="true" id="omega" name="omega" value="0.4"/>
+      <parameter constant="false" id="lambda_H" metaid="COPASI14" name="lambda_H" value="0">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI14">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:12:26Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="false" id="lambda_G" metaid="COPASI15" name="lambda_G" value="5.1">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI15">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:16:52Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+      <parameter constant="false" id="N" metaid="COPASI16" name="N" value="500">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI16">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2018-07-20T11:12:45Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+            </parameter>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="N">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> S </ci>
+            <ci> I_H </ci>
+            <ci> I_GH </ci>
+            <ci> A_H </ci>
+            <ci> A_GH </ci>
+            <ci> A_HT </ci>
+            <ci> A_GHT </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="lambda_G">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> beta_G </ci>
+              <apply>
+                <plus/>
+                <ci> I_G </ci>
+                <apply>
+                  <times/>
+                  <ci> thetaGH </ci>
+                  <apply>
+                    <plus/>
+                    <ci> I_GH </ci>
+                    <apply>
+                      <times/>
+                      <ci> epsilon2 </ci>
+                      <ci> A_GH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> phi </ci>
+                  <ci> A_GHT </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> N </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="lambda_H">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> beta_H </ci>
+              <apply>
+                <plus/>
+                <ci> I_H </ci>
+                <apply>
+                  <times/>
+                  <ci> eta </ci>
+                  <ci> I_GH </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> thetaA </ci>
+                  <apply>
+                    <plus/>
+                    <ci> A_H </ci>
+                    <apply>
+                      <times/>
+                      <ci> epsilon1 </ci>
+                      <ci> A_GH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> V </ci>
+                  <ci> A_HT </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> phi </ci>
+                  <ci> A_GHT </ci>
+                </apply>
+              </apply>
+            </apply>
+            <ci> N </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <rateRule variable="S">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <ci> LAMBDA </ci>
+                  <apply>
+                    <times/>
+                    <ci> PHI1 </ci>
+                    <ci> I_G </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> lambda_G </ci>
+                  <ci> S </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> lambda_H </ci>
+                <ci> S </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> mu </ci>
+              <ci> S </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="I_G">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> lambda_G </ci>
+                <ci> S </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> alpha </ci>
+                <ci> lambda_H </ci>
+                <ci> I_G </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> PHI1 </ci>
+                <ci> mu </ci>
+              </apply>
+              <ci> I_G </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="I_H">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> lambda_H </ci>
+                  <ci> S </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> PHI2 </ci>
+                  <ci> I_GH </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> lambda_G </ci>
+                <ci> I_H </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> gamma </ci>
+                <ci> mu </ci>
+              </apply>
+              <ci> I_H </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="I_GH">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> alpha </ci>
+                <ci> lambda_H </ci>
+                <ci> I_G </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> lambda_G </ci>
+                <ci> I_H </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> kappa </ci>
+                  <ci> gamma </ci>
+                </apply>
+                <ci> PHI2 </ci>
+                <ci> mu </ci>
+              </apply>
+              <ci> I_GH </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="A_H">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> gamma </ci>
+                  <ci> I_H </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> PHI3 </ci>
+                  <ci> A_GH </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> lambda_G </ci>
+                <ci> A_H </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> omega </ci>
+                <ci> mu </ci>
+                <ci> v </ci>
+              </apply>
+              <ci> A_H </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="A_GH">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> kappa </ci>
+                <ci> gamma </ci>
+                <ci> I_GH </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> lambda_G </ci>
+                <ci> A_H </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> omega </ci>
+                <ci> PHI3 </ci>
+                <ci> mu </ci>
+                <ci> v </ci>
+              </apply>
+              <ci> A_GH </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="A_HT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> omega </ci>
+                  <ci> A_H </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> PHI4 </ci>
+                  <ci> A_GHT </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> lambda_G </ci>
+                <ci> A_HT </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> mu </ci>
+                <apply>
+                  <times/>
+                  <ci> tau </ci>
+                  <ci> v </ci>
+                </apply>
+              </apply>
+              <ci> A_HT </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="A_GHT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> omega </ci>
+                <ci> A_GH </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> sigma </ci>
+                <ci> lambda_G </ci>
+                <ci> A_HT </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <ci> PHI4 </ci>
+                <ci> v </ci>
+                <apply>
+                  <times/>
+                  <ci> tau </ci>
+                  <ci> v </ci>
+                </apply>
+              </apply>
+              <ci> A_GHT </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+    </listOfRules>
+  </model>
+</sbml>

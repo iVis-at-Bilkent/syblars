@@ -1,0 +1,1331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model name="Gérard - 2019 - Coupling the cell cycle and the cell transformation networks (SBML)">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+     <p>Model for the Let-7-mediated coupling between the CDK network driving the cell cycle and the malignant cell transformation network. The model is based on the cell cycle model by Gérard and Goldbeter (Interface Focus 1, 24-35, 2011) and on a model for the epigenetic switch linking inflammation to cell transformation by Gérard et al (PLoS Comput. Biol. 10:e1003455, 2014).</p>
+  </body>
+    </notes>
+    <listOfFunctionDefinitions>
+      <functionDefinition id="max" name="minimum">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <bvar>
+              <ci> y </ci>
+            </bvar>
+            <piecewise>
+              <piece>
+                <ci> x </ci>
+                <apply>
+                  <gt/>
+                  <ci> x </ci>
+                  <ci> y </ci>
+                </apply>
+              </piece>
+              <otherwise>
+                <ci> y </ci>
+              </otherwise>
+            </piecewise>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="min" name="maximum">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <bvar>
+              <ci> y </ci>
+            </bvar>
+            <piecewise>
+              <piece>
+                <ci> x </ci>
+                <apply>
+                  <lt/>
+                  <ci> x </ci>
+                  <ci> y </ci>
+                </apply>
+              </piece>
+              <otherwise>
+                <ci> y </ci>
+              </otherwise>
+            </piecewise>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="heav" name="heavyside">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <piecewise>
+              <piece>
+                <cn type="integer"> 0 </cn>
+                <apply>
+                  <lt/>
+                  <ci> x </ci>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <piece>
+                <cn> 0.5 </cn>
+                <apply>
+                  <eq/>
+                  <ci> x </ci>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <piece>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <gt/>
+                  <ci> x </ci>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <otherwise>
+                <cn type="integer"> 0 </cn>
+              </otherwise>
+            </piecewise>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="mod" name="modulo">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <bvar>
+              <ci> y </ci>
+            </bvar>
+            <piecewise>
+              <piece>
+                <apply>
+                  <minus/>
+                  <ci> x </ci>
+                  <apply>
+                    <times/>
+                    <ci> y </ci>
+                    <apply>
+                      <ceiling/>
+                      <apply>
+                        <divide/>
+                        <ci> x </ci>
+                        <ci> y </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <xor/>
+                  <apply>
+                    <lt/>
+                    <ci> x </ci>
+                    <cn type="integer"> 0 </cn>
+                  </apply>
+                  <apply>
+                    <lt/>
+                    <ci> y </ci>
+                    <cn type="integer"> 0 </cn>
+                  </apply>
+                </apply>
+              </piece>
+              <otherwise>
+                <apply>
+                  <minus/>
+                  <ci> x </ci>
+                  <apply>
+                    <times/>
+                    <ci> y </ci>
+                    <apply>
+                      <floor/>
+                      <apply>
+                        <divide/>
+                        <ci> x </ci>
+                        <ci> y </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </otherwise>
+            </piecewise>
+          </lambda>
+        </math>
+            </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfParameters>
+      <parameter constant="false" id="NFKB" name="NFKB = 0.00045" value="0.00045"/>
+      <parameter constant="false" id="LIN28" name="LIN28 = 0.34" value="0.34"/>
+      <parameter constant="false" id="let7" name="let7 = 40" value="40"/>
+      <parameter constant="false" id="mIL6" name="mIL6 = 0.0003" value="0.0003"/>
+      <parameter constant="false" id="IL6" name="IL6 = 0.001" value="0.001"/>
+      <parameter constant="false" id="mRas" name="mRas = 0.00001" value="1E-5"/>
+      <parameter constant="false" id="Ras" name="Ras = 0.0001" value="0.0001"/>
+      <parameter constant="false" id="STAT3" name="STAT3 = 0.0001" value="0.0001"/>
+      <parameter constant="false" id="miR21" name="miR21 = 0.0003" value="0.0003"/>
+      <parameter constant="false" id="mPTEN" name="mPTEN = 0.01" value="0.01"/>
+      <parameter constant="false" id="PTEN" name="PTEN = 0.17" value="0.17"/>
+      <parameter constant="false" id="Src" name="Src = 0.01" value="0.01"/>
+      <parameter constant="false" id="ks1let7" name="ks1let7 = 10" value="10"/>
+      <parameter constant="false" id="Kilet7" name="Kilet7 = 0.1" value="0.1"/>
+      <parameter constant="false" id="kdlet7" name="kdlet7 = 0.05" value="0.05"/>
+      <parameter constant="false" id="kaa1nfkb" name="kaa1nfkb = 10" value="10"/>
+      <parameter constant="false" id="kaa2nfkb" name="kaa2nfkb = 0.09" value="0.09"/>
+      <parameter constant="false" id="kaa3nfkb" name="kaa3nfkb = 1" value="1"/>
+      <parameter constant="false" id="Kanfkb" name="Kanfkb = 0.01" value="0.01"/>
+      <parameter constant="false" id="Kinfkb" name="Kinfkb = 0.02" value="0.02"/>
+      <parameter constant="false" id="kdnfkb" name="kdnfkb = 0.01" value="0.01"/>
+      <parameter constant="false" id="NFKBtot" name="NFKBtot = 1" value="1"/>
+      <parameter constant="false" id="Kasrc" name="Kasrc = 2" value="2"/>
+      <parameter constant="false" id="Ka1il6" name="Ka1il6 = 10" value="10"/>
+      <parameter constant="false" id="Ka2il6" name="Ka2il6 = 40" value="40"/>
+      <parameter constant="false" id="Karas" name="Karas = 10" value="10"/>
+      <parameter constant="false" id="Kipten" name="Kipten = 5" value="5"/>
+      <parameter constant="false" id="Vslin28" name="Vslin28 = 0.1" value="0.1"/>
+      <parameter constant="false" id="kdlin28" name="kdlin28 = 0.015" value="0.015"/>
+      <parameter constant="false" id="Ka1nfkb" name="Ka1nfkb = 0.01" value="0.01"/>
+      <parameter constant="false" id="k9" name="k9 = 10" value="10"/>
+      <parameter constant="false" id="k10" name="k10 = 0.01" value="0.01"/>
+      <parameter constant="false" id="Vs1mil6" name="Vs1mil6 = 0.12" value="0.12"/>
+      <parameter constant="false" id="Vs2mil6" name="Vs2mil6 = 0.01" value="0.01"/>
+      <parameter constant="false" id="kdmil6" name="kdmil6 = 0.01" value="0.01"/>
+      <parameter constant="false" id="kdillet" name="kdillet = 0.5" value="0.5"/>
+      <parameter constant="false" id="Ka2nfkb" name="Ka2nfkb = 5" value="5"/>
+      <parameter constant="false" id="ks1il6" name="ks1il6 = 1.5" value="1.5"/>
+      <parameter constant="false" id="kdil6" name="kdil6 = 0.4" value="0.4"/>
+      <parameter constant="false" id="Vs1mras" name="Vs1mras = 0.006" value="0.006"/>
+      <parameter constant="false" id="k11" name="k11 = 10" value="10"/>
+      <parameter constant="false" id="k12" name="k12 = 0.01" value="0.01"/>
+      <parameter constant="false" id="kdmras" name="kdmras = 0.01" value="0.01"/>
+      <parameter constant="false" id="kdraslet" name="kdraslet = 0.5" value="0.5"/>
+      <parameter constant="false" id="ks1ras" name="ks1ras = 0.25" value="0.25"/>
+      <parameter constant="false" id="kdras" name="kdras = 0.03" value="0.03"/>
+      <parameter constant="false" id="Vsstat" name="Vsstat = 0.15" value="0.15"/>
+      <parameter constant="false" id="kdstat" name="kdstat = 0.03" value="0.03"/>
+      <parameter constant="false" id="Vsmir21" name="Vsmir21 = 4" value="4"/>
+      <parameter constant="false" id="Kastat" name="Kastat = 5" value="5"/>
+      <parameter constant="false" id="k13" name="k13 = 10" value="10"/>
+      <parameter constant="false" id="k14" name="k14 = 0.01" value="0.01"/>
+      <parameter constant="false" id="k15" name="k15 = 10" value="10"/>
+      <parameter constant="false" id="k16" name="k16 = 0.01" value="0.01"/>
+      <parameter constant="false" id="kdmir21" name="kdmir21 = 0.2" value="0.2"/>
+      <parameter constant="false" id="Vsmpten" name="Vsmpten = 0.001" value="0.001"/>
+      <parameter constant="false" id="kdmpten" name="kdmpten = 0.1" value="0.1"/>
+      <parameter constant="false" id="kdmiRmp" name="kdmiRmp = 0.1" value="0.1"/>
+      <parameter constant="false" id="kspten" name="kspten = 0.9" value="0.9"/>
+      <parameter constant="false" id="kdpten" name="kdpten = 0.05" value="0.05"/>
+      <parameter constant="false" id="Md" name="Md = 0.01" value="0.01"/>
+      <parameter constant="false" id="E2F" name="E2F = 0.01" value="0.01"/>
+      <parameter constant="false" id="Me" name="Me = 0.01" value="0.01"/>
+      <parameter constant="false" id="Ma" name="Ma = 0.01" value="0.01"/>
+      <parameter constant="false" id="Mb" name="Mb = 0.01" value="0.01"/>
+      <parameter constant="false" id="APC" name="APC = 0.01" value="0.01"/>
+      <parameter constant="false" id="deg" name="deg = 0" value="0"/>
+      <parameter constant="false" id="vsmcyc" name="vsmcyc = 1.5" value="1.5"/>
+      <parameter constant="false" id="GF" name="GF = 1" value="1"/>
+      <parameter constant="false" id="ksmmd" name="ksmmd = 0.03" value="0.03"/>
+      <parameter constant="false" id="kdmmd" name="kdmmd = 0.2" value="0.2"/>
+      <parameter constant="false" id="ksd" name="ksd = 0.5" value="0.5"/>
+      <parameter constant="false" id="Kgf" name="Kgf = 0.1" value="0.1"/>
+      <parameter constant="false" id="kdmd" name="kdmd = 0.5" value="0.5"/>
+      <parameter constant="false" id="k1e2f" name="k1e2f = 2.3" value="2.3"/>
+      <parameter constant="false" id="Kae2f" name="Kae2f = 0.01" value="0.01"/>
+      <parameter constant="false" id="k2e2f" name="k2e2f = 2.5" value="2.5"/>
+      <parameter constant="false" id="Kie2f" name="Kie2f = 0.01" value="0.01"/>
+      <parameter constant="false" id="E2Ftot" name="E2Ftot = 4" value="4"/>
+      <parameter constant="false" id="ksmme" name="ksmme = 0.035" value="0.035"/>
+      <parameter constant="false" id="kdmme" name="kdmme = 0.08" value="0.08"/>
+      <parameter constant="false" id="kse" name="kse = 0.8" value="0.8"/>
+      <parameter constant="false" id="kdme" name="kdme = 0.2" value="0.2"/>
+      <parameter constant="false" id="kdme2" name="kdme2 = 0.1" value="0.1"/>
+      <parameter constant="false" id="Kde" name="Kde = 0.08" value="0.08"/>
+      <parameter constant="false" id="ksmma" name="ksmma = 0.07" value="0.07"/>
+      <parameter constant="false" id="kdmma" name="kdmma = 0.08" value="0.08"/>
+      <parameter constant="false" id="ksa" name="ksa = 0.4" value="0.4"/>
+      <parameter constant="false" id="kdma" name="kdma = 0.35" value="0.35"/>
+      <parameter constant="false" id="kdma2" name="kdma2 = 0.05" value="0.05"/>
+      <parameter constant="false" id="Kda" name="Kda = 0.01" value="0.01"/>
+      <parameter constant="false" id="vsmmb" name="vsmmb = 0.06" value="0.06"/>
+      <parameter constant="false" id="kdmmb" name="kdmmb = 0.08" value="0.08"/>
+      <parameter constant="false" id="vsb" name="vsb = 0.35" value="0.35"/>
+      <parameter constant="false" id="kdmb" name="kdmb = 0.2" value="0.2"/>
+      <parameter constant="false" id="kdmb2" name="kdmb2 = 0.7" value="0.7"/>
+      <parameter constant="false" id="Kdb" name="Kdb = 0.01" value="0.01"/>
+      <parameter constant="false" id="k1apc" name="k1apc = 1" value="1"/>
+      <parameter constant="false" id="Kaapc" name="Kaapc = 2" value="2"/>
+      <parameter constant="false" id="V2apc" name="V2apc = 0.3" value="0.3"/>
+      <parameter constant="false" id="Kiapc" name="Kiapc = 10" value="10"/>
+      <parameter constant="false" id="APCtot" name="APCtot = 2" value="2"/>
+      <parameter constant="false" id="k1" name="k1 = 1" value="1"/>
+      <parameter constant="false" id="k2" name="k2 = 0.01" value="0.01"/>
+      <parameter constant="false" id="k3" name="k3 = 1" value="1"/>
+      <parameter constant="false" id="k4" name="k4 = 0.01" value="0.01"/>
+      <parameter constant="false" id="k5" name="k5 = 1" value="1"/>
+      <parameter constant="false" id="k6" name="k6 = 0.01" value="0.01"/>
+      <parameter constant="false" id="k7" name="k7 = 1" value="1"/>
+      <parameter constant="false" id="k8" name="k8 = 0.01" value="0.01"/>
+      <parameter constant="false" id="kdmMdlet7" name="kdmMdlet7 = 1" value="1"/>
+      <parameter constant="false" id="kdmMelet7" name="kdmMelet7 = 1" value="1"/>
+      <parameter constant="false" id="kdmMalet7" name="kdmMalet7 = 1" value="1"/>
+      <parameter constant="false" id="kdmMblet7" name="kdmMblet7 = 1" value="1"/>
+      <parameter constant="false" id="mIL6let7" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mRaslet7" units="dimensionless" value="0"/>
+      <parameter constant="false" id="miRmpten" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMd" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMdlet7" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMe" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMelet7" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMa" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMalet7" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMb" units="dimensionless" value="0"/>
+      <parameter constant="false" id="mMblet7" units="dimensionless" value="0"/>
+      <parameter constant="false" id="NFKBi" units="dimensionless" value="0"/>
+      <parameter constant="false" id="Let7TOT" units="dimensionless" value="0"/>
+      <parameter constant="false" id="t" name="model time" units="dimensionless" value="0"/>
+    </listOfParameters>
+    <listOfRules>
+      <rateRule variable="NFKB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> kaa1nfkb </ci>
+                  <ci> Src </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kaa2nfkb </ci>
+                  <ci> IL6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kaa3nfkb </ci>
+                  <ci> Ras </ci>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> Kipten </ci>
+                <apply>
+                  <plus/>
+                  <ci> Kipten </ci>
+                  <ci> PTEN </ci>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <ci> NFKBi </ci>
+                <apply>
+                  <plus/>
+                  <ci> Kanfkb </ci>
+                  <ci> NFKBi </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdnfkb </ci>
+              <apply>
+                <divide/>
+                <ci> NFKB </ci>
+                <apply>
+                  <plus/>
+                  <ci> Kinfkb </ci>
+                  <ci> NFKB </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="LIN28">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> Vslin28 </ci>
+              <apply>
+                <divide/>
+                <ci> NFKB </ci>
+                <apply>
+                  <plus/>
+                  <ci> Ka1nfkb </ci>
+                  <ci> NFKB </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdlin28 </ci>
+              <ci> LIN28 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="let7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <minus/>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <minus/>
+                                    <apply>
+                                      <times/>
+                                      <ci> ks1let7 </ci>
+                                      <apply>
+                                        <divide/>
+                                        <ci> Kilet7 </ci>
+                                        <apply>
+                                          <plus/>
+                                          <ci> Kilet7 </ci>
+                                          <ci> LIN28 </ci>
+                                        </apply>
+                                      </apply>
+                                    </apply>
+                                    <apply>
+                                      <times/>
+                                      <ci> k9 </ci>
+                                      <ci> mIL6 </ci>
+                                      <ci> let7 </ci>
+                                    </apply>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> k10 </ci>
+                                    <ci> mIL6let7 </ci>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> k11 </ci>
+                                  <ci> mRas </ci>
+                                  <ci> let7 </ci>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <ci> k12 </ci>
+                                <ci> mRaslet7 </ci>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> k1 </ci>
+                              <ci> mMd </ci>
+                              <ci> let7 </ci>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> k2 </ci>
+                            <ci> mMdlet7 </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> k3 </ci>
+                          <ci> mMe </ci>
+                          <ci> let7 </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> k4 </ci>
+                        <ci> mMelet7 </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k5 </ci>
+                      <ci> mMa </ci>
+                      <ci> let7 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> k6 </ci>
+                    <ci> mMalet7 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k7 </ci>
+                  <ci> mMb </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k8 </ci>
+                <ci> mMblet7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> deg </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> kdmMdlet7 </ci>
+                    <ci> mMdlet7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> kdmMelet7 </ci>
+                    <ci> mMelet7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> kdmMalet7 </ci>
+                    <ci> mMalet7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> kdmMblet7 </ci>
+                    <ci> mMblet7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> kdraslet </ci>
+                    <ci> mRaslet7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> kdillet </ci>
+                    <ci> mIL6let7 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdlet7 </ci>
+              <ci> let7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mIL6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <ci> Vs1mil6 </ci>
+                  <apply>
+                    <times/>
+                    <ci> Vs2mil6 </ci>
+                    <apply>
+                      <divide/>
+                      <ci> NFKB </ci>
+                      <apply>
+                        <plus/>
+                        <ci> Ka2nfkb </ci>
+                        <ci> NFKB </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k9 </ci>
+                  <ci> mIL6 </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k10 </ci>
+                <ci> mIL6let7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmil6 </ci>
+              <ci> mIL6 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mIL6let7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k9 </ci>
+                <ci> mIL6 </ci>
+                <ci> let7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k10 </ci>
+                <ci> mIL6let7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdillet </ci>
+              <ci> mIL6let7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="IL6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> ks1il6 </ci>
+              <ci> mIL6 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdil6 </ci>
+              <ci> IL6 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mRas">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> Vs1mras </ci>
+                <apply>
+                  <times/>
+                  <ci> k11 </ci>
+                  <ci> mRas </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k12 </ci>
+                <ci> mRaslet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmras </ci>
+              <ci> mRas </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mRaslet7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k11 </ci>
+                <ci> mRas </ci>
+                <ci> let7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k12 </ci>
+                <ci> mRaslet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdraslet </ci>
+              <ci> mRaslet7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="Ras">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> ks1ras </ci>
+              <ci> mRas </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdras </ci>
+              <ci> Ras </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="STAT3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> Vsstat </ci>
+              <apply>
+                <divide/>
+                <ci> IL6 </ci>
+                <apply>
+                  <plus/>
+                  <ci> Ka2il6 </ci>
+                  <ci> IL6 </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdstat </ci>
+              <ci> STAT3 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="miR21">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Vsmir21 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> STAT3 </ci>
+                    <apply>
+                      <plus/>
+                      <ci> Kastat </ci>
+                      <ci> STAT3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k13 </ci>
+                  <ci> mPTEN </ci>
+                  <ci> miR21 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k14 </ci>
+                <ci> miRmpten </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> deg </ci>
+                <ci> kdmiRmp </ci>
+                <ci> miRmpten </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmir21 </ci>
+              <ci> miR21 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mPTEN">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> Vsmpten </ci>
+                <apply>
+                  <times/>
+                  <ci> k13 </ci>
+                  <ci> mPTEN </ci>
+                  <ci> miR21 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k14 </ci>
+                <ci> miRmpten </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmpten </ci>
+              <ci> mPTEN </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="miRmpten">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k13 </ci>
+                <ci> mPTEN </ci>
+                <ci> miR21 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k14 </ci>
+                <ci> miRmpten </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmiRmp </ci>
+              <ci> miRmpten </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="PTEN">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> kspten </ci>
+              <ci> mPTEN </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdpten </ci>
+              <ci> PTEN </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMd">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> vsmcyc </ci>
+                  <ci> ksmmd </ci>
+                  <ci> GF </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> mMd </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> mMdlet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmmd </ci>
+              <ci> mMd </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="Md">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> ksd </ci>
+              <ci> mMd </ci>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmd </ci>
+              <ci> Md </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMdlet7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> mMd </ci>
+                <ci> let7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> mMdlet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmMdlet7 </ci>
+              <ci> mMdlet7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="E2F">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k1e2f </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <ci> E2Ftot </ci>
+                  <ci> E2F </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> E2Ftot </ci>
+                    <ci> E2F </ci>
+                  </apply>
+                  <ci> Kae2f </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Md </ci>
+                <ci> Me </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> k2e2f </ci>
+              <apply>
+                <divide/>
+                <ci> E2F </ci>
+                <apply>
+                  <plus/>
+                  <ci> E2F </ci>
+                  <ci> Kie2f </ci>
+                </apply>
+              </apply>
+              <ci> Ma </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMe">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> vsmcyc </ci>
+                  <ci> ksmme </ci>
+                  <ci> E2F </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k3 </ci>
+                  <ci> mMe </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k4 </ci>
+                <ci> mMelet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmme </ci>
+              <ci> mMe </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="Me">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kse </ci>
+                <ci> mMe </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kdme </ci>
+                <ci> Ma </ci>
+                <apply>
+                  <divide/>
+                  <ci> Me </ci>
+                  <apply>
+                    <plus/>
+                    <ci> Me </ci>
+                    <ci> Kde </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdme2 </ci>
+              <ci> Me </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMelet7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k3 </ci>
+                <ci> mMe </ci>
+                <ci> let7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k4 </ci>
+                <ci> mMelet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmMelet7 </ci>
+              <ci> mMelet7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMa">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> vsmcyc </ci>
+                  <ci> ksmma </ci>
+                  <ci> E2F </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k5 </ci>
+                  <ci> mMa </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k6 </ci>
+                <ci> mMalet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmma </ci>
+              <ci> mMa </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="Ma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> ksa </ci>
+                <ci> mMa </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kdma </ci>
+                <ci> APC </ci>
+                <apply>
+                  <divide/>
+                  <ci> Ma </ci>
+                  <apply>
+                    <plus/>
+                    <ci> Ma </ci>
+                    <ci> Kda </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdma2 </ci>
+              <ci> Ma </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMalet7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k5 </ci>
+                <ci> mMa </ci>
+                <ci> let7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k6 </ci>
+                <ci> mMalet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmMalet7 </ci>
+              <ci> mMalet7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMb">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> vsmcyc </ci>
+                  <ci> vsmmb </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k7 </ci>
+                  <ci> mMb </ci>
+                  <ci> let7 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k8 </ci>
+                <ci> mMblet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmmb </ci>
+              <ci> mMb </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="Mb">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> vsb </ci>
+                <ci> mMb </ci>
+                <ci> Ma </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kdmb </ci>
+                <ci> APC </ci>
+                <apply>
+                  <divide/>
+                  <ci> Mb </ci>
+                  <apply>
+                    <plus/>
+                    <ci> Mb </ci>
+                    <ci> Kdb </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmb2 </ci>
+              <ci> Mb </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="mMblet7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k7 </ci>
+                <ci> mMb </ci>
+                <ci> let7 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k8 </ci>
+                <ci> mMblet7 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdmMblet7 </ci>
+              <ci> mMblet7 </ci>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <rateRule variable="APC">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> k1apc </ci>
+              <ci> Mb </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <minus/>
+                  <ci> APCtot </ci>
+                  <ci> APC </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> APCtot </ci>
+                    <ci> APC </ci>
+                  </apply>
+                  <ci> Kaapc </ci>
+                </apply>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> V2apc </ci>
+              <apply>
+                <divide/>
+                <ci> APC </ci>
+                <apply>
+                  <plus/>
+                  <ci> APC </ci>
+                  <ci> Kiapc </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+            </rateRule>
+      <assignmentRule variable="NFKBi">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <ci> NFKBtot </ci>
+            <ci> NFKB </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="Let7TOT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <ci> let7 </ci>
+            <ci> mMdlet7 </ci>
+            <ci> mMelet7 </ci>
+            <ci> mMalet7 </ci>
+            <ci> mMblet7 </ci>
+            <ci> mIL6let7 </ci>
+            <ci> mRaslet7 </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule variable="t">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+  </model>
+</sbml>

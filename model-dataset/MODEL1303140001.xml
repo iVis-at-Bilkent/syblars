@@ -1,0 +1,1740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" xmlns:html="http://www.w3.org/1999/xhtml" metaid="_1e35c86e_b86b_46a7_b0ee_37125676b426" level="2" version="1">
+  <model metaid="d43fb313_ed0c_406e_9e78_6a96409a0746" id="MODEL1303140001" name="Ray2013 - S.cerevisiae meiosis-specific metabolic network">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <div class="dc:title">Ray2013 - S.cerevisiae meiosis-specific metabolic network</div>
+        <div class="dc:description">
+          <p>Meiosis is a strongly concerved cell division program that generates haploid gametes from a diploid parental cell. Successful meiosis is the fundamental basis of sexual reproduction. Multiple lines of evidence suggest a tight link between meiosis and metabolism. Here, yeast  meiosis is studied to elucidate the link between reproduction and metabolism. Network flux is obtained using GLPK (GNU Linear Programming Kit) supported by the COBRA Toolbox for Matlab.</p>
+        </div>
+        <div class="dc:bibliographicCitation">
+          <p>This model is described in the article:</p>
+          <div class="bibo:title">
+            <a href="http://identifiers.org/pubmed/23675502" title="Access to this publication">Characterization of the metabolic requirements in yeast meiosis.</a>
+          </div>
+          <div class="bibo:authorList">Ray D, Ye P.</div>
+          <div class="bibo:Journal">PLoS One. 2013 May 8;8(5):e63707.</div>
+          <p>Abstract:</p>
+          <div class="bibo:abstract">
+            <p>The diploid yeast Saccharomyces cerevisiae undergoes mitosis in glucose-rich medium but enters meiosis in acetate sporulation medium. The transition from mitosis to meiosis involves a remarkable adaptation of the metabolic machinery to the changing environment to meet new energy and biosynthesis requirements. Biochemical studies indicate that five metabolic pathways are active at different stages of sporulation: glutamate formation, tricarboxylic acid cycle, glyoxylate cycle, gluconeogenesis, and glycogenolysis. A dynamic synthesis of macromolecules, including nucleotides, amino acids, and lipids, is also observed. However, the metabolic requirements of sporulating cells are poorly understood. In this study, we apply flux balance analyses to uncover optimal principles driving the operation of metabolic networks over the entire period of sporulation. A meiosis-specific metabolic network is constructed, and flux distribution is simulated using ten objective functions combined with time-course expression-based reaction constraints. By systematically evaluating the correlation between computational and experimental fluxes on pathways and macromolecule syntheses, the metabolic requirements of cells are determined: sporulation requires maximization of ATP production and macromolecule syntheses in the early phase followed by maximization of carbohydrate breakdown and minimization of ATP production in the middle and late stages. Our computational models are validated by in silico deletion of enzymes known to be essential for sporulation. Finally, the models are used to predict novel metabolic genes required for sporulation. This study indicates that yeast cells have distinct metabolic requirements at different phases of meiosis, which may reflect regulation that realizes the optimal outcome of sporulation. Our meiosis-specific network models provide a framework for an in-depth understanding of the roles of enzymes and reactions, and may open new avenues for engineering metabolic pathways to improve sporulation efficiency.</p>
+          </div>
+        </div>
+        <div class="dc:publisher">
+          <p>This model is hosted on        <a href="http://www.ebi.ac.uk/biomodels/">BioModels Database</a>
+            and identified
+by:        <a href="http://identifiers.org/biomodels.db/MODEL1303140001">MODEL1303140001</a>
+            .        </p>
+        <p>To cite BioModels Database, please use:        <a href="http://identifiers.org/pubmed/20587024" title="Latest BioModels Database publication">BioModels Database: An enhanced, curated and annotated resource
+for published quantitative kinetic models</a>
+            .        </p>
+    </div>
+    <div class="dc:license">
+      <p>To the extent possible under law, all copyright and related or
+neighbouring rights to this encoded model have been dedicated to the public
+domain worldwide. Please refer to        <a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Access to: CC0 1.0 Universal (CC0 1.0), Public Domain Dedication">CC0 Public Domain
+Dedication</a>
+            for more information.        </p>
+  </div>
+</body>
+</notes><annotation>
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+    <rdf:Description rdf:about="#d43fb313_ed0c_406e_9e78_6a96409a0746">
+      <bqmodel:is>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1303140001"/>
+        </rdf:Bag>
+      </bqmodel:is>
+      <bqbiol:hasTaxon>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/taxonomy/4932"/>
+        </rdf:Bag>
+      </bqbiol:hasTaxon>
+      <bqbiol:isVersionOf>
+        <rdf:Bag>
+          <rdf:li rdf:resource="http://identifiers.org/go/GO:0060631"/>
+        </rdf:Bag>
+      </bqbiol:isVersionOf>
+    </rdf:Description>
+  </rdf:RDF>
+</annotation><listOfUnitDefinitions>
+  <unitDefinition metaid="ea6dc6b6_4aca_4aeb_88e2_371674c9c4ef" id="mmol_per_gDW_per_hr">
+    <listOfUnits>
+      <unit metaid="_72232df1_9e43_482f_ae6e_0fd53692c01d" kind="mole" scale="-3" multiplier="1" offset="0"/>
+      <unit metaid="_1b5d14b8_a73d_4d28_b842_5166f4ae1e21" kind="gram" exponent="-1" multiplier="1" offset="0"/>
+      <unit metaid="c8328c72_8bb6_435f_921f_5764288fa803" kind="second" exponent="-1" multiplier="0.00027777" offset="0"/>
+    </listOfUnits>
+  </unitDefinition>
+</listOfUnitDefinitions><listOfCompartments>
+  <compartment metaid="_5bd0609a_0679_431b_842a_68e763aa4a01" id="C_c" name="Cytoplasm" size="1"/>
+  <compartment metaid="c784c272_5470_4dea_8bf5_fcf954e761ff" id="C_m" name="Mitochondria" size="1"/>
+  <compartment metaid="_86318413_62bc_498b_845c_f7b59091e0a2" id="C_e" name="Extracellular" size="1"/>
+</listOfCompartments><listOfSpecies>
+  <species metaid="_3aaf929d_8e18_4ca8_a46d_72fa3d78367d" id="M_Acetate_c" name="Acetate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C2H3O2</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_4aadf2e6_273d_4c72_99a5_7e0117ce9183" id="M_AcetylCoA_c" name="AcetylCoA_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C23H34N7O17P3S</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_1224a0d9_8054_4259_bae9_5f49138436b5" id="M_AcetylCoA_m" name="AcetylCoA_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C23H34N7O17P3S</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_4dd2291b_ec2c_4c84_968a_f03dd4cb0567" id="M_Citrate_m" name="Citrate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H5O7</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_2da04be8_2b93_493a_9847_c5d9774c4d57" id="M_IsoCitrate_m" name="IsoCitrate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H5O7</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="a39a8ed3_505a_4ce9_a507_ccb4c346aaf7" id="M_Oxoglutarate_m" name="Oxoglutarate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C5H4O5</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_5985ff47_139b_49ac_bb8f_ccc94ab5adfc" id="M_Oxoglutarate_c" name="Oxoglutarate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C5H4O5</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_39633866_6906_46ea_bdfe_b0dfc4837fc2" id="M_SuccinylCoA_m" name="SuccinylCoA_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C25H35N7O19P3S</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_9b51aea3_2da4_4d09_b912_5f789f29cc79" id="M_Succinate_m" name="Succinate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H4O4</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_1893da4d_5d97_4eac_86ab_bd9b156070a3" id="M_Fumarate_m" name="Fumarate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H2O4</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_88f7f32c_6d0d_4536_a3d2_ceb5754ff93b" id="M_Malate_m" name="Malate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H4O5</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="bccc9a6d_42bc_40e2_b175_58f744fe78dd" id="M_Oxaloacetate_m" name="Oxaloacetate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H2O5</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_3faf05c6_9442_4aee_a4d7_1220bddd1c57" id="M_Oxaloacetate_c" name="Oxaloacetate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H2O5</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_0de0dc57_0143_4262_9c4a_d7a5711639c2" id="M_Citrate_c" name="Citrate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H5O7</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_6b284846_a21c_4fc6_a053_a70ff059c2b8" id="M_IsoCitrate_c" name="IsoCitrate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H5O7</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_6a617de7_6edc_4994_80f3_f3260addbdac" id="M_Succinate_c" name="Succinate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H4O4</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_4aa69af3_0cc8_4627_9c06_80c1bc945ddb" id="M_Glyoxylate_c" name="Glyoxylate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C2H1O3</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_37a257f8_1eb1_4522_bd58_f907c20fb5b4" id="M_Malate_c" name="Malate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H4O5</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_3b95490c_4731_47a4_b1fc_11dc5077c98b" id="M_Fumarate_c" name="Fumarate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C4H2O4</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_8650974f_60d3_4717_9465_8009200de477" id="M_PhosphoenolPyruvate_c" name="PhosphoenolPyruvate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H2O6P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="fb63110b_2922_4915_9cff_e04160449bb3" id="M_2PhosphoGlycerate_c" name="2PhosphoGlycerate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H4O7P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="c897f1e6_5eca_4c48_9613_c90421a76496" id="M_3PhosphoGlycerate_c" name="3PhosphoGlycerate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H4O7P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="a6f89156_9478_47b2_b21d_b93315db8215" id="M_13BiPGlycerate_c" name="1,3 Biphospho Glycerate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H7O10P2</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_2d0421d4_fe03_4830_b97b_816029f33a7f" id="M_Glyceraldehyde3P_c" name="Glyceraldehyde 3 Phosphate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H7O6P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="f77d39f0_616a_4146_b491_30de34f49d05" id="M_DihydroxyacetoneP_c" name="Dihydroxyacetone phosphate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H7O6P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_9ab54289_c972_41dc_93c1_a6f77478b515" id="M_Fructose16BP_c" name="Fructose 1,6 bisphosphate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H14O12P2</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="a55faacd_b729_4384_afb3_73b9f74f6035" id="M_Fructose6P_c" name="Fructose 6 phosphate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H13O9P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="d640acc2_2fa7_47b8_9182_d39029020938" id="M_Glucose6P_c" name="Glucose 6 phosphate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H13O9P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_0ce11580_e188_46a7_bafc_83b42c81cdb4" id="M_Glucose1P_c" name="Glucose 1 phosphate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C6H13O9P</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_18fff740_cd72_4271_827c_50f20dc0ec88" id="M_Pyruvate_c" name="Pyruvate_cytoplasmic" compartment="C_c" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H3O3</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_03284078_f268_42ba_9219_8bc6ca6f16f0" id="M_Pyruvate_m" name="Pyruvate_mitochondrial" compartment="C_m" initialConcentration="0">
+    <notes>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <p>FORMULA: C3H3O3</p>
+      </html>
+    </notes>
+  </species>
+  <species metaid="_03b8cbab_38ec_46a8_8a3c_3cedbab9c772" id="M_Acetate_b" name="Acetate_external" compartment="C_e" initialConcentration="0"/>
+  <species metaid="b4f70b0d_2beb_4e00_afdb_d564e2d7e49b" id="M_Nucleotide1_b" name="Nucleotide1_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="_431bf206_1845_44b9_9c22_aebe7a0635ba" id="M_Amino1_b" name="Amino1_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="_02031ca0_035d_4c3a_9e03_5174a92c6448" id="M_Amino2_b" name="Amino2_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="_69d8203c_f904_4dc6_aac2_af8d5d560dd1" id="M_Amino3_b" name="Amino3_mitochondrial" compartment="C_m" initialConcentration="0"/>
+  <species metaid="e10d1135_ec40_4b51_8ede_b371265b30f2" id="M_Amino4_b" name="Amino4_internal" compartment="C_m" initialConcentration="0"/>
+  <species metaid="_19f71f47_7581_41dd_beba_0fcd90a6472d" id="M_Amino5_b" name="Amino5_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="_4afe37ef_bb01_44e5_a547_252fb34cf5b9" id="M_Lipid1_b" name="Lipid1_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="_161c26eb_ecad_4fd3_b410_be53b08bcd26" id="M_Lipid2_b" name="Lipid2_mitochondrial" compartment="C_m" initialConcentration="0"/>
+  <species metaid="_116ba580_3f8b_49f5_a93f_40c59c1cb75b" id="M_Lipid3_b" name="Lipid3_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="d0137136_e7b8_4815_ad5b_c3e08e2b93c1" id="M_Lipid4_b" name="Lipid4_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="d2533b3f_75ff_4a3b_b047_0b3429874ee4" id="M_Glycogen_b" name="Glycogen_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="dfbc6ca6_a6fe_4ade_bbd6_6e7a1c4dc6a0" id="M_Trehalose_b" name="Trehalose_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+  <species metaid="fdefddaf_fbb1_489c_bd86_54d449ffc626" id="M_Glutamate_b" name="Glutamate_cytoplasmic" compartment="C_c" initialConcentration="0"/>
+</listOfSpecies><listOfReactions>
+  <reaction metaid="_06828ea8_3fea_4f53_80d4_eead35d7a79f" id="R_ACS_V1" name="(R_acetyl_CoA_synthetase)::Coenzyme A + Acetate + ATP =&gt; AcetylCoA + pyrophosphate + AMP" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR153C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="c51a249c_a75a_43bb_96ff_f1aa754f11a3" species="M_Acetate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_053dbfdb_41c0_41f8_b8e2_3889fd0b4879" species="M_AcetylCoA_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_0517de30_4806_4bd6_b15c_508558c0fcdb">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_4e4007dd_5e8a_4ecc_aa9d_1d563ee626cc" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_0386ff72_05fb_45aa_b151_478aec908ec8" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_4a3a8ef5_3536_4f5b_8753_7983a6bd0592" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="d0bf09f4_1630_4950_9b71_ff9635bb34a9" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_67f53812_2c44_4b86_8d2a_243458bdf618" id="R_CSm_V2" name="(R_acetyl_CoA_synthetase)::Oxaloacetate + AcetylCoA + H2O =&gt; Citrate + Coenzyme A" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YCR005C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="b2dbc9cd_944a_4d0f_ac95_d29be5539f22" species="M_AcetylCoA_c" stoichiometry="1"/>
+      <speciesReference metaid="f4fcbeee_a519_461d_8bce_c741f56d2a56" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="fa95cd56_cb86_4da7_bdd7_ad2c6e4abdd3" species="M_Citrate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_9c32831e_b4db_4b18_95cf_c92d9127e749">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="a449a0e9_ebdd_4df6_bf21_80f3996030e4" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_2414d0ea_d25a_4964_bf23_8e576ed97b75" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f5893d62_0d63_4dae_af89_16b0f9f492fe" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_4e083584_ee20_47d9_bcf1_2fcec7c19e59" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_31b8a08e_23e4_4d8f_8fc1_fabbf3dce395" id="R_ACONT_V3" name="(R_aconitase)::Citrate + H2O =&gt; IsoCitrate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR304C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="d73a079b_ecab_4a62_ad69_0fff9eaeabd9" species="M_Citrate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="fc33cefe_fe13_4703_ab26_599e12c10aad" species="M_IsoCitrate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="a347a023_b064_4e77_8891_8b85b0ddeedc">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_2d8f22a2_7a71_47e9_be29_f3e2214a7ef1" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="e661e564_280c_4ddf_88b9_a7124a15be78" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f116b7b3_c3c8_411d_a74b_0dd296fb70a8" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_2db2868b_a815_441c_b36b_020548efe5f8" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_2ab75e5d_0eb5_4679_a011_c061c1482d5f" id="R_ICL_V4" name="(R_Isocitrate_lyase)::IsoCitrate =&gt; Glyoxylate + Succinate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YER065C</html:p>
+      <html:p>SUBSYSTEM: GLYOXYLATE</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_7fc5b983_c510_4589_a4f7_13dcd1af9e1d" species="M_IsoCitrate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="f570a24d_6e09_4742_8f9e_505aa22c6c0b" species="M_Succinate_c" stoichiometry="1"/>
+      <speciesReference metaid="_8cb29c90_86aa_4788_b8ad_6f6d46c4d3d9" species="M_Glyoxylate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="c446324e_39af_4de1_b1f9_025374ad934f">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_0bda5307_6414_45ae_8e38_6817bd8b1b52" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f69434e9_dbb7_472a_ad97_ff1341ef1b8b" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_4553d6f2_dfb8_467c_829e_d0fc67217a87" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_47496cf7_9abd_4136_a6e4_df42643db702" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="ddd8521f_00fb_4bad_9d51_9e9b5a23c65f" id="R_MALS_V5" name="(R_malate_synthase)::Glyoxylate + AcetylCoA =&gt; Malate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YNL117W</html:p>
+      <html:p>SUBSYSTEM: GLYOXYLATE</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="a7ded881_8edd_4d77_8537_2f358340b14b" species="M_Glyoxylate_c" stoichiometry="1"/>
+      <speciesReference metaid="a1e1b04d_9426_4ffb_a14c_4d2250021daa" species="M_AcetylCoA_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_03f22313_7ad2_4131_8e2e_3b9f7e9fcb16" species="M_Malate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="a87def34_3f6d_4e70_a2ac_2506085e03c2">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_229a4d36_38e4_4e84_b863_9e0538a6a005" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="cb5e37b2_70c7_48ff_b544_716429abdc05" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_50bfcfae_534a_4681_8acb_a8d68de81f7c" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_880b861d_f0b3_4379_8f58_8d944ef3eabc" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_4c6536a0_ff20_4654_8dd3_516493885ab3" id="R_MDH_V6" name="(R_malate_dehydrogenase)::Malate + NAD =&gt; Oxaloacetate + NADH + H+" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YOL126C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_5fd20e00_78bc_4ea2_a087_b36623da5514" species="M_Malate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_641ca7cc_9c99_40ed_b00a_522da02840f3" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="ccc51286_2f11_4161_b213_fc9597860a4e">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_021b6d74_a34e_4b03_9730_19139b743852" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="a8fa5ceb_93db_40cb_991b_48faabc3e287" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_1a829d0b_1bf3_449f_8c2e_e09d6d8a4dc3" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_6ae1c907_ca69_4730_9ee1_711b9a261790" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_705a6eed_5c21_4fec_bda1_2c2f432446b3" id="R_PPCK_V7" name="(R_phosphoenolpyruvate_carboxykinase)::Oxaloacetate + GTP =&gt; CO2 + PhosphoenolPyruvate + GDP" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKR097W</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_521d153d_e5ad_4382_95ae_cc3ced11a2df" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_82c178f5_c689_4521_9463_f19ad8f46389" species="M_PhosphoenolPyruvate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="b6d86b5a_72ab_4085_8d0d_b1ecc2f561be">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="d59650fd_327b_46dc_8464_ac5128003ccd" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_4ab24198_69ed_4991_be6c_8c55934a8ad3" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_41bb6d1b_738e_45be_b804_1d019975a65d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_33d0690f_b834_433c_a92a_92a580e1ea60" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_0cd4e5c8_ac4a_4c07_8e29_e6365a196401" id="R_ENO_V8" name="(R_enolase)::PhosphoenolPyruvate + H2O  =&gt; 2 PhosphoGlycerate " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YGR254W</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_7c15de79_6650_41d5_bd9c_7e177059b287" species="M_PhosphoenolPyruvate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="d4a0c52d_897b_4aa7_9fdf_e3b386af1f7a" species="M_2PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="ab7089d6_c842_436e_9706_77d0815470c3">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="e70e5cce_9797_475d_94aa_d6d18f2ecb86" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_59f6722d_9505_4d7c_9584_cfb44c7fad32" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="acb13d9c_5fd8_433f_84c3_17687b14befd" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_00bcba7c_5240_488a_a85a_4b5d983c9cb0" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_0898e214_ea38_4be7_afae_337c15899443" id="R_PGM_V9" name="(R_phosphoglycerate_mutase)::2 PhosphoGlycerate =&gt; 3 PhosphoGlycerate " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL152C</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_96439ac2_e2a3_4d17_938e_9eecf9703751" species="M_2PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_38627a44_a677_4a40_8e98_f98dc1f3eeff" species="M_3PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="f2371ca6_840e_42b0_8c9f_dd4e41c4af91">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="f6dce6f1_9a56_4773_8a3d_c55926244358" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_28d6d58d_55c2_4230_a89c_b2980276914f" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_1a564358_c380_4085_b2fe_df86159115b4" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_35b3060e_ed7e_4740_8b88_c89cdca5c0d6" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_55690113_c512_4a38_a2a2_cbda718d3a96" id="R_PGK_V10" name="(R_phosphoglycerate_kinase)::3 PhosphoGlycerate + ATP =&gt; 1,3 Biphospho Glycerate + ADP" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YCR012W</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="b898fd99_2d1b_4c9a_a23a_62faa3a0f992" species="M_3PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_221c5a08_1eac_4433_88a0_9ae051bd8323" species="M_13BiPGlycerate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="f017466f_1173_4c87_95c6_08da277e8f8e">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_5e606547_f4b2_4dbf_9d4e_96a8a66b9f46" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_8686db65_664d_4314_8432_dcf46593d8a6" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_3194b07a_69c6_4c9a_8002_fbb47b7a321d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_39414f41_b799_4a4c_96f7_62c3c0227e52" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_13c08548_52b6_47c0_9703_dfe30b12aa53" id="R_GAPD_V11" name="(R_glyceraldehyde_3_phosphate_dehydrogenase)::1,3 Biphospho Glycerate + NADH + H+ =&gt; Glyceraldehyde 3 phosphate + phosphate + NAD" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION:   (   YJL052W or YJR009C or YGR192C )</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_4d77c117_6519_427a_948b_73f7f2540c0f" species="M_13BiPGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_5566df6f_14d8_4060_bcc7_89791873142e" species="M_Glyceraldehyde3P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_1f23f86d_1f55_4795_877e_b55de4008652">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="e3481d7d_d4ef_40c1_a713_c3d7976d3987" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_5309ef2f_ddb6_4fc7_a5ef_a7054ce83ec4" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="ff189599_61b9_44e1_be4c_15dcab1eddc5" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="c06a42f6_f8d4_48a1_b15a_477e2da44408" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="f55a1636_6fad_4b63_9e1d_0438a1aed760" id="R_TPI_V12" name="(R_triose_phosphate_isomerase)::Glyceraldehyde 3 phosphate =&gt; Dihydroxyacetone phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YDR050C</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_106660bc_8a5f_4570_98ef_9f9b44980eca" species="M_Glyceraldehyde3P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_85d094e8_e429_4ce0_8dae_2f65e4e2cb87" species="M_DihydroxyacetoneP_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_7ef5f0b8_fde7_4bc2_95e6_e35dbb6d2d73">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_0e73b453_9a80_4685_8fbe_14115b27651e" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_7ddb551f_df67_403b_88da_675c49095d68" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="b06e9d19_2aae_4f9d_a1ce_84f29098fad1" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_5b798406_b2f8_49ce_b249_b3efed18cd03" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_390529e4_3c82_4941_97c7_f8bd99290e77" id="R_FBA_V13" name="(R_fructose_bisphosphate_aldolase)::Dihydroxyacetone phosphate + Glyceraldehyde 3 phosphate =&gt; Fructose 1,6 bisphosphate " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL060C</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_6043e857_632a_4b56_8734_99c901b4c0ba" species="M_DihydroxyacetoneP_c" stoichiometry="1"/>
+      <speciesReference metaid="_451d116b_f886_45c6_b989_05a23a5d4650" species="M_Glyceraldehyde3P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_869a408f_fa09_417b_b490_83971438fe95" species="M_Fructose16BP_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="d41ad4fe_8e18_4607_8eca_c64eea6c9c45">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="d9092701_be6a_4ffe_8172_4e0ba5904116" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="dd6b07ef_fd53_4ac9_bd5b_88079e010eed" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_9cbf47e4_d25e_4641_98f4_7f66fe4fcbbd" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_13003c5b_ce67_438a_bc72_8c183de81559" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_699cb20f_d916_4422_a634_acb8a69bba24" id="R_FBP_V14" name="(R_fructose_bisphosphatase)::Fructose 1,6 bisphosphate + H2O =&gt; Fructose 6 phosphate + phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR377C</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="fa4112ee_e79e_4104_9e9a_2c43be54dd83" species="M_Fructose16BP_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_94adb82f_08e6_4741_868f_a9e72debe80a" species="M_Fructose6P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_4323c059_1a33_4926_9eca_1ab451f38fed">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_88a02ae8_ba62_4b9c_bfb6_c0796916df82" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="b4b42883_fae1_4b53_855a_aaf6a2bc4704" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="e9a9861d_b8e9_4b35_a7f6_575760a30239" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="f1072eb0_b279_4a8b_8d97_2c8d44f64ccb" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_8076cc2e_9f10_4ae3_81cc_e7e0db58db3b" id="R_PGI_V15" name="(R_glucose_6_phosphate_isomerase)::Fructose 6 phosphate =&gt; Glucose 6 phosphate " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YBR196C</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_32b77615_295a_42a1_881a_13904e0ec407" species="M_Fructose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="c7702f51_6e2d_4e08_a987_e7c557edfec9" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="cee89d91_f4d7_4baa_a6bb_4fb14012fffd">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="e012be4b_890e_49fd_89d7_3437ba56195d" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_619dffc6_321c_4fed_b8d9_7cff8e22f466" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_2960863a_ec5b_4a81_8290_a9686dbce2d8" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="f686d362_000c_41c1_a822_369e0142d6a7" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="ced559a9_dc24_4c6e_a8de_91e9bf06bd48" id="R_PGMT_V16" name="(R_phosphoglucomutase)::Glucose 6 phosphate =&gt; Glucose 1 phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YMR105C</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_912cad13_0455_41ce_a713_1728ff76fdde" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_83237060_a0b0_4a52_9c2d_50e1b380bd50" species="M_Glucose1P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_9bf17c81_2360_40ec_a1a4_d81a27a4934e">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_5ca7c813_ea76_4cb3_9637_d288630f54f9" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_0e4e9b35_2356_415a_a8be_a218cbab518a" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_0b0e245a_8f14_4a4e_a95d_f3cb1ca88d6d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_8f647db2_4328_4950_933c_3f8b56459bae" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_2cedc20a_b6e5_4a96_8594_546c13f194ad" id="R_TRE6PS_V17" name="(R_alpha_alpha_trehalose_phosphate_synthase__UDP_forming_)::UDP D glucose + Glucose 6 phosphate =&gt; UDP + α,α trehalose 6 phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YBR126C and YDR074W and YMR261C and YML100W )</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_7fc59899_c0dc_4b70_9dc6_a3c609586bc4" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="fdf37821_f7c7_4f6c_b7eb_c15e3d736555" species="M_Trehalose_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="c5ec500e_8ce3_446d_b9eb_ed9c92131312">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_8431c305_3270_483c_a284_62769ae5f08d" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_6643c344_a901_4c0b_83f6_7ec6aeb1f2ed" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_1a995956_a861_4aad_995e_23cefb39cd63" id="OBJECTIVE_COEFFICIENT" value="1"/>
+        <parameter metaid="d3980b24_52e6_4ee1_8cae_b2b918990be5" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="ab1c161c_89f5_47ad_9463_c5e8ab2df2ce" id="R_GLCS2_V18" name="(R_glycogen_synthase__UDPGlc_)::Glucose 1 phosphate =&gt; Glycogen" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL035W</html:p>
+      <html:p>SUBSYSTEM: GLUCONEOGENESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="b69e7655_968c_4d21_972c_c764dfe7c9bc" species="M_Glucose1P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_7b44c1ea_0523_453f_8340_c053a32c0eed" species="M_Glycogen_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="eac798e0_cc2e_424c_8301_2535304f6328">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_01070aae_87c6_461b_b09a_bfe569923bf8" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_42810405_2346_4456_bebb_e1cae907de16" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="dca7e600_c8ba_4fed_bd9d_044b3188b003" id="OBJECTIVE_COEFFICIENT" value="1"/>
+        <parameter metaid="_0082d6d2_70c9_46c7_ada6_16acb6cbdc26" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="e26d1a24_1cf0_4093_abe2_04708b0d12bb" id="R_GLCP_V19" name="(R_glycogen_phosphorylase)::Glycogen =&gt; Glucose 1 Phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YPR160W</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="aefba483_5069_4036_b422_58e0df8b28bc" species="M_Glycogen_b" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="fc42f436_478c_4617_bc81_180b0a08d593" species="M_Glucose1P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_129d4b3a_bb21_4587_a8e1_f4a0d06c9597">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_91650d59_0e2f_41e4_a4fb_f4c9063110b8" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_552a4904_0167_41e9_bdc7_e74d369f7cb9" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_103aca2f_3ef7_4cba_84a0_32995bb6ec19" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="d3292b4f_98d5_4d40_8041_5df98821d495" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_842183ba_4a85_4d8e_9e69_bf9c973c6966" id="R_PGMT_V20" name="(R_phosphoglucomutase)::Glucose 1 phosphate =&gt; Glucose 6 phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YMR105C</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_6a4b07d9_e216_424b_9a90_f26f7b6249af" species="M_Glucose1P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="c14449b7_73b9_4f90_abe4_809d83056b5d" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="d186e0ed_622d_409b_a186_9fcd02a1d4e4">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="c0c2feba_5ddb_40e3_aeae_0581879037a4" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_008771bd_784c_41cc_b291_29fc793b82c1" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_4ded446f_7c81_4040_bce6_d30d5c0d2ef4" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_7773a704_ef95_49f0_91e3_4ed76a686108" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="a0133eaa_b0f0_45c8_a444_aa90551683e8" id="R_PGI_V21" name="(R_glucose_6_phosphate_isomerase)::Glucose 6 phosphate =&gt; Fructose 6 phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YBR196C</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_2b6950cf_5bbd_41a0_9d92_bf99909186c4" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="e47d11bd_2756_4145_9c8f_2687683b4394" species="M_Fructose6P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="a27aa00e_4baf_4e76_88fa_1134c3881138">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="c88560a4_2392_42db_bb37_6178e58692a8" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_8fe32b38_a578_49be_8d66_9b369c7285eb" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="aaa38a3d_7bcb_4180_8e0f_80367ce01da4" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_9fc06d1a_9579_4e4f_bc86_a037a3aaf71c" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="d5a8e502_316d_4bb5_90b9_6e5c85758060" id="R_PFK_V22" name="(R_phosphofructokinase)::Fructose 6 phosphate + ATP =&gt; Fructose 1,6 bisphosphate + ADP + H+" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YGR240C and YMR205C )</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="b3b034c6_d418_4e6d_8d04_4a861711cdb7" species="M_Fructose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="d2f4745f_27f8_4e72_8130_b9b8f1200bfd" species="M_Fructose16BP_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_665efd23_70b9_4537_8e39_cb6b25ab001d">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3fcf523d_a41e_4e2f_901f_297fe7bd33a0" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="a57a6105_ddad_459b_abe3_06f8420a85af" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_87dc6885_2040_4370_8282_45a6b6a6c2e6" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="f2daf93f_4490_44a1_bd61_3e1b0d1ab359" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_545ec321_2e9d_4f84_aa71_474ce47c4e75" id="R_FBA_V23" name="(R_fructose_bisphosphate_aldolase)::Fructose 1,6 bisphosphate =&gt; Dihydroxyacetone phosphate + Glyceraldehyde 3 phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL060C</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="f29c25a3_d0dd_495a_b183_512bef5dc2f6" species="M_Fructose16BP_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_8bdc661b_6d85_46af_95b5_030917b79e73" species="M_Glyceraldehyde3P_c" stoichiometry="1"/>
+      <speciesReference metaid="_04d3cf53_cb96_4845_bba5_faed183dc47e" species="M_DihydroxyacetoneP_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_5ce1df6f_c6a3_40a7_a0ac_6a376ba1a604">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="e8db6b90_df1e_48f1_b44a_424cab1f81ce" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_03531fad_f2b8_492f_9ab5_68b9e3a41f89" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_2df37571_7ec5_4263_8c21_dab0e5c9eda1" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_120005c4_ff01_4a1e_a716_71399305629e" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="cf15362e_586e_4b90_a23a_8b96f367d00f" id="R_TPI_V24" name="(R_triose_phosphate_isomerase)::Dihydroxyacetone phosphate =&gt; Glyceraldehyde 3 phosphate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YDR050C</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="da522489_4cf2_4720_b711_763a0600c00d" species="M_DihydroxyacetoneP_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_979ca571_9e47_4f15_8440_ef6806aef9bf" species="M_Glyceraldehyde3P_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_0fb77a6f_66ff_4a00_aff7_878f638be615">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="eaef8679_7d0b_47ec_a55e_3e579fffa8e0" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="cca6d0bc_44a0_428e_b84a_943b779ce787" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="ff0c281c_7b36_430c_8e1e_a858c17ce99d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_14b333ef_4fd1_4dd6_b3ee_ef752b9e8fd6" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_60463ed2_725c_4e01_9504_65d6c2a09cbf" id="R_GAPD_V25" name="(R_glyceraldehyde_3_phosphate_dehydrogenase)::Glyceraldehyde 3 phosphate + Phosphate + NAD =&gt; 1,3 BIP Glycerate + NADH + H+" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YJL052W or YJR009C or YGR192C   )</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_5991af90_efe8_4c9b_9ce6_e51098d59e98" species="M_Glyceraldehyde3P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="c0620be6_73f5_4970_b1f6_37c1512a7c40" species="M_13BiPGlycerate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="d93c07bb_5ad5_4cb4_acb1_ff86da15b254">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_082391e7_36f6_49a7_9286_e82d52c26425" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f233362b_e8f4_4d64_b5f1_60231671d029" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_7ad5cd85_7166_4b84_a625_18cea69f338d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_4ee6b272_bd49_4ef7_afaf_b4a1064372b1" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="ff138a50_c623_40b3_be03_3a395c95010a" id="R_PGK_V26" name="(R_phosphoglycerate_kinase)::1,3 BIP Glycerate + ADP =&gt; 3 PhosphoGlycerate + ATP " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YCR012W</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="e262c3b4_b592_4bf4_b38a_f14795e9b4f0" species="M_13BiPGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_4928b94f_6b59_4954_bf76_2ab686c22011" species="M_3PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="edf04c37_809e_4656_81ee_bf6a3aac49d1">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_4d411752_0d83_4a59_b46b_9477f952029c" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_0432e8d5_487c_4748_bac1_fb20bb9ef0b3" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_9db2babd_52fa_4c05_a45d_e7f94b8c6f0d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_2ee7c8c9_48cf_40de_bfb8_619beb1533bb" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="ce653c5f_46e5_480e_8bd9_f9f62a7df651" id="R_PGM_V27" name="(R_phosphoglycerate_mutase)::3 PhosphoGlycerate --&gt; 2 PhosphoGlycerate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL152C</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_53c71d59_68b7_4525_9c75_c6bd5c70a787" species="M_3PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="f727ea3d_a448_4aea_a6fa_8fd2cc070726" species="M_2PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="e0fd3629_db95_471b_8996_31e9d9381d92">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3e92ac20_4f3a_4b62_8431_d9839adc9f1a" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_64e609e0_ff87_47be_b660_4e3f64036340" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_332f11d0_4693_44c2_9fe5_aa685d41c4da" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_4782880f_c119_43a6_b42f_f37e197f30a1" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="cfb6b22e_267b_4f53_8b53_a984c76911fc" id="R_ENO_V28" name="(R_enolase)::2 PhosphoGlycerate =&gt; PhosphoenolPyruvate + H2O" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YGR254W</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_181540e8_d03c_4306_a12c_b5931187cf43" species="M_2PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_5dd17919_f727_4412_9d98_ee2156d7b2da" species="M_PhosphoenolPyruvate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_78f0f916_fa38_4253_85ce_927e40c4c36c">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="a0614100_1323_4bc6_a223_c86c1145e272" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_2b2c4656_6c9e_4e6c_a399_8c21d77a4ab1" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_22a68c19_9025_4bb1_8339_314af1601aa1" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_2bd1a865_542a_4b72_bd8f_c14d90d821b9" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_3c16fb8a_4f86_45ff_ba23_b1df73dd4093" id="R_PYK_V29" name="(R_pyruvate_kinase)::PhosphoenolPyruvate + ADP + H+ =&gt; Pyruvate + ATP" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YOR347C</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_449516d2_7805_464b_9ad1_b9b163b75e5b" species="M_PhosphoenolPyruvate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="f5f3d40f_fbbd_41fa_a282_a93138ffe64d" species="M_Pyruvate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_8d5aa27d_d8d3_4975_9271_07103eb98764">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3384c930_9c5f_466a_b53f_4c63a17ac29c" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_6893da0c_b9d8_44bd_8476_7aa1966527f6" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_35133a27_617e_4d28_9ec7_75c015837c22" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="c8352a00_f5f9_40cd_8d8d_dc0444d121b0" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_17016846_5d5d_4284_8928_8a2d260adb61" id="R_PC_V30" name="(R_pyruvate_carboxylase)::HCO3- + Pyruvate + ATP =&gt; Phosphate + Oxaloacetate + ADP" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YGL062W or YBR218C  )</html:p>
+      <html:p>SUBSYSTEM: GLYCOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_00a1d01a_fa39_4c63_bf7e_e881b5044db5" species="M_Pyruvate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_88176292_0ea9_4fc0_927b_5ba32ca60e51" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="e70b3888_85a5_4036_86bc_ac14fbaf8d20">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_593576bb_9a07_45bd_a1eb_11333e9c3586" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="a5f9989b_e549_4776_bb90_73e6fd0ceaee" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f9d8b400_22ac_413b_ab54_ce4a3f68b017" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_506a2b96_9997_43c0_a83c_cd0a49ad9f8b" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_26780965_25dd_45f4_9acd_e25c42864320" id="R_FUM_V31" name="(R_fumarase)::Fumarate + H2O =&gt; Malate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YPL262W</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_6254cb2d_8c34_4f10_9931_26640d839fd1" species="M_Fumarate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="b09a9ea0_2a6d_40d0_8364_8f7781b3ea9a" species="M_Malate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="c8834f25_e591_4638_aac4_5419f437d16a">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3c47dc3f_9229_445f_a5ba_775258fef2dd" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_5a38cdb5_b6a1_48d0_b0ba_c2ace0bbe142" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_9a67269a_aea5_4b0e_a5e9_c6520a334d5a" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_67be1d88_201c_4bda_a894_0f1de8e28635" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_524b824e_f0d9_4e0e_b7fe_40cc57ba7e8b" id="R_ICDHy_V32" name="(R_isocitrate_dehydrogenase__NADP_)::IsoCitrate + NADP =&gt; Oxoglutarate + CO2 + NADPH" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR174W</html:p>
+      <html:p>SUBSYSTEM: GLUTAMATE</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_3c87caf6_7a47_4307_963a_2b7457949bb8" species="M_IsoCitrate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="a67ef528_a5a6_4f0b_adcb_ebb5c9519006" species="M_Oxoglutarate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="d5edc5f6_cd62_464b_95e1_6942800bf953">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="b21f87b1_c8fb_419f_907c_a911da9bc1d1" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_5145a039_f5c0_4b75_ab39_7e32a8138d25" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="c58e5cda_f75b_41e2_a9d4_2dedca56603a" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_42ab3e58_a674_4e5e_a6c2_f52f48e0e322" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_202c5fb5_3e04_41ee_ae17_ae2bdc5f3cf0" id="R_GLUDyi_V33" name="(R_glutamate_dehydrogenase__NADP_)::Oxoglutarate + NH3 + NADPH + H+ =&gt; L Glutamate + H2O + NADP " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YAL062W</html:p>
+      <html:p>SUBSYSTEM: GLUTAMATE</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_2a91bf6b_6815_4d94_aba6_806b4e1fe8dc" species="M_Oxoglutarate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_383b02ce_ebd3_4a8b_b85b_47c18e90675a" species="M_Glutamate_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_59bf478b_64ab_438e_bfe2_2cc7139f2240">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="dda32848_ad3b_46c2_8695_79a4bd0db2af" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_1d71d7f5_f7c6_4fda_9fcd_39e5d86e15b5" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="eccf3a54_ba6d_4d97_940d_95538487b0d8" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_08437651_2a23_49f5_8615_f587a6fe6ae5" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="c358dff2_4855_42c9_9e64_ac87bb407503" id="R_PDHm_V34" name="(R_pyruvate_dehydrogenase)::Coenzyme A [m] + NAD + Pyruvate [m] =&gt; AcetylCoA [m] + CO2 + NADH" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YER178W and YBR221C )</html:p>
+      <html:p>SUBSYSTEM: GLYCOGENOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="fb87cf13_d0ff_4576_830d_07afcd88c0af" species="M_Pyruvate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="a18cb847_ad0c_4297_889b_eb63e69f8b82" species="M_AcetylCoA_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="fa5f2ff6_f4e6_4ec0_801a_35ef8206b720">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_24444e93_1111_4535_b5f7_c9ee52ce98d9" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_9db4909f_ec30_4f4c_a28f_5235d362cb3c" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="cd5c918f_7835_4cd3_80c7_286c7ead6b6f" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_0b492d1f_e0e4_47b5_a438_84b52c2b9371" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="a411f33f_c19c_4ac4_ab3f_cf29e3d0cc7d" id="R_CSm_V35" name="(R_acetyl_CoA_synthetase)::Oxaloacetate [m] + AcetylCoA [m] + H2O =&gt; Citrate [m]+ Coenzyme A [m]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YNR001C</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="ae528a7d_ea89_4725_9ed7_dd2a30460e68" species="M_AcetylCoA_m" stoichiometry="1"/>
+      <speciesReference metaid="b16330eb_fde7_46db_9b50_a1a18c93d8a3" species="M_Oxaloacetate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_04034c5f_484b_44b2_a588_ca9bb7a03dad" species="M_Citrate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_5b8166f1_1fc2_4cc4_bcd0_fa470efbbe72">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_146fbd1b_c1de_4a50_a70c_f53237feedf8" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="eae51d9d_2497_49ae_a5ac_638a37a3dd07" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_55a477c4_81f6_4572_9655_69ecfdf01cf8" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_7ca72c12_10a6_4894_8bf4_5b5be74e331b" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_7a34be73_6837_43f9_8e29_5be7895bac6d" id="R_ACONTm_V36" name="(R_Aconitate_hydratase)::Citrate [m]  + H2O =&gt; IsoCitrate [m]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR304C</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="ee899bcb_639b_4195_96fb_38a921208ac1" species="M_Citrate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_63214ee6_8748_4bad_8583_e856b9becf57" species="M_IsoCitrate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_220b779e_82ae_4ce6_9aa1_e94a3ad2b9e4">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="a4133c42_d8f5_4d61_954f_277d70899b9d" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_9b2a21f6_be4a_43f0_a819_8395a6bddae3" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="fb38b441_c88f_4aae_9805_3a2f7cb2a400" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="eb65b3cc_3d05_4d2d_a8e8_af4036f0f55e" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_101d82bd_4a33_45ed_b00a_0c6e79c080aa" id="R_ICDHxm_V37" name="(R_Isocitrate_dehydrogenase__NAD_)::NAD + IsoCitrate [m] =&gt; Oxoglutarate [m] + NADH + CO2" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YNL037C and YOR136W )</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="d0f44ca8_1200_459d_b04c_5134b07466cf" species="M_IsoCitrate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="ba8bf860_c929_4867_9c30_f85e9adcd936" species="M_Oxoglutarate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="b0c4c467_da36_4fe0_b0aa_f10b1a453692">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_9ab309c6_f534_4456_8162_895cc7bcc2c7" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_7352ca79_9130_4368_ac0c_5f2b71e2fc93" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f1b8f193_8c0b_418a_9456_0c45b763fe4e" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_0ea8dd16_c0bb_4e17_a9c5_9afab7552153" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_027397fc_2f2a_4971_8746_c487da556376" id="R_PDHcm_V38" name="(R_pyruvate_dehydrogenase__dihydrolipoamide_dehydrogenase_)::Oxoglutarate [m] + Coenzyme A [m] + NAD =&gt; SuccinylCoA [m] + CO2 + NADH" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YFL018C and YIL125W and YDR148C )</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_5ab97c7f_f71c_421d_9fc4_f68256a5f456" species="M_Oxoglutarate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="c28eca53_f737_42f8_9f96_9286f3842f56" species="M_SuccinylCoA_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_54210634_abb5_4847_979e_f0d103b69d74">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="a8b967d2_229c_4443_866b_f594160a9b83" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="b73b074b_d4ce_4da2_a44b_92ebad69ad2c" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_29a0e0ef_afc0_4017_951c_e3cde0bbb200" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_20795316_7c5c_4da6_8dca_870b7f5e8d9e" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_018271aa_5315_4a91_a8fd_9c5ae061906a" id="R_SUCOASm_V39" name="(R_Succinate__CoA_ligase__ADP_forming_)::Succinyl CoA [m] + GDP + Phosphate =&gt; Succinate [m] + Coenzyme A [m] + GTP" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YOR142W and YGR244C )</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="afe420f2_2120_4b4e_ae32_b171bac3a50c" species="M_SuccinylCoA_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="a2115b18_3c90_48b0_8295_7af07910fed8" species="M_Succinate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="bcc02f2e_ddd9_4dfb_8514_661d5210816e">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3b864510_5142_4195_8545_4abe8b3779bf" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="e3c82c28_4c58_44c7_8750_0d7039c0f3a1" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f1404f20_c7fe_441c_83a8_fb76125f9c74" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="a9af981b_a517_4335_8ffa_4fb922a5e477" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_12c969bc_7ac1_4613_a9eb_5b9daf980ae7" id="R_SUCD1m_V40" name="(R_succinate_dehydrogenase)::Succinate [m] + FAD =&gt; Fumarate [m] + FADH2" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YKL148C and YLL041C and YKL141W and YDR178W )</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_2c48169c_1e65_4abc_a338_5fc769c9876a" species="M_Succinate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_490b5ea4_d121_41c1_8a8d_2d73d49bbd97" species="M_Fumarate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="f84635c4_9055_4b4b_8744_57ce96960be2">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="fac5ad9c_68c2_4e2a_b7be_a4d6e60a33c6" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="e7657610_0f56_42b1_8ffe_c926339fd3f0" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_74846145_3a70_40dd_be81_39e12ade519a" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_9382041c_97d4_44a9_9fba_0c7d3eb55cec" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="ae408ea9_b7ea_42c6_9e0b_d82e99d7f313" id="R_FUMm_V41" name="(R_fumarase__mitochondrial)::Fumarate [m] + H2O =&gt; Malate [m]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YPL262W</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="dc5a1ca3_4f10_4665_879c_5100596ee19d" species="M_Fumarate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="fb62377b_eb98_4a09_bb13_e9e344949caa" species="M_Malate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_457f0e1b_34c5_47e0_82b6_2651e0538929">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_1958343a_8750_45ed_9765_f1064f9e667d" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_1700c1cd_e649_4d9f_b504_5e2c63ab7419" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="d48388ce_d770_49ea_b93e_497c300ea397" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_9bdfc215_4021_4773_808e_218c778aa112" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_00b6f08d_fbdd_43c2_9087_aab542cbc71b" id="R_MDHm_V42" name="(R_malate_dehydrogenase__mitochondrial)::Malate [m] + NAD =&gt; Oxaloacetate [m] + NADH + H+" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL085W</html:p>
+      <html:p>SUBSYSTEM: TCA</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="a1a946a8_ea95_4c0d_802f_b30ab87fee80" species="M_Malate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_1c8cd0e0_84db_4014_9428_98b3c138d688" species="M_Oxaloacetate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_81bcd0ff_0721_4506_ad97_4b870f908c35">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3a9ccede_148d_4fb1_be21_8ae815116bba" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_05b58e79_28a2_40a8_a701_b6666fb9ddaa" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="cfc81fd1_3592_44c4_af31_85d9d706d4fc" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="f697bb33_73dd_4c17_ac10_0fb05af66e03" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_17638d3a_90d0_4069_86d4_67faaeee4316" id="R_ACtr_V43" name="(R_acetate_transporter)::Acetate [e] =&gt; Acetate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YCR010C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_2b06a2a9_4a07_40ba_9ebd_c4eeff3ecd99" species="M_Acetate_b" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_70da7014_08a5_4153_adf4_49c7624c12bd" species="M_Acetate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="f0ef8175_6f29_4ab9_b162_fbe89424a0be">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_535d3e87_a5ae_4e65_8986_cad251effbaf" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_02ef34aa_152a_4311_b14b_b362b3ed7c9e" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="c1bedb47_4562_479f_ac53_e955b600db90" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_5a4aebbe_b091_4fb6_a06b_cb46842ffc37" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_0b4b0ba4_7b3a_4ce8_a6ec_052f141f64de" id="R_CSNATr_V44" name="(R_carnitine_O_acetyltransferase)::AcetylCoA =&gt; AcetylCoA [m]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YML042W avg YAR035W avg YER024W )</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_402f9cda_db12_46f7_aea9_6ce2aa72caf0" species="M_AcetylCoA_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_4e027f74_b29a_4802_bd8f_4a9855867be0" species="M_AcetylCoA_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="e938e1bc_0f34_4933_9904_e4a9932da5cb">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="fbd5fe69_967c_42a0_b910_94f2111067fa" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_7d48ef90_4c06_4e80_baa5_57ef3c754153" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_59033420_3c72_487b_8318_b6278e1ff383" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="bb3fb501_893a_4055_b4c2_4b2df593ac39" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_6c877894_60ea_443e_804c_8b50c6753547" id="R_OAAt2m_V45" name="(R_oxaloacetate_transport__mitochondrial)::Oxaloacetate [m] =&gt; Oxaloacetate " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL120W</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_17530c6f_1283_4fc0_8c96_e2b4d2ae7b5a" species="M_Oxaloacetate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_7ff6eefd_111a_49e9_916b_87ba015aeb43" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="bb6a6745_b86b_4e42_b47e_a5f03228b622">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_262cd0b2_c4bb_4152_b5fb_85ec10b8db4e" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_3c05845e_65c4_4468_ad8d_43ee0ee7e009" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_8e68d316_8829_4157_a7a3_84971cbe0bc2" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_5203138b_bdd2_4d36_b747_c5153d231f45" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="e95f7505_14b5_4f84_a8f2_d7dfb5397134" id="R_OAAt2m_V46" name="(R_oxaloacetate_transport__mitochondrial)::Oxaloacetate =&gt; Oxaloacetate [m]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL120W</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_88d42064_b02a_4f4f_bc1f_3bdc9bed35c3" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_7dd778d3_9a08_4648_a0c4_8334d62487da" species="M_Oxaloacetate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="b3e76ff9_5511_4c35_95b3_7c8c37aed9ca">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="d3bf70a3_3598_4c5a_a285_cecf38771fa9" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_577449fd_1efe_4be6_a42b_8d09c81edd15" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="c4fd0e92_cab5_4c2e_ae96_97ce0143de05" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_6659f2a2_d9dd_4f20_aaed_51962f174b3c" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_891b08da_a336_44ae_86d5_4dc2d754d8ab" id="R_CITtcm_V47" name="(R_citrate_transport__mitochondrial)::Citrate =&gt; Citrate [m] " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YBR291C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_1c475b83_19e1_425a_bed4_4b721803025c" species="M_Citrate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_52be0193_c98c_4a85_b298_6c3631cd3d1f" species="M_Citrate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_251b1f33_253f_431c_bef9_6a6800cd6f24">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_0a1aace8_f996_49ce_a0cc_8fc54b26311d" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_47189edb_2699_4680_8b78_618215d8df6e" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_1be678eb_5598_436c_8e8a_bfbe7a779be6" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_351eb7c9_60bd_4b82_9106_c904b65e8796" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="b78b3d40_0ebf_48b2_aff7_c8dfa00b2ff0" id="R_CITtcm_V48" name="(R_citrate_transport__mitochondrial)::IsoCitrate [m] =&gt; IsoCitrate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YBR291C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_3451512e_f01b_4f55_8a78_c34c7b10bfc5" species="M_IsoCitrate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_3cf215d3_7a56_43dc_a83b_4b9457e8748c" species="M_IsoCitrate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_7347d464_b374_4e6b_9dbd_91129f8d239b">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_0b55a957_840d_446d_8fe6_0b4df6204cb3" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_47dea8ef_419b_4d02_9605_f84de6659a37" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_228dcb6e_5136_40d6_8074_4131dad49d20" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_7b67e371_f779_4e82_96d1_7044abe9fc2c" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_5d73a62b_fa52_476e_8247_d6adac942546" id="R_SUCFUMtm_V49" name="(R_succinate_fumarate_transport__mitochondrial)::Fumarate [m] + Succinate =&gt; Fumarate + Succinate [m] " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YJR095W</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="ddf8293f_7759_4952_862b_618c26a873e3" species="M_Fumarate_m" stoichiometry="1"/>
+      <speciesReference metaid="fc98727e_e9bb_472d_aa94_a93146d6c306" species="M_Succinate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_01e06bd1_476f_41b1_b607_049481f658cf" species="M_Fumarate_c" stoichiometry="1"/>
+      <speciesReference metaid="_056821a3_1504_453c_ae14_ad972d83abda" species="M_Succinate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_1d479c12_1cf1_4d41_92f1_3377bd22fc90">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_855a8180_5d66_4bb2_8095_b06a14f001a4" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_80a59895_5145_4dd1_a744_32e8ca1473a3" id="UPPER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_155fbe1a_90ac_46d1_b985_bf87272c77d2" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_95e56285_3b18_4cab_9973_521c044f4657" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_5b080146_958d_47d2_a5ad_c545e1059a68" id="R_SUCCtm_V50" name="(R_succinate_transport__mitochondrial)::Succinate + Phosphate [m] =&gt; Succinate [m] + Phosphate " reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR348C</html:p>
+      <html:p>SUBSYSTEM: OTHERS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_7ce58f56_d948_496c_baff_5f5681284330" species="M_Succinate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_892b1fe1_4ab1_479b_93ef_86d35064e07a" species="M_Succinate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_5fa18a9e_d735_419d_9d97_a144eca4f44a">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_43eb72fc_f9b5_4ae0_b5ff_e235105452d1" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_5e8adf32_87d6_4d2d_ba86_e0d27f6511cc" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_0ae40a83_e1ca_40cf_8484_32e704be89c5" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="d9f7f268_b3f4_4872_8bca_0aaf4d24f7aa" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="b3530846_df62_4ec9_99c8_b54e6d40d544" id="R_OXO2Ctm_V51" name="(R_2_oxodicarboylate_transporter__mitochondrial)::Oxoglutarate [m] =&gt; Oxoglutarate" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YPL134C</html:p>
+      <html:p>SUBSYSTEM: GLUTAMATE</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="ce67333d_866d_47b4_bb9d_c73454a731cc" species="M_Oxoglutarate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_80fa1f27_4c72_4fa7_9c0a_1d18c635ee5d" species="M_Oxoglutarate_c" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="d6007816_80ea_462f_ba1a_570d7e3c8082">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_367e74a4_6264_4cda_b36e_e446a4b40886" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="b9ce2c91_fea7_43ad_ad5b_c284159071e7" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="dfb7dcad_d344_400f_8b9d_632a08ac8dd2" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_14c4d288_7d0d_421a_9af7_e0e73676eb7c" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="bf5e62a7_572a_4b5a_93b7_c0b1e8c13879" id="R_PYRt2m_V52" name="(R_pyruvate_mitochondrial_transport_via_proton_symport)::Pyruvate =&gt; Pyruvate [m]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YIL006W</html:p>
+      <html:p>SUBSYSTEM: GLYCOGENOLYSIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_495a3e72_2202_47b2_aa86_38652f8bc4a7" species="M_Pyruvate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="cbe007f5_7eef_4555_934c_5c772081a6e0" species="M_Pyruvate_m" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="aa1bb27d_1d08_45dd_a3f8_67d221006ed0">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="c791d19e_1c17_493f_813e_1cfe59227240" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_4debab3b_d70a_4440_91b3_b81d1489a684" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_7ec4df85_eea0_4da5_a208_f363f0fdfcea" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_7c60e2de_ff0e_455e_bd24_23407ee2253e" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_62551736_990a_4504_a898_027a63682418" id="R_G6PDH2_V53" name="(R_glucose_6_phosphate_dehydrogenase)::Glucose 6 phosphate + NADP =&gt; D 6 phospho gluconoδlactone + NADPH + H+ --&gt;  (Nucleotide1)" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YNL241C</html:p>
+      <html:p>SUBSYSTEM: NUCLEOTIDE_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="fc07fb5d_765d_4b75_98f9_54a87921d0cb" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="ea7f4d0c_c0ee_43d4_8519_3b1222edbe99" species="M_Nucleotide1_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_2c8f6a29_a066_48b0_a69b_3215df8c6e3e">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_3fc2ed93_312d_45c6_b0e6_9c90ccd165b8" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_543786af_ff09_498a_b731_9977bc9dd8d7" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="f718454d_5d42_4409_b9fc_37d4ca93730f" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_66f56c88_49c0_4983_8eda_3df693fe816d" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_75370107_f8ac_47fa_a114_abd6cbd68441" id="R_PGCD_V54" name="(R_phosphoglycerate_dehydrogenase)::3 PhosphoGlycerate + NAD+ =&gt; 3 PhosphohydroxyPyruvate   + H + NADH    --&gt; [AminoAcid1]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YER081W or YIL074C  )</html:p>
+      <html:p>SUBSYSTEM: AMINOACID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_0b175e3e_7a1f_4b1c_94a1_41d8eb48d648" species="M_3PhosphoGlycerate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_6dce3c54_bc46_4f16_8415_642f79315af2" species="M_Amino1_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="ff738f23_99a5_4a40_8ff9_5cd7de319af3">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_41563831_159c_43ae_ba6f_2aa74c4de77b" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_5e7b3b3b_9c20_4fc3_ade4_4827b8a2b3e7" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="dc3f143f_bf0e_4638_8cd1_e09941f3df5d" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_7de30f7c_4d8c_4775_8417_198ad8af409a" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_6c25a6c3_b50b_421b_904d_b2f604a28d8a" id="R_ASPTA_V55" name="(R_aspartate_transaminase)::Oxaloacetate + L glutamate =&gt; 2,Oxoglutarate + L aspartate    --&gt; [AminoAcid2]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YLR027C</html:p>
+      <html:p>SUBSYSTEM: AMINOACID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="d7bd988c_55f5_4622_afe9_8db226957be0" species="M_Oxaloacetate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_21a90241_9da6_4fca_b49b_4b2ebb8e6fc2" species="M_Amino2_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="ff715cb0_1cd4_4d2b_a435_4df6f3497939">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="a5fdb391_2a04_4aa8_afa3_f3a89107d6f2" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_50d2b645_3077_478b_bea0_423b8f7b7860" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_13b56cdc_de3b_4e10_a3d1_3a9addb9a10a" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_790c69ae_c97f_4469_ba07_e73515d50264" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_8a827793_47a2_4742_9309_3522b76111d8" id="R_ACLSm_V56" name="(R_acetolactate_synthase__mitochondrial)::Pyruvate [m] + NADPH + H+ + Glutamate =&gt; CO2 + NADP+ + H2O + Alpha ketoglutarate + valine    --&gt; [AminoAcid3]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: ( YMR108W and YCL009C )</html:p>
+      <html:p>SUBSYSTEM: AMINOACID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_8bab9b57_0e8e_4e95_a4d1_6ef354bcce24" species="M_Pyruvate_m" stoichiometry="2"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_19c75e57_fefd_4f56_a82f_107e0f671ef0" species="M_Amino3_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_08bcdff7_b37e_4d33_a59a_44af4b7ddb40">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="f758f811_ff46_4e8c_8b5e_b87fd825b471" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_949a9816_f762_4d65_a9a7_38b6d6f074d1" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_06d16428_0b03_46fb_a9b0_46504d28e42c" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_983086be_80ee_4027_afbd_d36d2178f83e" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="bc6a2212_7d1d_4807_a6ad_d14a188207b9" id="R_ASPTAm_V57" name="(R_aspartate_transaminase)::Oxaloacetate [m] + L Glutamate =&gt; 2 Oxoglutarate + L Aspartate    --&gt; [AminoAcid4]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YKL106W</html:p>
+      <html:p>SUBSYSTEM: AMINOACID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="e2c08214_f540_4e86_b95f_622b923fdfba" species="M_Oxaloacetate_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_512ecfd5_a704_43a7_9834_71c8faf4a732" species="M_Amino4_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_0453a9f9_6f47_476a_8382_c0430e5ccfb7">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_783c3984_4f41_427a_a2e5_fa2b89af5074" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_5ab956e6_3b2d_49ae_a279_e992d92ea68a" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_53bce0fd_a6b0_4eb5_b2ac_7f22e510b8a8" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="c30e7b5e_4844_4a0f_8cec_b3eab6a51713" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="a72c5d1d_5e34_427b_adfc_3ecc0c4d758f" id="R_PSCVTi_V58" name="(R_3_phosphoshikimate_1_carboxyvinyltransferase__irreversible)::PhosphoenolPyruvate + Skm5p =&gt; 3Psme + phosphate    --&gt; [AminoAcid5]" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YDR127W</html:p>
+      <html:p>SUBSYSTEM: AMINOACID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="bfd4e98f_80c2_4447_8b02_4d73048edc07" species="M_PhosphoenolPyruvate_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="b650b869_0dce_4115_b3e2_1117103b50d9" species="M_Amino5_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_91061618_1351_4852_9f2f_69c92158107b">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_30ca6128_626d_414d_9e91_c145db143f48" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_7fa4f1ea_ad65_406b_b63a_425155c814a9" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_087d233d_52dc_4c22_9a04_79d34292d161" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_1f401fd9_2cb9_4b00_b3f0_1c36129625db" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="fefb82ee_3073_4a62_93e3_25400b29790d" id="R_ACCOACr_V59" name="(R_acetyl_CoA_carboxylase__reversible_reaction)::BCCP biotin CO2 + AcetylCoA + ATP =&gt; MalonylCoA + BCCP biotin + phosphate + ADP --&gt; Lipid1" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YNR016C</html:p>
+      <html:p>SUBSYSTEM: LIPID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_7c659e08_84ac_479b_a892_160edc81441f" species="M_AcetylCoA_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="da25b07f_091a_4ed4_9d69_084944160aac" species="M_Lipid1_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="b14429ca_8c15_4655_a070_de583df6248f">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="d488698d_312e_4d67_8e7c_c53847c758d5" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_266b136d_2734_4265_9b35_51297954717d" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_8eca5389_b28c_43fa_9660_41cb72ad436c" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="e3a4fc01_ab25_4c83_89b9_c5514e725dd4" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="b11bc645_c2a1_4465_896b_36b730e78f27" id="R_ACCOACrm_V60" name="(R_Acetyl_Coa_carboxylase__mitochondrial)::BCCP biotin CO2 + AcetylCoA [m]+ ATP =&gt; MalonylCoA + BCCP biotin + phosphate + ADP --&gt; Lipid2" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YMR207C</html:p>
+      <html:p>SUBSYSTEM: LIPID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_75851e79_53d5_4541_9a04_c75637b6a86f" species="M_AcetylCoA_m" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="bd420a3e_e3a6_4730_b80f_ab309871ae50" species="M_Lipid2_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_91e04375_aebb_4c09_a87b_2f26a78c4504">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_42f0456f_ed31_4463_8d8f_8d305108006c" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_53aa3264_9170_485a_9df9_4899ea68a6f8" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_16178a30_85f5_49b1_b0c4_6bbc460b006f" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_79df9b06_9886_4fbf_9b29_7acfd39fd0c5" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="_74bbfbbb_fb94_4c72_b858_984ffd3cee2f" id="R_G3PD1ir_V61" name="(R_glycerol_3_phosphate_dehydrogenase__NAD_)::Dihydroxyacetone phosphate + NADH =&gt; Glycerol 3 P + NAD  --&gt; Lipid3" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YDL022W</html:p>
+      <html:p>SUBSYSTEM: LIPID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_128caec8_5611_4955_bff9_f82eda94f9fb" species="M_DihydroxyacetoneP_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="_42e8682a_ff8b_4f84_badf_a25121bbb257" species="M_Lipid3_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="_2a804316_e2a3_47bb_839b_09333caa1088">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="_03e76ca9_4ef8_4e17_b35f_1c663cc7974f" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_05d7fdbd_6a19_4160_ad4d_cb555869093f" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_9330c652_acb1_4214_9ffd_1305e9d23147" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="fd8b52ee_86e7_4756_b77e_e29df42aeba8" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+  <reaction metaid="c7e41184_d986_4b79_86e7_1904e254fc6d" id="R_MI1PS_V62" name="(R_myo_Inositol_1_phosphate_synthase)::Glucose 6 phosphate =&gt; Mi1p-D" reversible="false">
+    <notes>
+      <html:p>GENE_ASSOCIATION: YJL153C</html:p>
+      <html:p>SUBSYSTEM: LIPID_SYNTHESIS</html:p>
+    </notes>
+    <listOfReactants>
+      <speciesReference metaid="_289aba66_5a44_4b2a_a8e6_2ecb1080484a" species="M_Glucose6P_c" stoichiometry="1"/>
+    </listOfReactants>
+    <listOfProducts>
+      <speciesReference metaid="c0f8378b_4b36_44a6_ae63_a8430ab56138" species="M_Lipid4_b" stoichiometry="1"/>
+    </listOfProducts>
+    <kineticLaw metaid="e0391e7e_37e2_426b_82ac_f5949fb7e688">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> FLUX_VALUE </ci>
+      </math>
+      <listOfParameters>
+        <parameter metaid="b9e5bc63_0e71_4380_9ba7_664cfa6d5ee9" id="LOWER_BOUND" value="0" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="e0f42244_d959_4f90_80c1_d8d712d9af27" id="UPPER_BOUND" value="999999" units="mmol_per_gDW_per_hr"/>
+        <parameter metaid="_3acb3ba7_4b77_4a4d_a371_e2ad74c96b68" id="OBJECTIVE_COEFFICIENT" value="0"/>
+        <parameter metaid="_1bd5b388_3cca_446a_9193_714d2e40e51a" id="FLUX_VALUE" value="0" units="mmol_per_gDW_per_hr"/>
+      </listOfParameters>
+    </kineticLaw>
+  </reaction>
+</listOfReactions>
+</model>
+</sbml>
