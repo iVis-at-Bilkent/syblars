@@ -301,7 +301,6 @@ app.post('/:format', (req, res) => {
         }
       }
       catch (e) {
-        console.log(e);
         errorMessage = "Sorry! Cannot process the given query!"
       }
       if(errorMessage) {
