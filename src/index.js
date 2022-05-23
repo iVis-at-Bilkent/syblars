@@ -281,7 +281,7 @@ app.post('/:format', (req, res) => {
         }
         else if(queryOptions.query == 'kNeighborhood') {
           queryResult = cy.collection();
-          result = cy.elements().kNeighborhood(sourceNodes, queryOptions.limit, "asd");
+          result = cy.elements().kNeighborhood(sourceNodes, queryOptions.limit, queryOptions.direction);
           queryResult.merge(result.neighborNodes).merge(result.neighborEdges);
         }
         else if(queryOptions.query == 'commonStream') {
