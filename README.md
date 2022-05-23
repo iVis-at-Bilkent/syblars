@@ -1,7 +1,7 @@
 # SyBLaRS - Test
-This branch is to show how SyBLaRS can be used to generate images from a graph dataset serially.
+This branch is to show how SyBLaRS can be used to generate images from a graph dataset serially (as a batch).
 * ***model-dataset*** folder consists of 100 randomly selected SBML model files from [BioModels](https://www.ebi.ac.uk/biomodels/) dataset.  
-* ***generate-image.js*** script reads each file in the *model-dataset* folder one by one, sends them to the SyBLaRS and saves the resulting images to the *model-images* folder. 
+* ***generate-image.js*** script reads each file in the *model-dataset* folder one by one, sends them to the SyBLaRS service and saves the resulting images to the *model-images* folder. 
 Follow these steps to run the script: 
     * Start a local instance of the service on port 3000 (```localhost:3000```).
     * Download folders/files in this (*test*) branch and ```cd``` into it.
