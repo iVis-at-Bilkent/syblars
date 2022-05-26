@@ -1,6 +1,6 @@
 # SyBLaRS
 
-**Sy**stems **B**iology **La**yout & **R**endering **S**ervice (SyBLaRS) is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON formats and/or produce corresponding images (in JPG, PNG or SVG formats) of the layouts in the backend. 
+**Sy**stems **B**iology **La**yout & **R**endering **S**ervice (SyBLaRS) is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON formats and/or produce corresponding images (in JPG, PNG or SVG formats) of the layouts with an option to highlight results from various graph queries in the backend. 
 
 ![A screenshot from the sample Heroku deployment of SyBLaRS](img/syblars-ss.png)
 
@@ -37,7 +37,7 @@ npm run dev
 ## Supported formats
 SyBLaRS supports the following input formats for graphs:
 [SBGNML](https://github.com/sbgn/sbgn/wiki/SBGN_ML),
-[SBML](http://sbml.org/Main_Page),
+[SBML](http://sbml.org/),
 [GraphML](http://graphml.graphdrawing.org/), and
 [JSON](https://www.json.org/).
 
@@ -64,6 +64,16 @@ Each layout style has a varying number of options for customization of the layou
 - `packComponents`: Whether or not to pack disconnected components after separate layout
 - `tile`: Enable tiling of disconnected nodes together for a compact representation
 - `nodeDimensionsIncludeLabels`: Whether or not to include labels in node dimensions during layout
+
+## Supported graph queries
+The supported graph queries are:
+- `Shortest Path`: The shortest path from a single source to a single target in the graph
+- `k-Neighborhood`: The neighbors of the specified source nodes within a certain distance *k*
+- `Common Stream`: The set of common nodes that are in the upstream/downstream/bothstream of the specified source nodes with a path length limit *k*
+- `Paths Between`: The subgraph that consists of the paths of length at most *k* between any two nodes of the specified source nodes
+- `Paths From to`: All shortest paths between specified source nodes and target nodes with a maximum length limit *k* and a further distance *d*
+
+For more details about these queries, please refer to [cytoscape-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
 
 ## Usage
 
@@ -104,7 +114,7 @@ If the file content is in other formats:
 ```
 file_content + JSON.stringfy(options)
 ```
-where `options` is an object consisting of `layoutOptions` and `imageOptions`. Example:
+where `options` is an object consisting of `layoutOptions`, `imageOptions` and `queryOptions`. Example:
 ```
 options = {
   layoutOptions: {
@@ -118,7 +128,17 @@ options = {
     width: 1280,                // desired width
     height: 720,                // desired height
     color: '#9ecae1'            // node color
-  }
+  },
+  queryOptions: {
+    query: 'kNeighborhood',           // query type
+    sourceNodes: [nodeID1, nodeID2],  // source nodes
+    limit: 2,                         // path length limit
+    direction: "BOTHSTREAM",          // direction of the search
+    sourceColor: "#00ff00",           // highlight color for source nodes
+    pathColor: "#ffff00",             // highlight color for result elements
+    highlightWidth: 10,               // underlay padding used to highlight elements
+    cropToResult: false,              // whether to crop the image to the query result
+  }  
 }
 ```
 **Note:** While sending the requests via curl, any `"` in the `request_body` should be replaced with `\"`. 
