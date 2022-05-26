@@ -133,9 +133,9 @@ options = {
     query: 'kNeighborhood',           // query type
     sourceNodes: [nodeID1, nodeID2],  // source nodes
     limit: 2,                         // path length limit
-    direction: "BOTHSTREAM",          // direction of the search
-    sourceColor: "#00ff00",           // highlight color for source nodes
-    pathColor: "#ffff00",             // highlight color for result elements
+    direction: 'BOTHSTREAM',          // direction of the search
+    sourceColor: '#00ff00',           // highlight color for source nodes
+    pathColor: '#ffff00',             // highlight color for result elements
     highlightWidth: 10,               // underlay padding used to highlight elements
     cropToResult: false,              // whether to crop the image to the query result
   }  
@@ -144,6 +144,79 @@ options = {
 **Note:** While sending the requests via curl, any `"` in the `request_body` should be replaced with `\"`. 
 
 For supported layout options, please check the documentation of the associated layout algorithm. Image options support three output formats: `png`, `jpg` and `svg`. `background` attribute should be a hex color code or `transparent`. `color` attribute should be a hex color code for SBML, GraphML and JSON formats, and one of the following predefined color schemes for the SBGNML format: `bluescale`, `greyscale`, `red_blue`, `green_brown`, `purple_brown`, `purple_green`, `grey_red`, and `black_white`.
+
+The query options change depending on the query type:
+
+Shortest Path: 
+```
+  queryOptions: {
+    query: 'shortestPath',   // query type
+    sourceNodes: [nodeID1],  // source node
+    targetNodes: [nodeID2],  // target node
+    sourceColor: '#00ff00',  // highlight color for source node
+    targetColor: '#ff0000',  // highlight color for target node
+    pathColor: '#ffff00',    // highlight color for resulting elements
+    highlightWidth: 10,      // underlay padding used to highlight elements
+    cropToResult: false      // whether to crop the image to the query result
+  } 
+```
+k-Neighborhood: 
+```
+  queryOptions: {
+    query: 'kNeighborhood',                // query type
+    sourceNodes: [nodeID1, nodeID2, ...],  // source nodes
+    limit: 1,                              // path length limit
+    direction: 'BOTHSTREAM',               // direction of the search
+    sourceColor: '#00ff00',                // highlight color for source nodes
+    pathColor: '#ffff00',                  // highlight color for resulting elements
+    highlightWidth: 10,                    // underlay padding used to highlight elements
+    cropToResult: false                    // whether to crop the image to the query result
+  } 
+```
+Common Stream: 
+```
+  queryOptions: {
+    query: 'commonStream',                 // query type
+    sourceNodes: [nodeID1, nodeID2, ...],  // source nodes
+    limit: 1,                              // path length limit
+    direction: 'BOTHSTREAM',               // direction of the search
+    sourceColor: '#00ff00',                // highlight color for source nodes
+    targetColor: '#ff0000',                // highlight color for common nodes in stream    
+    pathColor: '#ffff00',                  // highlight color for resulting elements
+    highlightWidth: 10,                    // underlay padding used to highlight elements
+    cropToResult: false                    // whether to crop the image to the query result
+  } 
+```
+Paths Between: 
+```
+  queryOptions: {
+    query: 'pathsBetween',                 // query type
+    sourceNodes: [nodeID1, nodeID2, ...],  // source nodes
+    limit: 1,                              // path length limit
+    direction: 'BOTHSTREAM',               // direction of the search
+    sourceColor: '#00ff00',                // highlight color for source nodes  
+    pathColor: '#ffff00',                  // highlight color for resulting elements
+    highlightWidth: 10,                    // underlay padding used to highlight elements
+    cropToResult: false                    // whether to crop the image to the query result
+  } 
+```
+Paths From To: 
+```
+  queryOptions: {
+    query: 'pathsFromTo',                  // query type
+    sourceNodes: [nodeID1, nodeID2, ...],  // source nodes
+    targetNodes: [nodeID1, nodeID2, ...],  // target nodes    
+    limit: 1,                              // path length limit
+    furtherDistance: 1,                    // parameter for "relaxing" the path length limit
+    direction: 'DIRECTED',                 // direction of the search
+    sourceColor: '#00ff00',                // highlight color for source nodes
+    targetColor: '#ff0000',                // highlight color for target nodes    
+    pathColor: '#ffff00',                  // highlight color for resulting elements
+    highlightWidth: 10,                    // underlay padding used to highlight elements
+    cropToResult: false                    // whether to crop the image to the query result
+  } 
+```
+where `direction` is one of `UPSTREAM`, `DOWNSTREAM` or `BOTHSTREAM` for `kNeighborhood`, `commonStream` and `pathsBetween` queries and one of `DIRECTED` or `UNDIRECTED` for `pathsFromTo` query. 
 
 In case you do not need layout applied, you should either not provide `layoutOptions` or provide `preset` the layout style. If you do not provide `imageOptions`, default ones will be used. To disable image output (in case you only need the output JSON file back with layout information), you should set `image` option to `false` in your request URL, which is `true` by default:
 ```
