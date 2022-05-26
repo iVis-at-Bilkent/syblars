@@ -814,9 +814,7 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source Nodes: </span>
-          <div class="four wide field">
-            <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
-          </div>
+          <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
           <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
