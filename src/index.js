@@ -259,7 +259,23 @@ app.post('/:format', (req, res) => {
       let path;
       let sourceNodes = cy.collection();
       let targetNodes = cy.collection();
-      try {        
+      // assign default values for some of the query options
+      if(!queryOptions.limit) {
+        queryOptions.limit = 1;
+      }
+      if(!queryOptions.furtherDistance) {
+        queryOptions.furtherDistance = 1;
+      }
+      if(!queryOptions.direction) {
+        if(queryOptions.query == 'pathsFromTo') {
+          queryOptions.direction = "DIRECTED";
+        }
+        else {
+          queryOptions.direction = "BOTHSTREAM";
+        }
+      }
+      // run queries
+      try {
         queryOptions.sourceNodes.forEach(function(nodeId){
           let node = cy.getElementById(nodeId);
           node.addClass('source');
