@@ -67,11 +67,11 @@ Each layout style has a varying number of options for customization of the layou
 
 ## Supported graph queries
 The supported graph queries are:
-- `Shortest Path`: The shortest path from a single source to a single target in the graph
-- `k-Neighborhood`: The neighbors of the specified source nodes within a certain distance *k*
-- `Common Stream`: The set of common nodes that are in the upstream/downstream/bothstream of the specified source nodes with a path length limit *k*
-- `Paths Between`: The subgraph that consists of the paths of length at most *k* between any two nodes of the specified source nodes
-- `Paths From to`: All shortest paths between specified source nodes and target nodes with a maximum length limit *k* and a further distance *d*
+- **Shortest Path**: The shortest path from a single source to a single target in the graph
+- **k-Neighborhood**: The neighbors of the specified source nodes within a certain distance *k*
+- **Common Stream**: The set of common nodes that are in the upstream/downstream/bothstream of the specified source nodes with a path length limit *k*
+- **Paths Between**: The subgraph that consists of the paths of length at most *k* between any two nodes of the specified source nodes
+- **Paths From To**: All shortest paths between specified source nodes and target nodes with a maximum length limit *k* and a further distance *d*
 
 For more details about these queries, please refer to [cytoscape-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
 
@@ -151,8 +151,8 @@ Shortest Path:
 ```
   queryOptions: {
     query: 'shortestPath',   // query type
-    sourceNodes: [nodeID1],  // source node
-    targetNodes: [nodeID2],  // target node
+    sourceNodes: [nodeID1],  // source node - only one node id
+    targetNodes: [nodeID2],  // target node - only one node id
     sourceColor: '#00ff00',  // highlight color for source node
     targetColor: '#ff0000',  // highlight color for target node
     pathColor: '#ffff00',    // highlight color for resulting elements
