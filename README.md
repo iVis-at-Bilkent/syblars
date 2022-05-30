@@ -4,10 +4,15 @@
 
 ![A screenshot from the sample Heroku deployment of SyBLaRS](img/syblars-ss.png)
 
-Main use cases of SyBLaRS include:
-- creating an image of the provided map, which already has layout information,
+Main capabilities of SyBLaRS include:
+- creating an image of the provided map, which already has layout information, with an option to highlight a specific query result
 - laying out the provided map in specified layout style (among many available ones) and returning the map with layout information, and
-- both laying out the provided map in specified layout style and creating an image of it (and returning both the map with layout information and the image).
+- both laying out the provided map in specified layout style and creating an image of it again with an option to highlight a specific query result (and returning both the map with layout information and the image).
+
+Backed by these capabilities, SyBLaRS can be used:
+- to produce images from a dataset with large amount of graphs (e.g. BioModels) in an automated way
+- as the layout service of a network visualization tool, and
+- to generate image of an SBGN/SBML model for a publication (e.g. journal/conference article).  
 
 SyBLaRS is distributed under the [MIT License](https://github.com/iVis-at-Bilkent/syblars/blob/main/LICENSE).
 Here is a sample server deployment along with a simple client-side demo:
@@ -304,4 +309,4 @@ Third-party libraries used in demo client:
 
 ## Team
 
-[Hasan Balci](https://github.com/hasanbalci), [Perman Atayev](https://github.com/PermanAtayev) and [Ugur Dogrusoz](https://github.com/ugurdogrusoz) of [i-Vis at Bilkent University](http://www.cs.bilkent.edu.tr/~ivis)
+[Hasan Balci](https://github.com/hasanbalci), [Yusuf Ziya Özgül](https://github.com/YusufZiyaOzgul), [Perman Atayev](https://github.com/PermanAtayev) and [Ugur Dogrusoz](https://github.com/ugurdogrusoz) of [i-Vis at Bilkent University](http://www.cs.bilkent.edu.tr/~ivis)
