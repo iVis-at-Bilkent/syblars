@@ -275,6 +275,7 @@ app.post('/:format', (req, res) => {
         }
       }
       // run queries
+      let result;
       try {
         queryOptions.sourceNodes.forEach(function(nodeId){
           let node = cy.getElementById(nodeId);
@@ -291,7 +292,6 @@ app.post('/:format', (req, res) => {
           });
         }
 
-        let result;
         if(queryOptions.query == 'shortestPath') {
           queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
         }

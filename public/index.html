@@ -270,12 +270,14 @@
         </div>        
         <div class="scrolling content" style="text-align: justify;">
           <b>Systems Biology Layout & Rendering Service (SyBLaRS)</b> is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON 
-          formats and produce corresponding images of the layouts in the backend. This page presents a sample client-side demo for SyBLaRS. <br><br>
+          formats and produce corresponding images of the layouts with an option to highlight results from various graph queries in the backend. 
+          This page presents a sample client-side demo for SyBLaRS. <br><br>
           To use the demo, please follow these steps:
           <ul>
             <li>Open a file in one of the following formats: SBGNML, SBML, GraphML or JSON (or open one of the sample files)</li>
             <li>Select a layout style and modify corresponding layout options as desired</li>
             <li>Select an image format and image options as desired</li>
+            <li>Select a query type and query options as desired if you want to highlight a subgraph of interest</li>
             <li>Click on "Apply Layout" button</li>
             <li>Now you can view/download layout info in "JSON" field and corresponding image in "Image" field</li>
           </ul>
@@ -815,10 +817,12 @@
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source Nodes: </span>
           <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
+        </div>
+        <div class="inline fields">
           <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
-          </div>          
+          </div>
         </div>
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source: </span>
@@ -848,7 +852,7 @@
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Target Nodes: </span>
           <select multiple="" id="targetNodesPFT" class="ui tiny dropdown"></select>
-        </div>        
+        </div>
         <div class="inline fields">
           <span class="add-on layout-text option-label"> k (limit): </span>
           <div class="two wide field">
