@@ -2,8 +2,7 @@
 
 **Sy**stems **B**iology **La**yout & **R**endering **S**ervice (SyBLaRS) is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON formats and/or produce corresponding images (in JPG, PNG or SVG formats) of the layouts with an option to highlight results from various graph queries in the backend. 
 
-| ![A screenshot from the sample Heroku deployment of SyBLaRS](img/syblars-ss.png) |
-| ----- |
+![A screenshot from the sample Heroku deployment of SyBLaRS](img/syblars-ss.png)
 
 Main capabilities of SyBLaRS include:
 - creating an image of the provided map, which already has layout information, with an option to highlight a specific query result
