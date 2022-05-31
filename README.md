@@ -6,7 +6,7 @@
 
 Main capabilities of SyBLaRS include:
 - creating an image of the provided map, which already has layout information, with an option to highlight a specific query result
-- laying out the provided map in specified layout style (among many available ones) and returning the map with layout information, and
+- laying out the provided map in specified layout style (among many available ones) and returning the map with layout information in JSON format, and
 - both laying out the provided map in specified layout style and creating an image of it again with an option to highlight a specific query result (and returning both the map with layout information and the image).
 
 Backed by these capabilities, SyBLaRS can be used:
@@ -74,11 +74,11 @@ Each layout style has a varying number of options for customization of the layou
 The supported graph queries are:
 - **Shortest Path**: The shortest path from a single source to a single target in the graph
 - **k-Neighborhood**: The neighbors of the specified source nodes within a certain distance *k*
-- **Common Stream**: The set of common nodes that are in the upstream/downstream/bothstream of the specified source nodes with a path length limit *k*
+- **Common Stream**: The set of common nodes that are in the upstream/downstream/bothstream of *all* specified source nodes with a path length limit *k*
 - **Paths Between**: The subgraph that consists of the paths of length at most *k* between any two nodes of the specified source nodes
 - **Paths From To**: All shortest paths between specified source nodes and target nodes with a maximum length limit *k* and a further distance *d*
 
-For more details about these queries, please refer to [cytoscape-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
+For more details about these queries, please refer to [cytoscape.js-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
 
 ## Usage
 
