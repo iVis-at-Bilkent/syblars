@@ -6,7 +6,7 @@
 
 Main capabilities of SyBLaRS include:
 - creating an image of the provided map, which already has layout information, with an option to highlight a specific query result
-- laying out the provided map in specified layout style (among many available ones) and returning the map with layout information, and
+- laying out the provided map in specified layout style (among many available ones) and returning the map with layout information in JSON format, and
 - both laying out the provided map in specified layout style and creating an image of it again with an option to highlight a specific query result (and returning both the map with layout information and the image).
 
 Backed by these capabilities, SyBLaRS can be used:
@@ -74,11 +74,11 @@ Each layout style has a varying number of options for customization of the layou
 The supported graph queries are:
 - **Shortest Path**: The shortest path from a single source to a single target in the graph
 - **k-Neighborhood**: The neighbors of the specified source nodes within a certain distance *k*
-- **Common Stream**: The set of common nodes that are in the upstream/downstream/bothstream of the specified source nodes with a path length limit *k*
+- **Common Stream**: The set of common nodes that are in the upstream/downstream/bothstream of *all* specified source nodes with a path length limit *k*
 - **Paths Between**: The subgraph that consists of the paths of length at most *k* between any two nodes of the specified source nodes
 - **Paths From To**: All shortest paths between specified source nodes and target nodes with a maximum length limit *k* and a further distance *d*
 
-For more details about these queries, please refer to [cytoscape-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
+For more details about these queries, please refer to [cytoscape.js-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
 
 ## Usage
 
@@ -269,9 +269,9 @@ let imageInfo = result["image"];     // in `base64uri` for `png` and `jpg` and i
 
 - SyBLaRS also takes any node dimensions into account for layout in SBML, GraphML and JSON file formats. This information should be provided via the layout extension in SBML files, and via `width` and `height` data attributes of each node in GraphML and JSON files (see the [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). Any dimension data is ignored for the SBGNML file format, however, as the third-party [stylesheet](https://github.com/iVis-at-Bilkent/cytoscape-sbgn-stylesheet) used for rendering SBGNML maps has fixed/pre-defined dimensions for each node type.
 
-- Compound/nested graph structures are supported in all file formats. We recommend that you use the fCoSE layout style for best results on graphs with compound structures.
+- Compound/nested graph structures are supported in all file formats. We recommend that you use the [fCoSE](https://github.com/iVis-at-Bilkent/cytoscape.js-fcose) layout style for best results on graphs with compound structures.
 
-- Performing a layout emphasizing the clustering/grouping of nodes is supported only with GraphML and JSON formats. The cluster each node belongs to should be defined via the `clusterID` data attribute of each node (see the corresponding [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). CiSE layout style should be used for layout to explicitly show the clustering available in the graph.
+- Performing a layout emphasizing the clustering/grouping of nodes is supported only with GraphML and JSON formats. The cluster each node belongs to should be defined via the `clusterID` data attribute of each node (see the corresponding [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)). [CiSE](https://github.com/iVis-at-Bilkent/cytoscape.js-cise) layout style should be used for layout to explicitly show the clustering available in the graph.
 
 - The `x` and `y` coordinates of a node in the resulting layout information indicate the '*center*' coordinates of the node.
 
