@@ -647,7 +647,7 @@
         <button class="ui primary button" id="klay-save-layout" style="float: right; display:none" >Save</button>                              
       </div>
     </script>
-                   
+
     <script type="text/template" id="avsdf-settings-template">
       <div class="ui tiny form">
         <div class="equal width fields">
@@ -706,6 +706,15 @@
           </div>
         </div>
         <div class="inline fields">
+          <span class="add-on layout-text option-label"> Direction: </span>
+          <div class="three wide field">
+            <select id="directionSP">
+              <option value="DIRECTED">Directed</option>
+              <option value="UNDIRECTED">Undirected</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline fields">
           <span class="add-on layout-text option-label"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorSP" value= <%= sourceColor %>>
@@ -718,12 +727,10 @@
           <div class="two wide field">
             <input type="color" id="pathColorSP" value= <%= pathColor %>>
           </div>
-        </div>
-        <div class="inline fields">
           <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthSP" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
-          </div>
+          </div>          
         </div>
         <button class="ui button" id="shortestPath-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="shortestPath-save-query" style="float: right; display:none" >Save</button>
@@ -748,7 +755,7 @@
               <option value="UPSTREAM">Up Stream</option>
               <option value="DOWNSTREAM">Down Stream</option>
             </select>
-          </div>          
+          </div>
         </div>
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source: </span>
@@ -762,7 +769,7 @@
           <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
-          </div>          
+          </div>
         </div>
         <button class="ui button" id="kNeighborhood-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="kNeighborhood-save-query" style="float: right; display:none" >Save</button>
@@ -787,7 +794,7 @@
               <option value="UPSTREAM">Up Stream</option>
               <option value="DOWNSTREAM">Down Stream</option>
             </select>
-          </div>          
+          </div>
         </div>
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source: </span>
@@ -805,7 +812,7 @@
           <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
-          </div>          
+          </div>
         </div>
         <button class="ui button" id="commonStream-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="commonStream-save-query" style="float: right; display:none" >Save</button>
@@ -836,7 +843,7 @@
           <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
-          </div>          
+          </div>
         </div>
         <button class="ui button" id="pathsBetween-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="pathsBetween-save-query" style="float: right; display:none" >Save</button>
@@ -868,7 +875,7 @@
               <option value="DIRECTED">Directed</option>
               <option value="UNDIRECTED">Undirected</option>
             </select>
-          </div>          
+          </div>
         </div>
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source: </span>
@@ -886,7 +893,7 @@
           <span class="add-on layout-text option-label"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
-          </div>          
+          </div>
         </div>
         <button class="ui button" id="pathsFromTo-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="pathsFromTo-save-query" style="float: right; display:none" >Save</button>

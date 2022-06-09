@@ -293,7 +293,8 @@ app.post('/:format', (req, res) => {
         }
 
         if(queryOptions.query == 'shortestPath') {
-          queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0])).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
+          let direction = queryOptions.direction == "DIRECTED" ? true : false;
+          queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0]), undefined, direction).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
         }
         else if(queryOptions.query == 'kNeighborhood') {
           queryResult = cy.collection();

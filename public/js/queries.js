@@ -4,6 +4,7 @@ let shortestPathQuery = Backbone.View.extend({
     cropToResult: false,
     sourceNodes: [],
     targetNodes: [],
+    direction: "DIRECTED",
     sourceColor: "#00ff00",
     targetColor: "#ff0000",
     pathColor: "#ffff00",
@@ -35,6 +36,7 @@ let shortestPathQuery = Backbone.View.extend({
     $(document).off("click", "#shortestPath-save-query").on("click", "#shortestPath-save-query", function (evt) {
       self.currentQueryProperties.sourceNodes = [document.getElementById("sourceNodesSP").value];
       self.currentQueryProperties.targetNodes = [document.getElementById("targetNodesSP").value];
+      self.currentQueryProperties.direction = document.getElementById("directionSP").value;
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorSP").value;
       self.currentQueryProperties.targetColor = document.getElementById("targetColorSP").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorSP").value;
