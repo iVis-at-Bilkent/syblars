@@ -306,7 +306,21 @@ let adjustStylesheet = function(format, colorScheme) {
             },
             'underlay-opacity': 0.5
           }
-        },                
+        },
+        {
+          selector: 'node.highlight',
+          style: {
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#00ff00";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "0px";
+            },
+            'underlay-opacity': function(node){
+              return node.data('highlightWidth') ? 0.5 : 0;
+            }
+          }
+        },
         {
           selector: 'edge',
           style: {
@@ -491,7 +505,21 @@ let adjustStylesheet = function(format, colorScheme) {
             },
             'underlay-opacity': 0.5
           }
-        },                         
+        },
+        {
+          selector: 'node.highlight',
+          style: {
+            'underlay-color': function(node){
+              return node.data('highlightColor') ? node.data('highlightColor') : "#00ff00";
+            },
+            'underlay-padding': function(node){
+              return node.data('highlightWidth') ? node.data('highlightWidth') : "0px";
+            },
+            'underlay-opacity': function(node){
+              return node.data('highlightWidth') ? 0.5 : 0;
+            }
+          }
+        },
         {
           selector: 'edge',
           style: {

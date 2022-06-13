@@ -274,6 +274,9 @@ app.post('/:format', (req, res) => {
           queryOptions.direction = "BOTHSTREAM";
         }
       }
+      if(!queryOptions.highlight) {
+        queryOptions.highlight = true;
+      }
 
       const isCentrality = queryOptions.query == 'degreeCentrality' || queryOptions.query == 'closenessCentrality' 
         || queryOptions.query == 'betweennessCentrality' || queryOptions.query == 'pageRank';
@@ -369,6 +372,11 @@ app.post('/:format', (req, res) => {
                   node.data('label', node.data('id') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
                 }
               }
+              if(queryOptions.highlight === true) {
+                node.addClass('highlight');
+                node.data('highlightColor', queryOptions.highlightColor);
+                node.data('highlightWidth', (round2dec(queryResult.indegree(node)) + round2dec(queryResult.outdegree(node))) / 2 * 10);                
+              }
             });
           }
           else {
@@ -388,6 +396,11 @@ app.post('/:format', (req, res) => {
                 else {
                   node.data('label', node.data('id') + "\n(" +round2dec( queryResult.degree(node)) + ")");
                 }
+              }
+              if(queryOptions.highlight === true) {
+                node.addClass('highlight');
+                node.data('highlightColor', queryOptions.highlightColor);
+                node.data('highlightWidth', round2dec(queryResult.degree(node)) * 10);                
               }
             });
           }
@@ -410,6 +423,11 @@ app.post('/:format', (req, res) => {
                 node.data('label', node.data('id') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
               }
             }
+            if(queryOptions.highlight === true) {
+              node.addClass('highlight');
+              node.data('highlightColor', queryOptions.highlightColor);
+              node.data('highlightWidth', round2dec(queryResult.closeness(node)) * 10);
+            }
           });
         }
         else if(queryOptions.query == 'betweennessCentrality') {
@@ -430,6 +448,11 @@ app.post('/:format', (req, res) => {
                 node.data('label', node.data('id') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
               }
             }
+            if(queryOptions.highlight === true) {
+              node.addClass('highlight');
+              node.data('highlightColor', queryOptions.highlightColor);
+              node.data('highlightWidth', round2dec(queryResult.betweennessNormalized(node)) * 10);
+            }
           });
         }
         else if(queryOptions.query == 'pageRank') {
@@ -449,6 +472,11 @@ app.post('/:format', (req, res) => {
               else {
                 node.data('label', node.data('id') + "\n(" + round2dec(queryResult.rank(node)) + ")");
               }
+            }
+            if(queryOptions.highlight === true) {
+              node.addClass('highlight');
+              node.data('highlightColor', queryOptions.highlightColor);
+              node.data('highlightWidth', round2dec(queryResult.rank(node)) * 100);
             }
           });
         }

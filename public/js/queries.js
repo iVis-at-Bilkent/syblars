@@ -99,7 +99,7 @@ let closenessCentralityQuery = Backbone.View.extend({
     });
 
     $(document).off("click", "#closenessCentrality-save-query").on("click", "#closenessCentrality-save-query", function (evt) {
-      self.currentQueryProperties.direction = document.getElementById("directionDC").value;
+      self.currentQueryProperties.direction = document.getElementById("directionCC").value;
       self.currentQueryProperties.highlight = document.getElementById("highlightCC").checked;      
       self.currentQueryProperties.highlightColor = document.getElementById("highlightColorCC").value;
       self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
@@ -159,7 +159,7 @@ let betweennessCentralityQuery = Backbone.View.extend({
     });
 
     $(document).off("click", "#betweennessCentrality-save-query").on("click", "#betweennessCentrality-save-query", function (evt) {
-      self.currentQueryProperties.direction = document.getElementById("directionDC").value;
+      self.currentQueryProperties.direction = document.getElementById("directionBC").value;
       self.currentQueryProperties.highlight = document.getElementById("highlightBC").checked;      
       self.currentQueryProperties.highlightColor = document.getElementById("highlightColorBC").value;
       self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;

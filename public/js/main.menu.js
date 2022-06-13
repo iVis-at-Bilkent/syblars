@@ -215,7 +215,7 @@ let processLayout = async function () {
       queryOptions = degreeCentralityQueryProp.getProperties();
       break;
     case 'closenessCentrality':
-      queryOptions = closenessCentralitydQueryProp.getProperties();
+      queryOptions = closenessCentralityQueryProp.getProperties();
       break;
     case 'betweennessCentrality':
       queryOptions = betweennessCentralityQueryProp.getProperties();
