@@ -158,6 +158,7 @@ Shortest Path:
     query: 'shortestPath',   // query type
     sourceNodes: [nodeID1],  // source node - only one node id
     targetNodes: [nodeID2],  // target node - only one node id
+    direction: 'DIRECTED',   // direction of the search
     sourceColor: '#00ff00',  // highlight color for source node
     targetColor: '#ff0000',  // highlight color for target node
     pathColor: '#ffff00',    // highlight color for resulting elements
@@ -221,7 +222,7 @@ Paths From To:
     cropToResult: false                    // whether to crop the image to the query result
   } 
 ```
-where `direction` is one of `UPSTREAM`, `DOWNSTREAM` or `BOTHSTREAM` for `kNeighborhood`, `commonStream` and `pathsBetween` queries and one of `DIRECTED` or `UNDIRECTED` for `pathsFromTo` query. 
+where `direction` is one of `UPSTREAM`, `DOWNSTREAM` or `BOTHSTREAM` for `kNeighborhood`, `commonStream` and `pathsBetween` queries and one of `DIRECTED` or `UNDIRECTED` for `shortestPath` and `pathsFromTo` queries. 
 
 In case you do not need layout applied, you should either not provide `layoutOptions` or provide `preset` the layout style. If you do not provide `imageOptions`, default ones will be used. To disable image output (in case you only need the output JSON file back with layout information), you should set `image` option to `false` in your request URL, which is `true` by default:
 ```
