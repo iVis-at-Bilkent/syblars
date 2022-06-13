@@ -274,25 +274,46 @@ app.post('/:format', (req, res) => {
           queryOptions.direction = "BOTHSTREAM";
         }
       }
+
+      const isCentrality = queryOptions.query == 'degreeCentrality' || queryOptions.query == 'closenessCentrality' 
+        || queryOptions.query == 'betweennessCentrality' || queryOptions.query == 'pageRank';
+
       // run queries
       let result;
       try {
-        queryOptions.sourceNodes.forEach(function(nodeId){
-          let node = cy.getElementById(nodeId);
-          node.addClass('source');
-          node.data('highlightColor', queryOptions.sourceColor);
-          sourceNodes.merge(node);
-        });
-        if(queryOptions.targetNodes) {
-          queryOptions.targetNodes.forEach(function(nodeId){
+        if(!isCentrality) {
+          queryOptions.sourceNodes.forEach(function(nodeId){
             let node = cy.getElementById(nodeId);
-            node.addClass('target');
-            node.data('highlightColor', queryOptions.targetColor);
-            targetNodes.merge(node);
+            node.addClass('source');
+            node.data('highlightColor', queryOptions.sourceColor);
+            sourceNodes.merge(node);
           });
+          if(queryOptions.targetNodes) {
+            queryOptions.targetNodes.forEach(function(nodeId){
+              let node = cy.getElementById(nodeId);
+              node.addClass('target');
+              node.data('highlightColor', queryOptions.targetColor);
+              targetNodes.merge(node);
+            });
+          }
         }
 
-        if(queryOptions.query == 'shortestPath') {
+        if(queryOptions.query == 'degreeCentrality') {
+          let direction = queryOptions.direction == "DIRECTED" ? true : false;
+          queryResult = cy.elements().degreeCentralityNormalized({directed: direction});
+        }
+        if(queryOptions.query == 'closenessCentrality') {
+          let direction = queryOptions.direction == "DIRECTED" ? true : false;
+          queryResult = cy.elements().closenessCentralityNormalized({directed: direction});
+        }
+        if(queryOptions.query == 'betweennessCentrality') {
+          let direction = queryOptions.direction == "DIRECTED" ? true : false;
+          queryResult = cy.elements().betweennessCentrality({directed: direction});
+        }
+        if(queryOptions.query == 'pageRank') {
+          queryResult = cy.elements().pageRank();
+        }
+        else if(queryOptions.query == 'shortestPath') {
           let direction = queryOptions.direction == "DIRECTED" ? true : false;
           queryResult = cy.elements().dijkstra(cy.getElementById(queryOptions.sourceNodes[0]), undefined, direction).pathTo(cy.getElementById(queryOptions.targetNodes[0]));
         }
@@ -326,25 +347,133 @@ app.post('/:format', (req, res) => {
        });
       }
 
-      path = queryResult.difference(sourceNodes).difference(targetNodes);
-      if(queryOptions.query == 'commonStream') {
-        let commonNodes = cy.collection();  // change here after graph-algos bug fix
-        result.commonNodes.forEach(function(node){
-          commonNodes.merge(node);
-        });
-        path = path.difference(commonNodes);
-        result.commonNodes.forEach(function(node){
-          node.addClass('target');
-          node.data('highlightColor', queryOptions.targetColor);
-          targetNodes.merge(node);
-        });
-      }
-      path.addClass('path');
-      path.data('highlightColor', queryOptions.pathColor);
-      queryResult.data('highlightWidth', queryOptions.highlightWidth);
+      if(isCentrality) {
+        let round2dec = num => Math.round(num * 100) / 100;
 
-      if(queryOptions.cropToResult) {
-        elementsToBeRendered = queryResult.union(sourceNodes).union(targetNodes);
+        if(queryOptions.query == 'degreeCentrality') {
+          if(queryOptions.direction == "DIRECTED") {
+            cy.nodes().forEach(function(node){
+              if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+                if(node.data('label')) {
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                }
+                else {
+                  node.data('label', "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                }
+              }
+              else if(req.params.format === 'graphml' || req.params.format === 'json'){
+                if(node.data('label')) {
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                }
+                else {
+                  node.data('label', node.data('id') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                }
+              }
+            });
+          }
+          else {
+            cy.nodes().forEach(function(node){
+              if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+                if(node.data('label')) {
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.degree(node)) + ")");
+                }
+                else {
+                  node.data('label', "\n(" + round2dec(queryResult.degree(node)) + ")");
+                }
+              }
+              else if(req.params.format === 'graphml' || req.params.format === 'json'){
+                if(node.data('label')) {
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.degree(node)) + ")");
+                }
+                else {
+                  node.data('label', node.data('id') + "\n(" +round2dec( queryResult.degree(node)) + ")");
+                }
+              }
+            });
+          }
+        }
+        else if(queryOptions.query == 'closenessCentrality') {
+          cy.nodes().forEach(function(node){
+            if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+              if(node.data('label')) {
+                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
+              }
+              else {
+                node.data('label', "\n(" + round2dec(queryResult.closeness(node)) + ")");
+              }
+            }
+            else if(req.params.format === 'graphml' || req.params.format === 'json'){
+              if(node.data('label')) {
+                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
+              }
+              else {
+                node.data('label', node.data('id') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
+              }
+            }
+          });
+        }
+        else if(queryOptions.query == 'betweennessCentrality') {
+          cy.nodes().forEach(function(node){
+            if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+              if(node.data('label')) {
+                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
+              }
+              else {
+                node.data('label', "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
+              }
+            }
+            else if(req.params.format === 'graphml' || req.params.format === 'json'){
+              if(node.data('label')) {
+                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
+              }
+              else {
+                node.data('label', node.data('id') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
+              }
+            }
+          });
+        }
+        else if(queryOptions.query == 'pageRank') {
+          cy.nodes().forEach(function(node){
+            if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+              if(node.data('label')) {
+                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.rank(node)) + ")");
+              }
+              else {
+                node.data('label', "\n(" + round2dec(queryResult.rank(node)) + ")");
+              }
+            }
+            else if(req.params.format === 'graphml' || req.params.format === 'json'){
+              if(node.data('label')) {
+                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.rank(node)) + ")");
+              }
+              else {
+                node.data('label', node.data('id') + "\n(" + round2dec(queryResult.rank(node)) + ")");
+              }
+            }
+          });
+        }
+      }
+      else {
+        path = queryResult.difference(sourceNodes).difference(targetNodes);
+        if(queryOptions.query == 'commonStream') {
+          let commonNodes = cy.collection();  // change here after graph-algos bug fix
+          result.commonNodes.forEach(function(node){
+            commonNodes.merge(node);
+          });
+          path = path.difference(commonNodes);
+          result.commonNodes.forEach(function(node){
+            node.addClass('target');
+            node.data('highlightColor', queryOptions.targetColor);
+            targetNodes.merge(node);
+          });
+        }
+        path.addClass('path');
+        path.data('highlightColor', queryOptions.pathColor);
+        queryResult.data('highlightWidth', queryOptions.highlightWidth);
+  
+        if(queryOptions.cropToResult) {
+          elementsToBeRendered = queryResult.union(sourceNodes).union(targetNodes);
+        }
       }
     }
 

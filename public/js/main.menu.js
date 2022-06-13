@@ -211,6 +211,18 @@ let processLayout = async function () {
 
   let queryOptions = undefined;
   switch (currentQuery) {
+    case 'degreeCentrality':
+      queryOptions = degreeCentralityQueryProp.getProperties();
+      break;
+    case 'closenessCentrality':
+      queryOptions = closenessCentralitydQueryProp.getProperties();
+      break;
+    case 'betweennessCentrality':
+      queryOptions = betweennessCentralityQueryProp.getProperties();
+      break;
+    case 'pageRank':
+      queryOptions = pageRankQueryProp.getProperties();
+      break;    
     case 'shortestPath':
       queryOptions = shortestPathQueryProp.getProperties();
       break;
@@ -567,6 +579,22 @@ $("#layoutSettingsDefault").on("click", function (e) {
   $('#' + currentLayout + '-default-layout').trigger("click");
 });
 
+let degreeCentralityQueryProp = new degreeCentralityQuery({
+  el: '#degreeCentrality-query-table'
+});
+
+let closenessCentralityQueryProp = new closenessCentralityQuery({
+  el: '#closenessCentrality-query-table'
+});
+
+let betweennessCentralityQueryProp = new betweennessCentralityQuery({
+  el: '#betweennessCentrality-query-table'
+});
+
+let pageRankQueryProp = new pageRankQuery({
+  el: '#pageRank-query-table'
+});
+
 let shortestPathQueryProp = new shortestPathQuery({
   el: '#shortestPath-query-table'
 });
@@ -587,16 +615,31 @@ let pathsFromToQueryProp = new pathsFromToQuery({
   el: '#pathsFromTo-query-table'
 });
 
-//shortestPathQueryProp.render();
 let previousQuery = $('#queryType').val();
 $("#queryType").on("change", function (e) {
   let currentQuery = $('#queryType').val();
   $('#' + previousQuery + '-save-query').trigger("click");
   switch (currentQuery) {
-    case 'shortestPath':      
-      shortestPathQueryProp.render(previousQuery, nodeData);
+    case 'degreeCentrality':
+      degreeCentralityQueryProp.render(previousQuery, nodeData);
       previousQuery = $('#queryType').val();
       break;    
+    case 'closenessCentrality':
+      closenessCentralityQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
+      break;
+    case 'betweennessCentrality':
+      betweennessCentralityQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
+      break;
+    case 'pageRank':
+      pageRankQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
+      break;
+    case 'shortestPath':
+      shortestPathQueryProp.render(previousQuery, nodeData);
+      previousQuery = $('#queryType').val();
+      break;
     case 'kNeighborhood':
       kNeighborhoodQueryProp.render(previousQuery, nodeData);
       previousQuery = $('#queryType').val();

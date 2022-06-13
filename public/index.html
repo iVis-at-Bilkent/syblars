@@ -187,6 +187,10 @@
                   <div class="four wide field">
                     <select id="queryType">
                       <option value="">Select Query</option>
+                      <option value="degreeCentrality">Degree Centrality</option>
+                      <option value="closenessCentrality">Closeness Centrality</option>
+                      <option value="betweennessCentrality">Betweenness Centrality</option>
+                      <option value="pageRank">Page Rank</option>
                       <option value="shortestPath">Shortest Path</option>
                       <option value="kNeighborhood">k-Neighborhood</option>
                       <option value="commonStream">Common Stream</option>
@@ -200,6 +204,18 @@
                       <label style="margin-top: 4px"></label>
                   </div>
                   <img class="ui image" id="querySettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 10px; margin-top: 0px; float: right; padding: 2.5px">
+                </div>
+                <div id="degreeCentrality-query-table" class="ui mini" >
+                  <!-- degreeCentrality query table will be shown here -->
+                </div>
+                <div id="closenessCentrality-query-table" class="ui mini" >
+                  <!-- closenessCentrality query table will be shown here -->
+                </div>
+                <div id="betweennessCentrality-query-table" class="ui mini" >
+                  <!-- betweennessCentrality query table will be shown here -->
+                </div>
+                <div id="pageRank-query-table" class="ui mini" >
+                  <!-- pageRank query table will be shown here -->
                 </div>
                 <div id="shortestPath-query-table" class="ui mini" >
                   <!-- shortestPath query table will be shown here -->
@@ -693,12 +709,107 @@
     </script>
 
     <!-- query templates -->
+    <script type="text/template" id="degreeCentrality-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <span class="add-on layout-text option-label"> Direction: </span>
+          <div class="three wide field">
+            <select id="directionDC">
+              <option value="DIRECTED">Directed</option>
+              <option value="UNDIRECTED">Undirected</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <input id="highlightDC" type="checkbox"<% if(highlight){ %> checked <%}%> >
+          </div>
+          <span class="add-on layout-text option-label"> Highlight Color: </span>
+          <div class="two wide field">
+            <input type="color" id="highlightColorDC" value= <%= highlightColor %>>
+          </div>
+        </div>
+        <button class="ui button" id="degreeCentrality-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="degreeCentrality-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
+    <script type="text/template" id="closenessCentrality-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <span class="add-on layout-text option-label"> Direction: </span>
+          <div class="three wide field">
+            <select id="directionCC">
+              <option value="DIRECTED">Directed</option>
+              <option value="UNDIRECTED">Undirected</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <input id="highlightCC" type="checkbox"<% if(highlight){ %> checked <%}%> >
+          </div>
+          <span class="add-on layout-text option-label"> Highlight Color: </span>
+          <div class="two wide field">
+            <input type="color" id="highlightColorCC" value= <%= highlightColor %>>
+          </div>
+        </div>
+        <button class="ui button" id="closenessCentrality-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="closenessCentrality-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
+    <script type="text/template" id="betweennessCentrality-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <span class="add-on layout-text option-label"> Direction: </span>
+          <div class="three wide field">
+            <select id="directionBC">
+              <option value="DIRECTED">Directed</option>
+              <option value="UNDIRECTED">Undirected</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <input id="highlightBC" type="checkbox"<% if(highlight){ %> checked <%}%> >
+          </div>
+          <span class="add-on layout-text option-label"> Highlight Color: </span>
+          <div class="two wide field">
+            <input type="color" id="highlightColorBC" value= <%= highlightColor %>>
+          </div>
+        </div>
+        <button class="ui button" id="betweennessCentrality-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="betweennessCentrality-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
+    <script type="text/template" id="pageRank-settings-template">
+      <div class="ui tiny form">
+        <div class="inline fields">
+          <div class="field" style="margin-right: 5px">
+            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <input id="highlightPR" type="checkbox"<% if(highlight){ %> checked <%}%> >
+          </div>
+          <span class="add-on layout-text option-label"> Highlight Color: </span>
+          <div class="two wide field">
+            <input type="color" id="highlightColorPR" value= <%= highlightColor %>>
+          </div>
+        </div>
+        <button class="ui button" id="pageRank-default-query" style="display:none">Default</button>
+        <button class="ui primary button" id="pageRank-save-query" style="float: right; display:none" >Save</button>
+      </div>
+    </script>
+
     <script type="text/template" id="shortestPath-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source Node: </span>
           <div class="three wide field">
-            <select id="sourceNodesSP" class="ui dropdown"></select>          
+            <select id="sourceNodesSP"></select>
           </div>
           <span class="add-on layout-text option-label"> Target Node: </span>
           <div class="three wide field">

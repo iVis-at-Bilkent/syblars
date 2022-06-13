@@ -1,3 +1,241 @@
+let degreeCentralityQuery = Backbone.View.extend({
+  defaultQueryProperties: {
+    query: "degreeCentrality",
+    cropToResult: false,
+    direction: "DIRECTED",
+    highlight: true,
+    highlightColor: "#00ff00"
+  },
+  currentQueryProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#degreeCentrality-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+  },
+  copyProperties: function () {
+    this.currentQueryProperties = _.clone(this.defaultQueryProperties);
+  },
+  getProperties: function () {
+    return this.currentQueryProperties;
+  },
+
+  render: function (previousQuery, nodeData) {
+    let self = this;
+    let temp = _.template($("#degreeCentrality-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+    $("#" + previousQuery + "-query-table").hide();
+    $(self.el).html(self.template);
+    fillNodesFunc("degreeCentrality", nodeData);
+    $(self.el).show();
+
+    $(document).off("change", "#highlightDC").on("change", "#highlightDC", function() {
+      if(this.checked) {
+        $("#highlightColorDC").attr("disabled", false);
+      }
+      else {
+        $("#highlightColorDC").attr("disabled", true);
+      }
+    }); 
+
+    $(document).off("click", "#degreeCentrality-save-query").on("click", "#degreeCentrality-save-query", function (evt) {
+      self.currentQueryProperties.direction = document.getElementById("directionDC").value;
+      self.currentQueryProperties.highlight = document.getElementById("highlightDC").checked;      
+      self.currentQueryProperties.highlightColor = document.getElementById("highlightColorDC").value;
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
+    });
+    
+    $(document).off("click", "#degreeCentrality-default-query").on("click", "#degreeCentrality-default-query", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#degreeCentrality-settings-template").html());
+      self.template = temp(self.currentQueryProperties);
+      $(self.el).html(self.template);
+      fillNodesFunc("degreeCentrality", nodeData);
+      document.getElementById("cropToResult").checked = false;
+    });
+
+    return this;
+  }
+});
+
+let closenessCentralityQuery = Backbone.View.extend({
+  defaultQueryProperties: {
+    query: "closenessCentrality",
+    cropToResult: false,
+    direction: "DIRECTED",
+    highlight: true,
+    highlightColor: "#00ff00"
+  },
+  currentQueryProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#closenessCentrality-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+  },
+  copyProperties: function () {
+    this.currentQueryProperties = _.clone(this.defaultQueryProperties);
+  },
+  getProperties: function () {
+    return this.currentQueryProperties;
+  },  
+
+  render: function (previousQuery, nodeData) {
+    let self = this;
+    let temp = _.template($("#closenessCentrality-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+    $("#" + previousQuery + "-query-table").hide();
+    $(self.el).html(self.template);
+    fillNodesFunc("closenessCentrality", nodeData);
+    $(self.el).show();
+
+    $(document).off("change", "#highlightCC").on("change", "#highlightCC", function() {
+      if(this.checked) {
+        $("#highlightColorCC").attr("disabled", false);
+      }
+      else {
+        $("#highlightColorCC").attr("disabled", true);
+      }
+    });
+
+    $(document).off("click", "#closenessCentrality-save-query").on("click", "#closenessCentrality-save-query", function (evt) {
+      self.currentQueryProperties.direction = document.getElementById("directionDC").value;
+      self.currentQueryProperties.highlight = document.getElementById("highlightCC").checked;      
+      self.currentQueryProperties.highlightColor = document.getElementById("highlightColorCC").value;
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
+    });
+    
+    $(document).off("click", "#closenessCentrality-default-query").on("click", "#closenessCentrality-default-query", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#closenessCentrality-settings-template").html());
+      self.template = temp(self.currentQueryProperties);
+      $(self.el).html(self.template);
+      fillNodesFunc("closenessCentrality", nodeData);
+      document.getElementById("cropToResult").checked = false;
+    });
+
+    return this;
+  }
+});
+
+let betweennessCentralityQuery = Backbone.View.extend({
+  defaultQueryProperties: {
+    query: "betweennessCentrality",
+    cropToResult: false,
+    direction: "DIRECTED",
+    highlight: true,
+    highlightColor: "#00ff00"
+  },
+  currentQueryProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#betweennessCentrality-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+  },
+  copyProperties: function () {
+    this.currentQueryProperties = _.clone(this.defaultQueryProperties);
+  },
+  getProperties: function () {
+    return this.currentQueryProperties;
+  },  
+
+  render: function (previousQuery, nodeData) {
+    let self = this;
+    let temp = _.template($("#betweennessCentrality-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+    $("#" + previousQuery + "-query-table").hide();
+    $(self.el).html(self.template);
+    fillNodesFunc("betweennessCentrality", nodeData);
+    $(self.el).show();
+
+    $(document).off("change", "#highlightBC").on("change", "#highlightBC", function() {
+      if(this.checked) {
+        $("#highlightColorBC").attr("disabled", false);
+      }
+      else {
+        $("#highlightColorBC").attr("disabled", true);
+      }
+    });
+
+    $(document).off("click", "#betweennessCentrality-save-query").on("click", "#betweennessCentrality-save-query", function (evt) {
+      self.currentQueryProperties.direction = document.getElementById("directionDC").value;
+      self.currentQueryProperties.highlight = document.getElementById("highlightBC").checked;      
+      self.currentQueryProperties.highlightColor = document.getElementById("highlightColorBC").value;
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
+    });
+    
+    $(document).off("click", "#betweennessCentrality-default-query").on("click", "#betweennessCentrality-default-query", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#betweennessCentrality-settings-template").html());
+      self.template = temp(self.currentQueryProperties);
+      $(self.el).html(self.template);
+      fillNodesFunc("betweennessCentrality", nodeData);
+      document.getElementById("cropToResult").checked = false;
+    });
+
+    return this;
+  }
+});
+
+let pageRankQuery = Backbone.View.extend({
+  defaultQueryProperties: {
+    query: "pageRank",
+    cropToResult: false,
+    highlight: true,
+    highlightColor: "#00ff00"
+  },
+  currentQueryProperties: null,
+  initialize: function () {
+    let self = this;
+    self.copyProperties();
+    let temp = _.template($("#pageRank-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+  },
+  copyProperties: function () {
+    this.currentQueryProperties = _.clone(this.defaultQueryProperties);
+  },
+  getProperties: function () {
+    return this.currentQueryProperties;
+  },  
+
+  render: function (previousQuery, nodeData) {
+    let self = this;
+    let temp = _.template($("#pageRank-settings-template").html());
+    self.template = temp(this.currentQueryProperties);
+    $("#" + previousQuery + "-query-table").hide();
+    $(self.el).html(self.template);
+    fillNodesFunc("pageRank", nodeData);
+    $(self.el).show();
+
+    $(document).off("change", "#highlightBPR").on("change", "#highlightPR", function() {
+      if(this.checked) {
+        $("#highlightColorPR").attr("disabled", false);
+      }
+      else {
+        $("#highlightColorPR").attr("disabled", true);
+      }
+    });
+
+    $(document).off("click", "#pageRank-save-query").on("click", "#pageRank-save-query", function (evt) {
+      self.currentQueryProperties.highlight = document.getElementById("highlightPR").checked;      
+      self.currentQueryProperties.highlightColor = document.getElementById("highlightColorPR").value;
+      self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
+    });
+    
+    $(document).off("click", "#pageRank-default-query").on("click", "#pageRank-default-query", function (evt) {
+      self.copyProperties();
+      let temp = _.template($("#pageRank-settings-template").html());
+      self.template = temp(self.currentQueryProperties);
+      $(self.el).html(self.template);
+      fillNodesFunc("pageRank", nodeData);
+      document.getElementById("cropToResult").checked = false;
+    });
+
+    return this;
+  }
+});
+
 let shortestPathQuery = Backbone.View.extend({
   defaultQueryProperties: {
     query: "shortestPath",
