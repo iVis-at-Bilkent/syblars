@@ -274,7 +274,7 @@ app.post('/:format', (req, res) => {
           queryOptions.direction = "BOTHSTREAM";
         }
       }
-      if(!queryOptions.highlight) {
+      if(queryOptions.highlight == undefined) {
         queryOptions.highlight = true;
       }
 

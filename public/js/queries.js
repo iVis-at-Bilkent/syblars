@@ -27,6 +27,8 @@ let degreeCentralityQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("degreeCentrality", nodeData);
+    document.getElementById("directionDC").value = self.currentQueryProperties.direction;
+    document.getElementById("highlightColorDC").disabled = self.currentQueryProperties.highlightColorDisabled;
     $(self.el).show();
 
     $(document).off("change", "#highlightDC").on("change", "#highlightDC", function() {
@@ -40,8 +42,9 @@ let degreeCentralityQuery = Backbone.View.extend({
 
     $(document).off("click", "#degreeCentrality-save-query").on("click", "#degreeCentrality-save-query", function (evt) {
       self.currentQueryProperties.direction = document.getElementById("directionDC").value;
-      self.currentQueryProperties.highlight = document.getElementById("highlightDC").checked;      
+      self.currentQueryProperties.highlight = document.getElementById("highlightDC").checked;
       self.currentQueryProperties.highlightColor = document.getElementById("highlightColorDC").value;
+      self.currentQueryProperties.highlightColorDisabled = document.getElementById("highlightColorDC").disabled;
       self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
@@ -87,6 +90,8 @@ let closenessCentralityQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("closenessCentrality", nodeData);
+    document.getElementById("directionCC").value = self.currentQueryProperties.direction;
+    document.getElementById("highlightColorCC").disabled = self.currentQueryProperties.highlightColorDisabled;
     $(self.el).show();
 
     $(document).off("change", "#highlightCC").on("change", "#highlightCC", function() {
@@ -102,6 +107,7 @@ let closenessCentralityQuery = Backbone.View.extend({
       self.currentQueryProperties.direction = document.getElementById("directionCC").value;
       self.currentQueryProperties.highlight = document.getElementById("highlightCC").checked;      
       self.currentQueryProperties.highlightColor = document.getElementById("highlightColorCC").value;
+      self.currentQueryProperties.highlightColorDisabled = document.getElementById("highlightColorCC").disabled;
       self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
@@ -147,6 +153,8 @@ let betweennessCentralityQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("betweennessCentrality", nodeData);
+    document.getElementById("directionBC").value = self.currentQueryProperties.direction;
+    document.getElementById("highlightColorBC").disabled = self.currentQueryProperties.highlightColorDisabled;
     $(self.el).show();
 
     $(document).off("change", "#highlightBC").on("change", "#highlightBC", function() {
@@ -160,8 +168,9 @@ let betweennessCentralityQuery = Backbone.View.extend({
 
     $(document).off("click", "#betweennessCentrality-save-query").on("click", "#betweennessCentrality-save-query", function (evt) {
       self.currentQueryProperties.direction = document.getElementById("directionBC").value;
-      self.currentQueryProperties.highlight = document.getElementById("highlightBC").checked;      
+      self.currentQueryProperties.highlight = document.getElementById("highlightBC").checked;
       self.currentQueryProperties.highlightColor = document.getElementById("highlightColorBC").value;
+      self.currentQueryProperties.highlightColorDisabled = document.getElementById("highlightColorBC").disabled;
       self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
@@ -206,6 +215,7 @@ let pageRankQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("pageRank", nodeData);
+    document.getElementById("highlightColorPR").disabled = self.currentQueryProperties.highlightColorDisabled;
     $(self.el).show();
 
     $(document).off("change", "#highlightBPR").on("change", "#highlightPR", function() {
@@ -220,6 +230,7 @@ let pageRankQuery = Backbone.View.extend({
     $(document).off("click", "#pageRank-save-query").on("click", "#pageRank-save-query", function (evt) {
       self.currentQueryProperties.highlight = document.getElementById("highlightPR").checked;      
       self.currentQueryProperties.highlightColor = document.getElementById("highlightColorPR").value;
+      self.currentQueryProperties.highlightColorDisabled = document.getElementById("highlightColorPR").disabled;
       self.currentQueryProperties.cropToResult = document.getElementById("cropToResult").checked;
     });
     
@@ -269,6 +280,7 @@ let shortestPathQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("shortestPath", nodeData);
+    document.getElementById("directionSP").value = self.currentQueryProperties.direction;
     $(self.el).show();
 
     $(document).off("click", "#shortestPath-save-query").on("click", "#shortestPath-save-query", function (evt) {
@@ -327,6 +339,7 @@ let kNeighborhoodQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("kNeighborhood", nodeData);
+    document.getElementById("directionKN").value = self.currentQueryProperties.direction;
     $(self.el).show();
 
     $(document).off("click", "#kNeighborhood-save-query").on("click", "#kNeighborhood-save-query", function (evt) {
@@ -385,6 +398,7 @@ let commonStreamQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("commonStream", nodeData);
+    document.getElementById("directionCS").value = self.currentQueryProperties.direction;
     $(self.el).show();
 
     $(document).off("click", "#commonStream-save-query").on("click", "#commonStream-save-query", function (evt) {
@@ -501,6 +515,7 @@ let pathsFromToQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("pathsFromTo", nodeData);
+    document.getElementById("directionPFT").value = self.currentQueryProperties.direction;
     $(self.el).show();
 
     $(document).off("click", "#pathsFromTo-save-query").on("click", "#pathsFromTo-save-query", function (evt) {
