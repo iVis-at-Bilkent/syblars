@@ -709,5 +709,7 @@ $("#resultImage").on("click", function (e) {
   let imageContent = document.getElementById("imageContent");
   let imageSource = document.getElementById("resultImage").src;
   imageContent.src = imageSource;
+  let imageTitle = document.getElementById("imageTitle"); 
+  imageTitle.innerHTML = document.getElementById("file-name").innerHTML;
   $('#imageModal').modal({inverted: true}).modal('show');
 });
