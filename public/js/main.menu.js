@@ -704,3 +704,10 @@ $("#sampleType").change(function() {
   $("#file-input").trigger("change", [graph]);
   document.getElementById("file-name").innerHTML = currentSample;
 });
+
+$("#resultImage").on("click", function (e) {
+  let imageContent = document.getElementById("imageContent");
+  let imageSource = document.getElementById("resultImage").src;
+  imageContent.src = imageSource;
+  $('#imageModal').modal({inverted: true}).modal('show');
+});

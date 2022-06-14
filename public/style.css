@@ -162,3 +162,6 @@ option {
   background-color: #efefef !important;
 }
 
+#imageModal {
+  width: auto;
+}

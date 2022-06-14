@@ -262,11 +262,11 @@
                   <img class="ui image" id="downloadImage" src="img/download.svg" title="Download image" style="height: 25px; width: 25px; padding: 2.5px;"> 
                 </div>
                 <div id="imageArea" class="ui segment" style="width: auto; height: 345px; padding: 0px;">
-                  <img style="cursor:pointer; padding: 0px !important;" class="ui centered huge image" id="resultImage" onclick="window.open(this.src, '_blank');">
+                  <img style="cursor:pointer; padding: 0px !important;" class="ui centered huge image" id="resultImage">
                 </div>
-              </div>  
-            </div>           
-          </div>                    
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ui divider"></div>
         <div class="row" style="padding-bottom: 0; padding-top: 0; font-size: 13px;">
@@ -276,14 +276,20 @@
              Bilkent i-Vis Research Lab.
             </a> All rights reserved. 
           </div>
-        </div>        
+        </div>
+      </div>
+
+      <div class="ui modal" id="imageModal">
+        <div class="image content">
+          <img class="image" id="imageContent">
+        </div>
       </div>
       
       <div id="information-modal" class="ui small modal information" >
         <i class="close icon"></i>
         <div class="ui center aligned header" id="about">
           ABOUT
-        </div>        
+        </div>
         <div class="scrolling content" style="text-align: justify;">
           <b>Systems Biology Layout & Rendering Service (SyBLaRS)</b> is a web service to lay out graphs in SBGNML, SBML, GraphML and JSON 
           formats and produce corresponding images of the layouts with an option to highlight results from various graph queries in the backend. 
