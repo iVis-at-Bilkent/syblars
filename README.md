@@ -10,7 +10,7 @@ Main capabilities of SyBLaRS include:
 - both laying out the provided map in specified layout style and creating an image of it again with an option to highlight a specific query result (and returning both the map with layout information and the image).
 
 Backed by these capabilities, SyBLaRS can be used:
-- to produce images from a dataset with large amount of graphs (e.g. BioModels) in an automated way
+- to produce images from a dataset with large amount of graphs (e.g. BioModels) in an automated way (see [test](https://github.com/iVis-at-Bilkent/syblars/tree/test) branch)
 - as the layout service of a network visualization tool, and
 - to generate image of an SBGN/SBML model for a publication (e.g. journal/conference article).  
 
@@ -72,13 +72,17 @@ Each layout style has a varying number of options for customization of the layou
 
 ## Supported graph queries
 The supported graph queries are:
+- **Degree Centrality**: The normalized degree centrality of the nodes in the graph
+- **Closeness Centrality**: The normalized closeness centrality of the nodes in the graph
+- **Betweenness Centrality**: The normalized betweenness centrality of the nodes in the graph
+- **Page Rank**: The rank of the nodes in the graph
 - **Shortest Path**: The shortest path from a single source to a single target in the graph
 - **k-Neighborhood**: The neighbors of the specified source nodes within a certain distance *k*
 - **Common Stream**: The set of common nodes that are in the upstream/downstream/bothstream of *all* specified source nodes with a path length limit *k*
 - **Paths Between**: The subgraph that consists of the paths of length at most *k* between any two nodes of the specified source nodes
 - **Paths From To**: All shortest paths between specified source nodes and target nodes with a maximum length limit *k* and a further distance *d*
 
-For more details about these queries, please refer to [cytoscape.js-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
+For more details about these queries, please refer to [centrality](https://js.cytoscape.org/#collection/centrality) section of Cytoscape.js and [cytoscape.js-graph-algos](https://github.com/iVis-at-Bilkent/cytoscape.js-graph-algos) GitHub repository.
 
 ## Usage
 
@@ -152,6 +156,41 @@ For supported layout options, please check the documentation of the associated l
 
 The query options change depending on the query type:
 
+Degree Centrality: 
+```
+  queryOptions: {
+    query: 'degreeCentrality',  // query type
+    direction: 'DIRECTED',      // direction of the search
+    highlight: true             // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00',  // highlight color (valid only if highlight option is true)
+  } 
+```
+Closeness Centrality: 
+```
+  queryOptions: {
+    query: 'closenessCentrality',  // query type
+    direction: 'DIRECTED',         // direction of the search
+    highlight: true                // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00',     // highlight color (valid only if highlight option is true)
+  } 
+```
+Betweenness Centrality: 
+```
+  queryOptions: {
+    query: 'betweennessCentrality',  // query type
+    direction: 'DIRECTED',           // direction of the search
+    highlight: true                  // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00',       // highlight color (valid only if highlight option is true)
+  } 
+```
+Page Rank: 
+```
+  queryOptions: {
+    query: 'pageRank',  // query type
+    highlight: true                  // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00',       // highlight color (valid only if highlight option is true)
+  } 
+```
 Shortest Path: 
 ```
   queryOptions: {
@@ -199,7 +238,6 @@ Paths Between:
     query: 'pathsBetween',                 // query type
     sourceNodes: [nodeID1, nodeID2, ...],  // source nodes
     limit: 1,                              // path length limit
-    direction: 'BOTHSTREAM',               // direction of the search
     sourceColor: '#00ff00',                // highlight color for source nodes  
     pathColor: '#ffff00',                  // highlight color for resulting elements
     highlightWidth: 10,                    // underlay padding used to highlight elements
@@ -222,7 +260,7 @@ Paths From To:
     cropToResult: false                    // whether to crop the image to the query result
   } 
 ```
-where `direction` is one of `UPSTREAM`, `DOWNSTREAM` or `BOTHSTREAM` for `kNeighborhood`, `commonStream` and `pathsBetween` queries and one of `DIRECTED` or `UNDIRECTED` for `shortestPath` and `pathsFromTo` queries. 
+where `direction` is one of `UPSTREAM`, `DOWNSTREAM` or `BOTHSTREAM` for `kNeighborhood` and `commonStream` queries and one of `DIRECTED` or `UNDIRECTED` for `degreeCentrality`, `closenessCentrality`, `betweennessCentrality`, `shortestPath` and `pathsFromTo` queries. 
 
 In case you do not need layout applied, you should either not provide `layoutOptions` or provide `preset` the layout style. If you do not provide `imageOptions`, default ones will be used. To disable image output (in case you only need the output JSON file back with layout information), you should set `image` option to `false` in your request URL, which is `true` by default:
 ```
@@ -310,4 +348,4 @@ Third-party libraries used in demo client:
 
 ## Team
 
-[Hasan Balci](https://github.com/hasanbalci), [Yusuf Ziya Özgül](https://github.com/YusufZiyaOzgul), [Perman Atayev](https://github.com/PermanAtayev) and [Ugur Dogrusoz](https://github.com/ugurdogrusoz) of [i-Vis at Bilkent University](http://www.cs.bilkent.edu.tr/~ivis)
+[Hasan Balci](https://github.com/hasanbalci), [Ugur Dogrusoz](https://github.com/ugurdogrusoz), [Yusuf Ziya Özgül](https://github.com/YusufZiyaOzgul) and [Perman Atayev](https://github.com/PermanAtayev) of [i-Vis at Bilkent University](http://www.cs.bilkent.edu.tr/~ivis)
