@@ -161,8 +161,8 @@ Degree Centrality:
   queryOptions: {
     query: 'degreeCentrality',  // query type
     direction: 'DIRECTED',      // direction of the search
-    highlight: true             // whether to highlight nodes based on the resulting values
-    highlightColor: '#00ff00',  // highlight color (valid only if highlight option is true)
+    highlight: true,            // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00'   // highlight color (valid only if highlight option is true)
   } 
 ```
 Closeness Centrality: 
@@ -170,8 +170,8 @@ Closeness Centrality:
   queryOptions: {
     query: 'closenessCentrality',  // query type
     direction: 'DIRECTED',         // direction of the search
-    highlight: true                // whether to highlight nodes based on the resulting values
-    highlightColor: '#00ff00',     // highlight color (valid only if highlight option is true)
+    highlight: true,               // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00'      // highlight color (valid only if highlight option is true)
   } 
 ```
 Betweenness Centrality: 
@@ -179,16 +179,16 @@ Betweenness Centrality:
   queryOptions: {
     query: 'betweennessCentrality',  // query type
     direction: 'DIRECTED',           // direction of the search
-    highlight: true                  // whether to highlight nodes based on the resulting values
-    highlightColor: '#00ff00',       // highlight color (valid only if highlight option is true)
+    highlight: true,                 // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00'        // highlight color (valid only if highlight option is true)
   } 
 ```
 Page Rank: 
 ```
   queryOptions: {
     query: 'pageRank',          // query type
-    highlight: true             // whether to highlight nodes based on the resulting values
-    highlightColor: '#00ff00',  // highlight color (valid only if highlight option is true)
+    highlight: true,            // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00'   // highlight color (valid only if highlight option is true)
   } 
 ```
 Shortest Path: 
