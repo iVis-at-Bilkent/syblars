@@ -186,9 +186,9 @@ Betweenness Centrality:
 Page Rank: 
 ```
   queryOptions: {
-    query: 'pageRank',  // query type
-    highlight: true                  // whether to highlight nodes based on the resulting values
-    highlightColor: '#00ff00',       // highlight color (valid only if highlight option is true)
+    query: 'pageRank',          // query type
+    highlight: true             // whether to highlight nodes based on the resulting values
+    highlightColor: '#00ff00',  // highlight color (valid only if highlight option is true)
   } 
 ```
 Shortest Path: 
