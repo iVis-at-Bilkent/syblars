@@ -431,6 +431,7 @@ let pathsBetweenQuery = Backbone.View.extend({
     cropToResult: false,
     sourceNodes: [],
     limit: 1,
+    direction: "DIRECTED",
     sourceColor: "#00ff00",
     pathColor: "#ffff00",
     highlightWidth: 10
@@ -456,10 +457,12 @@ let pathsBetweenQuery = Backbone.View.extend({
     $("#" + previousQuery + "-query-table").hide();
     $(self.el).html(self.template);
     fillNodesFunc("pathsBetween", nodeData);
+    document.getElementById("directionPB").value = self.currentQueryProperties.direction;
     $(self.el).show();
 
     $(document).off("click", "#pathsBetween-save-query").on("click", "#pathsBetween-save-query", function (evt) {
       self.currentQueryProperties.sourceNodes = $("#sourceNodesPB").dropdown("get value");
+      self.currentQueryProperties.direction = document.getElementById("directionPB").value;
       self.currentQueryProperties.limit = Number(document.getElementById("limitPB").value);
       self.currentQueryProperties.sourceColor = document.getElementById("sourceColorPB").value;
       self.currentQueryProperties.pathColor = document.getElementById("pathColorPB").value;

@@ -948,6 +948,13 @@
           <div class="two wide field">
             <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
+          <span class="add-on layout-text option-label"> Direction: </span>
+          <div class="three wide field">
+            <select id="directionPB">
+              <option value="DIRECTED">Directed</option>
+              <option value="UNDIRECTED">Undirected</option>
+            </select>
+          </div>
         </div>
         <div class="inline fields">
           <span class="add-on layout-text option-label"> Source: </span>

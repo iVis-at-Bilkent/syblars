@@ -267,7 +267,7 @@ app.post('/:format', (req, res) => {
         queryOptions.furtherDistance = 1;
       }
       if(!queryOptions.direction) {
-        if(queryOptions.query == 'pathsFromTo') {
+        if(queryOptions.query == 'pathsBetween' || queryOptions.query == 'pathsFromTo') {
           queryOptions.direction = "DIRECTED";
         }
         else {
@@ -332,7 +332,7 @@ app.post('/:format', (req, res) => {
         }
         else if(queryOptions.query == 'pathsBetween') {
           queryResult = cy.collection();
-          result = cy.elements().pathsBetween(sourceNodes, queryOptions.limit);
+          result = cy.elements().pathsBetween(sourceNodes, queryOptions.limit, queryOptions.direction);
           queryResult.merge(result.resultNodes).merge(result.resultEdges);
         }
         else if(queryOptions.query == 'pathsFromTo') {

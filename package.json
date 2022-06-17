@@ -30,7 +30,7 @@
     "cytoscape-cola": "^2.4.0",
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-fcose": "github:iVis-at-Bilkent/cytoscape.js-fcose#unstable",
-    "cytoscape-graph-algos": "github:iVis-at-Bilkent/cytoscape.js-graph-algos#1abe621c5aecf5149934236d310ca4c5961827a4",
+    "cytoscape-graph-algos": "github:iVis-at-Bilkent/cytoscape.js-graph-algos#444eae85df5be17d958e96eb867d34c9fd3e1066",
     "cytoscape-graphml": "^1.0.6",
     "cytoscape-klay": "^3.1.4",
     "cytoscape-layout-utilities": "^1.0.2",
