@@ -81,9 +81,19 @@ app.use((req, res, next) => {
         })
 
         req.on('end', () => {
-            for (id = 0; id < body.length && body[id] != '{'; id++);
-            options = body.substring(id);
-            data = body.substring(0, id);
+            let indexOfOptions = Math.min(body.includes("layoutOptions") ? body.indexOf("layoutOptions") : Number.MAX_SAFE_INTEGER,
+            body.includes("imageOptions") ? body.indexOf("imageOptions") : Number.MAX_SAFE_INTEGER, 
+            body.includes("queryOptions") ? body.indexOf("queryOptions") : Number.MAX_SAFE_INTEGER);
+            let indexOfOptionsStart;
+            if (indexOfOptions != Number.MAX_SAFE_INTEGER) {
+              indexOfOptionsStart = body.substring(0, indexOfOptions).lastIndexOf("{");
+              options = body.substring(indexOfOptionsStart);
+              data = body.substring(0, indexOfOptionsStart);
+            }
+            else {
+              data = body;
+              options = "";
+            }
 
             let foundSBGN = body.includes("sbgn");
             let foundSBML = body.includes("sbml");
@@ -102,7 +112,7 @@ app.use((req, res, next) => {
             }
             else {
                 try {
-                    options = JSON.parse(options);
+                  options = JSON.parse(options);
                 }
                 catch (e) {
                   errorMessage = "Sorry! Cannot process the given options!"
@@ -112,7 +122,7 @@ app.use((req, res, next) => {
                     data = convertSBGNtoCytoscape(data);
                   }
                   else if (foundSBML) {
-                      data = convertSBMLtoCytoscape(libsbmlInstance, data);
+                    data = convertSBMLtoCytoscape(libsbmlInstance, data);
                   }
                 }
                 catch (e) {
