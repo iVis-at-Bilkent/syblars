@@ -222,10 +222,14 @@ app.post('/:format', (req, res) => {
     }
 
     if(req.query.nodeInfo) {
-      let ret = {};
+      let ret = {
+        nodeData: {}
+      };
       cy.nodes().forEach(function(node){
-        ret[node.id()] = node.data('label') ? node.data('label') : "";
+        ret["nodeData"][node.id()] = node.data('label') ? node.data('label') : "";
       });
+      ret["nodeAmount"] = cy.nodes().length;
+      ret["edgeAmount"] = cy.edges().length;
       return res.status(200).send(ret);
     }
 

@@ -7,6 +7,7 @@ let blobData; // blob data for image
 let imageFormat;
 let fileType;
 let nodeData; // object keeps node ids and labels 
+let areNodesInProcess;
 
 let setFileContent = function (fileName) {
     let span = document.getElementById('file-name');
@@ -133,20 +134,25 @@ let processNodes = async function () {
             return result;
           })
           .catch(e => {
-            return alert("Sorry! Cannot process the given file!");
+            //return alert("Sorry! Cannot process the given file!");
           });
        
-  if(!res.errorMessage) {
+  if(res && !res.errorMessage) {
+    if((res["nodeAmount"] > 2000 || res["edgeAmount"] > 2000) && heroku) {
+      return false;
+    }
     // get layout info
-    nodeData = res;
+    nodeData = res["nodeData"];
+    return true;
   }
   else {
-    if(res.errorMessage) {
+    if(res && res.errorMessage) {
       alert(res.errorMessage);
     }
     else {
       alert("Sorry! Cannot process the given file!");
     }
+    return "error";
   }
 };
 
@@ -303,7 +309,7 @@ let processLayout = async function () {
 
 $('#applyLayout').click(function(){
 
-  if(graphData !== undefined) {
+  if(graphData !== undefined && !areNodesInProcess) {
     processLayout();
     $("#applyLayout").addClass("loading");
     $("#applyLayout").css("background-color", "#f2711c");
@@ -353,8 +359,34 @@ $("body").on("change", "#file-input", function (e, fileObject) {
         let isJSON = (file.type == 'application/json') ? 1 : 0;
         let isGraphML = (graphData.search("graphml") == -1) ? 0 : 1;
         let isSBGNML = (graphData.search("sbgn") == -1) ? 0 : 1;
-        let isSBML = (graphData.search("sbml") == -1) ? 0 : 1;        
-        if(isGraphML) {
+        let isSBML = (graphData.search("sbml") == -1) ? 0 : 1;
+        let validFile = false;
+        let processFile = false;
+        if(isJSON || isGraphML || isSBGNML || isSBML) {
+          $("#file-type").html("File is being loaded...");
+          validFile = true;
+          areNodesInProcess = true;
+          processFile = await processNodes();
+          areNodesInProcess = false;
+        }
+        if(processFile == "error" || !processFile) {
+          fileType = undefined;
+          if(!validFile) {
+            $("#file-type").html("File format is not valid! <br> Load SBGNML, SBML, GraphML or JSON.");
+          }
+          else if(!processFile){
+            $("#file-type").html("This file is too big for this sample app! <br> You can try it with a local deployment.");
+          }
+          else {
+            $("#file-type").html("");
+          }
+          $("#colorScheme").attr("disabled", true);
+          $("#color").attr("disabled", false);
+          $("#resultText").val("");
+          $("#resultImage").attr("src", null);
+          graphData = undefined;
+        }
+        else if(isGraphML) {
           fileType = "graphml";
           $("#file-type").html("GraphML file is detected! <br> Now you can apply layout.");
           $("#colorScheme").attr("disabled", true);
@@ -396,7 +428,6 @@ $("body").on("change", "#file-input", function (e, fileObject) {
         $("#queryTab").css("pointer-events", "all");
         $("#queryTab").removeClass("disabled");                
         blobData = undefined;
-        await processNodes();
         $("#queryType").trigger('change');       
     };
     reader.readAsText(file);
