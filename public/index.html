@@ -137,17 +137,17 @@
                   <img class="ui image" id="imageSettingsDefault" title="Reset to default" src="img/settings.svg" style="height: 25px; width: 25px; margin-left: 30px; margin-top: 0px; float: right; padding: 2.5px">
                 </div>
                 <div class="inline fields">
-                  <span class="add-on layout-text option-label"> Width: </span>
+                  <span class="add-on layout-text option-label" title="Desired image width"> Width: </span>
                   <div class="two wide field">
                     <input type="number" id="imageWidth" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value="1280" min="1">
                   </div>
-                  <span class="add-on layout-text option-label"> Height: </span>
+                  <span class="add-on layout-text option-label" title="Desired image height"> Height: </span>
                   <div class="two wide field">
                     <input type="number" id="imageHeight" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value="720" min="1">
                   </div>
                 </div>
                 <div class="inline fields">
-                  <span class="add-on layout-text option-label"> Color: </span>
+                  <span class="add-on layout-text option-label" title="Node color"> Color: </span>
                   <div class="two wide field">
                     <input type="color" id="color" value="#9ecae1">
                   </div>
@@ -168,8 +168,8 @@
                   </div>
                 </div>
                 <div class="inline fields">
-                  <span class="add-on layout-text option-label"> Background: </span>
-                  <div class="two wide field">                  
+                  <span class="add-on layout-text option-label" title="Image background color"> Background: </span>
+                  <div class="two wide field">
                     <input type="color" disabled id="imageBackground" value="#ffffff">
                   </div>
                   <!-- <div class="ui checkbox" style="margin-left: 5px;"> -->
@@ -199,7 +199,7 @@
                     </select>
                   </div>
                   <div class="field" style="margin-left: 15px">
-                    <span class="add-on layout-text option-label" style="margin-right:5px">Crop to Result:</span>
+                    <span class="add-on layout-text option-label" style="margin-right:5px" title="Whether or not to crop the image to the query result">Crop to Result:</span>
                       <input type="checkbox" id="cropToResult">
                       <label style="margin-top: 4px"></label>
                   </div>
@@ -354,19 +354,19 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to include labels in node dimensions"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels1" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Uniform Node Dimensions: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not simple nodes (non-compound nodes) are of uniform dimensions"> Uniform Node Dimensions: </span>
             <input id="uniformNodeDimensions1" type="checkbox"<% if(uniformNodeDimensions){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to pack disconnected components"> Pack Components: </span>
             <input id="packComponents1" type="checkbox"<% if(packComponents){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Tile: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to enable tiling for zero-degree nodes"> Tile: </span>
             <input id="tile1" type="checkbox"<% if(tile){ %> checked <%}%> >
           </div>
         </div>
@@ -384,15 +384,15 @@
             <input id="idealEdgeLength1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" value = <%= idealEdgeLength %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Edge Elasticity </span>
+            <span class="add-on layout-text" title="Divisor to compute edge forces"> Edge Elasticity </span>
             <input id="edgeElasticity1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" step="0.1" value = <%= edgeElasticity %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Nesting Factor </span>
+            <span class="add-on layout-text" title="Nesting factor (multiplier) to compute ideal edge length for nested edges"> Nesting Factor </span>
             <input id="nestingFactor1" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" type="number" min="0" step="0.1" value = <%= nestingFactor %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Number of Iter. </span>
+            <span class="add-on layout-text" title="Maximum number of iterations to perform"> Number of Iter. </span>
             <input id="numIter1" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= numIter %> >
           </div>
         </div>
@@ -431,15 +431,15 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to include labels in node dimensions"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels2" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Avoid Overlap: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to prevent overlap of node bounding boxes"> Avoid Overlap: </span>
             <input id="avoidOverlap2" type="checkbox"<% if(avoidOverlap){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Handle Disconnected: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to avoid disconnected components from overlapping"> Handle Disconnected: </span>
             <input id="handleDisconnected2" type="checkbox"<% if(handleDisconnected){ %> checked <%}%> >
           </div>
         </div>
@@ -461,25 +461,25 @@
             <input id="edgeLength2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeLength %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Edge SymDiff Length </span>
+            <span class="add-on layout-text" title="Symmetric diff edge length in simulation"> Edge SymDiff Length </span>
             <input id="edgeSymDiffLength2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeSymDiffLength %> >
           </div>
         </div>
         <div class="equal width fields">
           <div class="field">
-            <span class="add-on layout-text"> Edge Jaccard Length </span>
+            <span class="add-on layout-text" title="Jaccard edge length in simulation"> Edge Jaccard Length </span>
             <input id="edgeJaccardLength2" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= edgeJaccardLength %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Unconstraint Iterations </span>
+            <span class="add-on layout-text" title="Unconstrained initial layout iterations"> Unconstraint Iterations </span>
             <input id="unconstrIter2" type="number" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value = <%= unconstrIter %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> User Constraint Iterations </span>
+            <span class="add-on layout-text" title="Initial layout iterations with user-specified constraints"> User Constraint Iterations </span>
             <input id="userConstIter2" type="number" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" value = <%= userConstIter %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> All Constraint Iterations </span>
+            <span class="add-on layout-text" title="Initial layout iterations with all constraints including non-overlap"> All Constraint Iterations </span>
             <input id="allConstIter2" type="number" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0"value = <%= allConstIter %> >
           </div>
           <div class="field">
@@ -494,15 +494,15 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to include labels in node dimensions"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels3" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Pack Components: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to pack disconnected components"> Pack Components: </span>
             <input id="packComponents3" type="checkbox"<% if(packComponents){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Allow Nodes Inside Circle: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to pull on-circle nodes inside of the circle"> Allow Nodes Inside Circle: </span>
             <input id="allowNodesInsideCircle3" type="checkbox"<% if(allowNodesInsideCircle){ %> checked <%}%> >
           </div>
         </div>
@@ -551,7 +551,7 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to include labels in node dimensions"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels4" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
         </div>
@@ -586,41 +586,41 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Node Dimensions Include Labels: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to include labels in node dimensions"> Node Dimensions Include Labels: </span>
             <input id="nodeDimensionsIncludeLabels5" type="checkbox"<% if(nodeDimensionsIncludeLabels){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Compact Components: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Try to further compact components (disconnected sub-graphs)"> Compact Components: </span>
             <input id="compactComponents5" type="checkbox"<% if(klay.compactComponents){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Feedback Edges: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not feedback edges should be highlighted by routing around the nodes."> Feedback Edges: </span>
             <input id="feedbackEdges5" type="checkbox"<% if(klay.feedbackEdges){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Layout Hierarchy: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not the selected layouter should consider the full hierarchy"> Layout Hierarchy: </span>
             <input id="layoutHierarchy5" type="checkbox"<% if(klay.layoutHierarchy){ %> checked <%}%> > 
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Merge Edges: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Edges that have no ports are merged so they touch the connected nodes at the same points"> Merge Edges: </span>
             <input id="mergeEdges5" type="checkbox"<% if(klay.mergeEdges){ %> checked <%}%> >  
           </div>
         </div>
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Merge Hier. Crossing Edges: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="If hierarchical layout is active, hierarchy-crossing edges use as few hierarchical ports as possible"> Merge Hier. Crossing Edges: </span>
             <input id="mergeHierarchyCrossingEdges5" type="checkbox"<% if(klay.mergeHierarchyCrossingEdges){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Add Unnec. Bendpoints: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Add bend points even if an edge does not change direction"> Add Unnec. Bendpoints: </span>
             <input id="addUnnecessaryBendpoints5" type="checkbox"<% if(klay.addUnnecessaryBendpoints){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Route Self Loop Inside: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not a self-loop is routed around or inside its node"> Route Self Loop Inside: </span>
             <input id="routeSelfLoopInside5" type="checkbox"<% if(klay.routeSelfLoopInside){ %> checked <%}%> >
           </div>
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Separate Conn. Components: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not each connected component should be processed separately"> Separate Conn. Components: </span>
             <input id="separateConnectedComponents5" type="checkbox"<% if(klay.separateConnectedComponents){ %> checked <%}%> >
           </div>
         </div>
@@ -634,21 +634,21 @@
             <input id="aspectRatio5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.aspectRatio %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Border Spacing </span>
+            <span class="add-on layout-text" title="Minimal amount of space to be left to the border"> Border Spacing </span>
             <input id="borderSpacing5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.borderSpacing %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Edge Spacing Factor </span>
+            <span class="add-on layout-text" title="Factor by which the object spacing is multiplied to arrive at the minimal spacing between edges"> Edge Spacing Factor </span>
             <input id="edgeSpacingFactor5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.edgeSpacingFactor %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> In-Layer Spacing Factor </span>
+            <span class="add-on layout-text" title="Factor by which the usual spacing is multiplied to determine the in-layer spacing between objects"> In-Layer Spacing Factor </span>
             <input id="inLayerSpacingFactor5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.inLayerSpacingFactor %> >
           </div>
         </div>
         <div class="equal width fields">
           <div class="field">
-            <span class="add-on layout-text"> Linear Seg. Defl. Damp. </span>
+            <span class="add-on layout-text" title="Dampen the movement of nodes to keep the diagram from getting too large"> Linear Seg. Defl. Damp. </span>
             <input id="linearSegmentsDeflectionDampening5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" step="0.1" value = <%= klay.linearSegmentsDeflectionDampening %> >
           </div>
           <div class="field">
@@ -660,7 +660,7 @@
             <input id="spacing5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.spacing %> >
           </div>
           <div class="field">
-            <span class="add-on layout-text"> Thoroughness </span>
+            <span class="add-on layout-text" title="How much effort should be spent to produce a nice layout"> Thoroughness </span>
             <input id="thoroughness5" type="number" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="0" value = <%= klay.thoroughness %> >
           </div>
           <div class="field">
@@ -719,7 +719,7 @@
     <script type="text/template" id="degreeCentrality-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionDC">
               <option value="DIRECTED">Directed</option>
@@ -729,10 +729,10 @@
         </div>
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to highlight nodes based on the resulting values"> Highlight: </span>
             <input id="highlightDC" type="checkbox"<% if(highlight){ %> checked <%}%> >
           </div>
-          <span class="add-on layout-text option-label"> Color: </span>
+          <span class="add-on layout-text option-label" title="Highlight color (valid only if highlight option is true)"> Color: </span>
           <div class="two wide field">
             <input type="color" id="highlightColorDC" value= <%= highlightColor %>>
           </div>
@@ -745,7 +745,7 @@
     <script type="text/template" id="closenessCentrality-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionCC">
               <option value="DIRECTED">Directed</option>
@@ -755,10 +755,10 @@
         </div>
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to highlight nodes based on the resulting values"> Highlight: </span>
             <input id="highlightCC" type="checkbox"<% if(highlight){ %> checked <%}%> >
           </div>
-          <span class="add-on layout-text option-label"> Color: </span>
+          <span class="add-on layout-text option-label" title="Highlight color (valid only if highlight option is true)"> Color: </span>
           <div class="two wide field">
             <input type="color" id="highlightColorCC" value= <%= highlightColor %>>
           </div>
@@ -771,7 +771,7 @@
     <script type="text/template" id="betweennessCentrality-settings-template">
       <div class="ui tiny form">
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionBC">
               <option value="DIRECTED">Directed</option>
@@ -781,10 +781,10 @@
         </div>
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to highlight nodes based on the resulting values"> Highlight: </span>
             <input id="highlightBC" type="checkbox"<% if(highlight){ %> checked <%}%> >
           </div>
-          <span class="add-on layout-text option-label"> Color: </span>
+          <span class="add-on layout-text option-label" title="Highlight color (valid only if highlight option is true)"> Color: </span>
           <div class="two wide field">
             <input type="color" id="highlightColorBC" value= <%= highlightColor %>>
           </div>
@@ -798,10 +798,10 @@
       <div class="ui tiny form">
         <div class="inline fields">
           <div class="field" style="margin-right: 5px">
-            <span class="add-on layout-text" style="margin-right: 5px"> Highlight: </span>
+            <span class="add-on layout-text" style="margin-right: 5px" title="Whether or not to highlight nodes based on the resulting values"> Highlight: </span>
             <input id="highlightPR" type="checkbox"<% if(highlight){ %> checked <%}%> >
           </div>
-          <span class="add-on layout-text option-label"> Color: </span>
+          <span class="add-on layout-text option-label" title="Highlight color (valid only if highlight option is true)"> Color: </span>
           <div class="two wide field">
             <input type="color" id="highlightColorPR" value= <%= highlightColor %>>
           </div>
@@ -824,7 +824,7 @@
           </div>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionSP">
               <option value="DIRECTED">Directed</option>
@@ -833,22 +833,22 @@
           </div>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Source: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for source node"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorSP" value= <%= sourceColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Target: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for target node"> Target: </span>
           <div class="two wide field">
             <input type="color" id="targetColorSP" value= <%= targetColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Path: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for resulting elements"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorSP" value= <%= pathColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Highlight Width: </span>
+          <span class="add-on layout-text option-label" title="Underlay padding used to highlight elements"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthSP" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
-          </div>          
+          </div>
         </div>
         <button class="ui button" id="shortestPath-default-query" style="display:none">Default</button>
         <button class="ui primary button" id="shortestPath-save-query" style="float: right; display:none" >Save</button>
@@ -862,11 +862,11 @@
           <select multiple="" id="sourceNodesKN" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> k (limit): </span>
+          <span class="add-on layout-text option-label" title="Path length limit"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionKN">
               <option value="BOTHSTREAM">Both Stream</option>
@@ -876,15 +876,15 @@
           </div>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Source: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for source nodes"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorKN" value= <%= sourceColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Path: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for resulting elements"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorKN" value= <%= pathColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Highlight Width: </span>
+          <span class="add-on layout-text option-label" title="Underlay padding used to highlight elements"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthKN" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>
@@ -901,11 +901,11 @@
           <select multiple="" id="sourceNodesCS" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> k (limit): </span>
+          <span class="add-on layout-text option-label" title="Path length limit"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionCS">
               <option value="BOTHSTREAM">Both Stream</option>
@@ -915,19 +915,19 @@
           </div>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Source: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for source nodes"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorCS" value= <%= sourceColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Target: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for common nodes in stream"> Target: </span>
           <div class="two wide field">
             <input type="color" id="targetColorCS" value= <%= targetColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Path: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for resulting elements"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorCS" value= <%= pathColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Highlight Width: </span>
+          <span class="add-on layout-text option-label" title="Underlay padding used to highlight elements"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthCS" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>
@@ -944,11 +944,11 @@
           <select multiple="" id="sourceNodesPB" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> k (limit): </span>
+          <span class="add-on layout-text option-label" title="Path length limit"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionPB">
               <option value="DIRECTED">Directed</option>
@@ -957,15 +957,15 @@
           </div>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Source: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for source nodes"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorPB" value= <%= sourceColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Path: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for resulting elements"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorPB" value= <%= pathColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Highlight Width: </span>
+          <span class="add-on layout-text option-label" title="Underlay padding used to highlight elements"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthPB" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>
@@ -986,15 +986,15 @@
           <select multiple="" id="targetNodesPFT" class="ui tiny dropdown"></select>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> k (limit): </span>
+          <span class="add-on layout-text option-label" title="Path length limit"> k (limit): </span>
           <div class="two wide field">
             <input type="number" id="limitPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= limit %>>
           </div>
-          <span class="add-on layout-text option-label"> Further Distance: </span>
+          <span class="add-on layout-text option-label" title="Parameter for 'relaxing' the path length limit"> Further Distance: </span>
           <div class="two wide field">
             <input type="number" id="furtherDistancePFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= furtherDistance %>>
           </div>
-          <span class="add-on layout-text option-label"> Direction: </span>
+          <span class="add-on layout-text option-label" title="Direction of the search"> Direction: </span>
           <div class="three wide field">
             <select id="directionPFT">
               <option value="DIRECTED">Directed</option>
@@ -1003,19 +1003,19 @@
           </div>
         </div>
         <div class="inline fields">
-          <span class="add-on layout-text option-label"> Source: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for source nodes"> Source: </span>
           <div class="two wide field">
             <input type="color" id="sourceColorPFT" value= <%= sourceColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Target: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for target nodes"> Target: </span>
           <div class="two wide field">
             <input type="color" id="targetColorPFT" value= <%= targetColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Path: </span>
+          <span class="add-on layout-text option-label" title="Highlight color for resulting elements"> Path: </span>
           <div class="two wide field">
             <input type="color" id="pathColorPFT" value= <%= pathColor %>>
           </div>
-          <span class="add-on layout-text option-label"> Highlight Width: </span>
+          <span class="add-on layout-text option-label" title="Underlay padding used to highlight elements"> Highlight Width: </span>
           <div class="two wide field">
             <input type="number" id="highlightWidthPFT" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : 0" min="1" value= <%= highlightWidth %>>
           </div>
