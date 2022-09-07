@@ -29,7 +29,7 @@ In order to deploy and run a local instance of the service, please follow the st
 ```
 git clone https://github.com/iVis-at-Bilkent/syblars.git
 cd syblars
-npm install 
+npm install   // this may take a while
 ```
 
 ### Starting server
@@ -37,7 +37,24 @@ The default port is 3000, you can change it by setting 'port' environment variab
 ```
 npm run dev
 ```
-**Note:** This service uses [Puppeteer](https://pptr.dev) to generate the output. Please refer to the [Puppeteer documentation](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#troubleshooting) to ensure that your machine is configured properly to run Chrome headlessly.
+
+**Note #1:** We recommend the use of Node.js version 14.x and npm version 6.x. We used Node.js v14.18.0 and npm v6.14.8 during development.
+
+**Note #2:** This service uses [Puppeteer](https://pptr.dev) to generate the output. Please refer to the [Puppeteer documentation](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#troubleshooting) to ensure that your machine is configured properly to run Chrome headlessly.
+
+### Docker
+Alternatively, you can use Dockerfile provided in the root directory. Please note that Dockerfile currently works in Linux and Windows environments and **does not** work in macOS because of Puppeteer related issues. To run the Dockerfile:
+
+First, `cd` into the folder where Dockerfile is located.
+
+Then, build a Docker image with name *syblars* (this may take a while).
+```
+docker build -t syblars .
+```
+Lastly, run the image from port 3000. If you want to use another port, please change the first port number in below command.
+```
+docker run -p 3000:3000 syblars
+```
 
 ## Supported formats
 SyBLaRS supports the following input formats for graphs:
