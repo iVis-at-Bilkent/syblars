@@ -114,8 +114,17 @@ let processNodes = async function () {
 
   let data;
   if (!isGraphML && !isSBGNML && !isSBML) {
-    data = [JSON.parse(graphData), options];
-    data = JSON.stringify(data);
+    try {
+      data = [JSON.parse(graphData), options];
+      data = JSON.stringify(data);
+    }
+    catch (e) {
+      let errorContent = document.getElementById("errorContent");
+      let errorString = "<b>Sorry! Cannot process the given file!</b><br><br>There is something wrong with the format of this JSON file!<br><br>Error detail: <br>";
+      errorContent.innerHTML = errorString + e;
+      $('#errorModal').modal({inverted: true}).modal('show');
+      return "error";
+    }
   } else
     data = graphData + JSON.stringify(options);
   
@@ -147,10 +156,14 @@ let processNodes = async function () {
   }
   else {
     if(res && res.errorMessage) {
-      alert(res.errorMessage);
+      let errorContent = document.getElementById("errorContent");
+      errorContent.innerHTML = res.errorMessage;
+      $('#errorModal').modal({inverted: true}).modal('show');
     }
     else {
-      alert("Sorry! Cannot process the given file!");
+      let errorContent = document.getElementById("errorContent");
+      errorContent.innerHTML = "<b>Sorry! Cannot process the given file!</b>";
+      $('#errorModal').modal({inverted: true}).modal('show');
     }
     return "error";
   }
@@ -280,7 +293,9 @@ let processLayout = async function () {
             return result;
           })
           .catch(e => {
-            return alert("Sorry! Cannot process the given file!");
+            let errorContent = document.getElementById("errorContent");
+            errorContent.innerHTML = "<b>Sorry! Cannot process the given file!</b><br><br>Error detail:<br>" + e;
+            $('#errorModal').modal({inverted: true}).modal('show');
           });
 
   $("#applyLayout").removeClass("loading");
@@ -299,10 +314,14 @@ let processLayout = async function () {
   }
   else {
     if(res.errorMessage) {
-      alert(res.errorMessage);
+      let errorContent = document.getElementById("errorContent");
+      errorContent.innerHTML = res.errorMessage;
+      $('#errorModal').modal({inverted: true}).modal('show');
     }
     else {
-      alert("Sorry! Cannot process the given file!");
+      let errorContent = document.getElementById("errorContent");
+      errorContent.innerHTML = "<b>Sorry! Cannot process the given file!</b>";
+      $('#errorModal').modal({inverted: true}).modal('show');
     }
   }
 };

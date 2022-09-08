@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cytoscape = require('cytoscape');
 const fs = require('fs');
+const { Console } = require('node:console');
 const cors = require('cors');
 const libsbml = require('libsbmljs_stable');
 const libsbmlInstance = libsbml();
@@ -59,6 +60,12 @@ cytoscape.use(avsdf);
 const cola = require('cytoscape-cola');
 cytoscape.use(cola);
 
+// for logging
+
+const errorOutput = fs.createWriteStream('./syblars_error.log');
+// Custom simple logger
+const logger = new Console({ stdout: errorOutput });
+
 let cy;
 let options;
 let data;
@@ -103,19 +110,23 @@ app.use((req, res, next) => {
             if (isJson) {
                 try {
                     body = JSON.parse(body);
+                    data = body[0];
+                    options = body[1];
                 }
                 catch (e) {
-                  errorMessage = "Sorry! Cannot process the given file!"
+                  let date = new Date()
+                  errorMessage = "<b>Sorry! Cannot process the given file!</b><br><br>There is something wrong with the format of this JSON file!<br><br>Error detail: <br>" + e;                  
+                  logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
                 }
-                data = body[0];
-                options = body[1];
             }
             else {
                 try {
                   options = JSON.parse(options);
                 }
                 catch (e) {
-                  errorMessage = "Sorry! Cannot process the given options!"
+                  let date = new Date()
+                  errorMessage = "<b>Sorry! Cannot process the given file!</b><br><br>There is something wrong with the format of the options!<br><br>Error detail: <br>" + e;                  
+                  logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
                 }
                 try {
                   if (foundSBGN) { // sbgnml
@@ -126,13 +137,15 @@ app.use((req, res, next) => {
                   }
                 }
                 catch (e) {
-                  errorMessage = "Sorry! Cannot process the given file!"
+                  let date = new Date()
+                  errorMessage = "<b>Sorry! Cannot process the given file!</b><br><br>Either format of the file is wrong or there is something that we do not support.<br><br>Error detail: <br>" + e;                  
+                  logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
                 }
             }
             if(errorMessage) {
               return res.status(500).send({
                 errorMessage: errorMessage
-             });
+              });
             }
             else {
               next();
@@ -142,7 +155,6 @@ app.use((req, res, next) => {
     else
         next();
 });
-// check if an object is empty or not
 
 // whether to include edges in the output or not
 // POST :format?edges=true 
@@ -190,15 +202,25 @@ app.post('/:format', (req, res) => {
     }
     
     if (req.params.format === "graphml") {
-      cy.graphml({layoutBy: function(){
-        cy.nodes().forEach(function(node) {
-          node.position({x: parseFloat(node.data("x")), y: parseFloat(node.data("y"))});
-        }); 
-      }});
-      cy.graphml(data);     
-      cy.nodes().forEach((node) => {        
-        node.data("backgroundColor", imageOptions.color);
-      });
+      try {
+        cy.graphml({layoutBy: function(){
+          cy.nodes().forEach(function(node) {
+            node.position({x: parseFloat(node.data("x")), y: parseFloat(node.data("y"))});
+          }); 
+        }});
+        cy.graphml(data);     
+        cy.nodes().forEach((node) => {        
+          node.data("backgroundColor", imageOptions.color);
+        });
+      }
+      catch (e) {
+        let date = new Date()
+        errorMessage = "<b>Sorry! Cannot process the given file!</b><br><br>Either format of the file is wrong or there is something that we do not support.<br><br>Error detail: <br>" + e;                  
+        logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
+        return res.status(500).send({
+          errorMessage: errorMessage
+        });
+      }
     }
     else {
       if(req.params.format === "sbgnml") {  // add position info if exists
@@ -209,7 +231,17 @@ app.post('/:format', (req, res) => {
           }
         });
       }
-      cy.add(data);
+      try{
+        cy.add(data);
+      }
+      catch (e) {
+        let date = new Date()
+        errorMessage = "<b>Sorry! Cannot process the given file!</b><br><br>Unable to add nodes/edges.<br><br>Error detail: <br>" + e;                  
+        logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
+        return res.status(500).send({
+          errorMessage: errorMessage
+        });
+      }
       cy.nodes().forEach((node) => {
         if (req.params.format === "json" || req.params.format === "sbml") {
           node.data("backgroundColor", imageOptions.color);
@@ -356,166 +388,176 @@ app.post('/:format', (req, res) => {
         }
       }
       catch (e) {
-        errorMessage = "Sorry! Cannot process the given query!"
-      }
-      if(errorMessage) {
+        let date = new Date()
+        errorMessage = "<b>Sorry! Cannot process the given query!</b><br><br>Either format of the query options is wrong or there is a bug in our side.<br><br>Error detail: <br>" + e;
+        logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
         return res.status(500).send({
           errorMessage: errorMessage
-       });
+        });
       }
 
-      if(isCentrality) {
-        let round2dec = num => Math.round(num * 100) / 100;
+      try {
+        if(isCentrality) {
+          let round2dec = num => Math.round(num * 100) / 100;
 
-        if(queryOptions.query == 'degreeCentrality') {
-          if(queryOptions.direction == "DIRECTED") {
+          if(queryOptions.query == 'degreeCentrality') {
+            if(queryOptions.direction == "DIRECTED") {
+              cy.nodes().forEach(function(node){
+                if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+                  if(node.data('label')) {
+                    node.data('label', node.data('label') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  }
+                  else {
+                    node.data('label', "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  }
+                }
+                else if(req.params.format === 'graphml' || req.params.format === 'json'){
+                  if(node.data('label')) {
+                    node.data('label', node.data('label') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  }
+                  else {
+                    node.data('label', node.data('id') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  }
+                }
+                if(queryOptions.highlight === true) {
+                  node.addClass('highlight');
+                  node.data('highlightColor', queryOptions.highlightColor);
+                  node.data('highlightWidth', (round2dec(queryResult.indegree(node)) + round2dec(queryResult.outdegree(node))) / 2 * 10);                
+                }
+              });
+            }
+            else {
+              cy.nodes().forEach(function(node){
+                if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+                  if(node.data('label')) {
+                    node.data('label', node.data('label') + "\n(" + round2dec(queryResult.degree(node)) + ")");
+                  }
+                  else {
+                    node.data('label', "\n(" + round2dec(queryResult.degree(node)) + ")");
+                  }
+                }
+                else if(req.params.format === 'graphml' || req.params.format === 'json'){
+                  if(node.data('label')) {
+                    node.data('label', node.data('label') + "\n(" + round2dec(queryResult.degree(node)) + ")");
+                  }
+                  else {
+                    node.data('label', node.data('id') + "\n(" +round2dec( queryResult.degree(node)) + ")");
+                  }
+                }
+                if(queryOptions.highlight === true) {
+                  node.addClass('highlight');
+                  node.data('highlightColor', queryOptions.highlightColor);
+                  node.data('highlightWidth', round2dec(queryResult.degree(node)) * 10);                
+                }
+              });
+            }
+          }
+          else if(queryOptions.query == 'closenessCentrality') {
             cy.nodes().forEach(function(node){
               if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
                 if(node.data('label')) {
-                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
                 }
                 else {
-                  node.data('label', "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  node.data('label', "\n(" + round2dec(queryResult.closeness(node)) + ")");
                 }
               }
               else if(req.params.format === 'graphml' || req.params.format === 'json'){
                 if(node.data('label')) {
-                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
                 }
                 else {
-                  node.data('label', node.data('id') + "\n(" + round2dec(queryResult.indegree(node)) + ", " + round2dec(queryResult.outdegree(node)) + ")");
+                  node.data('label', node.data('id') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
                 }
               }
               if(queryOptions.highlight === true) {
                 node.addClass('highlight');
                 node.data('highlightColor', queryOptions.highlightColor);
-                node.data('highlightWidth', (round2dec(queryResult.indegree(node)) + round2dec(queryResult.outdegree(node))) / 2 * 10);                
+                node.data('highlightWidth', round2dec(queryResult.closeness(node)) * 10);
               }
             });
           }
-          else {
+          else if(queryOptions.query == 'betweennessCentrality') {
             cy.nodes().forEach(function(node){
               if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
                 if(node.data('label')) {
-                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.degree(node)) + ")");
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
                 }
                 else {
-                  node.data('label', "\n(" + round2dec(queryResult.degree(node)) + ")");
+                  node.data('label', "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
                 }
               }
               else if(req.params.format === 'graphml' || req.params.format === 'json'){
                 if(node.data('label')) {
-                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.degree(node)) + ")");
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
                 }
                 else {
-                  node.data('label', node.data('id') + "\n(" +round2dec( queryResult.degree(node)) + ")");
+                  node.data('label', node.data('id') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
                 }
               }
               if(queryOptions.highlight === true) {
                 node.addClass('highlight');
                 node.data('highlightColor', queryOptions.highlightColor);
-                node.data('highlightWidth', round2dec(queryResult.degree(node)) * 10);                
+                node.data('highlightWidth', round2dec(queryResult.betweennessNormalized(node)) * 10);
+              }
+            });
+          }
+          else if(queryOptions.query == 'pageRank') {
+            cy.nodes().forEach(function(node){
+              if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
+                if(node.data('label')) {
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.rank(node)) + ")");
+                }
+                else {
+                  node.data('label', "\n(" + round2dec(queryResult.rank(node)) + ")");
+                }
+              }
+              else if(req.params.format === 'graphml' || req.params.format === 'json'){
+                if(node.data('label')) {
+                  node.data('label', node.data('label') + "\n(" + round2dec(queryResult.rank(node)) + ")");
+                }
+                else {
+                  node.data('label', node.data('id') + "\n(" + round2dec(queryResult.rank(node)) + ")");
+                }
+              }
+              if(queryOptions.highlight === true) {
+                node.addClass('highlight');
+                node.data('highlightColor', queryOptions.highlightColor);
+                node.data('highlightWidth', round2dec(queryResult.rank(node)) * 100);
               }
             });
           }
         }
-        else if(queryOptions.query == 'closenessCentrality') {
-          cy.nodes().forEach(function(node){
-            if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
-              if(node.data('label')) {
-                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
-              }
-              else {
-                node.data('label', "\n(" + round2dec(queryResult.closeness(node)) + ")");
-              }
-            }
-            else if(req.params.format === 'graphml' || req.params.format === 'json'){
-              if(node.data('label')) {
-                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
-              }
-              else {
-                node.data('label', node.data('id') + "\n(" + round2dec(queryResult.closeness(node)) + ")");
-              }
-            }
-            if(queryOptions.highlight === true) {
-              node.addClass('highlight');
-              node.data('highlightColor', queryOptions.highlightColor);
-              node.data('highlightWidth', round2dec(queryResult.closeness(node)) * 10);
-            }
-          });
-        }
-        else if(queryOptions.query == 'betweennessCentrality') {
-          cy.nodes().forEach(function(node){
-            if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
-              if(node.data('label')) {
-                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
-              }
-              else {
-                node.data('label', "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
-              }
-            }
-            else if(req.params.format === 'graphml' || req.params.format === 'json'){
-              if(node.data('label')) {
-                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
-              }
-              else {
-                node.data('label', node.data('id') + "\n(" + round2dec(queryResult.betweennessNormalized(node)) + ")");
-              }
-            }
-            if(queryOptions.highlight === true) {
-              node.addClass('highlight');
-              node.data('highlightColor', queryOptions.highlightColor);
-              node.data('highlightWidth', round2dec(queryResult.betweennessNormalized(node)) * 10);
-            }
-          });
-        }
-        else if(queryOptions.query == 'pageRank') {
-          cy.nodes().forEach(function(node){
-            if(req.params.format === 'sbgnml' || req.params.format === 'sbml') {
-              if(node.data('label')) {
-                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.rank(node)) + ")");
-              }
-              else {
-                node.data('label', "\n(" + round2dec(queryResult.rank(node)) + ")");
-              }
-            }
-            else if(req.params.format === 'graphml' || req.params.format === 'json'){
-              if(node.data('label')) {
-                node.data('label', node.data('label') + "\n(" + round2dec(queryResult.rank(node)) + ")");
-              }
-              else {
-                node.data('label', node.data('id') + "\n(" + round2dec(queryResult.rank(node)) + ")");
-              }
-            }
-            if(queryOptions.highlight === true) {
-              node.addClass('highlight');
-              node.data('highlightColor', queryOptions.highlightColor);
-              node.data('highlightWidth', round2dec(queryResult.rank(node)) * 100);
-            }
-          });
+        else {
+          path = queryResult.difference(sourceNodes).difference(targetNodes);
+          if(queryOptions.query == 'commonStream') {
+            let commonNodes = cy.collection();  // change here after graph-algos bug fix
+            result.commonNodes.forEach(function(node){
+              commonNodes.merge(node);
+            });
+            path = path.difference(commonNodes);
+            result.commonNodes.forEach(function(node){
+              node.addClass('target');
+              node.data('highlightColor', queryOptions.targetColor);
+              targetNodes.merge(node);
+            });
+          }
+          path.addClass('path');
+          path.data('highlightColor', queryOptions.pathColor);
+          queryResult.data('highlightWidth', queryOptions.highlightWidth);
+    
+          if(queryOptions.cropToResult) {
+            elementsToBeRendered = queryResult.union(sourceNodes).union(targetNodes);
+          }
         }
       }
-      else {
-        path = queryResult.difference(sourceNodes).difference(targetNodes);
-        if(queryOptions.query == 'commonStream') {
-          let commonNodes = cy.collection();  // change here after graph-algos bug fix
-          result.commonNodes.forEach(function(node){
-            commonNodes.merge(node);
-          });
-          path = path.difference(commonNodes);
-          result.commonNodes.forEach(function(node){
-            node.addClass('target');
-            node.data('highlightColor', queryOptions.targetColor);
-            targetNodes.merge(node);
-          });
-        }
-        path.addClass('path');
-        path.data('highlightColor', queryOptions.pathColor);
-        queryResult.data('highlightWidth', queryOptions.highlightWidth);
-  
-        if(queryOptions.cropToResult) {
-          elementsToBeRendered = queryResult.union(sourceNodes).union(targetNodes);
-        }
+      catch (e) {
+        let date = new Date()
+        errorMessage = "<b>Sorry! Cannot process the given query!<b><br><br>Either format of the query options is wrong or there is a bug in our side.<br><br>Error detail: <br>" + e;
+        logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
+        return res.status(500).send({
+          errorMessage: errorMessage
+        });
       }
     }
 
@@ -543,29 +585,39 @@ app.post('/:format', (req, res) => {
     let colorScheme = imageOptions.color || "white";
     let stylesheet = adjustStylesheet(format, colorScheme);
 
-    snap.start().then(function(){
-      return snap.shot({
-        elements: elementsToBeRendered.jsons(),
-        layout: layoutOptions,
-        style: stylesheet,
-        resolvesTo: 'all',
-        format: imageOptions.format,
-        quality: 100,
-        width: imageOptions.width,
-        height: imageOptions.height,
-        background: imageOptions.background
-      }).then(function( result ){
-        if(imageWanted) {
-          ret["image"] = result.image;
-        }
-        if(layoutOptions.name != "preset") {
-          setJson(result);
-        }
-        return res.status(200).send(ret);
-      }).then(function(){
-        snap.stop();
+    try {
+      snap.start().then(function(){
+        return snap.shot({
+          elements: elementsToBeRendered.jsons(),
+          layout: layoutOptions,
+          style: stylesheet,
+          resolvesTo: 'all',
+          format: imageOptions.format,
+          quality: 100,
+          width: imageOptions.width,
+          height: imageOptions.height,
+          background: imageOptions.background
+        }).then(function( result ){
+          if(imageWanted) {
+            ret["image"] = result.image;
+          }
+          if(layoutOptions.name != "preset") {
+            setJson(result);
+          }
+          return res.status(200).send(ret);
+        }).then(function(){
+          snap.stop();
+        });
       });
-    });
+    }
+    catch (e) {
+      let date = new Date()
+      errorMessage = "<b>Sorry! Cannot process the given file!</b><br><br>Something has gone wrong during either applying layout or generating image.<br><br>Error detail: <br>" + e;
+      logger.log('---- %s', date + ": \n" + errorMessage.replace(/<br\s*[\/]?>/gi,"\n").replace(/<b\s*\/?>/mg,"") + "\n");
+      return res.status(500).send({
+        errorMessage: errorMessage
+      }); 
+    }
 
 });
 
