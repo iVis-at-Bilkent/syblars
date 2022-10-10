@@ -6,7 +6,7 @@ let adjustStylesheet = function(format, colorScheme) {
   let stylesheet;
   if(format == 'sbgnml') {
     if(colorScheme == 'black_white') {
-      stylesheet = function(){       
+      stylesheet = function(){
         return sbgnStylesheet(cytoscape, 'black_white');
       };
     }
@@ -46,11 +46,10 @@ let adjustStylesheet = function(format, colorScheme) {
       };
     }
     else {
-      if(!isColor(colorScheme))
-        colorScheme = undefined;
+      // default color scheme for SBGNML is bluescale
       stylesheet = function(){
-        return sbgnStylesheet(cytoscape, colorScheme);
-      };      
+        return sbgnStylesheet(cytoscape, 'bluescale');
+      };
     }
     return stylesheet;
   }
@@ -108,7 +107,7 @@ let adjustStylesheet = function(format, colorScheme) {
           style: {
             'shape': 'rhomboid'
           }
-        },        
+        },
         {
           selector: 'node[sboTerm = 253]',
           style: {
@@ -142,7 +141,7 @@ let adjustStylesheet = function(format, colorScheme) {
               return node.data('height') ? node.data('height') : 25;
             },
           }
-        },        
+        },
         {
           selector: 'node[sboTerm = 298]',
           style: {
@@ -248,9 +247,9 @@ let adjustStylesheet = function(format, colorScheme) {
             'text-valign': 'center',
             'width': 25,
             'height': 25,
-            'background-color': "#F2F2F2"           
+            'background-color': "#F2F2F2"
           }
-        },        
+        },
         {
           selector: 'node[sboTerm = 238]',
           style: {
@@ -434,7 +433,7 @@ let adjustStylesheet = function(format, colorScheme) {
     };
 
     return stylesheet;
-  }      
+  }
   else {
     stylesheet =  function(){
       return [
@@ -540,18 +539,12 @@ let adjustStylesheet = function(format, colorScheme) {
             'underlay-opacity': 0.5
           }
         }
-      ];        
-    };      
+      ];
+    };
 
-    return stylesheet;             
+    return stylesheet;
   }  
 };
-
-function isColor(strColor){
-  var s = new Option().style;
-  s.color = strColor;
-  return s.color == strColor;
-}
 
 module.exports = {
   adjustStylesheet
