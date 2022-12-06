@@ -1,4 +1,4 @@
-heroku = !(location.hostname === "localhost");
+syblars = !(location.hostname === "localhost");
 
 ///////////////////// LOAD & SAVE //////////////////////////////
 
@@ -53,7 +53,7 @@ let processNodes = async function () {
   let isSBGNML = (graphData.search("sbgn") === -1) ? 0 : 1;
   let isSBML = (graphData.search("sbml") === -1) ? 0 : 1;
 
-  if (!heroku) {
+  if (!syblars) {
     if (isGraphML)
       url = "http://localhost:" + port + "/graphml?nodeInfo=true";
     else if (isSBGNML)
@@ -64,13 +64,13 @@ let processNodes = async function () {
       url = "http://localhost:" + port + "/json?nodeInfo=true";
   } else {
     if (isGraphML)
-      url = "https://syblars.herokuapp.com/graphml?nodeInfo=true";
+      url = "http://syblars.cs.bilkent.edu.tr/graphml?nodeInfo=true";
     else if (isSBGNML)
-      url = "https://syblars.herokuapp.com/sbgnml?nodeInfo=true";
+      url = "http://syblars.cs.bilkent.edu.tr/sbgnml?nodeInfo=true";
     else if (isSBML)
-      url = "https://syblars.herokuapp.com/sbml?nodeInfo=true"
+      url = "http://syblars.cs.bilkent.edu.tr/sbml?nodeInfo=true"
     else
-      url = "https://syblars.herokuapp.com/json?nodeInfo=true";
+      url = "http://syblars.cs.bilkent.edu.tr/json?nodeInfo=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
@@ -147,9 +147,6 @@ let processNodes = async function () {
           });
        
   if(res && !res.errorMessage) {
-    if((res["nodeAmount"] > 2000 || res["edgeAmount"] > 2000) && heroku) {
-      return false;
-    }
     // get layout info
     nodeData = res["nodeData"];
     return true;
@@ -175,7 +172,7 @@ let processLayout = async function () {
   let isSBGNML = (graphData.search("sbgn") === -1) ? 0 : 1;
   let isSBML = (graphData.search("sbml") === -1) ? 0 : 1;
 
-  if (!heroku) {
+  if (!syblars) {
     if (isGraphML)
       url = "http://localhost:" + port + "/graphml?edges=true";
     else if (isSBGNML)
@@ -186,13 +183,13 @@ let processLayout = async function () {
       url = "http://localhost:" + port + "/json?edges=true";
   } else {
     if (isGraphML)
-      url = "https://syblars.herokuapp.com/graphml?edges=true";
+      url = "http://syblars.cs.bilkent.edu.tr/graphml?edges=true";
     else if (isSBGNML)
-      url = "https://syblars.herokuapp.com/sbgnml?edges=true";
+      url = "http://syblars.cs.bilkent.edu.tr/sbgnml?edges=true";
     else if (isSBML)
-      url = "https://syblars.herokuapp.com/sbml?edges=true"
+      url = "http://syblars.cs.bilkent.edu.tr/sbml?edges=true"
     else
-      url = "https://syblars.herokuapp.com/json?edges=true";
+      url = "http://syblars.cs.bilkent.edu.tr/json?edges=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
