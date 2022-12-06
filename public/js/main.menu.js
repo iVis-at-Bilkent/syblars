@@ -1,3 +1,4 @@
+// This is for using the service with a hostname other than localhost
 syblars = !(location.hostname === "localhost");
 
 ///////////////////// LOAD & SAVE //////////////////////////////
@@ -62,7 +63,7 @@ let processNodes = async function () {
       url = "http://localhost:" + port + "/sbml?nodeInfo=true";
     else
       url = "http://localhost:" + port + "/json?nodeInfo=true";
-  } else {
+  } else {  // NOTE: If you are using the service with a different hostname, please change below accordingly
     if (isGraphML)
       url = "http://syblars.cs.bilkent.edu.tr/graphml?nodeInfo=true";
     else if (isSBGNML)
@@ -181,7 +182,7 @@ let processLayout = async function () {
       url = "http://localhost:" + port + "/sbml?edges=true";
     else
       url = "http://localhost:" + port + "/json?edges=true";
-  } else {
+  } else { // NOTE: If you are using the service with a different hostname, please change below accordingly
     if (isGraphML)
       url = "http://syblars.cs.bilkent.edu.tr/graphml?edges=true";
     else if (isSBGNML)
