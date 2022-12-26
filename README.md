@@ -21,6 +21,10 @@ Here is a sample server deployment along with a simple client-side demo:
 <a href="http://syblars.cs.bilkent.edu.tr"><img src="https://www.cs.bilkent.edu.tr/~ivis/images/demo1.png" height=42px></a>
 </p>
 
+Please cite the following when you use this service:
+
+H. Balci, U. Dogrusoz, Y.Z. Ozgul and P. Atayev, "[SyBLaRS: A web service for laying out, rendering and mining biological maps in SBGN, SBML and more](https://doi.org/10.1371/journal.pcbi.1010635)", PLOS Computational Biology, 18(11), pp. 1-12, 2022.
+
 ## Setup of a service
 
 In order to deploy and run a local instance of the service, please follow the steps below:
