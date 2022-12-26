@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this service, please cite it as below."
+authors:
+- family-names: "Balci"
+  given-names: "Hasan"
+  orcid: "https://orcid.org/0000-0001-8319-7758"
+- family-names: "Dogrusoz"
+  given-names: "Ugur"
+  orcid: "https://orcid.org/0000-0002-7153-0784"
+- family-names: "Ozgul"
+  given-names: "Yusuf Ziya"
+- family-names: "Atayev"
+  given-names: "Perman"   
+title: "syblars"
+version: 1.0.2
+date-released: 2021-09-09
+url: "https://github.com/iVis-at-Bilkent/syblars"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Balci"
+    given-names: "Hasan"
+    orcid: "https://orcid.org/0000-0001-8319-7758"
+  - family-names: "Dogrusoz"
+    given-names: "Ugur"
+    orcid: "https://orcid.org/0000-0002-7153-0784"
+  - family-names: "Ozgul"
+    given-names: "Yusuf Ziya"
+  - family-names: "Atayev"
+    given-names: "Perman"
+  doi: "10.1371/journal.pcbi.1010635"
+  journal: "PLOS Computational Biology"
+  title: "SyBLaRS: A web service for laying out, rendering and mining biological maps in SBGN, SBML and more"
+  issue: 11
+  volume: 18  
+  start: 1 # First page number
+  end: 12 # Last page number
+  month: 11
+  year: 2022
