@@ -328,23 +328,19 @@ let settings = {
             <label text='Triose-P&#xA;Isomerase' /> <!-- contains line break -->
             <bbox x='150' y='120' w='120' h='60'/>
           </glyph>
-
           <glyph class='process' orientation='vertical' id='pn1'>
             <bbox x='50' y='140' w='20' h='20'/>
             <port x='60' y='130' id='pn1.1'/>
             <port x='60' y='170' id='pn1.2'/>
           </glyph>
-
           <arc class='production' source='pn1.1' target='glyph1' id='a1'>
             <start x='60' y='130' />
             <end x='60' y='80' />
           </arc>
-
           <arc class='production' source='pn1.2' target='glyph2' id='a2'>
             <start x='60' y='170' />			
             <end x='60' y='220' />
           </arc>
-
           <arc class='catalysis' source='glyph3' target='pn1' id='a3'>
             <start x='150' y='150' />
             <end x='70' y='150' />			
@@ -365,6 +361,9 @@ let result = await fetch("http://syblars.cs.bilkent.edu.tr/sbgnml?edges=true", s
 let imageInfo = result["image"];     // data:image/png;base64,iVBORw0KGgoAAAANSUhE... (in `base64uri` for `png` and `jpg` and in `xml` for `svg`)
 let layoutInfo = result["layout"];   // {"_00ac7e0a-288f-42e0-b252-9bcb59027572":{"position":{"x":97.42656942899578,"y":-128.0473968715957},"data":{"width":25,"height":25,"parent":"_23d436e2-6633-42f2-98d0-00dbb962ac3d"}},...}}}}  (in JSON format)
 ```
+
+See also [here](https://gist.github.com/cannin/7e35f3fae274370bd0a70c7b1840c743) for sample Python codes that call SyBLaRS to lay out and render SBGNML files by [Augustin Luna](https://gist.github.com/cannin).
+
 ### Remarks
 
 - SyBLaRS regards any node position information. This is especially useful if you want to create an image of the map, which is already laid out. This is also useful in cases where you do have a partially decent layout but you would like to apply an incremental layout respecting the current positions in your map. This information should be provided via `bbox` of each glyph in SBGNML files, via the layout extension in SBML files, via `x` and `y` data attributes and `position` attribute of each node in GraphML and JSON files, respectively (see the [sample files](https://github.com/iVis-at-Bilkent/syblars/tree/main/public/samples)).
