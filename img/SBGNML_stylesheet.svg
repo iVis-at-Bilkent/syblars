@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="927.20929"
    height="808.24835"
    id="svg503"
    sodipodi:docname="SBGNML_stylesheet.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:export-filename="SBGNML_stylesheet.jpg"
+   inkscape:export-xdpi="27.318336"
+   inkscape:export-ydpi="27.318336"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata507">
     <rdf:RDF>
@@ -22,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,21 +38,24 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1387"
+     inkscape:window-width="1512"
+     inkscape:window-height="829"
      id="namedview505"
      showgrid="false"
-     inkscape:zoom="1.5000001"
-     inkscape:cx="362.68366"
-     inkscape:cy="652.27662"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:zoom="0.35258702"
+     inkscape:cx="226.89434"
+     inkscape:cy="425.42689"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g501"
+     inkscape:current-layer="g3184"
      fit-margin-top="10"
      fit-margin-left="20"
      fit-margin-right="20"
-     fit-margin-bottom="10" />
+     fit-margin-bottom="10"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs143">
     <inkscape:path-effect
@@ -1453,23 +1459,7 @@
            font-weight="normal"
            font-style="normal"
            font-size="12px">Tag</text>
-        <flowRoot
-           xml:space="preserve"
-           id="flowRoot1576"
-           style="font-style:normal;font-weight:normal;font-size:10px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-           transform="matrix(0.67424242,0,0,0.67424242,-647.97958,443.28714)"><flowRegion
-             id="flowRegion1578"
-             style="letter-spacing:0px"><rect
-               id="rect1580"
-               width="194.01759"
-               height="70.381241"
-               x="-180.87976"
-               y="272.37537"
-               style="letter-spacing:0px" /></flowRegion><flowPara
-             id="flowPara1582"
-             style="font-size:29.26666641px">Nucleic acid </flowPara><flowPara
-             id="flowPara1584"
-             style="font-size:29.26666641px">feature</flowPara></flowRoot>        <text
+        <text
            style="font-style:normal;font-weight:normal;font-size:19.74122047px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.64510167"
            id="text6-6"
            dominant-baseline="text-after-edge"
@@ -1479,6 +1469,24 @@
            font-weight="normal"
            font-style="normal"
            font-size="12px">Perturbing agent</text>
+        <text
+           style="font-style:normal;font-weight:normal;font-size:19.7412px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.6451;stroke-miterlimit:10;stroke-opacity:1"
+           id="text6-6-7"
+           dominant-baseline="text-after-edge"
+           y="649.14172"
+           x="-703.65875"
+           text-decoration="normal"
+           font-weight="normal"
+           font-style="normal"
+           font-size="12px"><tspan
+             sodipodi:role="line"
+             id="tspan1"
+             x="-703.65875"
+             y="649.14172">Nucleic acid</tspan><tspan
+             sodipodi:role="line"
+             id="tspan2"
+             x="-703.65875"
+             y="673.81824">feature</tspan></text>
         <text
            style="font-style:normal;font-weight:normal;font-size:19.74122047px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.64510167"
            id="text6-6-2"
@@ -1696,11 +1704,9 @@
          text-decoration="normal"
          font-weight="normal"
          font-style="normal"
-         font-size="12px">
-        <tspan
+         font-size="12px"><tspan
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.1030302px;font-family:'Helvetica Neue', Helvetica, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, sans-serif Bold';stroke-width:1.15157115"
-           id="tspan1677-4">SBGN PD Glyphs</tspan>
-      </text>
+           id="tspan1677-4">SBGN PD Glyphs</tspan></text>
       <text
          style="font-style:normal;font-weight:normal;font-size:13.81885433px;font-family:'Helvetica Neue', Helvetica, sans-serif;dominant-baseline:text-after-edge;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15157115;stroke-miterlimit:10;stroke-opacity:1"
          id="text70-7-8-6"
@@ -1710,11 +1716,9 @@
          text-decoration="normal"
          font-weight="normal"
          font-style="normal"
-         font-size="12px">
-        <tspan
+         font-size="12px"><tspan
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.1030302px;font-family:'Helvetica Neue', Helvetica, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, sans-serif Bold';stroke-width:1.15157115"
-           id="tspan1677-4-2">SBGN PD Arcs</tspan>
-      </text>
+           id="tspan1677-4-2">SBGN PD Arcs</tspan></text>
       <path
          id="path184"
          stroke-miterlimit="10"
@@ -1857,7 +1861,8 @@
              height="848.32843"
              width="1006.9208"
              id="rect1164" /></flowRegion><flowPara
-           id="flowPara1166" /></flowRoot>      <g
+           id="flowPara1166" /></flowRoot>
+      <g
          id="g1214">
         <path
            d="m -205.83191,922.60402 -9.4132,-4.70666 v 9.41325 l 9.4132,-4.70659 m -12.55093,4.70659 h -0.92741 v -9.41325 h 0.92741 z"
