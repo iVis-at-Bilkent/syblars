@@ -65,13 +65,13 @@ let processNodes = async function () {
       url = "http://localhost:" + port + "/json?nodeInfo=true";
   } else {  // NOTE: If you are using the service with a different hostname, please change below accordingly
     if (isGraphML)
-      url = "http://syblars.cs.bilkent.edu.tr/graphml?nodeInfo=true";
+      url = "https://syblars.cs.bilkent.edu.tr/graphml?nodeInfo=true";
     else if (isSBGNML)
-      url = "http://syblars.cs.bilkent.edu.tr/sbgnml?nodeInfo=true";
+      url = "https://syblars.cs.bilkent.edu.tr/sbgnml?nodeInfo=true";
     else if (isSBML)
-      url = "http://syblars.cs.bilkent.edu.tr/sbml?nodeInfo=true"
+      url = "https://syblars.cs.bilkent.edu.tr/sbml?nodeInfo=true"
     else
-      url = "http://syblars.cs.bilkent.edu.tr/json?nodeInfo=true";
+      url = "https://syblars.cs.bilkent.edu.tr/json?nodeInfo=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
@@ -184,13 +184,13 @@ let processLayout = async function () {
       url = "http://localhost:" + port + "/json?edges=true";
   } else { // NOTE: If you are using the service with a different hostname, please change below accordingly
     if (isGraphML)
-      url = "http://syblars.cs.bilkent.edu.tr/graphml?edges=true";
+      url = "https://syblars.cs.bilkent.edu.tr/graphml?edges=true";
     else if (isSBGNML)
-      url = "http://syblars.cs.bilkent.edu.tr/sbgnml?edges=true";
+      url = "https://syblars.cs.bilkent.edu.tr/sbgnml?edges=true";
     else if (isSBML)
-      url = "http://syblars.cs.bilkent.edu.tr/sbml?edges=true"
+      url = "https://syblars.cs.bilkent.edu.tr/sbml?edges=true"
     else
-      url = "http://syblars.cs.bilkent.edu.tr/json?edges=true";
+      url = "https://syblars.cs.bilkent.edu.tr/json?edges=true";
   }
 
   imageFormat = $('#formatRadios').find('[name="format"]:checked').val();
